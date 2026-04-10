@@ -6,9 +6,9 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "36ca355a486d3bf825fe47b2f87289f296c7a28d2a725630344444a99d5e286b",
+    "canonical_ir_sha256": "fea92240156bed58ad1ef48d7ff7d85e1dda9b996cf210154054e74e4ebeceef",
     "generator_version": "0.1.0",
-    "ir_schema_version": "1.0.0",
+    "ir_schema_version": "1.1.0",
     "manifest_kind": "artifact-manifest-v1",
     "patch_manifest": {
       "applied_patches": [
@@ -205,19 +205,19 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 6625,
-      "content_sha256": "f0b5185af22a9ab528b614a3c2a7e869639406db7f6e8f2a76ef28be4fa72e13",
+      "content_sha256": "2dcb7fdceccd3c848d31079e74067998e109840c62a43d740ea6c0f721c4f3b1",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 223831,
-      "content_sha256": "65a81d61dc7c6ec3f39881c57f64b7f00b038a94fc0b91f1602b3a0d9663d0e3",
+      "content_bytes": 225842,
+      "content_sha256": "fd245511ad2acad6829cb3c0e688be40c5c1196c58385b3eb03deca422dc9a98",
       "path": "st/stm32g0/family-connectivity.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 768,
-      "content_sha256": "e730c0ad7eb4957617a19225573c31b2a8fc5eaebbaafdeaddb43bd8d596ae0f",
+      "content_sha256": "6255f23b869ef0f69e95530a3a481bf7010366e156087733105039fcf0473ed7",
       "path": "st/stm32g0/family-index.json"
     },
     {
@@ -258,8 +258,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 52265,
-      "content_sha256": "059e482a1c6f27b9074cdd3b7758609ccac1eccb56a9f7613bfbdcf2cdf68453",
+      "content_bytes": 53328,
+      "content_sha256": "2a025758ba1cca0c0334b36784dc2fd0fa5c3ab2d84d9c5a5c6c8ed5d0fd0633",
       "path": "st/stm32g0/stm32g030f6/device.json"
     },
     {
@@ -282,8 +282,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 183559,
-      "content_sha256": "c1680ce536c3d4c444ab536f818f4bf93f85b6aa9f89561f85d817a180695e96",
+      "content_bytes": 185140,
+      "content_sha256": "9389c71ea71cfe69395183de353d0e73cb71a8e192ac4fc668ddc9fc439d1abd",
       "path": "st/stm32g0/stm32g071rb/device.json"
     },
     {
@@ -306,8 +306,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 223810,
-      "content_sha256": "f9f33c5353d4dbf1168627a71518169ca08a2de586b23c4f62b227b1ea3f8785",
+      "content_bytes": 225760,
+      "content_sha256": "9ff92a07508b8e0bb49fe1c3f961e7cbdd57bdaedaf1cfeabf804c6cd3e035cd",
       "path": "st/stm32g0/stm32g0b1re/device.json"
     },
     {
@@ -340,7 +340,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "b99aec6d62c6ef0bde289c5a8785da5d270676cb92881280561027df552ba2cd",
+  "target_artifact_revision": "0023fb4f48a7595d7e6b7b8b65a736ae7160d6e25bd0719226f3ad56f0f6a743",
   "target_repository": "alloy-devices",
   "validation": {
     "gates": [

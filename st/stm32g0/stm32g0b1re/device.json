@@ -477,6 +477,7 @@
       "base_address": 1073816576,
       "instance": 1,
       "ip_name": "adc",
+      "ip_version": "aditf4_v3_0_G0_Cube",
       "name": "ADC1",
       "provenance": {
         "patch_ids": [
@@ -493,6 +494,7 @@
       "base_address": 1073807872,
       "instance": 0,
       "ip_name": "comp",
+      "ip_version": null,
       "name": "COMP",
       "provenance": {
         "patch_ids": [
@@ -509,6 +511,7 @@
       "base_address": 1073885184,
       "instance": 0,
       "ip_name": "crc",
+      "ip_version": "integtest1_v2_0",
       "name": "CRC",
       "provenance": {
         "patch_ids": [
@@ -525,6 +528,7 @@
       "base_address": 1073771520,
       "instance": 0,
       "ip_name": "dac",
+      "ip_version": null,
       "name": "DAC",
       "provenance": {
         "patch_ids": [
@@ -541,6 +545,7 @@
       "base_address": 1073829888,
       "instance": 0,
       "ip_name": "dbg",
+      "ip_version": null,
       "name": "DBG",
       "provenance": {
         "patch_ids": [
@@ -557,6 +562,7 @@
       "base_address": 1073874944,
       "instance": 1,
       "ip_name": "dmamux",
+      "ip_version": null,
       "name": "DMAMUX1",
       "provenance": {
         "patch_ids": [
@@ -573,6 +579,7 @@
       "base_address": 1073872896,
       "instance": 1,
       "ip_name": "dma",
+      "ip_version": null,
       "name": "DMA1",
       "provenance": {
         "patch_ids": [
@@ -589,6 +596,7 @@
       "base_address": 1073873920,
       "instance": 2,
       "ip_name": "dma",
+      "ip_version": null,
       "name": "DMA2",
       "provenance": {
         "patch_ids": [
@@ -605,6 +613,7 @@
       "base_address": 1073879040,
       "instance": 0,
       "ip_name": "exti",
+      "ip_version": null,
       "name": "EXTI",
       "provenance": {
         "patch_ids": [
@@ -621,6 +630,7 @@
       "base_address": 1073767424,
       "instance": 1,
       "ip_name": "fdcan",
+      "ip_version": "fdcan1_v1_0_Cube",
       "name": "FDCAN1",
       "provenance": {
         "patch_ids": [
@@ -637,6 +647,7 @@
       "base_address": 1073768448,
       "instance": 2,
       "ip_name": "fdcan",
+      "ip_version": "fdcan1_v1_0_Cube",
       "name": "FDCAN2",
       "provenance": {
         "patch_ids": [
@@ -653,6 +664,7 @@
       "base_address": 1073881088,
       "instance": 0,
       "ip_name": "flash",
+      "ip_version": null,
       "name": "FLASH",
       "provenance": {
         "patch_ids": [
@@ -669,6 +681,7 @@
       "base_address": 1342177280,
       "instance": 0,
       "ip_name": "gpio",
+      "ip_version": null,
       "name": "GPIOA",
       "provenance": {
         "patch_ids": [
@@ -685,6 +698,7 @@
       "base_address": 1342178304,
       "instance": 1,
       "ip_name": "gpio",
+      "ip_version": null,
       "name": "GPIOB",
       "provenance": {
         "patch_ids": [
@@ -701,6 +715,7 @@
       "base_address": 1342179328,
       "instance": 2,
       "ip_name": "gpio",
+      "ip_version": null,
       "name": "GPIOC",
       "provenance": {
         "patch_ids": [
@@ -717,6 +732,7 @@
       "base_address": 1342180352,
       "instance": 3,
       "ip_name": "gpio",
+      "ip_version": null,
       "name": "GPIOD",
       "provenance": {
         "patch_ids": [
@@ -733,6 +749,7 @@
       "base_address": 1342181376,
       "instance": 4,
       "ip_name": "gpio",
+      "ip_version": null,
       "name": "GPIOE",
       "provenance": {
         "patch_ids": [
@@ -749,6 +766,7 @@
       "base_address": 1342182400,
       "instance": 5,
       "ip_name": "gpio",
+      "ip_version": null,
       "name": "GPIOF",
       "provenance": {
         "patch_ids": [
@@ -765,6 +783,7 @@
       "base_address": 1073772544,
       "instance": 0,
       "ip_name": "hdmi_cec",
+      "ip_version": "hdmi_cec_v2_0_Cube",
       "name": "HDMI_CEC",
       "provenance": {
         "patch_ids": [
@@ -781,6 +800,7 @@
       "base_address": 1073763328,
       "instance": 0,
       "ip_name": "i2c1",
+      "ip_version": "i2c2_v1_1_Cube",
       "name": "I2C1",
       "provenance": {
         "patch_ids": [
@@ -797,6 +817,7 @@
       "base_address": 1073764352,
       "instance": 0,
       "ip_name": "i2c2",
+      "ip_version": "i2c2_v1_1_Cube",
       "name": "I2C2",
       "provenance": {
         "patch_ids": [
@@ -813,6 +834,7 @@
       "base_address": 1073776640,
       "instance": 0,
       "ip_name": "i2c3",
+      "ip_version": "i2c2_v1_1_Cube",
       "name": "I2C3",
       "provenance": {
         "patch_ids": [
@@ -829,6 +851,7 @@
       "base_address": 1073754112,
       "instance": 0,
       "ip_name": "iwdg",
+      "ip_version": "iwdg1_v2_0",
       "name": "IWDG",
       "provenance": {
         "patch_ids": [
@@ -845,6 +868,7 @@
       "base_address": 1073773568,
       "instance": 1,
       "ip_name": "lptim",
+      "ip_version": "G0xx_lptimer1_v1_4_Cube",
       "name": "LPTIM1",
       "provenance": {
         "patch_ids": [
@@ -861,6 +885,7 @@
       "base_address": 1073779712,
       "instance": 2,
       "ip_name": "lptim",
+      "ip_version": "G0xx_lptimer1_v1_4_Cube",
       "name": "LPTIM2",
       "provenance": {
         "patch_ids": [
@@ -877,6 +902,7 @@
       "base_address": 1073774592,
       "instance": 1,
       "ip_name": "lpuart",
+      "ip_version": "sci3_v1_4_Cube",
       "name": "LPUART1",
       "provenance": {
         "patch_ids": [
@@ -893,6 +919,7 @@
       "base_address": 1073775616,
       "instance": 2,
       "ip_name": "lpuart",
+      "ip_version": "sci3_v1_4_Cube",
       "name": "LPUART2",
       "provenance": {
         "patch_ids": [
@@ -909,6 +936,7 @@
       "base_address": 1073770496,
       "instance": 0,
       "ip_name": "pwr",
+      "ip_version": null,
       "name": "PWR",
       "provenance": {
         "patch_ids": [
@@ -925,6 +953,7 @@
       "base_address": 1073876992,
       "instance": 0,
       "ip_name": "rcc",
+      "ip_version": "STM32G0-512_rcc_v1_0",
       "name": "RCC",
       "provenance": {
         "patch_ids": [
@@ -941,6 +970,7 @@
       "base_address": 1073752064,
       "instance": 0,
       "ip_name": "rtc",
+      "ip_version": "rtc3_v1_0_Cube",
       "name": "RTC",
       "provenance": {
         "patch_ids": [
@@ -957,6 +987,7 @@
       "base_address": 1073819648,
       "instance": 1,
       "ip_name": "spi",
+      "ip_version": "spi2s1_v3_5_Cube",
       "name": "SPI1",
       "provenance": {
         "patch_ids": [
@@ -973,6 +1004,7 @@
       "base_address": 1073756160,
       "instance": 2,
       "ip_name": "spi",
+      "ip_version": "spi2s1_v3_5_Cube",
       "name": "SPI2",
       "provenance": {
         "patch_ids": [
@@ -989,6 +1021,7 @@
       "base_address": 1073757184,
       "instance": 3,
       "ip_name": "spi",
+      "ip_version": "spi2s1_v3_5_Cube",
       "name": "SPI3",
       "provenance": {
         "patch_ids": [
@@ -1005,6 +1038,7 @@
       "base_address": 1073786880,
       "instance": 0,
       "ip_name": "tamp",
+      "ip_version": null,
       "name": "TAMP",
       "provenance": {
         "patch_ids": [
@@ -1021,6 +1055,7 @@
       "base_address": 1073818624,
       "instance": 1,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM1",
       "provenance": {
         "patch_ids": [
@@ -1037,6 +1072,7 @@
       "base_address": 1073741824,
       "instance": 2,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM2",
       "provenance": {
         "patch_ids": [
@@ -1053,6 +1089,7 @@
       "base_address": 1073742848,
       "instance": 3,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM3",
       "provenance": {
         "patch_ids": [
@@ -1069,6 +1106,7 @@
       "base_address": 1073743872,
       "instance": 4,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM4",
       "provenance": {
         "patch_ids": [
@@ -1085,6 +1123,7 @@
       "base_address": 1073745920,
       "instance": 6,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM6",
       "provenance": {
         "patch_ids": [
@@ -1101,6 +1140,7 @@
       "base_address": 1073746944,
       "instance": 7,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM7",
       "provenance": {
         "patch_ids": [
@@ -1117,6 +1157,7 @@
       "base_address": 1073750016,
       "instance": 14,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM14",
       "provenance": {
         "patch_ids": [
@@ -1133,6 +1174,7 @@
       "base_address": 1073823744,
       "instance": 15,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM15",
       "provenance": {
         "patch_ids": [
@@ -1149,6 +1191,7 @@
       "base_address": 1073824768,
       "instance": 16,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM16",
       "provenance": {
         "patch_ids": [
@@ -1165,6 +1208,7 @@
       "base_address": 1073825792,
       "instance": 17,
       "ip_name": "tim",
+      "ip_version": "gptimer2_v3_x_Cube",
       "name": "TIM17",
       "provenance": {
         "patch_ids": [
@@ -1181,6 +1225,7 @@
       "base_address": 1073782784,
       "instance": 1,
       "ip_name": "ucpd",
+      "ip_version": "ucpd_v1_0_Cube",
       "name": "UCPD1",
       "provenance": {
         "patch_ids": [
@@ -1197,6 +1242,7 @@
       "base_address": 1073783808,
       "instance": 2,
       "ip_name": "ucpd",
+      "ip_version": "ucpd_v1_0_Cube",
       "name": "UCPD2",
       "provenance": {
         "patch_ids": [
@@ -1213,6 +1259,7 @@
       "base_address": 1073821696,
       "instance": 1,
       "ip_name": "usart",
+      "ip_version": "sci3_v2_1_Cube",
       "name": "USART1",
       "provenance": {
         "patch_ids": [
@@ -1229,6 +1276,7 @@
       "base_address": 1073759232,
       "instance": 2,
       "ip_name": "usart",
+      "ip_version": "sci3_v2_1_Cube",
       "name": "USART2",
       "provenance": {
         "patch_ids": [
@@ -1245,6 +1293,7 @@
       "base_address": 1073760256,
       "instance": 3,
       "ip_name": "usart",
+      "ip_version": "sci3_v2_1_Cube",
       "name": "USART3",
       "provenance": {
         "patch_ids": [
@@ -1261,6 +1310,7 @@
       "base_address": 1073761280,
       "instance": 4,
       "ip_name": "usart",
+      "ip_version": "sci3_v2_1_Cube",
       "name": "USART4",
       "provenance": {
         "patch_ids": [
@@ -1277,6 +1327,7 @@
       "base_address": 1073762304,
       "instance": 5,
       "ip_name": "usart",
+      "ip_version": "sci3_v2_1_Cube",
       "name": "USART5",
       "provenance": {
         "patch_ids": [
@@ -1293,6 +1344,7 @@
       "base_address": 1073822720,
       "instance": 6,
       "ip_name": "usart",
+      "ip_version": "sci3_v2_1_Cube",
       "name": "USART6",
       "provenance": {
         "patch_ids": [
@@ -1309,6 +1361,7 @@
       "base_address": 1073765376,
       "instance": 0,
       "ip_name": "usb",
+      "ip_version": null,
       "name": "USB",
       "provenance": {
         "patch_ids": [
@@ -1325,6 +1378,7 @@
       "base_address": 1073807408,
       "instance": 0,
       "ip_name": "vrefbuf",
+      "ip_version": null,
       "name": "VREFBUF",
       "provenance": {
         "patch_ids": [
@@ -1341,6 +1395,7 @@
       "base_address": 1073753088,
       "instance": 0,
       "ip_name": "wwdg",
+      "ip_version": "wwdg1_v2_0",
       "name": "WWDG",
       "provenance": {
         "patch_ids": [
@@ -7836,5 +7891,5 @@
     "source_id": "stm32-open-pin-data",
     "source_path": "STM32G0B1R(B-C-E)Tx.xml"
   },
-  "schema_version": "1.0.0"
+  "schema_version": "1.1.0"
 }
