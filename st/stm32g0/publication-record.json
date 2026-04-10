@@ -170,7 +170,7 @@
     "validation_report_sha256": "a2d28e280a087eb8fda744bbebc66ba343c0f3261cd54eafa6215ab22feb26b1"
   },
   "consumer_verification": {
-    "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb",
+    "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g030f6",
     "command": [
       "/usr/bin/c++",
       "-std=c++23",
@@ -180,21 +180,21 @@
       "-pedantic",
       "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
       "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
-      "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"st/stm32g0/stm32g071rb/register_map.hpp\"",
-      "-DALLOY_CODEGEN_SMOKE_PIN_FUNCTIONS_HEADER=\"st/stm32g0/stm32g071rb/pin_functions.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"st/stm32g0/stm32g030f6/register_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PIN_FUNCTIONS_HEADER=\"st/stm32g0/stm32g030f6/pin_functions.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"st/stm32g0/generated/peripherals/gpioa.hpp\"",
-      "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32g0::stm32g071rb",
+      "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32g0::stm32g030f6",
       "-DALLOY_CODEGEN_SMOKE_GPIO_NAMESPACE=st::stm32g0::generated::peripherals",
       "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
-      "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32g0/stm32g071rb/startup.cpp",
+      "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32g0/stm32g030f6/startup.cpp",
       "-o",
-      "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb/smoke-consumer"
+      "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g030f6/smoke-consumer"
     ],
     "compiler": "/usr/bin/c++",
     "consumer_id": "alloy-published-artifact-smoke",
-    "executable_path": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb/smoke-consumer",
+    "executable_path": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g030f6/smoke-consumer",
     "source_file": "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
-    "startup_source": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32g0/stm32g071rb/startup.cpp",
+    "startup_source": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32g0/stm32g030f6/startup.cpp",
     "stderr": "",
     "stdout": "",
     "succeeded": true
