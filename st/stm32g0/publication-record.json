@@ -200,7 +200,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 17,
+  "published_artifact_count": 22,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -225,6 +225,36 @@
       "content_bytes": 405,
       "content_sha256": "6ca225f1b1089ec3fd80761ddf34ee8474cd90903b655051bfcf9783ca54fc1b",
       "path": "st/stm32g0/generated/peripherals/gpioa.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 405,
+      "content_sha256": "c6ba2ab3d754b977fd06c6c5e7f39705666fe1e2e2bc81e521af09a781e3686e",
+      "path": "st/stm32g0/generated/peripherals/gpiob.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 405,
+      "content_sha256": "21c86121def543d51d80f4cc4ad61aacc8f4039c32a8470ccf82968972e078ac",
+      "path": "st/stm32g0/generated/peripherals/gpioc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 405,
+      "content_sha256": "3bad5345dc8340d013819c8b896f1c6eb6cc9a6b023e8f7860d83e0143ed3d60",
+      "path": "st/stm32g0/generated/peripherals/gpiod.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "026152472d6599b1311fe6bb6eace0476246d5b0e6cd61b0024d7584d3a09b0b",
+      "path": "st/stm32g0/generated/peripherals/gpioe.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 405,
+      "content_sha256": "3511e0290456c10ad4c7f01bc5ae602215e899f512677104a8b514522eadea9a",
+      "path": "st/stm32g0/generated/peripherals/gpiof.hpp"
     },
     {
       "artifact_kind": "canonical-metadata",
@@ -310,7 +340,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "c471f583b42bb5a26e0a7ec54b5cde6eceb5b633825b568aad6683b9db71b67c",
+  "target_artifact_revision": "b99aec6d62c6ef0bde289c5a8785da5d270676cb92881280561027df552ba2cd",
   "target_repository": "alloy-devices",
   "validation": {
     "gates": [
