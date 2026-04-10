@@ -200,7 +200,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 23,
+  "published_artifact_count": 25,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -219,6 +219,12 @@
       "content_bytes": 768,
       "content_sha256": "6255f23b869ef0f69e95530a3a481bf7010366e156087733105039fcf0473ed7",
       "path": "st/stm32g0/family-index.json"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 413,
+      "content_sha256": "de9640777d7c6f76b2136ebf7069a595b75084ad8e40e6436e038bff1de87074",
+      "path": "st/stm32g0/generated/dma_map.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -255,6 +261,12 @@
       "content_bytes": 405,
       "content_sha256": "3511e0290456c10ad4c7f01bc5ae602215e899f512677104a8b514522eadea9a",
       "path": "st/stm32g0/generated/peripherals/gpiof.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2538,
+      "content_sha256": "c0beaa9b0763c4195a98a65006c7934867850fb79edb132a10cc75f2bbf456eb",
+      "path": "st/stm32g0/generated/rcc_map.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -346,7 +358,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "c8e13b0de751d3b3ca92d62c0924a1fa04e5a95e60fd12a4ec9cb09a6dc8d0a0",
+  "target_artifact_revision": "0c79e6cb133da717359088a278aa29a82d8742995ccaf227067e10633bc72c33",
   "target_repository": "alloy-devices",
   "validation": {
     "gates": [
