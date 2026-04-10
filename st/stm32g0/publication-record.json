@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "126bda6a1747138f98f8bed9e841842b3c51ad63c80bd4331a3b4750ed491ad6",
+    "canonical_ir_sha256": "36ca355a486d3bf825fe47b2f87289f296c7a28d2a725630344444a99d5e286b",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.0.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -43,40 +43,121 @@
       "manifest_kind": "source-manifest-v1",
       "sources": [
         {
-          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G030.svd",
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32G030.svd",
           "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
-          "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
+          "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
           "scope": {
             "device": null,
             "family": "stm32g0",
             "vendor": "st"
           },
           "source_id": "cmsis-svd-data",
+          "target_device": "stm32g030f6",
           "upstream_path": "data/STMicro/STM32G030.svd"
         },
         {
-          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G071.svd",
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32G071.svd",
           "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
-          "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
+          "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
           "scope": {
             "device": null,
             "family": "stm32g0",
             "vendor": "st"
           },
           "source_id": "cmsis-svd-data",
+          "target_device": "stm32g071rb",
           "upstream_path": "data/STMicro/STM32G071.svd"
         },
         {
-          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
           "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
-          "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
+          "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
           "scope": {
             "device": null,
             "family": "stm32g0",
             "vendor": "st"
           },
           "source_id": "cmsis-svd-data",
+          "target_device": "stm32g0b1re",
           "upstream_path": "data/STMicro/STM32G0B1.svd"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32G030F6Px.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32g0",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32g030f6",
+          "upstream_path": "mcu/STM32G030F6Px.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32G03x_gpio_v1_0_Modes.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32g0",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32g030f6",
+          "upstream_path": "mcu/IP/GPIO-STM32G03x_gpio_v1_0_Modes.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32G071R(6-8-B)Tx.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32g0",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32g071rb",
+          "upstream_path": "mcu/STM32G071R(6-8-B)Tx.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32G07x_gpio_v1_0_Modes.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32g0",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32g071rb",
+          "upstream_path": "mcu/IP/GPIO-STM32G07x_gpio_v1_0_Modes.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32G0B1R(B-C-E)Tx.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32g0",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32g0b1re",
+          "upstream_path": "mcu/STM32G0B1R(B-C-E)Tx.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32G0Bx_gpio_v1_0_Modes.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32g0",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32g0b1re",
+          "upstream_path": "mcu/IP/GPIO-STM32G0Bx_gpio_v1_0_Modes.xml"
         }
       ],
       "targets": [
@@ -86,7 +167,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "92b8a99fdad30b4d2f19c9a0ca53bcf3aaf48cd0864abfb59fa74751cb6cf9ce"
+    "validation_report_sha256": "86b02194eef1c30e5d0ca5200febc387c8b5313b97c2389268b998ac670116cd"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb",
@@ -123,14 +204,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3232,
-      "content_sha256": "7a24ca4da719041dde466b619528fa46a274591d9a6ea38a466a6f1deebced28",
+      "content_bytes": 6625,
+      "content_sha256": "f0b5185af22a9ab528b614a3c2a7e869639406db7f6e8f2a76ef28be4fa72e13",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 14908,
-      "content_sha256": "d98bc6122c9923d633c509739d1ef6b82121135ecc928380db7642115bfda3bf",
+      "content_bytes": 223831,
+      "content_sha256": "65a81d61dc7c6ec3f39881c57f64b7f00b038a94fc0b91f1602b3a0d9663d0e3",
       "path": "st/stm32g0/family-connectivity.json"
     },
     {
@@ -147,80 +228,80 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 8013,
-      "content_sha256": "50e9fa0a4f7c3301aa2f75b354f6acbc79a8c3f5dd3b4da1ae7c294838645f56",
+      "content_bytes": 52265,
+      "content_sha256": "059e482a1c6f27b9074cdd3b7758609ccac1eccb56a9f7613bfbdcf2cdf68453",
       "path": "st/stm32g0/stm32g030f6/device.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 491,
-      "content_sha256": "c73d1b99ce78b501d894d5c1a0a1b661ab51bd57f1f0252aef69caf10ed33d73",
+      "content_bytes": 2538,
+      "content_sha256": "491f82fa31e7ffd2502de132e311a985a962d835ab23d035dfc4b43fa7f35ab8",
       "path": "st/stm32g0/stm32g030f6/pin_functions.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 386,
-      "content_sha256": "703a7f3ee53df9440a6a830a95e06a5d8d4a1fc7e4d1066ff4a98ce92046a8e7",
+      "content_bytes": 1100,
+      "content_sha256": "c5595c98cfeaf08fd2955dd90460c3adf27b87cb48db33c43617fc839ce3dc67",
       "path": "st/stm32g0/stm32g030f6/register_map.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 368,
-      "content_sha256": "ee3cac0313d7a87ac67b083ea46934a172971da2672518291488d928d7f62773",
+      "content_bytes": 953,
+      "content_sha256": "69aeedc4ecc4be62b19640f7e2d4d21517f9e564c655561396e16a482bcaac47",
       "path": "st/stm32g0/stm32g030f6/startup.cpp"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 9247,
-      "content_sha256": "ab4fd8e0e816b246482a377192c4a262590c34b739b16306844a55826d35184a",
+      "content_bytes": 183559,
+      "content_sha256": "c1680ce536c3d4c444ab536f818f4bf93f85b6aa9f89561f85d817a180695e96",
       "path": "st/stm32g0/stm32g071rb/device.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 491,
-      "content_sha256": "5e8d10dd93282d249da0f38a37d7f31f26c024fc6e6c613ecc225ce332de04fb",
+      "content_bytes": 13650,
+      "content_sha256": "a610064c69465d56cd3f0e69fecc05a4002c96f07e6f4e3398ab1f21d6231a00",
       "path": "st/stm32g0/stm32g071rb/pin_functions.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 440,
-      "content_sha256": "fab8c10bb221a0bdda8615709e5e5311973fd1ea390767d44abd3c19a6313566",
+      "content_bytes": 1446,
+      "content_sha256": "14b6709a038c4d1aba3fe3d7ed2b036b5429958a8e4f33559912ed608bd7232f",
       "path": "st/stm32g0/stm32g071rb/register_map.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 403,
-      "content_sha256": "fc21671e41bac57066d1073546b49fb69e5a0d6b46f9ac0307b79b5dbdeac50e",
+      "content_bytes": 1168,
+      "content_sha256": "d8908ebd5e8532d552791182863fe468d3adc98bbbc0f5773e5a6b69a70e2331",
       "path": "st/stm32g0/stm32g071rb/startup.cpp"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 7719,
-      "content_sha256": "b18d8ee5d48b8ed736838ae27a1a03cc5eaebb0d60babcd6fca1f740f9493cd6",
+      "content_bytes": 223810,
+      "content_sha256": "f9f33c5353d4dbf1168627a71518169ca08a2de586b23c4f62b227b1ea3f8785",
       "path": "st/stm32g0/stm32g0b1re/device.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 497,
-      "content_sha256": "e12837f47a871d7e7763bb94be10919dd6fb3a6e81e744279c3cadc7254e2a92",
+      "content_bytes": 17431,
+      "content_sha256": "2d6032386747c308f6e5f9beb88fb592c92a43e401b9884bb793a39a84c9e760",
       "path": "st/stm32g0/stm32g0b1re/pin_functions.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 412,
-      "content_sha256": "df5757c6058449ea1c939239987f6ef3050b9daae9c39269a6fcdc8bd5945ccb",
+      "content_bytes": 1701,
+      "content_sha256": "b0f6d1f10804db3dacf4c15e3473bfa9bcd29a782491944e10af59afb3438ac9",
       "path": "st/stm32g0/stm32g0b1re/register_map.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 372,
-      "content_sha256": "503dfffd0e0051a2ba6df88ab8cbb5ae63ebf12d50b6d4d54a32b80e2a8cc0ce",
+      "content_bytes": 1243,
+      "content_sha256": "21d0adbafe96778ba6f4b388db538f7c7e6098d43f74f3dc7d14e697296b1bce",
       "path": "st/stm32g0/stm32g0b1re/startup.cpp"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 15372,
-      "content_sha256": "92b8a99fdad30b4d2f19c9a0ca53bcf3aaf48cd0864abfb59fa74751cb6cf9ce",
+      "content_bytes": 15687,
+      "content_sha256": "86b02194eef1c30e5d0ca5200febc387c8b5313b97c2389268b998ac670116cd",
       "path": "st/stm32g0/validation-report.json"
     }
   ],
@@ -229,17 +310,18 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "e6dc3872739e2b6ce897f60831cb07c476212acde636e91dae4bd7069e3a4bb0",
+  "target_artifact_revision": "c471f583b42bb5a26e0a7ec54b5cde6eceb5b633825b568aad6683b9db71b67c",
   "target_repository": "alloy-devices",
   "validation": {
     "gates": [
       {
         "blocking": false,
         "gate_id": "gate-a",
-        "message": "gate-a passed with 5 rule(s).",
+        "message": "gate-a passed with 6 rule(s).",
         "passed": true,
         "rule_ids": [
-          "source-target-count-match",
+          "source-records-cover-targets",
+          "source-records-provide-required-upstreams",
           "source-records-have-revisions",
           "source-records-have-local-paths",
           "patch-target-count-match",
