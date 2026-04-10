@@ -1,0 +1,408 @@
+{
+  "artifact_manifest": {
+    "build_metadata": {
+      "artifact_layout_version": "alloy-devices-v1",
+      "cpp_contract_version": "alloy-cpp-bootstrap-v1",
+      "pipeline_name": "alloy-codegen",
+      "target_repository": "alloy-devices"
+    },
+    "canonical_ir_sha256": "440b2d373db20091408c1128e1d22438a53cd3c9a69ce57b71a8ee4bc5572822",
+    "generator_version": "0.1.0",
+    "ir_schema_version": "1.1.0",
+    "manifest_kind": "artifact-manifest-v1",
+    "patch_manifest": {
+      "applied_patches": [
+        {
+          "description": "Bootstrap overlay patch for atsame70n21b using family catalog microchip-same70-family-bootstrap-v1.",
+          "patch_id": "microchip-same70-atsame70n21b-bootstrap"
+        },
+        {
+          "description": "Bootstrap overlay patch for atsame70q21b using family catalog microchip-same70-family-bootstrap-v1.",
+          "patch_id": "microchip-same70-atsame70q21b-bootstrap"
+        }
+      ],
+      "bootstrap_family": "same70",
+      "manifest_kind": "patch-manifest-v1",
+      "targets": [
+        "atsame70n21b",
+        "atsame70q21b"
+      ]
+    },
+    "scope": {
+      "device": null,
+      "family": "same70",
+      "vendor": "microchip"
+    },
+    "source_manifest": {
+      "bootstrap_family": "same70",
+      "manifest_kind": "source-manifest-v1",
+      "sources": [
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/Microchip.SAME70_DFP.4.13.292.atpack",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:ea4a48a1bf0e46991ebe41ce1f098f6f81f93e1d41382c12cc2ebbbaed08c5b9",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-pack",
+          "target_device": "atsame70n21b",
+          "upstream_path": "Microchip.SAME70_DFP.4.13.292.atpack"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70n21b",
+          "upstream_path": "."
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699/Microchip.SAME70_DFP.pdsc",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70n21b",
+          "upstream_path": "Microchip.SAME70_DFP.pdsc"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699/same70b/atdf/ATSAME70N21B.atdf",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70n21b",
+          "upstream_path": "same70b/atdf/ATSAME70N21B.atdf"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699/same70b/svd/ATSAME70N21B.svd",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70n21b",
+          "upstream_path": "same70b/svd/ATSAME70N21B.svd"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/Microchip.SAME70_DFP.4.13.292.atpack",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:ea4a48a1bf0e46991ebe41ce1f098f6f81f93e1d41382c12cc2ebbbaed08c5b9",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-pack",
+          "target_device": "atsame70q21b",
+          "upstream_path": "Microchip.SAME70_DFP.4.13.292.atpack"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70q21b",
+          "upstream_path": "."
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699/Microchip.SAME70_DFP.pdsc",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70q21b",
+          "upstream_path": "Microchip.SAME70_DFP.pdsc"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699/same70b/atdf/ATSAME70Q21B.atdf",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70q21b",
+          "upstream_path": "same70b/atdf/ATSAME70Q21B.atdf"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/same70-ea4a48a1bf0e4699/same70b/svd/ATSAME70Q21B.svd",
+          "origin_url": "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack",
+          "revision": "content-sha256:8b4a7b02037c0aa938c90eef9bdcac8f0ceed19167906c618036e17fb2e49ce2",
+          "scope": {
+            "device": null,
+            "family": "same70",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "atsame70q21b",
+          "upstream_path": "same70b/svd/ATSAME70Q21B.svd"
+        }
+      ],
+      "targets": [
+        "atsame70n21b",
+        "atsame70q21b"
+      ]
+    },
+    "validation_report_id": "bootstrap-validation-v1",
+    "validation_report_sha256": "dd2f63da5970b217f3399effc83e4f14c0f6763e0da5ecd8a2677556590401d8"
+  },
+  "consumer_verification": {
+    "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/atsame70n21b",
+    "command": [
+      "/usr/bin/c++",
+      "-std=c++23",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
+      "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"microchip/same70/atsame70n21b/register_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PIN_FUNCTIONS_HEADER=\"microchip/same70/atsame70n21b/pin_functions.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"microchip/same70/generated/peripherals/gpioa.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=microchip::same70::atsame70n21b",
+      "-DALLOY_CODEGEN_SMOKE_GPIO_NAMESPACE=microchip::same70::generated::peripherals",
+      "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
+      "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/microchip/same70/atsame70n21b/startup.cpp",
+      "-o",
+      "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/atsame70n21b/smoke-consumer"
+    ],
+    "compiler": "/usr/bin/c++",
+    "consumer_id": "alloy-published-artifact-smoke",
+    "executable_path": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/atsame70n21b/smoke-consumer",
+    "source_file": "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
+    "startup_source": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/microchip/same70/atsame70n21b/startup.cpp",
+    "stderr": "",
+    "stdout": "",
+    "succeeded": true
+  },
+  "publication_mode": "published",
+  "published_artifact_count": 20,
+  "published_artifacts": [
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 7649,
+      "content_sha256": "ef41500251335eb318f2dbc0489d8be866677e892f6436f8d01e54fe7fe0e3ac",
+      "path": "microchip/same70/artifact-manifest.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 243549,
+      "content_sha256": "ffb8b0d173eb763db4edb197c9cab77e7d66d302f3fc588cb9f7b14094b7de3a",
+      "path": "microchip/same70/atsame70n21b/device.json"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 14407,
+      "content_sha256": "9c72039c86abdeffe1ef1346aa9efe0f335d2ed6dff010d5d81f2eb6e1548c61",
+      "path": "microchip/same70/atsame70n21b/pin_functions.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1892,
+      "content_sha256": "7a56c74d60b39c19e2e09aee47135c10655c533f3e379b8f386622651d8076fb",
+      "path": "microchip/same70/atsame70n21b/register_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1885,
+      "content_sha256": "6b3a86534a45562e781d17593a257fc5268bd040b2e9e49384162b0106142bbf",
+      "path": "microchip/same70/atsame70n21b/startup.cpp"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 316059,
+      "content_sha256": "90f8f0712386b3f601bac6de7cc0d784e4286ab7951404887548d1891d57b677",
+      "path": "microchip/same70/atsame70q21b/device.json"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 19183,
+      "content_sha256": "574dc70716090843345dbaa7e88be2734d275333b9ce2c15a487b2c6550361b9",
+      "path": "microchip/same70/atsame70q21b/pin_functions.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2019,
+      "content_sha256": "77b74cfa52f953046f1d2236d46bf0c0054aa0fe48628cb94ccf3c2e46dd28b7",
+      "path": "microchip/same70/atsame70q21b/register_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1985,
+      "content_sha256": "d4a5df1a636ad18ad76da6f636d2584771ec312fccd425cacc952cbf3d3ab720",
+      "path": "microchip/same70/atsame70q21b/startup.cpp"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 294472,
+      "content_sha256": "51c92df323f1dc20ac44161d673e5996f8bc6563c84f45ec331d7618f3b43cb4",
+      "path": "microchip/same70/family-connectivity.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 618,
+      "content_sha256": "7e5b9db8796af674a7862c7d3d33cfae2dbfdb53f421368297c95dc10b843d14",
+      "path": "microchip/same70/family-index.json"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2367,
+      "content_sha256": "dab585a24584bc7ab700c8cfda5fdd55e37040afca8aa3bda6929db5505fa729",
+      "path": "microchip/same70/generated/dma_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 387,
+      "content_sha256": "4de2550aa262fcaf30c3ff1279b915da859ba15b489e8c5848709798c5a7a991",
+      "path": "microchip/same70/generated/peripherals/gpioa.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 387,
+      "content_sha256": "1ea3ff13c0d369328eb8ccab2ffe643fb85de74bb408c652630df6e079c9ad94",
+      "path": "microchip/same70/generated/peripherals/gpiob.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 387,
+      "content_sha256": "80d032fa8ed84c1a8ac5f76a1b689b8152f0aad118e9a8ec73c9b87901c18b57",
+      "path": "microchip/same70/generated/peripherals/gpioc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 387,
+      "content_sha256": "ee38c595fb3a53499ff0385a0b2f56aa58a14dff18635a316aa49d1b1e48645f",
+      "path": "microchip/same70/generated/peripherals/gpiod.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 387,
+      "content_sha256": "fb6f14c492cb29850ad4a070fef6b43450900169039efe82cf0a677f92f188db",
+      "path": "microchip/same70/generated/peripherals/gpioe.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1726,
+      "content_sha256": "4bce4735d695b87b3d7d6a5b8acc32c64952c693f0853252fcfcce7f951df7e8",
+      "path": "microchip/same70/generated/rcc_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 10263,
+      "content_sha256": "914e376b05cf447894ebb92b8147e9de86c888d7208106a86c4384e217cbfe8f",
+      "path": "microchip/same70/generated/signal_map.hpp"
+    },
+    {
+      "artifact_kind": "validation-report",
+      "content_bytes": 11300,
+      "content_sha256": "dd2f63da5970b217f3399effc83e4f14c0f6763e0da5ecd8a2677556590401d8",
+      "path": "microchip/same70/validation-report.json"
+    }
+  ],
+  "scope": {
+    "device": null,
+    "family": "same70",
+    "vendor": "microchip"
+  },
+  "target_artifact_revision": "6c0de5a80ca0244c978191d95c37d3cf063948e8e8da81137d6811bc4cf83e8e",
+  "target_repository": "alloy-devices",
+  "validation": {
+    "gates": [
+      {
+        "blocking": false,
+        "gate_id": "gate-a",
+        "message": "gate-a passed with 6 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "source-records-cover-targets",
+          "source-records-provide-required-upstreams",
+          "source-records-have-revisions",
+          "source-records-have-local-paths",
+          "patch-target-count-match",
+          "patch-ids-unique"
+        ]
+      },
+      {
+        "blocking": false,
+        "gate_id": "gate-b",
+        "message": "gate-b passed with 6 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "atsame70n21b-schema-version-present",
+          "atsame70n21b-identity-fields-present",
+          "atsame70n21b-required-sections-present",
+          "atsame70q21b-schema-version-present",
+          "atsame70q21b-identity-fields-present",
+          "atsame70q21b-required-sections-present"
+        ]
+      },
+      {
+        "blocking": true,
+        "gate_id": "gate-c",
+        "message": "gate-c passed with 26 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "atsame70n21b-package-pin-count-covers-known-pins",
+          "atsame70n21b-pin-port-has-gpio-peripheral",
+          "atsame70n21b-pin-signals-present",
+          "atsame70n21b-pin-signals-reference-known-peripherals",
+          "atsame70n21b-alternate-functions-explicit",
+          "atsame70n21b-memory-sizes-positive",
+          "atsame70n21b-peripheral-bases-unique",
+          "atsame70n21b-interrupts-present",
+          "atsame70n21b-interrupts-reference-known-peripherals",
+          "atsame70n21b-referenced-peripherals-have-rcc-enable",
+          "atsame70n21b-dma-controllers-known",
+          "atsame70n21b-dma-request-peripherals-known",
+          "atsame70n21b-dma-routes-unique",
+          "atsame70q21b-package-pin-count-covers-known-pins",
+          "atsame70q21b-pin-port-has-gpio-peripheral",
+          "atsame70q21b-pin-signals-present",
+          "atsame70q21b-pin-signals-reference-known-peripherals",
+          "atsame70q21b-alternate-functions-explicit",
+          "atsame70q21b-memory-sizes-positive",
+          "atsame70q21b-peripheral-bases-unique",
+          "atsame70q21b-interrupts-present",
+          "atsame70q21b-interrupts-reference-known-peripherals",
+          "atsame70q21b-referenced-peripherals-have-rcc-enable",
+          "atsame70q21b-dma-controllers-known",
+          "atsame70q21b-dma-request-peripherals-known",
+          "atsame70q21b-dma-routes-unique"
+        ]
+      }
+    ],
+    "is_passing": true,
+    "report_id": "bootstrap-validation-v1"
+  }
+}
