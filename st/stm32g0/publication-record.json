@@ -43,7 +43,7 @@
       "manifest_kind": "source-manifest-v1",
       "sources": [
         {
-          "local_path": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G030.svd",
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G030.svd",
           "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
           "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
           "scope": {
@@ -55,7 +55,7 @@
           "upstream_path": "data/STMicro/STM32G030.svd"
         },
         {
-          "local_path": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G071.svd",
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G071.svd",
           "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
           "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
           "scope": {
@@ -67,7 +67,7 @@
           "upstream_path": "data/STMicro/STM32G071.svd"
         },
         {
-          "local_path": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
           "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
           "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
           "scope": {
@@ -89,7 +89,7 @@
     "validation_report_sha256": "92b8a99fdad30b4d2f19c9a0ca53bcf3aaf48cd0864abfb59fa74751cb6cf9ce"
   },
   "consumer_verification": {
-    "build_dir": "/private/tmp/alloy-codegen-artifacts-devices/alloy-published-artifact-smoke/stm32g071rb",
+    "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb",
     "command": [
       "/usr/bin/c++",
       "-std=c++23",
@@ -97,23 +97,23 @@
       "-Wextra",
       "-Werror",
       "-pedantic",
-      "-I/Users/lgili/Documents/01 - Codes/01 - Github/alloy/src",
-      "-I/Users/lgili/Documents/01 - Codes/01 - Github/.alloy-devices.staging",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
       "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"st/stm32g0/stm32g071rb/register_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PIN_FUNCTIONS_HEADER=\"st/stm32g0/stm32g071rb/pin_functions.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"st/stm32g0/generated/peripherals/gpioa.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32g0::stm32g071rb",
       "-DALLOY_CODEGEN_SMOKE_GPIO_NAMESPACE=st::stm32g0::generated::peripherals",
-      "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
-      "/Users/lgili/Documents/01 - Codes/01 - Github/.alloy-devices.staging/st/stm32g0/stm32g071rb/startup.cpp",
+      "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
+      "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32g0/stm32g071rb/startup.cpp",
       "-o",
-      "/private/tmp/alloy-codegen-artifacts-devices/alloy-published-artifact-smoke/stm32g071rb/smoke-consumer"
+      "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb/smoke-consumer"
     ],
     "compiler": "/usr/bin/c++",
     "consumer_id": "alloy-published-artifact-smoke",
-    "executable_path": "/private/tmp/alloy-codegen-artifacts-devices/alloy-published-artifact-smoke/stm32g071rb/smoke-consumer",
-    "source_file": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
-    "startup_source": "/Users/lgili/Documents/01 - Codes/01 - Github/.alloy-devices.staging/st/stm32g0/stm32g071rb/startup.cpp",
+    "executable_path": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb/smoke-consumer",
+    "source_file": "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
+    "startup_source": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32g0/stm32g071rb/startup.cpp",
     "stderr": "",
     "stdout": "",
     "succeeded": true
@@ -123,8 +123,8 @@
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3274,
-      "content_sha256": "f5c0c9eb9a9b80dd219d690d635670bfa8a58dd688905edfa5521562f81d2bd8",
+      "content_bytes": 3232,
+      "content_sha256": "7a24ca4da719041dde466b619528fa46a274591d9a6ea38a466a6f1deebced28",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
@@ -229,7 +229,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "226e5b4c472ec71b2200caa7eb9d07fe89d522d59f659664f138b12db514d772",
+  "target_artifact_revision": "e6dc3872739e2b6ce897f60831cb07c476212acde636e91dae4bd7069e3a4bb0",
   "target_repository": "alloy-devices",
   "validation": {
     "gates": [

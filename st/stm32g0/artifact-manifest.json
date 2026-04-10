@@ -42,7 +42,7 @@
     "manifest_kind": "source-manifest-v1",
     "sources": [
       {
-        "local_path": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G030.svd",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G030.svd",
         "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
         "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
         "scope": {
@@ -54,7 +54,7 @@
         "upstream_path": "data/STMicro/STM32G030.svd"
       },
       {
-        "local_path": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G071.svd",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G071.svd",
         "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
         "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
         "scope": {
@@ -66,7 +66,7 @@
         "upstream_path": "data/STMicro/STM32G071.svd"
       },
       {
-        "local_path": "/Users/lgili/Documents/01 - Codes/01 - Github/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/tests/fixtures/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
         "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
         "revision": "content-sha256:7c30b52cd43a93529c916c5a69291bc4cccbdf45981f78265ef9b1dc2791c8d8",
         "scope": {
