@@ -167,7 +167,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "86b02194eef1c30e5d0ca5200febc387c8b5313b97c2389268b998ac670116cd"
+    "validation_report_sha256": "a2d28e280a087eb8fda744bbebc66ba343c0f3261cd54eafa6215ab22feb26b1"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32g071rb",
@@ -205,7 +205,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 6625,
-      "content_sha256": "2dcb7fdceccd3c848d31079e74067998e109840c62a43d740ea6c0f721c4f3b1",
+      "content_sha256": "7ce463b765e63fd071f981a8919394c2f2f8287f17898b95afd0591605558296",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
@@ -348,8 +348,8 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 15687,
-      "content_sha256": "86b02194eef1c30e5d0ca5200febc387c8b5313b97c2389268b998ac670116cd",
+      "content_bytes": 15693,
+      "content_sha256": "a2d28e280a087eb8fda744bbebc66ba343c0f3261cd54eafa6215ab22feb26b1",
       "path": "st/stm32g0/validation-report.json"
     }
   ],
@@ -358,7 +358,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "0c79e6cb133da717359088a278aa29a82d8742995ccaf227067e10633bc72c33",
+  "target_artifact_revision": "ebbf6e7255497f06d21d169c80f0f89235507bbf78272546657ecc749a5c7688",
   "target_repository": "alloy-devices",
   "validation": {
     "gates": [
