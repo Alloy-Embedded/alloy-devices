@@ -142,6 +142,10 @@
       "-DALLOY_CODEGEN_SMOKE_MEMORY_MAP_HEADER=\"st/stm32f4/generated/memory_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PACKAGE_MAP_HEADER=\"st/stm32f4/generated/package_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CLOCK_TREE_HEADER=\"st/stm32f4/generated/clock_tree_lite.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DEVICE_DESCRIPTOR_HEADER=\"st/stm32f4/generated/devices/stm32f401re/device_descriptor.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PINS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/pins.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PERIPHERAL_INSTANCES_HEADER=\"st/stm32f4/generated/devices/stm32f401re/peripheral_instances.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_CAPABILITY_OVERLAYS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/capability_overlays.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_STARTUP_DESCRIPTORS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/startup_descriptors.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32f4::generated::devices::stm32f401re",
       "-DALLOY_CODEGEN_SMOKE_GENERATED_NAMESPACE=st::stm32f4::generated",
@@ -162,7 +166,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 56,
+  "published_artifact_count": 64,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -184,6 +188,30 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 7614,
+      "content_sha256": "f6c4f78e5d7403e2e7c7cedea1db6dc9c1604d2f5182619ff93710a6adb9e355",
+      "path": "st/stm32f4/generated/devices/stm32f401re/capability_overlays.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 657,
+      "content_sha256": "5af9a87a357f67ae6977415473912ee982e0968a587de6be57a22aaca26ba645",
+      "path": "st/stm32f4/generated/devices/stm32f401re/device_descriptor.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 8998,
+      "content_sha256": "27c98c94d95c767488474d18f92c00a643fae4823e7f467765aa8204aca6dffc",
+      "path": "st/stm32f4/generated/devices/stm32f401re/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 7192,
+      "content_sha256": "07076f09f6dc1cc07114c09682002b9dc0d40365bb815c9f2ef74714dfde0400",
+      "path": "st/stm32f4/generated/devices/stm32f401re/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 1749,
       "content_sha256": "c3cf8e3627dda71bad8f64fffb074b09e89c7c079b77256531e836d8b79f080e",
       "path": "st/stm32f4/generated/devices/stm32f401re/register_map.hpp"
@@ -199,6 +227,30 @@
       "content_bytes": 1749,
       "content_sha256": "8f1837f3118d0a98b680315f25bad74349bdc87ab58272ff41d7d4ea7ad1d9ea",
       "path": "st/stm32f4/generated/devices/stm32f401re/startup_vectors.cpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 7614,
+      "content_sha256": "f493f855f910cfb573d4646139669310871e9407c530a034b127aaa5951acf9c",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/capability_overlays.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 664,
+      "content_sha256": "2e25c715c80556b82bcf1e0c1eff16d9eb47c5563982fc9b3ea7ea36d99d1e96",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/device_descriptor.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 13392,
+      "content_sha256": "fca08b25fe4cdb7a9cd9007ae9d6ff388b365bfe36bacb9d72fac03265e23b95",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 7307,
+      "content_sha256": "dd07a24ab57e5f5482bd1f94a1641dea6fedc20bf30feb246b8cd710a7af144a",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/pins.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -506,7 +558,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "77024c73e740deeab67b6c20f988f92eb973bc0144063d550540f2b8c0843971",
+  "target_artifact_revision": "f8e87088f8fc9c7a04dd34727dcfa05fa61119f0544ae517c87d68bd485c2f8f",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
