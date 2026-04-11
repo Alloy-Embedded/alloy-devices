@@ -884,6 +884,7 @@
   "family": "stm32f4",
   "ip_blocks": [
     {
+      "backend_schema_id": "alloy.adc.st-aditf2-v1-1-cube",
       "capability_ids": [],
       "ip_name": "adc",
       "ip_version": "aditf2_v1_1_Cube",
@@ -900,6 +901,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.can.st-bxcan1-v1-1-cube",
       "capability_ids": [],
       "ip_name": "can",
       "ip_version": "bxcan1_v1_1_Cube",
@@ -916,6 +918,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.crc.st-integtest1-v1-0",
       "capability_ids": [],
       "ip_name": "crc",
       "ip_version": "integtest1_v1_0",
@@ -932,6 +935,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.dac.st-dacif-v1-1-cube",
       "capability_ids": [],
       "ip_name": "dac",
       "ip_version": "dacif_v1_1_Cube",
@@ -948,6 +952,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.i2c1.st-i2c1-v1-5-cube",
       "capability_ids": [
         "capability:i2c1:i2c1-v1-5-cube:scl",
         "capability:i2c1:i2c1-v1-5-cube:sda",
@@ -972,6 +977,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.i2c2.st-i2c1-v1-5-cube",
       "capability_ids": [
         "capability:i2c2:i2c1-v1-5-cube:scl",
         "capability:i2c2:i2c1-v1-5-cube:sda",
@@ -996,6 +1002,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.i2c3.st-i2c1-v1-5-cube",
       "capability_ids": [],
       "ip_name": "i2c3",
       "ip_version": "i2c1_v1_5_Cube",
@@ -1012,6 +1019,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.iwdg.st-iwdg1-v1-1",
       "capability_ids": [],
       "ip_name": "iwdg",
       "ip_version": "iwdg1_v1_1",
@@ -1028,6 +1036,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.nvic.st-stm32f401",
       "capability_ids": [],
       "ip_name": "nvic",
       "ip_version": "STM32F401",
@@ -1044,6 +1053,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.nvic.st-stm32f417",
       "capability_ids": [],
       "ip_name": "nvic",
       "ip_version": "STM32F417",
@@ -1060,6 +1070,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.rcc.st-stm32f417-rcc-v1-0",
       "capability_ids": [],
       "ip_name": "rcc",
       "ip_version": "STM32F417-rcc_v1_0",
@@ -1076,6 +1087,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.rng.st-rng1-v1-1",
       "capability_ids": [],
       "ip_name": "rng",
       "ip_version": "rng1_v1_1",
@@ -1092,6 +1104,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.rtc.st-rtc2-v2-3",
       "capability_ids": [],
       "ip_name": "rtc",
       "ip_version": "rtc2_v2_3",
@@ -1108,6 +1121,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.sdio.st-sdmmc-v1-2-cube",
       "capability_ids": [],
       "ip_name": "sdio",
       "ip_version": "sdmmc_v1_2_Cube",
@@ -1124,6 +1138,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.spi.st-spi2s1-v2-2-cube",
       "capability_ids": [
         "capability:spi:spi2s1-v2-2-cube:miso",
         "capability:spi:spi2s1-v2-2-cube:mosi",
@@ -1150,6 +1165,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v2-x-cube",
       "capability_ids": [
         "capability:tim:gptimer2-v2-x-cube:bkin",
         "capability:tim:gptimer2-v2-x-cube:ch1",
@@ -1186,6 +1202,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci2-v1-2-f4-cube",
       "capability_ids": [],
       "ip_name": "uart",
       "ip_version": "sci2_v1_2_F4_Cube",
@@ -1202,6 +1219,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci2-v1-2-cube",
       "capability_ids": [
         "capability:usart:sci2-v1-2-cube:ck",
         "capability:usart:sci2-v1-2-cube:cts",
@@ -1230,6 +1248,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.wwdg.st-wwdg1-v1-0",
       "capability_ids": [],
       "ip_name": "wwdg",
       "ip_version": "wwdg1_v1_0",

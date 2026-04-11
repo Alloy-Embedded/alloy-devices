@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "can",
   "bxcan1_v1_1_Cube",
   "can",
+  "alloy.can.st-bxcan1-v1-1-cube",
   "can:bxcan1_v1_1_Cube",
   "",
 };

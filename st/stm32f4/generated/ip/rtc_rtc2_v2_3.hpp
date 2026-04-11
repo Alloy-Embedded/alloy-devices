@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "rtc",
   "rtc2_v2_3",
   "rtc",
+  "alloy.rtc.st-rtc2-v2-3",
   "rtc:rtc2_v2_3",
   "",
 };

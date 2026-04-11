@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "usart",
   "sci2_v1_2_Cube",
   "uart",
+  "alloy.uart.st-sci2-v1-2-cube",
   "usart:sci2_v1_2_Cube",
   "ck,cts,rts,rx,tx",
 };

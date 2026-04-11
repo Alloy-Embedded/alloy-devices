@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "2b82d388227f84845a47095159873e4f1ed505c1e91009df404eb007972d5694",
+    "canonical_ir_sha256": "44fd9f468d9c2307ce14e805e63f52eeade325f7bfb99588b5d5976a5996eeb7",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.1.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -122,7 +122,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "1eee77cfacb285173e4cd246e15f32b3012f9ca7bbcaceebb02172f2ef518518"
+    "validation_report_sha256": "107e4c209e81d85d72819a935e396626fe90e26ce1a7ef9b5ac670a2d4380711"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32f401re",
@@ -136,15 +136,19 @@
       "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
       "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
       "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"st/stm32f4/generated/devices/stm32f401re/register_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_REGISTER_FIELDS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/register_fields.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"st/stm32f4/generated/peripherals/gpioa.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CONNECTOR_TABLES_HEADER=\"st/stm32f4/generated/connector_tables.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_INTERRUPT_MAP_HEADER=\"st/stm32f4/generated/interrupt_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_MEMORY_MAP_HEADER=\"st/stm32f4/generated/memory_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PACKAGE_MAP_HEADER=\"st/stm32f4/generated/package_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CLOCK_TREE_HEADER=\"st/stm32f4/generated/clock_tree_lite.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_PROFILES_HEADER=\"st/stm32f4/generated/runtime_profiles.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_DESCRIPTOR_HEADER=\"st/stm32f4/generated/devices/stm32f401re/device_descriptor.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PINS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/pins.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PERIPHERAL_INSTANCES_HEADER=\"st/stm32f4/generated/devices/stm32f401re/peripheral_instances.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_INTERRUPT_BINDINGS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/interrupt_bindings.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DMA_BINDINGS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/dma_bindings.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CAPABILITY_OVERLAYS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/capability_overlays.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_STARTUP_DESCRIPTORS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/startup_descriptors.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32f4::generated::devices::stm32f401re",
@@ -166,24 +170,24 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 64,
+  "published_artifact_count": 71,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 4727,
-      "content_sha256": "4d80b98e42c1997f3f8976e32b01401b0d547b64b835957f1eeb5de4718a5cb4",
+      "content_sha256": "8f80aaee2acfb2e89f8e098d1f122a395d00d0d2a3d5c612c5d2db471024e715",
       "path": "st/stm32f4/artifact-manifest.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10103,
-      "content_sha256": "6d5d46cc339fd2ec74f7c81adbaa79a461cc8f76b79636672151864f43915e25",
+      "content_bytes": 19691,
+      "content_sha256": "b3f29bbf2ec1c20c710ecd99c363662c792d9518d29baa99a8f58e336c6c7698",
       "path": "st/stm32f4/generated/clock_tree_lite.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 133275,
-      "content_sha256": "c4ba95f24054b6eda8e9aab3ced0e2eb53d886d0e01c9159265e9146c49a4e5c",
+      "content_bytes": 427879,
+      "content_sha256": "8ebff74b2d5aa76ed19f75e5c6877efd86bc7b57d36a94aaa8daa3dd6426c1fe",
       "path": "st/stm32f4/generated/connector_tables.hpp"
     },
     {
@@ -200,8 +204,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8998,
-      "content_sha256": "27c98c94d95c767488474d18f92c00a643fae4823e7f467765aa8204aca6dffc",
+      "content_bytes": 1008,
+      "content_sha256": "a71b86da71d095581c6f61beca122d92dd10d16f7f851298d79e5155998e4bee",
+      "path": "st/stm32f4/generated/devices/stm32f401re/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 11492,
+      "content_sha256": "8b08bb41a4645579383ad52ffa27bd85833279669a9b06b1ee37d33bcf2f7858",
+      "path": "st/stm32f4/generated/devices/stm32f401re/interrupt_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 14101,
+      "content_sha256": "fb8201342dc00faec1ed2bc7d9ac5ee8fe42adb2f09adc1635c34024d28dee7d",
       "path": "st/stm32f4/generated/devices/stm32f401re/peripheral_instances.hpp"
     },
     {
@@ -212,8 +228,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1749,
-      "content_sha256": "c3cf8e3627dda71bad8f64fffb074b09e89c7c079b77256531e836d8b79f080e",
+      "content_bytes": 753244,
+      "content_sha256": "38d60eaa5a476ab72a6291be84abe275e6ae82084b420c5fa82d0642d3cddfbf",
+      "path": "st/stm32f4/generated/devices/stm32f401re/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 92072,
+      "content_sha256": "9a1e16db7612b872d1b73a0189456a552e96055388f56f54bee1c4acad88e6d3",
       "path": "st/stm32f4/generated/devices/stm32f401re/register_map.hpp"
     },
     {
@@ -242,8 +264,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 13392,
-      "content_sha256": "fca08b25fe4cdb7a9cd9007ae9d6ff388b365bfe36bacb9d72fac03265e23b95",
+      "content_bytes": 1008,
+      "content_sha256": "57d0678c49ee63fa6a3018bdcc72056a1df9e23fbd3df286b50597a6f954119a",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 24855,
+      "content_sha256": "40afa3476b29e4b71fe1dcf9eef195d57854a6afd5be94f8f817e1d7a3141640",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/interrupt_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 21838,
+      "content_sha256": "dc5dd476174942a1d5a3a878e8ed3869db6d956f881d3ab0480c2d38f727abca",
       "path": "st/stm32f4/generated/devices/stm32f405rg/peripheral_instances.hpp"
     },
     {
@@ -254,8 +288,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2747,
-      "content_sha256": "c40597870dd01c20f71ba3850099340f60cf42215309ec067664ac79ce17669e",
+      "content_bytes": 2106127,
+      "content_sha256": "58f09dba29b33e851a786c22d12cf469036555c164133315fd2541c43d1a34f0",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 202893,
+      "content_sha256": "b8fd0af661add9d9e01ceb201b55c8c3a87bbb0a87e971d4e210b2e3f58bf412",
       "path": "st/stm32f4/generated/devices/stm32f405rg/register_map.hpp"
     },
     {
@@ -284,116 +324,116 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 734,
-      "content_sha256": "3e7b117af9fbe50eeccb043eeece1d88f27ae700602ea7fa2ed90f481ae3640d",
+      "content_bytes": 802,
+      "content_sha256": "d69efa5d819789ebb493e9a3ff3e2c632e834042cef13ca4474f501882789419",
       "path": "st/stm32f4/generated/ip/adc_aditf2_v1_1_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 734,
-      "content_sha256": "37f1564f7c6702a3bd201a5071f49d2134606b2566036894e590e2aa9260d505",
+      "content_bytes": 802,
+      "content_sha256": "4ecba6249761877521b3edc2fb0495a3955718ad85818bcc596688b589a8cb49",
       "path": "st/stm32f4/generated/ip/can_bxcan1_v1_1_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 732,
-      "content_sha256": "aa0263fc87d678cd973292a795a04cab683415a702c3b6a761b1e321979a8db9",
+      "content_bytes": 799,
+      "content_sha256": "8c58bbbc0f2ce976b27329fb7151ebe4bd758ccf5147309ee9392da0f7898bfc",
       "path": "st/stm32f4/generated/ip/crc_integtest1_v1_0.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 732,
-      "content_sha256": "09e6128277b2bde2ff8b135aaa247713a3b3eabc14e880f767b1e92bc216d414",
+      "content_bytes": 799,
+      "content_sha256": "6e742f479ab4f78caf40d061d57f0ffa682b77304bf7c40ea462daca8660f17c",
       "path": "st/stm32f4/generated/ip/dac_dacif_v1_1_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1134,
-      "content_sha256": "295608352f13fba53bb26e9e307017fc682cee7c6698338aa9db847a676bcfff",
+      "content_bytes": 1201,
+      "content_sha256": "c882b5685a21414c98ac46fddb00fb7b1616eb07695aff7d9d6bbac1ee5852c0",
       "path": "st/stm32f4/generated/ip/i2c1_i2c1_v1_5_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1134,
-      "content_sha256": "0a752976a2a20e7dfdbccfb7dd8e69595846c92e6d7207a0094170692d7d2209",
+      "content_bytes": 1201,
+      "content_sha256": "1f9a6be3422e2f8e571154e8532c4fd43ce5be26881902626f3ebe224006c960",
       "path": "st/stm32f4/generated/ip/i2c2_i2c1_v1_5_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 733,
-      "content_sha256": "31bb4bb039d1ad1d5a2cb39dd08b7304317ea1c55977dde835e170b016766fa1",
+      "content_bytes": 800,
+      "content_sha256": "8d9fe09f970632ac277c4a45f5659b1c16eafed5937e1076c48e578e1a6f23c8",
       "path": "st/stm32f4/generated/ip/i2c3_i2c1_v1_5_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 725,
-      "content_sha256": "a0f117d097360edb2f338276f76167e29bd433efc913301e167188b028cdf058",
+      "content_bytes": 788,
+      "content_sha256": "9c2aff725257886d06a8e861b236fd90631350f952b8a172b2ea56c159fcbd54",
       "path": "st/stm32f4/generated/ip/iwdg_iwdg1_v1_1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 723,
-      "content_sha256": "b0b5ff401d8998ee5d9b87dbf03d71032661d8774d450c9e8edd5b2b37ce0797",
+      "content_bytes": 785,
+      "content_sha256": "8f781d60d94e4495279edbfc1f3016cf39fe6691876cf9cb9afec9b90bb63d71",
       "path": "st/stm32f4/generated/ip/nvic_stm32f401.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 723,
-      "content_sha256": "4be3addfbd1b2cd7fef80082f3f82b38fdc77c9d83d008ce47fe47ea9f1e2680",
+      "content_bytes": 785,
+      "content_sha256": "19d0a8fefa4d5c0b03e5dff913c1d68aa0f04bc7cb815c7d26dffa6a2d33de5c",
       "path": "st/stm32f4/generated/ip/nvic_stm32f417.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 738,
-      "content_sha256": "37be829a6f36ab2f5ffc4f49dc398cdd5e01ccc36d40af76171ce4fce71b3206",
+      "content_bytes": 808,
+      "content_sha256": "3fe376294c119307ad52df4ea28539ec7eeea3d247eb3e12493622713dc7e6b7",
       "path": "st/stm32f4/generated/ip/rcc_stm32f417_rcc_v1_0.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 720,
-      "content_sha256": "25a3b203c7561295f6c88d24df44b0733c97df6fb7ac529ce686569d47326d4a",
+      "content_bytes": 781,
+      "content_sha256": "53b48eb3cc59b85a8a04bd68943ce03ac9090ed5ee0b8eb1facb8aa040c39099",
       "path": "st/stm32f4/generated/ip/rng_rng1_v1_1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 720,
-      "content_sha256": "a64de987641f000e9d3714195cecfa36ae7e36f6fbe59bf5e8cbdebf684c6104",
+      "content_bytes": 781,
+      "content_sha256": "ca865be69f5eda1b77dd627cfb326f359df261b09932340472e700d530b484fe",
       "path": "st/stm32f4/generated/ip/rtc_rtc2_v2_3.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 735,
-      "content_sha256": "c5a865edc2e67f32629e9b938fb2a018201ae8de5d6ed5c46ac8fc7c20382b50",
+      "content_bytes": 803,
+      "content_sha256": "1d3472e87572ca2117bf44b5b17ccca10e6e2d765381cc635a732d3f5bca3fdb",
       "path": "st/stm32f4/generated/ip/sdio_sdmmc_v1_2_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1274,
-      "content_sha256": "e9991f687a958d1f8da56bbb3f154099f5c38ff5df78f1eeaddad0115f45d641",
+      "content_bytes": 1342,
+      "content_sha256": "141a00b3f917a5adac492eb21d8d96651bcc4bb5b11902e99befc3d74f409a7f",
       "path": "st/stm32f4/generated/ip/spi_spi2s1_v2_2_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2005,
-      "content_sha256": "f6a7edc2454735d916a7cd4fcad3887c38735d143b46ab3348f7ea2d5b01ceb2",
+      "content_bytes": 2077,
+      "content_sha256": "84b950d1148519567be74e623a46d729c0329b3212de13f44b7213d11cc8cf8c",
       "path": "st/stm32f4/generated/ip/tim_gptimer2_v2_x_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 739,
-      "content_sha256": "6321d76cd78f30a7d2d1edc3349e840d59efd78abb5434d84179cfab4a65f39a",
+      "content_bytes": 809,
+      "content_sha256": "99f1e39f48f0465013702a72bacdd6802e29453f7355ef9bf7950d67345054c4",
       "path": "st/stm32f4/generated/ip/uart_sci2_v1_2_f4_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1398,
-      "content_sha256": "ebb659cd7c38c0d02bb76cefc210432b7b3248067bb92a8805699c3e21fd85b7",
+      "content_bytes": 1465,
+      "content_sha256": "b502db7b80cc680ab46db6febf3a8195f4dba36681a489ca991e4a1875300440",
       "path": "st/stm32f4/generated/ip/usart_sci2_v1_2_cube.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 725,
-      "content_sha256": "0865562bd50fd5dfc05b8f2afa590f657076b40a1cbf898863ab91cdfd4566b6",
+      "content_bytes": 788,
+      "content_sha256": "39f517a76315ff60f0dc4354051d0e3b88bb652af605686074c7dfc85b93a027",
       "path": "st/stm32f4/generated/ip/wwdg_wwdg1_v1_0.hpp"
     },
     {
@@ -481,6 +521,12 @@
       "path": "st/stm32f4/generated/rcc_map.hpp"
     },
     {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 18134,
+      "content_sha256": "d04c541462bbdd3396028ec0766c14bf061ebcd027e3cbc4c5085e5f3a65c623",
+      "path": "st/stm32f4/generated/runtime_profiles.hpp"
+    },
+    {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 40887,
       "content_sha256": "8d0d7cb357b42019268001e4ef301e8bd7d287be69d3a3f1cf1ea1ee37c8d3b7",
@@ -488,26 +534,26 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 448382,
-      "content_sha256": "47d8d5b0451945ab3ed475151cd45764b3f3c48d6ef2b6ec4519df194d42b2f2",
+      "content_bytes": 591398,
+      "content_sha256": "8c01a197d1a847632a8689daa0a1373e5fb3afd9c5c1726bd15b8810449d03ae",
       "path": "st/stm32f4/metadata/connectors.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 438671,
-      "content_sha256": "7e639737b0d26e0cf2ad0c6a7e5dfaef681cf259a8bc88a982fbc59538ba1241",
+      "content_bytes": 3000100,
+      "content_sha256": "8e241c8024f4ce0f870c7e6877c828e3978225c456afa08f5471e6039394dc9a",
       "path": "st/stm32f4/metadata/devices/stm32f401re.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 496846,
-      "content_sha256": "9babee120af266ec90bfe82bf4da2cdb8aa9a031916ff165313fbaa6f63b8157",
+      "content_bytes": 7301330,
+      "content_sha256": "4149d668322b136c62c12c140939fffc55a7add150ce1559732b48fb74b01c83",
       "path": "st/stm32f4/metadata/devices/stm32f405rg.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 153992,
-      "content_sha256": "4f143b7fea952e31726aeb3b1d4327b03c845e0e3be39e1920e914f056ee127d",
+      "content_bytes": 159186,
+      "content_sha256": "521eb101c2f9ea1de1a4e47d3ee24c0ae660570799232ec4efcb48cd85aca595",
       "path": "st/stm32f4/metadata/family-connectivity.json"
     },
     {
@@ -518,8 +564,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 32181,
-      "content_sha256": "c27dac2a302cb7cf133e08355bd615c11b4d610c1a2c7530679227459bfb2936",
+      "content_bytes": 33287,
+      "content_sha256": "b9f59116b7964ac12b9d2913585afc1d4c264d845ce0c57fd14cbaab74cf6260",
       "path": "st/stm32f4/metadata/ip-blocks.json"
     },
     {
@@ -530,8 +576,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 251451,
-      "content_sha256": "6968bfc22ca59ce49caebac9288f2b0206c419c31d44dde6872a871e7fdfda52",
+      "content_bytes": 267273,
+      "content_sha256": "1ae2bda02a68d2726f5be782ef3acc47e7b576c00f90ee1f4627250eb78cb735",
       "path": "st/stm32f4/metadata/system-descriptors.json"
     },
     {
@@ -542,14 +588,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 50519,
-      "content_sha256": "1eee77cfacb285173e4cd246e15f32b3012f9ca7bbcaceebb02172f2ef518518",
+      "content_bytes": 62643,
+      "content_sha256": "107e4c209e81d85d72819a935e396626fe90e26ce1a7ef9b5ac670a2d4380711",
       "path": "st/stm32f4/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 14850,
-      "content_sha256": "3732f7a0d731ddf4b4c9cdbb9704a273f189491639707e68d5b774ab17df409f",
+      "content_bytes": 18102,
+      "content_sha256": "e88191d3faf25972dd41373ab2064d361ca41ab3245d8d69f5f2eddfdd8abbce",
       "path": "st/stm32f4/reports/validation-summary.json"
     }
   ],
@@ -558,7 +604,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "f8e87088f8fc9c7a04dd34727dcfa05fa61119f0544ae517c87d68bd485c2f8f",
+  "target_artifact_revision": "a55325fdd888f29f017446c97a2cf79306b28ceb8ce463be58ffc457ae60feef",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -594,7 +640,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 136 rule(s).",
+        "message": "gate-c passed with 172 rule(s).",
         "passed": true,
         "rule_ids": [
           "stm32f401re-package-pin-count-covers-known-pins",
@@ -636,9 +682,20 @@
           "stm32f401re-connection-groups-reference-known-packages",
           "stm32f401re-multi-signal-connection-groups-present",
           "stm32f401re-ip-blocks-cover-versioned-instances",
+          "stm32f401re-peripherals-carry-backend-schema",
+          "stm32f401re-ip-blocks-carry-backend-schema",
+          "stm32f401re-runtime-peripherals-have-register-descriptors",
+          "stm32f401re-runtime-peripherals-have-register-field-descriptors",
+          "stm32f401re-route-requirements-typed",
+          "stm32f401re-route-operations-typed",
+          "stm32f401re-register-target-operations-resolved",
           "stm32f401re-interrupts-carry-aliases",
           "stm32f401re-interrupt-aliases-unique",
           "stm32f401re-interrupt-shared-groups-consistent",
+          "stm32f401re-interrupt-bindings-reference-known-peripherals",
+          "stm32f401re-interrupt-bindings-reference-known-interrupts",
+          "stm32f401re-interrupt-bindings-reference-known-vector-slots",
+          "stm32f401re-runtime-interrupt-bindings-present",
           "stm32f401re-vector-slots-reference-known-interrupts",
           "stm32f401re-vector-slots-unique",
           "stm32f401re-interrupts-have-vector-slot",
@@ -653,6 +710,8 @@
           "stm32f401re-clock-node-parents-known",
           "stm32f401re-clock-graph-reaches-root",
           "stm32f401re-clock-selectors-structured",
+          "stm32f401re-clock-gates-structured",
+          "stm32f401re-resets-structured",
           "stm32f401re-clock-gates-reference-known-nodes",
           "stm32f401re-clock-bound-peripherals-covered",
           "stm32f401re-dma-controller-descriptors-complete",
@@ -661,6 +720,11 @@
           "stm32f401re-dma-routes-reference-known-controllers",
           "stm32f401re-dma-routes-reference-known-peripherals",
           "stm32f401re-dma-routes-reference-known-conflicts",
+          "stm32f401re-dma-bindings-reference-known-peripherals",
+          "stm32f401re-dma-bindings-reference-known-controllers",
+          "stm32f401re-dma-bindings-reference-known-routes",
+          "stm32f401re-dma-bindings-reference-known-conflicts",
+          "stm32f401re-dma-bindings-cover-routes",
           "stm32f401re-dma-conflict-groups-reference-known-routes",
           "stm32f401re-dma-conflict-groups-nontrivial",
           "stm32f401re-dma-route-conflict-annotations-consistent",
@@ -703,9 +767,20 @@
           "stm32f405rg-connection-groups-reference-known-packages",
           "stm32f405rg-multi-signal-connection-groups-present",
           "stm32f405rg-ip-blocks-cover-versioned-instances",
+          "stm32f405rg-peripherals-carry-backend-schema",
+          "stm32f405rg-ip-blocks-carry-backend-schema",
+          "stm32f405rg-runtime-peripherals-have-register-descriptors",
+          "stm32f405rg-runtime-peripherals-have-register-field-descriptors",
+          "stm32f405rg-route-requirements-typed",
+          "stm32f405rg-route-operations-typed",
+          "stm32f405rg-register-target-operations-resolved",
           "stm32f405rg-interrupts-carry-aliases",
           "stm32f405rg-interrupt-aliases-unique",
           "stm32f405rg-interrupt-shared-groups-consistent",
+          "stm32f405rg-interrupt-bindings-reference-known-peripherals",
+          "stm32f405rg-interrupt-bindings-reference-known-interrupts",
+          "stm32f405rg-interrupt-bindings-reference-known-vector-slots",
+          "stm32f405rg-runtime-interrupt-bindings-present",
           "stm32f405rg-vector-slots-reference-known-interrupts",
           "stm32f405rg-vector-slots-unique",
           "stm32f405rg-interrupts-have-vector-slot",
@@ -720,6 +795,8 @@
           "stm32f405rg-clock-node-parents-known",
           "stm32f405rg-clock-graph-reaches-root",
           "stm32f405rg-clock-selectors-structured",
+          "stm32f405rg-clock-gates-structured",
+          "stm32f405rg-resets-structured",
           "stm32f405rg-clock-gates-reference-known-nodes",
           "stm32f405rg-clock-bound-peripherals-covered",
           "stm32f405rg-dma-controller-descriptors-complete",
@@ -728,6 +805,11 @@
           "stm32f405rg-dma-routes-reference-known-controllers",
           "stm32f405rg-dma-routes-reference-known-peripherals",
           "stm32f405rg-dma-routes-reference-known-conflicts",
+          "stm32f405rg-dma-bindings-reference-known-peripherals",
+          "stm32f405rg-dma-bindings-reference-known-controllers",
+          "stm32f405rg-dma-bindings-reference-known-routes",
+          "stm32f405rg-dma-bindings-reference-known-conflicts",
+          "stm32f405rg-dma-bindings-cover-routes",
           "stm32f405rg-dma-conflict-groups-reference-known-routes",
           "stm32f405rg-dma-conflict-groups-nontrivial",
           "stm32f405rg-dma-route-conflict-annotations-consistent",
@@ -742,18 +824,26 @@
       {
         "domain_id": "interrupt",
         "draft": false,
-        "message": "interrupt domain is publishable with 12 rule(s).",
+        "message": "interrupt domain is publishable with 20 rule(s).",
         "passed": true,
         "rule_ids": [
           "stm32f401re-interrupts-reference-known-peripherals",
           "stm32f401re-interrupt-aliases-unique",
           "stm32f401re-interrupt-shared-groups-consistent",
+          "stm32f401re-interrupt-bindings-reference-known-peripherals",
+          "stm32f401re-interrupt-bindings-reference-known-interrupts",
+          "stm32f401re-interrupt-bindings-reference-known-vector-slots",
+          "stm32f401re-runtime-interrupt-bindings-present",
           "stm32f401re-vector-slots-reference-known-interrupts",
           "stm32f401re-vector-slots-unique",
           "stm32f401re-interrupts-have-vector-slot",
           "stm32f405rg-interrupts-reference-known-peripherals",
           "stm32f405rg-interrupt-aliases-unique",
           "stm32f405rg-interrupt-shared-groups-consistent",
+          "stm32f405rg-interrupt-bindings-reference-known-peripherals",
+          "stm32f405rg-interrupt-bindings-reference-known-interrupts",
+          "stm32f405rg-interrupt-bindings-reference-known-vector-slots",
+          "stm32f405rg-runtime-interrupt-bindings-present",
           "stm32f405rg-vector-slots-reference-known-interrupts",
           "stm32f405rg-vector-slots-unique",
           "stm32f405rg-interrupts-have-vector-slot"
@@ -816,7 +906,7 @@
       {
         "domain_id": "dma",
         "draft": false,
-        "message": "dma domain is publishable with 22 rule(s).",
+        "message": "dma domain is publishable with 32 rule(s).",
         "passed": true,
         "rule_ids": [
           "stm32f401re-dma-controllers-known",
@@ -827,6 +917,11 @@
           "stm32f401re-dma-routes-reference-known-controllers",
           "stm32f401re-dma-routes-reference-known-peripherals",
           "stm32f401re-dma-routes-reference-known-conflicts",
+          "stm32f401re-dma-bindings-reference-known-peripherals",
+          "stm32f401re-dma-bindings-reference-known-controllers",
+          "stm32f401re-dma-bindings-reference-known-routes",
+          "stm32f401re-dma-bindings-reference-known-conflicts",
+          "stm32f401re-dma-bindings-cover-routes",
           "stm32f401re-dma-conflict-groups-reference-known-routes",
           "stm32f401re-dma-conflict-groups-nontrivial",
           "stm32f401re-dma-route-conflict-annotations-consistent",
@@ -838,6 +933,11 @@
           "stm32f405rg-dma-routes-reference-known-controllers",
           "stm32f405rg-dma-routes-reference-known-peripherals",
           "stm32f405rg-dma-routes-reference-known-conflicts",
+          "stm32f405rg-dma-bindings-reference-known-peripherals",
+          "stm32f405rg-dma-bindings-reference-known-controllers",
+          "stm32f405rg-dma-bindings-reference-known-routes",
+          "stm32f405rg-dma-bindings-reference-known-conflicts",
+          "stm32f405rg-dma-bindings-cover-routes",
           "stm32f405rg-dma-conflict-groups-reference-known-routes",
           "stm32f405rg-dma-conflict-groups-nontrivial",
           "stm32f405rg-dma-route-conflict-annotations-consistent"
