@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+
 namespace microchip {
 namespace same70 {
 namespace generated {
@@ -9,7 +11,7 @@ struct DmaDescriptor {
   const char* controller;
   const char* request_line;
 };
-inline constexpr DmaDescriptor kDmaMap[] = {
+inline constexpr std::array<DmaDescriptor, 52> kDmaMap = {{
   {"AES", "RX", "XDMAC", "PERID_38"},
   {"AES", "TX", "XDMAC", "PERID_37"},
   {"AFEC0", "RX", "XDMAC", "PERID_35"},
@@ -62,7 +64,7 @@ inline constexpr DmaDescriptor kDmaMap[] = {
   {"USART1", "TX", "XDMAC", "PERID_9"},
   {"USART2", "RX", "XDMAC", "PERID_12"},
   {"USART2", "TX", "XDMAC", "PERID_11"},
-};
+}};
 }
 }
 }

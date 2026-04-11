@@ -1,0 +1,1925 @@
+{
+  "device_usage": [
+    {
+      "device": "atsame70n21b",
+      "peripherals": [
+        {
+          "base_address": 1074020352,
+          "ip_name": "acc",
+          "ip_version": "acc_j",
+          "name": "ACC"
+        },
+        {
+          "base_address": 1074184192,
+          "ip_name": "aes",
+          "ip_version": "aes_w",
+          "name": "AES"
+        },
+        {
+          "base_address": 1073987584,
+          "ip_name": "afec",
+          "ip_version": "afec_s",
+          "name": "AFEC0"
+        },
+        {
+          "base_address": 1074151424,
+          "ip_name": "afec",
+          "ip_version": "afec_s",
+          "name": "AFEC1"
+        },
+        {
+          "base_address": 1074661696,
+          "ip_name": "chipid",
+          "ip_version": "chipid_zk",
+          "name": "CHIPID"
+        },
+        {
+          "base_address": 3758157296,
+          "ip_name": "coredebug",
+          "ip_version": null,
+          "name": "CoreDebug"
+        },
+        {
+          "base_address": 1074003968,
+          "ip_name": "dacc",
+          "ip_version": "dacc_e",
+          "name": "DACC"
+        },
+        {
+          "base_address": 3758100480,
+          "ip_name": "dwt",
+          "ip_version": "dwt",
+          "name": "DWT"
+        },
+        {
+          "base_address": 1074662400,
+          "ip_name": "efc",
+          "ip_version": "efc_y",
+          "name": "EFC"
+        },
+        {
+          "base_address": 3758362624,
+          "ip_name": "etm",
+          "ip_version": "etm",
+          "name": "ETM"
+        },
+        {
+          "base_address": 3758104576,
+          "ip_name": "fpb",
+          "ip_version": "fpb",
+          "name": "FPB"
+        },
+        {
+          "base_address": 3758157616,
+          "ip_name": "fpu",
+          "ip_version": "fpu",
+          "name": "FPU"
+        },
+        {
+          "base_address": 1074069504,
+          "ip_name": "gmac",
+          "ip_version": "gmac_s",
+          "name": "GMAC"
+        },
+        {
+          "base_address": 1074665616,
+          "ip_name": "gpbr",
+          "ip_version": "gpbr_j",
+          "name": "GPBR"
+        },
+        {
+          "base_address": 1074662912,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOA"
+        },
+        {
+          "base_address": 1074663424,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOB"
+        },
+        {
+          "base_address": 1074664448,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOD"
+        },
+        {
+          "base_address": 1073741824,
+          "ip_name": "hsmci",
+          "ip_version": "hsmci_r",
+          "name": "HSMCI"
+        },
+        {
+          "base_address": 1074315264,
+          "ip_name": "i2sc0",
+          "ip_version": "i2sc_n",
+          "name": "I2SC0"
+        },
+        {
+          "base_address": 1074036736,
+          "ip_name": "icm",
+          "ip_version": "icm_h",
+          "name": "ICM"
+        },
+        {
+          "base_address": 1074053120,
+          "ip_name": "isi",
+          "ip_version": "isi_k",
+          "name": "ISI"
+        },
+        {
+          "base_address": 3758096384,
+          "ip_name": "itm",
+          "ip_version": "itm",
+          "name": "ITM"
+        },
+        {
+          "base_address": 0,
+          "ip_name": "lockbit",
+          "ip_version": "lockbit_1",
+          "name": "LOCKBIT"
+        },
+        {
+          "base_address": 1074298880,
+          "ip_name": "matrix",
+          "ip_version": "matrix_l",
+          "name": "MATRIX"
+        },
+        {
+          "base_address": 1073938432,
+          "ip_name": "mcan",
+          "ip_version": "mcan_n",
+          "name": "MCAN0"
+        },
+        {
+          "base_address": 1073954816,
+          "ip_name": "mcan",
+          "ip_version": "mcan_n",
+          "name": "MCAN1"
+        },
+        {
+          "base_address": 3758157200,
+          "ip_name": "mpu",
+          "ip_version": "mpu",
+          "name": "MPU"
+        },
+        {
+          "base_address": 3758153984,
+          "ip_name": "nvic",
+          "ip_version": "nvic",
+          "name": "NVIC"
+        },
+        {
+          "base_address": 1074660864,
+          "ip_name": "pmc",
+          "ip_version": "pmc_p",
+          "name": "PMC"
+        },
+        {
+          "base_address": 1073872896,
+          "ip_name": "pwm",
+          "ip_version": "pwm_y",
+          "name": "PWM0"
+        },
+        {
+          "base_address": 1074118656,
+          "ip_name": "pwm",
+          "ip_version": "pwm_y",
+          "name": "PWM1"
+        },
+        {
+          "base_address": 1074249728,
+          "ip_name": "qspi",
+          "ip_version": "qspi_j",
+          "name": "QSPI"
+        },
+        {
+          "base_address": 1074665472,
+          "ip_name": "rstc",
+          "ip_version": "rstc_n",
+          "name": "RSTC"
+        },
+        {
+          "base_address": 1074665728,
+          "ip_name": "rswdt",
+          "ip_version": "rswdt_g",
+          "name": "RSWDT"
+        },
+        {
+          "base_address": 1074665568,
+          "ip_name": "rtc",
+          "ip_version": "rtc_zb",
+          "name": "RTC"
+        },
+        {
+          "base_address": 1074665520,
+          "ip_name": "rtt",
+          "ip_version": "rtt_m",
+          "name": "RTT"
+        },
+        {
+          "base_address": 3758157056,
+          "ip_name": "scb",
+          "ip_version": "scb",
+          "name": "SCB"
+        },
+        {
+          "base_address": 3758153728,
+          "ip_name": "scnscb",
+          "ip_version": null,
+          "name": "SCnSCB"
+        },
+        {
+          "base_address": 1073774592,
+          "ip_name": "spi",
+          "ip_version": "spi_zm",
+          "name": "SPI0"
+        },
+        {
+          "base_address": 1073758208,
+          "ip_name": "ssc",
+          "ip_version": "ssc_q",
+          "name": "SSC"
+        },
+        {
+          "base_address": 1074665488,
+          "ip_name": "supc",
+          "ip_version": "supc_ze",
+          "name": "SUPC"
+        },
+        {
+          "base_address": 3758153744,
+          "ip_name": "systick",
+          "ip_version": null,
+          "name": "SysTick"
+        },
+        {
+          "base_address": 1073790976,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC0"
+        },
+        {
+          "base_address": 1073807360,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC1"
+        },
+        {
+          "base_address": 1073823744,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC2"
+        },
+        {
+          "base_address": 1074085888,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC3"
+        },
+        {
+          "base_address": 3758358528,
+          "ip_name": "tpiu",
+          "ip_version": "tpiu",
+          "name": "TPIU"
+        },
+        {
+          "base_address": 1074200576,
+          "ip_name": "trng",
+          "ip_version": "trng_g",
+          "name": "TRNG"
+        },
+        {
+          "base_address": 1073840128,
+          "ip_name": "twihs",
+          "ip_version": "twihs_z",
+          "name": "TWIHS0"
+        },
+        {
+          "base_address": 1073856512,
+          "ip_name": "twihs",
+          "ip_version": "twihs_z",
+          "name": "TWIHS1"
+        },
+        {
+          "base_address": 1074135040,
+          "ip_name": "twihs",
+          "ip_version": "twihs_z",
+          "name": "TWIHS2"
+        },
+        {
+          "base_address": 1074661376,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART0"
+        },
+        {
+          "base_address": 1074661888,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART1"
+        },
+        {
+          "base_address": 1074665984,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART2"
+        },
+        {
+          "base_address": 1074666496,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART3"
+        },
+        {
+          "base_address": 1074667008,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART4"
+        },
+        {
+          "base_address": 1073889280,
+          "ip_name": "usart",
+          "ip_version": "usart_zw",
+          "name": "USART0"
+        },
+        {
+          "base_address": 1073905664,
+          "ip_name": "usart",
+          "ip_version": "usart_zw",
+          "name": "USART1"
+        },
+        {
+          "base_address": 1073922048,
+          "ip_name": "usart",
+          "ip_version": "usart_zw",
+          "name": "USART2"
+        },
+        {
+          "base_address": 1073971200,
+          "ip_name": "usbhs",
+          "ip_version": "usbhs_g",
+          "name": "USBHS"
+        },
+        {
+          "base_address": 1074660352,
+          "ip_name": "utmi",
+          "ip_version": "utmi_a",
+          "name": "UTMI"
+        },
+        {
+          "base_address": 1074665552,
+          "ip_name": "wdt",
+          "ip_version": "wdt_n",
+          "name": "WDT"
+        },
+        {
+          "base_address": 1074233344,
+          "ip_name": "xdmac",
+          "ip_version": "xdmac_k",
+          "name": "XDMAC"
+        }
+      ]
+    },
+    {
+      "device": "atsame70q21b",
+      "peripherals": [
+        {
+          "base_address": 1074020352,
+          "ip_name": "acc",
+          "ip_version": "acc_j",
+          "name": "ACC"
+        },
+        {
+          "base_address": 1074184192,
+          "ip_name": "aes",
+          "ip_version": "aes_w",
+          "name": "AES"
+        },
+        {
+          "base_address": 1073987584,
+          "ip_name": "afec",
+          "ip_version": "afec_s",
+          "name": "AFEC0"
+        },
+        {
+          "base_address": 1074151424,
+          "ip_name": "afec",
+          "ip_version": "afec_s",
+          "name": "AFEC1"
+        },
+        {
+          "base_address": 1074661696,
+          "ip_name": "chipid",
+          "ip_version": "chipid_zk",
+          "name": "CHIPID"
+        },
+        {
+          "base_address": 3758157296,
+          "ip_name": "coredebug",
+          "ip_version": null,
+          "name": "CoreDebug"
+        },
+        {
+          "base_address": 1074003968,
+          "ip_name": "dacc",
+          "ip_version": "dacc_e",
+          "name": "DACC"
+        },
+        {
+          "base_address": 3758100480,
+          "ip_name": "dwt",
+          "ip_version": "dwt",
+          "name": "DWT"
+        },
+        {
+          "base_address": 1074662400,
+          "ip_name": "efc",
+          "ip_version": "efc_y",
+          "name": "EFC"
+        },
+        {
+          "base_address": 3758362624,
+          "ip_name": "etm",
+          "ip_version": "etm",
+          "name": "ETM"
+        },
+        {
+          "base_address": 3758104576,
+          "ip_name": "fpb",
+          "ip_version": "fpb",
+          "name": "FPB"
+        },
+        {
+          "base_address": 3758157616,
+          "ip_name": "fpu",
+          "ip_version": "fpu",
+          "name": "FPU"
+        },
+        {
+          "base_address": 1074069504,
+          "ip_name": "gmac",
+          "ip_version": "gmac_s",
+          "name": "GMAC"
+        },
+        {
+          "base_address": 1074665616,
+          "ip_name": "gpbr",
+          "ip_version": "gpbr_j",
+          "name": "GPBR"
+        },
+        {
+          "base_address": 1074662912,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOA"
+        },
+        {
+          "base_address": 1074663424,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOB"
+        },
+        {
+          "base_address": 1074663936,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOC"
+        },
+        {
+          "base_address": 1074664448,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOD"
+        },
+        {
+          "base_address": 1074664960,
+          "ip_name": "gpio",
+          "ip_version": "pio_v",
+          "name": "GPIOE"
+        },
+        {
+          "base_address": 1073741824,
+          "ip_name": "hsmci",
+          "ip_version": "hsmci_r",
+          "name": "HSMCI"
+        },
+        {
+          "base_address": 1074315264,
+          "ip_name": "i2sc0",
+          "ip_version": "i2sc_n",
+          "name": "I2SC0"
+        },
+        {
+          "base_address": 1074331648,
+          "ip_name": "i2sc1",
+          "ip_version": "i2sc_n",
+          "name": "I2SC1"
+        },
+        {
+          "base_address": 1074036736,
+          "ip_name": "icm",
+          "ip_version": "icm_h",
+          "name": "ICM"
+        },
+        {
+          "base_address": 1074053120,
+          "ip_name": "isi",
+          "ip_version": "isi_k",
+          "name": "ISI"
+        },
+        {
+          "base_address": 3758096384,
+          "ip_name": "itm",
+          "ip_version": "itm",
+          "name": "ITM"
+        },
+        {
+          "base_address": 0,
+          "ip_name": "lockbit",
+          "ip_version": "lockbit_1",
+          "name": "LOCKBIT"
+        },
+        {
+          "base_address": 1074298880,
+          "ip_name": "matrix",
+          "ip_version": "matrix_l",
+          "name": "MATRIX"
+        },
+        {
+          "base_address": 1073938432,
+          "ip_name": "mcan",
+          "ip_version": "mcan_n",
+          "name": "MCAN0"
+        },
+        {
+          "base_address": 1073954816,
+          "ip_name": "mcan",
+          "ip_version": "mcan_n",
+          "name": "MCAN1"
+        },
+        {
+          "base_address": 3758157200,
+          "ip_name": "mpu",
+          "ip_version": "mpu",
+          "name": "MPU"
+        },
+        {
+          "base_address": 3758153984,
+          "ip_name": "nvic",
+          "ip_version": "nvic",
+          "name": "NVIC"
+        },
+        {
+          "base_address": 1074660864,
+          "ip_name": "pmc",
+          "ip_version": "pmc_p",
+          "name": "PMC"
+        },
+        {
+          "base_address": 1073872896,
+          "ip_name": "pwm",
+          "ip_version": "pwm_y",
+          "name": "PWM0"
+        },
+        {
+          "base_address": 1074118656,
+          "ip_name": "pwm",
+          "ip_version": "pwm_y",
+          "name": "PWM1"
+        },
+        {
+          "base_address": 1074249728,
+          "ip_name": "qspi",
+          "ip_version": "qspi_j",
+          "name": "QSPI"
+        },
+        {
+          "base_address": 1074665472,
+          "ip_name": "rstc",
+          "ip_version": "rstc_n",
+          "name": "RSTC"
+        },
+        {
+          "base_address": 1074665728,
+          "ip_name": "rswdt",
+          "ip_version": "rswdt_g",
+          "name": "RSWDT"
+        },
+        {
+          "base_address": 1074665568,
+          "ip_name": "rtc",
+          "ip_version": "rtc_zb",
+          "name": "RTC"
+        },
+        {
+          "base_address": 1074665520,
+          "ip_name": "rtt",
+          "ip_version": "rtt_m",
+          "name": "RTT"
+        },
+        {
+          "base_address": 3758157056,
+          "ip_name": "scb",
+          "ip_version": "scb",
+          "name": "SCB"
+        },
+        {
+          "base_address": 3758153728,
+          "ip_name": "scnscb",
+          "ip_version": null,
+          "name": "SCnSCB"
+        },
+        {
+          "base_address": 1074266112,
+          "ip_name": "smc",
+          "ip_version": "smc_j",
+          "name": "SMC"
+        },
+        {
+          "base_address": 1073774592,
+          "ip_name": "spi",
+          "ip_version": "spi_zm",
+          "name": "SPI0"
+        },
+        {
+          "base_address": 1074102272,
+          "ip_name": "spi",
+          "ip_version": "spi_zm",
+          "name": "SPI1"
+        },
+        {
+          "base_address": 1073758208,
+          "ip_name": "ssc",
+          "ip_version": "ssc_q",
+          "name": "SSC"
+        },
+        {
+          "base_address": 1074665488,
+          "ip_name": "supc",
+          "ip_version": "supc_ze",
+          "name": "SUPC"
+        },
+        {
+          "base_address": 3758153744,
+          "ip_name": "systick",
+          "ip_version": null,
+          "name": "SysTick"
+        },
+        {
+          "base_address": 1073790976,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC0"
+        },
+        {
+          "base_address": 1073807360,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC1"
+        },
+        {
+          "base_address": 1073823744,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC2"
+        },
+        {
+          "base_address": 1074085888,
+          "ip_name": "tc",
+          "ip_version": "tc_zl",
+          "name": "TC3"
+        },
+        {
+          "base_address": 3758358528,
+          "ip_name": "tpiu",
+          "ip_version": "tpiu",
+          "name": "TPIU"
+        },
+        {
+          "base_address": 1074200576,
+          "ip_name": "trng",
+          "ip_version": "trng_g",
+          "name": "TRNG"
+        },
+        {
+          "base_address": 1073840128,
+          "ip_name": "twihs",
+          "ip_version": "twihs_z",
+          "name": "TWIHS0"
+        },
+        {
+          "base_address": 1073856512,
+          "ip_name": "twihs",
+          "ip_version": "twihs_z",
+          "name": "TWIHS1"
+        },
+        {
+          "base_address": 1074135040,
+          "ip_name": "twihs",
+          "ip_version": "twihs_z",
+          "name": "TWIHS2"
+        },
+        {
+          "base_address": 1074661376,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART0"
+        },
+        {
+          "base_address": 1074661888,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART1"
+        },
+        {
+          "base_address": 1074665984,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART2"
+        },
+        {
+          "base_address": 1074666496,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART3"
+        },
+        {
+          "base_address": 1074667008,
+          "ip_name": "uart",
+          "ip_version": "uart_r",
+          "name": "UART4"
+        },
+        {
+          "base_address": 1073889280,
+          "ip_name": "usart",
+          "ip_version": "usart_zw",
+          "name": "USART0"
+        },
+        {
+          "base_address": 1073905664,
+          "ip_name": "usart",
+          "ip_version": "usart_zw",
+          "name": "USART1"
+        },
+        {
+          "base_address": 1073922048,
+          "ip_name": "usart",
+          "ip_version": "usart_zw",
+          "name": "USART2"
+        },
+        {
+          "base_address": 1073971200,
+          "ip_name": "usbhs",
+          "ip_version": "usbhs_g",
+          "name": "USBHS"
+        },
+        {
+          "base_address": 1074660352,
+          "ip_name": "utmi",
+          "ip_version": "utmi_a",
+          "name": "UTMI"
+        },
+        {
+          "base_address": 1074665552,
+          "ip_name": "wdt",
+          "ip_version": "wdt_n",
+          "name": "WDT"
+        },
+        {
+          "base_address": 1074233344,
+          "ip_name": "xdmac",
+          "ip_version": "xdmac_k",
+          "name": "XDMAC"
+        }
+      ]
+    }
+  ],
+  "family": "same70",
+  "ip_blocks": [
+    {
+      "capability_ids": [],
+      "ip_name": "acc",
+      "ip_version": "acc_j",
+      "peripheral_class": "acc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "acc:acc_j",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "aes",
+      "ip_version": "aes_w",
+      "peripheral_class": "aes",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "aes:aes_w",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:afec:afec-s:ad0",
+        "capability:afec:afec-s:ad1",
+        "capability:afec:afec-s:ad10",
+        "capability:afec:afec-s:ad2",
+        "capability:afec:afec-s:ad5",
+        "capability:afec:afec-s:ad6",
+        "capability:afec:afec-s:ad7",
+        "capability:afec:afec-s:ad8",
+        "capability:afec:afec-s:ad9",
+        "capability:afec:afec-s:adtrg"
+      ],
+      "ip_name": "afec",
+      "ip_version": "afec_s",
+      "peripheral_class": "afec",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "afec:afec_s",
+      "signal_roles": [
+        "ad0",
+        "ad1",
+        "ad10",
+        "ad2",
+        "ad5",
+        "ad6",
+        "ad7",
+        "ad8",
+        "ad9",
+        "adtrg"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "chipid",
+      "ip_version": "chipid_zk",
+      "peripheral_class": "chipid",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "chipid:chipid_zk",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:dacc:dacc-e:dac0",
+        "capability:dacc:dacc-e:dac1",
+        "capability:dacc:dacc-e:datrg"
+      ],
+      "ip_name": "dacc",
+      "ip_version": "dacc_e",
+      "peripheral_class": "dacc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "dacc:dacc_e",
+      "signal_roles": [
+        "dac0",
+        "dac1",
+        "datrg"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "dwt",
+      "ip_version": "dwt",
+      "peripheral_class": "dwt",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "dwt:dwt",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:efc:efc-y:erase"
+      ],
+      "ip_name": "efc",
+      "ip_version": "efc_y",
+      "peripheral_class": "efc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "efc:efc_y",
+      "signal_roles": [
+        "erase"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "etm",
+      "ip_version": "etm",
+      "peripheral_class": "etm",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "etm:etm",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "fpb",
+      "ip_version": "fpb",
+      "peripheral_class": "fpb",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "fpb:fpb",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "fpu",
+      "ip_version": "fpu",
+      "peripheral_class": "fpu",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "fpu:fpu",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:gmac:gmac-s:gcol",
+        "capability:gmac:gmac-s:gcrs",
+        "capability:gmac:gmac-s:gmdc",
+        "capability:gmac:gmac-s:gmdio",
+        "capability:gmac:gmac-s:grx0",
+        "capability:gmac:gmac-s:grx1",
+        "capability:gmac:gmac-s:grx2",
+        "capability:gmac:gmac-s:grx3",
+        "capability:gmac:gmac-s:grxck",
+        "capability:gmac:gmac-s:grxdv",
+        "capability:gmac:gmac-s:grxer",
+        "capability:gmac:gmac-s:gtsucomp",
+        "capability:gmac:gmac-s:gtx0",
+        "capability:gmac:gmac-s:gtx1",
+        "capability:gmac:gmac-s:gtx2",
+        "capability:gmac:gmac-s:gtx3",
+        "capability:gmac:gmac-s:gtxck",
+        "capability:gmac:gmac-s:gtxen",
+        "capability:gmac:gmac-s:gtxer"
+      ],
+      "ip_name": "gmac",
+      "ip_version": "gmac_s",
+      "peripheral_class": "gmac",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "gmac:gmac_s",
+      "signal_roles": [
+        "gcol",
+        "gcrs",
+        "gmdc",
+        "gmdio",
+        "grx0",
+        "grx1",
+        "grx2",
+        "grx3",
+        "grxck",
+        "grxdv",
+        "grxer",
+        "gtsucomp",
+        "gtx0",
+        "gtx1",
+        "gtx2",
+        "gtx3",
+        "gtxck",
+        "gtxen",
+        "gtxer"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "gpbr",
+      "ip_version": "gpbr_j",
+      "peripheral_class": "gpbr",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "gpbr:gpbr_j",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:gpio:pio-v:piodc0",
+        "capability:gpio:pio-v:piodc1",
+        "capability:gpio:pio-v:piodc2",
+        "capability:gpio:pio-v:piodc3",
+        "capability:gpio:pio-v:piodc4",
+        "capability:gpio:pio-v:piodc5",
+        "capability:gpio:pio-v:piodc6",
+        "capability:gpio:pio-v:piodc7",
+        "capability:gpio:pio-v:piodcclk",
+        "capability:gpio:pio-v:piodcen1",
+        "capability:gpio:pio-v:piodcen2"
+      ],
+      "ip_name": "gpio",
+      "ip_version": "pio_v",
+      "peripheral_class": "gpio",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "gpio:pio_v",
+      "signal_roles": [
+        "piodc0",
+        "piodc1",
+        "piodc2",
+        "piodc3",
+        "piodc4",
+        "piodc5",
+        "piodc6",
+        "piodc7",
+        "piodcclk",
+        "piodcen1",
+        "piodcen2"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:hsmci:hsmci-r:mccda",
+        "capability:hsmci:hsmci-r:mcck",
+        "capability:hsmci:hsmci-r:mcda0",
+        "capability:hsmci:hsmci-r:mcda1",
+        "capability:hsmci:hsmci-r:mcda2",
+        "capability:hsmci:hsmci-r:mcda3"
+      ],
+      "ip_name": "hsmci",
+      "ip_version": "hsmci_r",
+      "peripheral_class": "hsmci",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "hsmci:hsmci_r",
+      "signal_roles": [
+        "mccda",
+        "mcck",
+        "mcda0",
+        "mcda1",
+        "mcda2",
+        "mcda3"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:i2sc0:i2sc-n:ck",
+        "capability:i2sc0:i2sc-n:di0",
+        "capability:i2sc0:i2sc-n:do0",
+        "capability:i2sc0:i2sc-n:mck",
+        "capability:i2sc0:i2sc-n:ws"
+      ],
+      "ip_name": "i2sc0",
+      "ip_version": "i2sc_n",
+      "peripheral_class": "i2sc0",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "i2sc0:i2sc_n",
+      "signal_roles": [
+        "ck",
+        "di0",
+        "do0",
+        "mck",
+        "ws"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:i2sc1:i2sc-n:ck",
+        "capability:i2sc1:i2sc-n:di0",
+        "capability:i2sc1:i2sc-n:do0",
+        "capability:i2sc1:i2sc-n:mck",
+        "capability:i2sc1:i2sc-n:ws"
+      ],
+      "ip_name": "i2sc1",
+      "ip_version": "i2sc_n",
+      "peripheral_class": "i2sc1",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70q21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70Q21B.svd"
+      },
+      "register_profile": "i2sc1:i2sc_n",
+      "signal_roles": [
+        "ck",
+        "di0",
+        "do0",
+        "mck",
+        "ws"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "icm",
+      "ip_version": "icm_h",
+      "peripheral_class": "icm",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "icm:icm_h",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:isi:isi-k:d0",
+        "capability:isi:isi-k:d1",
+        "capability:isi:isi-k:d10",
+        "capability:isi:isi-k:d11",
+        "capability:isi:isi-k:d2",
+        "capability:isi:isi-k:d3",
+        "capability:isi:isi-k:d4",
+        "capability:isi:isi-k:d5",
+        "capability:isi:isi-k:d6",
+        "capability:isi:isi-k:d7",
+        "capability:isi:isi-k:d8",
+        "capability:isi:isi-k:d9",
+        "capability:isi:isi-k:hsync",
+        "capability:isi:isi-k:pck",
+        "capability:isi:isi-k:vsync"
+      ],
+      "ip_name": "isi",
+      "ip_version": "isi_k",
+      "peripheral_class": "isi",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "isi:isi_k",
+      "signal_roles": [
+        "d0",
+        "d1",
+        "d10",
+        "d11",
+        "d2",
+        "d3",
+        "d4",
+        "d5",
+        "d6",
+        "d7",
+        "d8",
+        "d9",
+        "hsync",
+        "pck",
+        "vsync"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "itm",
+      "ip_version": "itm",
+      "peripheral_class": "itm",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "itm:itm",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "lockbit",
+      "ip_version": "lockbit_1",
+      "peripheral_class": "lockbit",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "lockbit:lockbit_1",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "matrix",
+      "ip_version": "matrix_l",
+      "peripheral_class": "matrix",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "matrix:matrix_l",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:mcan:mcan-n:rx",
+        "capability:mcan:mcan-n:tx"
+      ],
+      "ip_name": "mcan",
+      "ip_version": "mcan_n",
+      "peripheral_class": "can",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "mcan:mcan_n",
+      "signal_roles": [
+        "rx",
+        "tx"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "mpu",
+      "ip_version": "mpu",
+      "peripheral_class": "mpu",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "mpu:mpu",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "nvic",
+      "ip_version": "nvic",
+      "peripheral_class": "nvic",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "nvic:nvic",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:pmc:pmc-p:pck0",
+        "capability:pmc:pmc-p:pck1",
+        "capability:pmc:pmc-p:pck2",
+        "capability:pmc:pmc-p:xin",
+        "capability:pmc:pmc-p:xin32",
+        "capability:pmc:pmc-p:xout",
+        "capability:pmc:pmc-p:xout32"
+      ],
+      "ip_name": "pmc",
+      "ip_version": "pmc_p",
+      "peripheral_class": "pmc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "pmc:pmc_p",
+      "signal_roles": [
+        "pck0",
+        "pck1",
+        "pck2",
+        "xin",
+        "xin32",
+        "xout",
+        "xout32"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:pwm:pwm-y:pwmextrg0",
+        "capability:pwm:pwm-y:pwmextrg1",
+        "capability:pwm:pwm-y:pwmfi0",
+        "capability:pwm:pwm-y:pwmfi1",
+        "capability:pwm:pwm-y:pwmfi2",
+        "capability:pwm:pwm-y:pwmh0",
+        "capability:pwm:pwm-y:pwmh1",
+        "capability:pwm:pwm-y:pwmh2",
+        "capability:pwm:pwm-y:pwmh3",
+        "capability:pwm:pwm-y:pwml0",
+        "capability:pwm:pwm-y:pwml1",
+        "capability:pwm:pwm-y:pwml2",
+        "capability:pwm:pwm-y:pwml3"
+      ],
+      "ip_name": "pwm",
+      "ip_version": "pwm_y",
+      "peripheral_class": "pwm",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "pwm:pwm_y",
+      "signal_roles": [
+        "pwmextrg0",
+        "pwmextrg1",
+        "pwmfi0",
+        "pwmfi1",
+        "pwmfi2",
+        "pwmh0",
+        "pwmh1",
+        "pwmh2",
+        "pwmh3",
+        "pwml0",
+        "pwml1",
+        "pwml2",
+        "pwml3"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:qspi:qspi-j:qcs",
+        "capability:qspi:qspi-j:qio0",
+        "capability:qspi:qspi-j:qio1",
+        "capability:qspi:qspi-j:qio2",
+        "capability:qspi:qspi-j:qio3",
+        "capability:qspi:qspi-j:qsck"
+      ],
+      "ip_name": "qspi",
+      "ip_version": "qspi_j",
+      "peripheral_class": "qspi",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "qspi:qspi_j",
+      "signal_roles": [
+        "qcs",
+        "qio0",
+        "qio1",
+        "qio2",
+        "qio3",
+        "qsck"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "rstc",
+      "ip_version": "rstc_n",
+      "peripheral_class": "rstc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "rstc:rstc_n",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "rswdt",
+      "ip_version": "rswdt_g",
+      "peripheral_class": "rswdt",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "rswdt:rswdt_g",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:rtc:rtc-zb:rtcout0",
+        "capability:rtc:rtc-zb:rtcout1"
+      ],
+      "ip_name": "rtc",
+      "ip_version": "rtc_zb",
+      "peripheral_class": "rtc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "rtc:rtc_zb",
+      "signal_roles": [
+        "rtcout0",
+        "rtcout1"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "rtt",
+      "ip_version": "rtt_m",
+      "peripheral_class": "rtt",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "rtt:rtt_m",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "scb",
+      "ip_version": "scb",
+      "peripheral_class": "scb",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "scb:scb",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "smc",
+      "ip_version": "smc_j",
+      "peripheral_class": "smc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70q21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70Q21B.svd"
+      },
+      "register_profile": "smc:smc_j",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:spi:spi-zm:cs",
+        "capability:spi:spi-zm:miso",
+        "capability:spi:spi-zm:mosi",
+        "capability:spi:spi-zm:sck"
+      ],
+      "ip_name": "spi",
+      "ip_version": "spi_zm",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "spi:spi_zm",
+      "signal_roles": [
+        "cs",
+        "miso",
+        "mosi",
+        "sck"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:ssc:ssc-q:rd",
+        "capability:ssc:ssc-q:rf",
+        "capability:ssc:ssc-q:rk",
+        "capability:ssc:ssc-q:td",
+        "capability:ssc:ssc-q:tf",
+        "capability:ssc:ssc-q:tk"
+      ],
+      "ip_name": "ssc",
+      "ip_version": "ssc_q",
+      "peripheral_class": "ssc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "ssc:ssc_q",
+      "signal_roles": [
+        "rd",
+        "rf",
+        "rk",
+        "td",
+        "tf",
+        "tk"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:supc:supc-ze:wkup0",
+        "capability:supc:supc-ze:wkup1",
+        "capability:supc:supc-ze:wkup10",
+        "capability:supc:supc-ze:wkup11",
+        "capability:supc:supc-ze:wkup12",
+        "capability:supc:supc-ze:wkup13",
+        "capability:supc:supc-ze:wkup2",
+        "capability:supc:supc-ze:wkup3",
+        "capability:supc:supc-ze:wkup4",
+        "capability:supc:supc-ze:wkup5",
+        "capability:supc:supc-ze:wkup6",
+        "capability:supc:supc-ze:wkup7",
+        "capability:supc:supc-ze:wkup8",
+        "capability:supc:supc-ze:wkup9"
+      ],
+      "ip_name": "supc",
+      "ip_version": "supc_ze",
+      "peripheral_class": "supc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "supc:supc_ze",
+      "signal_roles": [
+        "wkup0",
+        "wkup1",
+        "wkup10",
+        "wkup11",
+        "wkup12",
+        "wkup13",
+        "wkup2",
+        "wkup3",
+        "wkup4",
+        "wkup5",
+        "wkup6",
+        "wkup7",
+        "wkup8",
+        "wkup9"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:tc:tc-zl:tclk0",
+        "capability:tc:tc-zl:tclk1",
+        "capability:tc:tc-zl:tclk11",
+        "capability:tc:tc-zl:tioa0",
+        "capability:tc:tc-zl:tioa1",
+        "capability:tc:tc-zl:tioa11",
+        "capability:tc:tc-zl:tioa2",
+        "capability:tc:tc-zl:tiob0",
+        "capability:tc:tc-zl:tiob1",
+        "capability:tc:tc-zl:tiob11",
+        "capability:tc:tc-zl:tiob2"
+      ],
+      "ip_name": "tc",
+      "ip_version": "tc_zl",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "tc:tc_zl",
+      "signal_roles": [
+        "tclk0",
+        "tclk1",
+        "tclk11",
+        "tioa0",
+        "tioa1",
+        "tioa11",
+        "tioa2",
+        "tiob0",
+        "tiob1",
+        "tiob11",
+        "tiob2"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "tpiu",
+      "ip_version": "tpiu",
+      "peripheral_class": "tpiu",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "tpiu:tpiu",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "trng",
+      "ip_version": "trng_g",
+      "peripheral_class": "trng",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "trng:trng_g",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:twihs:twihs-z:scl",
+        "capability:twihs:twihs-z:sda"
+      ],
+      "ip_name": "twihs",
+      "ip_version": "twihs_z",
+      "peripheral_class": "i2c",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "twihs:twihs_z",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:uart:uart-r:urxd0",
+        "capability:uart:uart-r:urxd1",
+        "capability:uart:uart-r:urxd2",
+        "capability:uart:uart-r:urxd3",
+        "capability:uart:uart-r:urxd4",
+        "capability:uart:uart-r:utxd0",
+        "capability:uart:uart-r:utxd1",
+        "capability:uart:uart-r:utxd2",
+        "capability:uart:uart-r:utxd3",
+        "capability:uart:uart-r:utxd4"
+      ],
+      "ip_name": "uart",
+      "ip_version": "uart_r",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "uart:uart_r",
+      "signal_roles": [
+        "urxd0",
+        "urxd1",
+        "urxd2",
+        "urxd3",
+        "urxd4",
+        "utxd0",
+        "utxd1",
+        "utxd2",
+        "utxd3",
+        "utxd4"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:usart:usart-zw:cts",
+        "capability:usart:usart-zw:dcd0",
+        "capability:usart:usart-zw:dcd1",
+        "capability:usart:usart-zw:dcd2",
+        "capability:usart:usart-zw:dsr0",
+        "capability:usart:usart-zw:dsr1",
+        "capability:usart:usart-zw:dsr2",
+        "capability:usart:usart-zw:dtr0",
+        "capability:usart:usart-zw:dtr1",
+        "capability:usart:usart-zw:dtr2",
+        "capability:usart:usart-zw:loncol1",
+        "capability:usart:usart-zw:ri0",
+        "capability:usart:usart-zw:ri2",
+        "capability:usart:usart-zw:rts",
+        "capability:usart:usart-zw:rx",
+        "capability:usart:usart-zw:sck0",
+        "capability:usart:usart-zw:sck1",
+        "capability:usart:usart-zw:sck2",
+        "capability:usart:usart-zw:tx"
+      ],
+      "ip_name": "usart",
+      "ip_version": "usart_zw",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "usart:usart_zw",
+      "signal_roles": [
+        "cts",
+        "dcd0",
+        "dcd1",
+        "dcd2",
+        "dsr0",
+        "dsr1",
+        "dsr2",
+        "dtr0",
+        "dtr1",
+        "dtr2",
+        "loncol1",
+        "ri0",
+        "ri2",
+        "rts",
+        "rx",
+        "sck0",
+        "sck1",
+        "sck2",
+        "tx"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "usbhs",
+      "ip_version": "usbhs_g",
+      "peripheral_class": "usbhs",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "usbhs:usbhs_g",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "utmi",
+      "ip_version": "utmi_a",
+      "peripheral_class": "utmi",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "utmi:utmi_a",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "wdt",
+      "ip_version": "wdt_n",
+      "peripheral_class": "wdt",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "wdt:wdt_n",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "xdmac",
+      "ip_version": "xdmac_k",
+      "peripheral_class": "dma",
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/svd/ATSAME70N21B.svd"
+      },
+      "register_profile": "xdmac:xdmac_k",
+      "signal_roles": []
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "microchip"
+}
