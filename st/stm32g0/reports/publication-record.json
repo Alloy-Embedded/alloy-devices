@@ -187,6 +187,10 @@
       "-DALLOY_CODEGEN_SMOKE_MEMORY_MAP_HEADER=\"st/stm32g0/generated/memory_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PACKAGE_MAP_HEADER=\"st/stm32g0/generated/package_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CLOCK_TREE_HEADER=\"st/stm32g0/generated/clock_tree_lite.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DEVICE_DESCRIPTOR_HEADER=\"st/stm32g0/generated/devices/stm32g030f6/device_descriptor.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PINS_HEADER=\"st/stm32g0/generated/devices/stm32g030f6/pins.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PERIPHERAL_INSTANCES_HEADER=\"st/stm32g0/generated/devices/stm32g030f6/peripheral_instances.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_CAPABILITY_OVERLAYS_HEADER=\"st/stm32g0/generated/devices/stm32g030f6/capability_overlays.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_STARTUP_DESCRIPTORS_HEADER=\"st/stm32g0/generated/devices/stm32g030f6/startup_descriptors.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32g0::generated::devices::stm32g030f6",
       "-DALLOY_CODEGEN_SMOKE_GENERATED_NAMESPACE=st::stm32g0::generated",
@@ -207,7 +211,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 57,
+  "published_artifact_count": 69,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -229,6 +233,30 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 5070,
+      "content_sha256": "d9efbfcc8a5882e2afcef94e08a4ed4c763a449684df3d293122a7ad8c711eac",
+      "path": "st/stm32g0/generated/devices/stm32g030f6/capability_overlays.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 646,
+      "content_sha256": "b0a729f8738dad9f58fd46ef70fcbff587130c4cf0b6cadc001da3337b240c84",
+      "path": "st/stm32g0/generated/devices/stm32g030f6/device_descriptor.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 6094,
+      "content_sha256": "79e96cf42daed6b36a824aad4388812a715f02c66ceaa1848251fa5b6292f61b",
+      "path": "st/stm32g0/generated/devices/stm32g030f6/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3319,
+      "content_sha256": "bdcbb42d3b8479e18f5e455be56f8f50fdb6b6db57a14a907ee4d3be1895804c",
+      "path": "st/stm32g0/generated/devices/stm32g030f6/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 1146,
       "content_sha256": "5dc29db7d79aa52590a89725f2ac927c00e12098b6ee3859e9aae3ff15bdf498",
       "path": "st/stm32g0/generated/devices/stm32g030f6/register_map.hpp"
@@ -247,6 +275,30 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 13288,
+      "content_sha256": "69b47a28a091a7041473ff242c21252ee03838835519a75ed6ccbfd2188c30e2",
+      "path": "st/stm32g0/generated/devices/stm32g071rb/capability_overlays.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 656,
+      "content_sha256": "9c8131740e4a7e0a4a0509a7eb8e831d18b71a6791bcf36d7998e464bc8e3fe3",
+      "path": "st/stm32g0/generated/devices/stm32g071rb/device_descriptor.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 10112,
+      "content_sha256": "0aec32dbc5d706962e58a8fee3935305e5446857aa855c91478d889af41b47a7",
+      "path": "st/stm32g0/generated/devices/stm32g071rb/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 15704,
+      "content_sha256": "2864990efaa43424fca9b8055cb3b791cfdd87317ca6e218df10c4cef2404738",
+      "path": "st/stm32g0/generated/devices/stm32g071rb/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 1492,
       "content_sha256": "6352cd40c73e61200cc9f0b15b50b9b8f2ecab6cc7fbb9ca6b04264de84a2092",
       "path": "st/stm32g0/generated/devices/stm32g071rb/register_map.hpp"
@@ -262,6 +314,30 @@
       "content_bytes": 1730,
       "content_sha256": "0a83887837ada377fbd1bc20abadfa739887d600fd541ccb88a8b5b1512a3354",
       "path": "st/stm32g0/generated/devices/stm32g071rb/startup_vectors.cpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 18251,
+      "content_sha256": "0197c741d0f0e3510542592e075aa35017ea31edd96f8fb281cad3555b709842",
+      "path": "st/stm32g0/generated/devices/stm32g0b1re/capability_overlays.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 647,
+      "content_sha256": "f4dba7a9ac031b3cf541e556e1477248105cd2599290c913b760f242f97c239a",
+      "path": "st/stm32g0/generated/devices/stm32g0b1re/device_descriptor.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 12834,
+      "content_sha256": "c45fa33204c8c1dbdd392d9e7ef4135515e6da2caa999f1d2b2531c6cce6c3f7",
+      "path": "st/stm32g0/generated/devices/stm32g0b1re/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 19485,
+      "content_sha256": "17de560ad665fa932b32b9d8a5cfc079714e599474d67e5ccbc244ae359149f4",
+      "path": "st/stm32g0/generated/devices/stm32g0b1re/pins.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -557,7 +633,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "2d31ca61b6aa93f2f0639f874a5b517d06b37449ba44e8a6ac17b47940ddaabd",
+  "target_artifact_revision": "08589794a0cf713b540d8fd078bf9e3376347695fa8bb111482a0bac38dab566",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
