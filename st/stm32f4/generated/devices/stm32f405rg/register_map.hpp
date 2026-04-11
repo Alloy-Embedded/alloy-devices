@@ -1,0 +1,112 @@
+#pragma once
+
+#include <cstdint>
+
+namespace st {
+namespace stm32f4 {
+namespace generated {
+namespace devices {
+namespace stm32f405rg {
+inline constexpr const char* kDevice = "stm32f405rg";
+struct PeripheralBase {
+  const char* name;
+  std::uintptr_t address;
+};
+inline constexpr PeripheralBase kPeripheralBases[] = {
+  {"ADC1", 0x40012000u},
+  {"ADC2", 0x40012100u},
+  {"ADC3", 0x40012200u},
+  {"CAN1", 0x40006400u},
+  {"CAN2", 0x40006800u},
+  {"CRC", 0x40023000u},
+  {"CRYP", 0x50060000u},
+  {"C_ADC", 0x40012300u},
+  {"DAC", 0x40007400u},
+  {"DBG", 0xE0042000u},
+  {"DCMI", 0x50050000u},
+  {"DMA1", 0x40026000u},
+  {"DMA2", 0x40026400u},
+  {"EXTI", 0x40013C00u},
+  {"Ethernet_DMA", 0x40029000u},
+  {"Ethernet_MAC", 0x40028000u},
+  {"Ethernet_MMC", 0x40028100u},
+  {"Ethernet_PTP", 0x40028700u},
+  {"FLASH", 0x40023C00u},
+  {"FPU", 0xE000EF34u},
+  {"FPU_CPACR", 0xE000ED88u},
+  {"FSMC", 0xA0000000u},
+  {"GPIOA", 0x40020000u},
+  {"GPIOB", 0x40020400u},
+  {"GPIOC", 0x40020800u},
+  {"GPIOD", 0x40020C00u},
+  {"GPIOE", 0x40021000u},
+  {"GPIOF", 0x40021400u},
+  {"GPIOG", 0x40021800u},
+  {"GPIOH", 0x40021C00u},
+  {"GPIOI", 0x40022000u},
+  {"GPIOJ", 0x40022400u},
+  {"GPIOK", 0x40022800u},
+  {"HASH", 0x50060400u},
+  {"I2C1", 0x40005400u},
+  {"I2C2", 0x40005800u},
+  {"I2C3", 0x40005C00u},
+  {"I2S2ext", 0x40003400u},
+  {"I2S3ext", 0x40004000u},
+  {"IWDG", 0x40003000u},
+  {"LTDC", 0x40016800u},
+  {"MPU", 0xE000ED90u},
+  {"NVIC", 0xE000E100u},
+  {"NVIC_STIR", 0xE000EF00u},
+  {"OTG_FS_DEVICE", 0x50000800u},
+  {"OTG_FS_GLOBAL", 0x50000000u},
+  {"OTG_FS_HOST", 0x50000400u},
+  {"OTG_FS_PWRCLK", 0x50000E00u},
+  {"OTG_HS_DEVICE", 0x40040800u},
+  {"OTG_HS_GLOBAL", 0x40040000u},
+  {"OTG_HS_HOST", 0x40040400u},
+  {"OTG_HS_PWRCLK", 0x40040E00u},
+  {"PWR", 0x40007000u},
+  {"RCC", 0x40023800u},
+  {"RNG", 0x50060800u},
+  {"RTC", 0x40002800u},
+  {"SAI1", 0x40015800u},
+  {"SCB", 0xE000ED00u},
+  {"SCB_ACTRL", 0xE000E008u},
+  {"SDIO", 0x40012C00u},
+  {"SPI1", 0x40013000u},
+  {"SPI2", 0x40003800u},
+  {"SPI3", 0x40003C00u},
+  {"SPI4", 0x40013400u},
+  {"SPI5", 0x40015000u},
+  {"SPI6", 0x40015400u},
+  {"STK", 0xE000E010u},
+  {"SYSCFG", 0x40013800u},
+  {"TIM1", 0x40010000u},
+  {"TIM10", 0x40014400u},
+  {"TIM11", 0x40014800u},
+  {"TIM12", 0x40001800u},
+  {"TIM13", 0x40001C00u},
+  {"TIM14", 0x40002000u},
+  {"TIM2", 0x40000000u},
+  {"TIM3", 0x40000400u},
+  {"TIM4", 0x40000800u},
+  {"TIM5", 0x40000C00u},
+  {"TIM6", 0x40001000u},
+  {"TIM7", 0x40001400u},
+  {"TIM8", 0x40010400u},
+  {"TIM9", 0x40014000u},
+  {"UART4", 0x40004C00u},
+  {"UART5", 0x40005000u},
+  {"UART7", 0x40007800u},
+  {"UART8", 0x40007C00u},
+  {"USART1", 0x40011000u},
+  {"USART2", 0x40004400u},
+  {"USART3", 0x40004800u},
+  {"USART6", 0x40011400u},
+  {"WWDG", 0x40002C00u},
+};
+}
+}
+}
+}
+}

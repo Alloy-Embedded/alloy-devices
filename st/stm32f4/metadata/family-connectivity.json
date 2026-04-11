@@ -1,0 +1,6026 @@
+{
+  "dma_requests": [
+    {
+      "controller": "DMA1",
+      "peripheral": "USART2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "request_line": "DMA1_STREAM5",
+      "signal": "RX"
+    },
+    {
+      "controller": "DMA1",
+      "peripheral": "USART2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "request_line": "DMA1_STREAM6",
+      "signal": "TX"
+    },
+    {
+      "controller": "DMA2",
+      "peripheral": "USART1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f405rg.json"
+      },
+      "request_line": "DMA2_STREAM2",
+      "signal": "RX"
+    },
+    {
+      "controller": "DMA2",
+      "peripheral": "USART1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f405rg.json"
+      },
+      "request_line": "DMA2_STREAM7",
+      "signal": "TX"
+    }
+  ],
+  "family": "stm32f4",
+  "interrupts": [
+    {
+      "alias_names": [
+        "ADC1",
+        "ADC_IRQHandler"
+      ],
+      "line": 18,
+      "name": "ADC",
+      "peripheral": "ADC1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "CAN1_RX0_IRQHandler"
+      ],
+      "line": 20,
+      "name": "CAN1_RX0",
+      "peripheral": "CAN1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can1"
+    },
+    {
+      "alias_names": [
+        "CAN1_RX1_IRQHandler"
+      ],
+      "line": 21,
+      "name": "CAN1_RX1",
+      "peripheral": "CAN1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can1"
+    },
+    {
+      "alias_names": [
+        "CAN1_SCE_IRQHandler"
+      ],
+      "line": 22,
+      "name": "CAN1_SCE",
+      "peripheral": "CAN1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can1"
+    },
+    {
+      "alias_names": [
+        "CAN1_TX_IRQHandler"
+      ],
+      "line": 19,
+      "name": "CAN1_TX",
+      "peripheral": "CAN1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can1"
+    },
+    {
+      "alias_names": [
+        "CAN2_RX0_IRQHandler"
+      ],
+      "line": 64,
+      "name": "CAN2_RX0",
+      "peripheral": "CAN2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can2"
+    },
+    {
+      "alias_names": [
+        "CAN2_RX1_IRQHandler"
+      ],
+      "line": 65,
+      "name": "CAN2_RX1",
+      "peripheral": "CAN2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can2"
+    },
+    {
+      "alias_names": [
+        "CAN2_SCE_IRQHandler"
+      ],
+      "line": 66,
+      "name": "CAN2_SCE",
+      "peripheral": "CAN2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can2"
+    },
+    {
+      "alias_names": [
+        "CAN2_TX_IRQHandler"
+      ],
+      "line": 63,
+      "name": "CAN2_TX",
+      "peripheral": "CAN2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:can2"
+    },
+    {
+      "alias_names": [
+        "CRYP_IRQHandler"
+      ],
+      "line": 79,
+      "name": "CRYP",
+      "peripheral": "CRYP",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "DCMI_IRQHandler"
+      ],
+      "line": 78,
+      "name": "DCMI",
+      "peripheral": "DCMI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream0_IRQHandler"
+      ],
+      "line": 11,
+      "name": "DMA1_Stream0",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream1_IRQHandler"
+      ],
+      "line": 12,
+      "name": "DMA1_Stream1",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream2_IRQHandler"
+      ],
+      "line": 13,
+      "name": "DMA1_Stream2",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream3_IRQHandler"
+      ],
+      "line": 14,
+      "name": "DMA1_Stream3",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream4_IRQHandler"
+      ],
+      "line": 15,
+      "name": "DMA1_Stream4",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream5_IRQHandler"
+      ],
+      "line": 16,
+      "name": "DMA1_Stream5",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream6_IRQHandler"
+      ],
+      "line": 17,
+      "name": "DMA1_Stream6",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream7_IRQHandler"
+      ],
+      "line": 47,
+      "name": "DMA1_Stream7",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream0_IRQHandler"
+      ],
+      "line": 56,
+      "name": "DMA2_Stream0",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream1_IRQHandler"
+      ],
+      "line": 57,
+      "name": "DMA2_Stream1",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream2_IRQHandler"
+      ],
+      "line": 58,
+      "name": "DMA2_Stream2",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream3_IRQHandler"
+      ],
+      "line": 59,
+      "name": "DMA2_Stream3",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream4_IRQHandler"
+      ],
+      "line": 60,
+      "name": "DMA2_Stream4",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream5_IRQHandler"
+      ],
+      "line": 68,
+      "name": "DMA2_Stream5",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream6_IRQHandler"
+      ],
+      "line": 69,
+      "name": "DMA2_Stream6",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "DMA2_Stream7_IRQHandler"
+      ],
+      "line": 70,
+      "name": "DMA2_Stream7",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:dma2"
+    },
+    {
+      "alias_names": [
+        "Ethernet_MAC",
+        "ETH_IRQHandler"
+      ],
+      "line": 61,
+      "name": "ETH",
+      "peripheral": "Ethernet_MAC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:ethernet-mac"
+    },
+    {
+      "alias_names": [
+        "Ethernet_MAC",
+        "ETH_WKUP_IRQHandler"
+      ],
+      "line": 62,
+      "name": "ETH_WKUP",
+      "peripheral": "Ethernet_MAC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:ethernet-mac"
+    },
+    {
+      "alias_names": [
+        "EXTI0_IRQHandler"
+      ],
+      "line": 6,
+      "name": "EXTI0",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "EXTI1_IRQHandler"
+      ],
+      "line": 7,
+      "name": "EXTI1",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "EXTI15_10_IRQHandler"
+      ],
+      "line": 40,
+      "name": "EXTI15_10",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "EXTI2_IRQHandler"
+      ],
+      "line": 8,
+      "name": "EXTI2",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "EXTI3_IRQHandler"
+      ],
+      "line": 9,
+      "name": "EXTI3",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "EXTI4_IRQHandler"
+      ],
+      "line": 10,
+      "name": "EXTI4",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "EXTI9_5_IRQHandler"
+      ],
+      "line": 23,
+      "name": "EXTI9_5",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "FLASH_IRQHandler"
+      ],
+      "line": 4,
+      "name": "FLASH",
+      "peripheral": "FLASH",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "ADC_Common",
+        "FPU_IRQHandler"
+      ],
+      "line": 81,
+      "name": "FPU",
+      "peripheral": "ADC_Common",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "RNG",
+        "FPU_IRQHandler"
+      ],
+      "line": 81,
+      "name": "FPU",
+      "peripheral": "RNG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "FSMC_IRQHandler"
+      ],
+      "line": 48,
+      "name": "FSMC",
+      "peripheral": "FSMC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "HASH_RNG_IRQHandler"
+      ],
+      "line": 80,
+      "name": "HASH_RNG",
+      "peripheral": "HASH",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "I2C1_ER_IRQHandler"
+      ],
+      "line": 32,
+      "name": "I2C1_ER",
+      "peripheral": "I2C1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:i2c1"
+    },
+    {
+      "alias_names": [
+        "RCC",
+        "I2C1_ER_IRQHandler"
+      ],
+      "line": 32,
+      "name": "I2C1_ER",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:rcc"
+    },
+    {
+      "alias_names": [
+        "I2C1_EV_IRQHandler"
+      ],
+      "line": 31,
+      "name": "I2C1_EV",
+      "peripheral": "I2C1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:i2c1"
+    },
+    {
+      "alias_names": [
+        "RCC",
+        "I2C1_EV_IRQHandler"
+      ],
+      "line": 31,
+      "name": "I2C1_EV",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:rcc"
+    },
+    {
+      "alias_names": [
+        "I2C2_ER_IRQHandler"
+      ],
+      "line": 34,
+      "name": "I2C2_ER",
+      "peripheral": "I2C2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:i2c2"
+    },
+    {
+      "alias_names": [
+        "RTC",
+        "I2C2_ER_IRQHandler"
+      ],
+      "line": 34,
+      "name": "I2C2_ER",
+      "peripheral": "RTC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:rtc"
+    },
+    {
+      "alias_names": [
+        "I2C2_EV_IRQHandler"
+      ],
+      "line": 33,
+      "name": "I2C2_EV",
+      "peripheral": "I2C2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:i2c2"
+    },
+    {
+      "alias_names": [
+        "RTC",
+        "I2C2_EV_IRQHandler"
+      ],
+      "line": 33,
+      "name": "I2C2_EV",
+      "peripheral": "RTC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:rtc"
+    },
+    {
+      "alias_names": [
+        "I2C3_ER_IRQHandler"
+      ],
+      "line": 73,
+      "name": "I2C3_ER",
+      "peripheral": "I2C3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:i2c3"
+    },
+    {
+      "alias_names": [
+        "SDIO",
+        "I2C3_ER_IRQHandler"
+      ],
+      "line": 73,
+      "name": "I2C3_ER",
+      "peripheral": "SDIO",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:sdio"
+    },
+    {
+      "alias_names": [
+        "I2C3_EV_IRQHandler"
+      ],
+      "line": 72,
+      "name": "I2C3_EV",
+      "peripheral": "I2C3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:i2c3"
+    },
+    {
+      "alias_names": [
+        "SDIO",
+        "I2C3_EV_IRQHandler"
+      ],
+      "line": 72,
+      "name": "I2C3_EV",
+      "peripheral": "SDIO",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:sdio"
+    },
+    {
+      "alias_names": [
+        "LTDC",
+        "LCD_TFT_IRQHandler"
+      ],
+      "line": 88,
+      "name": "LCD_TFT",
+      "peripheral": "LTDC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:ltdc"
+    },
+    {
+      "alias_names": [
+        "LTDC",
+        "LCD_TFT_1_IRQHandler"
+      ],
+      "line": 89,
+      "name": "LCD_TFT_1",
+      "peripheral": "LTDC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:ltdc"
+    },
+    {
+      "alias_names": [
+        "OTG_FS_GLOBAL",
+        "OTG_FS_IRQHandler"
+      ],
+      "line": 67,
+      "name": "OTG_FS",
+      "peripheral": "OTG_FS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:otg-fs-global"
+    },
+    {
+      "alias_names": [
+        "USART1",
+        "OTG_FS_IRQHandler"
+      ],
+      "line": 67,
+      "name": "OTG_FS",
+      "peripheral": "USART1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:usart1"
+    },
+    {
+      "alias_names": [
+        "OTG_FS_GLOBAL",
+        "OTG_FS_WKUP_IRQHandler"
+      ],
+      "line": 42,
+      "name": "OTG_FS_WKUP",
+      "peripheral": "OTG_FS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:otg-fs-global"
+    },
+    {
+      "alias_names": [
+        "USART1",
+        "OTG_FS_WKUP_IRQHandler"
+      ],
+      "line": 42,
+      "name": "OTG_FS_WKUP",
+      "peripheral": "USART1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:usart1"
+    },
+    {
+      "alias_names": [
+        "OTG_HS_GLOBAL",
+        "OTG_HS_IRQHandler"
+      ],
+      "line": 77,
+      "name": "OTG_HS",
+      "peripheral": "OTG_HS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:otg-hs-global"
+    },
+    {
+      "alias_names": [
+        "OTG_HS_GLOBAL",
+        "OTG_HS_EP1_IN_IRQHandler"
+      ],
+      "line": 75,
+      "name": "OTG_HS_EP1_IN",
+      "peripheral": "OTG_HS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:otg-hs-global"
+    },
+    {
+      "alias_names": [
+        "OTG_HS_GLOBAL",
+        "OTG_HS_EP1_OUT_IRQHandler"
+      ],
+      "line": 74,
+      "name": "OTG_HS_EP1_OUT",
+      "peripheral": "OTG_HS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:otg-hs-global"
+    },
+    {
+      "alias_names": [
+        "OTG_HS_GLOBAL",
+        "OTG_HS_WKUP_IRQHandler"
+      ],
+      "line": 76,
+      "name": "OTG_HS_WKUP",
+      "peripheral": "OTG_HS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:otg-hs-global"
+    },
+    {
+      "alias_names": [
+        "PWR",
+        "PVD_IRQHandler"
+      ],
+      "line": 1,
+      "name": "PVD",
+      "peripheral": "PWR",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "WWDG",
+        "PVD_IRQHandler"
+      ],
+      "line": 1,
+      "name": "PVD",
+      "peripheral": "WWDG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "DMA2",
+        "RCC_IRQHandler"
+      ],
+      "line": 5,
+      "name": "RCC",
+      "peripheral": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "RCC_IRQHandler"
+      ],
+      "line": 5,
+      "name": "RCC",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "DMA1",
+        "RTC_Alarm_IRQHandler"
+      ],
+      "line": 41,
+      "name": "RTC_Alarm",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "RTC_Alarm_IRQHandler"
+      ],
+      "line": 41,
+      "name": "RTC_Alarm",
+      "peripheral": "RTC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:rtc"
+    },
+    {
+      "alias_names": [
+        "DMA1",
+        "RTC_WKUP_IRQHandler"
+      ],
+      "line": 3,
+      "name": "RTC_WKUP",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "RTC_WKUP_IRQHandler"
+      ],
+      "line": 3,
+      "name": "RTC_WKUP",
+      "peripheral": "RTC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:rtc"
+    },
+    {
+      "alias_names": [
+        "GPIOH",
+        "SDIO_IRQHandler"
+      ],
+      "line": 49,
+      "name": "SDIO",
+      "peripheral": "GPIOH",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "SDIO_IRQHandler"
+      ],
+      "line": 49,
+      "name": "SDIO",
+      "peripheral": "SDIO",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "SPI1_IRQHandler"
+      ],
+      "line": 35,
+      "name": "SPI1",
+      "peripheral": "SPI1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM10",
+        "SPI1_IRQHandler"
+      ],
+      "line": 35,
+      "name": "SPI1",
+      "peripheral": "TIM10",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "SPI2_IRQHandler"
+      ],
+      "line": 36,
+      "name": "SPI2",
+      "peripheral": "SPI2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM11",
+        "SPI2_IRQHandler"
+      ],
+      "line": 36,
+      "name": "SPI2",
+      "peripheral": "TIM11",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "SPI3_IRQHandler"
+      ],
+      "line": 51,
+      "name": "SPI3",
+      "peripheral": "SPI3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM2",
+        "SPI3_IRQHandler"
+      ],
+      "line": 51,
+      "name": "SPI3",
+      "peripheral": "TIM2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM3",
+        "SPI4_IRQHandler"
+      ],
+      "line": 84,
+      "name": "SPI4",
+      "peripheral": "TIM3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "EXTI",
+        "TAMP_STAMP_IRQHandler"
+      ],
+      "line": 2,
+      "name": "TAMP_STAMP",
+      "peripheral": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:exti"
+    },
+    {
+      "alias_names": [
+        "GPIOD",
+        "TIM1_BRK_TIM9_IRQHandler"
+      ],
+      "line": 24,
+      "name": "TIM1_BRK_TIM9",
+      "peripheral": "GPIOD",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:gpiod"
+    },
+    {
+      "alias_names": [
+        "TIM1_BRK_TIM9_IRQHandler"
+      ],
+      "line": 24,
+      "name": "TIM1_BRK_TIM9",
+      "peripheral": "TIM1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim1"
+    },
+    {
+      "alias_names": [
+        "GPIOD",
+        "TIM1_CC_IRQHandler"
+      ],
+      "line": 27,
+      "name": "TIM1_CC",
+      "peripheral": "GPIOD",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:gpiod"
+    },
+    {
+      "alias_names": [
+        "TIM1_CC_IRQHandler"
+      ],
+      "line": 27,
+      "name": "TIM1_CC",
+      "peripheral": "TIM1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim1"
+    },
+    {
+      "alias_names": [
+        "GPIOD",
+        "TIM1_TRG_COM_TIM11_IRQHandler"
+      ],
+      "line": 26,
+      "name": "TIM1_TRG_COM_TIM11",
+      "peripheral": "GPIOD",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:gpiod"
+    },
+    {
+      "alias_names": [
+        "TIM1_TRG_COM_TIM11_IRQHandler"
+      ],
+      "line": 26,
+      "name": "TIM1_TRG_COM_TIM11",
+      "peripheral": "TIM1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim1"
+    },
+    {
+      "alias_names": [
+        "GPIOD",
+        "TIM1_UP_TIM10_IRQHandler"
+      ],
+      "line": 25,
+      "name": "TIM1_UP_TIM10",
+      "peripheral": "GPIOD",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": "interrupt-group:gpiod"
+    },
+    {
+      "alias_names": [
+        "TIM1_UP_TIM10_IRQHandler"
+      ],
+      "line": 25,
+      "name": "TIM1_UP_TIM10",
+      "peripheral": "TIM1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim1"
+    },
+    {
+      "alias_names": [
+        "GPIOA",
+        "TIM2_IRQHandler"
+      ],
+      "line": 28,
+      "name": "TIM2",
+      "peripheral": "GPIOA",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM2_IRQHandler"
+      ],
+      "line": 28,
+      "name": "TIM2",
+      "peripheral": "TIM2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "I2C3",
+        "TIM3_IRQHandler"
+      ],
+      "line": 29,
+      "name": "TIM3",
+      "peripheral": "I2C3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM3_IRQHandler"
+      ],
+      "line": 29,
+      "name": "TIM3",
+      "peripheral": "TIM3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM4_IRQHandler"
+      ],
+      "line": 30,
+      "name": "TIM4",
+      "peripheral": "TIM4",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM5_IRQHandler"
+      ],
+      "line": 50,
+      "name": "TIM5",
+      "peripheral": "TIM5",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM6_DAC_IRQHandler"
+      ],
+      "line": 54,
+      "name": "TIM6_DAC",
+      "peripheral": "DAC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM7_IRQHandler"
+      ],
+      "line": 55,
+      "name": "TIM7",
+      "peripheral": "TIM7",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "TIM8_BRK_TIM12_IRQHandler"
+      ],
+      "line": 43,
+      "name": "TIM8_BRK_TIM12",
+      "peripheral": "TIM8",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim8"
+    },
+    {
+      "alias_names": [
+        "TIM8_CC_IRQHandler"
+      ],
+      "line": 46,
+      "name": "TIM8_CC",
+      "peripheral": "TIM8",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim8"
+    },
+    {
+      "alias_names": [
+        "TIM8_TRG_COM_TIM14_IRQHandler"
+      ],
+      "line": 45,
+      "name": "TIM8_TRG_COM_TIM14",
+      "peripheral": "TIM8",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim8"
+    },
+    {
+      "alias_names": [
+        "TIM8_UP_TIM13_IRQHandler"
+      ],
+      "line": 44,
+      "name": "TIM8_UP_TIM13",
+      "peripheral": "TIM8",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": "interrupt-group:tim8"
+    },
+    {
+      "alias_names": [
+        "UART4_IRQHandler"
+      ],
+      "line": 52,
+      "name": "UART4",
+      "peripheral": "UART4",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "UART5_IRQHandler"
+      ],
+      "line": 53,
+      "name": "UART5",
+      "peripheral": "UART5",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "USART1_IRQHandler"
+      ],
+      "line": 37,
+      "name": "USART1",
+      "peripheral": "USART1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "USART2_IRQHandler"
+      ],
+      "line": 38,
+      "name": "USART2",
+      "peripheral": "USART2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "USART3_IRQHandler"
+      ],
+      "line": 39,
+      "name": "USART3",
+      "peripheral": "USART3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "USART6_IRQHandler"
+      ],
+      "line": 71,
+      "name": "USART6",
+      "peripheral": "USART6",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    },
+    {
+      "alias_names": [
+        "WWDG_IRQHandler"
+      ],
+      "line": 0,
+      "name": "WWDG",
+      "peripheral": "WWDG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "shared_group": null
+    }
+  ],
+  "packages": [
+    {
+      "name": "lqfp64",
+      "pin_count": 64,
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      }
+    }
+  ],
+  "peripherals": [
+    {
+      "base_address": 1073815552,
+      "instance": 1,
+      "ip_name": "adc",
+      "ip_version": "aditf2_v1_1_Cube",
+      "name": "ADC1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073815808,
+      "instance": 2,
+      "ip_name": "adc",
+      "ip_version": "aditf2_v1_1_Cube",
+      "name": "ADC2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073816064,
+      "instance": 3,
+      "ip_name": "adc",
+      "ip_version": "aditf2_v1_1_Cube",
+      "name": "ADC3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073816320,
+      "instance": 0,
+      "ip_name": "adc_common",
+      "ip_version": null,
+      "name": "ADC_Common",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073767424,
+      "instance": 1,
+      "ip_name": "can",
+      "ip_version": "bxcan1_v1_1_Cube",
+      "name": "CAN1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073768448,
+      "instance": 2,
+      "ip_name": "can",
+      "ip_version": "bxcan1_v1_1_Cube",
+      "name": "CAN2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073885184,
+      "instance": 0,
+      "ip_name": "crc",
+      "ip_version": "integtest1_v1_0",
+      "name": "CRC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342570496,
+      "instance": 0,
+      "ip_name": "cryp",
+      "ip_version": null,
+      "name": "CRYP",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073816320,
+      "instance": 0,
+      "ip_name": "c_adc",
+      "ip_version": null,
+      "name": "C_ADC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073771520,
+      "instance": 0,
+      "ip_name": "dac",
+      "ip_version": "dacif_v1_1_Cube",
+      "name": "DAC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758366720,
+      "instance": 0,
+      "ip_name": "dbg",
+      "ip_version": null,
+      "name": "DBG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342504960,
+      "instance": 0,
+      "ip_name": "dcmi",
+      "ip_version": null,
+      "name": "DCMI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073897472,
+      "instance": 1,
+      "ip_name": "dma",
+      "ip_version": null,
+      "name": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.DMA1EN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.DMA1RST"
+    },
+    {
+      "base_address": 1073898496,
+      "instance": 2,
+      "ip_name": "dma",
+      "ip_version": null,
+      "name": "DMA2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.DMA2EN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.DMA2RST"
+    },
+    {
+      "base_address": 1073822720,
+      "instance": 0,
+      "ip_name": "exti",
+      "ip_version": null,
+      "name": "EXTI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073909760,
+      "instance": 0,
+      "ip_name": "ethernet_dma",
+      "ip_version": null,
+      "name": "Ethernet_DMA",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073905664,
+      "instance": 0,
+      "ip_name": "ethernet_mac",
+      "ip_version": null,
+      "name": "Ethernet_MAC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073905920,
+      "instance": 0,
+      "ip_name": "ethernet_mmc",
+      "ip_version": null,
+      "name": "Ethernet_MMC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073907456,
+      "instance": 0,
+      "ip_name": "ethernet_ptp",
+      "ip_version": null,
+      "name": "Ethernet_PTP",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073888256,
+      "instance": 0,
+      "ip_name": "flash",
+      "ip_version": null,
+      "name": "FLASH",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758157620,
+      "instance": 0,
+      "ip_name": "fpu",
+      "ip_version": null,
+      "name": "FPU",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758157192,
+      "instance": 0,
+      "ip_name": "fpu_cpacr",
+      "ip_version": null,
+      "name": "FPU_CPACR",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 2684354560,
+      "instance": 0,
+      "ip_name": "fsmc",
+      "ip_version": null,
+      "name": "FSMC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073872896,
+      "instance": 0,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOA",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.GPIOAEN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.GPIOARST"
+    },
+    {
+      "base_address": 1073873920,
+      "instance": 1,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOB",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.GPIOBEN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.GPIOBRST"
+    },
+    {
+      "base_address": 1073874944,
+      "instance": 2,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.GPIOCEN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.GPIOCRST"
+    },
+    {
+      "base_address": 1073875968,
+      "instance": 3,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOD",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.GPIODEN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.GPIODRST"
+    },
+    {
+      "base_address": 1073876992,
+      "instance": 4,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOE",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073878016,
+      "instance": 5,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOF",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073879040,
+      "instance": 6,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073880064,
+      "instance": 7,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOH",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_AHB1ENR.GPIOHEN",
+      "rcc_reset_signal": "RCC_AHB1RSTR.GPIOHRST"
+    },
+    {
+      "base_address": 1073881088,
+      "instance": 8,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOI",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073882112,
+      "instance": 9,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOJ",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073883136,
+      "instance": 10,
+      "ip_name": "gpio",
+      "ip_version": null,
+      "name": "GPIOK",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342571520,
+      "instance": 0,
+      "ip_name": "hash",
+      "ip_version": null,
+      "name": "HASH",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073763328,
+      "instance": 0,
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "I2C1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.I2C1EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.I2C1RST"
+    },
+    {
+      "base_address": 1073764352,
+      "instance": 0,
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "I2C2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.I2C2EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.I2C2RST"
+    },
+    {
+      "base_address": 1073765376,
+      "instance": 0,
+      "ip_name": "i2c3",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "I2C3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073755136,
+      "instance": 0,
+      "ip_name": "i2s2ext",
+      "ip_version": null,
+      "name": "I2S2ext",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073758208,
+      "instance": 0,
+      "ip_name": "i2s3ext",
+      "ip_version": null,
+      "name": "I2S3ext",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073754112,
+      "instance": 0,
+      "ip_name": "iwdg",
+      "ip_version": "iwdg1_v1_1",
+      "name": "IWDG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073833984,
+      "instance": 0,
+      "ip_name": "ltdc",
+      "ip_version": null,
+      "name": "LTDC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758157200,
+      "instance": 0,
+      "ip_name": "mpu",
+      "ip_version": null,
+      "name": "MPU",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758153984,
+      "instance": 0,
+      "ip_name": "nvic",
+      "ip_version": "STM32F401",
+      "name": "NVIC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758157568,
+      "instance": 0,
+      "ip_name": "nvic_stir",
+      "ip_version": null,
+      "name": "NVIC_STIR",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342179328,
+      "instance": 0,
+      "ip_name": "otg_fs_device",
+      "ip_version": null,
+      "name": "OTG_FS_DEVICE",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342177280,
+      "instance": 0,
+      "ip_name": "otg_fs_global",
+      "ip_version": null,
+      "name": "OTG_FS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342178304,
+      "instance": 0,
+      "ip_name": "otg_fs_host",
+      "ip_version": null,
+      "name": "OTG_FS_HOST",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342180864,
+      "instance": 0,
+      "ip_name": "otg_fs_pwrclk",
+      "ip_version": null,
+      "name": "OTG_FS_PWRCLK",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1074006016,
+      "instance": 0,
+      "ip_name": "otg_hs_device",
+      "ip_version": null,
+      "name": "OTG_HS_DEVICE",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1074003968,
+      "instance": 0,
+      "ip_name": "otg_hs_global",
+      "ip_version": null,
+      "name": "OTG_HS_GLOBAL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1074004992,
+      "instance": 0,
+      "ip_name": "otg_hs_host",
+      "ip_version": null,
+      "name": "OTG_HS_HOST",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1074007552,
+      "instance": 0,
+      "ip_name": "otg_hs_pwrclk",
+      "ip_version": null,
+      "name": "OTG_HS_PWRCLK",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073770496,
+      "instance": 0,
+      "ip_name": "pwr",
+      "ip_version": null,
+      "name": "PWR",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073887232,
+      "instance": 0,
+      "ip_name": "rcc",
+      "ip_version": "STM32F417-rcc_v1_0",
+      "name": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1342572544,
+      "instance": 0,
+      "ip_name": "rng",
+      "ip_version": "rng1_v1_1",
+      "name": "RNG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073752064,
+      "instance": 0,
+      "ip_name": "rtc",
+      "ip_version": "rtc2_v2_3",
+      "name": "RTC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073829888,
+      "instance": 1,
+      "ip_name": "sai",
+      "ip_version": null,
+      "name": "SAI1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758157056,
+      "instance": 0,
+      "ip_name": "scb",
+      "ip_version": null,
+      "name": "SCB",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758153736,
+      "instance": 0,
+      "ip_name": "scb_actrl",
+      "ip_version": null,
+      "name": "SCB_ACTRL",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073818624,
+      "instance": 0,
+      "ip_name": "sdio",
+      "ip_version": "sdmmc_v1_2_Cube",
+      "name": "SDIO",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073819648,
+      "instance": 1,
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "SPI1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB2ENR.SPI1EN",
+      "rcc_reset_signal": "RCC_APB2RSTR.SPI1RST"
+    },
+    {
+      "base_address": 1073756160,
+      "instance": 2,
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "SPI2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.SPI2EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.SPI2RST"
+    },
+    {
+      "base_address": 1073757184,
+      "instance": 3,
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "SPI3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073820672,
+      "instance": 4,
+      "ip_name": "spi",
+      "ip_version": null,
+      "name": "SPI4",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073827840,
+      "instance": 5,
+      "ip_name": "spi",
+      "ip_version": null,
+      "name": "SPI5",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073828864,
+      "instance": 6,
+      "ip_name": "spi",
+      "ip_version": null,
+      "name": "SPI6",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 3758153744,
+      "instance": 0,
+      "ip_name": "stk",
+      "ip_version": null,
+      "name": "STK",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073821696,
+      "instance": 0,
+      "ip_name": "syscfg",
+      "ip_version": null,
+      "name": "SYSCFG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073807360,
+      "instance": 1,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB2ENR.TIM1EN",
+      "rcc_reset_signal": "RCC_APB2RSTR.TIM1RST"
+    },
+    {
+      "base_address": 1073824768,
+      "instance": 10,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM10",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073825792,
+      "instance": 11,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM11",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073747968,
+      "instance": 12,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM12",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073748992,
+      "instance": 13,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM13",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073750016,
+      "instance": 14,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM14",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073741824,
+      "instance": 2,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.TIM2EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.TIM2RST"
+    },
+    {
+      "base_address": 1073742848,
+      "instance": 3,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.TIM3EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.TIM3RST"
+    },
+    {
+      "base_address": 1073743872,
+      "instance": 4,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM4",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.TIM4EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.TIM4RST"
+    },
+    {
+      "base_address": 1073744896,
+      "instance": 5,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM5",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.TIM5EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.TIM5RST"
+    },
+    {
+      "base_address": 1073745920,
+      "instance": 6,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM6",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073746944,
+      "instance": 7,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM7",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073808384,
+      "instance": 8,
+      "ip_name": "tim",
+      "ip_version": null,
+      "name": "TIM8",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073823744,
+      "instance": 9,
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "TIM9",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073761280,
+      "instance": 4,
+      "ip_name": "uart",
+      "ip_version": "sci2_v1_2_F4_Cube",
+      "name": "UART4",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073762304,
+      "instance": 5,
+      "ip_name": "uart",
+      "ip_version": "sci2_v1_2_F4_Cube",
+      "name": "UART5",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073772544,
+      "instance": 7,
+      "ip_name": "uart",
+      "ip_version": null,
+      "name": "UART7",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073773568,
+      "instance": 8,
+      "ip_name": "uart",
+      "ip_version": null,
+      "name": "UART8",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073811456,
+      "instance": 1,
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "USART1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB2ENR.USART1EN",
+      "rcc_reset_signal": "RCC_APB2RSTR.USART1RST"
+    },
+    {
+      "base_address": 1073759232,
+      "instance": 2,
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "USART2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": "RCC_APB1ENR.USART2EN",
+      "rcc_reset_signal": "RCC_APB1RSTR.USART2RST"
+    },
+    {
+      "base_address": 1073760256,
+      "instance": 3,
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "USART3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073812480,
+      "instance": 6,
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "USART6",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "base_address": 1073753088,
+      "instance": 0,
+      "ip_name": "wwdg",
+      "ip_version": "wwdg1_v1_0",
+      "name": "WWDG",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    }
+  ],
+  "pins": [
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA0",
+      "number": 0,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN0"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA1",
+      "number": 1,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN1"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch2",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        },
+        {
+          "af_number": 2,
+          "function": "tim5_ch2",
+          "peripheral": "TIM5",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        },
+        {
+          "af_number": 7,
+          "function": "usart2_rts",
+          "peripheral": "USART2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "RTS"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA10",
+      "number": 10,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN10"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch3",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_rx",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "RX"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA11",
+      "number": 11,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN11"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch4",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH4"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_cts",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CTS"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA12",
+      "number": 12,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN12"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_etr",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "ETR"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_rts",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "RTS"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA13",
+      "number": 13,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN13"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA14",
+      "number": 14,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN14"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA15",
+      "number": 15,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN15"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_nss",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "NSS"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch1",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_etr",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "ETR"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA2",
+      "number": 2,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN2"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch3",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        },
+        {
+          "af_number": 2,
+          "function": "tim5_ch3",
+          "peripheral": "TIM5",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        },
+        {
+          "af_number": 7,
+          "function": "usart2_tx",
+          "peripheral": "USART2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "TX"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA3",
+      "number": 3,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN3"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch4",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH4"
+        },
+        {
+          "af_number": 2,
+          "function": "tim5_ch4",
+          "peripheral": "TIM5",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH4"
+        },
+        {
+          "af_number": 7,
+          "function": "usart2_rx",
+          "peripheral": "USART2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "RX"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA4",
+      "number": 4,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN4"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_nss",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "NSS"
+        },
+        {
+          "af_number": 7,
+          "function": "usart2_ck",
+          "peripheral": "USART2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CK"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA5",
+      "number": 5,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN5"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_sck",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCK"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch1",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_etr",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "ETR"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA6",
+      "number": 6,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN6"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_miso",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MISO"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_bkin",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "BKIN"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch1",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA7",
+      "number": 7,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN7"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_mosi",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MOSI"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch1n",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1N"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch2",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA8",
+      "number": 8,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN8"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch1",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_ck",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CK"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PA9",
+      "number": 9,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "A",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOA",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN9"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch2",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_tx",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "TX"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB0",
+      "number": 0,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN0"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch2n",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2N"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch3",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB1",
+      "number": 1,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN1"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch3n",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3N"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch4",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH4"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB10",
+      "number": 10,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN10"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c2_scl",
+          "peripheral": "I2C2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCL"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_sck",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCK"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch3",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f405rg"
+      ],
+      "name": "PB11",
+      "number": 11,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F405RGTx.xml"
+          },
+          "signal": "IN11"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c2_sda",
+          "peripheral": "I2C2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F405RGTx.xml"
+          },
+          "signal": "SDA"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch4",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F405RGTx.xml"
+          },
+          "signal": "CH4"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB12",
+      "number": 12,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN12"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c2_smba",
+          "peripheral": "I2C2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SMBA"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_nss",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "NSS"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_bkin",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "BKIN"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB13",
+      "number": 13,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN13"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_sck",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCK"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch1n",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1N"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB14",
+      "number": 14,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN14"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_miso",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MISO"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch2n",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2N"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB15",
+      "number": 15,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN15"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_mosi",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MOSI"
+        },
+        {
+          "af_number": 1,
+          "function": "tim1_ch3n",
+          "peripheral": "TIM1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3N"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB2",
+      "number": 2,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN2"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB3",
+      "number": 3,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN3"
+        },
+        {
+          "af_number": 9,
+          "function": "i2c2_sda",
+          "peripheral": "I2C2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SDA"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_sck",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCK"
+        },
+        {
+          "af_number": 1,
+          "function": "tim2_ch2",
+          "peripheral": "TIM2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB4",
+      "number": 4,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN4"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_miso",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MISO"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch1",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB5",
+      "number": 5,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN5"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c1_smba",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SMBA"
+        },
+        {
+          "af_number": 5,
+          "function": "spi1_mosi",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MOSI"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch2",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB6",
+      "number": 6,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN6"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c1_scl",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCL"
+        },
+        {
+          "af_number": 2,
+          "function": "tim4_ch1",
+          "peripheral": "TIM4",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_tx",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "TX"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB7",
+      "number": 7,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN7"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c1_sda",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SDA"
+        },
+        {
+          "af_number": 2,
+          "function": "tim4_ch2",
+          "peripheral": "TIM4",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        },
+        {
+          "af_number": 7,
+          "function": "usart1_rx",
+          "peripheral": "USART1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "RX"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB8",
+      "number": 8,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN8"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c1_scl",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SCL"
+        },
+        {
+          "af_number": 2,
+          "function": "tim4_ch3",
+          "peripheral": "TIM4",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PB9",
+      "number": 9,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "B",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN9"
+        },
+        {
+          "af_number": 4,
+          "function": "i2c1_sda",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "SDA"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_nss",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "NSS"
+        },
+        {
+          "af_number": 2,
+          "function": "tim4_ch4",
+          "peripheral": "TIM4",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH4"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC0",
+      "number": 0,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN0"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC1",
+      "number": 1,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN1"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC10",
+      "number": 10,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN10"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC11",
+      "number": 11,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN11"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC12",
+      "number": 12,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN12"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC13",
+      "number": 13,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN13"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC14",
+      "number": 14,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN14"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC15",
+      "number": 15,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN15"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC2",
+      "number": 2,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN2"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_miso",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MISO"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC3",
+      "number": 3,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN3"
+        },
+        {
+          "af_number": 5,
+          "function": "spi2_mosi",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "MOSI"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC4",
+      "number": 4,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN4"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC5",
+      "number": 5,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN5"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC6",
+      "number": 6,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN6"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch1",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH1"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC7",
+      "number": 7,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN7"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch2",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH2"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC8",
+      "number": 8,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN8"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch3",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH3"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PC9",
+      "number": 9,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "C",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOC",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN9"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_ch4",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "CH4"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PD2",
+      "number": 2,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "D",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOD",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN2"
+        },
+        {
+          "af_number": 2,
+          "function": "tim3_etr",
+          "peripheral": "TIM3",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "ETR"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PH0",
+      "number": 0,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "H",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOH",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN0"
+        }
+      ]
+    },
+    {
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "name": "PH1",
+      "number": 1,
+      "packages": [
+        "lqfp64"
+      ],
+      "port": "H",
+      "signals": [
+        {
+          "af_number": null,
+          "function": "gpio",
+          "peripheral": "GPIOH",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32F401R(B-C)Tx.xml"
+          },
+          "signal": "IN1"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "st"
+}

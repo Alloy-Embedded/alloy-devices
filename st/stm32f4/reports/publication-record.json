@@ -1,0 +1,818 @@
+{
+  "artifact_manifest": {
+    "build_metadata": {
+      "artifact_layout_version": "alloy-devices-v1",
+      "cpp_contract_version": "alloy-cpp-bootstrap-v1",
+      "pipeline_name": "alloy-codegen",
+      "target_repository": "alloy-devices"
+    },
+    "canonical_ir_sha256": "2b82d388227f84845a47095159873e4f1ed505c1e91009df404eb007972d5694",
+    "generator_version": "0.1.0",
+    "ir_schema_version": "1.1.0",
+    "manifest_kind": "artifact-manifest-v1",
+    "patch_manifest": {
+      "applied_patches": [
+        {
+          "description": "Bootstrap overlay patch for stm32f401re using family catalog st-stm32f4-family-bootstrap-v1.",
+          "patch_id": "st-stm32f4-stm32f401re-bootstrap"
+        },
+        {
+          "description": "Bootstrap overlay patch for stm32f405rg using family catalog st-stm32f4-family-bootstrap-v1.",
+          "patch_id": "st-stm32f4-stm32f405rg-bootstrap"
+        }
+      ],
+      "bootstrap_family": "stm32f4",
+      "manifest_kind": "patch-manifest-v1",
+      "targets": [
+        "stm32f401re",
+        "stm32f405rg"
+      ]
+    },
+    "scope": {
+      "device": null,
+      "family": "stm32f4",
+      "vendor": "st"
+    },
+    "source_manifest": {
+      "bootstrap_family": "stm32f4",
+      "manifest_kind": "source-manifest-v1",
+      "sources": [
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32F401.svd",
+          "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
+          "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
+          "scope": {
+            "device": null,
+            "family": "stm32f4",
+            "vendor": "st"
+          },
+          "source_id": "cmsis-svd-data",
+          "target_device": "stm32f401re",
+          "upstream_path": "data/STMicro/STM32F401.svd"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32F405.svd",
+          "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
+          "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
+          "scope": {
+            "device": null,
+            "family": "stm32f4",
+            "vendor": "st"
+          },
+          "source_id": "cmsis-svd-data",
+          "target_device": "stm32f405rg",
+          "upstream_path": "data/STMicro/STM32F405.svd"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32F401R(B-C)Tx.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32f4",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32f401re",
+          "upstream_path": "mcu/STM32F401R(B-C)Tx.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32F401_gpio_v1_0_Modes.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32f4",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32f401re",
+          "upstream_path": "mcu/IP/GPIO-STM32F401_gpio_v1_0_Modes.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32F405RGTx.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32f4",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32f405rg",
+          "upstream_path": "mcu/STM32F405RGTx.xml"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32F417_gpio_v1_0_Modes.xml",
+          "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
+          "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
+          "scope": {
+            "device": null,
+            "family": "stm32f4",
+            "vendor": "st"
+          },
+          "source_id": "stm32-open-pin-data",
+          "target_device": "stm32f405rg",
+          "upstream_path": "mcu/IP/GPIO-STM32F417_gpio_v1_0_Modes.xml"
+        }
+      ],
+      "targets": [
+        "stm32f401re",
+        "stm32f405rg"
+      ]
+    },
+    "validation_report_id": "bootstrap-validation-v1",
+    "validation_report_sha256": "1eee77cfacb285173e4cd246e15f32b3012f9ca7bbcaceebb02172f2ef518518"
+  },
+  "consumer_verification": {
+    "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32f401re",
+    "command": [
+      "/usr/bin/c++",
+      "-std=c++23",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
+      "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"st/stm32f4/generated/devices/stm32f401re/register_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"st/stm32f4/generated/peripherals/gpioa.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_CONNECTOR_TABLES_HEADER=\"st/stm32f4/generated/connector_tables.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_INTERRUPT_MAP_HEADER=\"st/stm32f4/generated/interrupt_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_MEMORY_MAP_HEADER=\"st/stm32f4/generated/memory_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_PACKAGE_MAP_HEADER=\"st/stm32f4/generated/package_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_CLOCK_TREE_HEADER=\"st/stm32f4/generated/clock_tree_lite.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_STARTUP_DESCRIPTORS_HEADER=\"st/stm32f4/generated/devices/stm32f401re/startup_descriptors.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=st::stm32f4::generated::devices::stm32f401re",
+      "-DALLOY_CODEGEN_SMOKE_GENERATED_NAMESPACE=st::stm32f4::generated",
+      "-DALLOY_CODEGEN_SMOKE_GPIO_NAMESPACE=st::stm32f4::generated::peripherals",
+      "-DALLOY_CODEGEN_SMOKE_IP_HEADER=\"st/stm32f4/generated/ip/i2c1_i2c1_v1_5_cube.hpp\"",
+      "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
+      "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32f4/generated/devices/stm32f401re/startup_vectors.cpp",
+      "-o",
+      "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32f401re/smoke-consumer"
+    ],
+    "compiler": "/usr/bin/c++",
+    "consumer_id": "alloy-published-artifact-smoke",
+    "executable_path": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/stm32f401re/smoke-consumer",
+    "source_file": "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_artifact_contract_smoke.cpp",
+    "startup_source": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/st/stm32f4/generated/devices/stm32f401re/startup_vectors.cpp",
+    "stderr": "",
+    "stdout": "",
+    "succeeded": true
+  },
+  "publication_mode": "published",
+  "published_artifact_count": 56,
+  "published_artifacts": [
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 4727,
+      "content_sha256": "4d80b98e42c1997f3f8976e32b01401b0d547b64b835957f1eeb5de4718a5cb4",
+      "path": "st/stm32f4/artifact-manifest.json"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 10103,
+      "content_sha256": "6d5d46cc339fd2ec74f7c81adbaa79a461cc8f76b79636672151864f43915e25",
+      "path": "st/stm32f4/generated/clock_tree_lite.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 133275,
+      "content_sha256": "c4ba95f24054b6eda8e9aab3ced0e2eb53d886d0e01c9159265e9146c49a4e5c",
+      "path": "st/stm32f4/generated/connector_tables.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1749,
+      "content_sha256": "c3cf8e3627dda71bad8f64fffb074b09e89c7c079b77256531e836d8b79f080e",
+      "path": "st/stm32f4/generated/devices/stm32f401re/register_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3986,
+      "content_sha256": "6da31b6d8baf9f2ce4cf218f3217dd71d2e94a67e5800df27080537f0357e6b5",
+      "path": "st/stm32f4/generated/devices/stm32f401re/startup_descriptors.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1749,
+      "content_sha256": "8f1837f3118d0a98b680315f25bad74349bdc87ab58272ff41d7d4ea7ad1d9ea",
+      "path": "st/stm32f4/generated/devices/stm32f401re/startup_vectors.cpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2747,
+      "content_sha256": "c40597870dd01c20f71ba3850099340f60cf42215309ec067664ac79ce17669e",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/register_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 7280,
+      "content_sha256": "5d4b26ce2a09fb7d12a9c81b7f19b8b0d51628af05cb6f886094570b92e18a86",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/startup_descriptors.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3323,
+      "content_sha256": "ec7f70aa3972978b8fe0044b800e8ba3aa2b89f02b33a2b596869988510fad27",
+      "path": "st/stm32f4/generated/devices/stm32f405rg/startup_vectors.cpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 462,
+      "content_sha256": "ecca865b26d2b9ac3792b49691505b9fbb556bb0081d699d4fd29f8740a66b29",
+      "path": "st/stm32f4/generated/dma_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 13790,
+      "content_sha256": "e8bfd074c38b650ab4c5418c976a7f3f123c5b865035b5a0323f2834199b3023",
+      "path": "st/stm32f4/generated/interrupt_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 734,
+      "content_sha256": "3e7b117af9fbe50eeccb043eeece1d88f27ae700602ea7fa2ed90f481ae3640d",
+      "path": "st/stm32f4/generated/ip/adc_aditf2_v1_1_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 734,
+      "content_sha256": "37f1564f7c6702a3bd201a5071f49d2134606b2566036894e590e2aa9260d505",
+      "path": "st/stm32f4/generated/ip/can_bxcan1_v1_1_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 732,
+      "content_sha256": "aa0263fc87d678cd973292a795a04cab683415a702c3b6a761b1e321979a8db9",
+      "path": "st/stm32f4/generated/ip/crc_integtest1_v1_0.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 732,
+      "content_sha256": "09e6128277b2bde2ff8b135aaa247713a3b3eabc14e880f767b1e92bc216d414",
+      "path": "st/stm32f4/generated/ip/dac_dacif_v1_1_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1134,
+      "content_sha256": "295608352f13fba53bb26e9e307017fc682cee7c6698338aa9db847a676bcfff",
+      "path": "st/stm32f4/generated/ip/i2c1_i2c1_v1_5_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1134,
+      "content_sha256": "0a752976a2a20e7dfdbccfb7dd8e69595846c92e6d7207a0094170692d7d2209",
+      "path": "st/stm32f4/generated/ip/i2c2_i2c1_v1_5_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 733,
+      "content_sha256": "31bb4bb039d1ad1d5a2cb39dd08b7304317ea1c55977dde835e170b016766fa1",
+      "path": "st/stm32f4/generated/ip/i2c3_i2c1_v1_5_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 725,
+      "content_sha256": "a0f117d097360edb2f338276f76167e29bd433efc913301e167188b028cdf058",
+      "path": "st/stm32f4/generated/ip/iwdg_iwdg1_v1_1.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 723,
+      "content_sha256": "b0b5ff401d8998ee5d9b87dbf03d71032661d8774d450c9e8edd5b2b37ce0797",
+      "path": "st/stm32f4/generated/ip/nvic_stm32f401.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 723,
+      "content_sha256": "4be3addfbd1b2cd7fef80082f3f82b38fdc77c9d83d008ce47fe47ea9f1e2680",
+      "path": "st/stm32f4/generated/ip/nvic_stm32f417.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 738,
+      "content_sha256": "37be829a6f36ab2f5ffc4f49dc398cdd5e01ccc36d40af76171ce4fce71b3206",
+      "path": "st/stm32f4/generated/ip/rcc_stm32f417_rcc_v1_0.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 720,
+      "content_sha256": "25a3b203c7561295f6c88d24df44b0733c97df6fb7ac529ce686569d47326d4a",
+      "path": "st/stm32f4/generated/ip/rng_rng1_v1_1.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 720,
+      "content_sha256": "a64de987641f000e9d3714195cecfa36ae7e36f6fbe59bf5e8cbdebf684c6104",
+      "path": "st/stm32f4/generated/ip/rtc_rtc2_v2_3.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 735,
+      "content_sha256": "c5a865edc2e67f32629e9b938fb2a018201ae8de5d6ed5c46ac8fc7c20382b50",
+      "path": "st/stm32f4/generated/ip/sdio_sdmmc_v1_2_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1274,
+      "content_sha256": "e9991f687a958d1f8da56bbb3f154099f5c38ff5df78f1eeaddad0115f45d641",
+      "path": "st/stm32f4/generated/ip/spi_spi2s1_v2_2_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2005,
+      "content_sha256": "f6a7edc2454735d916a7cd4fcad3887c38735d143b46ab3348f7ea2d5b01ceb2",
+      "path": "st/stm32f4/generated/ip/tim_gptimer2_v2_x_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 739,
+      "content_sha256": "6321d76cd78f30a7d2d1edc3349e840d59efd78abb5434d84179cfab4a65f39a",
+      "path": "st/stm32f4/generated/ip/uart_sci2_v1_2_f4_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1398,
+      "content_sha256": "ebb659cd7c38c0d02bb76cefc210432b7b3248067bb92a8805699c3e21fd85b7",
+      "path": "st/stm32f4/generated/ip/usart_sci2_v1_2_cube.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 725,
+      "content_sha256": "0865562bd50fd5dfc05b8f2afa590f657076b40a1cbf898863ab91cdfd4566b6",
+      "path": "st/stm32f4/generated/ip/wwdg_wwdg1_v1_0.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 821,
+      "content_sha256": "8ffe3ed45ea86572314cd802c1e0742a4c3a03be75a7e7d84d11a42c00582e4f",
+      "path": "st/stm32f4/generated/memory_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 9712,
+      "content_sha256": "e207bb813ffde0957be06ea6cd4c82c09370717ecc39d4b702d92a735d3393e8",
+      "path": "st/stm32f4/generated/package_map.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 407,
+      "content_sha256": "9decc48481c5f11588bbad2a3d233437c061a74d5b28972e4d8314e39d9b7d94",
+      "path": "st/stm32f4/generated/peripherals/gpioa.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 407,
+      "content_sha256": "d028250729e3acf8a47a1a5ad63ea7789c00d3a55a7416c2b9ac79aeac5fcb0f",
+      "path": "st/stm32f4/generated/peripherals/gpiob.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 407,
+      "content_sha256": "a3a16980569a80ecc77fd54d96fe728c270625b35790891d563adcbe7b461729",
+      "path": "st/stm32f4/generated/peripherals/gpioc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 407,
+      "content_sha256": "c22cee47422e656dcbebed04f163fd243b3af61fec1a5f46ba6ce791c54abf75",
+      "path": "st/stm32f4/generated/peripherals/gpiod.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "1278e24546d15197376e2b74aaccfa6041b1b8ec31beddfa898c33a799e4c1cf",
+      "path": "st/stm32f4/generated/peripherals/gpioe.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "8dd01250c450e052cad3c6c93947f9afb34ee99a1200c98fbd50043d47fe52a3",
+      "path": "st/stm32f4/generated/peripherals/gpiof.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "e2e4501785f60225b1af01222ca37c533117403e421e801f6167827835b550a0",
+      "path": "st/stm32f4/generated/peripherals/gpiog.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 407,
+      "content_sha256": "f3392b79e784539cb0e18098440ae229960efd98a06b30bdae17e38f266a27c7",
+      "path": "st/stm32f4/generated/peripherals/gpioh.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "7f47088246c3db908eee61565a349bb9ba3eac420818c33c48b87d5f01c1cf0c",
+      "path": "st/stm32f4/generated/peripherals/gpioi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "a3b9c6e2907e17b390bd77e32f9d20ed026117f638b5cc2122d538892d322363",
+      "path": "st/stm32f4/generated/peripherals/gpioj.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 377,
+      "content_sha256": "98d2cd2e71b34e1d0accea94b924a9ff6eb7ebc5bb3db60db08cfac38c021fbe",
+      "path": "st/stm32f4/generated/peripherals/gpiok.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1305,
+      "content_sha256": "988f9264b1965b8c40e2d0597b87e808c56d689c3b3b00ad5dfd24fdcd880558",
+      "path": "st/stm32f4/generated/rcc_map.hpp"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 40887,
+      "content_sha256": "8d0d7cb357b42019268001e4ef301e8bd7d287be69d3a3f1cf1ea1ee37c8d3b7",
+      "path": "st/stm32f4/metadata/capabilities.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 448382,
+      "content_sha256": "47d8d5b0451945ab3ed475151cd45764b3f3c48d6ef2b6ec4519df194d42b2f2",
+      "path": "st/stm32f4/metadata/connectors.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 438671,
+      "content_sha256": "7e639737b0d26e0cf2ad0c6a7e5dfaef681cf259a8bc88a982fbc59538ba1241",
+      "path": "st/stm32f4/metadata/devices/stm32f401re.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 496846,
+      "content_sha256": "9babee120af266ec90bfe82bf4da2cdb8aa9a031916ff165313fbaa6f63b8157",
+      "path": "st/stm32f4/metadata/devices/stm32f405rg.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 153992,
+      "content_sha256": "4f143b7fea952e31726aeb3b1d4327b03c845e0e3be39e1920e914f056ee127d",
+      "path": "st/stm32f4/metadata/family-connectivity.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 592,
+      "content_sha256": "215e97537e3ed2a82278070d0b99148714eceb3dae80a3723792451c6edc6735",
+      "path": "st/stm32f4/metadata/family-index.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 32181,
+      "content_sha256": "c27dac2a302cb7cf133e08355bd615c11b4d610c1a2c7530679227459bfb2936",
+      "path": "st/stm32f4/metadata/ip-blocks.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 61191,
+      "content_sha256": "a1e40466324a8d9c311ed80152c23b9e6ce188e89139c6b0cfc8d020a755e757",
+      "path": "st/stm32f4/metadata/packages.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 251451,
+      "content_sha256": "6968bfc22ca59ce49caebac9288f2b0206c419c31d44dde6872a871e7fdfda52",
+      "path": "st/stm32f4/metadata/system-descriptors.json"
+    },
+    {
+      "artifact_kind": "coverage-report",
+      "content_bytes": 2376,
+      "content_sha256": "a5e103912b2adbf32be8a50c3d8282927881c5d0faa3d2ff0d5e31c64616efe9",
+      "path": "st/stm32f4/reports/coverage.json"
+    },
+    {
+      "artifact_kind": "validation-report",
+      "content_bytes": 50519,
+      "content_sha256": "1eee77cfacb285173e4cd246e15f32b3012f9ca7bbcaceebb02172f2ef518518",
+      "path": "st/stm32f4/reports/validation-report.json"
+    },
+    {
+      "artifact_kind": "validation-report",
+      "content_bytes": 14850,
+      "content_sha256": "3732f7a0d731ddf4b4c9cdbb9704a273f189491639707e68d5b774ab17df409f",
+      "path": "st/stm32f4/reports/validation-summary.json"
+    }
+  ],
+  "scope": {
+    "device": null,
+    "family": "stm32f4",
+    "vendor": "st"
+  },
+  "target_artifact_revision": "77024c73e740deeab67b6c20f988f92eb973bc0144063d550540f2b8c0843971",
+  "target_repository": "alloy-devices",
+  "validation": {
+    "draft_system_descriptor_domains": [],
+    "gates": [
+      {
+        "blocking": false,
+        "gate_id": "gate-a",
+        "message": "gate-a passed with 6 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "source-records-cover-targets",
+          "source-records-provide-required-upstreams",
+          "source-records-have-revisions",
+          "source-records-have-local-paths",
+          "patch-target-count-match",
+          "patch-ids-unique"
+        ]
+      },
+      {
+        "blocking": false,
+        "gate_id": "gate-b",
+        "message": "gate-b passed with 6 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-schema-version-present",
+          "stm32f401re-identity-fields-present",
+          "stm32f401re-required-sections-present",
+          "stm32f405rg-schema-version-present",
+          "stm32f405rg-identity-fields-present",
+          "stm32f405rg-required-sections-present"
+        ]
+      },
+      {
+        "blocking": true,
+        "gate_id": "gate-c",
+        "message": "gate-c passed with 136 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-package-pin-count-covers-known-pins",
+          "stm32f401re-pin-port-has-gpio-peripheral",
+          "stm32f401re-pin-signals-present",
+          "stm32f401re-pin-signals-reference-known-peripherals",
+          "stm32f401re-alternate-functions-explicit",
+          "stm32f401re-memory-sizes-positive",
+          "stm32f401re-peripheral-bases-unique",
+          "stm32f401re-interrupts-present",
+          "stm32f401re-interrupts-reference-known-peripherals",
+          "stm32f401re-referenced-peripherals-have-rcc-enable",
+          "stm32f401re-dma-controllers-known",
+          "stm32f401re-dma-request-peripherals-known",
+          "stm32f401re-dma-routes-unique",
+          "stm32f401re-package-pads-present",
+          "stm32f401re-package-pad-ids-unique",
+          "stm32f401re-package-pads-reference-known-packages",
+          "stm32f401re-package-variants-have-pad-coverage",
+          "stm32f401re-package-pad-positions-unique",
+          "stm32f401re-package-pad-bonding-state-consistent",
+          "stm32f401re-package-pads-reference-known-pins",
+          "stm32f401re-bonded-pins-have-package-pad",
+          "stm32f401re-signal-endpoints-present",
+          "stm32f401re-connection-candidates-present",
+          "stm32f401re-connection-candidates-reference-known-pins",
+          "stm32f401re-connection-candidates-reference-known-peripherals",
+          "stm32f401re-connection-candidates-reference-known-groups",
+          "stm32f401re-connection-candidates-reference-known-requirements",
+          "stm32f401re-connection-candidates-carry-package-requirement",
+          "stm32f401re-connection-candidates-carry-source-requirement",
+          "stm32f401re-connection-candidates-reference-known-operations",
+          "stm32f401re-connection-candidates-reference-known-capabilities",
+          "stm32f401re-capability-descriptors-carry-context",
+          "stm32f401re-candidate-capabilities-resolve-from-descriptors",
+          "stm32f401re-connection-groups-reference-known-candidates",
+          "stm32f401re-connection-groups-match-selected-package",
+          "stm32f401re-connection-groups-have-satisfiable-signals",
+          "stm32f401re-connection-groups-reference-known-packages",
+          "stm32f401re-multi-signal-connection-groups-present",
+          "stm32f401re-ip-blocks-cover-versioned-instances",
+          "stm32f401re-interrupts-carry-aliases",
+          "stm32f401re-interrupt-aliases-unique",
+          "stm32f401re-interrupt-shared-groups-consistent",
+          "stm32f401re-vector-slots-reference-known-interrupts",
+          "stm32f401re-vector-slots-unique",
+          "stm32f401re-interrupts-have-vector-slot",
+          "stm32f401re-vector-slots-include-system-baseline",
+          "stm32f401re-memory-regions-carry-startup-roles",
+          "stm32f401re-startup-descriptors-present",
+          "stm32f401re-startup-descriptors-reference-known-memories",
+          "stm32f401re-startup-descriptors-cover-memory-roles",
+          "stm32f401re-startup-descriptors-include-runtime-baseline",
+          "stm32f401re-startup-descriptors-emit-without-handwritten-tables",
+          "stm32f401re-clock-bindings-reference-known-descriptors",
+          "stm32f401re-clock-node-parents-known",
+          "stm32f401re-clock-graph-reaches-root",
+          "stm32f401re-clock-selectors-structured",
+          "stm32f401re-clock-gates-reference-known-nodes",
+          "stm32f401re-clock-bound-peripherals-covered",
+          "stm32f401re-dma-controller-descriptors-complete",
+          "stm32f401re-dma-controller-request-counts-match",
+          "stm32f401re-dma-routes-cover-requests",
+          "stm32f401re-dma-routes-reference-known-controllers",
+          "stm32f401re-dma-routes-reference-known-peripherals",
+          "stm32f401re-dma-routes-reference-known-conflicts",
+          "stm32f401re-dma-conflict-groups-reference-known-routes",
+          "stm32f401re-dma-conflict-groups-nontrivial",
+          "stm32f401re-dma-route-conflict-annotations-consistent",
+          "stm32f405rg-package-pin-count-covers-known-pins",
+          "stm32f405rg-pin-port-has-gpio-peripheral",
+          "stm32f405rg-pin-signals-present",
+          "stm32f405rg-pin-signals-reference-known-peripherals",
+          "stm32f405rg-alternate-functions-explicit",
+          "stm32f405rg-memory-sizes-positive",
+          "stm32f405rg-peripheral-bases-unique",
+          "stm32f405rg-interrupts-present",
+          "stm32f405rg-interrupts-reference-known-peripherals",
+          "stm32f405rg-referenced-peripherals-have-rcc-enable",
+          "stm32f405rg-dma-controllers-known",
+          "stm32f405rg-dma-request-peripherals-known",
+          "stm32f405rg-dma-routes-unique",
+          "stm32f405rg-package-pads-present",
+          "stm32f405rg-package-pad-ids-unique",
+          "stm32f405rg-package-pads-reference-known-packages",
+          "stm32f405rg-package-variants-have-pad-coverage",
+          "stm32f405rg-package-pad-positions-unique",
+          "stm32f405rg-package-pad-bonding-state-consistent",
+          "stm32f405rg-package-pads-reference-known-pins",
+          "stm32f405rg-bonded-pins-have-package-pad",
+          "stm32f405rg-signal-endpoints-present",
+          "stm32f405rg-connection-candidates-present",
+          "stm32f405rg-connection-candidates-reference-known-pins",
+          "stm32f405rg-connection-candidates-reference-known-peripherals",
+          "stm32f405rg-connection-candidates-reference-known-groups",
+          "stm32f405rg-connection-candidates-reference-known-requirements",
+          "stm32f405rg-connection-candidates-carry-package-requirement",
+          "stm32f405rg-connection-candidates-carry-source-requirement",
+          "stm32f405rg-connection-candidates-reference-known-operations",
+          "stm32f405rg-connection-candidates-reference-known-capabilities",
+          "stm32f405rg-capability-descriptors-carry-context",
+          "stm32f405rg-candidate-capabilities-resolve-from-descriptors",
+          "stm32f405rg-connection-groups-reference-known-candidates",
+          "stm32f405rg-connection-groups-match-selected-package",
+          "stm32f405rg-connection-groups-have-satisfiable-signals",
+          "stm32f405rg-connection-groups-reference-known-packages",
+          "stm32f405rg-multi-signal-connection-groups-present",
+          "stm32f405rg-ip-blocks-cover-versioned-instances",
+          "stm32f405rg-interrupts-carry-aliases",
+          "stm32f405rg-interrupt-aliases-unique",
+          "stm32f405rg-interrupt-shared-groups-consistent",
+          "stm32f405rg-vector-slots-reference-known-interrupts",
+          "stm32f405rg-vector-slots-unique",
+          "stm32f405rg-interrupts-have-vector-slot",
+          "stm32f405rg-vector-slots-include-system-baseline",
+          "stm32f405rg-memory-regions-carry-startup-roles",
+          "stm32f405rg-startup-descriptors-present",
+          "stm32f405rg-startup-descriptors-reference-known-memories",
+          "stm32f405rg-startup-descriptors-cover-memory-roles",
+          "stm32f405rg-startup-descriptors-include-runtime-baseline",
+          "stm32f405rg-startup-descriptors-emit-without-handwritten-tables",
+          "stm32f405rg-clock-bindings-reference-known-descriptors",
+          "stm32f405rg-clock-node-parents-known",
+          "stm32f405rg-clock-graph-reaches-root",
+          "stm32f405rg-clock-selectors-structured",
+          "stm32f405rg-clock-gates-reference-known-nodes",
+          "stm32f405rg-clock-bound-peripherals-covered",
+          "stm32f405rg-dma-controller-descriptors-complete",
+          "stm32f405rg-dma-controller-request-counts-match",
+          "stm32f405rg-dma-routes-cover-requests",
+          "stm32f405rg-dma-routes-reference-known-controllers",
+          "stm32f405rg-dma-routes-reference-known-peripherals",
+          "stm32f405rg-dma-routes-reference-known-conflicts",
+          "stm32f405rg-dma-conflict-groups-reference-known-routes",
+          "stm32f405rg-dma-conflict-groups-nontrivial",
+          "stm32f405rg-dma-route-conflict-annotations-consistent",
+          "st-stm32f4-family-devices-expose-multi-signal-groups",
+          "st-stm32f4-family-reuses-ip-version-descriptors"
+        ]
+      }
+    ],
+    "is_passing": true,
+    "report_id": "bootstrap-validation-v1",
+    "system_descriptor_domains": [
+      {
+        "domain_id": "interrupt",
+        "draft": false,
+        "message": "interrupt domain is publishable with 12 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-interrupts-reference-known-peripherals",
+          "stm32f401re-interrupt-aliases-unique",
+          "stm32f401re-interrupt-shared-groups-consistent",
+          "stm32f401re-vector-slots-reference-known-interrupts",
+          "stm32f401re-vector-slots-unique",
+          "stm32f401re-interrupts-have-vector-slot",
+          "stm32f405rg-interrupts-reference-known-peripherals",
+          "stm32f405rg-interrupt-aliases-unique",
+          "stm32f405rg-interrupt-shared-groups-consistent",
+          "stm32f405rg-vector-slots-reference-known-interrupts",
+          "stm32f405rg-vector-slots-unique",
+          "stm32f405rg-interrupts-have-vector-slot"
+        ]
+      },
+      {
+        "domain_id": "memory",
+        "draft": false,
+        "message": "memory domain is publishable with 4 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-memory-sizes-positive",
+          "stm32f401re-memory-regions-carry-startup-roles",
+          "stm32f405rg-memory-sizes-positive",
+          "stm32f405rg-memory-regions-carry-startup-roles"
+        ]
+      },
+      {
+        "domain_id": "startup",
+        "draft": false,
+        "message": "startup domain is publishable with 12 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-vector-slots-include-system-baseline",
+          "stm32f401re-startup-descriptors-present",
+          "stm32f401re-startup-descriptors-reference-known-memories",
+          "stm32f401re-startup-descriptors-cover-memory-roles",
+          "stm32f401re-startup-descriptors-include-runtime-baseline",
+          "stm32f401re-startup-descriptors-emit-without-handwritten-tables",
+          "stm32f405rg-vector-slots-include-system-baseline",
+          "stm32f405rg-startup-descriptors-present",
+          "stm32f405rg-startup-descriptors-reference-known-memories",
+          "stm32f405rg-startup-descriptors-cover-memory-roles",
+          "stm32f405rg-startup-descriptors-include-runtime-baseline",
+          "stm32f405rg-startup-descriptors-emit-without-handwritten-tables"
+        ]
+      },
+      {
+        "domain_id": "clock-reset",
+        "draft": false,
+        "message": "clock-reset domain is publishable with 14 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-referenced-peripherals-have-rcc-enable",
+          "stm32f401re-clock-bindings-reference-known-descriptors",
+          "stm32f401re-clock-node-parents-known",
+          "stm32f401re-clock-graph-reaches-root",
+          "stm32f401re-clock-selectors-structured",
+          "stm32f401re-clock-gates-reference-known-nodes",
+          "stm32f401re-clock-bound-peripherals-covered",
+          "stm32f405rg-referenced-peripherals-have-rcc-enable",
+          "stm32f405rg-clock-bindings-reference-known-descriptors",
+          "stm32f405rg-clock-node-parents-known",
+          "stm32f405rg-clock-graph-reaches-root",
+          "stm32f405rg-clock-selectors-structured",
+          "stm32f405rg-clock-gates-reference-known-nodes",
+          "stm32f405rg-clock-bound-peripherals-covered"
+        ]
+      },
+      {
+        "domain_id": "dma",
+        "draft": false,
+        "message": "dma domain is publishable with 22 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-dma-controllers-known",
+          "stm32f401re-dma-request-peripherals-known",
+          "stm32f401re-dma-routes-unique",
+          "stm32f401re-dma-controller-descriptors-complete",
+          "stm32f401re-dma-routes-cover-requests",
+          "stm32f401re-dma-routes-reference-known-controllers",
+          "stm32f401re-dma-routes-reference-known-peripherals",
+          "stm32f401re-dma-routes-reference-known-conflicts",
+          "stm32f401re-dma-conflict-groups-reference-known-routes",
+          "stm32f401re-dma-conflict-groups-nontrivial",
+          "stm32f401re-dma-route-conflict-annotations-consistent",
+          "stm32f405rg-dma-controllers-known",
+          "stm32f405rg-dma-request-peripherals-known",
+          "stm32f405rg-dma-routes-unique",
+          "stm32f405rg-dma-controller-descriptors-complete",
+          "stm32f405rg-dma-routes-cover-requests",
+          "stm32f405rg-dma-routes-reference-known-controllers",
+          "stm32f405rg-dma-routes-reference-known-peripherals",
+          "stm32f405rg-dma-routes-reference-known-conflicts",
+          "stm32f405rg-dma-conflict-groups-reference-known-routes",
+          "stm32f405rg-dma-conflict-groups-nontrivial",
+          "stm32f405rg-dma-route-conflict-annotations-consistent"
+        ]
+      },
+      {
+        "domain_id": "package",
+        "draft": false,
+        "message": "package domain is publishable with 14 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "stm32f401re-package-pads-present",
+          "stm32f401re-package-pad-ids-unique",
+          "stm32f401re-package-pads-reference-known-packages",
+          "stm32f401re-package-variants-have-pad-coverage",
+          "stm32f401re-package-pad-positions-unique",
+          "stm32f401re-package-pads-reference-known-pins",
+          "stm32f401re-bonded-pins-have-package-pad",
+          "stm32f405rg-package-pads-present",
+          "stm32f405rg-package-pad-ids-unique",
+          "stm32f405rg-package-pads-reference-known-packages",
+          "stm32f405rg-package-variants-have-pad-coverage",
+          "stm32f405rg-package-pad-positions-unique",
+          "stm32f405rg-package-pads-reference-known-pins",
+          "stm32f405rg-bonded-pins-have-package-pad"
+        ]
+      }
+    ]
+  }
+}

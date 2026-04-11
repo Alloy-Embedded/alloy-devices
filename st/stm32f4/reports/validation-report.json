@@ -1,0 +1,1350 @@
+{
+  "draft_system_descriptor_domains": [],
+  "gates": [
+    {
+      "blocking": false,
+      "gate_id": "gate-a",
+      "message": "gate-a passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "source-records-cover-targets",
+        "source-records-provide-required-upstreams",
+        "source-records-have-revisions",
+        "source-records-have-local-paths",
+        "patch-target-count-match",
+        "patch-ids-unique"
+      ]
+    },
+    {
+      "blocking": false,
+      "gate_id": "gate-b",
+      "message": "gate-b passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-schema-version-present",
+        "stm32f401re-identity-fields-present",
+        "stm32f401re-required-sections-present",
+        "stm32f405rg-schema-version-present",
+        "stm32f405rg-identity-fields-present",
+        "stm32f405rg-required-sections-present"
+      ]
+    },
+    {
+      "blocking": true,
+      "gate_id": "gate-c",
+      "message": "gate-c passed with 136 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-package-pin-count-covers-known-pins",
+        "stm32f401re-pin-port-has-gpio-peripheral",
+        "stm32f401re-pin-signals-present",
+        "stm32f401re-pin-signals-reference-known-peripherals",
+        "stm32f401re-alternate-functions-explicit",
+        "stm32f401re-memory-sizes-positive",
+        "stm32f401re-peripheral-bases-unique",
+        "stm32f401re-interrupts-present",
+        "stm32f401re-interrupts-reference-known-peripherals",
+        "stm32f401re-referenced-peripherals-have-rcc-enable",
+        "stm32f401re-dma-controllers-known",
+        "stm32f401re-dma-request-peripherals-known",
+        "stm32f401re-dma-routes-unique",
+        "stm32f401re-package-pads-present",
+        "stm32f401re-package-pad-ids-unique",
+        "stm32f401re-package-pads-reference-known-packages",
+        "stm32f401re-package-variants-have-pad-coverage",
+        "stm32f401re-package-pad-positions-unique",
+        "stm32f401re-package-pad-bonding-state-consistent",
+        "stm32f401re-package-pads-reference-known-pins",
+        "stm32f401re-bonded-pins-have-package-pad",
+        "stm32f401re-signal-endpoints-present",
+        "stm32f401re-connection-candidates-present",
+        "stm32f401re-connection-candidates-reference-known-pins",
+        "stm32f401re-connection-candidates-reference-known-peripherals",
+        "stm32f401re-connection-candidates-reference-known-groups",
+        "stm32f401re-connection-candidates-reference-known-requirements",
+        "stm32f401re-connection-candidates-carry-package-requirement",
+        "stm32f401re-connection-candidates-carry-source-requirement",
+        "stm32f401re-connection-candidates-reference-known-operations",
+        "stm32f401re-connection-candidates-reference-known-capabilities",
+        "stm32f401re-capability-descriptors-carry-context",
+        "stm32f401re-candidate-capabilities-resolve-from-descriptors",
+        "stm32f401re-connection-groups-reference-known-candidates",
+        "stm32f401re-connection-groups-match-selected-package",
+        "stm32f401re-connection-groups-have-satisfiable-signals",
+        "stm32f401re-connection-groups-reference-known-packages",
+        "stm32f401re-multi-signal-connection-groups-present",
+        "stm32f401re-ip-blocks-cover-versioned-instances",
+        "stm32f401re-interrupts-carry-aliases",
+        "stm32f401re-interrupt-aliases-unique",
+        "stm32f401re-interrupt-shared-groups-consistent",
+        "stm32f401re-vector-slots-reference-known-interrupts",
+        "stm32f401re-vector-slots-unique",
+        "stm32f401re-interrupts-have-vector-slot",
+        "stm32f401re-vector-slots-include-system-baseline",
+        "stm32f401re-memory-regions-carry-startup-roles",
+        "stm32f401re-startup-descriptors-present",
+        "stm32f401re-startup-descriptors-reference-known-memories",
+        "stm32f401re-startup-descriptors-cover-memory-roles",
+        "stm32f401re-startup-descriptors-include-runtime-baseline",
+        "stm32f401re-startup-descriptors-emit-without-handwritten-tables",
+        "stm32f401re-clock-bindings-reference-known-descriptors",
+        "stm32f401re-clock-node-parents-known",
+        "stm32f401re-clock-graph-reaches-root",
+        "stm32f401re-clock-selectors-structured",
+        "stm32f401re-clock-gates-reference-known-nodes",
+        "stm32f401re-clock-bound-peripherals-covered",
+        "stm32f401re-dma-controller-descriptors-complete",
+        "stm32f401re-dma-controller-request-counts-match",
+        "stm32f401re-dma-routes-cover-requests",
+        "stm32f401re-dma-routes-reference-known-controllers",
+        "stm32f401re-dma-routes-reference-known-peripherals",
+        "stm32f401re-dma-routes-reference-known-conflicts",
+        "stm32f401re-dma-conflict-groups-reference-known-routes",
+        "stm32f401re-dma-conflict-groups-nontrivial",
+        "stm32f401re-dma-route-conflict-annotations-consistent",
+        "stm32f405rg-package-pin-count-covers-known-pins",
+        "stm32f405rg-pin-port-has-gpio-peripheral",
+        "stm32f405rg-pin-signals-present",
+        "stm32f405rg-pin-signals-reference-known-peripherals",
+        "stm32f405rg-alternate-functions-explicit",
+        "stm32f405rg-memory-sizes-positive",
+        "stm32f405rg-peripheral-bases-unique",
+        "stm32f405rg-interrupts-present",
+        "stm32f405rg-interrupts-reference-known-peripherals",
+        "stm32f405rg-referenced-peripherals-have-rcc-enable",
+        "stm32f405rg-dma-controllers-known",
+        "stm32f405rg-dma-request-peripherals-known",
+        "stm32f405rg-dma-routes-unique",
+        "stm32f405rg-package-pads-present",
+        "stm32f405rg-package-pad-ids-unique",
+        "stm32f405rg-package-pads-reference-known-packages",
+        "stm32f405rg-package-variants-have-pad-coverage",
+        "stm32f405rg-package-pad-positions-unique",
+        "stm32f405rg-package-pad-bonding-state-consistent",
+        "stm32f405rg-package-pads-reference-known-pins",
+        "stm32f405rg-bonded-pins-have-package-pad",
+        "stm32f405rg-signal-endpoints-present",
+        "stm32f405rg-connection-candidates-present",
+        "stm32f405rg-connection-candidates-reference-known-pins",
+        "stm32f405rg-connection-candidates-reference-known-peripherals",
+        "stm32f405rg-connection-candidates-reference-known-groups",
+        "stm32f405rg-connection-candidates-reference-known-requirements",
+        "stm32f405rg-connection-candidates-carry-package-requirement",
+        "stm32f405rg-connection-candidates-carry-source-requirement",
+        "stm32f405rg-connection-candidates-reference-known-operations",
+        "stm32f405rg-connection-candidates-reference-known-capabilities",
+        "stm32f405rg-capability-descriptors-carry-context",
+        "stm32f405rg-candidate-capabilities-resolve-from-descriptors",
+        "stm32f405rg-connection-groups-reference-known-candidates",
+        "stm32f405rg-connection-groups-match-selected-package",
+        "stm32f405rg-connection-groups-have-satisfiable-signals",
+        "stm32f405rg-connection-groups-reference-known-packages",
+        "stm32f405rg-multi-signal-connection-groups-present",
+        "stm32f405rg-ip-blocks-cover-versioned-instances",
+        "stm32f405rg-interrupts-carry-aliases",
+        "stm32f405rg-interrupt-aliases-unique",
+        "stm32f405rg-interrupt-shared-groups-consistent",
+        "stm32f405rg-vector-slots-reference-known-interrupts",
+        "stm32f405rg-vector-slots-unique",
+        "stm32f405rg-interrupts-have-vector-slot",
+        "stm32f405rg-vector-slots-include-system-baseline",
+        "stm32f405rg-memory-regions-carry-startup-roles",
+        "stm32f405rg-startup-descriptors-present",
+        "stm32f405rg-startup-descriptors-reference-known-memories",
+        "stm32f405rg-startup-descriptors-cover-memory-roles",
+        "stm32f405rg-startup-descriptors-include-runtime-baseline",
+        "stm32f405rg-startup-descriptors-emit-without-handwritten-tables",
+        "stm32f405rg-clock-bindings-reference-known-descriptors",
+        "stm32f405rg-clock-node-parents-known",
+        "stm32f405rg-clock-graph-reaches-root",
+        "stm32f405rg-clock-selectors-structured",
+        "stm32f405rg-clock-gates-reference-known-nodes",
+        "stm32f405rg-clock-bound-peripherals-covered",
+        "stm32f405rg-dma-controller-descriptors-complete",
+        "stm32f405rg-dma-controller-request-counts-match",
+        "stm32f405rg-dma-routes-cover-requests",
+        "stm32f405rg-dma-routes-reference-known-controllers",
+        "stm32f405rg-dma-routes-reference-known-peripherals",
+        "stm32f405rg-dma-routes-reference-known-conflicts",
+        "stm32f405rg-dma-conflict-groups-reference-known-routes",
+        "stm32f405rg-dma-conflict-groups-nontrivial",
+        "stm32f405rg-dma-route-conflict-annotations-consistent",
+        "st-stm32f4-family-devices-expose-multi-signal-groups",
+        "st-stm32f4-family-reuses-ip-version-descriptors"
+      ]
+    }
+  ],
+  "is_passing": true,
+  "report_id": "bootstrap-validation-v1",
+  "results": [
+    {
+      "category": "schema",
+      "message": "Source records cover every requested bootstrap target.",
+      "passed": true,
+      "rule_id": "source-records-cover-targets",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Every target carries records drawn from the declared family source bundle.",
+      "passed": true,
+      "rule_id": "source-records-provide-required-upstreams",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "All source records carry a concrete upstream revision.",
+      "passed": true,
+      "rule_id": "source-records-have-revisions",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "All source records expose a resolved local path.",
+      "passed": true,
+      "rule_id": "source-records-have-local-paths",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Found 2 patch record(s) for 2 target(s).",
+      "passed": true,
+      "rule_id": "patch-target-count-match",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Patch identifiers are unique within the requested scope.",
+      "passed": true,
+      "rule_id": "patch-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "stm32f401re declares an IR schema version.",
+      "passed": true,
+      "rule_id": "stm32f401re-schema-version-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "stm32f401re exposes the required canonical identity fields.",
+      "passed": true,
+      "rule_id": "stm32f401re-identity-fields-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "stm32f401re contains non-empty required canonical sections.",
+      "passed": true,
+      "rule_id": "stm32f401re-required-sections-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "stm32f405rg declares an IR schema version.",
+      "passed": true,
+      "rule_id": "stm32f405rg-schema-version-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "stm32f405rg exposes the required canonical identity fields.",
+      "passed": true,
+      "rule_id": "stm32f405rg-identity-fields-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "stm32f405rg contains non-empty required canonical sections.",
+      "passed": true,
+      "rule_id": "stm32f405rg-required-sections-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re package pin count 64 covers 50 known pin definition(s).",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pin-count-covers-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re pin ports map to discovered GPIO peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-pin-port-has-gpio-peripheral",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re curated pins expose explicit signal metadata.",
+      "passed": true,
+      "rule_id": "stm32f401re-pin-signals-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re pin signals only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-pin-signals-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re non-GPIO alternate functions carry explicit AF numbers.",
+      "passed": true,
+      "rule_id": "stm32f401re-alternate-functions-explicit",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re memory regions use positive non-placeholder sizes.",
+      "passed": true,
+      "rule_id": "stm32f401re-memory-sizes-positive",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re peripheral base addresses are unique.",
+      "passed": true,
+      "rule_id": "stm32f401re-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes interrupt metadata from the raw source.",
+      "passed": true,
+      "rule_id": "stm32f401re-interrupts-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re interrupt entries only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-interrupts-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re referenced peripherals expose RCC enable ownership.",
+      "passed": true,
+      "rule_id": "stm32f401re-referenced-peripherals-have-rcc-enable",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA requests reference known controller peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-controllers-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA requests reference known target peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-request-peripherals-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA controller/request-line pairs are unique.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-routes-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes package pad descriptors.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pads-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re package pad identifiers are unique.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pad-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re package pads reference declared packages.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pads-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re every declared package exposes package pads.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-variants-have-pad-coverage",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re package pad positions are unique per package.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pad-positions-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re package pad bonding state matches bonded-pin coverage.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pad-bonding-state-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re package pads reference declared bonded pins.",
+      "passed": true,
+      "rule_id": "stm32f401re-package-pads-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re every declared GPIO pin is covered by a package pad.",
+      "passed": true,
+      "rule_id": "stm32f401re-bonded-pins-have-package-pad",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes canonical signal endpoints.",
+      "passed": true,
+      "rule_id": "stm32f401re-signal-endpoints-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes route-driven connection candidates.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re connection candidates reference known pins.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re connection candidates reference known peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re connection candidates reference known route groups.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-reference-known-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route candidates only reference declared requirements.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-reference-known-requirements",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route candidates carry an explicit package requirement.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-carry-package-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route candidates with selectors carry an explicit source-selection requirement.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-carry-source-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route candidates only reference declared operations.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-reference-known-operations",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route candidates only reference declared capabilities.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-candidates-reference-known-capabilities",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re capability descriptors carry explicit ip-block or instance-overlay context.",
+      "passed": true,
+      "rule_id": "stm32f401re-capability-descriptors-carry-context",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re candidate capabilities resolve through ip-block and instance-overlay descriptors.",
+      "passed": true,
+      "rule_id": "stm32f401re-candidate-capabilities-resolve-from-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route groups only reference declared candidates.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-groups-reference-known-candidates",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route groups only admit candidates valid for the selected package and bonded pinout.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-groups-match-selected-package",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route groups declare satisfiable signal bundles.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-groups-have-satisfiable-signals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re route groups only reference declared packages.",
+      "passed": true,
+      "rule_id": "stm32f401re-connection-groups-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes at least one multi-signal connection group.",
+      "passed": true,
+      "rule_id": "stm32f401re-multi-signal-connection-groups-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re IP block descriptors cover versioned instances.",
+      "passed": true,
+      "rule_id": "stm32f401re-ip-blocks-cover-versioned-instances",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re interrupts carry explicit alias descriptors.",
+      "passed": true,
+      "rule_id": "stm32f401re-interrupts-carry-aliases",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re interrupt aliases are unique per interrupt.",
+      "passed": true,
+      "rule_id": "stm32f401re-interrupt-aliases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re interrupt shared groups describe a real multi-interrupt owner.",
+      "passed": true,
+      "rule_id": "stm32f401re-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re vector slots only reference declared interrupts.",
+      "passed": true,
+      "rule_id": "stm32f401re-vector-slots-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re vector slot numbers are unique.",
+      "passed": true,
+      "rule_id": "stm32f401re-vector-slots-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re every interrupt owns an external vector slot.",
+      "passed": true,
+      "rule_id": "stm32f401re-interrupts-have-vector-slot",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re vector slots include the system baseline slots.",
+      "passed": true,
+      "rule_id": "stm32f401re-vector-slots-include-system-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes startup-relevant memory classifications for at least one memory region.",
+      "passed": true,
+      "rule_id": "stm32f401re-memory-regions-carry-startup-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re exposes startup descriptors separately from logic.",
+      "passed": true,
+      "rule_id": "stm32f401re-startup-descriptors-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re startup descriptors only reference declared memories.",
+      "passed": true,
+      "rule_id": "stm32f401re-startup-descriptors-reference-known-memories",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re startup descriptors cover every startup-classified memory region.",
+      "passed": true,
+      "rule_id": "stm32f401re-startup-descriptors-cover-memory-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re startup descriptors include vector-table and initial-stack-pointer facts.",
+      "passed": true,
+      "rule_id": "stm32f401re-startup-descriptors-include-runtime-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re startup vectors and startup descriptors are sufficient to emit startup artifacts without handwritten device tables.",
+      "passed": true,
+      "rule_id": "stm32f401re-startup-descriptors-emit-without-handwritten-tables",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re clock bindings reference known gate/reset/selector descriptors.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re clock nodes only reference known parents.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-node-parents-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re clock graph remains root-reachable and acyclic.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-graph-reaches-root",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re clock selectors expose at least one parent option when present.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-selectors-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re clock gates reference known clock nodes.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-gates-reference-known-nodes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re peripherals with enable/reset ownership have clock bindings.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-bound-peripherals-covered",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA controllers expose non-empty channel and request counts.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-controller-descriptors-complete",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA controller request counts match the normalized DMA route set.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-controller-request-counts-match",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA routes cover the normalized DMA request set.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-routes-cover-requests",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA routes reference known controller descriptors.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-routes-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA routes reference known target peripherals.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-routes-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA routes reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA conflict groups reference known DMA routes.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-conflict-groups-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA conflict groups only exist for true multi-route conflicts.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-conflict-groups-nontrivial",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re DMA route conflict annotations match the declared conflict groups.",
+      "passed": true,
+      "rule_id": "stm32f401re-dma-route-conflict-annotations-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg package pin count 64 covers 51 known pin definition(s).",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pin-count-covers-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg pin ports map to discovered GPIO peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-pin-port-has-gpio-peripheral",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg curated pins expose explicit signal metadata.",
+      "passed": true,
+      "rule_id": "stm32f405rg-pin-signals-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg pin signals only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-pin-signals-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg non-GPIO alternate functions carry explicit AF numbers.",
+      "passed": true,
+      "rule_id": "stm32f405rg-alternate-functions-explicit",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg memory regions use positive non-placeholder sizes.",
+      "passed": true,
+      "rule_id": "stm32f405rg-memory-sizes-positive",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg peripheral base addresses are unique.",
+      "passed": true,
+      "rule_id": "stm32f405rg-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes interrupt metadata from the raw source.",
+      "passed": true,
+      "rule_id": "stm32f405rg-interrupts-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg interrupt entries only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-interrupts-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg referenced peripherals expose RCC enable ownership.",
+      "passed": true,
+      "rule_id": "stm32f405rg-referenced-peripherals-have-rcc-enable",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA requests reference known controller peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-controllers-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA requests reference known target peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-request-peripherals-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA controller/request-line pairs are unique.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-routes-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes package pad descriptors.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pads-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg package pad identifiers are unique.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pad-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg package pads reference declared packages.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pads-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg every declared package exposes package pads.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-variants-have-pad-coverage",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg package pad positions are unique per package.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pad-positions-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg package pad bonding state matches bonded-pin coverage.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pad-bonding-state-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg package pads reference declared bonded pins.",
+      "passed": true,
+      "rule_id": "stm32f405rg-package-pads-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg every declared GPIO pin is covered by a package pad.",
+      "passed": true,
+      "rule_id": "stm32f405rg-bonded-pins-have-package-pad",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes canonical signal endpoints.",
+      "passed": true,
+      "rule_id": "stm32f405rg-signal-endpoints-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes route-driven connection candidates.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg connection candidates reference known pins.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg connection candidates reference known peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg connection candidates reference known route groups.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-reference-known-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route candidates only reference declared requirements.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-reference-known-requirements",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route candidates carry an explicit package requirement.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-carry-package-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route candidates with selectors carry an explicit source-selection requirement.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-carry-source-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route candidates only reference declared operations.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-reference-known-operations",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route candidates only reference declared capabilities.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-candidates-reference-known-capabilities",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg capability descriptors carry explicit ip-block or instance-overlay context.",
+      "passed": true,
+      "rule_id": "stm32f405rg-capability-descriptors-carry-context",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg candidate capabilities resolve through ip-block and instance-overlay descriptors.",
+      "passed": true,
+      "rule_id": "stm32f405rg-candidate-capabilities-resolve-from-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route groups only reference declared candidates.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-groups-reference-known-candidates",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route groups only admit candidates valid for the selected package and bonded pinout.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-groups-match-selected-package",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route groups declare satisfiable signal bundles.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-groups-have-satisfiable-signals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg route groups only reference declared packages.",
+      "passed": true,
+      "rule_id": "stm32f405rg-connection-groups-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes at least one multi-signal connection group.",
+      "passed": true,
+      "rule_id": "stm32f405rg-multi-signal-connection-groups-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg IP block descriptors cover versioned instances.",
+      "passed": true,
+      "rule_id": "stm32f405rg-ip-blocks-cover-versioned-instances",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg interrupts carry explicit alias descriptors.",
+      "passed": true,
+      "rule_id": "stm32f405rg-interrupts-carry-aliases",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg interrupt aliases are unique per interrupt.",
+      "passed": true,
+      "rule_id": "stm32f405rg-interrupt-aliases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg interrupt shared groups describe a real multi-interrupt owner.",
+      "passed": true,
+      "rule_id": "stm32f405rg-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg vector slots only reference declared interrupts.",
+      "passed": true,
+      "rule_id": "stm32f405rg-vector-slots-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg vector slot numbers are unique.",
+      "passed": true,
+      "rule_id": "stm32f405rg-vector-slots-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg every interrupt owns an external vector slot.",
+      "passed": true,
+      "rule_id": "stm32f405rg-interrupts-have-vector-slot",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg vector slots include the system baseline slots.",
+      "passed": true,
+      "rule_id": "stm32f405rg-vector-slots-include-system-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes startup-relevant memory classifications for at least one memory region.",
+      "passed": true,
+      "rule_id": "stm32f405rg-memory-regions-carry-startup-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg exposes startup descriptors separately from logic.",
+      "passed": true,
+      "rule_id": "stm32f405rg-startup-descriptors-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg startup descriptors only reference declared memories.",
+      "passed": true,
+      "rule_id": "stm32f405rg-startup-descriptors-reference-known-memories",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg startup descriptors cover every startup-classified memory region.",
+      "passed": true,
+      "rule_id": "stm32f405rg-startup-descriptors-cover-memory-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg startup descriptors include vector-table and initial-stack-pointer facts.",
+      "passed": true,
+      "rule_id": "stm32f405rg-startup-descriptors-include-runtime-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg startup vectors and startup descriptors are sufficient to emit startup artifacts without handwritten device tables.",
+      "passed": true,
+      "rule_id": "stm32f405rg-startup-descriptors-emit-without-handwritten-tables",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg clock bindings reference known gate/reset/selector descriptors.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg clock nodes only reference known parents.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-node-parents-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg clock graph remains root-reachable and acyclic.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-graph-reaches-root",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg clock selectors expose at least one parent option when present.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-selectors-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg clock gates reference known clock nodes.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-gates-reference-known-nodes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg peripherals with enable/reset ownership have clock bindings.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-bound-peripherals-covered",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA controllers expose non-empty channel and request counts.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-controller-descriptors-complete",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA controller request counts match the normalized DMA route set.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-controller-request-counts-match",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA routes cover the normalized DMA request set.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-routes-cover-requests",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA routes reference known controller descriptors.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-routes-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA routes reference known target peripherals.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-routes-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA routes reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA conflict groups reference known DMA routes.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-conflict-groups-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA conflict groups only exist for true multi-route conflicts.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-conflict-groups-nontrivial",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg DMA route conflict annotations match the declared conflict groups.",
+      "passed": true,
+      "rule_id": "stm32f405rg-dma-route-conflict-annotations-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "st-stm32f4 family scope exposes at least one multi-signal connection group for every normalized device.",
+      "passed": true,
+      "rule_id": "st-stm32f4-family-devices-expose-multi-signal-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "st-stm32f4 family scope reuses at least one ip-version descriptor across multiple devices when versioned IP data exist.",
+      "passed": true,
+      "rule_id": "st-stm32f4-family-reuses-ip-version-descriptors",
+      "severity": "error"
+    }
+  ],
+  "scope": {
+    "device": null,
+    "family": "stm32f4",
+    "vendor": "st"
+  },
+  "system_descriptor_domains": [
+    {
+      "domain_id": "interrupt",
+      "draft": false,
+      "message": "interrupt domain is publishable with 12 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-interrupts-reference-known-peripherals",
+        "stm32f401re-interrupt-aliases-unique",
+        "stm32f401re-interrupt-shared-groups-consistent",
+        "stm32f401re-vector-slots-reference-known-interrupts",
+        "stm32f401re-vector-slots-unique",
+        "stm32f401re-interrupts-have-vector-slot",
+        "stm32f405rg-interrupts-reference-known-peripherals",
+        "stm32f405rg-interrupt-aliases-unique",
+        "stm32f405rg-interrupt-shared-groups-consistent",
+        "stm32f405rg-vector-slots-reference-known-interrupts",
+        "stm32f405rg-vector-slots-unique",
+        "stm32f405rg-interrupts-have-vector-slot"
+      ]
+    },
+    {
+      "domain_id": "memory",
+      "draft": false,
+      "message": "memory domain is publishable with 4 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-memory-sizes-positive",
+        "stm32f401re-memory-regions-carry-startup-roles",
+        "stm32f405rg-memory-sizes-positive",
+        "stm32f405rg-memory-regions-carry-startup-roles"
+      ]
+    },
+    {
+      "domain_id": "startup",
+      "draft": false,
+      "message": "startup domain is publishable with 12 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-vector-slots-include-system-baseline",
+        "stm32f401re-startup-descriptors-present",
+        "stm32f401re-startup-descriptors-reference-known-memories",
+        "stm32f401re-startup-descriptors-cover-memory-roles",
+        "stm32f401re-startup-descriptors-include-runtime-baseline",
+        "stm32f401re-startup-descriptors-emit-without-handwritten-tables",
+        "stm32f405rg-vector-slots-include-system-baseline",
+        "stm32f405rg-startup-descriptors-present",
+        "stm32f405rg-startup-descriptors-reference-known-memories",
+        "stm32f405rg-startup-descriptors-cover-memory-roles",
+        "stm32f405rg-startup-descriptors-include-runtime-baseline",
+        "stm32f405rg-startup-descriptors-emit-without-handwritten-tables"
+      ]
+    },
+    {
+      "domain_id": "clock-reset",
+      "draft": false,
+      "message": "clock-reset domain is publishable with 14 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-referenced-peripherals-have-rcc-enable",
+        "stm32f401re-clock-bindings-reference-known-descriptors",
+        "stm32f401re-clock-node-parents-known",
+        "stm32f401re-clock-graph-reaches-root",
+        "stm32f401re-clock-selectors-structured",
+        "stm32f401re-clock-gates-reference-known-nodes",
+        "stm32f401re-clock-bound-peripherals-covered",
+        "stm32f405rg-referenced-peripherals-have-rcc-enable",
+        "stm32f405rg-clock-bindings-reference-known-descriptors",
+        "stm32f405rg-clock-node-parents-known",
+        "stm32f405rg-clock-graph-reaches-root",
+        "stm32f405rg-clock-selectors-structured",
+        "stm32f405rg-clock-gates-reference-known-nodes",
+        "stm32f405rg-clock-bound-peripherals-covered"
+      ]
+    },
+    {
+      "domain_id": "dma",
+      "draft": false,
+      "message": "dma domain is publishable with 22 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-dma-controllers-known",
+        "stm32f401re-dma-request-peripherals-known",
+        "stm32f401re-dma-routes-unique",
+        "stm32f401re-dma-controller-descriptors-complete",
+        "stm32f401re-dma-routes-cover-requests",
+        "stm32f401re-dma-routes-reference-known-controllers",
+        "stm32f401re-dma-routes-reference-known-peripherals",
+        "stm32f401re-dma-routes-reference-known-conflicts",
+        "stm32f401re-dma-conflict-groups-reference-known-routes",
+        "stm32f401re-dma-conflict-groups-nontrivial",
+        "stm32f401re-dma-route-conflict-annotations-consistent",
+        "stm32f405rg-dma-controllers-known",
+        "stm32f405rg-dma-request-peripherals-known",
+        "stm32f405rg-dma-routes-unique",
+        "stm32f405rg-dma-controller-descriptors-complete",
+        "stm32f405rg-dma-routes-cover-requests",
+        "stm32f405rg-dma-routes-reference-known-controllers",
+        "stm32f405rg-dma-routes-reference-known-peripherals",
+        "stm32f405rg-dma-routes-reference-known-conflicts",
+        "stm32f405rg-dma-conflict-groups-reference-known-routes",
+        "stm32f405rg-dma-conflict-groups-nontrivial",
+        "stm32f405rg-dma-route-conflict-annotations-consistent"
+      ]
+    },
+    {
+      "domain_id": "package",
+      "draft": false,
+      "message": "package domain is publishable with 14 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "stm32f401re-package-pads-present",
+        "stm32f401re-package-pad-ids-unique",
+        "stm32f401re-package-pads-reference-known-packages",
+        "stm32f401re-package-variants-have-pad-coverage",
+        "stm32f401re-package-pad-positions-unique",
+        "stm32f401re-package-pads-reference-known-pins",
+        "stm32f401re-bonded-pins-have-package-pad",
+        "stm32f405rg-package-pads-present",
+        "stm32f405rg-package-pad-ids-unique",
+        "stm32f405rg-package-pads-reference-known-packages",
+        "stm32f405rg-package-variants-have-pad-coverage",
+        "stm32f405rg-package-pad-positions-unique",
+        "stm32f405rg-package-pads-reference-known-pins",
+        "stm32f405rg-bonded-pins-have-package-pad"
+      ]
+    }
+  ]
+}

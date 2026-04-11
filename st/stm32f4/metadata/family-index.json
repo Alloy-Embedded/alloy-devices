@@ -1,0 +1,22 @@
+{
+  "device_count": 2,
+  "devices": [
+    {
+      "core": "cortex-m4f",
+      "device": "stm32f401re",
+      "metadata_path": "st/stm32f4/metadata/devices/stm32f401re.json",
+      "package": "lqfp64",
+      "summary": "Representative low-cost entry-level F4 device."
+    },
+    {
+      "core": "cortex-m4f",
+      "device": "stm32f405rg",
+      "metadata_path": "st/stm32f4/metadata/devices/stm32f405rg.json",
+      "package": "lqfp64",
+      "summary": "Representative higher-feature F4 device with USB OTG."
+    }
+  ],
+  "family": "stm32f4",
+  "schema_version": "1.1.0",
+  "vendor": "st"
+}

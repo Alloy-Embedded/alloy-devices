@@ -1,0 +1,1394 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "capability-instance:i2c1:lqfp64:scl",
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:lqfp64:sda",
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:lqfp64:smba",
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "smba"
+    },
+    {
+      "capability_id": "capability-instance:i2c2:lqfp64:scl",
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "I2C2",
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c2:lqfp64:sda",
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "I2C2",
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c2:lqfp64:smba",
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "I2C2",
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "smba"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:miso",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:mosi",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:nss",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:sck",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:miso",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:mosi",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:nss",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:sck",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:bkin",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "bkin"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch1",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch1n",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch2",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch2n",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2n"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch3",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch3n",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3n"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch4",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:etr",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "etr"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch1",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch2",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch3",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch4",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:etr",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "etr"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch1",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch2",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch3",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch4",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:etr",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "etr"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch1",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch2",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch3",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch4",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim5:lqfp64:ch2",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM5",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim5:lqfp64:ch3",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM5",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim5:lqfp64:ch4",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "TIM5",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:ck",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:cts",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:rts",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:rx",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:tx",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:ck",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:rts",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:rx",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:tx",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability:i2c1:i2c1-v1-5-cube:scl",
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability:i2c1:i2c1-v1-5-cube:sda",
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability:i2c1:i2c1-v1-5-cube:smba",
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "smba"
+    },
+    {
+      "capability_id": "capability:i2c2:i2c1-v1-5-cube:scl",
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability:i2c2:i2c1-v1-5-cube:sda",
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability:i2c2:i2c1-v1-5-cube:smba",
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "smba"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v2-2-cube:miso",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v2-2-cube:mosi",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v2-2-cube:nss",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v2-2-cube:sck",
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:bkin",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "bkin"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch1",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch1n",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch2",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch2n",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch2n"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch3",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch3n",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch3n"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:ch4",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v2-x-cube:etr",
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "etr"
+    },
+    {
+      "capability_id": "capability:usart:sci2-v1-2-cube:ck",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability:usart:sci2-v1-2-cube:cts",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability:usart:sci2-v1-2-cube:rts",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability:usart:sci2-v1-2-cube:rx",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability:usart:sci2-v1-2-cube:tx",
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32F401R(B-C)Tx.xml"
+      },
+      "scope": "ip-block",
+      "value": "tx"
+    }
+  ],
+  "family": "stm32f4",
+  "schema_version": "1.1.0",
+  "vendor": "st"
+}

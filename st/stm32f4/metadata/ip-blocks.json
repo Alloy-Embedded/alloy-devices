@@ -1,0 +1,1251 @@
+{
+  "device_usage": [
+    {
+      "device": "stm32f401re",
+      "peripherals": [
+        {
+          "base_address": 1073815552,
+          "ip_name": "adc",
+          "ip_version": "aditf2_v1_1_Cube",
+          "name": "ADC1"
+        },
+        {
+          "base_address": 1073816320,
+          "ip_name": "adc_common",
+          "ip_version": null,
+          "name": "ADC_Common"
+        },
+        {
+          "base_address": 1073885184,
+          "ip_name": "crc",
+          "ip_version": "integtest1_v1_0",
+          "name": "CRC"
+        },
+        {
+          "base_address": 3758366720,
+          "ip_name": "dbg",
+          "ip_version": null,
+          "name": "DBG"
+        },
+        {
+          "base_address": 1073897472,
+          "ip_name": "dma",
+          "ip_version": null,
+          "name": "DMA1"
+        },
+        {
+          "base_address": 1073898496,
+          "ip_name": "dma",
+          "ip_version": null,
+          "name": "DMA2"
+        },
+        {
+          "base_address": 1073822720,
+          "ip_name": "exti",
+          "ip_version": null,
+          "name": "EXTI"
+        },
+        {
+          "base_address": 1073888256,
+          "ip_name": "flash",
+          "ip_version": null,
+          "name": "FLASH"
+        },
+        {
+          "base_address": 3758157620,
+          "ip_name": "fpu",
+          "ip_version": null,
+          "name": "FPU"
+        },
+        {
+          "base_address": 3758157192,
+          "ip_name": "fpu_cpacr",
+          "ip_version": null,
+          "name": "FPU_CPACR"
+        },
+        {
+          "base_address": 1073872896,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOA"
+        },
+        {
+          "base_address": 1073873920,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOB"
+        },
+        {
+          "base_address": 1073874944,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOC"
+        },
+        {
+          "base_address": 1073875968,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOD"
+        },
+        {
+          "base_address": 1073876992,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOE"
+        },
+        {
+          "base_address": 1073880064,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOH"
+        },
+        {
+          "base_address": 1073763328,
+          "ip_name": "i2c1",
+          "ip_version": "i2c1_v1_5_Cube",
+          "name": "I2C1"
+        },
+        {
+          "base_address": 1073764352,
+          "ip_name": "i2c2",
+          "ip_version": "i2c1_v1_5_Cube",
+          "name": "I2C2"
+        },
+        {
+          "base_address": 1073765376,
+          "ip_name": "i2c3",
+          "ip_version": "i2c1_v1_5_Cube",
+          "name": "I2C3"
+        },
+        {
+          "base_address": 1073755136,
+          "ip_name": "i2s2ext",
+          "ip_version": null,
+          "name": "I2S2ext"
+        },
+        {
+          "base_address": 1073758208,
+          "ip_name": "i2s3ext",
+          "ip_version": null,
+          "name": "I2S3ext"
+        },
+        {
+          "base_address": 1073754112,
+          "ip_name": "iwdg",
+          "ip_version": "iwdg1_v1_1",
+          "name": "IWDG"
+        },
+        {
+          "base_address": 3758157200,
+          "ip_name": "mpu",
+          "ip_version": null,
+          "name": "MPU"
+        },
+        {
+          "base_address": 3758153984,
+          "ip_name": "nvic",
+          "ip_version": "STM32F401",
+          "name": "NVIC"
+        },
+        {
+          "base_address": 3758157568,
+          "ip_name": "nvic_stir",
+          "ip_version": null,
+          "name": "NVIC_STIR"
+        },
+        {
+          "base_address": 1342179328,
+          "ip_name": "otg_fs_device",
+          "ip_version": null,
+          "name": "OTG_FS_DEVICE"
+        },
+        {
+          "base_address": 1342177280,
+          "ip_name": "otg_fs_global",
+          "ip_version": null,
+          "name": "OTG_FS_GLOBAL"
+        },
+        {
+          "base_address": 1342178304,
+          "ip_name": "otg_fs_host",
+          "ip_version": null,
+          "name": "OTG_FS_HOST"
+        },
+        {
+          "base_address": 1342180864,
+          "ip_name": "otg_fs_pwrclk",
+          "ip_version": null,
+          "name": "OTG_FS_PWRCLK"
+        },
+        {
+          "base_address": 1073770496,
+          "ip_name": "pwr",
+          "ip_version": null,
+          "name": "PWR"
+        },
+        {
+          "base_address": 1073887232,
+          "ip_name": "rcc",
+          "ip_version": "STM32F417-rcc_v1_0",
+          "name": "RCC"
+        },
+        {
+          "base_address": 1073752064,
+          "ip_name": "rtc",
+          "ip_version": "rtc2_v2_3",
+          "name": "RTC"
+        },
+        {
+          "base_address": 3758157056,
+          "ip_name": "scb",
+          "ip_version": null,
+          "name": "SCB"
+        },
+        {
+          "base_address": 3758153736,
+          "ip_name": "scb_actrl",
+          "ip_version": null,
+          "name": "SCB_ACTRL"
+        },
+        {
+          "base_address": 1073818624,
+          "ip_name": "sdio",
+          "ip_version": "sdmmc_v1_2_Cube",
+          "name": "SDIO"
+        },
+        {
+          "base_address": 1073819648,
+          "ip_name": "spi",
+          "ip_version": "spi2s1_v2_2_Cube",
+          "name": "SPI1"
+        },
+        {
+          "base_address": 1073756160,
+          "ip_name": "spi",
+          "ip_version": "spi2s1_v2_2_Cube",
+          "name": "SPI2"
+        },
+        {
+          "base_address": 1073757184,
+          "ip_name": "spi",
+          "ip_version": "spi2s1_v2_2_Cube",
+          "name": "SPI3"
+        },
+        {
+          "base_address": 1073820672,
+          "ip_name": "spi",
+          "ip_version": null,
+          "name": "SPI4"
+        },
+        {
+          "base_address": 3758153744,
+          "ip_name": "stk",
+          "ip_version": null,
+          "name": "STK"
+        },
+        {
+          "base_address": 1073821696,
+          "ip_name": "syscfg",
+          "ip_version": null,
+          "name": "SYSCFG"
+        },
+        {
+          "base_address": 1073807360,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM1"
+        },
+        {
+          "base_address": 1073824768,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM10"
+        },
+        {
+          "base_address": 1073825792,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM11"
+        },
+        {
+          "base_address": 1073741824,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM2"
+        },
+        {
+          "base_address": 1073742848,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM3"
+        },
+        {
+          "base_address": 1073743872,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM4"
+        },
+        {
+          "base_address": 1073744896,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM5"
+        },
+        {
+          "base_address": 1073808384,
+          "ip_name": "tim",
+          "ip_version": null,
+          "name": "TIM8"
+        },
+        {
+          "base_address": 1073823744,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM9"
+        },
+        {
+          "base_address": 1073811456,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART1"
+        },
+        {
+          "base_address": 1073759232,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART2"
+        },
+        {
+          "base_address": 1073812480,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART6"
+        },
+        {
+          "base_address": 1073753088,
+          "ip_name": "wwdg",
+          "ip_version": "wwdg1_v1_0",
+          "name": "WWDG"
+        }
+      ]
+    },
+    {
+      "device": "stm32f405rg",
+      "peripherals": [
+        {
+          "base_address": 1073815552,
+          "ip_name": "adc",
+          "ip_version": "aditf2_v1_1_Cube",
+          "name": "ADC1"
+        },
+        {
+          "base_address": 1073815808,
+          "ip_name": "adc",
+          "ip_version": "aditf2_v1_1_Cube",
+          "name": "ADC2"
+        },
+        {
+          "base_address": 1073816064,
+          "ip_name": "adc",
+          "ip_version": "aditf2_v1_1_Cube",
+          "name": "ADC3"
+        },
+        {
+          "base_address": 1073767424,
+          "ip_name": "can",
+          "ip_version": "bxcan1_v1_1_Cube",
+          "name": "CAN1"
+        },
+        {
+          "base_address": 1073768448,
+          "ip_name": "can",
+          "ip_version": "bxcan1_v1_1_Cube",
+          "name": "CAN2"
+        },
+        {
+          "base_address": 1073885184,
+          "ip_name": "crc",
+          "ip_version": "integtest1_v1_0",
+          "name": "CRC"
+        },
+        {
+          "base_address": 1342570496,
+          "ip_name": "cryp",
+          "ip_version": null,
+          "name": "CRYP"
+        },
+        {
+          "base_address": 1073816320,
+          "ip_name": "c_adc",
+          "ip_version": null,
+          "name": "C_ADC"
+        },
+        {
+          "base_address": 1073771520,
+          "ip_name": "dac",
+          "ip_version": "dacif_v1_1_Cube",
+          "name": "DAC"
+        },
+        {
+          "base_address": 3758366720,
+          "ip_name": "dbg",
+          "ip_version": null,
+          "name": "DBG"
+        },
+        {
+          "base_address": 1342504960,
+          "ip_name": "dcmi",
+          "ip_version": null,
+          "name": "DCMI"
+        },
+        {
+          "base_address": 1073897472,
+          "ip_name": "dma",
+          "ip_version": null,
+          "name": "DMA1"
+        },
+        {
+          "base_address": 1073898496,
+          "ip_name": "dma",
+          "ip_version": null,
+          "name": "DMA2"
+        },
+        {
+          "base_address": 1073822720,
+          "ip_name": "exti",
+          "ip_version": null,
+          "name": "EXTI"
+        },
+        {
+          "base_address": 1073909760,
+          "ip_name": "ethernet_dma",
+          "ip_version": null,
+          "name": "Ethernet_DMA"
+        },
+        {
+          "base_address": 1073905664,
+          "ip_name": "ethernet_mac",
+          "ip_version": null,
+          "name": "Ethernet_MAC"
+        },
+        {
+          "base_address": 1073905920,
+          "ip_name": "ethernet_mmc",
+          "ip_version": null,
+          "name": "Ethernet_MMC"
+        },
+        {
+          "base_address": 1073907456,
+          "ip_name": "ethernet_ptp",
+          "ip_version": null,
+          "name": "Ethernet_PTP"
+        },
+        {
+          "base_address": 1073888256,
+          "ip_name": "flash",
+          "ip_version": null,
+          "name": "FLASH"
+        },
+        {
+          "base_address": 3758157620,
+          "ip_name": "fpu",
+          "ip_version": null,
+          "name": "FPU"
+        },
+        {
+          "base_address": 3758157192,
+          "ip_name": "fpu_cpacr",
+          "ip_version": null,
+          "name": "FPU_CPACR"
+        },
+        {
+          "base_address": 2684354560,
+          "ip_name": "fsmc",
+          "ip_version": null,
+          "name": "FSMC"
+        },
+        {
+          "base_address": 1073872896,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOA"
+        },
+        {
+          "base_address": 1073873920,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOB"
+        },
+        {
+          "base_address": 1073874944,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOC"
+        },
+        {
+          "base_address": 1073875968,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOD"
+        },
+        {
+          "base_address": 1073876992,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOE"
+        },
+        {
+          "base_address": 1073878016,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOF"
+        },
+        {
+          "base_address": 1073879040,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOG"
+        },
+        {
+          "base_address": 1073880064,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOH"
+        },
+        {
+          "base_address": 1073881088,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOI"
+        },
+        {
+          "base_address": 1073882112,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOJ"
+        },
+        {
+          "base_address": 1073883136,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIOK"
+        },
+        {
+          "base_address": 1342571520,
+          "ip_name": "hash",
+          "ip_version": null,
+          "name": "HASH"
+        },
+        {
+          "base_address": 1073763328,
+          "ip_name": "i2c1",
+          "ip_version": "i2c1_v1_5_Cube",
+          "name": "I2C1"
+        },
+        {
+          "base_address": 1073764352,
+          "ip_name": "i2c2",
+          "ip_version": "i2c1_v1_5_Cube",
+          "name": "I2C2"
+        },
+        {
+          "base_address": 1073765376,
+          "ip_name": "i2c3",
+          "ip_version": "i2c1_v1_5_Cube",
+          "name": "I2C3"
+        },
+        {
+          "base_address": 1073755136,
+          "ip_name": "i2s2ext",
+          "ip_version": null,
+          "name": "I2S2ext"
+        },
+        {
+          "base_address": 1073758208,
+          "ip_name": "i2s3ext",
+          "ip_version": null,
+          "name": "I2S3ext"
+        },
+        {
+          "base_address": 1073754112,
+          "ip_name": "iwdg",
+          "ip_version": "iwdg1_v1_1",
+          "name": "IWDG"
+        },
+        {
+          "base_address": 1073833984,
+          "ip_name": "ltdc",
+          "ip_version": null,
+          "name": "LTDC"
+        },
+        {
+          "base_address": 3758157200,
+          "ip_name": "mpu",
+          "ip_version": null,
+          "name": "MPU"
+        },
+        {
+          "base_address": 3758153984,
+          "ip_name": "nvic",
+          "ip_version": "STM32F417",
+          "name": "NVIC"
+        },
+        {
+          "base_address": 3758157568,
+          "ip_name": "nvic_stir",
+          "ip_version": null,
+          "name": "NVIC_STIR"
+        },
+        {
+          "base_address": 1342179328,
+          "ip_name": "otg_fs_device",
+          "ip_version": null,
+          "name": "OTG_FS_DEVICE"
+        },
+        {
+          "base_address": 1342177280,
+          "ip_name": "otg_fs_global",
+          "ip_version": null,
+          "name": "OTG_FS_GLOBAL"
+        },
+        {
+          "base_address": 1342178304,
+          "ip_name": "otg_fs_host",
+          "ip_version": null,
+          "name": "OTG_FS_HOST"
+        },
+        {
+          "base_address": 1342180864,
+          "ip_name": "otg_fs_pwrclk",
+          "ip_version": null,
+          "name": "OTG_FS_PWRCLK"
+        },
+        {
+          "base_address": 1074006016,
+          "ip_name": "otg_hs_device",
+          "ip_version": null,
+          "name": "OTG_HS_DEVICE"
+        },
+        {
+          "base_address": 1074003968,
+          "ip_name": "otg_hs_global",
+          "ip_version": null,
+          "name": "OTG_HS_GLOBAL"
+        },
+        {
+          "base_address": 1074004992,
+          "ip_name": "otg_hs_host",
+          "ip_version": null,
+          "name": "OTG_HS_HOST"
+        },
+        {
+          "base_address": 1074007552,
+          "ip_name": "otg_hs_pwrclk",
+          "ip_version": null,
+          "name": "OTG_HS_PWRCLK"
+        },
+        {
+          "base_address": 1073770496,
+          "ip_name": "pwr",
+          "ip_version": null,
+          "name": "PWR"
+        },
+        {
+          "base_address": 1073887232,
+          "ip_name": "rcc",
+          "ip_version": "STM32F417-rcc_v1_0",
+          "name": "RCC"
+        },
+        {
+          "base_address": 1342572544,
+          "ip_name": "rng",
+          "ip_version": "rng1_v1_1",
+          "name": "RNG"
+        },
+        {
+          "base_address": 1073752064,
+          "ip_name": "rtc",
+          "ip_version": "rtc2_v2_3",
+          "name": "RTC"
+        },
+        {
+          "base_address": 1073829888,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI1"
+        },
+        {
+          "base_address": 3758157056,
+          "ip_name": "scb",
+          "ip_version": null,
+          "name": "SCB"
+        },
+        {
+          "base_address": 3758153736,
+          "ip_name": "scb_actrl",
+          "ip_version": null,
+          "name": "SCB_ACTRL"
+        },
+        {
+          "base_address": 1073818624,
+          "ip_name": "sdio",
+          "ip_version": "sdmmc_v1_2_Cube",
+          "name": "SDIO"
+        },
+        {
+          "base_address": 1073819648,
+          "ip_name": "spi",
+          "ip_version": "spi2s1_v2_2_Cube",
+          "name": "SPI1"
+        },
+        {
+          "base_address": 1073756160,
+          "ip_name": "spi",
+          "ip_version": "spi2s1_v2_2_Cube",
+          "name": "SPI2"
+        },
+        {
+          "base_address": 1073757184,
+          "ip_name": "spi",
+          "ip_version": "spi2s1_v2_2_Cube",
+          "name": "SPI3"
+        },
+        {
+          "base_address": 1073820672,
+          "ip_name": "spi",
+          "ip_version": null,
+          "name": "SPI4"
+        },
+        {
+          "base_address": 1073827840,
+          "ip_name": "spi",
+          "ip_version": null,
+          "name": "SPI5"
+        },
+        {
+          "base_address": 1073828864,
+          "ip_name": "spi",
+          "ip_version": null,
+          "name": "SPI6"
+        },
+        {
+          "base_address": 3758153744,
+          "ip_name": "stk",
+          "ip_version": null,
+          "name": "STK"
+        },
+        {
+          "base_address": 1073821696,
+          "ip_name": "syscfg",
+          "ip_version": null,
+          "name": "SYSCFG"
+        },
+        {
+          "base_address": 1073807360,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM1"
+        },
+        {
+          "base_address": 1073824768,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM10"
+        },
+        {
+          "base_address": 1073825792,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM11"
+        },
+        {
+          "base_address": 1073747968,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM12"
+        },
+        {
+          "base_address": 1073748992,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM13"
+        },
+        {
+          "base_address": 1073750016,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM14"
+        },
+        {
+          "base_address": 1073741824,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM2"
+        },
+        {
+          "base_address": 1073742848,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM3"
+        },
+        {
+          "base_address": 1073743872,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM4"
+        },
+        {
+          "base_address": 1073744896,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM5"
+        },
+        {
+          "base_address": 1073745920,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM6"
+        },
+        {
+          "base_address": 1073746944,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM7"
+        },
+        {
+          "base_address": 1073808384,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM8"
+        },
+        {
+          "base_address": 1073823744,
+          "ip_name": "tim",
+          "ip_version": "gptimer2_v2_x_Cube",
+          "name": "TIM9"
+        },
+        {
+          "base_address": 1073761280,
+          "ip_name": "uart",
+          "ip_version": "sci2_v1_2_F4_Cube",
+          "name": "UART4"
+        },
+        {
+          "base_address": 1073762304,
+          "ip_name": "uart",
+          "ip_version": "sci2_v1_2_F4_Cube",
+          "name": "UART5"
+        },
+        {
+          "base_address": 1073772544,
+          "ip_name": "uart",
+          "ip_version": null,
+          "name": "UART7"
+        },
+        {
+          "base_address": 1073773568,
+          "ip_name": "uart",
+          "ip_version": null,
+          "name": "UART8"
+        },
+        {
+          "base_address": 1073811456,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART1"
+        },
+        {
+          "base_address": 1073759232,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART2"
+        },
+        {
+          "base_address": 1073760256,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART3"
+        },
+        {
+          "base_address": 1073812480,
+          "ip_name": "usart",
+          "ip_version": "sci2_v1_2_Cube",
+          "name": "USART6"
+        },
+        {
+          "base_address": 1073753088,
+          "ip_name": "wwdg",
+          "ip_version": "wwdg1_v1_0",
+          "name": "WWDG"
+        }
+      ]
+    }
+  ],
+  "family": "stm32f4",
+  "ip_blocks": [
+    {
+      "capability_ids": [],
+      "ip_name": "adc",
+      "ip_version": "aditf2_v1_1_Cube",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "adc:aditf2_v1_1_Cube",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "can",
+      "ip_version": "bxcan1_v1_1_Cube",
+      "peripheral_class": "can",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "register_profile": "can:bxcan1_v1_1_Cube",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "crc",
+      "ip_version": "integtest1_v1_0",
+      "peripheral_class": "crc",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "crc:integtest1_v1_0",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "dac",
+      "ip_version": "dacif_v1_1_Cube",
+      "peripheral_class": "dac",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "register_profile": "dac:dacif_v1_1_Cube",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:i2c1:i2c1-v1-5-cube:scl",
+        "capability:i2c1:i2c1-v1-5-cube:sda",
+        "capability:i2c1:i2c1-v1-5-cube:smba"
+      ],
+      "ip_name": "i2c1",
+      "ip_version": "i2c1_v1_5_Cube",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "i2c1:i2c1_v1_5_Cube",
+      "signal_roles": [
+        "scl",
+        "sda",
+        "smba"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:i2c2:i2c1-v1-5-cube:scl",
+        "capability:i2c2:i2c1-v1-5-cube:sda",
+        "capability:i2c2:i2c1-v1-5-cube:smba"
+      ],
+      "ip_name": "i2c2",
+      "ip_version": "i2c1_v1_5_Cube",
+      "peripheral_class": "i2c2",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "i2c2:i2c1_v1_5_Cube",
+      "signal_roles": [
+        "scl",
+        "sda",
+        "smba"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "i2c3",
+      "ip_version": "i2c1_v1_5_Cube",
+      "peripheral_class": "i2c3",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "i2c3:i2c1_v1_5_Cube",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "iwdg",
+      "ip_version": "iwdg1_v1_1",
+      "peripheral_class": "iwdg",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "iwdg:iwdg1_v1_1",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "nvic",
+      "ip_version": "STM32F401",
+      "peripheral_class": "nvic",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "nvic:STM32F401",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "nvic",
+      "ip_version": "STM32F417",
+      "peripheral_class": "nvic",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "register_profile": "nvic:STM32F417",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "rcc",
+      "ip_version": "STM32F417-rcc_v1_0",
+      "peripheral_class": "rcc",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "rcc:STM32F417-rcc_v1_0",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "rng",
+      "ip_version": "rng1_v1_1",
+      "peripheral_class": "rng",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "register_profile": "rng:rng1_v1_1",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "rtc",
+      "ip_version": "rtc2_v2_3",
+      "peripheral_class": "rtc",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "rtc:rtc2_v2_3",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "sdio",
+      "ip_version": "sdmmc_v1_2_Cube",
+      "peripheral_class": "sdio",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "sdio:sdmmc_v1_2_Cube",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:spi:spi2s1-v2-2-cube:miso",
+        "capability:spi:spi2s1-v2-2-cube:mosi",
+        "capability:spi:spi2s1-v2-2-cube:nss",
+        "capability:spi:spi2s1-v2-2-cube:sck"
+      ],
+      "ip_name": "spi",
+      "ip_version": "spi2s1_v2_2_Cube",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "spi:spi2s1_v2_2_Cube",
+      "signal_roles": [
+        "miso",
+        "mosi",
+        "nss",
+        "sck"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:tim:gptimer2-v2-x-cube:bkin",
+        "capability:tim:gptimer2-v2-x-cube:ch1",
+        "capability:tim:gptimer2-v2-x-cube:ch1n",
+        "capability:tim:gptimer2-v2-x-cube:ch2",
+        "capability:tim:gptimer2-v2-x-cube:ch2n",
+        "capability:tim:gptimer2-v2-x-cube:ch3",
+        "capability:tim:gptimer2-v2-x-cube:ch3n",
+        "capability:tim:gptimer2-v2-x-cube:ch4",
+        "capability:tim:gptimer2-v2-x-cube:etr"
+      ],
+      "ip_name": "tim",
+      "ip_version": "gptimer2_v2_x_Cube",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "tim:gptimer2_v2_x_Cube",
+      "signal_roles": [
+        "bkin",
+        "ch1",
+        "ch1n",
+        "ch2",
+        "ch2n",
+        "ch3",
+        "ch3n",
+        "ch4",
+        "etr"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "uart",
+      "ip_version": "sci2_v1_2_F4_Cube",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f405rg-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F405.svd"
+      },
+      "register_profile": "uart:sci2_v1_2_F4_Cube",
+      "signal_roles": []
+    },
+    {
+      "capability_ids": [
+        "capability:usart:sci2-v1-2-cube:ck",
+        "capability:usart:sci2-v1-2-cube:cts",
+        "capability:usart:sci2-v1-2-cube:rts",
+        "capability:usart:sci2-v1-2-cube:rx",
+        "capability:usart:sci2-v1-2-cube:tx"
+      ],
+      "ip_name": "usart",
+      "ip_version": "sci2_v1_2_Cube",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "usart:sci2_v1_2_Cube",
+      "signal_roles": [
+        "ck",
+        "cts",
+        "rts",
+        "rx",
+        "tx"
+      ]
+    },
+    {
+      "capability_ids": [],
+      "ip_name": "wwdg",
+      "ip_version": "wwdg1_v1_0",
+      "peripheral_class": "wwdg",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "cmsis-svd-data",
+        "source_path": "STM32F401.svd"
+      },
+      "register_profile": "wwdg:wwdg1_v1_0",
+      "signal_roles": []
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "st"
+}
