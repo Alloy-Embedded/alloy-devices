@@ -1,0 +1,108 @@
+#pragma once
+
+namespace st {
+namespace stm32g0 {
+namespace generated {
+struct InterruptDescriptor {
+  const char* device;
+  const char* interrupt_name;
+  int line;
+  const char* peripheral;
+  const char* shared_group;
+  const char* alias_names;
+  int vector_slot;
+  const char* symbol_name;
+};
+inline constexpr InterruptDescriptor kInterruptMap[] = {
+  {"stm32g030f6", "WWDG", 0, "WWDG", nullptr, "WWDG_IRQHandler", 16, "WWDG_IRQHandler"},
+  {"stm32g030f6", "RTC_STAMP", 2, "RTC", nullptr, "RTC_STAMP_IRQHandler", 18, "RTC_STAMP_IRQHandler"},
+  {"stm32g030f6", "FLASH", 3, "FLASH", nullptr, "FLASH_IRQHandler", 19, "FLASH_IRQHandler"},
+  {"stm32g030f6", "RCC", 4, "RCC", nullptr, "RCC_IRQHandler", 20, "RCC_IRQHandler"},
+  {"stm32g030f6", "EXTI0_1", 5, "EXTI", "interrupt-group:exti", "EXTI0_1_IRQHandler", 21, "EXTI0_1_IRQHandler"},
+  {"stm32g030f6", "EXTI2_3", 6, "EXTI", "interrupt-group:exti", "EXTI2_3_IRQHandler", 22, "EXTI2_3_IRQHandler"},
+  {"stm32g030f6", "EXTI4_15", 7, "EXTI", "interrupt-group:exti", "EXTI4_15_IRQHandler", 23, "EXTI4_15_IRQHandler"},
+  {"stm32g030f6", "DMA_Channel1", 9, "DMA1", "interrupt-group:dma1", "DMA1,DMA_Channel1_IRQHandler", 25, "DMA_Channel1_IRQHandler"},
+  {"stm32g030f6", "DMA_Channel2_3", 10, "DMA1", "interrupt-group:dma1", "DMA1,DMA_Channel2_3_IRQHandler", 26, "DMA_Channel2_3_IRQHandler"},
+  {"stm32g030f6", "DMA_Channel4_5_6_7", 11, "DMAMUX1", nullptr, "DMAMUX1,DMA_Channel4_5_6_7_IRQHandler", 27, "DMA_Channel4_5_6_7_IRQHandler"},
+  {"stm32g030f6", "ADC", 12, "ADC1", nullptr, "ADC1,ADC_IRQHandler", 28, "ADC_IRQHandler"},
+  {"stm32g030f6", "TIM1_BRK_UP_TRG_COM", 13, "TIM1", "interrupt-group:tim1", "TIM1_BRK_UP_TRG_COM_IRQHandler", 29, "TIM1_BRK_UP_TRG_COM_IRQHandler"},
+  {"stm32g030f6", "TIM1_CC", 14, "TIM1", "interrupt-group:tim1", "TIM1_CC_IRQHandler", 30, "TIM1_CC_IRQHandler"},
+  {"stm32g030f6", "TIM2", 15, "TIM2", "interrupt-group:tim2", "TIM2_IRQHandler", 31, "TIM2_IRQHandler"},
+  {"stm32g030f6", "TIM3", 16, "TIM2", "interrupt-group:tim2", "TIM2,TIM3_IRQHandler", 32, "TIM3_IRQHandler"},
+  {"stm32g030f6", "TIM14", 19, "TIM14", nullptr, "TIM14_IRQHandler", 35, "TIM14_IRQHandler"},
+  {"stm32g030f6", "TIM16", 21, "TIM16", nullptr, "TIM16_IRQHandler", 37, "TIM16_IRQHandler"},
+  {"stm32g030f6", "TIM17", 22, "TIM17", nullptr, "TIM17_IRQHandler", 38, "TIM17_IRQHandler"},
+  {"stm32g030f6", "I2C1", 23, "I2C1", nullptr, "I2C1_IRQHandler", 39, "I2C1_IRQHandler"},
+  {"stm32g030f6", "I2C2", 24, "I2C2", nullptr, "I2C2_IRQHandler", 40, "I2C2_IRQHandler"},
+  {"stm32g030f6", "SPI1", 25, "SPI1", nullptr, "SPI1_IRQHandler", 41, "SPI1_IRQHandler"},
+  {"stm32g030f6", "SPI2", 26, "SPI2", nullptr, "SPI2_IRQHandler", 42, "SPI2_IRQHandler"},
+  {"stm32g030f6", "USART1", 27, "USART1", nullptr, "USART1_IRQHandler", 43, "USART1_IRQHandler"},
+  {"stm32g030f6", "USART2", 28, "USART2", nullptr, "USART2_IRQHandler", 44, "USART2_IRQHandler"},
+  {"stm32g030f6", "CEC", 30, "CRC", nullptr, "CRC,CEC_IRQHandler", 46, "CEC_IRQHandler"},
+  {"stm32g071rb", "WWDG", 0, "WWDG", nullptr, "WWDG_IRQHandler", 16, "WWDG_IRQHandler"},
+  {"stm32g071rb", "PVD", 1, "PWR", nullptr, "PWR,PVD_IRQHandler", 17, "PVD_IRQHandler"},
+  {"stm32g071rb", "RTC_STAMP", 2, "RTC", nullptr, "RTC_STAMP_IRQHandler", 18, "RTC_STAMP_IRQHandler"},
+  {"stm32g071rb", "FLASH", 3, "FLASH", nullptr, "FLASH_IRQHandler", 19, "FLASH_IRQHandler"},
+  {"stm32g071rb", "RCC", 4, "RCC", nullptr, "RCC_IRQHandler", 20, "RCC_IRQHandler"},
+  {"stm32g071rb", "EXTI0_1", 5, "EXTI", "interrupt-group:exti", "EXTI0_1_IRQHandler", 21, "EXTI0_1_IRQHandler"},
+  {"stm32g071rb", "EXTI2_3", 6, "EXTI", "interrupt-group:exti", "EXTI2_3_IRQHandler", 22, "EXTI2_3_IRQHandler"},
+  {"stm32g071rb", "EXTI4_15", 7, "EXTI", "interrupt-group:exti", "EXTI4_15_IRQHandler", 23, "EXTI4_15_IRQHandler"},
+  {"stm32g071rb", "UCPD1_UCPD2", 8, "UCPD1", nullptr, "UCPD1_UCPD2_IRQHandler", 24, "UCPD1_UCPD2_IRQHandler"},
+  {"stm32g071rb", "DMA_Channel1", 9, "DMA1", "interrupt-group:dma1", "DMA1,DMA_Channel1_IRQHandler", 25, "DMA_Channel1_IRQHandler"},
+  {"stm32g071rb", "DMA_Channel2_3", 10, "DMA1", "interrupt-group:dma1", "DMA1,DMA_Channel2_3_IRQHandler", 26, "DMA_Channel2_3_IRQHandler"},
+  {"stm32g071rb", "DMA_Channel4_5_6_7", 11, "DMAMUX1", nullptr, "DMAMUX1,DMA_Channel4_5_6_7_IRQHandler", 27, "DMA_Channel4_5_6_7_IRQHandler"},
+  {"stm32g071rb", "ADC_COMP", 12, "ADC1", nullptr, "ADC1,ADC_COMP_IRQHandler", 28, "ADC_COMP_IRQHandler"},
+  {"stm32g071rb", "TIM1_BRK_UP_TRG_COMP", 13, "TIM1", "interrupt-group:tim1", "TIM1_BRK_UP_TRG_COMP_IRQHandler", 29, "TIM1_BRK_UP_TRG_COMP_IRQHandler"},
+  {"stm32g071rb", "TIM1_CC", 14, "TIM1", "interrupt-group:tim1", "TIM1_CC_IRQHandler", 30, "TIM1_CC_IRQHandler"},
+  {"stm32g071rb", "TIM2", 15, "TIM2", "interrupt-group:tim2", "TIM2_IRQHandler", 31, "TIM2_IRQHandler"},
+  {"stm32g071rb", "TIM3", 16, "TIM2", "interrupt-group:tim2", "TIM2,TIM3_IRQHandler", 32, "TIM3_IRQHandler"},
+  {"stm32g071rb", "TIM6_DAC_LPTIM1", 17, "TIM6", nullptr, "TIM6_DAC_LPTIM1_IRQHandler", 33, "TIM6_DAC_LPTIM1_IRQHandler"},
+  {"stm32g071rb", "TIM7_LPTIM2", 18, "TIM7", nullptr, "TIM7_LPTIM2_IRQHandler", 34, "TIM7_LPTIM2_IRQHandler"},
+  {"stm32g071rb", "TIM14", 19, "TIM14", nullptr, "TIM14_IRQHandler", 35, "TIM14_IRQHandler"},
+  {"stm32g071rb", "TIM15", 20, "TIM15", nullptr, "TIM15_IRQHandler", 36, "TIM15_IRQHandler"},
+  {"stm32g071rb", "TIM16", 21, "TIM16", nullptr, "TIM16_IRQHandler", 37, "TIM16_IRQHandler"},
+  {"stm32g071rb", "TIM17", 22, "TIM17", nullptr, "TIM17_IRQHandler", 38, "TIM17_IRQHandler"},
+  {"stm32g071rb", "I2C1", 23, "I2C1", nullptr, "I2C1_IRQHandler", 39, "I2C1_IRQHandler"},
+  {"stm32g071rb", "I2C2", 24, "I2C2", nullptr, "I2C2_IRQHandler", 40, "I2C2_IRQHandler"},
+  {"stm32g071rb", "SPI1", 25, "SPI1", nullptr, "SPI1_IRQHandler", 41, "SPI1_IRQHandler"},
+  {"stm32g071rb", "SPI2", 26, "SPI2", nullptr, "SPI2_IRQHandler", 42, "SPI2_IRQHandler"},
+  {"stm32g071rb", "USART1", 27, "USART1", nullptr, "USART1_IRQHandler", 43, "USART1_IRQHandler"},
+  {"stm32g071rb", "USART2", 28, "USART2", nullptr, "USART2_IRQHandler", 44, "USART2_IRQHandler"},
+  {"stm32g071rb", "USART3_USART4_LPUART1", 29, "USART3", nullptr, "USART3_USART4_LPUART1_IRQHandler", 45, "USART3_USART4_LPUART1_IRQHandler"},
+  {"stm32g071rb", "CEC", 30, "CRC", nullptr, "CRC,CEC_IRQHandler", 46, "CEC_IRQHandler"},
+  {"stm32g071rb", "RNG", 31, "RNG", nullptr, "RNG_IRQHandler", 47, "RNG_IRQHandler"},
+  {"stm32g0b1re", "WWDG", 0, "WWDG", nullptr, "WWDG_IRQHandler", 16, "WWDG_IRQHandler"},
+  {"stm32g0b1re", "PVD", 1, "PWR", nullptr, "PWR,PVD_IRQHandler", 17, "PVD_IRQHandler"},
+  {"stm32g0b1re", "RTC_TAMP", 2, "RTC", nullptr, "RTC_TAMP_IRQHandler", 18, "RTC_TAMP_IRQHandler"},
+  {"stm32g0b1re", "FLASH", 3, "FLASH", nullptr, "FLASH_IRQHandler", 19, "FLASH_IRQHandler"},
+  {"stm32g0b1re", "RCC_CRS", 4, "RCC", nullptr, "RCC_CRS_IRQHandler", 20, "RCC_CRS_IRQHandler"},
+  {"stm32g0b1re", "EXTI0_1", 5, "EXTI", "interrupt-group:exti", "EXTI0_1_IRQHandler", 21, "EXTI0_1_IRQHandler"},
+  {"stm32g0b1re", "EXTI2_3", 6, "EXTI", "interrupt-group:exti", "EXTI2_3_IRQHandler", 22, "EXTI2_3_IRQHandler"},
+  {"stm32g0b1re", "EXTI4_15", 7, "EXTI", "interrupt-group:exti", "EXTI4_15_IRQHandler", 23, "EXTI4_15_IRQHandler"},
+  {"stm32g0b1re", "UCPD1_UCPD2_USB", 8, "UCPD1", nullptr, "UCPD1_UCPD2_USB_IRQHandler", 24, "UCPD1_UCPD2_USB_IRQHandler"},
+  {"stm32g0b1re", "DMA1_Channel1", 9, "DMA1", "interrupt-group:dma1", "DMA1_Channel1_IRQHandler", 25, "DMA1_Channel1_IRQHandler"},
+  {"stm32g0b1re", "DMA1_Channel2_3", 10, "DMA1", "interrupt-group:dma1", "DMA1_Channel2_3_IRQHandler", 26, "DMA1_Channel2_3_IRQHandler"},
+  {"stm32g0b1re", "DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5", 11, "DMA1", "interrupt-group:dma1", "DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5_IRQHandler", 27, "DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5_IRQHandler"},
+  {"stm32g0b1re", "ADC_COMP", 12, "ADC1", nullptr, "ADC1,ADC_COMP_IRQHandler", 28, "ADC_COMP_IRQHandler"},
+  {"stm32g0b1re", "TIM1_BRK_UP_TRG_COM", 13, "TIM1", "interrupt-group:tim1", "TIM1_BRK_UP_TRG_COM_IRQHandler", 29, "TIM1_BRK_UP_TRG_COM_IRQHandler"},
+  {"stm32g0b1re", "TIM1_CC", 14, "TIM1", "interrupt-group:tim1", "TIM1_CC_IRQHandler", 30, "TIM1_CC_IRQHandler"},
+  {"stm32g0b1re", "TIM2", 15, "TIM2", nullptr, "TIM2_IRQHandler", 31, "TIM2_IRQHandler"},
+  {"stm32g0b1re", "TIM3_TIM4", 16, "TIM3", nullptr, "TIM3_TIM4_IRQHandler", 32, "TIM3_TIM4_IRQHandler"},
+  {"stm32g0b1re", "TIM6_DAC_LPTIM1", 17, "DAC", nullptr, "TIM6_DAC,TIM6_DAC_LPTIM1_IRQHandler", 33, "TIM6_DAC_LPTIM1_IRQHandler"},
+  {"stm32g0b1re", "TIM7", 18, "TIM7", nullptr, "TIM7_IRQHandler", 34, "TIM7_IRQHandler"},
+  {"stm32g0b1re", "TIM14", 19, "TIM14", nullptr, "TIM14_IRQHandler", 35, "TIM14_IRQHandler"},
+  {"stm32g0b1re", "TIM15", 20, "TIM15", nullptr, "TIM15_IRQHandler", 36, "TIM15_IRQHandler"},
+  {"stm32g0b1re", "TIM16", 21, "TIM16", nullptr, "TIM16_IRQHandler", 37, "TIM16_IRQHandler"},
+  {"stm32g0b1re", "TIM17", 22, "TIM17", nullptr, "TIM17_IRQHandler", 38, "TIM17_IRQHandler"},
+  {"stm32g0b1re", "I2C1", 23, "I2C1", nullptr, "I2C1_IRQHandler", 39, "I2C1_IRQHandler"},
+  {"stm32g0b1re", "I2C2_I2C3", 24, "I2C2", nullptr, "I2C2_I2C3_IRQHandler", 40, "I2C2_I2C3_IRQHandler"},
+  {"stm32g0b1re", "SPI1", 25, "SPI1", nullptr, "SPI1_IRQHandler", 41, "SPI1_IRQHandler"},
+  {"stm32g0b1re", "SPI2_SPI3", 26, "SPI2", nullptr, "SPI2_SPI3_IRQHandler", 42, "SPI2_SPI3_IRQHandler"},
+  {"stm32g0b1re", "USART1", 27, "USART1", nullptr, "USART1_IRQHandler", 43, "USART1_IRQHandler"},
+  {"stm32g0b1re", "USART2_LPUART2", 28, "USART2", nullptr, "USART2_LPUART2_IRQHandler", 44, "USART2_LPUART2_IRQHandler"},
+  {"stm32g0b1re", "USART3_USART4_USART5_USART6_LPUART1", 29, "USART3", nullptr, "USART3_USART4_USART5_USART6_LPUART1_IRQHandler", 45, "USART3_USART4_USART5_USART6_LPUART1_IRQHandler"},
+  {"stm32g0b1re", "CEC", 30, "HDMI_CEC", nullptr, "HDMI_CEC,CEC_IRQHandler", 46, "CEC_IRQHandler"},
+};
+}
+}
+}

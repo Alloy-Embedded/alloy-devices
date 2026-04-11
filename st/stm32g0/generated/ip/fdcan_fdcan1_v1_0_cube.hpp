@@ -1,0 +1,42 @@
+#pragma once
+
+#include <array>
+
+namespace st {
+namespace stm32g0 {
+namespace generated {
+namespace ip {
+struct IpBlockDescriptor {
+  const char* ip_name;
+  const char* ip_version;
+  const char* peripheral_class;
+  const char* register_profile;
+  const char* signal_roles;
+};
+inline constexpr IpBlockDescriptor kIpBlock = {
+  "fdcan",
+  "fdcan1_v1_0_Cube",
+  "fdcan",
+  "fdcan:fdcan1_v1_0_Cube",
+  "rx,tx",
+};
+
+struct CapabilityDescriptor {
+  const char* capability_id;
+  const char* scope;
+  const char* peripheral_class;
+  const char* name;
+  const char* value;
+  const char* ip_name;
+  const char* ip_version;
+  const char* peripheral;
+  const char* package;
+};
+inline constexpr std::array<CapabilityDescriptor, 2> kCapabilities = {{
+  {"capability:fdcan:fdcan1-v1-0-cube:rx", "ip-block", "fdcan", "signal-role", "rx", "fdcan", "fdcan1_v1_0_Cube", nullptr, nullptr},
+  {"capability:fdcan:fdcan1-v1-0-cube:tx", "ip-block", "fdcan", "signal-role", "tx", "fdcan", "fdcan1_v1_0_Cube", nullptr, nullptr},
+}};
+}
+}
+}
+}

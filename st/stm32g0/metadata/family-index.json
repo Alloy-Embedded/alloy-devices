@@ -1,0 +1,29 @@
+{
+  "device_count": 3,
+  "devices": [
+    {
+      "core": "cortex-m0plus",
+      "device": "stm32g030f6",
+      "metadata_path": "st/stm32g0/metadata/devices/stm32g030f6.json",
+      "package": "tssop20",
+      "summary": "Low-pin-count bootstrap device."
+    },
+    {
+      "core": "cortex-m0plus",
+      "device": "stm32g071rb",
+      "metadata_path": "st/stm32g0/metadata/devices/stm32g071rb.json",
+      "package": "lqfp64",
+      "summary": "Representative mid-range bootstrap device."
+    },
+    {
+      "core": "cortex-m0plus",
+      "device": "stm32g0b1re",
+      "metadata_path": "st/stm32g0/metadata/devices/stm32g0b1re.json",
+      "package": "lqfp64",
+      "summary": "Higher-feature bootstrap device."
+    }
+  ],
+  "family": "stm32g0",
+  "schema_version": "1.1.0",
+  "vendor": "st"
+}
