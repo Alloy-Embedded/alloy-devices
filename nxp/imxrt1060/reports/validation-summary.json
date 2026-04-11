@@ -4,12 +4,12 @@
     {
       "device": "mimxrt1062",
       "package": "bga196",
-      "publishable": false
+      "publishable": true
     },
     {
       "device": "mimxrt1064",
       "package": "bga196",
-      "publishable": false
+      "publishable": true
     }
   ],
   "draft_system_descriptor_domains": [],

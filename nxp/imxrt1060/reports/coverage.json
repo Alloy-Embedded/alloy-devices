@@ -1,5 +1,5 @@
 {
-  "all_devices_publishable": false,
+  "all_devices_publishable": true,
   "devices": [
     {
       "counts": {
@@ -33,7 +33,7 @@
         "capabilities": true,
         "clock-reset": true,
         "connectors": true,
-        "dma": false,
+        "dma": true,
         "interrupt": true,
         "ip-blocks": true,
         "memory": true,
@@ -41,7 +41,7 @@
         "startup": true
       },
       "package": "bga196",
-      "publishable": false
+      "publishable": true
     },
     {
       "counts": {
@@ -75,7 +75,7 @@
         "capabilities": true,
         "clock-reset": true,
         "connectors": true,
-        "dma": false,
+        "dma": true,
         "interrupt": true,
         "ip-blocks": true,
         "memory": true,
@@ -83,7 +83,7 @@
         "startup": true
       },
       "package": "bga196",
-      "publishable": false
+      "publishable": true
     }
   ],
   "draft_system_descriptor_domains": [],
