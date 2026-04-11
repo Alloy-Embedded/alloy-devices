@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "afec",
   "afec_s",
   "afec",
+  "alloy.afec.microchip-afec-s",
   "afec:afec_s",
   "ad0,ad1,ad10,ad2,ad5,ad6,ad7,ad8,ad9,adtrg",
 };

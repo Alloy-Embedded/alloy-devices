@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "gmac",
   "gmac_s",
   "gmac",
+  "alloy.gmac.microchip-gmac-s",
   "gmac:gmac_s",
   "gcol,gcrs,gmdc,gmdio,grx0,grx1,grx2,grx3,grxck,grxdv,grxer,gtsucomp,gtx0,gtx1,gtx2,gtx3,gtxck,gtxen,gtxer",
 };

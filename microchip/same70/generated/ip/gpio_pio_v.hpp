@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "gpio",
   "pio_v",
   "gpio",
+  "alloy.gpio.microchip-pio-v",
   "gpio:pio_v",
   "piodc0,piodc1,piodc2,piodc3,piodc4,piodc5,piodc6,piodc7,piodcclk,piodcen1,piodcen2",
 };

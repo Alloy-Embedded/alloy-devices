@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "f4e4256904e9fb4f0f32a6fbdf262d48519d444ebbad678c58f2ff82859a7f3d",
+    "canonical_ir_sha256": "59641dbd4094b1d7d96e7bf13c75eb4fe4c2f3c99a197ce9307f0934290f21e7",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.1.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -174,7 +174,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "303ff844c711afec309f469c207327b78fc101dc58f9903b714085e3ff83eda0"
+    "validation_report_sha256": "7df07245e52ecaf949fc29ee577b9ad1d44c72ba25c2a04e01d06da779c323e3"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/atsame70n21b",
@@ -188,15 +188,19 @@
       "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
       "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
       "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"microchip/same70/generated/devices/atsame70n21b/register_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_REGISTER_FIELDS_HEADER=\"microchip/same70/generated/devices/atsame70n21b/register_fields.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"microchip/same70/generated/peripherals/gpioa.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CONNECTOR_TABLES_HEADER=\"microchip/same70/generated/connector_tables.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_INTERRUPT_MAP_HEADER=\"microchip/same70/generated/interrupt_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_MEMORY_MAP_HEADER=\"microchip/same70/generated/memory_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PACKAGE_MAP_HEADER=\"microchip/same70/generated/package_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CLOCK_TREE_HEADER=\"microchip/same70/generated/clock_tree_lite.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_PROFILES_HEADER=\"microchip/same70/generated/runtime_profiles.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_DESCRIPTOR_HEADER=\"microchip/same70/generated/devices/atsame70n21b/device_descriptor.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PINS_HEADER=\"microchip/same70/generated/devices/atsame70n21b/pins.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PERIPHERAL_INSTANCES_HEADER=\"microchip/same70/generated/devices/atsame70n21b/peripheral_instances.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_INTERRUPT_BINDINGS_HEADER=\"microchip/same70/generated/devices/atsame70n21b/interrupt_bindings.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DMA_BINDINGS_HEADER=\"microchip/same70/generated/devices/atsame70n21b/dma_bindings.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CAPABILITY_OVERLAYS_HEADER=\"microchip/same70/generated/devices/atsame70n21b/capability_overlays.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_STARTUP_DESCRIPTORS_HEADER=\"microchip/same70/generated/devices/atsame70n21b/startup_descriptors.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=microchip::same70::generated::devices::atsame70n21b",
@@ -218,24 +222,24 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 85,
+  "published_artifact_count": 92,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 7649,
-      "content_sha256": "4e727e2880df846f08a69b3229ff16aa0ee6de04854f07fee0c3d0fb7c07e32b",
+      "content_sha256": "17adc7ef3a415f5c5cb1e46ed94a9e646675b561c2f957e64c221f6f7e0d955d",
       "path": "microchip/same70/artifact-manifest.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 14355,
-      "content_sha256": "db8018c6fac7db8c32042b893c94951a5519130cc2657301a23224f10a4a955c",
+      "content_bytes": 22039,
+      "content_sha256": "eae7d7ceecc3fc94b64a40a2c3c98a5950ecf91372ea9d0b21aa7a8fb7c19d6a",
       "path": "microchip/same70/generated/clock_tree_lite.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 439964,
-      "content_sha256": "d6c32ecdc8ca9bd5e6163b59263b238ee09ca0fe634477a84a00a8e8ab322e74",
+      "content_bytes": 1365484,
+      "content_sha256": "fbdeb81ab2e0734ef8b20b9ba4cab6ad9e95f78c8194172fa26e10d179a20156",
       "path": "microchip/same70/generated/connector_tables.hpp"
     },
     {
@@ -252,8 +256,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 15072,
-      "content_sha256": "1678af3e0a9e6c52caa9a19df4ba21a486d51a7d86654d3996c03b9731b46206",
+      "content_bytes": 9678,
+      "content_sha256": "3986ca971d83507d0c95cb1d48934e1ef51c33f59bee50f6bef983021c776905",
+      "path": "microchip/same70/generated/devices/atsame70n21b/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 17863,
+      "content_sha256": "3178485cc4e62829a77cb11635306cc79ab8837a52e46ccb788912eedc2577ea",
+      "path": "microchip/same70/generated/devices/atsame70n21b/interrupt_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 21050,
+      "content_sha256": "5d755fde26c4471c9875db59b15bc98c9da303714dcb232b24410fd694b7c00f",
       "path": "microchip/same70/generated/devices/atsame70n21b/peripheral_instances.hpp"
     },
     {
@@ -264,8 +280,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1938,
-      "content_sha256": "2a7c72af199f24f2477d4a3de00451ca7d42a280d34e1297b8af486caac119bf",
+      "content_bytes": 1742074,
+      "content_sha256": "36e57675ae1cd967d10081a3499708b25459986d85bb192471de932325259cbe",
+      "path": "microchip/same70/generated/devices/atsame70n21b/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 150980,
+      "content_sha256": "34431ad003ac3074b8768d626dc3eebd8744a4641a8e9d9ccd8a89c138193118",
       "path": "microchip/same70/generated/devices/atsame70n21b/register_map.hpp"
     },
     {
@@ -294,8 +316,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 17444,
-      "content_sha256": "50436cb5c4838b6d81884126bb4b0067d195ceea912c6b509c69b3e0e39b32de",
+      "content_bytes": 10930,
+      "content_sha256": "23ff937db8b5ac84584c714cbd9170f46abd0f8ea04f3eec723a2e20ee8c0ed0",
+      "path": "microchip/same70/generated/devices/atsame70q21b/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 18958,
+      "content_sha256": "a9cbe71d169b4b9295ad87218a2f6e700574071cc3da7de6332ff3e6c7e88d9d",
+      "path": "microchip/same70/generated/devices/atsame70q21b/interrupt_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 23873,
+      "content_sha256": "11c4f5e521b85b81978cf681a6c93fa1dfa839d5807055ceaeb44b17c0bd8ead",
       "path": "microchip/same70/generated/devices/atsame70q21b/peripheral_instances.hpp"
     },
     {
@@ -306,8 +340,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2065,
-      "content_sha256": "e0e7329ab5d65cb996363e9c509657aff45be92359e2fbb33fce00a7464e4d33",
+      "content_bytes": 2234853,
+      "content_sha256": "921dd3eff7e17bd19c99104727002479c51249d258ac231547530074da7259b6",
+      "path": "microchip/same70/generated/devices/atsame70q21b/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 167329,
+      "content_sha256": "925e31b97d6af45c5573db7c9eb8df3abfd480e2ea0b66988d632d5650830a61",
       "path": "microchip/same70/generated/devices/atsame70q21b/register_map.hpp"
     },
     {
@@ -336,278 +376,278 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 718,
-      "content_sha256": "761ec48a6a70c8d0c818450a55fc06e209b810f6dbdb01fb80fa17cb5d403229",
+      "content_bytes": 782,
+      "content_sha256": "304fff93713163c1da0d5df30f0c8b2a7fabafc9798a2dcfa8a50060960f8faa",
       "path": "microchip/same70/generated/ip/acc_acc_j.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 718,
-      "content_sha256": "bce7557cc24586cde1252251b0c3cd8a2024b60a14a93afd03740c243ff9149e",
+      "content_bytes": 782,
+      "content_sha256": "42c127559610c331eaa8804ebf7f3c0a9753c149c0f8abcc686bbcde2c15f3c0",
       "path": "microchip/same70/generated/ip/aes_aes_w.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1895,
-      "content_sha256": "d461bec2497a2820b9fbf6a562e01f1ec37b15f783a37b07e0af3c5ef11f2e1a",
+      "content_bytes": 1961,
+      "content_sha256": "83b533ef2e0d81c389cca1dff7f444b929c43d8129a7738f4f49dbf9b75918f6",
       "path": "microchip/same70/generated/ip/afec_afec_s.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 735,
-      "content_sha256": "6d92423a018d371689206988bd4b3303a14135e79680ef714350d6f051baa1e4",
+      "content_bytes": 806,
+      "content_sha256": "4f84e5156783e72d6e7a187dd4156e534ed70b8eb39556d15371ed51fdbb42a0",
       "path": "microchip/same70/generated/ip/chipid_chipid_zk.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1085,
-      "content_sha256": "859efb96be0fe847691482dd3aebfe2c15f1a16447b2144f0b9218a1d6f86eab",
+      "content_bytes": 1151,
+      "content_sha256": "b4f96737d0b2972b4dae67e5f32a69549c8388466d44f3a6bc9ffe70467086da",
       "path": "microchip/same70/generated/ip/dacc_dacc_e.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "755ff5be911494c92d46d57ed30d2ae232cdb6bb9608bb1aacba5d8e96f7fd2d",
+      "content_bytes": 776,
+      "content_sha256": "08336f69b98114ce282895114a763499393f7f9cf95c2d8c6794efb77bcaf494",
       "path": "microchip/same70/generated/ip/dwt_dwt.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 837,
-      "content_sha256": "37b520a8862c950cacb1f378594431f6b6cb5b00176f64c7643114b99112eb5f",
+      "content_bytes": 901,
+      "content_sha256": "c5d7aadb6089a7bfc1c1f629855eafeadebc8301b6033b6037cbac108c6493c6",
       "path": "microchip/same70/generated/ip/efc_efc_y.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "730182eb61947f46dd97d4a6d644900f9a407a157e04fb0863638dee8ccca496",
+      "content_bytes": 776,
+      "content_sha256": "042597c665d7b84e376a12574359297f4874b6bd87b3af5e62d5a8c92ea023bb",
       "path": "microchip/same70/generated/ip/etm_etm.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "e9d0eeda110e8172423c1d9be9fe92bf303892d912bbf03e30a20825a15e0813",
+      "content_bytes": 776,
+      "content_sha256": "89cb461fd58188f5804a03be2ea4998acf40708f32c6bde557e85dc90fca2ed9",
       "path": "microchip/same70/generated/ip/fpb_fpb.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "c070c2ef94a908156b690c9f2c9e02e55ddb90167206cf666507d5e9ad4b3daa",
+      "content_bytes": 776,
+      "content_sha256": "3e765d9afacdcf61bd548dc1e195dbd46328bb7bf6297f8fc632d47f9f52aa88",
       "path": "microchip/same70/generated/ip/fpu_fpu.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3020,
-      "content_sha256": "8c7e0c7bfff9b646e39455ab8edf0af3348e4a3c01294689a1ec97adf38e5097",
+      "content_bytes": 3086,
+      "content_sha256": "dc23c561dc5d237a790dab06101af60e4dfa6e1f5163ab5c328033907b88db0e",
       "path": "microchip/same70/generated/ip/gmac_gmac_s.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 723,
-      "content_sha256": "437555cf1f49af782f8e06e728248a452df7981c7820e69f50b6c9c3bf077c39",
+      "content_bytes": 789,
+      "content_sha256": "4397937e03fa6374e52c9da16f454e43bc1a4859213a6e26145290aa31362602",
       "path": "microchip/same70/generated/ip/gpbr_gpbr_j.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2095,
-      "content_sha256": "21c62ae0268c59f8f483ee863a09d75e300342a246cf71506432854f35ad8707",
+      "content_bytes": 2160,
+      "content_sha256": "e7efdceb8e460b60ea83746dd1b4f6388b4fe3080c21f115950a5ce2f4c2ad89",
       "path": "microchip/same70/generated/ip/gpio_pio_v.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1489,
-      "content_sha256": "aa13a76efe8a09b5beb9ac8229f8953e7c3e510e692e12b2d7a97b6f666168ca",
+      "content_bytes": 1557,
+      "content_sha256": "c42af49a7dc570cc6bbe0f8cf53f2c1c5596142246964c3e79328811504e8c22",
       "path": "microchip/same70/generated/ip/hsmci_hsmci_r.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1317,
-      "content_sha256": "58b4c04d81c14fad016f97bc2b2a977b53226bd87f3557fe346ba26a2877b7e5",
+      "content_bytes": 1384,
+      "content_sha256": "edcd202b14a5c359b397bfef69437a3d4a518e8750b9dbf515ffc54a97ca0ad4",
       "path": "microchip/same70/generated/ip/i2sc0_i2sc_n.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1317,
-      "content_sha256": "87c259a22b13434aa493ffa3026b1172769e7d01d7b08c3f4dc9fc3b54379494",
+      "content_bytes": 1384,
+      "content_sha256": "69ff502667cf0a1870953954cef2fcbdab6d7af77543124a210faccb5f7e8366",
       "path": "microchip/same70/generated/ip/i2sc1_i2sc_n.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 718,
-      "content_sha256": "6db7ff2d98d5718c4d481a58421166a08596207442de8e2b15c8e608046957b1",
+      "content_bytes": 782,
+      "content_sha256": "7b48333b752ff55452c29542063ed5b41f0b42db7641bfb4738fa6ae542a37e2",
       "path": "microchip/same70/generated/ip/icm_icm_h.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2368,
-      "content_sha256": "f6cb7864cacda2fcf66e8500c3a8abcf00869e9467ffc8885b1f55dd152218a6",
+      "content_bytes": 2432,
+      "content_sha256": "06dc192d8d50d865bf692db998bebef27d3107a2297daa9c2ddb0c9da1a27da3",
       "path": "microchip/same70/generated/ip/isi_isi_k.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "b9ffd60992417c1092f408045598e45211c3731a4f55d989b25aaf37635817b5",
+      "content_bytes": 776,
+      "content_sha256": "695df2e5c4efd60d159305a746e47a9b169a5671442e6d6c53a97320b1d2c440",
       "path": "microchip/same70/generated/ip/itm_itm.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 738,
-      "content_sha256": "5ae080cd2b120ea6a622516933b65113d011570ad5389f82bc3277385339f168",
+      "content_bytes": 810,
+      "content_sha256": "0ae8d2de32636c1072755ae1f8df281b24b5f15a6968872445870ac5d46ae8ac",
       "path": "microchip/same70/generated/ip/lockbit_lockbit_1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 733,
-      "content_sha256": "03dd9772e48f58601205d64f0c584d894d2204eb0f6ac89602fb27ad332cf981",
+      "content_bytes": 803,
+      "content_sha256": "ca87079f4c5b2eedbd4a2f11bfb9697b2da68af7da9a3394b9b1e4341a87cc6b",
       "path": "microchip/same70/generated/ip/matrix_matrix_l.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 948,
-      "content_sha256": "5a90eca4eb9c3991dd5c920b353bf92344bf5d9a2ebbf5fb6e46e916dcd22b9e",
+      "content_bytes": 1013,
+      "content_sha256": "386e699ac3cc48eb1c88b490caa69bac9fa4a260d839563d15842ea8a75f0700",
       "path": "microchip/same70/generated/ip/mcan_mcan_n.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "29a7fce1b4b748d8d4e4da6823a747c694f7d6ea50abdaefce3a82ac664c8ec6",
+      "content_bytes": 776,
+      "content_sha256": "dfb6e63003da2704fc4ce4fe76647c9671a950a6d99a62fb0ff865cb5d738d85",
       "path": "microchip/same70/generated/ip/mpu_mpu.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 719,
-      "content_sha256": "8031b17d4ffed6ffacee5e5c667c7a4755ead224708175a0ee99eacb3f5d7f57",
+      "content_bytes": 783,
+      "content_sha256": "1b1f04b1474b291bf71b12ff94f5c90469b127fad5eed54b758f039c23ffb2db",
       "path": "microchip/same70/generated/ip/nvic_nvic.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1524,
-      "content_sha256": "741bbc635ef1bce0914b92e1b7264e61ead30e8480464e5c93e24e8a86028fde",
+      "content_bytes": 1588,
+      "content_sha256": "fc9fdae9081f8cd354d202282d571494297a8092912fb22b0e6904270a302cad",
       "path": "microchip/same70/generated/ip/pmc_pmc_p.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2275,
-      "content_sha256": "2a7fdea5782129dd4d40d195f2034ff0abfdceffba5c5641bb901b064ba5396b",
+      "content_bytes": 2339,
+      "content_sha256": "37c8df8fed74be1420baf5a637adc4d988439b82cbd6917614f72ded270367cf",
       "path": "microchip/same70/generated/ip/pwm_pwm_y.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1436,
-      "content_sha256": "3fcc83d730653e5ce7fb5c88d095f88da112bb6150306dc679ac2eefa9c38fc1",
+      "content_bytes": 1502,
+      "content_sha256": "50c7042e5cd0c8be1d0d98e503fb2702cca472c018e7cbae14008036577ba69a",
       "path": "microchip/same70/generated/ip/qspi_qspi_j.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 723,
-      "content_sha256": "88e4399c11329f06f60317744afc234539559c6609b4fca17f89b7c91466831a",
+      "content_bytes": 789,
+      "content_sha256": "442e48be1f178f54820bf5fc6dbc1adfd77bffc03c96f5eb45bce80108fb8656",
       "path": "microchip/same70/generated/ip/rstc_rstc_n.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 728,
-      "content_sha256": "4815a39d0578e461beec9737de8d0340c6867be84599d8498fee8149e7d156f6",
+      "content_bytes": 796,
+      "content_sha256": "f8ed7b216e037d70f8e25262feff33e399c1c8a6f0645190b9c3e651c44acf2b",
       "path": "microchip/same70/generated/ip/rswdt_rswdt_g.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 972,
-      "content_sha256": "b757c2ae6a01d9eb4c20db85d209795e7ec9fbe48ac2df955d3d7dd66250d67f",
+      "content_bytes": 1037,
+      "content_sha256": "c8ae0eab2303abbbfeac5574fad863bf46127eb203973f66ee2aaa17793bf4c2",
       "path": "microchip/same70/generated/ip/rtc_rtc_zb.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 718,
-      "content_sha256": "4074991736b2289187f9af18e8550566c8ab3126f2767a5f39cd111e2b12e759",
+      "content_bytes": 782,
+      "content_sha256": "511ba808715350e8bfa84e7c8ae19efc8046525def07a4eafea6a369da519e6b",
       "path": "microchip/same70/generated/ip/rtt_rtt_m.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 714,
-      "content_sha256": "7db196a45a7e37e4fb371ad94d0568923fe36c1dae1f327bd7befca4a410d4d9",
+      "content_bytes": 776,
+      "content_sha256": "b77821d59cbacc834f6638e64c0028b7c335f87b1d9ce4cd2a0a04ee9b0f6790",
       "path": "microchip/same70/generated/ip/scb_scb.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 718,
-      "content_sha256": "290b7928614c01d1cd63c8b33bd517c3b62a331133bc598823fa822dffd7f9b8",
+      "content_bytes": 782,
+      "content_sha256": "eb2d3b89b511af2b5226fac6b4248b303896dc6bb6b2af1570885a948af4e32a",
       "path": "microchip/same70/generated/ip/smc_smc_j.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1177,
-      "content_sha256": "d8c7cb993eeffc437384a9e28864672db87b262f75cf164c5c337e198290c7a4",
+      "content_bytes": 1242,
+      "content_sha256": "398d7faac7a32a982c89f45c66ad1c70f98d67b2da2049ba313d9b8b3f6d3f72",
       "path": "microchip/same70/generated/ip/spi_spi_zm.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1368,
-      "content_sha256": "1f54b8acbe94a8794f6d948e7c93daef26db2c23f16148b0bce569ef2a84478e",
+      "content_bytes": 1432,
+      "content_sha256": "7d95dc1e11704af2b401fa33f6dfda2b13ab6c1c6a87af3ca36fd98801359b76",
       "path": "microchip/same70/generated/ip/ssc_ssc_q.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2476,
-      "content_sha256": "16551f298991f29a738010735fe898ddbf951e3c57f6cdf7f45e0e66d21786fb",
+      "content_bytes": 2543,
+      "content_sha256": "1a29665f11f38a8e4129e2dbc689880cb3918de1e06ee4b38edc196a7f4366e2",
       "path": "microchip/same70/generated/ip/supc_supc_ze.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2017,
-      "content_sha256": "12aa06e3b7b9bb4b8176aae78ef36b47a927da5ba34758eca0587043844bf5ba",
+      "content_bytes": 2083,
+      "content_sha256": "9cf1bbeb70c0aebb63a2d9af70be4e316934b0d5ed53545127a3c02a8cd99ca3",
       "path": "microchip/same70/generated/ip/tc_tc_zl.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 719,
-      "content_sha256": "5d7473a37e83180c656834452916fad652a97f7ba1845a6fa3fbe1498374685b",
+      "content_bytes": 783,
+      "content_sha256": "bffc916fafc533686f59ca1a9db7d638c8ee801d1368d430fc737280e94f1939",
       "path": "microchip/same70/generated/ip/tpiu_tpiu.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 723,
-      "content_sha256": "0434f4eb5980c695eb98f1ff9acf42f209e4b57404e9c0b521f1a89ad3f40b33",
+      "content_bytes": 789,
+      "content_sha256": "2f4fbae1fb499df5a08b149c63dd0068f3f104f376b9d6284c5cdcfc631f6020",
       "path": "microchip/same70/generated/ip/trng_trng_g.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 966,
-      "content_sha256": "77068294c7693d612283b5e15dd66911b91c4b815f00acf1d2c3e5ae031c91f5",
+      "content_bytes": 1032,
+      "content_sha256": "c54f50f8f0e757ca836a325c8f034dde3465aeb0eeb7134f63d187d478cc3b74",
       "path": "microchip/same70/generated/ip/twihs_twihs_z.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1946,
-      "content_sha256": "272ab026704d444411fe5ed7133397fd84d35131e78c6a7b8078251907646354",
+      "content_bytes": 2012,
+      "content_sha256": "9f4542a3ccb32c262b61376e2e3f18e3a5fecde531c5383d74df586acdf6d56c",
       "path": "microchip/same70/generated/ip/uart_uart_r.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3092,
-      "content_sha256": "3c934523fffd2b0182e119f2d143eba1136338285d18c3a11d672221433c2b55",
+      "content_bytes": 3160,
+      "content_sha256": "5cf63214a9712a80407f672ba2f6a920a99ee4de13d58f719a5d09326cfec80d",
       "path": "microchip/same70/generated/ip/usart_usart_zw.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 728,
-      "content_sha256": "bb01996ab35396a20daf38f36c966e880094941e8c14e8f408eebc7b10579442",
+      "content_bytes": 796,
+      "content_sha256": "b0163a48fb4b9f2305790ff2d73078bdde5071957a598df54f501104d4ceddd0",
       "path": "microchip/same70/generated/ip/usbhs_usbhs_g.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 723,
-      "content_sha256": "6d8cb4d2f9bd373e11f14d08694a220a5765bc58e670b6c5908999148d2046ed",
+      "content_bytes": 789,
+      "content_sha256": "dd3740ad9dcc93c82b105b56989ce08c0d989820cd1e3507426e155f6e84f8b4",
       "path": "microchip/same70/generated/ip/utmi_utmi_a.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 718,
-      "content_sha256": "de3883787129bae098d287085ac79fbec224424d578f589b42c7b15e2c8ca4ad",
+      "content_bytes": 782,
+      "content_sha256": "f4735559d41330a8f3db349e1d7a83c6e8018fedc2eef062a1b0cead696154a0",
       "path": "microchip/same70/generated/ip/wdt_wdt_n.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 726,
-      "content_sha256": "6bd51bf40afcd9b15e2c1723455ebea532c4145308824b6698f37e93624ad130",
+      "content_bytes": 792,
+      "content_sha256": "7e7f0f7d315bd8c6f16bfc493dd9202dfc51485056188fa03a71c155d74da5c8",
       "path": "microchip/same70/generated/ip/xdmac_xdmac_k.hpp"
     },
     {
@@ -659,6 +699,12 @@
       "path": "microchip/same70/generated/rcc_map.hpp"
     },
     {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 41920,
+      "content_sha256": "2ef22d8e27c5b004dfb80a9a8561fba85acc5ae554b9936556592c4a140c5d5f",
+      "path": "microchip/same70/generated/runtime_profiles.hpp"
+    },
+    {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 365676,
       "content_sha256": "a0505bc21ef1b2ae4d6f4f195ecadc886252181017e028eff22b2286442b718c",
@@ -666,26 +712,26 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 1539831,
-      "content_sha256": "d90b0dcd3ff12b8b8bf4b4e9c68e48441be0cf5fa04ac039f6dfe3e63ce73593",
+      "content_bytes": 1944179,
+      "content_sha256": "efcb414978e9561856c14605e025ecf998cc45f443cd9197cb9bfc7bf8463944",
       "path": "microchip/same70/metadata/connectors.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 1285634,
-      "content_sha256": "b25695e2045bede4fe2232d91b2342f66188edf440e426829c4061a8f91f6dbe",
+      "content_bytes": 7628938,
+      "content_sha256": "6f2f00aa5cafde9a8fdcdc3e13dc39043b75db05530041a9874632d011b694d8",
       "path": "microchip/same70/metadata/devices/atsame70n21b.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 1605240,
-      "content_sha256": "3fd6c9e734884d57c5d9d38589967589a7c71a8948e4754c7e2ce8cc4cb5f6a5",
+      "content_bytes": 9662969,
+      "content_sha256": "789f09404999d92cba523bc4069ce8668bbfd534394424a4c2e566c78309759d",
       "path": "microchip/same70/metadata/devices/atsame70q21b.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 301197,
-      "content_sha256": "a761db7547d50299d469989200526e44a87e8da8301dee1741e919a568956403",
+      "content_bytes": 305119,
+      "content_sha256": "8495548574cedd77c1de42255a48513398e26b381d2a5600ab4290a04f067dab",
       "path": "microchip/same70/metadata/family-connectivity.json"
     },
     {
@@ -696,8 +742,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 50447,
-      "content_sha256": "d286f7587c4bd3b7d8a7806934cddd295280a89cf6be84e18c3883c43d87c2a0",
+      "content_bytes": 53083,
+      "content_sha256": "d88d8c03ac724cdfa63183fc935e12185d772e4a34480cab2c51e96941c0c506",
       "path": "microchip/same70/metadata/ip-blocks.json"
     },
     {
@@ -708,8 +754,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 463499,
-      "content_sha256": "97f0a8e3d402ee920fef9f5a8399b535e3167b041dac8db166032ca6f2bac4a2",
+      "content_bytes": 470852,
+      "content_sha256": "5ab8dcd5a33bd543c48094587b5698df83ae7f8d6ee1757366468cad5db9dbf6",
       "path": "microchip/same70/metadata/system-descriptors.json"
     },
     {
@@ -720,14 +766,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 51062,
-      "content_sha256": "303ff844c711afec309f469c207327b78fc101dc58f9903b714085e3ff83eda0",
+      "content_bytes": 63312,
+      "content_sha256": "7df07245e52ecaf949fc29ee577b9ad1d44c72ba25c2a04e01d06da779c323e3",
       "path": "microchip/same70/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 15090,
-      "content_sha256": "43390188e91fbf6cbc3bb161d99361fdccfc59049865ab99dcd6fdb76889ec8c",
+      "content_bytes": 18396,
+      "content_sha256": "4e08dbc07ade3497de29beca03fa916daa15039c762f3949a3598ce025db49d6",
       "path": "microchip/same70/reports/validation-summary.json"
     }
   ],
@@ -736,7 +782,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "3b7827c00b52c84d21c763bca3062119ebf710df782c750b9cc44a81df03870e",
+  "target_artifact_revision": "18af13403eb72fc84d5e3ecddf2feab5d183b04d065aa17cb0e081bcd870d00d",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -772,7 +818,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 136 rule(s).",
+        "message": "gate-c passed with 172 rule(s).",
         "passed": true,
         "rule_ids": [
           "atsame70n21b-package-pin-count-covers-known-pins",
@@ -814,9 +860,20 @@
           "atsame70n21b-connection-groups-reference-known-packages",
           "atsame70n21b-multi-signal-connection-groups-present",
           "atsame70n21b-ip-blocks-cover-versioned-instances",
+          "atsame70n21b-peripherals-carry-backend-schema",
+          "atsame70n21b-ip-blocks-carry-backend-schema",
+          "atsame70n21b-runtime-peripherals-have-register-descriptors",
+          "atsame70n21b-runtime-peripherals-have-register-field-descriptors",
+          "atsame70n21b-route-requirements-typed",
+          "atsame70n21b-route-operations-typed",
+          "atsame70n21b-register-target-operations-resolved",
           "atsame70n21b-interrupts-carry-aliases",
           "atsame70n21b-interrupt-aliases-unique",
           "atsame70n21b-interrupt-shared-groups-consistent",
+          "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+          "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+          "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+          "atsame70n21b-runtime-interrupt-bindings-present",
           "atsame70n21b-vector-slots-reference-known-interrupts",
           "atsame70n21b-vector-slots-unique",
           "atsame70n21b-interrupts-have-vector-slot",
@@ -831,6 +888,8 @@
           "atsame70n21b-clock-node-parents-known",
           "atsame70n21b-clock-graph-reaches-root",
           "atsame70n21b-clock-selectors-structured",
+          "atsame70n21b-clock-gates-structured",
+          "atsame70n21b-resets-structured",
           "atsame70n21b-clock-gates-reference-known-nodes",
           "atsame70n21b-clock-bound-peripherals-covered",
           "atsame70n21b-dma-controller-descriptors-complete",
@@ -839,6 +898,11 @@
           "atsame70n21b-dma-routes-reference-known-controllers",
           "atsame70n21b-dma-routes-reference-known-peripherals",
           "atsame70n21b-dma-routes-reference-known-conflicts",
+          "atsame70n21b-dma-bindings-reference-known-peripherals",
+          "atsame70n21b-dma-bindings-reference-known-controllers",
+          "atsame70n21b-dma-bindings-reference-known-routes",
+          "atsame70n21b-dma-bindings-reference-known-conflicts",
+          "atsame70n21b-dma-bindings-cover-routes",
           "atsame70n21b-dma-conflict-groups-reference-known-routes",
           "atsame70n21b-dma-conflict-groups-nontrivial",
           "atsame70n21b-dma-route-conflict-annotations-consistent",
@@ -881,9 +945,20 @@
           "atsame70q21b-connection-groups-reference-known-packages",
           "atsame70q21b-multi-signal-connection-groups-present",
           "atsame70q21b-ip-blocks-cover-versioned-instances",
+          "atsame70q21b-peripherals-carry-backend-schema",
+          "atsame70q21b-ip-blocks-carry-backend-schema",
+          "atsame70q21b-runtime-peripherals-have-register-descriptors",
+          "atsame70q21b-runtime-peripherals-have-register-field-descriptors",
+          "atsame70q21b-route-requirements-typed",
+          "atsame70q21b-route-operations-typed",
+          "atsame70q21b-register-target-operations-resolved",
           "atsame70q21b-interrupts-carry-aliases",
           "atsame70q21b-interrupt-aliases-unique",
           "atsame70q21b-interrupt-shared-groups-consistent",
+          "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+          "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+          "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+          "atsame70q21b-runtime-interrupt-bindings-present",
           "atsame70q21b-vector-slots-reference-known-interrupts",
           "atsame70q21b-vector-slots-unique",
           "atsame70q21b-interrupts-have-vector-slot",
@@ -898,6 +973,8 @@
           "atsame70q21b-clock-node-parents-known",
           "atsame70q21b-clock-graph-reaches-root",
           "atsame70q21b-clock-selectors-structured",
+          "atsame70q21b-clock-gates-structured",
+          "atsame70q21b-resets-structured",
           "atsame70q21b-clock-gates-reference-known-nodes",
           "atsame70q21b-clock-bound-peripherals-covered",
           "atsame70q21b-dma-controller-descriptors-complete",
@@ -906,6 +983,11 @@
           "atsame70q21b-dma-routes-reference-known-controllers",
           "atsame70q21b-dma-routes-reference-known-peripherals",
           "atsame70q21b-dma-routes-reference-known-conflicts",
+          "atsame70q21b-dma-bindings-reference-known-peripherals",
+          "atsame70q21b-dma-bindings-reference-known-controllers",
+          "atsame70q21b-dma-bindings-reference-known-routes",
+          "atsame70q21b-dma-bindings-reference-known-conflicts",
+          "atsame70q21b-dma-bindings-cover-routes",
           "atsame70q21b-dma-conflict-groups-reference-known-routes",
           "atsame70q21b-dma-conflict-groups-nontrivial",
           "atsame70q21b-dma-route-conflict-annotations-consistent",
@@ -920,18 +1002,26 @@
       {
         "domain_id": "interrupt",
         "draft": false,
-        "message": "interrupt domain is publishable with 12 rule(s).",
+        "message": "interrupt domain is publishable with 20 rule(s).",
         "passed": true,
         "rule_ids": [
           "atsame70n21b-interrupts-reference-known-peripherals",
           "atsame70n21b-interrupt-aliases-unique",
           "atsame70n21b-interrupt-shared-groups-consistent",
+          "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+          "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+          "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+          "atsame70n21b-runtime-interrupt-bindings-present",
           "atsame70n21b-vector-slots-reference-known-interrupts",
           "atsame70n21b-vector-slots-unique",
           "atsame70n21b-interrupts-have-vector-slot",
           "atsame70q21b-interrupts-reference-known-peripherals",
           "atsame70q21b-interrupt-aliases-unique",
           "atsame70q21b-interrupt-shared-groups-consistent",
+          "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+          "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+          "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+          "atsame70q21b-runtime-interrupt-bindings-present",
           "atsame70q21b-vector-slots-reference-known-interrupts",
           "atsame70q21b-vector-slots-unique",
           "atsame70q21b-interrupts-have-vector-slot"
@@ -994,7 +1084,7 @@
       {
         "domain_id": "dma",
         "draft": false,
-        "message": "dma domain is publishable with 22 rule(s).",
+        "message": "dma domain is publishable with 32 rule(s).",
         "passed": true,
         "rule_ids": [
           "atsame70n21b-dma-controllers-known",
@@ -1005,6 +1095,11 @@
           "atsame70n21b-dma-routes-reference-known-controllers",
           "atsame70n21b-dma-routes-reference-known-peripherals",
           "atsame70n21b-dma-routes-reference-known-conflicts",
+          "atsame70n21b-dma-bindings-reference-known-peripherals",
+          "atsame70n21b-dma-bindings-reference-known-controllers",
+          "atsame70n21b-dma-bindings-reference-known-routes",
+          "atsame70n21b-dma-bindings-reference-known-conflicts",
+          "atsame70n21b-dma-bindings-cover-routes",
           "atsame70n21b-dma-conflict-groups-reference-known-routes",
           "atsame70n21b-dma-conflict-groups-nontrivial",
           "atsame70n21b-dma-route-conflict-annotations-consistent",
@@ -1016,6 +1111,11 @@
           "atsame70q21b-dma-routes-reference-known-controllers",
           "atsame70q21b-dma-routes-reference-known-peripherals",
           "atsame70q21b-dma-routes-reference-known-conflicts",
+          "atsame70q21b-dma-bindings-reference-known-peripherals",
+          "atsame70q21b-dma-bindings-reference-known-controllers",
+          "atsame70q21b-dma-bindings-reference-known-routes",
+          "atsame70q21b-dma-bindings-reference-known-conflicts",
+          "atsame70q21b-dma-bindings-cover-routes",
           "atsame70q21b-dma-conflict-groups-reference-known-routes",
           "atsame70q21b-dma-conflict-groups-nontrivial",
           "atsame70q21b-dma-route-conflict-annotations-consistent"

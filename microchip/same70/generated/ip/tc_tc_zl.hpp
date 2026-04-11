@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "tc",
   "tc_zl",
   "timer",
+  "alloy.timer.microchip-tc-zl",
   "tc:tc_zl",
   "tclk0,tclk1,tclk11,tioa0,tioa1,tioa11,tioa2,tiob0,tiob1,tiob11,tiob2",
 };

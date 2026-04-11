@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "hsmci",
   "hsmci_r",
   "hsmci",
+  "alloy.hsmci.microchip-hsmci-r",
   "hsmci:hsmci_r",
   "mccda,mcck,mcda0,mcda1,mcda2,mcda3",
 };

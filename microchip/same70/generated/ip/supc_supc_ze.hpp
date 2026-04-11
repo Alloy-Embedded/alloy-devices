@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "supc",
   "supc_ze",
   "supc",
+  "alloy.supc.microchip-supc-ze",
   "supc:supc_ze",
   "wkup0,wkup1,wkup10,wkup11,wkup12,wkup13,wkup2,wkup3,wkup4,wkup5,wkup6,wkup7,wkup8,wkup9",
 };

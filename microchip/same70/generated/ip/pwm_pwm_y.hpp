@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "pwm",
   "pwm_y",
   "pwm",
+  "alloy.pwm.microchip-pwm-y",
   "pwm:pwm_y",
   "pwmextrg0,pwmextrg1,pwmfi0,pwmfi1,pwmfi2,pwmh0,pwmh1,pwmh2,pwmh3,pwml0,pwml1,pwml2,pwml3",
 };

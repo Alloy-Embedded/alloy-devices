@@ -1952,6 +1952,7 @@
   ],
   "peripherals": [
     {
+      "backend_schema_id": "alloy.acc.microchip-acc-j",
       "base_address": 1074020352,
       "instance": 0,
       "ip_name": "acc",
@@ -1969,6 +1970,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aes.microchip-aes-w",
       "base_address": 1074184192,
       "instance": 0,
       "ip_name": "aes",
@@ -1986,6 +1988,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.afec.microchip-afec-s",
       "base_address": 1073987584,
       "instance": 0,
       "ip_name": "afec",
@@ -2003,6 +2006,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.afec.microchip-afec-s",
       "base_address": 1074151424,
       "instance": 1,
       "ip_name": "afec",
@@ -2020,6 +2024,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.chipid.microchip-chipid-zk",
       "base_address": 1074661696,
       "instance": 0,
       "ip_name": "chipid",
@@ -2037,6 +2042,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.coredebug.microchip-coredebug",
       "base_address": 3758157296,
       "instance": 0,
       "ip_name": "coredebug",
@@ -2054,6 +2060,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dacc.microchip-dacc-e",
       "base_address": 1074003968,
       "instance": 0,
       "ip_name": "dacc",
@@ -2071,6 +2078,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dwt.microchip-dwt",
       "base_address": 3758100480,
       "instance": 0,
       "ip_name": "dwt",
@@ -2088,6 +2096,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.efc.microchip-efc-y",
       "base_address": 1074662400,
       "instance": 0,
       "ip_name": "efc",
@@ -2105,6 +2114,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.etm.microchip-etm",
       "base_address": 3758362624,
       "instance": 0,
       "ip_name": "etm",
@@ -2122,6 +2132,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.fpb.microchip-fpb",
       "base_address": 3758104576,
       "instance": 0,
       "ip_name": "fpb",
@@ -2139,6 +2150,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.fpu.microchip-fpu",
       "base_address": 3758157616,
       "instance": 0,
       "ip_name": "fpu",
@@ -2156,6 +2168,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gmac.microchip-gmac-s",
       "base_address": 1074069504,
       "instance": 0,
       "ip_name": "gmac",
@@ -2173,6 +2186,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpbr.microchip-gpbr-j",
       "base_address": 1074665616,
       "instance": 0,
       "ip_name": "gpbr",
@@ -2190,6 +2204,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.microchip-pio-v",
       "base_address": 1074662912,
       "instance": 0,
       "ip_name": "gpio",
@@ -2207,6 +2222,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.microchip-pio-v",
       "base_address": 1074663424,
       "instance": 1,
       "ip_name": "gpio",
@@ -2224,6 +2240,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.microchip-pio-v",
       "base_address": 1074663936,
       "instance": 2,
       "ip_name": "gpio",
@@ -2241,6 +2258,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.microchip-pio-v",
       "base_address": 1074664448,
       "instance": 3,
       "ip_name": "gpio",
@@ -2258,6 +2276,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.microchip-pio-v",
       "base_address": 1074664960,
       "instance": 4,
       "ip_name": "gpio",
@@ -2275,6 +2294,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.hsmci.microchip-hsmci-r",
       "base_address": 1073741824,
       "instance": 0,
       "ip_name": "hsmci",
@@ -2292,6 +2312,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.i2sc0.microchip-i2sc-n",
       "base_address": 1074315264,
       "instance": 0,
       "ip_name": "i2sc0",
@@ -2309,6 +2330,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.i2sc1.microchip-i2sc-n",
       "base_address": 1074331648,
       "instance": 0,
       "ip_name": "i2sc1",
@@ -2326,6 +2348,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.icm.microchip-icm-h",
       "base_address": 1074036736,
       "instance": 0,
       "ip_name": "icm",
@@ -2343,6 +2366,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.isi.microchip-isi-k",
       "base_address": 1074053120,
       "instance": 0,
       "ip_name": "isi",
@@ -2360,6 +2384,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.itm.microchip-itm",
       "base_address": 3758096384,
       "instance": 0,
       "ip_name": "itm",
@@ -2377,6 +2402,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lockbit.microchip-lockbit-1",
       "base_address": 0,
       "instance": 0,
       "ip_name": "lockbit",
@@ -2394,6 +2420,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.matrix.microchip-matrix-l",
       "base_address": 1074298880,
       "instance": 0,
       "ip_name": "matrix",
@@ -2411,6 +2438,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.can.microchip-mcan-n",
       "base_address": 1073938432,
       "instance": 0,
       "ip_name": "mcan",
@@ -2428,6 +2456,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.can.microchip-mcan-n",
       "base_address": 1073954816,
       "instance": 1,
       "ip_name": "mcan",
@@ -2445,6 +2474,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.mpu.microchip-mpu",
       "base_address": 3758157200,
       "instance": 0,
       "ip_name": "mpu",
@@ -2462,6 +2492,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.nvic.microchip-nvic",
       "base_address": 3758153984,
       "instance": 0,
       "ip_name": "nvic",
@@ -2479,6 +2510,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pmc.microchip-pmc-p",
       "base_address": 1074660864,
       "instance": 0,
       "ip_name": "pmc",
@@ -2496,6 +2528,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pwm.microchip-pwm-y",
       "base_address": 1073872896,
       "instance": 0,
       "ip_name": "pwm",
@@ -2513,6 +2546,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pwm.microchip-pwm-y",
       "base_address": 1074118656,
       "instance": 1,
       "ip_name": "pwm",
@@ -2530,6 +2564,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.qspi.microchip-qspi-j",
       "base_address": 1074249728,
       "instance": 0,
       "ip_name": "qspi",
@@ -2547,6 +2582,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rstc.microchip-rstc-n",
       "base_address": 1074665472,
       "instance": 0,
       "ip_name": "rstc",
@@ -2564,6 +2600,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rswdt.microchip-rswdt-g",
       "base_address": 1074665728,
       "instance": 0,
       "ip_name": "rswdt",
@@ -2581,6 +2618,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rtc.microchip-rtc-zb",
       "base_address": 1074665568,
       "instance": 0,
       "ip_name": "rtc",
@@ -2598,6 +2636,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rtt.microchip-rtt-m",
       "base_address": 1074665520,
       "instance": 0,
       "ip_name": "rtt",
@@ -2615,6 +2654,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.scb.microchip-scb",
       "base_address": 3758157056,
       "instance": 0,
       "ip_name": "scb",
@@ -2632,6 +2672,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.scnscb.microchip-scnscb",
       "base_address": 3758153728,
       "instance": 0,
       "ip_name": "scnscb",
@@ -2649,6 +2690,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.smc.microchip-smc-j",
       "base_address": 1074266112,
       "instance": 0,
       "ip_name": "smc",
@@ -2666,6 +2708,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.microchip-spi-zm",
       "base_address": 1073774592,
       "instance": 0,
       "ip_name": "spi",
@@ -2683,6 +2726,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.microchip-spi-zm",
       "base_address": 1074102272,
       "instance": 1,
       "ip_name": "spi",
@@ -2700,6 +2744,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.ssc.microchip-ssc-q",
       "base_address": 1073758208,
       "instance": 0,
       "ip_name": "ssc",
@@ -2717,6 +2762,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.supc.microchip-supc-ze",
       "base_address": 1074665488,
       "instance": 0,
       "ip_name": "supc",
@@ -2734,6 +2780,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.systick.microchip-systick",
       "base_address": 3758153744,
       "instance": 0,
       "ip_name": "systick",
@@ -2751,6 +2798,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.timer.microchip-tc-zl",
       "base_address": 1073790976,
       "instance": 0,
       "ip_name": "tc",
@@ -2768,6 +2816,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.timer.microchip-tc-zl",
       "base_address": 1073807360,
       "instance": 1,
       "ip_name": "tc",
@@ -2785,6 +2834,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.timer.microchip-tc-zl",
       "base_address": 1073823744,
       "instance": 2,
       "ip_name": "tc",
@@ -2802,6 +2852,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.timer.microchip-tc-zl",
       "base_address": 1074085888,
       "instance": 3,
       "ip_name": "tc",
@@ -2819,6 +2870,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tpiu.microchip-tpiu",
       "base_address": 3758358528,
       "instance": 0,
       "ip_name": "tpiu",
@@ -2836,6 +2888,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.trng.microchip-trng-g",
       "base_address": 1074200576,
       "instance": 0,
       "ip_name": "trng",
@@ -2853,6 +2906,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.i2c.microchip-twihs-z",
       "base_address": 1073840128,
       "instance": 0,
       "ip_name": "twihs",
@@ -2870,6 +2924,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.i2c.microchip-twihs-z",
       "base_address": 1073856512,
       "instance": 1,
       "ip_name": "twihs",
@@ -2887,6 +2942,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.i2c.microchip-twihs-z",
       "base_address": 1074135040,
       "instance": 2,
       "ip_name": "twihs",
@@ -2904,6 +2960,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-uart-r",
       "base_address": 1074661376,
       "instance": 0,
       "ip_name": "uart",
@@ -2921,6 +2978,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-uart-r",
       "base_address": 1074661888,
       "instance": 1,
       "ip_name": "uart",
@@ -2938,6 +2996,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-uart-r",
       "base_address": 1074665984,
       "instance": 2,
       "ip_name": "uart",
@@ -2955,6 +3014,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-uart-r",
       "base_address": 1074666496,
       "instance": 3,
       "ip_name": "uart",
@@ -2972,6 +3032,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-uart-r",
       "base_address": 1074667008,
       "instance": 4,
       "ip_name": "uart",
@@ -2989,6 +3050,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-usart-zw",
       "base_address": 1073889280,
       "instance": 0,
       "ip_name": "usart",
@@ -3006,6 +3068,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-usart-zw",
       "base_address": 1073905664,
       "instance": 1,
       "ip_name": "usart",
@@ -3023,6 +3086,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.microchip-usart-zw",
       "base_address": 1073922048,
       "instance": 2,
       "ip_name": "usart",
@@ -3040,6 +3104,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usbhs.microchip-usbhs-g",
       "base_address": 1073971200,
       "instance": 0,
       "ip_name": "usbhs",
@@ -3057,6 +3122,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.utmi.microchip-utmi-a",
       "base_address": 1074660352,
       "instance": 0,
       "ip_name": "utmi",
@@ -3074,6 +3140,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.wdt.microchip-wdt-n",
       "base_address": 1074665552,
       "instance": 0,
       "ip_name": "wdt",
@@ -3091,6 +3158,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dma.microchip-xdmac-k",
       "base_address": 1074233344,
       "instance": 0,
       "ip_name": "xdmac",

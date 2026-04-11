@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 136 rule(s).",
+      "message": "gate-c passed with 172 rule(s).",
       "passed": true,
       "rule_ids": [
         "atsame70n21b-package-pin-count-covers-known-pins",
@@ -74,9 +74,20 @@
         "atsame70n21b-connection-groups-reference-known-packages",
         "atsame70n21b-multi-signal-connection-groups-present",
         "atsame70n21b-ip-blocks-cover-versioned-instances",
+        "atsame70n21b-peripherals-carry-backend-schema",
+        "atsame70n21b-ip-blocks-carry-backend-schema",
+        "atsame70n21b-runtime-peripherals-have-register-descriptors",
+        "atsame70n21b-runtime-peripherals-have-register-field-descriptors",
+        "atsame70n21b-route-requirements-typed",
+        "atsame70n21b-route-operations-typed",
+        "atsame70n21b-register-target-operations-resolved",
         "atsame70n21b-interrupts-carry-aliases",
         "atsame70n21b-interrupt-aliases-unique",
         "atsame70n21b-interrupt-shared-groups-consistent",
+        "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70n21b-runtime-interrupt-bindings-present",
         "atsame70n21b-vector-slots-reference-known-interrupts",
         "atsame70n21b-vector-slots-unique",
         "atsame70n21b-interrupts-have-vector-slot",
@@ -91,6 +102,8 @@
         "atsame70n21b-clock-node-parents-known",
         "atsame70n21b-clock-graph-reaches-root",
         "atsame70n21b-clock-selectors-structured",
+        "atsame70n21b-clock-gates-structured",
+        "atsame70n21b-resets-structured",
         "atsame70n21b-clock-gates-reference-known-nodes",
         "atsame70n21b-clock-bound-peripherals-covered",
         "atsame70n21b-dma-controller-descriptors-complete",
@@ -99,6 +112,11 @@
         "atsame70n21b-dma-routes-reference-known-controllers",
         "atsame70n21b-dma-routes-reference-known-peripherals",
         "atsame70n21b-dma-routes-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-reference-known-peripherals",
+        "atsame70n21b-dma-bindings-reference-known-controllers",
+        "atsame70n21b-dma-bindings-reference-known-routes",
+        "atsame70n21b-dma-bindings-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-cover-routes",
         "atsame70n21b-dma-conflict-groups-reference-known-routes",
         "atsame70n21b-dma-conflict-groups-nontrivial",
         "atsame70n21b-dma-route-conflict-annotations-consistent",
@@ -141,9 +159,20 @@
         "atsame70q21b-connection-groups-reference-known-packages",
         "atsame70q21b-multi-signal-connection-groups-present",
         "atsame70q21b-ip-blocks-cover-versioned-instances",
+        "atsame70q21b-peripherals-carry-backend-schema",
+        "atsame70q21b-ip-blocks-carry-backend-schema",
+        "atsame70q21b-runtime-peripherals-have-register-descriptors",
+        "atsame70q21b-runtime-peripherals-have-register-field-descriptors",
+        "atsame70q21b-route-requirements-typed",
+        "atsame70q21b-route-operations-typed",
+        "atsame70q21b-register-target-operations-resolved",
         "atsame70q21b-interrupts-carry-aliases",
         "atsame70q21b-interrupt-aliases-unique",
         "atsame70q21b-interrupt-shared-groups-consistent",
+        "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70q21b-runtime-interrupt-bindings-present",
         "atsame70q21b-vector-slots-reference-known-interrupts",
         "atsame70q21b-vector-slots-unique",
         "atsame70q21b-interrupts-have-vector-slot",
@@ -158,6 +187,8 @@
         "atsame70q21b-clock-node-parents-known",
         "atsame70q21b-clock-graph-reaches-root",
         "atsame70q21b-clock-selectors-structured",
+        "atsame70q21b-clock-gates-structured",
+        "atsame70q21b-resets-structured",
         "atsame70q21b-clock-gates-reference-known-nodes",
         "atsame70q21b-clock-bound-peripherals-covered",
         "atsame70q21b-dma-controller-descriptors-complete",
@@ -166,6 +197,11 @@
         "atsame70q21b-dma-routes-reference-known-controllers",
         "atsame70q21b-dma-routes-reference-known-peripherals",
         "atsame70q21b-dma-routes-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-reference-known-peripherals",
+        "atsame70q21b-dma-bindings-reference-known-controllers",
+        "atsame70q21b-dma-bindings-reference-known-routes",
+        "atsame70q21b-dma-bindings-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-cover-routes",
         "atsame70q21b-dma-conflict-groups-reference-known-routes",
         "atsame70q21b-dma-conflict-groups-nontrivial",
         "atsame70q21b-dma-route-conflict-annotations-consistent",
@@ -536,6 +572,55 @@
     },
     {
       "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripheral instances carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70n21b-peripherals-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned IP blocks carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70n21b-ip-blocks-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripheral instances expose normalized register descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-runtime-peripherals-have-register-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripheral instances expose normalized register field descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-runtime-peripherals-have-register-field-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route requirements expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70n21b-route-requirements-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route operations expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70n21b-route-operations-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route operations with register-like targets resolve a normalized register offset.",
+      "passed": true,
+      "rule_id": "atsame70n21b-register-target-operations-resolved",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
       "message": "atsame70n21b interrupts carry explicit alias descriptors.",
       "passed": true,
       "rule_id": "atsame70n21b-interrupts-carry-aliases",
@@ -553,6 +638,34 @@
       "message": "atsame70n21b interrupt shared groups describe a real multi-interrupt owner.",
       "passed": true,
       "rule_id": "atsame70n21b-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt bindings reference known peripheral instances.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt bindings reference declared interrupts.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt bindings reference matching vector slots.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripherals with interrupts expose typed interrupt bindings.",
+      "passed": true,
+      "rule_id": "atsame70n21b-runtime-interrupt-bindings-present",
       "severity": "error"
     },
     {
@@ -655,6 +768,20 @@
     },
     {
       "category": "semantic",
+      "message": "atsame70n21b clock gates expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-gates-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b resets expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70n21b-resets-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
       "message": "atsame70n21b clock gates reference known clock nodes.",
       "passed": true,
       "rule_id": "atsame70n21b-clock-gates-reference-known-nodes",
@@ -707,6 +834,41 @@
       "message": "atsame70n21b DMA routes reference declared conflict groups.",
       "passed": true,
       "rule_id": "atsame70n21b-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference known peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference known controllers.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference known DMA routes.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings cover the typed DMA route set.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-cover-routes",
       "severity": "error"
     },
     {
@@ -1005,6 +1167,55 @@
     },
     {
       "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripheral instances carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70q21b-peripherals-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned IP blocks carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70q21b-ip-blocks-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripheral instances expose normalized register descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-runtime-peripherals-have-register-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripheral instances expose normalized register field descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-runtime-peripherals-have-register-field-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route requirements expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70q21b-route-requirements-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route operations expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70q21b-route-operations-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route operations with register-like targets resolve a normalized register offset.",
+      "passed": true,
+      "rule_id": "atsame70q21b-register-target-operations-resolved",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
       "message": "atsame70q21b interrupts carry explicit alias descriptors.",
       "passed": true,
       "rule_id": "atsame70q21b-interrupts-carry-aliases",
@@ -1022,6 +1233,34 @@
       "message": "atsame70q21b interrupt shared groups describe a real multi-interrupt owner.",
       "passed": true,
       "rule_id": "atsame70q21b-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt bindings reference known peripheral instances.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt bindings reference declared interrupts.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt bindings reference matching vector slots.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripherals with interrupts expose typed interrupt bindings.",
+      "passed": true,
+      "rule_id": "atsame70q21b-runtime-interrupt-bindings-present",
       "severity": "error"
     },
     {
@@ -1124,6 +1363,20 @@
     },
     {
       "category": "semantic",
+      "message": "atsame70q21b clock gates expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-gates-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b resets expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70q21b-resets-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
       "message": "atsame70q21b clock gates reference known clock nodes.",
       "passed": true,
       "rule_id": "atsame70q21b-clock-gates-reference-known-nodes",
@@ -1180,6 +1433,41 @@
     },
     {
       "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference known peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference known controllers.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference known DMA routes.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings cover the typed DMA route set.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-cover-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
       "message": "atsame70q21b DMA conflict groups reference known DMA routes.",
       "passed": true,
       "rule_id": "atsame70q21b-dma-conflict-groups-reference-known-routes",
@@ -1223,18 +1511,26 @@
     {
       "domain_id": "interrupt",
       "draft": false,
-      "message": "interrupt domain is publishable with 12 rule(s).",
+      "message": "interrupt domain is publishable with 20 rule(s).",
       "passed": true,
       "rule_ids": [
         "atsame70n21b-interrupts-reference-known-peripherals",
         "atsame70n21b-interrupt-aliases-unique",
         "atsame70n21b-interrupt-shared-groups-consistent",
+        "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70n21b-runtime-interrupt-bindings-present",
         "atsame70n21b-vector-slots-reference-known-interrupts",
         "atsame70n21b-vector-slots-unique",
         "atsame70n21b-interrupts-have-vector-slot",
         "atsame70q21b-interrupts-reference-known-peripherals",
         "atsame70q21b-interrupt-aliases-unique",
         "atsame70q21b-interrupt-shared-groups-consistent",
+        "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70q21b-runtime-interrupt-bindings-present",
         "atsame70q21b-vector-slots-reference-known-interrupts",
         "atsame70q21b-vector-slots-unique",
         "atsame70q21b-interrupts-have-vector-slot"
@@ -1297,7 +1593,7 @@
     {
       "domain_id": "dma",
       "draft": false,
-      "message": "dma domain is publishable with 22 rule(s).",
+      "message": "dma domain is publishable with 32 rule(s).",
       "passed": true,
       "rule_ids": [
         "atsame70n21b-dma-controllers-known",
@@ -1308,6 +1604,11 @@
         "atsame70n21b-dma-routes-reference-known-controllers",
         "atsame70n21b-dma-routes-reference-known-peripherals",
         "atsame70n21b-dma-routes-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-reference-known-peripherals",
+        "atsame70n21b-dma-bindings-reference-known-controllers",
+        "atsame70n21b-dma-bindings-reference-known-routes",
+        "atsame70n21b-dma-bindings-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-cover-routes",
         "atsame70n21b-dma-conflict-groups-reference-known-routes",
         "atsame70n21b-dma-conflict-groups-nontrivial",
         "atsame70n21b-dma-route-conflict-annotations-consistent",
@@ -1319,6 +1620,11 @@
         "atsame70q21b-dma-routes-reference-known-controllers",
         "atsame70q21b-dma-routes-reference-known-peripherals",
         "atsame70q21b-dma-routes-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-reference-known-peripherals",
+        "atsame70q21b-dma-bindings-reference-known-controllers",
+        "atsame70q21b-dma-bindings-reference-known-routes",
+        "atsame70q21b-dma-bindings-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-cover-routes",
         "atsame70q21b-dma-conflict-groups-reference-known-routes",
         "atsame70q21b-dma-conflict-groups-nontrivial",
         "atsame70q21b-dma-route-conflict-annotations-consistent"

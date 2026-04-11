@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "pmc",
   "pmc_p",
   "pmc",
+  "alloy.pmc.microchip-pmc-p",
   "pmc:pmc_p",
   "pck0,pck1,pck2,xin,xin32,xout,xout32",
 };

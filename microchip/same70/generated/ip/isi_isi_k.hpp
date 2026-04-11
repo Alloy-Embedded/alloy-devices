@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "isi",
   "isi_k",
   "isi",
+  "alloy.isi.microchip-isi-k",
   "isi:isi_k",
   "d0,d1,d10,d11,d2,d3,d4,d5,d6,d7,d8,d9,hsync,pck,vsync",
 };
