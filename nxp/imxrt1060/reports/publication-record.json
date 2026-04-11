@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "2885b0b0d4039bed075b0e865466e9530e1abd6c44dd4634db67e299f4b9738a",
+    "canonical_ir_sha256": "0d3ad8402d58a9384390b48773870072b7fa65ead74b9a030a91e3b1609156d2",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.1.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -40,7 +40,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:be08fc7f9937e6519e5e0aa018510e68e68302092eba28f93a46f0c5835ad780",
+          "revision": "content-sha256:a708eaa0e459d1a20036ea515cb347d203795c707ea1ef1d3a318e927ed04102",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -53,7 +53,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:1659bf030d7812ca467c9fd69a701246e0b1773b187f60429d64d42f9a77a8f4",
+          "revision": "content-sha256:c106b250ff06ecd141b372162724cf3ce11f18b372c85fd0417daf559fd523a5",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -66,7 +66,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:be08fc7f9937e6519e5e0aa018510e68e68302092eba28f93a46f0c5835ad780",
+          "revision": "content-sha256:a708eaa0e459d1a20036ea515cb347d203795c707ea1ef1d3a318e927ed04102",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -79,7 +79,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:1659bf030d7812ca467c9fd69a701246e0b1773b187f60429d64d42f9a77a8f4",
+          "revision": "content-sha256:c106b250ff06ecd141b372162724cf3ce11f18b372c85fd0417daf559fd523a5",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -96,7 +96,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "df1a58e14f4be52ede811cad0a4e4087f2470ae42fafc0a602e19fb59288087a"
+    "validation_report_sha256": "4356b3becb4e4f644e7a09025ede1597fb83e09ec9c6caaf82c04593482e1db7"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-artifact-smoke/mimxrt1062",
@@ -110,15 +110,19 @@
       "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
       "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
       "-DALLOY_CODEGEN_SMOKE_REGISTER_MAP_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/register_map.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_REGISTER_FIELDS_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/register_fields.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_GPIO_HEADER=\"nxp/imxrt1060/generated/peripherals/gpio1.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CONNECTOR_TABLES_HEADER=\"nxp/imxrt1060/generated/connector_tables.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_INTERRUPT_MAP_HEADER=\"nxp/imxrt1060/generated/interrupt_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_MEMORY_MAP_HEADER=\"nxp/imxrt1060/generated/memory_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PACKAGE_MAP_HEADER=\"nxp/imxrt1060/generated/package_map.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CLOCK_TREE_HEADER=\"nxp/imxrt1060/generated/clock_tree_lite.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_PROFILES_HEADER=\"nxp/imxrt1060/generated/runtime_profiles.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_DESCRIPTOR_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/device_descriptor.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PINS_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/pins.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_PERIPHERAL_INSTANCES_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/peripheral_instances.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_INTERRUPT_BINDINGS_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/interrupt_bindings.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_DMA_BINDINGS_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/dma_bindings.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_CAPABILITY_OVERLAYS_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/capability_overlays.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_STARTUP_DESCRIPTORS_HEADER=\"nxp/imxrt1060/generated/devices/mimxrt1062/startup_descriptors.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_DEVICE_NAMESPACE=nxp::imxrt1060::generated::devices::mimxrt1062",
@@ -140,24 +144,24 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 52,
+  "published_artifact_count": 59,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3740,
-      "content_sha256": "4f9f3c238f1e053dddee3698cdb9e835c1dd6c9e8e950aad4ab40ee4d136f0d0",
+      "content_sha256": "0be36145143020f9400235a37948e9b7f8793175d78798257686372e17d3eee0",
       "path": "nxp/imxrt1060/artifact-manifest.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10916,
-      "content_sha256": "4ba7d276411a92c6e87d370b767f5618b15de8778dd58bb5d6c24bcdd1915d5a",
+      "content_bytes": 19356,
+      "content_sha256": "dbcb7b5a9e4a3bfcf001c22c62330b0b81a21dd5125f8759292b7acb9b7392bc",
       "path": "nxp/imxrt1060/generated/clock_tree_lite.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 413039,
-      "content_sha256": "fee9d8cb247974b4c1a56747aced54e8b14a1c4b4b828c3328f591a7650d23d7",
+      "content_bytes": 1289059,
+      "content_sha256": "f42c2d3c882a2a0bdc03ee966d4435504f19606feca5ba84db8a15b14b97529f",
       "path": "nxp/imxrt1060/generated/connector_tables.hpp"
     },
     {
@@ -174,8 +178,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 21266,
-      "content_sha256": "11f0dd6c1a284c1b025a86eff56fcdbf49f8d57bfb9509e5ada26875eab8b0f3",
+      "content_bytes": 579,
+      "content_sha256": "f373aa30df24c10da2af62f30b20049e73968b4c62f6216c21a38c45d8e8904f",
+      "path": "nxp/imxrt1060/generated/devices/mimxrt1062/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 46798,
+      "content_sha256": "1666a25f2425bc6e0df81334d71fddf9ccacec02a939c2f9c62ba75efc80f407",
+      "path": "nxp/imxrt1060/generated/devices/mimxrt1062/interrupt_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 31017,
+      "content_sha256": "bad0201030f74cca589f181571aeb5b43cb2e3f66e0ada527cf214261aefc1b5",
       "path": "nxp/imxrt1060/generated/devices/mimxrt1062/peripheral_instances.hpp"
     },
     {
@@ -186,8 +202,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3244,
-      "content_sha256": "e417c9a4763ee2358074e54e496b8d1fee01cfc04e5b5bbdea103edc45dadb61",
+      "content_bytes": 2812183,
+      "content_sha256": "eb6787b0494c724cd18e45e48f33ec5fab8d653d6298d7e489241c49c65512ee",
+      "path": "nxp/imxrt1060/generated/devices/mimxrt1062/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 516860,
+      "content_sha256": "9c98172b07c682614511c895dd1ae6febd92346f03eb0f01b43fc97677530341",
       "path": "nxp/imxrt1060/generated/devices/mimxrt1062/register_map.hpp"
     },
     {
@@ -216,8 +238,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 20452,
-      "content_sha256": "c9ec13c2a1def2d62a69578d0656449f5a013b8b55195c96527e7a3dd8ff6e16",
+      "content_bytes": 579,
+      "content_sha256": "cdf59908e08851fc7abc4b8746ca9f7a1161b97509e7401081c1545cf4fbad11",
+      "path": "nxp/imxrt1060/generated/devices/mimxrt1064/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 46682,
+      "content_sha256": "d434e80126cf3d30f66186ea2fca1d5233354415591286b4f3fdce11e57bd3ab",
+      "path": "nxp/imxrt1060/generated/devices/mimxrt1064/interrupt_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 30125,
+      "content_sha256": "87d4ba256ba00ea05d3740e9daec2bf7ae7fc70c36e01966659a031eb9d17bdb",
       "path": "nxp/imxrt1060/generated/devices/mimxrt1064/peripheral_instances.hpp"
     },
     {
@@ -228,8 +262,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3220,
-      "content_sha256": "da0d5960d3b8ca1b6071be917582e4afd9e98480d46945e5ddae803deebe017e",
+      "content_bytes": 2782833,
+      "content_sha256": "db7a6af37525a3b8759b57cf9ba2eb1e7c347897c38644dba96b8b2299d3d006",
+      "path": "nxp/imxrt1060/generated/devices/mimxrt1064/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 512136,
+      "content_sha256": "dd41bf27bd782cfd8013c9c98f5fcc7fd80c029419c96bfa15f920a321dff8d7",
       "path": "nxp/imxrt1060/generated/devices/mimxrt1064/register_map.hpp"
     },
     {
@@ -258,50 +298,50 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3066,
-      "content_sha256": "9050dbf415c5ecc87e89493cdc7364b4f2e891c5d66bd8fa458ceb0ef740c66d",
+      "content_bytes": 3133,
+      "content_sha256": "0c95f7680d3ff2740765336bc953425c576bea912be4f7fa5d0af7cbf95a9a36",
       "path": "nxp/imxrt1060/generated/ip/flexspi_flexspi_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4993,
-      "content_sha256": "3fe5096d010ed7db3b0d7123c4e4a6fb49334cfb9dcb363b3be60d7881ac817a",
+      "content_bytes": 5060,
+      "content_sha256": "6c43dda2a83b2aefeb19afc69f0d74f29bf061887199dd43b076d36953ab8a10",
       "path": "nxp/imxrt1060/generated/ip/gpio_imxrt_gpio_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1371,
-      "content_sha256": "6683d815ff41082a177c2cbc77bffc78941ab97e0e52cb81c1e1f8415b1ed6cf",
+      "content_bytes": 1435,
+      "content_sha256": "35253046a78c2de6d5db0a8babe36f1de58e3ad576589f2896c387456990de9d",
       "path": "nxp/imxrt1060/generated/ip/lpi2c1_lpi2c_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 984,
-      "content_sha256": "0fe22435e68feed167c74a89e802a5635aa28bd01d9253d18e165e877cb440d3",
+      "content_bytes": 1048,
+      "content_sha256": "452667d5872d289f148229004074562b797d2918c5d07b518e76d9079fb1e10f",
       "path": "nxp/imxrt1060/generated/ip/lpi2c2_lpi2c_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 984,
-      "content_sha256": "f9db0897a933149120eac1f3c2bc684643c283670c347e8f1a92712e864274db",
+      "content_bytes": 1048,
+      "content_sha256": "f8f7368ea829c96d0a7fedcac843853337e572ef977a07f9803d935be6a519e0",
       "path": "nxp/imxrt1060/generated/ip/lpi2c3_lpi2c_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 984,
-      "content_sha256": "5bb9b0850a16394986267edf57135c9b19737d9c270c1b512156d3a28c202c0a",
+      "content_bytes": 1048,
+      "content_sha256": "6691262e51554f3f1d4524e513a73378da06a1927ed1d014e55bd4db65351d70",
       "path": "nxp/imxrt1060/generated/ip/lpi2c4_lpi2c_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1329,
-      "content_sha256": "e6c7c4734274c2945345d71be9abdc8da5446fbafc5cbe422fb97dce4d6d17d7",
+      "content_bytes": 1390,
+      "content_sha256": "fa22cbfa7506436fd9c4f30efe7202a9a3c396dbaa8d9b4652598220ff2f4899",
       "path": "nxp/imxrt1060/generated/ip/lpspi_lpspi_v1.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1230,
-      "content_sha256": "2e85ee99513eaed7f65f215b02a548a9675bbedb0f88c12049df1ce5339fc4ff",
+      "content_bytes": 1293,
+      "content_sha256": "77fd69832fb00caf0daa515f8d88519efccbf4903051c8baba7605ef11e03336",
       "path": "nxp/imxrt1060/generated/ip/lpuart_lpuart_v1.hpp"
     },
     {
@@ -383,6 +423,12 @@
       "path": "nxp/imxrt1060/generated/rcc_map.hpp"
     },
     {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 39247,
+      "content_sha256": "8c2ebf86d5bd948a7df9ccfce6de8b8dbb053b4eb4f005f8c9eaa522314635e2",
+      "path": "nxp/imxrt1060/generated/runtime_profiles.hpp"
+    },
+    {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 154361,
       "content_sha256": "81b5978be016b8f3707c99a8af48d89598e71f1a82331a89bc10ff8ce35b6ccf",
@@ -390,26 +436,26 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 1332858,
-      "content_sha256": "5eaaa89c7a7b3ef7e6c47faf78da378e34617376e98a60170063a37d325cae0d",
+      "content_bytes": 1703222,
+      "content_sha256": "0b40a58b437a68b5f40d8173e41247f43dddd5561ff6a320486006e03dbbf558",
       "path": "nxp/imxrt1060/metadata/connectors.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 1224417,
-      "content_sha256": "3def532545a8b9323e433c20d97081d4c9beb4e7cd48d7d926bb25543d9410ea",
+      "content_bytes": 10895486,
+      "content_sha256": "711ef5d64f25b3e073eeaaddd8c18e3365d9527e929e11a5d18c6686530618cf",
       "path": "nxp/imxrt1060/metadata/devices/mimxrt1062.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 1158563,
-      "content_sha256": "1f699bb08779497609889a83ff06ff3f6174b1e478e1425f2569e3a2d2e308e8",
+      "content_bytes": 10723995,
+      "content_sha256": "4206ca9dd2575aa2675c7ce3a901820689ff8ee902ba26a08b2072448d6f6a44",
       "path": "nxp/imxrt1060/metadata/devices/mimxrt1064.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 263896,
-      "content_sha256": "07ffb7da4001afebf223a71f4300e9ef70a74562042b70b988509af82e0c2e3a",
+      "content_bytes": 269649,
+      "content_sha256": "dd2078f6e511b7c9419399e1e1522e9d1aa7772de37f9b9d65651b54234e3c04",
       "path": "nxp/imxrt1060/metadata/family-connectivity.json"
     },
     {
@@ -420,8 +466,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 40599,
-      "content_sha256": "583b407527e0c2950a8a9f63c4bd78d19818c391bbfc40f654cfb3848501a7be",
+      "content_bytes": 41049,
+      "content_sha256": "a73aae40728bf3914d35a7f7c01404333b00b71c7ea9c6656261a7722f691f38",
       "path": "nxp/imxrt1060/metadata/ip-blocks.json"
     },
     {
@@ -432,8 +478,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 521623,
-      "content_sha256": "26e059f4e2e5b6ba9a28b22aae93d43dd2ff06151f53dfa8cc0b0d719b74a98f",
+      "content_bytes": 532679,
+      "content_sha256": "f66f4b920b93df259e19efb2ed23aa063d511857c7b2d2eadcac9dc0811ff026",
       "path": "nxp/imxrt1060/metadata/system-descriptors.json"
     },
     {
@@ -444,14 +490,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 50046,
-      "content_sha256": "df1a58e14f4be52ede811cad0a4e4087f2470ae42fafc0a602e19fb59288087a",
+      "content_bytes": 62044,
+      "content_sha256": "4356b3becb4e4f644e7a09025ede1597fb83e09ec9c6caaf82c04593482e1db7",
       "path": "nxp/imxrt1060/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 14639,
-      "content_sha256": "96f7548d6c62540121c4b80d47fe5875cd49f8e2375a1ea3a690dcff57b7ba9e",
+      "content_bytes": 17837,
+      "content_sha256": "c173f684fdf5d69e35b6040398a3cf3d19d9dd1683e7a9b3990182771c3ea4d6",
       "path": "nxp/imxrt1060/reports/validation-summary.json"
     }
   ],
@@ -460,7 +506,7 @@
     "family": "imxrt1060",
     "vendor": "nxp"
   },
-  "target_artifact_revision": "1edfeb8a935a169be3173cde5b7fcdcfd62da1bedb10bd808ba00a8ffbfdb5fe",
+  "target_artifact_revision": "5eff2d3f83ebb10e7d681a042ac163f20dc868b0b82b88c130de81caf44c34e7",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -496,7 +542,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 136 rule(s).",
+        "message": "gate-c passed with 172 rule(s).",
         "passed": true,
         "rule_ids": [
           "mimxrt1062-package-pin-count-covers-known-pins",
@@ -538,9 +584,20 @@
           "mimxrt1062-connection-groups-reference-known-packages",
           "mimxrt1062-multi-signal-connection-groups-present",
           "mimxrt1062-ip-blocks-cover-versioned-instances",
+          "mimxrt1062-peripherals-carry-backend-schema",
+          "mimxrt1062-ip-blocks-carry-backend-schema",
+          "mimxrt1062-runtime-peripherals-have-register-descriptors",
+          "mimxrt1062-runtime-peripherals-have-register-field-descriptors",
+          "mimxrt1062-route-requirements-typed",
+          "mimxrt1062-route-operations-typed",
+          "mimxrt1062-register-target-operations-resolved",
           "mimxrt1062-interrupts-carry-aliases",
           "mimxrt1062-interrupt-aliases-unique",
           "mimxrt1062-interrupt-shared-groups-consistent",
+          "mimxrt1062-interrupt-bindings-reference-known-peripherals",
+          "mimxrt1062-interrupt-bindings-reference-known-interrupts",
+          "mimxrt1062-interrupt-bindings-reference-known-vector-slots",
+          "mimxrt1062-runtime-interrupt-bindings-present",
           "mimxrt1062-vector-slots-reference-known-interrupts",
           "mimxrt1062-vector-slots-unique",
           "mimxrt1062-interrupts-have-vector-slot",
@@ -555,6 +612,8 @@
           "mimxrt1062-clock-node-parents-known",
           "mimxrt1062-clock-graph-reaches-root",
           "mimxrt1062-clock-selectors-structured",
+          "mimxrt1062-clock-gates-structured",
+          "mimxrt1062-resets-structured",
           "mimxrt1062-clock-gates-reference-known-nodes",
           "mimxrt1062-clock-bound-peripherals-covered",
           "mimxrt1062-dma-controller-descriptors-complete",
@@ -563,6 +622,11 @@
           "mimxrt1062-dma-routes-reference-known-controllers",
           "mimxrt1062-dma-routes-reference-known-peripherals",
           "mimxrt1062-dma-routes-reference-known-conflicts",
+          "mimxrt1062-dma-bindings-reference-known-peripherals",
+          "mimxrt1062-dma-bindings-reference-known-controllers",
+          "mimxrt1062-dma-bindings-reference-known-routes",
+          "mimxrt1062-dma-bindings-reference-known-conflicts",
+          "mimxrt1062-dma-bindings-cover-routes",
           "mimxrt1062-dma-conflict-groups-reference-known-routes",
           "mimxrt1062-dma-conflict-groups-nontrivial",
           "mimxrt1062-dma-route-conflict-annotations-consistent",
@@ -605,9 +669,20 @@
           "mimxrt1064-connection-groups-reference-known-packages",
           "mimxrt1064-multi-signal-connection-groups-present",
           "mimxrt1064-ip-blocks-cover-versioned-instances",
+          "mimxrt1064-peripherals-carry-backend-schema",
+          "mimxrt1064-ip-blocks-carry-backend-schema",
+          "mimxrt1064-runtime-peripherals-have-register-descriptors",
+          "mimxrt1064-runtime-peripherals-have-register-field-descriptors",
+          "mimxrt1064-route-requirements-typed",
+          "mimxrt1064-route-operations-typed",
+          "mimxrt1064-register-target-operations-resolved",
           "mimxrt1064-interrupts-carry-aliases",
           "mimxrt1064-interrupt-aliases-unique",
           "mimxrt1064-interrupt-shared-groups-consistent",
+          "mimxrt1064-interrupt-bindings-reference-known-peripherals",
+          "mimxrt1064-interrupt-bindings-reference-known-interrupts",
+          "mimxrt1064-interrupt-bindings-reference-known-vector-slots",
+          "mimxrt1064-runtime-interrupt-bindings-present",
           "mimxrt1064-vector-slots-reference-known-interrupts",
           "mimxrt1064-vector-slots-unique",
           "mimxrt1064-interrupts-have-vector-slot",
@@ -622,6 +697,8 @@
           "mimxrt1064-clock-node-parents-known",
           "mimxrt1064-clock-graph-reaches-root",
           "mimxrt1064-clock-selectors-structured",
+          "mimxrt1064-clock-gates-structured",
+          "mimxrt1064-resets-structured",
           "mimxrt1064-clock-gates-reference-known-nodes",
           "mimxrt1064-clock-bound-peripherals-covered",
           "mimxrt1064-dma-controller-descriptors-complete",
@@ -630,6 +707,11 @@
           "mimxrt1064-dma-routes-reference-known-controllers",
           "mimxrt1064-dma-routes-reference-known-peripherals",
           "mimxrt1064-dma-routes-reference-known-conflicts",
+          "mimxrt1064-dma-bindings-reference-known-peripherals",
+          "mimxrt1064-dma-bindings-reference-known-controllers",
+          "mimxrt1064-dma-bindings-reference-known-routes",
+          "mimxrt1064-dma-bindings-reference-known-conflicts",
+          "mimxrt1064-dma-bindings-cover-routes",
           "mimxrt1064-dma-conflict-groups-reference-known-routes",
           "mimxrt1064-dma-conflict-groups-nontrivial",
           "mimxrt1064-dma-route-conflict-annotations-consistent",
@@ -644,18 +726,26 @@
       {
         "domain_id": "interrupt",
         "draft": false,
-        "message": "interrupt domain is publishable with 12 rule(s).",
+        "message": "interrupt domain is publishable with 20 rule(s).",
         "passed": true,
         "rule_ids": [
           "mimxrt1062-interrupts-reference-known-peripherals",
           "mimxrt1062-interrupt-aliases-unique",
           "mimxrt1062-interrupt-shared-groups-consistent",
+          "mimxrt1062-interrupt-bindings-reference-known-peripherals",
+          "mimxrt1062-interrupt-bindings-reference-known-interrupts",
+          "mimxrt1062-interrupt-bindings-reference-known-vector-slots",
+          "mimxrt1062-runtime-interrupt-bindings-present",
           "mimxrt1062-vector-slots-reference-known-interrupts",
           "mimxrt1062-vector-slots-unique",
           "mimxrt1062-interrupts-have-vector-slot",
           "mimxrt1064-interrupts-reference-known-peripherals",
           "mimxrt1064-interrupt-aliases-unique",
           "mimxrt1064-interrupt-shared-groups-consistent",
+          "mimxrt1064-interrupt-bindings-reference-known-peripherals",
+          "mimxrt1064-interrupt-bindings-reference-known-interrupts",
+          "mimxrt1064-interrupt-bindings-reference-known-vector-slots",
+          "mimxrt1064-runtime-interrupt-bindings-present",
           "mimxrt1064-vector-slots-reference-known-interrupts",
           "mimxrt1064-vector-slots-unique",
           "mimxrt1064-interrupts-have-vector-slot"
@@ -718,7 +808,7 @@
       {
         "domain_id": "dma",
         "draft": false,
-        "message": "dma domain is publishable with 22 rule(s).",
+        "message": "dma domain is publishable with 32 rule(s).",
         "passed": true,
         "rule_ids": [
           "mimxrt1062-dma-controllers-known",
@@ -729,6 +819,11 @@
           "mimxrt1062-dma-routes-reference-known-controllers",
           "mimxrt1062-dma-routes-reference-known-peripherals",
           "mimxrt1062-dma-routes-reference-known-conflicts",
+          "mimxrt1062-dma-bindings-reference-known-peripherals",
+          "mimxrt1062-dma-bindings-reference-known-controllers",
+          "mimxrt1062-dma-bindings-reference-known-routes",
+          "mimxrt1062-dma-bindings-reference-known-conflicts",
+          "mimxrt1062-dma-bindings-cover-routes",
           "mimxrt1062-dma-conflict-groups-reference-known-routes",
           "mimxrt1062-dma-conflict-groups-nontrivial",
           "mimxrt1062-dma-route-conflict-annotations-consistent",
@@ -740,6 +835,11 @@
           "mimxrt1064-dma-routes-reference-known-controllers",
           "mimxrt1064-dma-routes-reference-known-peripherals",
           "mimxrt1064-dma-routes-reference-known-conflicts",
+          "mimxrt1064-dma-bindings-reference-known-peripherals",
+          "mimxrt1064-dma-bindings-reference-known-controllers",
+          "mimxrt1064-dma-bindings-reference-known-routes",
+          "mimxrt1064-dma-bindings-reference-known-conflicts",
+          "mimxrt1064-dma-bindings-cover-routes",
           "mimxrt1064-dma-conflict-groups-reference-known-routes",
           "mimxrt1064-dma-conflict-groups-nontrivial",
           "mimxrt1064-dma-route-conflict-annotations-consistent"

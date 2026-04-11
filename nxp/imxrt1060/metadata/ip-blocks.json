@@ -1340,6 +1340,7 @@
   "family": "imxrt1060",
   "ip_blocks": [
     {
+      "backend_schema_id": "alloy.flexspi.nxp-flexspi-v1",
       "capability_ids": [
         "capability:flexspi:flexspi-v1:a-data00",
         "capability:flexspi:flexspi-v1:a-data01",
@@ -1390,6 +1391,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-imxrt-gpio-v1",
       "capability_ids": [
         "capability:gpio:imxrt-gpio-v1:io00",
         "capability:gpio:imxrt-gpio-v1:io01",
@@ -1472,6 +1474,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.lpi2c1.nxp-lpi2c-v1",
       "capability_ids": [
         "capability:lpi2c1:lpi2c-v1:hreq",
         "capability:lpi2c1:lpi2c-v1:scl",
@@ -1500,6 +1503,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.lpi2c2.nxp-lpi2c-v1",
       "capability_ids": [
         "capability:lpi2c2:lpi2c-v1:scl",
         "capability:lpi2c2:lpi2c-v1:sda"
@@ -1522,6 +1526,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.lpi2c3.nxp-lpi2c-v1",
       "capability_ids": [
         "capability:lpi2c3:lpi2c-v1:scl",
         "capability:lpi2c3:lpi2c-v1:sda"
@@ -1544,6 +1549,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.lpi2c4.nxp-lpi2c-v1",
       "capability_ids": [
         "capability:lpi2c4:lpi2c-v1:scl",
         "capability:lpi2c4:lpi2c-v1:sda"
@@ -1566,6 +1572,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.spi.nxp-lpspi-v1",
       "capability_ids": [
         "capability:lpspi:lpspi-v1:cs",
         "capability:lpspi:lpspi-v1:sck",
@@ -1594,6 +1601,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "capability_ids": [
         "capability:lpuart:lpuart-v1:cts",
         "capability:lpuart:lpuart-v1:rts",

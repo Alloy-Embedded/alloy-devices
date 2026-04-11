@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "lpspi",
   "lpspi-v1",
   "spi",
+  "alloy.spi.nxp-lpspi-v1",
   "lpspi:lpspi-v1",
   "cs,sck,sd0,sdi,sdo",
 };

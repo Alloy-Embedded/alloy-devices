@@ -2794,6 +2794,7 @@
   ],
   "peripherals": [
     {
+      "backend_schema_id": "alloy.adc.nxp-adc",
       "base_address": 1074544640,
       "instance": 1,
       "ip_name": "adc",
@@ -2811,6 +2812,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.adc.nxp-adc",
       "base_address": 1074561024,
       "instance": 2,
       "ip_name": "adc",
@@ -2828,6 +2830,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.adc_etc.nxp-adc-etc",
       "base_address": 1077608448,
       "instance": 0,
       "ip_name": "adc_etc",
@@ -2845,6 +2848,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aipstz.nxp-aipstz",
       "base_address": 1074249728,
       "instance": 1,
       "ip_name": "aipstz",
@@ -2862,6 +2866,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aipstz.nxp-aipstz",
       "base_address": 1075298304,
       "instance": 2,
       "ip_name": "aipstz",
@@ -2879,6 +2884,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aipstz.nxp-aipstz",
       "base_address": 1076346880,
       "instance": 3,
       "ip_name": "aipstz",
@@ -2896,6 +2902,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aipstz.nxp-aipstz",
       "base_address": 1077395456,
       "instance": 4,
       "ip_name": "aipstz",
@@ -2913,6 +2920,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aoi.nxp-aoi",
       "base_address": 1077624832,
       "instance": 1,
       "ip_name": "aoi",
@@ -2930,6 +2938,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.aoi.nxp-aoi",
       "base_address": 1077641216,
       "instance": 2,
       "ip_name": "aoi",
@@ -2947,6 +2956,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.bee.nxp-bee",
       "base_address": 1077854208,
       "instance": 0,
       "ip_name": "bee",
@@ -2964,6 +2974,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.can.nxp-can",
       "base_address": 1075642368,
       "instance": 1,
       "ip_name": "can",
@@ -2981,6 +2992,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.can.nxp-can",
       "base_address": 1075658752,
       "instance": 2,
       "ip_name": "can",
@@ -2998,6 +3010,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.can.nxp-can",
       "base_address": 1075675136,
       "instance": 3,
       "ip_name": "can",
@@ -3015,6 +3028,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.ccm.nxp-ccm",
       "base_address": 1074774016,
       "instance": 0,
       "ip_name": "ccm",
@@ -3032,6 +3046,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.cm7_mcm.nxp-cm7-mcm",
       "base_address": 3758620672,
       "instance": 0,
       "ip_name": "cm7_mcm",
@@ -3049,6 +3064,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.cmp.nxp-cmp",
       "base_address": 1074348032,
       "instance": 1,
       "ip_name": "cmp",
@@ -3066,6 +3082,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.cmp.nxp-cmp",
       "base_address": 1074348040,
       "instance": 2,
       "ip_name": "cmp",
@@ -3083,6 +3100,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.cmp.nxp-cmp",
       "base_address": 1074348048,
       "instance": 3,
       "ip_name": "cmp",
@@ -3100,6 +3118,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.cmp.nxp-cmp",
       "base_address": 1074348056,
       "instance": 4,
       "ip_name": "cmp",
@@ -3117,6 +3136,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.csi.nxp-csi",
       "base_address": 1076609024,
       "instance": 0,
       "ip_name": "csi",
@@ -3134,6 +3154,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.csu.nxp-csu",
       "base_address": 1074642944,
       "instance": 0,
       "ip_name": "csu",
@@ -3151,6 +3172,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dcdc.nxp-dcdc",
       "base_address": 1074266112,
       "instance": 0,
       "ip_name": "dcdc",
@@ -3168,6 +3190,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dcp.nxp-dcp",
       "base_address": 1076871168,
       "instance": 0,
       "ip_name": "dcp",
@@ -3185,6 +3208,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dma.nxp-dma",
       "base_address": 1074692096,
       "instance": 0,
       "ip_name": "dma",
@@ -3202,6 +3226,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dma-router.nxp-dmamux",
       "base_address": 1074708480,
       "instance": 1,
       "ip_name": "dmamux",
@@ -3219,6 +3244,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.enc.nxp-enc",
       "base_address": 1077706752,
       "instance": 1,
       "ip_name": "enc",
@@ -3236,6 +3262,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.enc.nxp-enc",
       "base_address": 1077723136,
       "instance": 2,
       "ip_name": "enc",
@@ -3253,6 +3280,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.enc.nxp-enc",
       "base_address": 1077739520,
       "instance": 3,
       "ip_name": "enc",
@@ -3270,6 +3298,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.enc.nxp-enc",
       "base_address": 1077755904,
       "instance": 4,
       "ip_name": "enc",
@@ -3287,6 +3316,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.enet.nxp-enet",
       "base_address": 1076723712,
       "instance": 0,
       "ip_name": "enet",
@@ -3304,6 +3334,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.enet.nxp-enet",
       "base_address": 1076707328,
       "instance": 2,
       "ip_name": "enet",
@@ -3321,6 +3352,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.ewm.nxp-ewm",
       "base_address": 1074479104,
       "instance": 0,
       "ip_name": "ewm",
@@ -3338,6 +3370,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.flexio.nxp-flexio",
       "base_address": 1075494912,
       "instance": 1,
       "ip_name": "flexio",
@@ -3355,6 +3388,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.flexio.nxp-flexio",
       "base_address": 1075511296,
       "instance": 2,
       "ip_name": "flexio",
@@ -3372,6 +3406,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.flexio.nxp-flexio",
       "base_address": 1107427328,
       "instance": 3,
       "ip_name": "flexio",
@@ -3389,6 +3424,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.flexram.nxp-flexram",
       "base_address": 1074462720,
       "instance": 0,
       "ip_name": "flexram",
@@ -3406,6 +3442,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.flexspi.nxp-flexspi-v1",
       "base_address": 1076527104,
       "instance": 0,
       "ip_name": "flexspi",
@@ -3423,6 +3460,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.flexspi.nxp-flexspi-v1",
       "base_address": 1076510720,
       "instance": 2,
       "ip_name": "flexspi",
@@ -3440,6 +3478,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpc.nxp-gpc",
       "base_address": 1074741248,
       "instance": 0,
       "ip_name": "gpc",
@@ -3457,6 +3496,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-imxrt-gpio-v1",
       "base_address": 1075544064,
       "instance": 1,
       "ip_name": "gpio",
@@ -3474,6 +3514,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-gpio",
       "base_address": 1075609600,
       "instance": 10,
       "ip_name": "gpio",
@@ -3491,6 +3532,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-imxrt-gpio-v1",
       "base_address": 1075560448,
       "instance": 2,
       "ip_name": "gpio",
@@ -3508,6 +3550,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-imxrt-gpio-v1",
       "base_address": 1075576832,
       "instance": 3,
       "ip_name": "gpio",
@@ -3525,6 +3568,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-imxrt-gpio-v1",
       "base_address": 1075593216,
       "instance": 4,
       "ip_name": "gpio",
@@ -3542,6 +3586,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-imxrt-gpio-v1",
       "base_address": 1074528256,
       "instance": 5,
       "ip_name": "gpio",
@@ -3559,6 +3604,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-gpio",
       "base_address": 1107296256,
       "instance": 6,
       "ip_name": "gpio",
@@ -3576,6 +3622,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-gpio",
       "base_address": 1107312640,
       "instance": 7,
       "ip_name": "gpio",
@@ -3593,6 +3640,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-gpio",
       "base_address": 1107329024,
       "instance": 8,
       "ip_name": "gpio",
@@ -3610,6 +3658,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.nxp-gpio",
       "base_address": 1107345408,
       "instance": 9,
       "ip_name": "gpio",
@@ -3627,6 +3676,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpt.nxp-gpt",
       "base_address": 1075757056,
       "instance": 1,
       "ip_name": "gpt",
@@ -3644,6 +3694,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpt.nxp-gpt",
       "base_address": 1075773440,
       "instance": 2,
       "ip_name": "gpt",
@@ -3661,6 +3712,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.iomuxc.nxp-iomuxc",
       "base_address": 1075806208,
       "instance": 0,
       "ip_name": "iomuxc",
@@ -3678,6 +3730,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.iomuxc_gpr.nxp-iomuxc-gpr",
       "base_address": 1074446336,
       "instance": 0,
       "ip_name": "iomuxc_gpr",
@@ -3695,6 +3748,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.iomuxc_snvs.nxp-iomuxc-snvs",
       "base_address": 1074429952,
       "instance": 0,
       "ip_name": "iomuxc_snvs",
@@ -3712,6 +3766,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.iomuxc_snvs_gpr.nxp-iomuxc-snvs-gpr",
       "base_address": 1074413568,
       "instance": 0,
       "ip_name": "iomuxc_snvs_gpr",
@@ -3729,6 +3784,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.kpp.nxp-kpp",
       "base_address": 1075822592,
       "instance": 0,
       "ip_name": "kpp",
@@ -3746,6 +3802,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lcdif.nxp-lcdif",
       "base_address": 1076592640,
       "instance": 0,
       "ip_name": "lcdif",
@@ -3763,6 +3820,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lpi2c1.nxp-lpi2c-v1",
       "base_address": 1077870592,
       "instance": 0,
       "ip_name": "lpi2c1",
@@ -3780,6 +3838,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lpi2c2.nxp-lpi2c-v1",
       "base_address": 1077886976,
       "instance": 0,
       "ip_name": "lpi2c2",
@@ -3797,6 +3856,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lpi2c3.nxp-lpi2c-v1",
       "base_address": 1077903360,
       "instance": 0,
       "ip_name": "lpi2c3",
@@ -3814,6 +3874,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lpi2c4.nxp-lpi2c-v1",
       "base_address": 1077919744,
       "instance": 0,
       "ip_name": "lpi2c4",
@@ -3831,6 +3892,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.nxp-lpspi-v1",
       "base_address": 1077493760,
       "instance": 1,
       "ip_name": "lpspi",
@@ -3848,6 +3910,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.nxp-lpspi-v1",
       "base_address": 1077510144,
       "instance": 2,
       "ip_name": "lpspi",
@@ -3865,6 +3928,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.nxp-lpspi-v1",
       "base_address": 1077526528,
       "instance": 3,
       "ip_name": "lpspi",
@@ -3882,6 +3946,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.nxp-lpspi-v1",
       "base_address": 1077542912,
       "instance": 4,
       "ip_name": "lpspi",
@@ -3899,6 +3964,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075331072,
       "instance": 1,
       "ip_name": "lpuart",
@@ -3916,6 +3982,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075347456,
       "instance": 2,
       "ip_name": "lpuart",
@@ -3933,6 +4000,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075363840,
       "instance": 3,
       "ip_name": "lpuart",
@@ -3950,6 +4018,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075380224,
       "instance": 4,
       "ip_name": "lpuart",
@@ -3967,6 +4036,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075396608,
       "instance": 5,
       "ip_name": "lpuart",
@@ -3984,6 +4054,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075412992,
       "instance": 6,
       "ip_name": "lpuart",
@@ -4001,6 +4072,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075429376,
       "instance": 7,
       "ip_name": "lpuart",
@@ -4018,6 +4090,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.uart.nxp-lpuart-v1",
       "base_address": 1075445760,
       "instance": 8,
       "ip_name": "lpuart",
@@ -4035,6 +4108,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.mpu.nxp-mpu",
       "base_address": 3758157200,
       "instance": 0,
       "ip_name": "mpu",
@@ -4052,6 +4126,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.nvic.nxp-nvic",
       "base_address": 3758153984,
       "instance": 0,
       "ip_name": "nvic",
@@ -4069,6 +4144,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.ocotp.nxp-ocotp",
       "base_address": 1075789824,
       "instance": 0,
       "ip_name": "ocotp",
@@ -4086,6 +4162,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pit.nxp-pit",
       "base_address": 1074282496,
       "instance": 0,
       "ip_name": "pit",
@@ -4103,6 +4180,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pmu.nxp-pmu",
       "base_address": 1074626560,
       "instance": 0,
       "ip_name": "pmu",
@@ -4120,6 +4198,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pwm.nxp-pwm",
       "base_address": 1077788672,
       "instance": 1,
       "ip_name": "pwm",
@@ -4137,6 +4216,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pwm.nxp-pwm",
       "base_address": 1077805056,
       "instance": 2,
       "ip_name": "pwm",
@@ -4154,6 +4234,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pwm.nxp-pwm",
       "base_address": 1077821440,
       "instance": 3,
       "ip_name": "pwm",
@@ -4171,6 +4252,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pwm.nxp-pwm",
       "base_address": 1077837824,
       "instance": 4,
       "ip_name": "pwm",
@@ -4188,6 +4270,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.pxp.nxp-pxp",
       "base_address": 1076576256,
       "instance": 0,
       "ip_name": "pxp",
@@ -4205,6 +4288,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.romc.nxp-romc",
       "base_address": 1075314688,
       "instance": 0,
       "ip_name": "romc",
@@ -4222,6 +4306,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rtwdog.nxp-rtwdog",
       "base_address": 1074511872,
       "instance": 0,
       "ip_name": "rtwdog",
@@ -4239,6 +4324,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.sai.nxp-sai",
       "base_address": 1077428224,
       "instance": 1,
       "ip_name": "sai",
@@ -4256,6 +4342,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.sai.nxp-sai",
       "base_address": 1077444608,
       "instance": 2,
       "ip_name": "sai",
@@ -4273,6 +4360,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.sai.nxp-sai",
       "base_address": 1077460992,
       "instance": 3,
       "ip_name": "sai",
@@ -4290,6 +4378,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.semc.nxp-semc",
       "base_address": 1076822016,
       "instance": 0,
       "ip_name": "semc",
@@ -4307,6 +4396,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.snvs.nxp-snvs",
       "base_address": 1074610176,
       "instance": 0,
       "ip_name": "snvs",
@@ -4324,6 +4414,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spdif.nxp-spdif",
       "base_address": 1077411840,
       "instance": 0,
       "ip_name": "spdif",
@@ -4341,6 +4432,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.src.nxp-src",
       "base_address": 1074757632,
       "instance": 0,
       "ip_name": "src",
@@ -4358,6 +4450,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.systemcontrol.nxp-systemcontrol",
       "base_address": 3758153728,
       "instance": 0,
       "ip_name": "systemcontrol",
@@ -4375,6 +4468,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tmr.nxp-tmr",
       "base_address": 1075691520,
       "instance": 1,
       "ip_name": "tmr",
@@ -4392,6 +4486,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tmr.nxp-tmr",
       "base_address": 1075707904,
       "instance": 2,
       "ip_name": "tmr",
@@ -4409,6 +4504,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tmr.nxp-tmr",
       "base_address": 1075724288,
       "instance": 3,
       "ip_name": "tmr",
@@ -4426,6 +4522,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tmr.nxp-tmr",
       "base_address": 1075740672,
       "instance": 4,
       "ip_name": "tmr",
@@ -4443,6 +4540,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.trng.nxp-trng",
       "base_address": 1074577408,
       "instance": 0,
       "ip_name": "trng",
@@ -4460,6 +4558,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tsc.nxp-tsc",
       "base_address": 1074659328,
       "instance": 0,
       "ip_name": "tsc",
@@ -4477,6 +4576,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usb.nxp-usb",
       "base_address": 1076756480,
       "instance": 1,
       "ip_name": "usb",
@@ -4494,6 +4594,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usb.nxp-usb",
       "base_address": 1076756992,
       "instance": 2,
       "ip_name": "usb",
@@ -4511,6 +4612,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usbnc.nxp-usbnc",
       "base_address": 1076756484,
       "instance": 2,
       "ip_name": "usbnc",
@@ -4528,6 +4630,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usbphy.nxp-usbphy",
       "base_address": 1074630656,
       "instance": 1,
       "ip_name": "usbphy",
@@ -4545,6 +4648,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usbphy.nxp-usbphy",
       "base_address": 1074634752,
       "instance": 2,
       "ip_name": "usbphy",
@@ -4562,6 +4666,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usdhc.nxp-usdhc",
       "base_address": 1076625408,
       "instance": 1,
       "ip_name": "usdhc",
@@ -4579,6 +4684,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.usdhc.nxp-usdhc",
       "base_address": 1076641792,
       "instance": 2,
       "ip_name": "usdhc",
@@ -4596,6 +4702,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.wdog.nxp-wdog",
       "base_address": 1074495488,
       "instance": 1,
       "ip_name": "wdog",
@@ -4613,6 +4720,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.wdog.nxp-wdog",
       "base_address": 1074593792,
       "instance": 2,
       "ip_name": "wdog",
@@ -4630,6 +4738,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.xbara.nxp-xbara",
       "base_address": 1077657600,
       "instance": 1,
       "ip_name": "xbara",
@@ -4647,6 +4756,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.xbarb.nxp-xbarb",
       "base_address": 1077673984,
       "instance": 2,
       "ip_name": "xbarb",
@@ -4664,6 +4774,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.xbarb.nxp-xbarb",
       "base_address": 1077690368,
       "instance": 3,
       "ip_name": "xbarb",

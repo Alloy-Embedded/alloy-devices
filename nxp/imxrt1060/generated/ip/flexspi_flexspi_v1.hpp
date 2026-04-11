@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "flexspi",
   "flexspi-v1",
   "flexspi",
+  "alloy.flexspi.nxp-flexspi-v1",
   "flexspi:flexspi-v1",
   "a_data00,a_data01,a_data02,a_data03,a_dqs,a_sclk,a_ss0_b,a_ss1_b,b_data00,b_data01,b_data02,b_data03,b_dqs,b_sclk,b_ss0_b,b_ss1_b",
 };
