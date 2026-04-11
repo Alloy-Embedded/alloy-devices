@@ -914,6 +914,7 @@
   ],
   "peripherals": [
     {
+      "backend_schema_id": "alloy.adc.st-aditf4-v3-0-g0-cube",
       "base_address": 1073816576,
       "instance": 1,
       "ip_name": "adc",
@@ -931,6 +932,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.ADCRST"
     },
     {
+      "backend_schema_id": "alloy.comp.st-comp",
       "base_address": 1073807872,
       "instance": 0,
       "ip_name": "comp",
@@ -948,6 +950,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.crc.st-integtest1-v2-0",
       "base_address": 1073885184,
       "instance": 0,
       "ip_name": "crc",
@@ -965,6 +968,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dac.st-dac",
       "base_address": 1073771520,
       "instance": 0,
       "ip_name": "dac",
@@ -982,6 +986,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dbg.st-dbg",
       "base_address": 1073829888,
       "instance": 0,
       "ip_name": "dbg",
@@ -999,6 +1004,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dma.st-dma",
       "base_address": 1073872896,
       "instance": 1,
       "ip_name": "dma",
@@ -1016,6 +1022,7 @@
       "rcc_reset_signal": "RCC_AHBRSTR.DMA1RST"
     },
     {
+      "backend_schema_id": "alloy.dma.st-dma",
       "base_address": 1073873920,
       "instance": 2,
       "ip_name": "dma",
@@ -1033,6 +1040,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.dma-router.st-dmamux",
       "base_address": 1073874944,
       "instance": 1,
       "ip_name": "dmamux",
@@ -1050,6 +1058,7 @@
       "rcc_reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
     },
     {
+      "backend_schema_id": "alloy.exti.st-exti",
       "base_address": 1073879040,
       "instance": 0,
       "ip_name": "exti",
@@ -1067,6 +1076,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.fdcan.st-fdcan1-v1-0-cube",
       "base_address": 1073767424,
       "instance": 1,
       "ip_name": "fdcan",
@@ -1084,6 +1094,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.FDCANRST"
     },
     {
+      "backend_schema_id": "alloy.fdcan.st-fdcan1-v1-0-cube",
       "base_address": 1073768448,
       "instance": 2,
       "ip_name": "fdcan",
@@ -1101,6 +1112,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.FDCANRST"
     },
     {
+      "backend_schema_id": "alloy.flash.st-flash",
       "base_address": 1073881088,
       "instance": 0,
       "ip_name": "flash",
@@ -1118,6 +1130,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.st-gpio",
       "base_address": 1342177280,
       "instance": 0,
       "ip_name": "gpio",
@@ -1135,6 +1148,7 @@
       "rcc_reset_signal": "RCC_IOPRSTR.GPIOARST"
     },
     {
+      "backend_schema_id": "alloy.gpio.st-gpio",
       "base_address": 1342178304,
       "instance": 1,
       "ip_name": "gpio",
@@ -1152,6 +1166,7 @@
       "rcc_reset_signal": "RCC_IOPRSTR.GPIOBRST"
     },
     {
+      "backend_schema_id": "alloy.gpio.st-gpio",
       "base_address": 1342179328,
       "instance": 2,
       "ip_name": "gpio",
@@ -1169,6 +1184,7 @@
       "rcc_reset_signal": "RCC_IOPRSTR.GPIOCRST"
     },
     {
+      "backend_schema_id": "alloy.gpio.st-gpio",
       "base_address": 1342180352,
       "instance": 3,
       "ip_name": "gpio",
@@ -1186,6 +1202,7 @@
       "rcc_reset_signal": "RCC_IOPRSTR.GPIODRST"
     },
     {
+      "backend_schema_id": "alloy.gpio.st-gpio",
       "base_address": 1342181376,
       "instance": 4,
       "ip_name": "gpio",
@@ -1203,6 +1220,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.gpio.st-gpio",
       "base_address": 1342182400,
       "instance": 5,
       "ip_name": "gpio",
@@ -1220,6 +1238,7 @@
       "rcc_reset_signal": "RCC_IOPRSTR.GPIOFRST"
     },
     {
+      "backend_schema_id": "alloy.hdmi_cec.st-hdmi-cec-v2-0-cube",
       "base_address": 1073772544,
       "instance": 0,
       "ip_name": "hdmi_cec",
@@ -1237,6 +1256,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.i2c1.st-i2c2-v1-1-cube",
       "base_address": 1073763328,
       "instance": 0,
       "ip_name": "i2c1",
@@ -1254,6 +1274,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.I2C1RST"
     },
     {
+      "backend_schema_id": "alloy.i2c2.st-i2c2-v1-1-cube",
       "base_address": 1073764352,
       "instance": 0,
       "ip_name": "i2c2",
@@ -1271,6 +1292,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.I2C2RST"
     },
     {
+      "backend_schema_id": "alloy.i2c3.st-i2c2-v1-1-cube",
       "base_address": 1073776640,
       "instance": 0,
       "ip_name": "i2c3",
@@ -1288,6 +1310,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.I2C3RST"
     },
     {
+      "backend_schema_id": "alloy.iwdg.st-iwdg1-v2-0",
       "base_address": 1073754112,
       "instance": 0,
       "ip_name": "iwdg",
@@ -1305,6 +1328,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.lptim.st-g0xx-lptimer1-v1-4-cube",
       "base_address": 1073773568,
       "instance": 1,
       "ip_name": "lptim",
@@ -1322,6 +1346,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.LPTIM1RST"
     },
     {
+      "backend_schema_id": "alloy.lptim.st-g0xx-lptimer1-v1-4-cube",
       "base_address": 1073779712,
       "instance": 2,
       "ip_name": "lptim",
@@ -1339,6 +1364,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.LPTIM2RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v1-2-cube",
       "base_address": 1073774592,
       "instance": 1,
       "ip_name": "lpuart",
@@ -1356,6 +1382,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.LPUART1RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v1-4-cube",
       "base_address": 1073775616,
       "instance": 2,
       "ip_name": "lpuart",
@@ -1373,6 +1400,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.LPUART2RST"
     },
     {
+      "backend_schema_id": "alloy.pwr.st-pwr",
       "base_address": 1073770496,
       "instance": 0,
       "ip_name": "pwr",
@@ -1390,6 +1418,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rcc.st-stm32g0-64-rcc-v1-0",
       "base_address": 1073876992,
       "instance": 0,
       "ip_name": "rcc",
@@ -1407,6 +1436,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rng.st-rng",
       "base_address": 1073893376,
       "instance": 0,
       "ip_name": "rng",
@@ -1424,6 +1454,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.rtc.st-rtc3-v1-0-cube",
       "base_address": 1073752064,
       "instance": 0,
       "ip_name": "rtc",
@@ -1441,6 +1472,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.spi.st-spi2s1-v3-5-cube",
       "base_address": 1073819648,
       "instance": 1,
       "ip_name": "spi",
@@ -1458,6 +1490,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.SPI1RST"
     },
     {
+      "backend_schema_id": "alloy.spi.st-spi2s1-v3-5-cube",
       "base_address": 1073756160,
       "instance": 2,
       "ip_name": "spi",
@@ -1475,6 +1508,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.SPI2RST"
     },
     {
+      "backend_schema_id": "alloy.spi.st-spi2s1-v3-5-cube",
       "base_address": 1073757184,
       "instance": 3,
       "ip_name": "spi",
@@ -1492,6 +1526,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.SPI3RST"
     },
     {
+      "backend_schema_id": "alloy.syscfg.st-syscfg",
       "base_address": 1073807360,
       "instance": 0,
       "ip_name": "syscfg",
@@ -1509,6 +1544,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.syscfg_vrefbuf.st-syscfg-vrefbuf",
       "base_address": 1073807360,
       "instance": 0,
       "ip_name": "syscfg_vrefbuf",
@@ -1526,6 +1562,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.tamp.st-tamp",
       "base_address": 1073786880,
       "instance": 0,
       "ip_name": "tamp",
@@ -1543,6 +1580,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073818624,
       "instance": 1,
       "ip_name": "tim",
@@ -1560,6 +1598,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.TIM1RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073750016,
       "instance": 14,
       "ip_name": "tim",
@@ -1577,6 +1616,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.TIM14RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073823744,
       "instance": 15,
       "ip_name": "tim",
@@ -1594,6 +1634,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.TIM15RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073824768,
       "instance": 16,
       "ip_name": "tim",
@@ -1611,6 +1652,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.TIM16RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073825792,
       "instance": 17,
       "ip_name": "tim",
@@ -1628,6 +1670,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.TIM17RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-tim",
       "base_address": 1073741824,
       "instance": 2,
       "ip_name": "tim",
@@ -1645,6 +1688,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.TIM2RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073742848,
       "instance": 3,
       "ip_name": "tim",
@@ -1662,6 +1706,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.TIM3RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073743872,
       "instance": 4,
       "ip_name": "tim",
@@ -1679,6 +1724,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.TIM4RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073745920,
       "instance": 6,
       "ip_name": "tim",
@@ -1696,6 +1742,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.TIM6RST"
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "base_address": 1073746944,
       "instance": 7,
       "ip_name": "tim",
@@ -1713,6 +1760,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.TIM7RST"
     },
     {
+      "backend_schema_id": "alloy.ucpd.st-ucpd-v1-0-cube",
       "base_address": 1073782784,
       "instance": 1,
       "ip_name": "ucpd",
@@ -1730,6 +1778,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.UCPD1RST"
     },
     {
+      "backend_schema_id": "alloy.ucpd.st-ucpd-v1-0-cube",
       "base_address": 1073783808,
       "instance": 2,
       "ip_name": "ucpd",
@@ -1747,6 +1796,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.UCPD2RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "base_address": 1073821696,
       "instance": 1,
       "ip_name": "usart",
@@ -1764,6 +1814,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.USART1RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "base_address": 1073759232,
       "instance": 2,
       "ip_name": "usart",
@@ -1781,6 +1832,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.USART2RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "base_address": 1073760256,
       "instance": 3,
       "ip_name": "usart",
@@ -1798,6 +1850,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.USART3RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "base_address": 1073761280,
       "instance": 4,
       "ip_name": "usart",
@@ -1815,6 +1868,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.USART4RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "base_address": 1073762304,
       "instance": 5,
       "ip_name": "usart",
@@ -1832,6 +1886,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.USART5RST"
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "base_address": 1073822720,
       "instance": 6,
       "ip_name": "usart",
@@ -1849,6 +1904,7 @@
       "rcc_reset_signal": "RCC_APBRSTR1.USART6RST"
     },
     {
+      "backend_schema_id": "alloy.usb.st-usb",
       "base_address": 1073765376,
       "instance": 0,
       "ip_name": "usb",
@@ -1866,6 +1922,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.vrefbuf.st-vrefbuf",
       "base_address": 1073807408,
       "instance": 0,
       "ip_name": "vrefbuf",
@@ -1883,6 +1940,7 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.wwdg.st-wwdg1-v2-0",
       "base_address": 1073753088,
       "instance": 0,
       "ip_name": "wwdg",

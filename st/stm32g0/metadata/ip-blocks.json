@@ -811,6 +811,7 @@
   "family": "stm32g0",
   "ip_blocks": [
     {
+      "backend_schema_id": "alloy.adc.st-aditf4-v3-0-g0-cube",
       "capability_ids": [],
       "ip_name": "adc",
       "ip_version": "aditf4_v3_0_G0_Cube",
@@ -827,6 +828,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.crc.st-integtest1-v2-0",
       "capability_ids": [],
       "ip_name": "crc",
       "ip_version": "integtest1_v2_0",
@@ -843,6 +845,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.fdcan.st-fdcan1-v1-0-cube",
       "capability_ids": [
         "capability:fdcan:fdcan1-v1-0-cube:rx",
         "capability:fdcan:fdcan1-v1-0-cube:tx"
@@ -865,6 +868,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.hdmi_cec.st-hdmi-cec-v2-0-cube",
       "capability_ids": [],
       "ip_name": "hdmi_cec",
       "ip_version": "hdmi_cec_v2_0_Cube",
@@ -881,6 +885,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.i2c1.st-i2c2-v1-1-cube",
       "capability_ids": [
         "capability:i2c1:i2c2-v1-1-cube:sda",
         "capability:i2c1:i2c2-v1-1-cube:smba"
@@ -903,6 +908,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.i2c2.st-i2c2-v1-1-cube",
       "capability_ids": [],
       "ip_name": "i2c2",
       "ip_version": "i2c2_v1_1_Cube",
@@ -919,6 +925,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.i2c3.st-i2c2-v1-1-cube",
       "capability_ids": [
         "capability:i2c3:i2c2-v1-1-cube:scl",
         "capability:i2c3:i2c2-v1-1-cube:sda"
@@ -941,6 +948,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.iwdg.st-iwdg1-v2-0",
       "capability_ids": [],
       "ip_name": "iwdg",
       "ip_version": "iwdg1_v2_0",
@@ -957,6 +965,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.lptim.st-g0xx-lptimer1-v1-4-cube",
       "capability_ids": [
         "capability:lptim:g0xx-lptimer1-v1-4-cube:etr",
         "capability:lptim:g0xx-lptimer1-v1-4-cube:in1",
@@ -983,6 +992,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v1-2-cube",
       "capability_ids": [
         "capability:lpuart:sci3-v1-2-cube:cts",
         "capability:lpuart:sci3-v1-2-cube:de",
@@ -1011,6 +1021,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v1-4-cube",
       "capability_ids": [
         "capability:lpuart:sci3-v1-4-cube:cts",
         "capability:lpuart:sci3-v1-4-cube:de",
@@ -1039,6 +1050,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.rcc.st-stm32g0-512-rcc-v1-0",
       "capability_ids": [],
       "ip_name": "rcc",
       "ip_version": "STM32G0-512_rcc_v1_0",
@@ -1055,6 +1067,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.rcc.st-stm32g05-rcc-v1-0",
       "capability_ids": [],
       "ip_name": "rcc",
       "ip_version": "STM32G05_rcc_v1_0",
@@ -1071,6 +1084,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.rcc.st-stm32g0-64-rcc-v1-0",
       "capability_ids": [],
       "ip_name": "rcc",
       "ip_version": "STM32G0_64_rcc_v1_0",
@@ -1087,6 +1101,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.rtc.st-rtc3-v1-0-cube",
       "capability_ids": [],
       "ip_name": "rtc",
       "ip_version": "rtc3_v1_0_Cube",
@@ -1103,6 +1118,7 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.spi.st-spi2s1-v3-3-cube",
       "capability_ids": [
         "capability:spi:spi2s1-v3-3-cube:miso",
         "capability:spi:spi2s1-v3-3-cube:mosi",
@@ -1129,6 +1145,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.spi.st-spi2s1-v3-5-cube",
       "capability_ids": [
         "capability:spi:spi2s1-v3-5-cube:miso",
         "capability:spi:spi2s1-v3-5-cube:mosi",
@@ -1155,6 +1172,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.timer.st-gptimer2-v3-x-cube",
       "capability_ids": [
         "capability:tim:gptimer2-v3-x-cube:bk",
         "capability:tim:gptimer2-v3-x-cube:ch1",
@@ -1185,6 +1203,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.ucpd.st-ucpd-v1-0-cube",
       "capability_ids": [
         "capability:ucpd:ucpd-v1-0-cube:frstx1",
         "capability:ucpd:ucpd-v1-0-cube:frstx2"
@@ -1207,6 +1226,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.uart.st-sci3-v2-1-cube",
       "capability_ids": [
         "capability:usart:sci3-v2-1-cube:ck",
         "capability:usart:sci3-v2-1-cube:cts",
@@ -1239,6 +1259,7 @@
       ]
     },
     {
+      "backend_schema_id": "alloy.wwdg.st-wwdg1-v2-0",
       "capability_ids": [],
       "ip_name": "wwdg",
       "ip_version": "wwdg1_v2_0",

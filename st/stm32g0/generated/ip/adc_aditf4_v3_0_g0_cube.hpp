@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "adc",
   "aditf4_v3_0_G0_Cube",
   "adc",
+  "alloy.adc.st-aditf4-v3-0-g0-cube",
   "adc:aditf4_v3_0_G0_Cube",
   "",
 };

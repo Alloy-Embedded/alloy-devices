@@ -14,7 +14,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:adcen",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_AHBENR.DMA1EN",
@@ -28,7 +33,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:ahbenr:dma1en",
+          "register_id": "register:rcc:ahbenr",
+          "register_name": "AHBENR",
+          "register_offset": 56,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_AHBENR.DMAMUX1EN",
@@ -42,7 +52,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_id": "register:rcc:ahbenr",
+          "register_name": "AHBENR",
+          "register_offset": 56,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOAEN",
@@ -56,7 +70,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpioaen",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOBEN",
@@ -70,7 +89,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpioben",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOCEN",
@@ -84,7 +108,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpiocen",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIODEN",
@@ -98,7 +127,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpioden",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOFEN",
@@ -112,7 +146,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpiofen",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C1EN",
@@ -126,7 +165,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C2EN",
@@ -140,7 +184,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.SPI1EN",
@@ -154,7 +203,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:spi1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.SPI2EN",
@@ -168,7 +222,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:spi2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM1EN",
@@ -182,7 +241,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM14EN",
@@ -196,7 +260,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim14en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM16EN",
@@ -210,7 +279,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim16en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM17EN",
@@ -224,7 +298,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim17en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM2EN",
@@ -238,7 +317,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM3EN",
@@ -252,7 +335,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.USART1EN",
@@ -266,7 +354,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:usart1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART2EN",
@@ -280,7 +373,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         }
       ],
       "clock_nodes": [
@@ -413,6 +511,11 @@
             "source_id": "bootstrap-patch",
             "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
           },
+          "register_field_id": "field:rcc:ccipr:usart1sel",
+          "register_id": "register:rcc:ccipr",
+          "register_name": "CCIPR",
+          "register_offset": 84,
+          "register_peripheral": "RCC",
           "register_target": "RCC_CCIPR.USART1SEL",
           "selector_id": "selector:usart1-kernel"
         }
@@ -1597,6 +1700,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:adcrst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:adc1",
           "reset_signal": "RCC_APBRSTR2.ADCRST"
         },
@@ -1611,6 +1719,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:ahbrstr:dma1rst",
+          "register_id": "register:rcc:ahbrstr",
+          "register_name": "AHBRSTR",
+          "register_offset": 40,
+          "register_peripheral": "RCC",
           "reset_id": "reset:dma1",
           "reset_signal": "RCC_AHBRSTR.DMA1RST"
         },
@@ -1625,6 +1738,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_id": "register:rcc:ahbrstr",
+          "register_name": "AHBRSTR",
+          "register_offset": 40,
+          "register_peripheral": "RCC",
           "reset_id": "reset:dmamux1",
           "reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
         },
@@ -1639,6 +1756,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpioarst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpioa",
           "reset_signal": "RCC_IOPRSTR.GPIOARST"
         },
@@ -1653,6 +1775,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiobrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiob",
           "reset_signal": "RCC_IOPRSTR.GPIOBRST"
         },
@@ -1667,6 +1794,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiocrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpioc",
           "reset_signal": "RCC_IOPRSTR.GPIOCRST"
         },
@@ -1681,6 +1813,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiodrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiod",
           "reset_signal": "RCC_IOPRSTR.GPIODRST"
         },
@@ -1695,6 +1832,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiofrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiof",
           "reset_signal": "RCC_IOPRSTR.GPIOFRST"
         },
@@ -1709,6 +1851,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c1",
           "reset_signal": "RCC_APBRSTR1.I2C1RST"
         },
@@ -1723,6 +1870,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c2",
           "reset_signal": "RCC_APBRSTR1.I2C2RST"
         },
@@ -1737,6 +1889,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:spi1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi1",
           "reset_signal": "RCC_APBRSTR2.SPI1RST"
         },
@@ -1751,6 +1908,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:spi2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi2",
           "reset_signal": "RCC_APBRSTR1.SPI2RST"
         },
@@ -1765,6 +1927,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim1",
           "reset_signal": "RCC_APBRSTR2.TIM1RST"
         },
@@ -1779,6 +1946,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim14rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim14",
           "reset_signal": "RCC_APBRSTR2.TIM14RST"
         },
@@ -1793,6 +1965,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim16rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim16",
           "reset_signal": "RCC_APBRSTR2.TIM16RST"
         },
@@ -1807,6 +1984,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim17rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim17",
           "reset_signal": "RCC_APBRSTR2.TIM17RST"
         },
@@ -1821,6 +2003,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim2",
           "reset_signal": "RCC_APBRSTR1.TIM2RST"
         },
@@ -1835,6 +2021,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim3",
           "reset_signal": "RCC_APBRSTR1.TIM3RST"
         },
@@ -1849,6 +2040,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:usart1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart1",
           "reset_signal": "RCC_APBRSTR2.USART1RST"
         },
@@ -1863,6 +2059,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G030.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart2",
           "reset_signal": "RCC_APBRSTR1.USART2RST"
         }
@@ -2550,7 +2751,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:adcen",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_AHBENR.DMA1EN",
@@ -2564,7 +2770,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:ahbenr",
+          "register_name": "AHBENR",
+          "register_offset": 56,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_AHBENR.DMAMUX1EN",
@@ -2578,7 +2788,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:ahbenr",
+          "register_name": "AHBENR",
+          "register_offset": 56,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOAEN",
@@ -2592,7 +2806,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOBEN",
@@ -2606,7 +2824,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOCEN",
@@ -2620,7 +2842,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIODEN",
@@ -2634,7 +2860,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOFEN",
@@ -2648,7 +2878,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C1EN",
@@ -2662,7 +2896,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C2EN",
@@ -2676,7 +2915,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPTIM1EN",
@@ -2690,7 +2934,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lptim1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPTIM2EN",
@@ -2704,7 +2953,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lptim2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPUART1EN",
@@ -2718,7 +2972,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lpuart1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.SPI1EN",
@@ -2732,7 +2991,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:spi1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.SPI2EN",
@@ -2746,7 +3010,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:spi2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM1EN",
@@ -2760,7 +3029,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM14EN",
@@ -2774,7 +3048,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim14en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM15EN",
@@ -2788,7 +3067,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim15en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM16EN",
@@ -2802,7 +3086,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim16en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM17EN",
@@ -2816,7 +3105,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim17en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM2EN",
@@ -2830,7 +3124,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM3EN",
@@ -2844,7 +3143,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM6EN",
@@ -2858,7 +3162,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim6en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM7EN",
@@ -2872,7 +3181,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim7en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.UCPD1EN",
@@ -2886,7 +3200,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:ucpd1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.UCPD2EN",
@@ -2900,7 +3219,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:ucpd2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.USART1EN",
@@ -2914,7 +3238,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:usart1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART2EN",
@@ -2928,7 +3257,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART3EN",
@@ -2942,7 +3276,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART4EN",
@@ -2956,7 +3295,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart4en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         }
       ],
       "clock_nodes": [
@@ -3076,24 +3420,6 @@
       "clock_selectors": [
         {
           "parent_options": [
-            "clock-node:rcc-apbenr2",
-            "clock-node:sysclk",
-            "clock-node:hsi16",
-            "clock-node:lse"
-          ],
-          "provenance": {
-            "patch_ids": [
-              "st-stm32g0-family-bootstrap-v1",
-              "st-stm32g0-stm32g071rb-bootstrap"
-            ],
-            "source_id": "bootstrap-patch",
-            "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
-          },
-          "register_target": "RCC_CCIPR.USART1SEL",
-          "selector_id": "selector:usart1-kernel"
-        },
-        {
-          "parent_options": [
             "clock-node:rcc-apbenr1",
             "clock-node:sysclk",
             "clock-node:hsi16",
@@ -3107,8 +3433,36 @@
             "source_id": "bootstrap-patch",
             "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
           },
+          "register_field_id": "field:rcc:ccipr:lpuart1sel",
+          "register_id": "register:rcc:ccipr",
+          "register_name": "CCIPR",
+          "register_offset": 84,
+          "register_peripheral": "RCC",
           "register_target": "RCC_CCIPR.LPUART1SEL",
           "selector_id": "selector:lpuart1-kernel"
+        },
+        {
+          "parent_options": [
+            "clock-node:rcc-apbenr2",
+            "clock-node:sysclk",
+            "clock-node:hsi16",
+            "clock-node:lse"
+          ],
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+          },
+          "register_field_id": "field:rcc:ccipr:usart1sel",
+          "register_id": "register:rcc:ccipr",
+          "register_name": "CCIPR",
+          "register_offset": 84,
+          "register_peripheral": "RCC",
+          "register_target": "RCC_CCIPR.USART1SEL",
+          "selector_id": "selector:usart1-kernel"
         }
       ],
       "device": "stm32g071rb",
@@ -5299,6 +5653,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:adcrst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:adc1",
           "reset_signal": "RCC_APBRSTR2.ADCRST"
         },
@@ -5313,6 +5672,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ahbrstr",
+          "register_name": "AHBRSTR",
+          "register_offset": 40,
+          "register_peripheral": "RCC",
           "reset_id": "reset:dma1",
           "reset_signal": "RCC_AHBRSTR.DMA1RST"
         },
@@ -5327,6 +5690,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ahbrstr",
+          "register_name": "AHBRSTR",
+          "register_offset": 40,
+          "register_peripheral": "RCC",
           "reset_id": "reset:dmamux1",
           "reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
         },
@@ -5341,6 +5708,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpioa",
           "reset_signal": "RCC_IOPRSTR.GPIOARST"
         },
@@ -5355,6 +5726,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiob",
           "reset_signal": "RCC_IOPRSTR.GPIOBRST"
         },
@@ -5369,6 +5744,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpioc",
           "reset_signal": "RCC_IOPRSTR.GPIOCRST"
         },
@@ -5383,6 +5762,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiod",
           "reset_signal": "RCC_IOPRSTR.GPIODRST"
         },
@@ -5397,6 +5780,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiof",
           "reset_signal": "RCC_IOPRSTR.GPIOFRST"
         },
@@ -5411,6 +5798,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c1",
           "reset_signal": "RCC_APBRSTR1.I2C1RST"
         },
@@ -5425,6 +5817,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c2",
           "reset_signal": "RCC_APBRSTR1.I2C2RST"
         },
@@ -5439,6 +5836,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lptim1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lptim1",
           "reset_signal": "RCC_APBRSTR1.LPTIM1RST"
         },
@@ -5453,6 +5855,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lptim2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lptim2",
           "reset_signal": "RCC_APBRSTR1.LPTIM2RST"
         },
@@ -5467,6 +5874,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lpuart1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lpuart1",
           "reset_signal": "RCC_APBRSTR1.LPUART1RST"
         },
@@ -5481,6 +5893,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:spi1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi1",
           "reset_signal": "RCC_APBRSTR2.SPI1RST"
         },
@@ -5495,6 +5912,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:spi2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi2",
           "reset_signal": "RCC_APBRSTR1.SPI2RST"
         },
@@ -5509,6 +5931,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim1",
           "reset_signal": "RCC_APBRSTR2.TIM1RST"
         },
@@ -5523,6 +5950,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim14rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim14",
           "reset_signal": "RCC_APBRSTR2.TIM14RST"
         },
@@ -5537,6 +5969,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim15rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim15",
           "reset_signal": "RCC_APBRSTR2.TIM15RST"
         },
@@ -5551,6 +5988,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim16rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim16",
           "reset_signal": "RCC_APBRSTR2.TIM16RST"
         },
@@ -5565,6 +6007,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim17rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim17",
           "reset_signal": "RCC_APBRSTR2.TIM17RST"
         },
@@ -5579,6 +6026,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim2",
           "reset_signal": "RCC_APBRSTR1.TIM2RST"
         },
@@ -5593,6 +6045,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim3",
           "reset_signal": "RCC_APBRSTR1.TIM3RST"
         },
@@ -5607,6 +6064,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim6rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim6",
           "reset_signal": "RCC_APBRSTR1.TIM6RST"
         },
@@ -5621,6 +6083,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim7rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim7",
           "reset_signal": "RCC_APBRSTR1.TIM7RST"
         },
@@ -5635,6 +6102,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:ucpd1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:ucpd1",
           "reset_signal": "RCC_APBRSTR1.UCPD1RST"
         },
@@ -5649,6 +6121,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:ucpd2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:ucpd2",
           "reset_signal": "RCC_APBRSTR1.UCPD2RST"
         },
@@ -5663,6 +6140,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:usart1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart1",
           "reset_signal": "RCC_APBRSTR2.USART1RST"
         },
@@ -5677,6 +6159,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart2",
           "reset_signal": "RCC_APBRSTR1.USART2RST"
         },
@@ -5691,6 +6178,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart3",
           "reset_signal": "RCC_APBRSTR1.USART3RST"
         },
@@ -5705,6 +6197,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G071.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart4rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart4",
           "reset_signal": "RCC_APBRSTR1.USART4RST"
         }
@@ -6490,7 +6987,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:adcen",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_AHBENR.DMA1EN",
@@ -6504,7 +7006,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:ahbenr:dma1en",
+          "register_id": "register:rcc:ahbenr",
+          "register_name": "AHBENR",
+          "register_offset": 56,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_AHBENR.DMAMUX1EN",
@@ -6518,7 +7025,11 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_id": "register:rcc:ahbenr",
+          "register_name": "AHBENR",
+          "register_offset": 56,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.FDCANEN",
@@ -6532,7 +7043,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:fdcanen",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.FDCANEN",
@@ -6546,7 +7062,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:fdcanen",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOAEN",
@@ -6560,7 +7081,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpioaen",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOBEN",
@@ -6574,7 +7100,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpioben",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOCEN",
@@ -6588,7 +7119,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpiocen",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIODEN",
@@ -6602,7 +7138,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpioden",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_IOPENR.GPIOFEN",
@@ -6616,7 +7157,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:iopenr:gpiofen",
+          "register_id": "register:rcc:iopenr",
+          "register_name": "IOPENR",
+          "register_offset": 52,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C1EN",
@@ -6630,7 +7176,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C2EN",
@@ -6644,7 +7195,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.I2C3EN",
@@ -6658,7 +7214,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:i2c3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPTIM1EN",
@@ -6672,7 +7233,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lptim1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPTIM2EN",
@@ -6686,7 +7252,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lptim2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPUART1EN",
@@ -6700,7 +7271,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lpuart1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.LPUART2EN",
@@ -6714,7 +7290,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:lpuart2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.SPI1EN",
@@ -6728,7 +7309,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:spi1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.SPI2EN",
@@ -6742,7 +7328,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:spi2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.SPI3EN",
@@ -6756,7 +7347,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:spi3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM1EN",
@@ -6770,7 +7366,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM14EN",
@@ -6784,7 +7385,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim14en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM15EN",
@@ -6798,7 +7404,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim15en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM16EN",
@@ -6812,7 +7423,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim16en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.TIM17EN",
@@ -6826,7 +7442,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:tim17en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM2EN",
@@ -6840,7 +7461,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM3EN",
@@ -6854,7 +7480,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM4EN",
@@ -6868,7 +7499,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim4en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM6EN",
@@ -6882,7 +7518,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim6en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.TIM7EN",
@@ -6896,7 +7537,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:tim7en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.UCPD1EN",
@@ -6910,7 +7556,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:ucpd1en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.UCPD2EN",
@@ -6924,7 +7575,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:ucpd2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR2.USART1EN",
@@ -6938,7 +7594,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr2:usart1en",
+          "register_id": "register:rcc:apbenr2",
+          "register_name": "APBENR2",
+          "register_offset": 64,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART2EN",
@@ -6952,7 +7613,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart2en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART3EN",
@@ -6966,7 +7632,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart3en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART4EN",
@@ -6980,7 +7651,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart4en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART5EN",
@@ -6994,7 +7670,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart5en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         },
         {
           "enable_signal": "RCC_APBENR1.USART6EN",
@@ -7008,7 +7689,12 @@
             ],
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
-          }
+          },
+          "register_field_id": "field:rcc:apbenr1:usart6en",
+          "register_id": "register:rcc:apbenr1",
+          "register_name": "APBENR1",
+          "register_offset": 60,
+          "register_peripheral": "RCC"
         }
       ],
       "clock_nodes": [
@@ -7128,24 +7814,6 @@
       "clock_selectors": [
         {
           "parent_options": [
-            "clock-node:rcc-apbenr2",
-            "clock-node:sysclk",
-            "clock-node:hsi16",
-            "clock-node:lse"
-          ],
-          "provenance": {
-            "patch_ids": [
-              "st-stm32g0-family-bootstrap-v1",
-              "st-stm32g0-stm32g0b1re-bootstrap"
-            ],
-            "source_id": "bootstrap-patch",
-            "source_path": "patches/st/stm32g0/devices/stm32g0b1re.json"
-          },
-          "register_target": "RCC_CCIPR.USART1SEL",
-          "selector_id": "selector:usart1-kernel"
-        },
-        {
-          "parent_options": [
             "clock-node:rcc-apbenr1",
             "clock-node:sysclk",
             "clock-node:hsi16",
@@ -7159,8 +7827,36 @@
             "source_id": "bootstrap-patch",
             "source_path": "patches/st/stm32g0/devices/stm32g0b1re.json"
           },
+          "register_field_id": "field:rcc:ccipr:lpuart1sel",
+          "register_id": "register:rcc:ccipr",
+          "register_name": "CCIPR",
+          "register_offset": 84,
+          "register_peripheral": "RCC",
           "register_target": "RCC_CCIPR.LPUART1SEL",
           "selector_id": "selector:lpuart1-kernel"
+        },
+        {
+          "parent_options": [
+            "clock-node:rcc-apbenr2",
+            "clock-node:sysclk",
+            "clock-node:hsi16",
+            "clock-node:lse"
+          ],
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/st/stm32g0/devices/stm32g0b1re.json"
+          },
+          "register_field_id": "field:rcc:ccipr:usart1sel",
+          "register_id": "register:rcc:ccipr",
+          "register_name": "CCIPR",
+          "register_offset": 84,
+          "register_peripheral": "RCC",
+          "register_target": "RCC_CCIPR.USART1SEL",
+          "selector_id": "selector:usart1-kernel"
         }
       ],
       "device": "stm32g0b1re",
@@ -9443,6 +10139,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:adcrst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:adc1",
           "reset_signal": "RCC_APBRSTR2.ADCRST"
         },
@@ -9457,6 +10158,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:ahbrstr:dma1rst",
+          "register_id": "register:rcc:ahbrstr",
+          "register_name": "AHBRSTR",
+          "register_offset": 40,
+          "register_peripheral": "RCC",
           "reset_id": "reset:dma1",
           "reset_signal": "RCC_AHBRSTR.DMA1RST"
         },
@@ -9471,6 +10177,10 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_id": "register:rcc:ahbrstr",
+          "register_name": "AHBRSTR",
+          "register_offset": 40,
+          "register_peripheral": "RCC",
           "reset_id": "reset:dmamux1",
           "reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
         },
@@ -9485,6 +10195,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:fdcanrst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:fdcan1",
           "reset_signal": "RCC_APBRSTR1.FDCANRST"
         },
@@ -9499,6 +10214,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:fdcanrst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:fdcan2",
           "reset_signal": "RCC_APBRSTR1.FDCANRST"
         },
@@ -9513,6 +10233,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpioarst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpioa",
           "reset_signal": "RCC_IOPRSTR.GPIOARST"
         },
@@ -9527,6 +10252,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiobrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiob",
           "reset_signal": "RCC_IOPRSTR.GPIOBRST"
         },
@@ -9541,6 +10271,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiocrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpioc",
           "reset_signal": "RCC_IOPRSTR.GPIOCRST"
         },
@@ -9555,6 +10290,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiodrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiod",
           "reset_signal": "RCC_IOPRSTR.GPIODRST"
         },
@@ -9569,6 +10309,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:ioprstr:gpiofrst",
+          "register_id": "register:rcc:ioprstr",
+          "register_name": "IOPRSTR",
+          "register_offset": 36,
+          "register_peripheral": "RCC",
           "reset_id": "reset:gpiof",
           "reset_signal": "RCC_IOPRSTR.GPIOFRST"
         },
@@ -9583,6 +10328,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c1",
           "reset_signal": "RCC_APBRSTR1.I2C1RST"
         },
@@ -9597,6 +10347,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c2",
           "reset_signal": "RCC_APBRSTR1.I2C2RST"
         },
@@ -9611,6 +10366,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:i2c3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:i2c3",
           "reset_signal": "RCC_APBRSTR1.I2C3RST"
         },
@@ -9625,6 +10385,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lptim1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lptim1",
           "reset_signal": "RCC_APBRSTR1.LPTIM1RST"
         },
@@ -9639,6 +10404,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lptim2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lptim2",
           "reset_signal": "RCC_APBRSTR1.LPTIM2RST"
         },
@@ -9653,6 +10423,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lpuart1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lpuart1",
           "reset_signal": "RCC_APBRSTR1.LPUART1RST"
         },
@@ -9667,6 +10442,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:lpuart2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:lpuart2",
           "reset_signal": "RCC_APBRSTR1.LPUART2RST"
         },
@@ -9681,6 +10461,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:spi1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi1",
           "reset_signal": "RCC_APBRSTR2.SPI1RST"
         },
@@ -9695,6 +10480,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:spi2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi2",
           "reset_signal": "RCC_APBRSTR1.SPI2RST"
         },
@@ -9709,6 +10499,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:spi3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:spi3",
           "reset_signal": "RCC_APBRSTR1.SPI3RST"
         },
@@ -9723,6 +10518,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim1",
           "reset_signal": "RCC_APBRSTR2.TIM1RST"
         },
@@ -9737,6 +10537,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim14rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim14",
           "reset_signal": "RCC_APBRSTR2.TIM14RST"
         },
@@ -9751,6 +10556,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim15rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim15",
           "reset_signal": "RCC_APBRSTR2.TIM15RST"
         },
@@ -9765,6 +10575,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim16rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim16",
           "reset_signal": "RCC_APBRSTR2.TIM16RST"
         },
@@ -9779,6 +10594,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:tim17rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim17",
           "reset_signal": "RCC_APBRSTR2.TIM17RST"
         },
@@ -9793,6 +10613,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim2",
           "reset_signal": "RCC_APBRSTR1.TIM2RST"
         },
@@ -9807,6 +10632,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim3",
           "reset_signal": "RCC_APBRSTR1.TIM3RST"
         },
@@ -9821,6 +10651,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim4rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim4",
           "reset_signal": "RCC_APBRSTR1.TIM4RST"
         },
@@ -9835,6 +10670,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim6rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim6",
           "reset_signal": "RCC_APBRSTR1.TIM6RST"
         },
@@ -9849,6 +10689,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:tim7rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:tim7",
           "reset_signal": "RCC_APBRSTR1.TIM7RST"
         },
@@ -9863,6 +10708,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:ucpd1rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:ucpd1",
           "reset_signal": "RCC_APBRSTR1.UCPD1RST"
         },
@@ -9877,6 +10727,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:ucpd2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:ucpd2",
           "reset_signal": "RCC_APBRSTR1.UCPD2RST"
         },
@@ -9891,6 +10746,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr2:usart1rst",
+          "register_id": "register:rcc:apbrstr2",
+          "register_name": "APBRSTR2",
+          "register_offset": 48,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart1",
           "reset_signal": "RCC_APBRSTR2.USART1RST"
         },
@@ -9905,6 +10765,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart2rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart2",
           "reset_signal": "RCC_APBRSTR1.USART2RST"
         },
@@ -9919,6 +10784,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart3rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart3",
           "reset_signal": "RCC_APBRSTR1.USART3RST"
         },
@@ -9933,6 +10803,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart4rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart4",
           "reset_signal": "RCC_APBRSTR1.USART4RST"
         },
@@ -9947,6 +10822,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart5rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart5",
           "reset_signal": "RCC_APBRSTR1.USART5RST"
         },
@@ -9961,6 +10841,11 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32G0B1.svd"
           },
+          "register_field_id": "field:rcc:apbrstr1:usart6rst",
+          "register_id": "register:rcc:apbrstr1",
+          "register_name": "APBRSTR1",
+          "register_offset": 44,
+          "register_peripheral": "RCC",
           "reset_id": "reset:usart6",
           "reset_signal": "RCC_APBRSTR1.USART6RST"
         }

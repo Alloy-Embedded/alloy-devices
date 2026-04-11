@@ -10,6 +10,7 @@ struct IpBlockDescriptor {
   const char* ip_name;
   const char* ip_version;
   const char* peripheral_class;
+  const char* backend_schema_id;
   const char* register_profile;
   const char* signal_roles;
 };
@@ -17,6 +18,7 @@ inline constexpr IpBlockDescriptor kIpBlock = {
   "lptim",
   "G0xx_lptimer1_v1_4_Cube",
   "lptim",
+  "alloy.lptim.st-g0xx-lptimer1-v1-4-cube",
   "lptim:G0xx_lptimer1_v1_4_Cube",
   "etr,in1,in2,out",
 };
