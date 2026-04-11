@@ -1,0 +1,1625 @@
+{
+  "device_usage": [
+    {
+      "device": "mimxrt1062",
+      "peripherals": [
+        {
+          "base_address": 1074544640,
+          "ip_name": "adc",
+          "ip_version": null,
+          "name": "ADC1"
+        },
+        {
+          "base_address": 1074561024,
+          "ip_name": "adc",
+          "ip_version": null,
+          "name": "ADC2"
+        },
+        {
+          "base_address": 1077608448,
+          "ip_name": "adc_etc",
+          "ip_version": null,
+          "name": "ADC_ETC"
+        },
+        {
+          "base_address": 1074249728,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ1"
+        },
+        {
+          "base_address": 1075298304,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ2"
+        },
+        {
+          "base_address": 1076346880,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ3"
+        },
+        {
+          "base_address": 1077395456,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ4"
+        },
+        {
+          "base_address": 1077624832,
+          "ip_name": "aoi",
+          "ip_version": null,
+          "name": "AOI1"
+        },
+        {
+          "base_address": 1077641216,
+          "ip_name": "aoi",
+          "ip_version": null,
+          "name": "AOI2"
+        },
+        {
+          "base_address": 1077854208,
+          "ip_name": "bee",
+          "ip_version": null,
+          "name": "BEE"
+        },
+        {
+          "base_address": 1075642368,
+          "ip_name": "can",
+          "ip_version": null,
+          "name": "CAN1"
+        },
+        {
+          "base_address": 1075658752,
+          "ip_name": "can",
+          "ip_version": null,
+          "name": "CAN2"
+        },
+        {
+          "base_address": 1075675136,
+          "ip_name": "can",
+          "ip_version": null,
+          "name": "CAN3"
+        },
+        {
+          "base_address": 1074774016,
+          "ip_name": "ccm",
+          "ip_version": null,
+          "name": "CCM"
+        },
+        {
+          "base_address": 3758620672,
+          "ip_name": "cm7_mcm",
+          "ip_version": null,
+          "name": "CM7_MCM"
+        },
+        {
+          "base_address": 1074348032,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP1"
+        },
+        {
+          "base_address": 1074348040,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP2"
+        },
+        {
+          "base_address": 1074348048,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP3"
+        },
+        {
+          "base_address": 1074348056,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP4"
+        },
+        {
+          "base_address": 1076609024,
+          "ip_name": "csi",
+          "ip_version": null,
+          "name": "CSI"
+        },
+        {
+          "base_address": 1074642944,
+          "ip_name": "csu",
+          "ip_version": null,
+          "name": "CSU"
+        },
+        {
+          "base_address": 1074266112,
+          "ip_name": "dcdc",
+          "ip_version": null,
+          "name": "DCDC"
+        },
+        {
+          "base_address": 1076871168,
+          "ip_name": "dcp",
+          "ip_version": null,
+          "name": "DCP"
+        },
+        {
+          "base_address": 1074692096,
+          "ip_name": "dma",
+          "ip_version": null,
+          "name": "DMA0"
+        },
+        {
+          "base_address": 1074708480,
+          "ip_name": "dmamux",
+          "ip_version": null,
+          "name": "DMAMUX1"
+        },
+        {
+          "base_address": 1077706752,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC1"
+        },
+        {
+          "base_address": 1077723136,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC2"
+        },
+        {
+          "base_address": 1077739520,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC3"
+        },
+        {
+          "base_address": 1077755904,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC4"
+        },
+        {
+          "base_address": 1076723712,
+          "ip_name": "enet",
+          "ip_version": null,
+          "name": "ENET"
+        },
+        {
+          "base_address": 1076707328,
+          "ip_name": "enet",
+          "ip_version": null,
+          "name": "ENET2"
+        },
+        {
+          "base_address": 1074479104,
+          "ip_name": "ewm",
+          "ip_version": null,
+          "name": "EWM"
+        },
+        {
+          "base_address": 1075494912,
+          "ip_name": "flexio",
+          "ip_version": null,
+          "name": "FLEXIO1"
+        },
+        {
+          "base_address": 1075511296,
+          "ip_name": "flexio",
+          "ip_version": null,
+          "name": "FLEXIO2"
+        },
+        {
+          "base_address": 1107427328,
+          "ip_name": "flexio",
+          "ip_version": null,
+          "name": "FLEXIO3"
+        },
+        {
+          "base_address": 1074462720,
+          "ip_name": "flexram",
+          "ip_version": null,
+          "name": "FLEXRAM"
+        },
+        {
+          "base_address": 1076527104,
+          "ip_name": "flexspi",
+          "ip_version": "flexspi-v1",
+          "name": "FLEXSPI"
+        },
+        {
+          "base_address": 1076510720,
+          "ip_name": "flexspi",
+          "ip_version": "flexspi-v1",
+          "name": "FLEXSPI2"
+        },
+        {
+          "base_address": 1074741248,
+          "ip_name": "gpc",
+          "ip_version": null,
+          "name": "GPC"
+        },
+        {
+          "base_address": 1075544064,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO1"
+        },
+        {
+          "base_address": 1075609600,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO10"
+        },
+        {
+          "base_address": 1075560448,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO2"
+        },
+        {
+          "base_address": 1075576832,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO3"
+        },
+        {
+          "base_address": 1075593216,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO4"
+        },
+        {
+          "base_address": 1074528256,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO5"
+        },
+        {
+          "base_address": 1107296256,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO6"
+        },
+        {
+          "base_address": 1107312640,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO7"
+        },
+        {
+          "base_address": 1107329024,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO8"
+        },
+        {
+          "base_address": 1107345408,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO9"
+        },
+        {
+          "base_address": 1075757056,
+          "ip_name": "gpt",
+          "ip_version": null,
+          "name": "GPT1"
+        },
+        {
+          "base_address": 1075773440,
+          "ip_name": "gpt",
+          "ip_version": null,
+          "name": "GPT2"
+        },
+        {
+          "base_address": 1075806208,
+          "ip_name": "iomuxc",
+          "ip_version": null,
+          "name": "IOMUXC"
+        },
+        {
+          "base_address": 1074446336,
+          "ip_name": "iomuxc_gpr",
+          "ip_version": null,
+          "name": "IOMUXC_GPR"
+        },
+        {
+          "base_address": 1074429952,
+          "ip_name": "iomuxc_snvs",
+          "ip_version": null,
+          "name": "IOMUXC_SNVS"
+        },
+        {
+          "base_address": 1074413568,
+          "ip_name": "iomuxc_snvs_gpr",
+          "ip_version": null,
+          "name": "IOMUXC_SNVS_GPR"
+        },
+        {
+          "base_address": 1075822592,
+          "ip_name": "kpp",
+          "ip_version": null,
+          "name": "KPP"
+        },
+        {
+          "base_address": 1076592640,
+          "ip_name": "lcdif",
+          "ip_version": null,
+          "name": "LCDIF"
+        },
+        {
+          "base_address": 1077870592,
+          "ip_name": "lpi2c1",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C1"
+        },
+        {
+          "base_address": 1077886976,
+          "ip_name": "lpi2c2",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C2"
+        },
+        {
+          "base_address": 1077903360,
+          "ip_name": "lpi2c3",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C3"
+        },
+        {
+          "base_address": 1077919744,
+          "ip_name": "lpi2c4",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C4"
+        },
+        {
+          "base_address": 1077493760,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI1"
+        },
+        {
+          "base_address": 1077510144,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI2"
+        },
+        {
+          "base_address": 1077526528,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI3"
+        },
+        {
+          "base_address": 1077542912,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI4"
+        },
+        {
+          "base_address": 1075331072,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART1"
+        },
+        {
+          "base_address": 1075347456,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART2"
+        },
+        {
+          "base_address": 1075363840,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART3"
+        },
+        {
+          "base_address": 1075380224,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART4"
+        },
+        {
+          "base_address": 1075396608,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART5"
+        },
+        {
+          "base_address": 1075412992,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART6"
+        },
+        {
+          "base_address": 1075429376,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART7"
+        },
+        {
+          "base_address": 1075445760,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART8"
+        },
+        {
+          "base_address": 3758157200,
+          "ip_name": "mpu",
+          "ip_version": null,
+          "name": "MPU"
+        },
+        {
+          "base_address": 3758153984,
+          "ip_name": "nvic",
+          "ip_version": null,
+          "name": "NVIC"
+        },
+        {
+          "base_address": 1075789824,
+          "ip_name": "ocotp",
+          "ip_version": null,
+          "name": "OCOTP"
+        },
+        {
+          "base_address": 1074282496,
+          "ip_name": "pit",
+          "ip_version": null,
+          "name": "PIT"
+        },
+        {
+          "base_address": 1074626560,
+          "ip_name": "pmu",
+          "ip_version": null,
+          "name": "PMU"
+        },
+        {
+          "base_address": 1077788672,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM1"
+        },
+        {
+          "base_address": 1077805056,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM2"
+        },
+        {
+          "base_address": 1077821440,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM3"
+        },
+        {
+          "base_address": 1077837824,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM4"
+        },
+        {
+          "base_address": 1076576256,
+          "ip_name": "pxp",
+          "ip_version": null,
+          "name": "PXP"
+        },
+        {
+          "base_address": 1075314688,
+          "ip_name": "romc",
+          "ip_version": null,
+          "name": "ROMC"
+        },
+        {
+          "base_address": 1074511872,
+          "ip_name": "rtwdog",
+          "ip_version": null,
+          "name": "RTWDOG"
+        },
+        {
+          "base_address": 1077428224,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI1"
+        },
+        {
+          "base_address": 1077444608,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI2"
+        },
+        {
+          "base_address": 1077460992,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI3"
+        },
+        {
+          "base_address": 1076822016,
+          "ip_name": "semc",
+          "ip_version": null,
+          "name": "SEMC"
+        },
+        {
+          "base_address": 1074610176,
+          "ip_name": "snvs",
+          "ip_version": null,
+          "name": "SNVS"
+        },
+        {
+          "base_address": 1077411840,
+          "ip_name": "spdif",
+          "ip_version": null,
+          "name": "SPDIF"
+        },
+        {
+          "base_address": 1074757632,
+          "ip_name": "src",
+          "ip_version": null,
+          "name": "SRC"
+        },
+        {
+          "base_address": 3758153728,
+          "ip_name": "systemcontrol",
+          "ip_version": null,
+          "name": "SystemControl"
+        },
+        {
+          "base_address": 1075691520,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR1"
+        },
+        {
+          "base_address": 1075707904,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR2"
+        },
+        {
+          "base_address": 1075724288,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR3"
+        },
+        {
+          "base_address": 1075740672,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR4"
+        },
+        {
+          "base_address": 1074577408,
+          "ip_name": "trng",
+          "ip_version": null,
+          "name": "TRNG"
+        },
+        {
+          "base_address": 1074659328,
+          "ip_name": "tsc",
+          "ip_version": null,
+          "name": "TSC"
+        },
+        {
+          "base_address": 1076756480,
+          "ip_name": "usb",
+          "ip_version": null,
+          "name": "USB1"
+        },
+        {
+          "base_address": 1076756992,
+          "ip_name": "usb",
+          "ip_version": null,
+          "name": "USB2"
+        },
+        {
+          "base_address": 1076756484,
+          "ip_name": "usbnc",
+          "ip_version": null,
+          "name": "USBNC2"
+        },
+        {
+          "base_address": 1074630656,
+          "ip_name": "usbphy",
+          "ip_version": null,
+          "name": "USBPHY1"
+        },
+        {
+          "base_address": 1074634752,
+          "ip_name": "usbphy",
+          "ip_version": null,
+          "name": "USBPHY2"
+        },
+        {
+          "base_address": 1076625408,
+          "ip_name": "usdhc",
+          "ip_version": null,
+          "name": "USDHC1"
+        },
+        {
+          "base_address": 1076641792,
+          "ip_name": "usdhc",
+          "ip_version": null,
+          "name": "USDHC2"
+        },
+        {
+          "base_address": 1074495488,
+          "ip_name": "wdog",
+          "ip_version": null,
+          "name": "WDOG1"
+        },
+        {
+          "base_address": 1074593792,
+          "ip_name": "wdog",
+          "ip_version": null,
+          "name": "WDOG2"
+        },
+        {
+          "base_address": 1077657600,
+          "ip_name": "xbara",
+          "ip_version": null,
+          "name": "XBARA1"
+        },
+        {
+          "base_address": 1077673984,
+          "ip_name": "xbarb",
+          "ip_version": null,
+          "name": "XBARB2"
+        },
+        {
+          "base_address": 1077690368,
+          "ip_name": "xbarb",
+          "ip_version": null,
+          "name": "XBARB3"
+        }
+      ]
+    },
+    {
+      "device": "mimxrt1064",
+      "peripherals": [
+        {
+          "base_address": 1074544640,
+          "ip_name": "adc",
+          "ip_version": null,
+          "name": "ADC1"
+        },
+        {
+          "base_address": 1074561024,
+          "ip_name": "adc",
+          "ip_version": null,
+          "name": "ADC2"
+        },
+        {
+          "base_address": 1077608448,
+          "ip_name": "adc_etc",
+          "ip_version": null,
+          "name": "ADC_ETC"
+        },
+        {
+          "base_address": 1074249728,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ1"
+        },
+        {
+          "base_address": 1075298304,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ2"
+        },
+        {
+          "base_address": 1076346880,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ3"
+        },
+        {
+          "base_address": 1077395456,
+          "ip_name": "aipstz",
+          "ip_version": null,
+          "name": "AIPSTZ4"
+        },
+        {
+          "base_address": 1077624832,
+          "ip_name": "aoi",
+          "ip_version": null,
+          "name": "AOI1"
+        },
+        {
+          "base_address": 1077641216,
+          "ip_name": "aoi",
+          "ip_version": null,
+          "name": "AOI2"
+        },
+        {
+          "base_address": 1077854208,
+          "ip_name": "bee",
+          "ip_version": null,
+          "name": "BEE"
+        },
+        {
+          "base_address": 1075642368,
+          "ip_name": "can",
+          "ip_version": null,
+          "name": "CAN1"
+        },
+        {
+          "base_address": 1075658752,
+          "ip_name": "can",
+          "ip_version": null,
+          "name": "CAN2"
+        },
+        {
+          "base_address": 1075675136,
+          "ip_name": "can",
+          "ip_version": null,
+          "name": "CAN3"
+        },
+        {
+          "base_address": 1074774016,
+          "ip_name": "ccm",
+          "ip_version": null,
+          "name": "CCM"
+        },
+        {
+          "base_address": 3758620672,
+          "ip_name": "cm7_mcm",
+          "ip_version": null,
+          "name": "CM7_MCM"
+        },
+        {
+          "base_address": 1074348032,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP1"
+        },
+        {
+          "base_address": 1074348040,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP2"
+        },
+        {
+          "base_address": 1074348048,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP3"
+        },
+        {
+          "base_address": 1074348056,
+          "ip_name": "cmp",
+          "ip_version": null,
+          "name": "CMP4"
+        },
+        {
+          "base_address": 1076609024,
+          "ip_name": "csi",
+          "ip_version": null,
+          "name": "CSI"
+        },
+        {
+          "base_address": 1074642944,
+          "ip_name": "csu",
+          "ip_version": null,
+          "name": "CSU"
+        },
+        {
+          "base_address": 1074266112,
+          "ip_name": "dcdc",
+          "ip_version": null,
+          "name": "DCDC"
+        },
+        {
+          "base_address": 1076871168,
+          "ip_name": "dcp",
+          "ip_version": null,
+          "name": "DCP"
+        },
+        {
+          "base_address": 1074692096,
+          "ip_name": "dma",
+          "ip_version": null,
+          "name": "DMA0"
+        },
+        {
+          "base_address": 1074708480,
+          "ip_name": "dmamux",
+          "ip_version": null,
+          "name": "DMAMUX1"
+        },
+        {
+          "base_address": 1077706752,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC1"
+        },
+        {
+          "base_address": 1077723136,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC2"
+        },
+        {
+          "base_address": 1077739520,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC3"
+        },
+        {
+          "base_address": 1077755904,
+          "ip_name": "enc",
+          "ip_version": null,
+          "name": "ENC4"
+        },
+        {
+          "base_address": 1076723712,
+          "ip_name": "enet",
+          "ip_version": null,
+          "name": "ENET"
+        },
+        {
+          "base_address": 1076707328,
+          "ip_name": "enet",
+          "ip_version": null,
+          "name": "ENET2"
+        },
+        {
+          "base_address": 1074479104,
+          "ip_name": "ewm",
+          "ip_version": null,
+          "name": "EWM"
+        },
+        {
+          "base_address": 1075494912,
+          "ip_name": "flexio",
+          "ip_version": null,
+          "name": "FLEXIO1"
+        },
+        {
+          "base_address": 1075511296,
+          "ip_name": "flexio",
+          "ip_version": null,
+          "name": "FLEXIO2"
+        },
+        {
+          "base_address": 1107427328,
+          "ip_name": "flexio",
+          "ip_version": null,
+          "name": "FLEXIO3"
+        },
+        {
+          "base_address": 1074462720,
+          "ip_name": "flexram",
+          "ip_version": null,
+          "name": "FLEXRAM"
+        },
+        {
+          "base_address": 1076527104,
+          "ip_name": "flexspi",
+          "ip_version": "flexspi-v1",
+          "name": "FLEXSPI"
+        },
+        {
+          "base_address": 1076510720,
+          "ip_name": "flexspi",
+          "ip_version": "flexspi-v1",
+          "name": "FLEXSPI2"
+        },
+        {
+          "base_address": 1074741248,
+          "ip_name": "gpc",
+          "ip_version": null,
+          "name": "GPC"
+        },
+        {
+          "base_address": 1075544064,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO1"
+        },
+        {
+          "base_address": 1075609600,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO10"
+        },
+        {
+          "base_address": 1075560448,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO2"
+        },
+        {
+          "base_address": 1075576832,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO3"
+        },
+        {
+          "base_address": 1075593216,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO4"
+        },
+        {
+          "base_address": 1074528256,
+          "ip_name": "gpio",
+          "ip_version": "imxrt-gpio-v1",
+          "name": "GPIO5"
+        },
+        {
+          "base_address": 1107296256,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO6"
+        },
+        {
+          "base_address": 1107312640,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO7"
+        },
+        {
+          "base_address": 1107329024,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO8"
+        },
+        {
+          "base_address": 1107345408,
+          "ip_name": "gpio",
+          "ip_version": null,
+          "name": "GPIO9"
+        },
+        {
+          "base_address": 1075757056,
+          "ip_name": "gpt",
+          "ip_version": null,
+          "name": "GPT1"
+        },
+        {
+          "base_address": 1075773440,
+          "ip_name": "gpt",
+          "ip_version": null,
+          "name": "GPT2"
+        },
+        {
+          "base_address": 1075806208,
+          "ip_name": "iomuxc",
+          "ip_version": null,
+          "name": "IOMUXC"
+        },
+        {
+          "base_address": 1074446336,
+          "ip_name": "iomuxc_gpr",
+          "ip_version": null,
+          "name": "IOMUXC_GPR"
+        },
+        {
+          "base_address": 1074429952,
+          "ip_name": "iomuxc_snvs",
+          "ip_version": null,
+          "name": "IOMUXC_SNVS"
+        },
+        {
+          "base_address": 1074413568,
+          "ip_name": "iomuxc_snvs_gpr",
+          "ip_version": null,
+          "name": "IOMUXC_SNVS_GPR"
+        },
+        {
+          "base_address": 1075822592,
+          "ip_name": "kpp",
+          "ip_version": null,
+          "name": "KPP"
+        },
+        {
+          "base_address": 1076592640,
+          "ip_name": "lcdif",
+          "ip_version": null,
+          "name": "LCDIF"
+        },
+        {
+          "base_address": 1077870592,
+          "ip_name": "lpi2c1",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C1"
+        },
+        {
+          "base_address": 1077886976,
+          "ip_name": "lpi2c2",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C2"
+        },
+        {
+          "base_address": 1077903360,
+          "ip_name": "lpi2c3",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C3"
+        },
+        {
+          "base_address": 1077919744,
+          "ip_name": "lpi2c4",
+          "ip_version": "lpi2c-v1",
+          "name": "LPI2C4"
+        },
+        {
+          "base_address": 1077493760,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI1"
+        },
+        {
+          "base_address": 1077510144,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI2"
+        },
+        {
+          "base_address": 1077526528,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI3"
+        },
+        {
+          "base_address": 1077542912,
+          "ip_name": "lpspi",
+          "ip_version": "lpspi-v1",
+          "name": "LPSPI4"
+        },
+        {
+          "base_address": 1075331072,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART1"
+        },
+        {
+          "base_address": 1075347456,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART2"
+        },
+        {
+          "base_address": 1075363840,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART3"
+        },
+        {
+          "base_address": 1075380224,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART4"
+        },
+        {
+          "base_address": 1075396608,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART5"
+        },
+        {
+          "base_address": 1075412992,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART6"
+        },
+        {
+          "base_address": 1075429376,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART7"
+        },
+        {
+          "base_address": 1075445760,
+          "ip_name": "lpuart",
+          "ip_version": "lpuart-v1",
+          "name": "LPUART8"
+        },
+        {
+          "base_address": 3758153984,
+          "ip_name": "nvic",
+          "ip_version": null,
+          "name": "NVIC"
+        },
+        {
+          "base_address": 1075789824,
+          "ip_name": "ocotp",
+          "ip_version": null,
+          "name": "OCOTP"
+        },
+        {
+          "base_address": 1074282496,
+          "ip_name": "pit",
+          "ip_version": null,
+          "name": "PIT"
+        },
+        {
+          "base_address": 1074626560,
+          "ip_name": "pmu",
+          "ip_version": null,
+          "name": "PMU"
+        },
+        {
+          "base_address": 1077788672,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM1"
+        },
+        {
+          "base_address": 1077805056,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM2"
+        },
+        {
+          "base_address": 1077821440,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM3"
+        },
+        {
+          "base_address": 1077837824,
+          "ip_name": "pwm",
+          "ip_version": null,
+          "name": "PWM4"
+        },
+        {
+          "base_address": 1076576256,
+          "ip_name": "pxp",
+          "ip_version": null,
+          "name": "PXP"
+        },
+        {
+          "base_address": 1075314688,
+          "ip_name": "romc",
+          "ip_version": null,
+          "name": "ROMC"
+        },
+        {
+          "base_address": 1074511872,
+          "ip_name": "rtwdog",
+          "ip_version": null,
+          "name": "RTWDOG"
+        },
+        {
+          "base_address": 1077428224,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI1"
+        },
+        {
+          "base_address": 1077444608,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI2"
+        },
+        {
+          "base_address": 1077460992,
+          "ip_name": "sai",
+          "ip_version": null,
+          "name": "SAI3"
+        },
+        {
+          "base_address": 1076822016,
+          "ip_name": "semc",
+          "ip_version": null,
+          "name": "SEMC"
+        },
+        {
+          "base_address": 1074610176,
+          "ip_name": "snvs",
+          "ip_version": null,
+          "name": "SNVS"
+        },
+        {
+          "base_address": 1077411840,
+          "ip_name": "spdif",
+          "ip_version": null,
+          "name": "SPDIF"
+        },
+        {
+          "base_address": 1074757632,
+          "ip_name": "src",
+          "ip_version": null,
+          "name": "SRC"
+        },
+        {
+          "base_address": 3758153728,
+          "ip_name": "systemcontrol",
+          "ip_version": null,
+          "name": "SystemControl"
+        },
+        {
+          "base_address": 1075691520,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR1"
+        },
+        {
+          "base_address": 1075707904,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR2"
+        },
+        {
+          "base_address": 1075724288,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR3"
+        },
+        {
+          "base_address": 1075740672,
+          "ip_name": "tmr",
+          "ip_version": null,
+          "name": "TMR4"
+        },
+        {
+          "base_address": 1074577408,
+          "ip_name": "trng",
+          "ip_version": null,
+          "name": "TRNG"
+        },
+        {
+          "base_address": 1074659328,
+          "ip_name": "tsc",
+          "ip_version": null,
+          "name": "TSC"
+        },
+        {
+          "base_address": 1076756480,
+          "ip_name": "usb",
+          "ip_version": null,
+          "name": "USB1"
+        },
+        {
+          "base_address": 1076756992,
+          "ip_name": "usb",
+          "ip_version": null,
+          "name": "USB2"
+        },
+        {
+          "base_address": 1076756484,
+          "ip_name": "usbnc",
+          "ip_version": null,
+          "name": "USBNC2"
+        },
+        {
+          "base_address": 1074630656,
+          "ip_name": "usbphy",
+          "ip_version": null,
+          "name": "USBPHY1"
+        },
+        {
+          "base_address": 1074634752,
+          "ip_name": "usbphy",
+          "ip_version": null,
+          "name": "USBPHY2"
+        },
+        {
+          "base_address": 1076625408,
+          "ip_name": "usdhc",
+          "ip_version": null,
+          "name": "USDHC1"
+        },
+        {
+          "base_address": 1076641792,
+          "ip_name": "usdhc",
+          "ip_version": null,
+          "name": "USDHC2"
+        },
+        {
+          "base_address": 1074495488,
+          "ip_name": "wdog",
+          "ip_version": null,
+          "name": "WDOG1"
+        },
+        {
+          "base_address": 1074593792,
+          "ip_name": "wdog",
+          "ip_version": null,
+          "name": "WDOG2"
+        },
+        {
+          "base_address": 1077657600,
+          "ip_name": "xbara",
+          "ip_version": null,
+          "name": "XBARA1"
+        },
+        {
+          "base_address": 1077673984,
+          "ip_name": "xbarb",
+          "ip_version": null,
+          "name": "XBARB2"
+        },
+        {
+          "base_address": 1077690368,
+          "ip_name": "xbarb",
+          "ip_version": null,
+          "name": "XBARB3"
+        }
+      ]
+    }
+  ],
+  "family": "imxrt1060",
+  "ip_blocks": [
+    {
+      "capability_ids": [
+        "capability:flexspi:flexspi-v1:a-data00",
+        "capability:flexspi:flexspi-v1:a-data01",
+        "capability:flexspi:flexspi-v1:a-data02",
+        "capability:flexspi:flexspi-v1:a-data03",
+        "capability:flexspi:flexspi-v1:a-dqs",
+        "capability:flexspi:flexspi-v1:a-sclk",
+        "capability:flexspi:flexspi-v1:a-ss0-b",
+        "capability:flexspi:flexspi-v1:a-ss1-b",
+        "capability:flexspi:flexspi-v1:b-data00",
+        "capability:flexspi:flexspi-v1:b-data01",
+        "capability:flexspi:flexspi-v1:b-data02",
+        "capability:flexspi:flexspi-v1:b-data03",
+        "capability:flexspi:flexspi-v1:b-dqs",
+        "capability:flexspi:flexspi-v1:b-sclk",
+        "capability:flexspi:flexspi-v1:b-ss0-b",
+        "capability:flexspi:flexspi-v1:b-ss1-b"
+      ],
+      "ip_name": "flexspi",
+      "ip_version": "flexspi-v1",
+      "peripheral_class": "flexspi",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "flexspi:flexspi-v1",
+      "signal_roles": [
+        "a_data00",
+        "a_data01",
+        "a_data02",
+        "a_data03",
+        "a_dqs",
+        "a_sclk",
+        "a_ss0_b",
+        "a_ss1_b",
+        "b_data00",
+        "b_data01",
+        "b_data02",
+        "b_data03",
+        "b_dqs",
+        "b_sclk",
+        "b_ss0_b",
+        "b_ss1_b"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:gpio:imxrt-gpio-v1:io00",
+        "capability:gpio:imxrt-gpio-v1:io01",
+        "capability:gpio:imxrt-gpio-v1:io02",
+        "capability:gpio:imxrt-gpio-v1:io03",
+        "capability:gpio:imxrt-gpio-v1:io04",
+        "capability:gpio:imxrt-gpio-v1:io05",
+        "capability:gpio:imxrt-gpio-v1:io06",
+        "capability:gpio:imxrt-gpio-v1:io07",
+        "capability:gpio:imxrt-gpio-v1:io08",
+        "capability:gpio:imxrt-gpio-v1:io09",
+        "capability:gpio:imxrt-gpio-v1:io10",
+        "capability:gpio:imxrt-gpio-v1:io11",
+        "capability:gpio:imxrt-gpio-v1:io12",
+        "capability:gpio:imxrt-gpio-v1:io13",
+        "capability:gpio:imxrt-gpio-v1:io14",
+        "capability:gpio:imxrt-gpio-v1:io15",
+        "capability:gpio:imxrt-gpio-v1:io16",
+        "capability:gpio:imxrt-gpio-v1:io17",
+        "capability:gpio:imxrt-gpio-v1:io18",
+        "capability:gpio:imxrt-gpio-v1:io19",
+        "capability:gpio:imxrt-gpio-v1:io20",
+        "capability:gpio:imxrt-gpio-v1:io21",
+        "capability:gpio:imxrt-gpio-v1:io22",
+        "capability:gpio:imxrt-gpio-v1:io23",
+        "capability:gpio:imxrt-gpio-v1:io24",
+        "capability:gpio:imxrt-gpio-v1:io25",
+        "capability:gpio:imxrt-gpio-v1:io26",
+        "capability:gpio:imxrt-gpio-v1:io27",
+        "capability:gpio:imxrt-gpio-v1:io28",
+        "capability:gpio:imxrt-gpio-v1:io29",
+        "capability:gpio:imxrt-gpio-v1:io30",
+        "capability:gpio:imxrt-gpio-v1:io31"
+      ],
+      "ip_name": "gpio",
+      "ip_version": "imxrt-gpio-v1",
+      "peripheral_class": "gpio",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "gpio:imxrt-gpio-v1",
+      "signal_roles": [
+        "io00",
+        "io01",
+        "io02",
+        "io03",
+        "io04",
+        "io05",
+        "io06",
+        "io07",
+        "io08",
+        "io09",
+        "io10",
+        "io11",
+        "io12",
+        "io13",
+        "io14",
+        "io15",
+        "io16",
+        "io17",
+        "io18",
+        "io19",
+        "io20",
+        "io21",
+        "io22",
+        "io23",
+        "io24",
+        "io25",
+        "io26",
+        "io27",
+        "io28",
+        "io29",
+        "io30",
+        "io31"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:lpi2c1:lpi2c-v1:hreq",
+        "capability:lpi2c1:lpi2c-v1:scl",
+        "capability:lpi2c1:lpi2c-v1:scls",
+        "capability:lpi2c1:lpi2c-v1:sda",
+        "capability:lpi2c1:lpi2c-v1:sdas"
+      ],
+      "ip_name": "lpi2c1",
+      "ip_version": "lpi2c-v1",
+      "peripheral_class": "lpi2c1",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "lpi2c1:lpi2c-v1",
+      "signal_roles": [
+        "hreq",
+        "scl",
+        "scls",
+        "sda",
+        "sdas"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:lpi2c2:lpi2c-v1:scl",
+        "capability:lpi2c2:lpi2c-v1:sda"
+      ],
+      "ip_name": "lpi2c2",
+      "ip_version": "lpi2c-v1",
+      "peripheral_class": "lpi2c2",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "lpi2c2:lpi2c-v1",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:lpi2c3:lpi2c-v1:scl",
+        "capability:lpi2c3:lpi2c-v1:sda"
+      ],
+      "ip_name": "lpi2c3",
+      "ip_version": "lpi2c-v1",
+      "peripheral_class": "lpi2c3",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "lpi2c3:lpi2c-v1",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:lpi2c4:lpi2c-v1:scl",
+        "capability:lpi2c4:lpi2c-v1:sda"
+      ],
+      "ip_name": "lpi2c4",
+      "ip_version": "lpi2c-v1",
+      "peripheral_class": "lpi2c4",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "lpi2c4:lpi2c-v1",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:lpspi:lpspi-v1:cs",
+        "capability:lpspi:lpspi-v1:sck",
+        "capability:lpspi:lpspi-v1:sd0",
+        "capability:lpspi:lpspi-v1:sdi",
+        "capability:lpspi:lpspi-v1:sdo"
+      ],
+      "ip_name": "lpspi",
+      "ip_version": "lpspi-v1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "lpspi:lpspi-v1",
+      "signal_roles": [
+        "cs",
+        "sck",
+        "sd0",
+        "sdi",
+        "sdo"
+      ]
+    },
+    {
+      "capability_ids": [
+        "capability:lpuart:lpuart-v1:cts",
+        "capability:lpuart:lpuart-v1:rts",
+        "capability:lpuart:lpuart-v1:rx",
+        "capability:lpuart:lpuart-v1:tx"
+      ],
+      "ip_name": "lpuart",
+      "ip_version": "lpuart-v1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1062-bootstrap"
+        ],
+        "source_id": "nxp-mcux-soc-svd",
+        "source_path": "MIMXRT1062/MIMXRT1062.xml"
+      },
+      "register_profile": "lpuart:lpuart-v1",
+      "signal_roles": [
+        "cts",
+        "rts",
+        "rx",
+        "tx"
+      ]
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "nxp"
+}

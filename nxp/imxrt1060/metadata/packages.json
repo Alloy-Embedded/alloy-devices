@@ -1,0 +1,4757 @@
+{
+  "family": "imxrt1060",
+  "packages": [
+    {
+      "devices": [
+        "mimxrt1062",
+        "mimxrt1064"
+      ],
+      "name": "bga196",
+      "pads": [
+        {
+          "pad_id": "GPIO_AD_B0_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_00"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_01"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_02"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_03"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_04"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_05"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_06",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_06"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_07",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_07"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_08",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_08"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_09",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_09"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_10"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_11"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_12"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_13"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_14"
+        },
+        {
+          "pad_id": "GPIO_AD_B0_15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B0_15"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_00"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_01"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_02"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_03"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_04"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_05"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_06",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_06"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_07",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_07"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_08",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_08"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_09",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_09"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_10"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_11"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_12"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_13"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_14"
+        },
+        {
+          "pad_id": "GPIO_AD_B1_15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_AD_B1_15"
+        },
+        {
+          "pad_id": "GPIO_B0_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_00"
+        },
+        {
+          "pad_id": "GPIO_B0_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_01"
+        },
+        {
+          "pad_id": "GPIO_B0_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_02"
+        },
+        {
+          "pad_id": "GPIO_B0_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_03"
+        },
+        {
+          "pad_id": "GPIO_B0_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_04"
+        },
+        {
+          "pad_id": "GPIO_B0_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_05"
+        },
+        {
+          "pad_id": "GPIO_B0_06",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_06"
+        },
+        {
+          "pad_id": "GPIO_B0_07",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_07"
+        },
+        {
+          "pad_id": "GPIO_B0_08",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_08"
+        },
+        {
+          "pad_id": "GPIO_B0_09",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_09"
+        },
+        {
+          "pad_id": "GPIO_B0_10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_10"
+        },
+        {
+          "pad_id": "GPIO_B0_11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_11"
+        },
+        {
+          "pad_id": "GPIO_B0_12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_12"
+        },
+        {
+          "pad_id": "GPIO_B0_13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_13"
+        },
+        {
+          "pad_id": "GPIO_B0_14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_14"
+        },
+        {
+          "pad_id": "GPIO_B0_15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B0_15"
+        },
+        {
+          "pad_id": "GPIO_B1_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_00"
+        },
+        {
+          "pad_id": "GPIO_B1_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_01"
+        },
+        {
+          "pad_id": "GPIO_B1_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_02"
+        },
+        {
+          "pad_id": "GPIO_B1_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_03"
+        },
+        {
+          "pad_id": "GPIO_B1_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_04"
+        },
+        {
+          "pad_id": "GPIO_B1_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_05"
+        },
+        {
+          "pad_id": "GPIO_B1_06",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_06"
+        },
+        {
+          "pad_id": "GPIO_B1_07",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_07"
+        },
+        {
+          "pad_id": "GPIO_B1_08",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_08"
+        },
+        {
+          "pad_id": "GPIO_B1_09",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_09"
+        },
+        {
+          "pad_id": "GPIO_B1_10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_10"
+        },
+        {
+          "pad_id": "GPIO_B1_11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_11"
+        },
+        {
+          "pad_id": "GPIO_B1_12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_12"
+        },
+        {
+          "pad_id": "GPIO_B1_13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_13"
+        },
+        {
+          "pad_id": "GPIO_B1_14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_14"
+        },
+        {
+          "pad_id": "GPIO_B1_15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_B1_15"
+        },
+        {
+          "pad_id": "GPIO_EMC_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_00"
+        },
+        {
+          "pad_id": "GPIO_EMC_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_01"
+        },
+        {
+          "pad_id": "GPIO_EMC_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_02"
+        },
+        {
+          "pad_id": "GPIO_EMC_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_03"
+        },
+        {
+          "pad_id": "GPIO_EMC_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_04"
+        },
+        {
+          "pad_id": "GPIO_EMC_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_05"
+        },
+        {
+          "pad_id": "GPIO_EMC_06",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_06"
+        },
+        {
+          "pad_id": "GPIO_EMC_07",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_07"
+        },
+        {
+          "pad_id": "GPIO_EMC_08",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_08"
+        },
+        {
+          "pad_id": "GPIO_EMC_09",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_09"
+        },
+        {
+          "pad_id": "GPIO_EMC_10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_10"
+        },
+        {
+          "pad_id": "GPIO_EMC_11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_11"
+        },
+        {
+          "pad_id": "GPIO_EMC_12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_12"
+        },
+        {
+          "pad_id": "GPIO_EMC_13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_13"
+        },
+        {
+          "pad_id": "GPIO_EMC_14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_14"
+        },
+        {
+          "pad_id": "GPIO_EMC_15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_15"
+        },
+        {
+          "pad_id": "GPIO_EMC_16",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_16"
+        },
+        {
+          "pad_id": "GPIO_EMC_17",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_17"
+        },
+        {
+          "pad_id": "GPIO_EMC_18",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_18"
+        },
+        {
+          "pad_id": "GPIO_EMC_19",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_19"
+        },
+        {
+          "pad_id": "GPIO_EMC_20",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_20"
+        },
+        {
+          "pad_id": "GPIO_EMC_21",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_21"
+        },
+        {
+          "pad_id": "GPIO_EMC_22",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_22"
+        },
+        {
+          "pad_id": "GPIO_EMC_23",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_23"
+        },
+        {
+          "pad_id": "GPIO_EMC_24",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_24"
+        },
+        {
+          "pad_id": "GPIO_EMC_25",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_25"
+        },
+        {
+          "pad_id": "GPIO_EMC_26",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_26"
+        },
+        {
+          "pad_id": "GPIO_EMC_27",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_27"
+        },
+        {
+          "pad_id": "GPIO_EMC_28",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_28"
+        },
+        {
+          "pad_id": "GPIO_EMC_29",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_29"
+        },
+        {
+          "pad_id": "GPIO_EMC_30",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_30"
+        },
+        {
+          "pad_id": "GPIO_EMC_31",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_31"
+        },
+        {
+          "pad_id": "GPIO_EMC_32",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_32"
+        },
+        {
+          "pad_id": "GPIO_EMC_33",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_33"
+        },
+        {
+          "pad_id": "GPIO_EMC_34",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_34"
+        },
+        {
+          "pad_id": "GPIO_EMC_35",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_35"
+        },
+        {
+          "pad_id": "GPIO_EMC_36",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_36"
+        },
+        {
+          "pad_id": "GPIO_EMC_37",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_37"
+        },
+        {
+          "pad_id": "GPIO_EMC_38",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_38"
+        },
+        {
+          "pad_id": "GPIO_EMC_39",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_39"
+        },
+        {
+          "pad_id": "GPIO_EMC_40",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_40"
+        },
+        {
+          "pad_id": "GPIO_EMC_41",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_EMC_41"
+        },
+        {
+          "pad_id": "GPIO_SD_B0_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B0_00"
+        },
+        {
+          "pad_id": "GPIO_SD_B0_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B0_01"
+        },
+        {
+          "pad_id": "GPIO_SD_B0_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B0_02"
+        },
+        {
+          "pad_id": "GPIO_SD_B0_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B0_03"
+        },
+        {
+          "pad_id": "GPIO_SD_B0_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B0_04"
+        },
+        {
+          "pad_id": "GPIO_SD_B0_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B0_05"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_00",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_00"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_01",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_01"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_02",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_02"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_03",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_03"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_04",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_04"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_05",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_05"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_06",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_06"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_07",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_07"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_08",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_08"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_09",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_09"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_10"
+        },
+        {
+          "pad_id": "GPIO_SD_B1_11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO_SD_B1_11"
+        }
+      ],
+      "pin_count": 196,
+      "pinouts": [
+        {
+          "device": "mimxrt1062",
+          "package": "bga196",
+          "pin_constraints": [],
+          "pin_index": [
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_00"
+              ],
+              "pin": "GPIO_AD_B0_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_01"
+              ],
+              "pin": "GPIO_AD_B0_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_02"
+              ],
+              "pin": "GPIO_AD_B0_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_03"
+              ],
+              "pin": "GPIO_AD_B0_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_04"
+              ],
+              "pin": "GPIO_AD_B0_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_05"
+              ],
+              "pin": "GPIO_AD_B0_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_06"
+              ],
+              "pin": "GPIO_AD_B0_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_07"
+              ],
+              "pin": "GPIO_AD_B0_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_08"
+              ],
+              "pin": "GPIO_AD_B0_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_09"
+              ],
+              "pin": "GPIO_AD_B0_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_10"
+              ],
+              "pin": "GPIO_AD_B0_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_11"
+              ],
+              "pin": "GPIO_AD_B0_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_12"
+              ],
+              "pin": "GPIO_AD_B0_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_13"
+              ],
+              "pin": "GPIO_AD_B0_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_14"
+              ],
+              "pin": "GPIO_AD_B0_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_15"
+              ],
+              "pin": "GPIO_AD_B0_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_00"
+              ],
+              "pin": "GPIO_AD_B1_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_01"
+              ],
+              "pin": "GPIO_AD_B1_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_02"
+              ],
+              "pin": "GPIO_AD_B1_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_03"
+              ],
+              "pin": "GPIO_AD_B1_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_04"
+              ],
+              "pin": "GPIO_AD_B1_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_05"
+              ],
+              "pin": "GPIO_AD_B1_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_06"
+              ],
+              "pin": "GPIO_AD_B1_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_07"
+              ],
+              "pin": "GPIO_AD_B1_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_08"
+              ],
+              "pin": "GPIO_AD_B1_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_09"
+              ],
+              "pin": "GPIO_AD_B1_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_10"
+              ],
+              "pin": "GPIO_AD_B1_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_11"
+              ],
+              "pin": "GPIO_AD_B1_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_12"
+              ],
+              "pin": "GPIO_AD_B1_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_13"
+              ],
+              "pin": "GPIO_AD_B1_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_14"
+              ],
+              "pin": "GPIO_AD_B1_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_15"
+              ],
+              "pin": "GPIO_AD_B1_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_00"
+              ],
+              "pin": "GPIO_B0_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_01"
+              ],
+              "pin": "GPIO_B0_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_02"
+              ],
+              "pin": "GPIO_B0_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_03"
+              ],
+              "pin": "GPIO_B0_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_04"
+              ],
+              "pin": "GPIO_B0_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_05"
+              ],
+              "pin": "GPIO_B0_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_06"
+              ],
+              "pin": "GPIO_B0_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_07"
+              ],
+              "pin": "GPIO_B0_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_08"
+              ],
+              "pin": "GPIO_B0_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_09"
+              ],
+              "pin": "GPIO_B0_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_10"
+              ],
+              "pin": "GPIO_B0_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_11"
+              ],
+              "pin": "GPIO_B0_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_12"
+              ],
+              "pin": "GPIO_B0_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_13"
+              ],
+              "pin": "GPIO_B0_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_14"
+              ],
+              "pin": "GPIO_B0_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_15"
+              ],
+              "pin": "GPIO_B0_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_00"
+              ],
+              "pin": "GPIO_B1_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_01"
+              ],
+              "pin": "GPIO_B1_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_02"
+              ],
+              "pin": "GPIO_B1_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_03"
+              ],
+              "pin": "GPIO_B1_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_04"
+              ],
+              "pin": "GPIO_B1_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_05"
+              ],
+              "pin": "GPIO_B1_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_06"
+              ],
+              "pin": "GPIO_B1_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_07"
+              ],
+              "pin": "GPIO_B1_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_08"
+              ],
+              "pin": "GPIO_B1_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_09"
+              ],
+              "pin": "GPIO_B1_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_10"
+              ],
+              "pin": "GPIO_B1_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_11"
+              ],
+              "pin": "GPIO_B1_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_12"
+              ],
+              "pin": "GPIO_B1_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_13"
+              ],
+              "pin": "GPIO_B1_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_14"
+              ],
+              "pin": "GPIO_B1_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_15"
+              ],
+              "pin": "GPIO_B1_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_00"
+              ],
+              "pin": "GPIO_EMC_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_01"
+              ],
+              "pin": "GPIO_EMC_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_02"
+              ],
+              "pin": "GPIO_EMC_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_03"
+              ],
+              "pin": "GPIO_EMC_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_04"
+              ],
+              "pin": "GPIO_EMC_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_05"
+              ],
+              "pin": "GPIO_EMC_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_06"
+              ],
+              "pin": "GPIO_EMC_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_07"
+              ],
+              "pin": "GPIO_EMC_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_08"
+              ],
+              "pin": "GPIO_EMC_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_09"
+              ],
+              "pin": "GPIO_EMC_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_10"
+              ],
+              "pin": "GPIO_EMC_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_11"
+              ],
+              "pin": "GPIO_EMC_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_12"
+              ],
+              "pin": "GPIO_EMC_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_13"
+              ],
+              "pin": "GPIO_EMC_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_14"
+              ],
+              "pin": "GPIO_EMC_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_15"
+              ],
+              "pin": "GPIO_EMC_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_16"
+              ],
+              "pin": "GPIO_EMC_16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_17"
+              ],
+              "pin": "GPIO_EMC_17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_18"
+              ],
+              "pin": "GPIO_EMC_18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_19"
+              ],
+              "pin": "GPIO_EMC_19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_20"
+              ],
+              "pin": "GPIO_EMC_20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_21"
+              ],
+              "pin": "GPIO_EMC_21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_22"
+              ],
+              "pin": "GPIO_EMC_22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_23"
+              ],
+              "pin": "GPIO_EMC_23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_24"
+              ],
+              "pin": "GPIO_EMC_24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_25"
+              ],
+              "pin": "GPIO_EMC_25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_26"
+              ],
+              "pin": "GPIO_EMC_26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_27"
+              ],
+              "pin": "GPIO_EMC_27"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_28"
+              ],
+              "pin": "GPIO_EMC_28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_29"
+              ],
+              "pin": "GPIO_EMC_29"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_30"
+              ],
+              "pin": "GPIO_EMC_30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_31"
+              ],
+              "pin": "GPIO_EMC_31"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_32"
+              ],
+              "pin": "GPIO_EMC_32"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_33"
+              ],
+              "pin": "GPIO_EMC_33"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_34"
+              ],
+              "pin": "GPIO_EMC_34"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_35"
+              ],
+              "pin": "GPIO_EMC_35"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_36"
+              ],
+              "pin": "GPIO_EMC_36"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_37"
+              ],
+              "pin": "GPIO_EMC_37"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_38"
+              ],
+              "pin": "GPIO_EMC_38"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_39"
+              ],
+              "pin": "GPIO_EMC_39"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_40"
+              ],
+              "pin": "GPIO_EMC_40"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_41"
+              ],
+              "pin": "GPIO_EMC_41"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_00"
+              ],
+              "pin": "GPIO_SD_B0_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_01"
+              ],
+              "pin": "GPIO_SD_B0_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_02"
+              ],
+              "pin": "GPIO_SD_B0_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_03"
+              ],
+              "pin": "GPIO_SD_B0_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_04"
+              ],
+              "pin": "GPIO_SD_B0_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_05"
+              ],
+              "pin": "GPIO_SD_B0_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_00"
+              ],
+              "pin": "GPIO_SD_B1_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_01"
+              ],
+              "pin": "GPIO_SD_B1_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_02"
+              ],
+              "pin": "GPIO_SD_B1_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_03"
+              ],
+              "pin": "GPIO_SD_B1_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_04"
+              ],
+              "pin": "GPIO_SD_B1_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_05"
+              ],
+              "pin": "GPIO_SD_B1_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_06"
+              ],
+              "pin": "GPIO_SD_B1_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_07"
+              ],
+              "pin": "GPIO_SD_B1_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_08"
+              ],
+              "pin": "GPIO_SD_B1_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_09"
+              ],
+              "pin": "GPIO_SD_B1_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_10"
+              ],
+              "pin": "GPIO_SD_B1_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_11"
+              ],
+              "pin": "GPIO_SD_B1_11"
+            }
+          ],
+          "pinout": [
+            {
+              "bonded_pin": "GPIO_AD_B0_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_00"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_01"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_02"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_03"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_04"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_05"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_06"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_07"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_08"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_09"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_10"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_11"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_12"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_13"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_14"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_15"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_00"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_01"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_02"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_03"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_04"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_05"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_06"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_07"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_08"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_09"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_10"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_11"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_12"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_13"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_14"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_15"
+            },
+            {
+              "bonded_pin": "GPIO_B0_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_00"
+            },
+            {
+              "bonded_pin": "GPIO_B0_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_01"
+            },
+            {
+              "bonded_pin": "GPIO_B0_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_02"
+            },
+            {
+              "bonded_pin": "GPIO_B0_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_03"
+            },
+            {
+              "bonded_pin": "GPIO_B0_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_04"
+            },
+            {
+              "bonded_pin": "GPIO_B0_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_05"
+            },
+            {
+              "bonded_pin": "GPIO_B0_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_06"
+            },
+            {
+              "bonded_pin": "GPIO_B0_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_07"
+            },
+            {
+              "bonded_pin": "GPIO_B0_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_08"
+            },
+            {
+              "bonded_pin": "GPIO_B0_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_09"
+            },
+            {
+              "bonded_pin": "GPIO_B0_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_10"
+            },
+            {
+              "bonded_pin": "GPIO_B0_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_11"
+            },
+            {
+              "bonded_pin": "GPIO_B0_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_12"
+            },
+            {
+              "bonded_pin": "GPIO_B0_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_13"
+            },
+            {
+              "bonded_pin": "GPIO_B0_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_14"
+            },
+            {
+              "bonded_pin": "GPIO_B0_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_15"
+            },
+            {
+              "bonded_pin": "GPIO_B1_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_00"
+            },
+            {
+              "bonded_pin": "GPIO_B1_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_01"
+            },
+            {
+              "bonded_pin": "GPIO_B1_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_02"
+            },
+            {
+              "bonded_pin": "GPIO_B1_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_03"
+            },
+            {
+              "bonded_pin": "GPIO_B1_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_04"
+            },
+            {
+              "bonded_pin": "GPIO_B1_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_05"
+            },
+            {
+              "bonded_pin": "GPIO_B1_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_06"
+            },
+            {
+              "bonded_pin": "GPIO_B1_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_07"
+            },
+            {
+              "bonded_pin": "GPIO_B1_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_08"
+            },
+            {
+              "bonded_pin": "GPIO_B1_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_09"
+            },
+            {
+              "bonded_pin": "GPIO_B1_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_10"
+            },
+            {
+              "bonded_pin": "GPIO_B1_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_11"
+            },
+            {
+              "bonded_pin": "GPIO_B1_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_12"
+            },
+            {
+              "bonded_pin": "GPIO_B1_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_13"
+            },
+            {
+              "bonded_pin": "GPIO_B1_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_14"
+            },
+            {
+              "bonded_pin": "GPIO_B1_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_15"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_00"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_01"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_02"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_03"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_04"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_05"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_06"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_07"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_08"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_09"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_10"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_11"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_12"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_13"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_14"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_15"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_16",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_16"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_17",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_17"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_18",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_18"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_19",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_19"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_20",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_20"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_21",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_21"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_22",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_22"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_23",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_23"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_24",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_24"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_25",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_25"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_26",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_26"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_27",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_27"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_28",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_28",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_28"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_29",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_29",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_29"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_30",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_30",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_30"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_31",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_31"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_32",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_32",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_32"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_33",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_33",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_33"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_34",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_34",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_34"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_35",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_35",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_35"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_36",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_36",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_36"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_37",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_37",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_37"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_38",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_38",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_38"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_39",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_39",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_39"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_40",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_40",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_40"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_41",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_41",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_41"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_00"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_01"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_02"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_03"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_04"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_05"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_00"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_01"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_02"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_03"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_04"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_05"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_06"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_07"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_08"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_09"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_10"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_11"
+            }
+          ]
+        },
+        {
+          "device": "mimxrt1064",
+          "package": "bga196",
+          "pin_constraints": [],
+          "pin_index": [
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_00"
+              ],
+              "pin": "GPIO_AD_B0_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_01"
+              ],
+              "pin": "GPIO_AD_B0_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_02"
+              ],
+              "pin": "GPIO_AD_B0_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_03"
+              ],
+              "pin": "GPIO_AD_B0_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_04"
+              ],
+              "pin": "GPIO_AD_B0_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_05"
+              ],
+              "pin": "GPIO_AD_B0_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_06"
+              ],
+              "pin": "GPIO_AD_B0_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_07"
+              ],
+              "pin": "GPIO_AD_B0_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_08"
+              ],
+              "pin": "GPIO_AD_B0_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_09"
+              ],
+              "pin": "GPIO_AD_B0_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_10"
+              ],
+              "pin": "GPIO_AD_B0_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_11"
+              ],
+              "pin": "GPIO_AD_B0_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_12"
+              ],
+              "pin": "GPIO_AD_B0_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_13"
+              ],
+              "pin": "GPIO_AD_B0_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_14"
+              ],
+              "pin": "GPIO_AD_B0_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B0_15"
+              ],
+              "pin": "GPIO_AD_B0_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_00"
+              ],
+              "pin": "GPIO_AD_B1_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_01"
+              ],
+              "pin": "GPIO_AD_B1_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_02"
+              ],
+              "pin": "GPIO_AD_B1_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_03"
+              ],
+              "pin": "GPIO_AD_B1_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_04"
+              ],
+              "pin": "GPIO_AD_B1_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_05"
+              ],
+              "pin": "GPIO_AD_B1_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_06"
+              ],
+              "pin": "GPIO_AD_B1_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_07"
+              ],
+              "pin": "GPIO_AD_B1_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_08"
+              ],
+              "pin": "GPIO_AD_B1_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_09"
+              ],
+              "pin": "GPIO_AD_B1_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_10"
+              ],
+              "pin": "GPIO_AD_B1_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_11"
+              ],
+              "pin": "GPIO_AD_B1_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_12"
+              ],
+              "pin": "GPIO_AD_B1_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_13"
+              ],
+              "pin": "GPIO_AD_B1_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_14"
+              ],
+              "pin": "GPIO_AD_B1_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_AD_B1_15"
+              ],
+              "pin": "GPIO_AD_B1_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_00"
+              ],
+              "pin": "GPIO_B0_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_01"
+              ],
+              "pin": "GPIO_B0_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_02"
+              ],
+              "pin": "GPIO_B0_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_03"
+              ],
+              "pin": "GPIO_B0_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_04"
+              ],
+              "pin": "GPIO_B0_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_05"
+              ],
+              "pin": "GPIO_B0_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_06"
+              ],
+              "pin": "GPIO_B0_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_07"
+              ],
+              "pin": "GPIO_B0_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_08"
+              ],
+              "pin": "GPIO_B0_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_09"
+              ],
+              "pin": "GPIO_B0_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_10"
+              ],
+              "pin": "GPIO_B0_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_11"
+              ],
+              "pin": "GPIO_B0_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_12"
+              ],
+              "pin": "GPIO_B0_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_13"
+              ],
+              "pin": "GPIO_B0_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_14"
+              ],
+              "pin": "GPIO_B0_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B0_15"
+              ],
+              "pin": "GPIO_B0_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_00"
+              ],
+              "pin": "GPIO_B1_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_01"
+              ],
+              "pin": "GPIO_B1_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_02"
+              ],
+              "pin": "GPIO_B1_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_03"
+              ],
+              "pin": "GPIO_B1_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_04"
+              ],
+              "pin": "GPIO_B1_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_05"
+              ],
+              "pin": "GPIO_B1_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_06"
+              ],
+              "pin": "GPIO_B1_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_07"
+              ],
+              "pin": "GPIO_B1_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_08"
+              ],
+              "pin": "GPIO_B1_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_09"
+              ],
+              "pin": "GPIO_B1_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_10"
+              ],
+              "pin": "GPIO_B1_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_11"
+              ],
+              "pin": "GPIO_B1_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_12"
+              ],
+              "pin": "GPIO_B1_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_13"
+              ],
+              "pin": "GPIO_B1_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_14"
+              ],
+              "pin": "GPIO_B1_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_B1_15"
+              ],
+              "pin": "GPIO_B1_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_00"
+              ],
+              "pin": "GPIO_EMC_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_01"
+              ],
+              "pin": "GPIO_EMC_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_02"
+              ],
+              "pin": "GPIO_EMC_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_03"
+              ],
+              "pin": "GPIO_EMC_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_04"
+              ],
+              "pin": "GPIO_EMC_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_05"
+              ],
+              "pin": "GPIO_EMC_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_06"
+              ],
+              "pin": "GPIO_EMC_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_07"
+              ],
+              "pin": "GPIO_EMC_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_08"
+              ],
+              "pin": "GPIO_EMC_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_09"
+              ],
+              "pin": "GPIO_EMC_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_10"
+              ],
+              "pin": "GPIO_EMC_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_11"
+              ],
+              "pin": "GPIO_EMC_11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_12"
+              ],
+              "pin": "GPIO_EMC_12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_13"
+              ],
+              "pin": "GPIO_EMC_13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_14"
+              ],
+              "pin": "GPIO_EMC_14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_15"
+              ],
+              "pin": "GPIO_EMC_15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_16"
+              ],
+              "pin": "GPIO_EMC_16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_17"
+              ],
+              "pin": "GPIO_EMC_17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_18"
+              ],
+              "pin": "GPIO_EMC_18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_19"
+              ],
+              "pin": "GPIO_EMC_19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_20"
+              ],
+              "pin": "GPIO_EMC_20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_21"
+              ],
+              "pin": "GPIO_EMC_21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_22"
+              ],
+              "pin": "GPIO_EMC_22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_23"
+              ],
+              "pin": "GPIO_EMC_23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_24"
+              ],
+              "pin": "GPIO_EMC_24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_25"
+              ],
+              "pin": "GPIO_EMC_25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_26"
+              ],
+              "pin": "GPIO_EMC_26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_27"
+              ],
+              "pin": "GPIO_EMC_27"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_28"
+              ],
+              "pin": "GPIO_EMC_28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_29"
+              ],
+              "pin": "GPIO_EMC_29"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_30"
+              ],
+              "pin": "GPIO_EMC_30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_31"
+              ],
+              "pin": "GPIO_EMC_31"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_32"
+              ],
+              "pin": "GPIO_EMC_32"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_33"
+              ],
+              "pin": "GPIO_EMC_33"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_34"
+              ],
+              "pin": "GPIO_EMC_34"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_35"
+              ],
+              "pin": "GPIO_EMC_35"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_36"
+              ],
+              "pin": "GPIO_EMC_36"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_37"
+              ],
+              "pin": "GPIO_EMC_37"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_38"
+              ],
+              "pin": "GPIO_EMC_38"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_39"
+              ],
+              "pin": "GPIO_EMC_39"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_40"
+              ],
+              "pin": "GPIO_EMC_40"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_EMC_41"
+              ],
+              "pin": "GPIO_EMC_41"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_00"
+              ],
+              "pin": "GPIO_SD_B0_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_01"
+              ],
+              "pin": "GPIO_SD_B0_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_02"
+              ],
+              "pin": "GPIO_SD_B0_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_03"
+              ],
+              "pin": "GPIO_SD_B0_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_04"
+              ],
+              "pin": "GPIO_SD_B0_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B0_05"
+              ],
+              "pin": "GPIO_SD_B0_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_00"
+              ],
+              "pin": "GPIO_SD_B1_00"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_01"
+              ],
+              "pin": "GPIO_SD_B1_01"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_02"
+              ],
+              "pin": "GPIO_SD_B1_02"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_03"
+              ],
+              "pin": "GPIO_SD_B1_03"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_04"
+              ],
+              "pin": "GPIO_SD_B1_04"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_05"
+              ],
+              "pin": "GPIO_SD_B1_05"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_06"
+              ],
+              "pin": "GPIO_SD_B1_06"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_07"
+              ],
+              "pin": "GPIO_SD_B1_07"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_08"
+              ],
+              "pin": "GPIO_SD_B1_08"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_09"
+              ],
+              "pin": "GPIO_SD_B1_09"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_10"
+              ],
+              "pin": "GPIO_SD_B1_10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GPIO_SD_B1_11"
+              ],
+              "pin": "GPIO_SD_B1_11"
+            }
+          ],
+          "pinout": [
+            {
+              "bonded_pin": "GPIO_AD_B0_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_00"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_01"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_02"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_03"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_04"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_05"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_06"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_07"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_08"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_09"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_10"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_11"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_12"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_13"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_14"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B0_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B0_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B0_15"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_00"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_01"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_02"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_03"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_04"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_05"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_06"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_07"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_08"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_09"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_10"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_11"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_12"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_13"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_14"
+            },
+            {
+              "bonded_pin": "GPIO_AD_B1_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_AD_B1_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_AD_B1_15"
+            },
+            {
+              "bonded_pin": "GPIO_B0_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_00"
+            },
+            {
+              "bonded_pin": "GPIO_B0_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_01"
+            },
+            {
+              "bonded_pin": "GPIO_B0_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_02"
+            },
+            {
+              "bonded_pin": "GPIO_B0_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_03"
+            },
+            {
+              "bonded_pin": "GPIO_B0_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_04"
+            },
+            {
+              "bonded_pin": "GPIO_B0_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_05"
+            },
+            {
+              "bonded_pin": "GPIO_B0_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_06"
+            },
+            {
+              "bonded_pin": "GPIO_B0_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_07"
+            },
+            {
+              "bonded_pin": "GPIO_B0_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_08"
+            },
+            {
+              "bonded_pin": "GPIO_B0_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_09"
+            },
+            {
+              "bonded_pin": "GPIO_B0_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_10"
+            },
+            {
+              "bonded_pin": "GPIO_B0_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_11"
+            },
+            {
+              "bonded_pin": "GPIO_B0_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_12"
+            },
+            {
+              "bonded_pin": "GPIO_B0_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_13"
+            },
+            {
+              "bonded_pin": "GPIO_B0_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_14"
+            },
+            {
+              "bonded_pin": "GPIO_B0_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B0_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B0_15"
+            },
+            {
+              "bonded_pin": "GPIO_B1_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_00"
+            },
+            {
+              "bonded_pin": "GPIO_B1_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_01"
+            },
+            {
+              "bonded_pin": "GPIO_B1_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_02"
+            },
+            {
+              "bonded_pin": "GPIO_B1_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_03"
+            },
+            {
+              "bonded_pin": "GPIO_B1_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_04"
+            },
+            {
+              "bonded_pin": "GPIO_B1_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_05"
+            },
+            {
+              "bonded_pin": "GPIO_B1_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_06"
+            },
+            {
+              "bonded_pin": "GPIO_B1_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_07"
+            },
+            {
+              "bonded_pin": "GPIO_B1_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_08"
+            },
+            {
+              "bonded_pin": "GPIO_B1_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_09"
+            },
+            {
+              "bonded_pin": "GPIO_B1_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_10"
+            },
+            {
+              "bonded_pin": "GPIO_B1_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_11"
+            },
+            {
+              "bonded_pin": "GPIO_B1_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_12"
+            },
+            {
+              "bonded_pin": "GPIO_B1_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_13"
+            },
+            {
+              "bonded_pin": "GPIO_B1_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_14"
+            },
+            {
+              "bonded_pin": "GPIO_B1_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_B1_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_B1_15"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_00"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_01"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_02"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_03"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_04"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_05"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_06"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_07"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_08"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_09"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_10"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_11"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_12"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_13"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_14"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_15"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_16",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_16"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_17",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_17"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_18",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_18"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_19",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_19"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_20",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_20"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_21",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_21"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_22",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_22"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_23",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_23"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_24",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_24"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_25",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_25"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_26",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_26"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_27",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_27"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_28",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_28",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_28"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_29",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_29",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_29"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_30",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_30",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_30"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_31",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_31"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_32",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_32",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_32"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_33",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_33",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_33"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_34",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_34",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_34"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_35",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_35",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_35"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_36",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_36",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_36"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_37",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_37",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_37"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_38",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_38",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_38"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_39",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_39",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_39"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_40",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_40",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_40"
+            },
+            {
+              "bonded_pin": "GPIO_EMC_41",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_EMC_41",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_EMC_41"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_00"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_01"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_02"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_03"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_04"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B0_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B0_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B0_05"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_00",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_00",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_00"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_01",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_01",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_01"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_02",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_02",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_02"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_03",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_03",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_03"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_04",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_04",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_04"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_05",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_05",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_05"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_06",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_06",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_06"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_07",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_07",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_07"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_08",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_08",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_08"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_09",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_09",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_09"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_10"
+            },
+            {
+              "bonded_pin": "GPIO_SD_B1_11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GPIO_SD_B1_11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GPIO_SD_B1_11"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "patch_ids": [
+          "nxp-imxrt1060-family-bootstrap-v1",
+          "nxp-imxrt1060-mimxrt1064-bootstrap"
+        ],
+        "source_id": "nxp-mcux-sdk",
+        "source_path": "devices/MIMXRT1064/drivers/fsl_iomuxc.h"
+      }
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "nxp"
+}
