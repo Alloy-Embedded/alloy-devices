@@ -170,7 +170,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 73,
+  "published_artifact_count": 86,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -522,6 +522,84 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 11104,
+      "content_sha256": "aa2bfd61f4d63dd2409b3b5d67a2f87649506f0b0855e3fe3e3ecdd5bb3b0304",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/clock_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 9441,
+      "content_sha256": "733b97996209401d5e188d9a1a5f2cf24834eefc718822aa9ec6bc3a0279c5fd",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 10504,
+      "content_sha256": "3093ed9a54c15e8636e4065f9dc5e84f5411c1b576fe88a531ee17c1f5d8baa1",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 576755,
+      "content_sha256": "45ce2d0b49b6cf5838516fb6fa02a647d784ece51874c1e7a22a0faab95d031d",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 50548,
+      "content_sha256": "c4d252cf6892fae256af59879e4f567f99f06183ccb26b2ad962abe2fa269284",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/registers.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 40971,
+      "content_sha256": "0fd74a2980cc0414398db72f38b5ca9f05a0a5bc4050da583255d0b061546c00",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 15038,
+      "content_sha256": "34786a167c8e3505363884d0bf207bd6117e86fdaf9e7744210300fb3c8fd56e",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/clock_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 16825,
+      "content_sha256": "9cc8dc68607106824d7ee56c11b8dc350a8e56a9cc06dd4f400ae11d34a17553",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 10707,
+      "content_sha256": "6e1cdc639b431e27eab46280582a9dc25bc2941afc909258472a5ec247835144",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1058301,
+      "content_sha256": "5d1ccfdcd071f758c6a75ca6f5ad32ddd37c401d4f791bfe6e23ba69c636adca",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 90610,
+      "content_sha256": "04bb08dbaaed4df2e4395900d1855c88d0132f44faa34a88fdae8b2b0ae7622e",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/registers.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 40971,
+      "content_sha256": "1ba3eac06c0591fac14ffebdd32d0a1cb3847deb6c25eeb069ff214496f3d376",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 5810,
+      "content_sha256": "8af4001f2c2d4380de8560bd7cbf2023e47d4375130b34d3b5a61c8daca2192d",
+      "path": "st/stm32f4/generated/runtime/types.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 32237,
       "content_sha256": "08e207a1fca08d43ecccce12f7e0d14116b6fa21a8d4180fa89790f8778aee12",
       "path": "st/stm32f4/generated/runtime_profiles.hpp"
@@ -616,7 +694,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "4ebbcb0d4dc383e5d2537ff6daa2a21f96323eae9ec7999a3b75049d09915bbf",
+  "target_artifact_revision": "751909f84bf60a9285b71b6b18e9f5b011ec5e6352a277f975239ce6f4561de9",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
