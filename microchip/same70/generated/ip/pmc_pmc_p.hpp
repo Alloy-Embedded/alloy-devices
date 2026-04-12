@@ -1,47 +1,59 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "pmc",
-  "pmc_p",
-  "pmc",
-  "alloy.pmc.microchip-pmc-p",
-  "pmc:pmc_p",
-  "pck0,pck1,pck2,xin,xin32,xout,xout32",
+  IpBlockId::ip_block_pmc_pmc_p,
+  PeripheralClassId::class_pmc,
+  BackendSchemaId::schema_alloy_pmc_microchip_pmc_p,
+  RegisterProfileId::register_profile_pmc_pmc_p,
+  0u,
+  7u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 7> kSignalRoles = {{
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_pck0},
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_pck1},
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_pck2},
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_xin},
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_xin32},
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_xout},
+  {IpBlockId::ip_block_pmc_pmc_p, SignalRoleId::signal_role_xout32},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 7> kCapabilities = {{
-  {"capability:pmc:pmc-p:pck0", "ip-block", "pmc", "signal-role", "pck0", "pmc", "pmc_p", nullptr, nullptr},
-  {"capability:pmc:pmc-p:pck1", "ip-block", "pmc", "signal-role", "pck1", "pmc", "pmc_p", nullptr, nullptr},
-  {"capability:pmc:pmc-p:pck2", "ip-block", "pmc", "signal-role", "pck2", "pmc", "pmc_p", nullptr, nullptr},
-  {"capability:pmc:pmc-p:xin", "ip-block", "pmc", "signal-role", "xin", "pmc", "pmc_p", nullptr, nullptr},
-  {"capability:pmc:pmc-p:xin32", "ip-block", "pmc", "signal-role", "xin32", "pmc", "pmc_p", nullptr, nullptr},
-  {"capability:pmc:pmc-p:xout", "ip-block", "pmc", "signal-role", "xout", "pmc", "pmc_p", nullptr, nullptr},
-  {"capability:pmc:pmc-p:xout32", "ip-block", "pmc", "signal-role", "xout32", "pmc", "pmc_p", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_pck0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_pck0, IpBlockId::ip_block_pmc_pmc_p},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_pck1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_pck1, IpBlockId::ip_block_pmc_pmc_p},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_pck2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_pck2, IpBlockId::ip_block_pmc_pmc_p},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_xin, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_xin, IpBlockId::ip_block_pmc_pmc_p},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_xin32, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_xin32, IpBlockId::ip_block_pmc_pmc_p},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_xout, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_xout, IpBlockId::ip_block_pmc_pmc_p},
+  {CapabilityId::capability_id_capability_pmc_pmc_p_xout32, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pmc, CapabilityKeyId::capability_signal_role_xout32, IpBlockId::ip_block_pmc_pmc_p},
 }};
 }
 }

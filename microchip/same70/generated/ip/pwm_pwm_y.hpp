@@ -1,53 +1,71 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "pwm",
-  "pwm_y",
-  "pwm",
-  "alloy.pwm.microchip-pwm-y",
-  "pwm:pwm_y",
-  "pwmextrg0,pwmextrg1,pwmfi0,pwmfi1,pwmfi2,pwmh0,pwmh1,pwmh2,pwmh3,pwml0,pwml1,pwml2,pwml3",
+  IpBlockId::ip_block_pwm_pwm_y,
+  PeripheralClassId::class_pwm,
+  BackendSchemaId::schema_alloy_pwm_microchip_pwm_y,
+  RegisterProfileId::register_profile_pwm_pwm_y,
+  0u,
+  13u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 13> kSignalRoles = {{
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmextrg0},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmextrg1},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmfi0},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmfi1},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmfi2},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmh0},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmh1},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmh2},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwmh3},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwml0},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwml1},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwml2},
+  {IpBlockId::ip_block_pwm_pwm_y, SignalRoleId::signal_role_pwml3},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 13> kCapabilities = {{
-  {"capability:pwm:pwm-y:pwmextrg0", "ip-block", "pwm", "signal-role", "pwmextrg0", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmextrg1", "ip-block", "pwm", "signal-role", "pwmextrg1", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmfi0", "ip-block", "pwm", "signal-role", "pwmfi0", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmfi1", "ip-block", "pwm", "signal-role", "pwmfi1", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmfi2", "ip-block", "pwm", "signal-role", "pwmfi2", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmh0", "ip-block", "pwm", "signal-role", "pwmh0", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmh1", "ip-block", "pwm", "signal-role", "pwmh1", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmh2", "ip-block", "pwm", "signal-role", "pwmh2", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwmh3", "ip-block", "pwm", "signal-role", "pwmh3", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwml0", "ip-block", "pwm", "signal-role", "pwml0", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwml1", "ip-block", "pwm", "signal-role", "pwml1", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwml2", "ip-block", "pwm", "signal-role", "pwml2", "pwm", "pwm_y", nullptr, nullptr},
-  {"capability:pwm:pwm-y:pwml3", "ip-block", "pwm", "signal-role", "pwml3", "pwm", "pwm_y", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmextrg0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmextrg0, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmextrg1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmextrg1, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmfi0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmfi0, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmfi1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmfi1, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmfi2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmfi2, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmh0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmh0, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmh1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmh1, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmh2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmh2, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwmh3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwmh3, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwml0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwml0, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwml1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwml1, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwml2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwml2, IpBlockId::ip_block_pwm_pwm_y},
+  {CapabilityId::capability_id_capability_pwm_pwm_y_pwml3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_pwm, CapabilityKeyId::capability_signal_role_pwml3, IpBlockId::ip_block_pwm_pwm_y},
 }};
 }
 }

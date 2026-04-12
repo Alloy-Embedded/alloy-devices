@@ -1,38 +1,42 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "chipid",
-  "chipid_zk",
-  "chipid",
-  "alloy.chipid.microchip-chipid-zk",
-  "chipid:chipid_zk",
-  "",
+  IpBlockId::ip_block_chipid_chipid_zk,
+  PeripheralClassId::class_chipid,
+  BackendSchemaId::schema_alloy_chipid_microchip_chipid_zk,
+  RegisterProfileId::register_profile_chipid_chipid_zk,
+  0u,
+  0u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 0> kSignalRoles = {};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 0> kCapabilities = {};
 }

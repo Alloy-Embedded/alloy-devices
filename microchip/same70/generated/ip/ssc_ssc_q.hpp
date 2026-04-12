@@ -1,46 +1,57 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "ssc",
-  "ssc_q",
-  "ssc",
-  "alloy.ssc.microchip-ssc-q",
-  "ssc:ssc_q",
-  "rd,rf,rk,td,tf,tk",
+  IpBlockId::ip_block_ssc_ssc_q,
+  PeripheralClassId::class_ssc,
+  BackendSchemaId::schema_alloy_ssc_microchip_ssc_q,
+  RegisterProfileId::register_profile_ssc_ssc_q,
+  0u,
+  6u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 6> kSignalRoles = {{
+  {IpBlockId::ip_block_ssc_ssc_q, SignalRoleId::signal_role_rd},
+  {IpBlockId::ip_block_ssc_ssc_q, SignalRoleId::signal_role_rf},
+  {IpBlockId::ip_block_ssc_ssc_q, SignalRoleId::signal_role_rk},
+  {IpBlockId::ip_block_ssc_ssc_q, SignalRoleId::signal_role_td},
+  {IpBlockId::ip_block_ssc_ssc_q, SignalRoleId::signal_role_tf},
+  {IpBlockId::ip_block_ssc_ssc_q, SignalRoleId::signal_role_tk},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 6> kCapabilities = {{
-  {"capability:ssc:ssc-q:rd", "ip-block", "ssc", "signal-role", "rd", "ssc", "ssc_q", nullptr, nullptr},
-  {"capability:ssc:ssc-q:rf", "ip-block", "ssc", "signal-role", "rf", "ssc", "ssc_q", nullptr, nullptr},
-  {"capability:ssc:ssc-q:rk", "ip-block", "ssc", "signal-role", "rk", "ssc", "ssc_q", nullptr, nullptr},
-  {"capability:ssc:ssc-q:td", "ip-block", "ssc", "signal-role", "td", "ssc", "ssc_q", nullptr, nullptr},
-  {"capability:ssc:ssc-q:tf", "ip-block", "ssc", "signal-role", "tf", "ssc", "ssc_q", nullptr, nullptr},
-  {"capability:ssc:ssc-q:tk", "ip-block", "ssc", "signal-role", "tk", "ssc", "ssc_q", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_ssc_ssc_q_rd, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ssc, CapabilityKeyId::capability_signal_role_rd, IpBlockId::ip_block_ssc_ssc_q},
+  {CapabilityId::capability_id_capability_ssc_ssc_q_rf, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ssc, CapabilityKeyId::capability_signal_role_rf, IpBlockId::ip_block_ssc_ssc_q},
+  {CapabilityId::capability_id_capability_ssc_ssc_q_rk, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ssc, CapabilityKeyId::capability_signal_role_rk, IpBlockId::ip_block_ssc_ssc_q},
+  {CapabilityId::capability_id_capability_ssc_ssc_q_td, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ssc, CapabilityKeyId::capability_signal_role_td, IpBlockId::ip_block_ssc_ssc_q},
+  {CapabilityId::capability_id_capability_ssc_ssc_q_tf, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ssc, CapabilityKeyId::capability_signal_role_tf, IpBlockId::ip_block_ssc_ssc_q},
+  {CapabilityId::capability_id_capability_ssc_ssc_q_tk, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ssc, CapabilityKeyId::capability_signal_role_tk, IpBlockId::ip_block_ssc_ssc_q},
 }};
 }
 }

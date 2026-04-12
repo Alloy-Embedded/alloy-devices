@@ -1,55 +1,75 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "isi",
-  "isi_k",
-  "isi",
-  "alloy.isi.microchip-isi-k",
-  "isi:isi_k",
-  "d0,d1,d10,d11,d2,d3,d4,d5,d6,d7,d8,d9,hsync,pck,vsync",
+  IpBlockId::ip_block_isi_isi_k,
+  PeripheralClassId::class_isi,
+  BackendSchemaId::schema_alloy_isi_microchip_isi_k,
+  RegisterProfileId::register_profile_isi_isi_k,
+  0u,
+  15u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 15> kSignalRoles = {{
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d0},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d1},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d10},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d11},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d2},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d3},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d4},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d5},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d6},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d7},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d8},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_d9},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_hsync},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_pck},
+  {IpBlockId::ip_block_isi_isi_k, SignalRoleId::signal_role_vsync},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 15> kCapabilities = {{
-  {"capability:isi:isi-k:d0", "ip-block", "isi", "signal-role", "d0", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d1", "ip-block", "isi", "signal-role", "d1", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d10", "ip-block", "isi", "signal-role", "d10", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d11", "ip-block", "isi", "signal-role", "d11", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d2", "ip-block", "isi", "signal-role", "d2", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d3", "ip-block", "isi", "signal-role", "d3", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d4", "ip-block", "isi", "signal-role", "d4", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d5", "ip-block", "isi", "signal-role", "d5", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d6", "ip-block", "isi", "signal-role", "d6", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d7", "ip-block", "isi", "signal-role", "d7", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d8", "ip-block", "isi", "signal-role", "d8", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:d9", "ip-block", "isi", "signal-role", "d9", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:hsync", "ip-block", "isi", "signal-role", "hsync", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:pck", "ip-block", "isi", "signal-role", "pck", "isi", "isi_k", nullptr, nullptr},
-  {"capability:isi:isi-k:vsync", "ip-block", "isi", "signal-role", "vsync", "isi", "isi_k", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_isi_isi_k_d0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d0, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d1, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d10, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d10, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d11, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d11, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d2, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d3, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d4, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d4, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d5, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d5, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d6, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d6, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d7, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d7, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d8, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d8, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_d9, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_d9, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_hsync, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_hsync, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_pck, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_pck, IpBlockId::ip_block_isi_isi_k},
+  {CapabilityId::capability_id_capability_isi_isi_k_vsync, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_isi, CapabilityKeyId::capability_signal_role_vsync, IpBlockId::ip_block_isi_isi_k},
 }};
 }
 }

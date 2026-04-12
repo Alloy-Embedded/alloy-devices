@@ -1,17 +1,16 @@
 #pragma once
 
+#include "../../runtime_refs.hpp"
+#include "../../runtime_semantics.hpp"
+
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace devices {
 namespace atsame70q21b {
 struct DeviceDescriptor {
-  const char* vendor;
-  const char* family;
-  const char* device;
-  const char* package_name;
-  const char* core;
-  const char* summary;
+  PackageRefId package_id;
+  CoreId core_id;
   int pin_count;
   int peripheral_count;
   int interrupt_count;
@@ -20,12 +19,8 @@ struct DeviceDescriptor {
   int startup_descriptor_count;
 };
 inline constexpr DeviceDescriptor kDeviceDescriptor = {
-  "microchip",
-  "same70",
-  "atsame70q21b",
-  "lqfp144",
-  "cortex-m7f",
-  "Board-target SAME70 Xplained Ultra device.",
+  PackageRefId::atsame70q21b_lqfp144,
+  CoreId::core_cortex_m7f,
   114,
   68,
   69,

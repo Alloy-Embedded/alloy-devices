@@ -1,43 +1,51 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "dacc",
-  "dacc_e",
-  "dacc",
-  "alloy.dacc.microchip-dacc-e",
-  "dacc:dacc_e",
-  "dac0,dac1,datrg",
+  IpBlockId::ip_block_dacc_dacc_e,
+  PeripheralClassId::class_dacc,
+  BackendSchemaId::schema_alloy_dacc_microchip_dacc_e,
+  RegisterProfileId::register_profile_dacc_dacc_e,
+  0u,
+  3u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 3> kSignalRoles = {{
+  {IpBlockId::ip_block_dacc_dacc_e, SignalRoleId::signal_role_dac0},
+  {IpBlockId::ip_block_dacc_dacc_e, SignalRoleId::signal_role_dac1},
+  {IpBlockId::ip_block_dacc_dacc_e, SignalRoleId::signal_role_datrg},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 3> kCapabilities = {{
-  {"capability:dacc:dacc-e:dac0", "ip-block", "dacc", "signal-role", "dac0", "dacc", "dacc_e", nullptr, nullptr},
-  {"capability:dacc:dacc-e:dac1", "ip-block", "dacc", "signal-role", "dac1", "dacc", "dacc_e", nullptr, nullptr},
-  {"capability:dacc:dacc-e:datrg", "ip-block", "dacc", "signal-role", "datrg", "dacc", "dacc_e", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_dacc_dacc_e_dac0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dacc, CapabilityKeyId::capability_signal_role_dac0, IpBlockId::ip_block_dacc_dacc_e},
+  {CapabilityId::capability_id_capability_dacc_dacc_e_dac1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dacc, CapabilityKeyId::capability_signal_role_dac1, IpBlockId::ip_block_dacc_dacc_e},
+  {CapabilityId::capability_id_capability_dacc_dacc_e_datrg, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dacc, CapabilityKeyId::capability_signal_role_datrg, IpBlockId::ip_block_dacc_dacc_e},
 }};
 }
 }

@@ -1,46 +1,57 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "hsmci",
-  "hsmci_r",
-  "hsmci",
-  "alloy.hsmci.microchip-hsmci-r",
-  "hsmci:hsmci_r",
-  "mccda,mcck,mcda0,mcda1,mcda2,mcda3",
+  IpBlockId::ip_block_hsmci_hsmci_r,
+  PeripheralClassId::class_hsmci,
+  BackendSchemaId::schema_alloy_hsmci_microchip_hsmci_r,
+  RegisterProfileId::register_profile_hsmci_hsmci_r,
+  0u,
+  6u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 6> kSignalRoles = {{
+  {IpBlockId::ip_block_hsmci_hsmci_r, SignalRoleId::signal_role_mccda},
+  {IpBlockId::ip_block_hsmci_hsmci_r, SignalRoleId::signal_role_mcck},
+  {IpBlockId::ip_block_hsmci_hsmci_r, SignalRoleId::signal_role_mcda0},
+  {IpBlockId::ip_block_hsmci_hsmci_r, SignalRoleId::signal_role_mcda1},
+  {IpBlockId::ip_block_hsmci_hsmci_r, SignalRoleId::signal_role_mcda2},
+  {IpBlockId::ip_block_hsmci_hsmci_r, SignalRoleId::signal_role_mcda3},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 6> kCapabilities = {{
-  {"capability:hsmci:hsmci-r:mccda", "ip-block", "hsmci", "signal-role", "mccda", "hsmci", "hsmci_r", nullptr, nullptr},
-  {"capability:hsmci:hsmci-r:mcck", "ip-block", "hsmci", "signal-role", "mcck", "hsmci", "hsmci_r", nullptr, nullptr},
-  {"capability:hsmci:hsmci-r:mcda0", "ip-block", "hsmci", "signal-role", "mcda0", "hsmci", "hsmci_r", nullptr, nullptr},
-  {"capability:hsmci:hsmci-r:mcda1", "ip-block", "hsmci", "signal-role", "mcda1", "hsmci", "hsmci_r", nullptr, nullptr},
-  {"capability:hsmci:hsmci-r:mcda2", "ip-block", "hsmci", "signal-role", "mcda2", "hsmci", "hsmci_r", nullptr, nullptr},
-  {"capability:hsmci:hsmci-r:mcda3", "ip-block", "hsmci", "signal-role", "mcda3", "hsmci", "hsmci_r", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_hsmci_hsmci_r_mccda, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_hsmci, CapabilityKeyId::capability_signal_role_mccda, IpBlockId::ip_block_hsmci_hsmci_r},
+  {CapabilityId::capability_id_capability_hsmci_hsmci_r_mcck, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_hsmci, CapabilityKeyId::capability_signal_role_mcck, IpBlockId::ip_block_hsmci_hsmci_r},
+  {CapabilityId::capability_id_capability_hsmci_hsmci_r_mcda0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_hsmci, CapabilityKeyId::capability_signal_role_mcda0, IpBlockId::ip_block_hsmci_hsmci_r},
+  {CapabilityId::capability_id_capability_hsmci_hsmci_r_mcda1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_hsmci, CapabilityKeyId::capability_signal_role_mcda1, IpBlockId::ip_block_hsmci_hsmci_r},
+  {CapabilityId::capability_id_capability_hsmci_hsmci_r_mcda2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_hsmci, CapabilityKeyId::capability_signal_role_mcda2, IpBlockId::ip_block_hsmci_hsmci_r},
+  {CapabilityId::capability_id_capability_hsmci_hsmci_r_mcda3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_hsmci, CapabilityKeyId::capability_signal_role_mcda3, IpBlockId::ip_block_hsmci_hsmci_r},
 }};
 }
 }

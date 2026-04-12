@@ -1,59 +1,83 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "gmac",
-  "gmac_s",
-  "gmac",
-  "alloy.gmac.microchip-gmac-s",
-  "gmac:gmac_s",
-  "gcol,gcrs,gmdc,gmdio,grx0,grx1,grx2,grx3,grxck,grxdv,grxer,gtsucomp,gtx0,gtx1,gtx2,gtx3,gtxck,gtxen,gtxer",
+  IpBlockId::ip_block_gmac_gmac_s,
+  PeripheralClassId::class_gmac,
+  BackendSchemaId::schema_alloy_gmac_microchip_gmac_s,
+  RegisterProfileId::register_profile_gmac_gmac_s,
+  0u,
+  19u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 19> kSignalRoles = {{
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gcol},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gcrs},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gmdc},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gmdio},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grx0},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grx1},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grx2},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grx3},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grxck},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grxdv},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_grxer},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtsucomp},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtx0},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtx1},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtx2},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtx3},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtxck},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtxen},
+  {IpBlockId::ip_block_gmac_gmac_s, SignalRoleId::signal_role_gtxer},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 19> kCapabilities = {{
-  {"capability:gmac:gmac-s:gcol", "ip-block", "gmac", "signal-role", "gcol", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gcrs", "ip-block", "gmac", "signal-role", "gcrs", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gmdc", "ip-block", "gmac", "signal-role", "gmdc", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gmdio", "ip-block", "gmac", "signal-role", "gmdio", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grx0", "ip-block", "gmac", "signal-role", "grx0", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grx1", "ip-block", "gmac", "signal-role", "grx1", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grx2", "ip-block", "gmac", "signal-role", "grx2", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grx3", "ip-block", "gmac", "signal-role", "grx3", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grxck", "ip-block", "gmac", "signal-role", "grxck", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grxdv", "ip-block", "gmac", "signal-role", "grxdv", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:grxer", "ip-block", "gmac", "signal-role", "grxer", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtsucomp", "ip-block", "gmac", "signal-role", "gtsucomp", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtx0", "ip-block", "gmac", "signal-role", "gtx0", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtx1", "ip-block", "gmac", "signal-role", "gtx1", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtx2", "ip-block", "gmac", "signal-role", "gtx2", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtx3", "ip-block", "gmac", "signal-role", "gtx3", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtxck", "ip-block", "gmac", "signal-role", "gtxck", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtxen", "ip-block", "gmac", "signal-role", "gtxen", "gmac", "gmac_s", nullptr, nullptr},
-  {"capability:gmac:gmac-s:gtxer", "ip-block", "gmac", "signal-role", "gtxer", "gmac", "gmac_s", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gcol, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gcol, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gcrs, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gcrs, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gmdc, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gmdc, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gmdio, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gmdio, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grx0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grx0, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grx1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grx1, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grx2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grx2, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grx3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grx3, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grxck, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grxck, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grxdv, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grxdv, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_grxer, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_grxer, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtsucomp, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtsucomp, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtx0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtx0, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtx1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtx1, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtx2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtx2, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtx3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtx3, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtxck, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtxck, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtxen, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtxen, IpBlockId::ip_block_gmac_gmac_s},
+  {CapabilityId::capability_id_capability_gmac_gmac_s_gtxer, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gmac, CapabilityKeyId::capability_signal_role_gtxer, IpBlockId::ip_block_gmac_gmac_s},
 }};
 }
 }

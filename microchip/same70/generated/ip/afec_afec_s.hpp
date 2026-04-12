@@ -1,50 +1,65 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "afec",
-  "afec_s",
-  "afec",
-  "alloy.afec.microchip-afec-s",
-  "afec:afec_s",
-  "ad0,ad1,ad10,ad2,ad5,ad6,ad7,ad8,ad9,adtrg",
+  IpBlockId::ip_block_afec_afec_s,
+  PeripheralClassId::class_afec,
+  BackendSchemaId::schema_alloy_afec_microchip_afec_s,
+  RegisterProfileId::register_profile_afec_afec_s,
+  0u,
+  10u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 10> kSignalRoles = {{
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad0},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad1},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad10},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad2},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad5},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad6},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad7},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad8},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_ad9},
+  {IpBlockId::ip_block_afec_afec_s, SignalRoleId::signal_role_adtrg},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 10> kCapabilities = {{
-  {"capability:afec:afec-s:ad0", "ip-block", "afec", "signal-role", "ad0", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad1", "ip-block", "afec", "signal-role", "ad1", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad10", "ip-block", "afec", "signal-role", "ad10", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad2", "ip-block", "afec", "signal-role", "ad2", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad5", "ip-block", "afec", "signal-role", "ad5", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad6", "ip-block", "afec", "signal-role", "ad6", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad7", "ip-block", "afec", "signal-role", "ad7", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad8", "ip-block", "afec", "signal-role", "ad8", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:ad9", "ip-block", "afec", "signal-role", "ad9", "afec", "afec_s", nullptr, nullptr},
-  {"capability:afec:afec-s:adtrg", "ip-block", "afec", "signal-role", "adtrg", "afec", "afec_s", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad0, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad1, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad10, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad10, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad2, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad5, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad5, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad6, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad6, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad7, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad7, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad8, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad8, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_ad9, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_ad9, IpBlockId::ip_block_afec_afec_s},
+  {CapabilityId::capability_id_capability_afec_afec_s_adtrg, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_afec, CapabilityKeyId::capability_signal_role_adtrg, IpBlockId::ip_block_afec_afec_s},
 }};
 }
 }

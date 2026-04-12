@@ -1,51 +1,67 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "gpio",
-  "pio_v",
-  "gpio",
-  "alloy.gpio.microchip-pio-v",
-  "gpio:pio_v",
-  "piodc0,piodc1,piodc2,piodc3,piodc4,piodc5,piodc6,piodc7,piodcclk,piodcen1,piodcen2",
+  IpBlockId::ip_block_gpio_pio_v,
+  PeripheralClassId::class_gpio,
+  BackendSchemaId::schema_alloy_gpio_microchip_pio_v,
+  RegisterProfileId::register_profile_gpio_pio_v,
+  0u,
+  11u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 11> kSignalRoles = {{
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc0},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc1},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc2},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc3},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc4},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc5},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc6},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodc7},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodcclk},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodcen1},
+  {IpBlockId::ip_block_gpio_pio_v, SignalRoleId::signal_role_piodcen2},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 11> kCapabilities = {{
-  {"capability:gpio:pio-v:piodc0", "ip-block", "gpio", "signal-role", "piodc0", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc1", "ip-block", "gpio", "signal-role", "piodc1", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc2", "ip-block", "gpio", "signal-role", "piodc2", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc3", "ip-block", "gpio", "signal-role", "piodc3", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc4", "ip-block", "gpio", "signal-role", "piodc4", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc5", "ip-block", "gpio", "signal-role", "piodc5", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc6", "ip-block", "gpio", "signal-role", "piodc6", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodc7", "ip-block", "gpio", "signal-role", "piodc7", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodcclk", "ip-block", "gpio", "signal-role", "piodcclk", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodcen1", "ip-block", "gpio", "signal-role", "piodcen1", "gpio", "pio_v", nullptr, nullptr},
-  {"capability:gpio:pio-v:piodcen2", "ip-block", "gpio", "signal-role", "piodcen2", "gpio", "pio_v", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc0, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc1, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc2, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc3, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc4, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc4, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc5, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc5, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc6, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc6, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodc7, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodc7, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodcclk, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodcclk, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodcen1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodcen1, IpBlockId::ip_block_gpio_pio_v},
+  {CapabilityId::capability_id_capability_gpio_pio_v_piodcen2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_gpio, CapabilityKeyId::capability_signal_role_piodcen2, IpBlockId::ip_block_gpio_pio_v},
 }};
 }
 }
