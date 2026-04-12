@@ -1,56 +1,77 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace nxp {
 namespace imxrt1060 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "flexspi",
-  "flexspi-v1",
-  "flexspi",
-  "alloy.flexspi.nxp-flexspi-v1",
-  "flexspi:flexspi-v1",
-  "a_data00,a_data01,a_data02,a_data03,a_dqs,a_sclk,a_ss0_b,a_ss1_b,b_data00,b_data01,b_data02,b_data03,b_dqs,b_sclk,b_ss0_b,b_ss1_b",
+  IpBlockId::ip_block_flexspi_flexspi_v1,
+  PeripheralClassId::class_flexspi,
+  BackendSchemaId::schema_alloy_flexspi_nxp_flexspi_v1,
+  RegisterProfileId::register_profile_flexspi_flexspi_v1,
+  0u,
+  16u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 16> kSignalRoles = {{
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_data00},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_data01},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_data02},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_data03},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_dqs},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_sclk},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_ss0_b},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_a_ss1_b},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_data00},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_data01},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_data02},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_data03},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_dqs},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_sclk},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_ss0_b},
+  {IpBlockId::ip_block_flexspi_flexspi_v1, SignalRoleId::signal_role_b_ss1_b},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 16> kCapabilities = {{
-  {"capability:flexspi:flexspi-v1:a-data00", "ip-block", "flexspi", "signal-role", "a_data00", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-data01", "ip-block", "flexspi", "signal-role", "a_data01", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-data02", "ip-block", "flexspi", "signal-role", "a_data02", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-data03", "ip-block", "flexspi", "signal-role", "a_data03", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-dqs", "ip-block", "flexspi", "signal-role", "a_dqs", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-sclk", "ip-block", "flexspi", "signal-role", "a_sclk", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-ss0-b", "ip-block", "flexspi", "signal-role", "a_ss0_b", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:a-ss1-b", "ip-block", "flexspi", "signal-role", "a_ss1_b", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-data00", "ip-block", "flexspi", "signal-role", "b_data00", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-data01", "ip-block", "flexspi", "signal-role", "b_data01", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-data02", "ip-block", "flexspi", "signal-role", "b_data02", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-data03", "ip-block", "flexspi", "signal-role", "b_data03", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-dqs", "ip-block", "flexspi", "signal-role", "b_dqs", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-sclk", "ip-block", "flexspi", "signal-role", "b_sclk", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-ss0-b", "ip-block", "flexspi", "signal-role", "b_ss0_b", "flexspi", "flexspi-v1", nullptr, nullptr},
-  {"capability:flexspi:flexspi-v1:b-ss1-b", "ip-block", "flexspi", "signal-role", "b_ss1_b", "flexspi", "flexspi-v1", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_data00, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_data00, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_data01, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_data01, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_data02, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_data02, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_data03, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_data03, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_dqs, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_dqs, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_sclk, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_sclk, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_ss0_b, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_ss0_b, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_a_ss1_b, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_a_ss1_b, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_data00, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_data00, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_data01, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_data01, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_data02, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_data02, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_data03, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_data03, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_dqs, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_dqs, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_sclk, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_sclk, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_ss0_b, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_ss0_b, IpBlockId::ip_block_flexspi_flexspi_v1},
+  {CapabilityId::capability_id_capability_flexspi_flexspi_v1_b_ss1_b, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_flexspi, CapabilityKeyId::capability_signal_role_b_ss1_b, IpBlockId::ip_block_flexspi_flexspi_v1},
 }};
 }
 }
