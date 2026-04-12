@@ -4408,6 +4408,21 @@ enum class FieldId : std::uint16_t {
   field_gpiod_wpmr_wpkey,
   field_gpiod_wpsr_wpvs,
   field_gpiod_wpsr_wpvsrc,
+  field_pmc_pcer0_pid7,
+  field_pmc_pcer0_pid8,
+  field_pmc_pcer0_pid10,
+  field_pmc_pcer0_pid11,
+  field_pmc_pcer0_pid13,
+  field_pmc_pcer0_pid14,
+  field_pmc_pcer0_pid15,
+  field_pmc_pcer0_pid16,
+  field_pmc_pcer0_pid19,
+  field_pmc_pcer0_pid20,
+  field_pmc_pcer0_pid21,
+  field_pmc_pcer1_pid41,
+  field_pmc_pcer1_pid44,
+  field_pmc_pcer1_pid45,
+  field_pmc_pcer1_pid46,
   field_spi0_cr_spien,
   field_spi0_cr_spidis,
   field_spi0_cr_swrst,
@@ -45080,6 +45095,141 @@ struct RegisterFieldTraits<FieldId::field_gpiod_wpsr_wpvsrc> {
 };
 
 template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid7> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid8> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid10> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid11> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid13> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid14> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid15> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid16> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid19> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid20> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer0_pid21> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer1_pid41> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer1_pid44> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer1_pid45> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_pmc_pcer1_pid46> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
 struct RegisterFieldTraits<FieldId::field_spi0_cr_spien> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_spi0_cr;
@@ -55024,7 +55174,7 @@ struct RegisterFieldTraits<FieldId::field_usart2_us_wpsr_wpvsrc> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
 };
 
-inline constexpr std::array<FieldId, 5500> kRegisterFields = {{
+inline constexpr std::array<FieldId, 5515> kRegisterFields = {{
   FieldId::field_gpioa_abcdsr__s_p0,
   FieldId::field_gpioa_abcdsr__s_p1,
   FieldId::field_gpioa_abcdsr__s_p2,
@@ -59420,6 +59570,21 @@ inline constexpr std::array<FieldId, 5500> kRegisterFields = {{
   FieldId::field_gpiod_wpmr_wpkey,
   FieldId::field_gpiod_wpsr_wpvs,
   FieldId::field_gpiod_wpsr_wpvsrc,
+  FieldId::field_pmc_pcer0_pid7,
+  FieldId::field_pmc_pcer0_pid8,
+  FieldId::field_pmc_pcer0_pid10,
+  FieldId::field_pmc_pcer0_pid11,
+  FieldId::field_pmc_pcer0_pid13,
+  FieldId::field_pmc_pcer0_pid14,
+  FieldId::field_pmc_pcer0_pid15,
+  FieldId::field_pmc_pcer0_pid16,
+  FieldId::field_pmc_pcer0_pid19,
+  FieldId::field_pmc_pcer0_pid20,
+  FieldId::field_pmc_pcer0_pid21,
+  FieldId::field_pmc_pcer1_pid41,
+  FieldId::field_pmc_pcer1_pid44,
+  FieldId::field_pmc_pcer1_pid45,
+  FieldId::field_pmc_pcer1_pid46,
   FieldId::field_spi0_cr_spien,
   FieldId::field_spi0_cr_spidis,
   FieldId::field_spi0_cr_swrst,

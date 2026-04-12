@@ -23,106 +23,106 @@ struct ClockGateTraits {
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpioa> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid10;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpiob> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid11;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpiod> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid16;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_spi0> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid21;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_twihs0> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid19;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_twihs1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid20;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_twihs2> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid41;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_uart0> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid7;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_uart1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid8;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_uart2> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid44;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_uart3> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid45;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_uart4> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid46;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_usart0> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid13;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_usart1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid14;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_usart2> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::none;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid15;
 };
 
 template<ResetId Id>

@@ -15,7 +15,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID33",
+          "register_field_id": "field:pmc:pcer1:pid33",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -31,7 +34,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID56",
+          "register_field_id": "field:pmc:pcer1:pid56",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -47,7 +53,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID29",
+          "register_field_id": "field:pmc:pcer0:pid29",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -63,7 +72,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID40",
+          "register_field_id": "field:pmc:pcer1:pid40",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -79,7 +91,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID30",
+          "register_field_id": "field:pmc:pcer0:pid30",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -95,7 +110,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID6",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -111,7 +128,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID39",
+          "register_field_id": "field:pmc:pcer1:pid39",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -127,7 +147,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID10",
+          "register_field_id": "field:pmc:pcer0:pid10",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -143,7 +166,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID11",
+          "register_field_id": "field:pmc:pcer0:pid11",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -159,7 +185,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID16",
+          "register_field_id": "field:pmc:pcer0:pid16",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -175,7 +204,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID18",
+          "register_field_id": "field:pmc:pcer0:pid18",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -191,7 +223,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID69",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -207,7 +241,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID32",
+          "register_field_id": "field:pmc:pcer1:pid32",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -223,7 +260,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID59",
+          "register_field_id": "field:pmc:pcer1:pid59",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -239,7 +279,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID35",
+          "register_field_id": "field:pmc:pcer1:pid35",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -255,7 +298,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID37",
+          "register_field_id": "field:pmc:pcer1:pid37",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -271,7 +317,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID5",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -287,7 +335,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID31",
+          "register_field_id": "field:pmc:pcer0:pid31",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -303,7 +354,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID60",
+          "register_field_id": "field:pmc:pcer1:pid60",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -319,7 +373,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID43",
+          "register_field_id": "field:pmc:pcer1:pid43",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -335,7 +392,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID1",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -351,7 +410,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID63",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -367,7 +428,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID2",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -383,7 +446,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID3",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -399,7 +464,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID21",
+          "register_field_id": "field:pmc:pcer0:pid21",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -415,7 +483,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID22",
+          "register_field_id": "field:pmc:pcer0:pid22",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -431,7 +502,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID0",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -447,7 +520,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID23",
+          "register_field_id": "field:pmc:pcer0:pid23",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -463,7 +539,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID26",
+          "register_field_id": "field:pmc:pcer0:pid26",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -479,7 +558,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID47",
+          "register_field_id": "field:pmc:pcer1:pid47",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -495,7 +577,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID50",
+          "register_field_id": "field:pmc:pcer1:pid50",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -511,7 +596,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID57",
+          "register_field_id": "field:pmc:pcer1:pid57",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -527,7 +615,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID19",
+          "register_field_id": "field:pmc:pcer0:pid19",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -543,7 +634,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID20",
+          "register_field_id": "field:pmc:pcer0:pid20",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -559,7 +653,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID41",
+          "register_field_id": "field:pmc:pcer1:pid41",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -575,7 +672,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID7",
+          "register_field_id": "field:pmc:pcer0:pid7",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -591,7 +691,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID8",
+          "register_field_id": "field:pmc:pcer0:pid8",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -607,7 +710,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID44",
+          "register_field_id": "field:pmc:pcer1:pid44",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -623,7 +729,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID45",
+          "register_field_id": "field:pmc:pcer1:pid45",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -639,7 +748,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID46",
+          "register_field_id": "field:pmc:pcer1:pid46",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -655,7 +767,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID13",
+          "register_field_id": "field:pmc:pcer0:pid13",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -671,7 +786,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID14",
+          "register_field_id": "field:pmc:pcer0:pid14",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -687,7 +805,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID15",
+          "register_field_id": "field:pmc:pcer0:pid15",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -703,7 +824,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID34",
+          "register_field_id": "field:pmc:pcer1:pid34",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -719,7 +843,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID4",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -735,7 +861,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70N21B.svd"
           },
-          "register_name": "PID58",
+          "register_field_id": "field:pmc:pcer1:pid58",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         }
       ],
@@ -6711,7 +6840,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID33",
+          "register_field_id": "field:pmc:pcer1:pid33",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6727,7 +6859,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID56",
+          "register_field_id": "field:pmc:pcer1:pid56",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6743,7 +6878,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID29",
+          "register_field_id": "field:pmc:pcer0:pid29",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6759,7 +6897,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID40",
+          "register_field_id": "field:pmc:pcer1:pid40",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6775,7 +6916,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID30",
+          "register_field_id": "field:pmc:pcer0:pid30",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6791,7 +6935,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID6",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6807,7 +6953,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID39",
+          "register_field_id": "field:pmc:pcer1:pid39",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6823,7 +6972,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID10",
+          "register_field_id": "field:pmc:pcer0:pid10",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6839,7 +6991,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID11",
+          "register_field_id": "field:pmc:pcer0:pid11",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6855,7 +7010,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID12",
+          "register_field_id": "field:pmc:pcer0:pid12",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6871,7 +7029,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID16",
+          "register_field_id": "field:pmc:pcer0:pid16",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6887,7 +7048,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID17",
+          "register_field_id": "field:pmc:pcer0:pid17",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6903,7 +7067,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID18",
+          "register_field_id": "field:pmc:pcer0:pid18",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -6919,7 +7086,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID69",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6935,7 +7104,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID70",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6951,7 +7122,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID32",
+          "register_field_id": "field:pmc:pcer1:pid32",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6967,7 +7141,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID59",
+          "register_field_id": "field:pmc:pcer1:pid59",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6983,7 +7160,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID35",
+          "register_field_id": "field:pmc:pcer1:pid35",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -6999,7 +7179,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID37",
+          "register_field_id": "field:pmc:pcer1:pid37",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7015,7 +7198,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID5",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7031,7 +7216,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID31",
+          "register_field_id": "field:pmc:pcer0:pid31",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7047,7 +7235,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID60",
+          "register_field_id": "field:pmc:pcer1:pid60",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7063,7 +7254,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID43",
+          "register_field_id": "field:pmc:pcer1:pid43",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7079,7 +7273,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID1",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7095,7 +7291,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID63",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7111,7 +7309,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID2",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7127,7 +7327,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID3",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7143,7 +7345,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID9",
+          "register_field_id": "field:pmc:pcer0:pid9",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7159,7 +7364,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID21",
+          "register_field_id": "field:pmc:pcer0:pid21",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7175,7 +7383,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID42",
+          "register_field_id": "field:pmc:pcer1:pid42",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7191,7 +7402,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID22",
+          "register_field_id": "field:pmc:pcer0:pid22",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7207,7 +7421,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID0",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7223,7 +7439,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID23",
+          "register_field_id": "field:pmc:pcer0:pid23",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7239,7 +7458,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID26",
+          "register_field_id": "field:pmc:pcer0:pid26",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7255,7 +7477,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID47",
+          "register_field_id": "field:pmc:pcer1:pid47",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7271,7 +7496,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID50",
+          "register_field_id": "field:pmc:pcer1:pid50",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7287,7 +7515,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID57",
+          "register_field_id": "field:pmc:pcer1:pid57",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7303,7 +7534,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID19",
+          "register_field_id": "field:pmc:pcer0:pid19",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7319,7 +7553,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID20",
+          "register_field_id": "field:pmc:pcer0:pid20",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7335,7 +7572,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID41",
+          "register_field_id": "field:pmc:pcer1:pid41",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7351,7 +7591,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID7",
+          "register_field_id": "field:pmc:pcer0:pid7",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7367,7 +7610,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID8",
+          "register_field_id": "field:pmc:pcer0:pid8",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7383,7 +7629,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID44",
+          "register_field_id": "field:pmc:pcer1:pid44",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7399,7 +7648,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID45",
+          "register_field_id": "field:pmc:pcer1:pid45",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7415,7 +7667,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID46",
+          "register_field_id": "field:pmc:pcer1:pid46",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7431,7 +7686,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID13",
+          "register_field_id": "field:pmc:pcer0:pid13",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7447,7 +7705,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID14",
+          "register_field_id": "field:pmc:pcer0:pid14",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7463,7 +7724,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID15",
+          "register_field_id": "field:pmc:pcer0:pid15",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7479,7 +7743,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID34",
+          "register_field_id": "field:pmc:pcer1:pid34",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         },
         {
@@ -7495,7 +7762,9 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID4",
+          "register_id": "register:pmc:pcer0",
+          "register_name": "PCER0",
+          "register_offset": 16,
           "register_peripheral": "PMC"
         },
         {
@@ -7511,7 +7780,10 @@
             "source_id": "microchip-dfp-extract",
             "source_path": "same70b/svd/ATSAME70Q21B.svd"
           },
-          "register_name": "PID58",
+          "register_field_id": "field:pmc:pcer1:pid58",
+          "register_id": "register:pmc:pcer1",
+          "register_name": "PCER1",
+          "register_offset": 256,
           "register_peripheral": "PMC"
         }
       ],

@@ -174,6 +174,8 @@ enum class RegisterId : std::uint16_t {
   register_gpiod_pcimr,
   register_gpiod_pcisr,
   register_gpiod_pcrhr,
+  register_pmc_pcer0,
+  register_pmc_pcer1,
   register_spi0_cr,
   register_spi0_mr,
   register_spi0_rdr,
@@ -1847,6 +1849,24 @@ struct RegisterTraits<RegisterId::register_gpiod_pcrhr> {
   static constexpr std::uintptr_t kBaseAddress = 0x400E1400u;
   static constexpr std::uint32_t kOffsetBytes = 356u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_pmc_pcer0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400E0600u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_pmc_pcer1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400E0600u;
+  static constexpr std::uint32_t kOffsetBytes = 256u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
 };
 
@@ -3713,7 +3733,7 @@ struct RegisterTraits<RegisterId::register_usart2_us_wpsr> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 369> kRegisters = {{
+inline constexpr std::array<RegisterId, 371> kRegisters = {{
   RegisterId::register_gpioa_per,
   RegisterId::register_gpioa_pdr,
   RegisterId::register_gpioa_psr,
@@ -3876,6 +3896,8 @@ inline constexpr std::array<RegisterId, 369> kRegisters = {{
   RegisterId::register_gpiod_pcimr,
   RegisterId::register_gpiod_pcisr,
   RegisterId::register_gpiod_pcrhr,
+  RegisterId::register_pmc_pcer0,
+  RegisterId::register_pmc_pcer1,
   RegisterId::register_spi0_cr,
   RegisterId::register_spi0_mr,
   RegisterId::register_spi0_rdr,
