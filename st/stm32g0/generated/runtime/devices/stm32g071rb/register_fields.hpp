@@ -1014,6 +1014,16 @@ enum class FieldId : std::uint16_t {
   field_rcc_apbrstr2_usart1rst,
   field_rcc_ccipr_usart1sel,
   field_rcc_ccipr_lpuart1sel,
+  field_rcc_iopenr_gpioaen,
+  field_rcc_iopenr_gpioben,
+  field_rcc_iopenr_gpiocen,
+  field_rcc_iopenr_gpioden,
+  field_rcc_iopenr_gpiofen,
+  field_rcc_ioprstr_gpioarst,
+  field_rcc_ioprstr_gpiobrst,
+  field_rcc_ioprstr_gpiocrst,
+  field_rcc_ioprstr_gpiodrst,
+  field_rcc_ioprstr_gpiofrst,
   field_spi1_cr1_cpha,
   field_spi1_cr1_cpol,
   field_spi1_cr1_mstr,
@@ -10661,6 +10671,96 @@ struct RegisterFieldTraits<FieldId::field_rcc_ccipr_lpuart1sel> {
 };
 
 template<>
+struct RegisterFieldTraits<FieldId::field_rcc_iopenr_gpioaen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_iopenr_gpioben> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_iopenr_gpiocen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_iopenr_gpioden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_iopenr_gpiofen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_ioprstr_gpioarst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_ioprstr_gpiobrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_ioprstr_gpiocrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_ioprstr_gpiodrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_ioprstr_gpiofrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
 struct RegisterFieldTraits<FieldId::field_spi1_cr1_cpha> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_spi1_cr1;
@@ -16294,7 +16394,7 @@ struct RegisterFieldTraits<FieldId::field_usart4_tdr_tdr> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
-inline constexpr std::array<FieldId, 1627> kRegisterFields = {{
+inline constexpr std::array<FieldId, 1637> kRegisterFields = {{
   FieldId::field_gpioa_afrh_afsel8,
   FieldId::field_gpioa_afrh_afsel9,
   FieldId::field_gpioa_afrh_afsel10,
@@ -17296,6 +17396,16 @@ inline constexpr std::array<FieldId, 1627> kRegisterFields = {{
   FieldId::field_rcc_apbrstr2_usart1rst,
   FieldId::field_rcc_ccipr_usart1sel,
   FieldId::field_rcc_ccipr_lpuart1sel,
+  FieldId::field_rcc_iopenr_gpioaen,
+  FieldId::field_rcc_iopenr_gpioben,
+  FieldId::field_rcc_iopenr_gpiocen,
+  FieldId::field_rcc_iopenr_gpioden,
+  FieldId::field_rcc_iopenr_gpiofen,
+  FieldId::field_rcc_ioprstr_gpioarst,
+  FieldId::field_rcc_ioprstr_gpiobrst,
+  FieldId::field_rcc_ioprstr_gpiocrst,
+  FieldId::field_rcc_ioprstr_gpiodrst,
+  FieldId::field_rcc_ioprstr_gpiofrst,
   FieldId::field_spi1_cr1_cpha,
   FieldId::field_spi1_cr1_cpol,
   FieldId::field_spi1_cr1_mstr,

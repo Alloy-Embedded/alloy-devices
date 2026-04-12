@@ -24,35 +24,35 @@ template<>
 struct ClockGateTraits<ClockGateId::gate_gpioa> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpioaen;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpiob> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpioben;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpioc> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpiocen;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpiod> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpioden;
 };
 
 template<>
 struct ClockGateTraits<ClockGateId::gate_gpiof> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpiofen;
 };
 
 template<>
@@ -116,7 +116,7 @@ template<>
 struct ResetTraits<ResetId::reset_gpioa> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpioarst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -124,7 +124,7 @@ template<>
 struct ResetTraits<ResetId::reset_gpiob> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiobrst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -132,7 +132,7 @@ template<>
 struct ResetTraits<ResetId::reset_gpioc> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiocrst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -140,7 +140,7 @@ template<>
 struct ResetTraits<ResetId::reset_gpiod> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiodrst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -148,7 +148,7 @@ template<>
 struct ResetTraits<ResetId::reset_gpiof> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiofrst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 

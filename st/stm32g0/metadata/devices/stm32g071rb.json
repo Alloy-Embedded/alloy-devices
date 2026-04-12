@@ -2390,13 +2390,14 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbenr:dma1en",
       "register_id": "register:rcc:ahbenr",
       "register_name": "AHBENR",
       "register_offset": 56,
       "register_peripheral": "RCC"
     },
     {
-      "enable_signal": "RCC_AHBENR.DMAMUX1EN",
+      "enable_signal": "RCC_AHBENR.DMA1EN",
       "gate_id": "gate:dmamux1",
       "parent_node": "clock-node:rcc-ahbenr",
       "peripheral": "DMAMUX1",
@@ -2408,6 +2409,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbenr:dma1en",
       "register_id": "register:rcc:ahbenr",
       "register_name": "AHBENR",
       "register_offset": 56,
@@ -2426,6 +2428,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpioaen",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -2444,6 +2447,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpioben",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -2462,6 +2466,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpiocen",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -2480,6 +2485,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpioden",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -2498,6 +2504,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpiofen",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -15517,8 +15524,8 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
-      "rcc_enable_signal": "RCC_AHBENR.DMAMUX1EN",
-      "rcc_reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
+      "rcc_enable_signal": "RCC_AHBENR.DMA1EN",
+      "rcc_reset_signal": "RCC_AHBRSTR.DMA1RST"
     },
     {
       "backend_schema_id": "alloy.gpio.st-gpio",
@@ -95179,6 +95186,258 @@
       },
       "register_id": "register:tim3:tisel",
       "register_name": "TISEL"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:rcc:ahbenr:dma1en",
+      "name": "DMA1EN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ahbenr",
+      "register_name": "AHBENR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:rcc:ahbrstr:dma1rst",
+      "name": "DMA1RST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ahbrstr",
+      "register_name": "AHBRSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:rcc:iopenr:gpioaen",
+      "name": "GPIOAEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:iopenr",
+      "register_name": "IOPENR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 1,
+      "bit_width": 1,
+      "field_id": "field:rcc:iopenr:gpioben",
+      "name": "GPIOBEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:iopenr",
+      "register_name": "IOPENR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 2,
+      "bit_width": 1,
+      "field_id": "field:rcc:iopenr:gpiocen",
+      "name": "GPIOCEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:iopenr",
+      "register_name": "IOPENR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 3,
+      "bit_width": 1,
+      "field_id": "field:rcc:iopenr:gpioden",
+      "name": "GPIODEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:iopenr",
+      "register_name": "IOPENR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 5,
+      "bit_width": 1,
+      "field_id": "field:rcc:iopenr:gpiofen",
+      "name": "GPIOFEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:iopenr",
+      "register_name": "IOPENR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:rcc:ioprstr:gpioarst",
+      "name": "GPIOARST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ioprstr",
+      "register_name": "IOPRSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 1,
+      "bit_width": 1,
+      "field_id": "field:rcc:ioprstr:gpiobrst",
+      "name": "GPIOBRST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ioprstr",
+      "register_name": "IOPRSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 2,
+      "bit_width": 1,
+      "field_id": "field:rcc:ioprstr:gpiocrst",
+      "name": "GPIOCRST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ioprstr",
+      "register_name": "IOPRSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 3,
+      "bit_width": 1,
+      "field_id": "field:rcc:ioprstr:gpiodrst",
+      "name": "GPIODRST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ioprstr",
+      "register_name": "IOPRSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 5,
+      "bit_width": 1,
+      "field_id": "field:rcc:ioprstr:gpiofrst",
+      "name": "GPIOFRST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:ioprstr",
+      "register_name": "IOPRSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 12,
+      "bit_width": 1,
+      "field_id": "field:rcc:apbenr1:fdcanen",
+      "name": "FDCANEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:apbenr1",
+      "register_name": "APBENR1"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 12,
+      "bit_width": 1,
+      "field_id": "field:rcc:apbrstr1:fdcanrst",
+      "name": "FDCANRST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g071rb-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
+      },
+      "register_id": "register:rcc:apbrstr1",
+      "register_name": "APBRSTR1"
     }
   ],
   "registers": [
@@ -105470,6 +105729,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbrstr:dma1rst",
       "register_id": "register:rcc:ahbrstr",
       "register_name": "AHBRSTR",
       "register_offset": 40,
@@ -105488,12 +105748,13 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbrstr:dma1rst",
       "register_id": "register:rcc:ahbrstr",
       "register_name": "AHBRSTR",
       "register_offset": 40,
       "register_peripheral": "RCC",
       "reset_id": "reset:dmamux1",
-      "reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
+      "reset_signal": "RCC_AHBRSTR.DMA1RST"
     },
     {
       "active_level": "high",
@@ -105506,6 +105767,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpioarst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -105524,6 +105786,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiobrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -105542,6 +105805,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiocrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -105560,6 +105824,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiodrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -105578,6 +105843,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiofrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -106042,6 +106308,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbenr:dma1en",
       "register_id": "register:rcc:ahbenr",
       "register_name": "AHBENR",
       "register_offset": 56,
@@ -106067,6 +106334,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbenr:dma1en",
       "register_id": "register:rcc:ahbenr",
       "register_name": "AHBENR",
       "register_offset": 56,
@@ -106074,7 +106342,7 @@
       "schema_id": "alloy.clock.st-stm32g05-rcc-v1-0",
       "subject_id": "DMAMUX1",
       "subject_kind": "peripheral",
-      "target": "RCC_AHBENR.DMAMUX1EN",
+      "target": "RCC_AHBENR.DMA1EN",
       "target_ref_id": "gate:dmamux1",
       "target_ref_kind": "clock-gate",
       "value": "1",
@@ -106092,6 +106360,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpioaen",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -106117,6 +106386,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpioben",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -106142,6 +106412,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpiocen",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -106167,6 +106438,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpioden",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -106192,6 +106464,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:iopenr:gpiofen",
       "register_id": "register:rcc:iopenr",
       "register_name": "IOPENR",
       "register_offset": 52,
@@ -106815,6 +107088,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbrstr:dma1rst",
       "register_id": "register:rcc:ahbrstr",
       "register_name": "AHBRSTR",
       "register_offset": 40,
@@ -106840,6 +107114,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ahbrstr:dma1rst",
       "register_id": "register:rcc:ahbrstr",
       "register_name": "AHBRSTR",
       "register_offset": 40,
@@ -106847,7 +107122,7 @@
       "schema_id": "alloy.clock.st-stm32g05-rcc-v1-0",
       "subject_id": "DMAMUX1",
       "subject_kind": "peripheral",
-      "target": "RCC_AHBRSTR.DMAMUX1RST",
+      "target": "RCC_AHBRSTR.DMA1RST",
       "target_ref_id": "reset:dmamux1",
       "target_ref_kind": "reset",
       "value": "0",
@@ -106865,6 +107140,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpioarst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -106890,6 +107166,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiobrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -106915,6 +107192,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiocrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -106940,6 +107218,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiodrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -106965,6 +107244,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
+      "register_field_id": "field:rcc:ioprstr:gpiofrst",
       "register_id": "register:rcc:ioprstr",
       "register_name": "IOPRSTR",
       "register_offset": 36,
@@ -114793,7 +115073,7 @@
         "source_path": "STM32G071.svd"
       },
       "requirement_id": "requirement:clock-enable:dmamux1",
-      "target": "RCC_AHBENR.DMAMUX1EN",
+      "target": "RCC_AHBENR.DMA1EN",
       "target_ref_id": "gate:dmamux1",
       "target_ref_kind": "clock-gate",
       "value": "1",
@@ -115351,7 +115631,7 @@
         "source_path": "STM32G071.svd"
       },
       "requirement_id": "requirement:reset-release:dmamux1",
-      "target": "RCC_AHBRSTR.DMAMUX1RST",
+      "target": "RCC_AHBRSTR.DMA1RST",
       "target_ref_id": "reset:dmamux1",
       "target_ref_kind": "reset",
       "value": "0",

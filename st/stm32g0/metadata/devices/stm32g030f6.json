@@ -991,7 +991,7 @@
       "register_peripheral": "RCC"
     },
     {
-      "enable_signal": "RCC_AHBENR.DMAMUX1EN",
+      "enable_signal": "RCC_AHBENR.DMA1EN",
       "gate_id": "gate:dmamux1",
       "parent_node": "clock-node:rcc-ahbenr",
       "peripheral": "DMAMUX1",
@@ -1003,6 +1003,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G030.svd"
       },
+      "register_field_id": "field:rcc:ahbenr:dma1en",
       "register_id": "register:rcc:ahbenr",
       "register_name": "AHBENR",
       "register_offset": 56,
@@ -5038,8 +5039,8 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G030.svd"
       },
-      "rcc_enable_signal": "RCC_AHBENR.DMAMUX1EN",
-      "rcc_reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
+      "rcc_enable_signal": "RCC_AHBENR.DMA1EN",
+      "rcc_reset_signal": "RCC_AHBRSTR.DMA1RST"
     },
     {
       "backend_schema_id": "alloy.gpio.st-gpio",
@@ -64221,6 +64222,42 @@
       },
       "register_id": "register:dbg:apb-fz2",
       "register_name": "APB_FZ2"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 12,
+      "bit_width": 1,
+      "field_id": "field:rcc:apbenr1:fdcanen",
+      "name": "FDCANEN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g030f6-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
+      },
+      "register_id": "register:rcc:apbenr1",
+      "register_name": "APBENR1"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 12,
+      "bit_width": 1,
+      "field_id": "field:rcc:apbrstr1:fdcanrst",
+      "name": "FDCANRST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g030f6-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
+      },
+      "register_id": "register:rcc:apbrstr1",
+      "register_name": "APBRSTR1"
     }
   ],
   "registers": [
@@ -71251,12 +71288,13 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G030.svd"
       },
+      "register_field_id": "field:rcc:ahbrstr:dma1rst",
       "register_id": "register:rcc:ahbrstr",
       "register_name": "AHBRSTR",
       "register_offset": 40,
       "register_peripheral": "RCC",
       "reset_id": "reset:dmamux1",
-      "reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
+      "reset_signal": "RCC_AHBRSTR.DMA1RST"
     },
     {
       "active_level": "high",
@@ -71645,6 +71683,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G030.svd"
       },
+      "register_field_id": "field:rcc:ahbenr:dma1en",
       "register_id": "register:rcc:ahbenr",
       "register_name": "AHBENR",
       "register_offset": 56,
@@ -71652,7 +71691,7 @@
       "schema_id": "alloy.clock.st-stm32g0-64-rcc-v1-0",
       "subject_id": "DMAMUX1",
       "subject_kind": "peripheral",
-      "target": "RCC_AHBENR.DMAMUX1EN",
+      "target": "RCC_AHBENR.DMA1EN",
       "target_ref_id": "gate:dmamux1",
       "target_ref_kind": "clock-gate",
       "value": "1",
@@ -72163,6 +72202,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G030.svd"
       },
+      "register_field_id": "field:rcc:ahbrstr:dma1rst",
       "register_id": "register:rcc:ahbrstr",
       "register_name": "AHBRSTR",
       "register_offset": 40,
@@ -72170,7 +72210,7 @@
       "schema_id": "alloy.clock.st-stm32g0-64-rcc-v1-0",
       "subject_id": "DMAMUX1",
       "subject_kind": "peripheral",
-      "target": "RCC_AHBRSTR.DMAMUX1RST",
+      "target": "RCC_AHBRSTR.DMA1RST",
       "target_ref_id": "reset:dmamux1",
       "target_ref_kind": "reset",
       "value": "0",
@@ -73790,7 +73830,7 @@
         "source_path": "STM32G030.svd"
       },
       "requirement_id": "requirement:clock-enable:dmamux1",
-      "target": "RCC_AHBENR.DMAMUX1EN",
+      "target": "RCC_AHBENR.DMA1EN",
       "target_ref_id": "gate:dmamux1",
       "target_ref_kind": "clock-gate",
       "value": "1",
@@ -74168,7 +74208,7 @@
         "source_path": "STM32G030.svd"
       },
       "requirement_id": "requirement:reset-release:dmamux1",
-      "target": "RCC_AHBRSTR.DMAMUX1RST",
+      "target": "RCC_AHBRSTR.DMA1RST",
       "target_ref_id": "reset:dmamux1",
       "target_ref_kind": "reset",
       "value": "0",

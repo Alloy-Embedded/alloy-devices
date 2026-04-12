@@ -1054,8 +1054,8 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G030.svd"
       },
-      "rcc_enable_signal": "RCC_AHBENR.DMAMUX1EN",
-      "rcc_reset_signal": "RCC_AHBRSTR.DMAMUX1RST"
+      "rcc_enable_signal": "RCC_AHBENR.DMA1EN",
+      "rcc_reset_signal": "RCC_AHBRSTR.DMA1RST"
     },
     {
       "backend_schema_id": "alloy.exti.st-exti",

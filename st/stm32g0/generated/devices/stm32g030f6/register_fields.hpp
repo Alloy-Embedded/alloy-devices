@@ -1905,6 +1905,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apbenr1_usart6en,
   field_rcc_apbenr1_rtcapben,
   field_rcc_apbenr1_wwdgen,
+  field_rcc_apbenr1_fdcanen,
   field_rcc_apbenr1_usben,
   field_rcc_apbenr1_spi2en,
   field_rcc_apbenr1_spi3en,
@@ -1931,6 +1932,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apbrstr1_tim7rst,
   field_rcc_apbrstr1_usart5rst,
   field_rcc_apbrstr1_usart6rst,
+  field_rcc_apbrstr1_fdcanrst,
   field_rcc_apbrstr1_usbrst,
   field_rcc_apbrstr1_spi2rst,
   field_rcc_apbrstr1_spi3rst,
@@ -3228,7 +3230,7 @@ struct RegisterFieldDescriptor {
   std::uint16_t bit_width;
   AccessKindId access_id;
 };
-inline constexpr std::array<RegisterFieldDescriptor, 3207> kRegisterFields = {{
+inline constexpr std::array<RegisterFieldDescriptor, 3209> kRegisterFields = {{
   {FieldId::field_adc1_adc_awd1tr_lt1, RegisterId::register_adc1_adc_awd1tr, PeripheralId::ADC1, 0u, 12u, AccessKindId::access_kind_read_write},
   {FieldId::field_adc1_adc_awd1tr_ht1, RegisterId::register_adc1_adc_awd1tr, PeripheralId::ADC1, 16u, 12u, AccessKindId::access_kind_read_write},
   {FieldId::field_adc1_adc_awd2cr_awd2ch0, RegisterId::register_adc1_adc_awd2cr, PeripheralId::ADC1, 0u, 1u, AccessKindId::access_kind_read_write},
@@ -5123,6 +5125,7 @@ inline constexpr std::array<RegisterFieldDescriptor, 3207> kRegisterFields = {{
   {FieldId::field_rcc_apbenr1_usart6en, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 9u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbenr1_rtcapben, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 10u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbenr1_wwdgen, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 11u, 1u, AccessKindId::access_kind_read_write},
+  {FieldId::field_rcc_apbenr1_fdcanen, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 12u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbenr1_usben, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 13u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbenr1_spi2en, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 14u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbenr1_spi3en, RegisterId::register_rcc_apbenr1, PeripheralId::RCC, 15u, 1u, AccessKindId::access_kind_read_write},
@@ -5149,6 +5152,7 @@ inline constexpr std::array<RegisterFieldDescriptor, 3207> kRegisterFields = {{
   {FieldId::field_rcc_apbrstr1_tim7rst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 5u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbrstr1_usart5rst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 8u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbrstr1_usart6rst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 9u, 1u, AccessKindId::access_kind_read_write},
+  {FieldId::field_rcc_apbrstr1_fdcanrst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 12u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbrstr1_usbrst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 13u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbrstr1_spi2rst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 14u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apbrstr1_spi3rst, RegisterId::register_rcc_apbrstr1, PeripheralId::RCC, 15u, 1u, AccessKindId::access_kind_read_write},
