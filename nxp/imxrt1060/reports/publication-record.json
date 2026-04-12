@@ -40,7 +40,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:37760d4e214ef63ec866aea2f421affb6140fab17263813b14fc1f744a49a353",
+          "revision": "content-sha256:eb511f842cb0c91760775c93cecd4ffa79a9722380387519f84638899375b5bb",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -53,7 +53,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:1663df434ff83b8389370e83c87050a662e8bb893390808de91f2ef395465780",
+          "revision": "content-sha256:1981097b433a1e5aebf41d5bfee99a1441ebe09c51a9fad772c32a5353d731f7",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -66,7 +66,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:37760d4e214ef63ec866aea2f421affb6140fab17263813b14fc1f744a49a353",
+          "revision": "content-sha256:eb511f842cb0c91760775c93cecd4ffa79a9722380387519f84638899375b5bb",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -79,7 +79,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:1663df434ff83b8389370e83c87050a662e8bb893390808de91f2ef395465780",
+          "revision": "content-sha256:1981097b433a1e5aebf41d5bfee99a1441ebe09c51a9fad772c32a5353d731f7",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -144,12 +144,12 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 74,
+  "published_artifact_count": 84,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3740,
-      "content_sha256": "6a8fd72f836cb891d05135cb08e12026581eeb6531d8cc9a3b094424d0aff527",
+      "content_sha256": "19d7cab5be1f1ae06349ea68201a5a8852dcbaf498b7682e386b16b088b6c43a",
       "path": "nxp/imxrt1060/artifact-manifest.json"
     },
     {
@@ -430,6 +430,36 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 763,
+      "content_sha256": "8bf41efa2fed41a393a49b78605452573016a386de2b5026e4dcad532b2453f7",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/common.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 265323,
+      "content_sha256": "4044afba139799999df30d915fb5cb8962c0a4bc486ee2de0ce148ae121b02c0",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/gpio.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 5057,
+      "content_sha256": "16533a59ef4ac2826def6a08762b0ede7b50432acaf18842079fe86f85dbeddd",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 26026,
+      "content_sha256": "960b77b394e92086252a80a348a93ec5b15d1f38c86679f0fc353e49b9493df7",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/spi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 55185,
+      "content_sha256": "30a64bb2e4b4644359c54529dd8aafd3fe8f9f2f551cd3e0643a96636d837a21",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/uart.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 15165,
       "content_sha256": "2801c5e052fa97350c94fba572c9cabedba9aad8bdfab9dc102d30b9d94ffbe5",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/peripheral_instances.hpp"
@@ -463,6 +493,36 @@
       "content_bytes": 13633,
       "content_sha256": "e085b92a72b834400119246cc3876612a0c90349d5fddf97849567aaca9f53ff",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/clock_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 763,
+      "content_sha256": "3dc90b3dec871a0009b6cf34b8880a09a0811ae2a4c851536bf664e0991023f8",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/common.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 265323,
+      "content_sha256": "406874286d9d2b7e993c05cf91c325caf562c844732a7902481aa892842942ac",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/gpio.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 5057,
+      "content_sha256": "7d0aff3508c0574df4b313638ced355e6e51d9b336075e714a7ec7c4bbdb1b03",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 26026,
+      "content_sha256": "b096f2818768ffe75b8379db511cd0b8d5bdc210b9e2c0f0c97b3108edc32cae",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/spi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 55185,
+      "content_sha256": "9d456002fdb7959c127c77e3b939eb2419f4aa8bf883838d44466675556ab298",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/uart.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -596,7 +656,7 @@
     "family": "imxrt1060",
     "vendor": "nxp"
   },
-  "target_artifact_revision": "8bac2429a775fb1eaa02a60f8c158ed08504781b9971378bf5ceadf54f90ffa8",
+  "target_artifact_revision": "e2d9b14e74fe5b61340dc9d2b2ecb93ebe3aa9fcc4918e6390a4986a6a6975bb",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
