@@ -1,81 +1,154 @@
 #pragma once
 
+#include <array>
+#include <cstdint>
+#include "../../runtime_semantics.hpp"
+#include "interrupt_bindings.hpp"
+
 namespace st {
 namespace stm32g0 {
 namespace generated {
 namespace devices {
 namespace stm32g0b1re {
-struct VectorSlotDescriptor {
-  int slot;
-  const char* symbol_name;
-  const char* interrupt_name;
-  const char* kind;
-};
-inline constexpr VectorSlotDescriptor kVectorSlots[] = {
-  {0, "__stack_top", nullptr, "initial-stack-pointer"},
-  {1, "Reset_Handler", nullptr, "reset-handler"},
-  {2, "NMI_Handler", nullptr, "system-exception"},
-  {3, "HardFault_Handler", nullptr, "system-exception"},
-  {4, "Reserved_Handler_4", nullptr, "reserved"},
-  {5, "Reserved_Handler_5", nullptr, "reserved"},
-  {6, "Reserved_Handler_6", nullptr, "reserved"},
-  {7, "Reserved_Handler_7", nullptr, "reserved"},
-  {8, "Reserved_Handler_8", nullptr, "reserved"},
-  {9, "Reserved_Handler_9", nullptr, "reserved"},
-  {10, "Reserved_Handler_10", nullptr, "reserved"},
-  {11, "SVCall_Handler", nullptr, "system-exception"},
-  {12, "Reserved_Handler_12", nullptr, "reserved"},
-  {13, "Reserved_Handler_13", nullptr, "reserved"},
-  {14, "PendSV_Handler", nullptr, "system-exception"},
-  {15, "SysTick_Handler", nullptr, "system-exception"},
-  {16, "WWDG_IRQHandler", "WWDG", "external-interrupt"},
-  {17, "PVD_IRQHandler", "PVD", "external-interrupt"},
-  {18, "RTC_TAMP_IRQHandler", "RTC_TAMP", "external-interrupt"},
-  {19, "FLASH_IRQHandler", "FLASH", "external-interrupt"},
-  {20, "RCC_CRS_IRQHandler", "RCC_CRS", "external-interrupt"},
-  {21, "EXTI0_1_IRQHandler", "EXTI0_1", "external-interrupt"},
-  {22, "EXTI2_3_IRQHandler", "EXTI2_3", "external-interrupt"},
-  {23, "EXTI4_15_IRQHandler", "EXTI4_15", "external-interrupt"},
-  {24, "UCPD1_UCPD2_USB_IRQHandler", "UCPD1_UCPD2_USB", "external-interrupt"},
-  {25, "DMA1_Channel1_IRQHandler", "DMA1_Channel1", "external-interrupt"},
-  {26, "DMA1_Channel2_3_IRQHandler", "DMA1_Channel2_3", "external-interrupt"},
-  {27, "DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5_IRQHandler", "DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5", "external-interrupt"},
-  {28, "ADC_COMP_IRQHandler", "ADC_COMP", "external-interrupt"},
-  {29, "TIM1_BRK_UP_TRG_COM_IRQHandler", "TIM1_BRK_UP_TRG_COM", "external-interrupt"},
-  {30, "TIM1_CC_IRQHandler", "TIM1_CC", "external-interrupt"},
-  {31, "TIM2_IRQHandler", "TIM2", "external-interrupt"},
-  {32, "TIM3_TIM4_IRQHandler", "TIM3_TIM4", "external-interrupt"},
-  {33, "TIM6_DAC_LPTIM1_IRQHandler", "TIM6_DAC_LPTIM1", "external-interrupt"},
-  {34, "TIM7_IRQHandler", "TIM7", "external-interrupt"},
-  {35, "TIM14_IRQHandler", "TIM14", "external-interrupt"},
-  {36, "TIM15_IRQHandler", "TIM15", "external-interrupt"},
-  {37, "TIM16_IRQHandler", "TIM16", "external-interrupt"},
-  {38, "TIM17_IRQHandler", "TIM17", "external-interrupt"},
-  {39, "I2C1_IRQHandler", "I2C1", "external-interrupt"},
-  {40, "I2C2_I2C3_IRQHandler", "I2C2_I2C3", "external-interrupt"},
-  {41, "SPI1_IRQHandler", "SPI1", "external-interrupt"},
-  {42, "SPI2_SPI3_IRQHandler", "SPI2_SPI3", "external-interrupt"},
-  {43, "USART1_IRQHandler", "USART1", "external-interrupt"},
-  {44, "USART2_LPUART2_IRQHandler", "USART2_LPUART2", "external-interrupt"},
-  {45, "USART3_USART4_USART5_USART6_LPUART1_IRQHandler", "USART3_USART4_USART5_USART6_LPUART1", "external-interrupt"},
-  {46, "CEC_IRQHandler", "CEC", "external-interrupt"},
+enum class StartupMemoryRegionId : std::uint16_t {
+  none,
+  flash,
+  sram,
 };
 
+enum class StartupSymbolId : std::uint16_t {
+  none,
+  ADC_COMP_IRQHandler,
+  CEC_IRQHandler,
+  DMA1_Channel1_IRQHandler,
+  DMA1_Channel2_3_IRQHandler,
+  DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5_IRQHandler,
+  EXTI0_1_IRQHandler,
+  EXTI2_3_IRQHandler,
+  EXTI4_15_IRQHandler,
+  FLASH_IRQHandler,
+  HardFault_Handler,
+  I2C1_IRQHandler,
+  I2C2_I2C3_IRQHandler,
+  NMI_Handler,
+  PVD_IRQHandler,
+  PendSV_Handler,
+  RCC_CRS_IRQHandler,
+  RTC_TAMP_IRQHandler,
+  Reserved_Handler_10,
+  Reserved_Handler_12,
+  Reserved_Handler_13,
+  Reserved_Handler_4,
+  Reserved_Handler_5,
+  Reserved_Handler_6,
+  Reserved_Handler_7,
+  Reserved_Handler_8,
+  Reserved_Handler_9,
+  Reset_Handler,
+  SPI1_IRQHandler,
+  SPI2_SPI3_IRQHandler,
+  SVCall_Handler,
+  SysTick_Handler,
+  TIM14_IRQHandler,
+  TIM15_IRQHandler,
+  TIM16_IRQHandler,
+  TIM17_IRQHandler,
+  TIM1_BRK_UP_TRG_COM_IRQHandler,
+  TIM1_CC_IRQHandler,
+  TIM2_IRQHandler,
+  TIM3_TIM4_IRQHandler,
+  TIM6_DAC_LPTIM1_IRQHandler,
+  TIM7_IRQHandler,
+  UCPD1_UCPD2_USB_IRQHandler,
+  USART1_IRQHandler,
+  USART2_LPUART2_IRQHandler,
+  USART3_USART4_USART5_USART6_LPUART1_IRQHandler,
+  WWDG_IRQHandler,
+  __stack_top,
+  _vectors,
+};
+
+enum class StartupDescriptorId : std::uint16_t {
+  none,
+  startup_copy_source_flash,
+  startup_copy_target_sram,
+  startup_stack_top,
+  startup_vector_source_flash,
+  startup_vectors,
+  startup_zero_target_sram,
+};
+
+struct VectorSlotDescriptor {
+  int slot;
+  StartupSymbolId symbol_id;
+  InterruptBindingId interrupt_binding_id;
+  VectorKindId kind_id;
+};
+inline constexpr std::array<VectorSlotDescriptor, 47> kVectorSlots = {{
+  {0, StartupSymbolId::__stack_top, InterruptBindingId::none, VectorKindId::vector_kind_initial_stack_pointer},
+  {1, StartupSymbolId::Reset_Handler, InterruptBindingId::none, VectorKindId::vector_kind_reset_handler},
+  {2, StartupSymbolId::NMI_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
+  {3, StartupSymbolId::HardFault_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
+  {4, StartupSymbolId::Reserved_Handler_4, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {5, StartupSymbolId::Reserved_Handler_5, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {6, StartupSymbolId::Reserved_Handler_6, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {7, StartupSymbolId::Reserved_Handler_7, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {8, StartupSymbolId::Reserved_Handler_8, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {9, StartupSymbolId::Reserved_Handler_9, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {10, StartupSymbolId::Reserved_Handler_10, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {11, StartupSymbolId::SVCall_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
+  {12, StartupSymbolId::Reserved_Handler_12, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {13, StartupSymbolId::Reserved_Handler_13, InterruptBindingId::none, VectorKindId::vector_kind_reserved},
+  {14, StartupSymbolId::PendSV_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
+  {15, StartupSymbolId::SysTick_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
+  {16, StartupSymbolId::WWDG_IRQHandler, InterruptBindingId::interrupt_binding_wwdg_wwdg, VectorKindId::vector_kind_external_interrupt},
+  {17, StartupSymbolId::PVD_IRQHandler, InterruptBindingId::interrupt_binding_pwr_pvd, VectorKindId::vector_kind_external_interrupt},
+  {18, StartupSymbolId::RTC_TAMP_IRQHandler, InterruptBindingId::interrupt_binding_rtc_rtc_tamp, VectorKindId::vector_kind_external_interrupt},
+  {19, StartupSymbolId::FLASH_IRQHandler, InterruptBindingId::interrupt_binding_flash_flash, VectorKindId::vector_kind_external_interrupt},
+  {20, StartupSymbolId::RCC_CRS_IRQHandler, InterruptBindingId::interrupt_binding_rcc_rcc_crs, VectorKindId::vector_kind_external_interrupt},
+  {21, StartupSymbolId::EXTI0_1_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti0_1, VectorKindId::vector_kind_external_interrupt},
+  {22, StartupSymbolId::EXTI2_3_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti2_3, VectorKindId::vector_kind_external_interrupt},
+  {23, StartupSymbolId::EXTI4_15_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti4_15, VectorKindId::vector_kind_external_interrupt},
+  {24, StartupSymbolId::UCPD1_UCPD2_USB_IRQHandler, InterruptBindingId::interrupt_binding_ucpd1_ucpd1_ucpd2_usb, VectorKindId::vector_kind_external_interrupt},
+  {25, StartupSymbolId::DMA1_Channel1_IRQHandler, InterruptBindingId::interrupt_binding_dma1_dma1_channel1, VectorKindId::vector_kind_external_interrupt},
+  {26, StartupSymbolId::DMA1_Channel2_3_IRQHandler, InterruptBindingId::interrupt_binding_dma1_dma1_channel2_3, VectorKindId::vector_kind_external_interrupt},
+  {27, StartupSymbolId::DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5_IRQHandler, InterruptBindingId::interrupt_binding_dma1_dma1_channel4_5_6_7_dmamux_dma2_channel1_2_3_4_5, VectorKindId::vector_kind_external_interrupt},
+  {28, StartupSymbolId::ADC_COMP_IRQHandler, InterruptBindingId::interrupt_binding_adc1_adc_comp, VectorKindId::vector_kind_external_interrupt},
+  {29, StartupSymbolId::TIM1_BRK_UP_TRG_COM_IRQHandler, InterruptBindingId::interrupt_binding_tim1_tim1_brk_up_trg_com, VectorKindId::vector_kind_external_interrupt},
+  {30, StartupSymbolId::TIM1_CC_IRQHandler, InterruptBindingId::interrupt_binding_tim1_tim1_cc, VectorKindId::vector_kind_external_interrupt},
+  {31, StartupSymbolId::TIM2_IRQHandler, InterruptBindingId::interrupt_binding_tim2_tim2, VectorKindId::vector_kind_external_interrupt},
+  {32, StartupSymbolId::TIM3_TIM4_IRQHandler, InterruptBindingId::interrupt_binding_tim3_tim3_tim4, VectorKindId::vector_kind_external_interrupt},
+  {33, StartupSymbolId::TIM6_DAC_LPTIM1_IRQHandler, InterruptBindingId::interrupt_binding_dac_tim6_dac_lptim1, VectorKindId::vector_kind_external_interrupt},
+  {34, StartupSymbolId::TIM7_IRQHandler, InterruptBindingId::interrupt_binding_tim7_tim7, VectorKindId::vector_kind_external_interrupt},
+  {35, StartupSymbolId::TIM14_IRQHandler, InterruptBindingId::interrupt_binding_tim14_tim14, VectorKindId::vector_kind_external_interrupt},
+  {36, StartupSymbolId::TIM15_IRQHandler, InterruptBindingId::interrupt_binding_tim15_tim15, VectorKindId::vector_kind_external_interrupt},
+  {37, StartupSymbolId::TIM16_IRQHandler, InterruptBindingId::interrupt_binding_tim16_tim16, VectorKindId::vector_kind_external_interrupt},
+  {38, StartupSymbolId::TIM17_IRQHandler, InterruptBindingId::interrupt_binding_tim17_tim17, VectorKindId::vector_kind_external_interrupt},
+  {39, StartupSymbolId::I2C1_IRQHandler, InterruptBindingId::interrupt_binding_i2c1_i2c1, VectorKindId::vector_kind_external_interrupt},
+  {40, StartupSymbolId::I2C2_I2C3_IRQHandler, InterruptBindingId::interrupt_binding_i2c2_i2c2_i2c3, VectorKindId::vector_kind_external_interrupt},
+  {41, StartupSymbolId::SPI1_IRQHandler, InterruptBindingId::interrupt_binding_spi1_spi1, VectorKindId::vector_kind_external_interrupt},
+  {42, StartupSymbolId::SPI2_SPI3_IRQHandler, InterruptBindingId::interrupt_binding_spi2_spi2_spi3, VectorKindId::vector_kind_external_interrupt},
+  {43, StartupSymbolId::USART1_IRQHandler, InterruptBindingId::interrupt_binding_usart1_usart1, VectorKindId::vector_kind_external_interrupt},
+  {44, StartupSymbolId::USART2_LPUART2_IRQHandler, InterruptBindingId::interrupt_binding_usart2_usart2_lpuart2, VectorKindId::vector_kind_external_interrupt},
+  {45, StartupSymbolId::USART3_USART4_USART5_USART6_LPUART1_IRQHandler, InterruptBindingId::interrupt_binding_usart3_usart3_usart4_usart5_usart6_lpuart1, VectorKindId::vector_kind_external_interrupt},
+  {46, StartupSymbolId::CEC_IRQHandler, InterruptBindingId::interrupt_binding_hdmi_cec_cec, VectorKindId::vector_kind_external_interrupt},
+}};
+
 struct StartupDescriptor {
-  const char* descriptor_id;
-  const char* kind;
-  const char* source_region;
-  const char* target_region;
-  const char* symbol;
+  StartupDescriptorId descriptor_id;
+  StartupKindId kind_id;
+  StartupMemoryRegionId source_region_id;
+  StartupMemoryRegionId target_region_id;
+  StartupSymbolId symbol_id;
 };
-inline constexpr StartupDescriptor kStartupDescriptors[] = {
-  {"startup:copy-source:flash", "copy-source-region", "flash", nullptr, nullptr},
-  {"startup:copy-target:sram", "copy-target-region", nullptr, "sram", nullptr},
-  {"startup:stack-top", "initial-stack-pointer", nullptr, nullptr, "__stack_top"},
-  {"startup:vector-source:flash", "vector-source-region", "flash", nullptr, nullptr},
-  {"startup:vectors", "vector-table", nullptr, nullptr, "_vectors"},
-  {"startup:zero-target:sram", "zero-target-region", nullptr, "sram", nullptr},
-};
+inline constexpr std::array<StartupDescriptor, 6> kStartupDescriptors = {{
+  {StartupDescriptorId::startup_copy_source_flash, StartupKindId::startup_kind_copy_source_region, StartupMemoryRegionId::flash, StartupMemoryRegionId::none, StartupSymbolId::none},
+  {StartupDescriptorId::startup_copy_target_sram, StartupKindId::startup_kind_copy_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::sram, StartupSymbolId::none},
+  {StartupDescriptorId::startup_stack_top, StartupKindId::startup_kind_initial_stack_pointer, StartupMemoryRegionId::none, StartupMemoryRegionId::none, StartupSymbolId::__stack_top},
+  {StartupDescriptorId::startup_vector_source_flash, StartupKindId::startup_kind_vector_source_region, StartupMemoryRegionId::flash, StartupMemoryRegionId::none, StartupSymbolId::none},
+  {StartupDescriptorId::startup_vectors, StartupKindId::startup_kind_vector_table, StartupMemoryRegionId::none, StartupMemoryRegionId::none, StartupSymbolId::_vectors},
+  {StartupDescriptorId::startup_zero_target_sram, StartupKindId::startup_kind_zero_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::sram, StartupSymbolId::none},
+}};
 }
 }
 }

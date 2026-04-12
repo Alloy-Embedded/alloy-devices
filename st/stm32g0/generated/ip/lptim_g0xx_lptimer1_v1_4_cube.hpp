@@ -1,44 +1,53 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32g0 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "lptim",
-  "G0xx_lptimer1_v1_4_Cube",
-  "lptim",
-  "alloy.lptim.st-g0xx-lptimer1-v1-4-cube",
-  "lptim:G0xx_lptimer1_v1_4_Cube",
-  "etr,in1,in2,out",
+  IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube,
+  PeripheralClassId::class_lptim,
+  BackendSchemaId::schema_alloy_lptim_st_g0xx_lptimer1_v1_4_cube,
+  RegisterProfileId::register_profile_lptim_G0xx_lptimer1_v1_4_Cube,
+  0u,
+  4u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 4> kSignalRoles = {{
+  {IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube, SignalRoleId::signal_role_etr},
+  {IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube, SignalRoleId::signal_role_in1},
+  {IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube, SignalRoleId::signal_role_in2},
+  {IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube, SignalRoleId::signal_role_out},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 4> kCapabilities = {{
-  {"capability:lptim:g0xx-lptimer1-v1-4-cube:etr", "ip-block", "lptim", "signal-role", "etr", "lptim", "G0xx_lptimer1_v1_4_Cube", nullptr, nullptr},
-  {"capability:lptim:g0xx-lptimer1-v1-4-cube:in1", "ip-block", "lptim", "signal-role", "in1", "lptim", "G0xx_lptimer1_v1_4_Cube", nullptr, nullptr},
-  {"capability:lptim:g0xx-lptimer1-v1-4-cube:in2", "ip-block", "lptim", "signal-role", "in2", "lptim", "G0xx_lptimer1_v1_4_Cube", nullptr, nullptr},
-  {"capability:lptim:g0xx-lptimer1-v1-4-cube:out", "ip-block", "lptim", "signal-role", "out", "lptim", "G0xx_lptimer1_v1_4_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_lptim_g0xx_lptimer1_v1_4_cube_etr, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_lptim, CapabilityKeyId::capability_signal_role_etr, IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube},
+  {CapabilityId::capability_id_capability_lptim_g0xx_lptimer1_v1_4_cube_in1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_lptim, CapabilityKeyId::capability_signal_role_in1, IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube},
+  {CapabilityId::capability_id_capability_lptim_g0xx_lptimer1_v1_4_cube_in2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_lptim, CapabilityKeyId::capability_signal_role_in2, IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube},
+  {CapabilityId::capability_id_capability_lptim_g0xx_lptimer1_v1_4_cube_out, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_lptim, CapabilityKeyId::capability_signal_role_out, IpBlockId::ip_block_lptim_G0xx_lptimer1_v1_4_Cube},
 }};
 }
 }

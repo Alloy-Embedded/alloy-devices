@@ -1,42 +1,49 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32g0 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "fdcan",
-  "fdcan1_v1_0_Cube",
-  "fdcan",
-  "alloy.fdcan.st-fdcan1-v1-0-cube",
-  "fdcan:fdcan1_v1_0_Cube",
-  "rx,tx",
+  IpBlockId::ip_block_fdcan_fdcan1_v1_0_Cube,
+  PeripheralClassId::class_fdcan,
+  BackendSchemaId::schema_alloy_fdcan_st_fdcan1_v1_0_cube,
+  RegisterProfileId::register_profile_fdcan_fdcan1_v1_0_Cube,
+  0u,
+  2u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 2> kSignalRoles = {{
+  {IpBlockId::ip_block_fdcan_fdcan1_v1_0_Cube, SignalRoleId::signal_role_rx},
+  {IpBlockId::ip_block_fdcan_fdcan1_v1_0_Cube, SignalRoleId::signal_role_tx},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 2> kCapabilities = {{
-  {"capability:fdcan:fdcan1-v1-0-cube:rx", "ip-block", "fdcan", "signal-role", "rx", "fdcan", "fdcan1_v1_0_Cube", nullptr, nullptr},
-  {"capability:fdcan:fdcan1-v1-0-cube:tx", "ip-block", "fdcan", "signal-role", "tx", "fdcan", "fdcan1_v1_0_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_fdcan_fdcan1_v1_0_cube_rx, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_fdcan, CapabilityKeyId::capability_signal_role_rx, IpBlockId::ip_block_fdcan_fdcan1_v1_0_Cube},
+  {CapabilityId::capability_id_capability_fdcan_fdcan1_v1_0_cube_tx, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_fdcan, CapabilityKeyId::capability_signal_role_tx, IpBlockId::ip_block_fdcan_fdcan1_v1_0_Cube},
 }};
 }
 }

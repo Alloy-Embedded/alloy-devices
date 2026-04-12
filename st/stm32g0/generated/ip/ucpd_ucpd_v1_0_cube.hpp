@@ -1,42 +1,49 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32g0 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "ucpd",
-  "ucpd_v1_0_Cube",
-  "ucpd",
-  "alloy.ucpd.st-ucpd-v1-0-cube",
-  "ucpd:ucpd_v1_0_Cube",
-  "frstx1,frstx2",
+  IpBlockId::ip_block_ucpd_ucpd_v1_0_Cube,
+  PeripheralClassId::class_ucpd,
+  BackendSchemaId::schema_alloy_ucpd_st_ucpd_v1_0_cube,
+  RegisterProfileId::register_profile_ucpd_ucpd_v1_0_Cube,
+  0u,
+  2u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 2> kSignalRoles = {{
+  {IpBlockId::ip_block_ucpd_ucpd_v1_0_Cube, SignalRoleId::signal_role_frstx1},
+  {IpBlockId::ip_block_ucpd_ucpd_v1_0_Cube, SignalRoleId::signal_role_frstx2},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 2> kCapabilities = {{
-  {"capability:ucpd:ucpd-v1-0-cube:frstx1", "ip-block", "ucpd", "signal-role", "frstx1", "ucpd", "ucpd_v1_0_Cube", nullptr, nullptr},
-  {"capability:ucpd:ucpd-v1-0-cube:frstx2", "ip-block", "ucpd", "signal-role", "frstx2", "ucpd", "ucpd_v1_0_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_ucpd_ucpd_v1_0_cube_frstx1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ucpd, CapabilityKeyId::capability_signal_role_frstx1, IpBlockId::ip_block_ucpd_ucpd_v1_0_Cube},
+  {CapabilityId::capability_id_capability_ucpd_ucpd_v1_0_cube_frstx2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_ucpd, CapabilityKeyId::capability_signal_role_frstx2, IpBlockId::ip_block_ucpd_ucpd_v1_0_Cube},
 }};
 }
 }

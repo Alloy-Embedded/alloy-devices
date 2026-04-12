@@ -1,44 +1,53 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32g0 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "spi",
-  "spi2s1_v3_3_Cube",
-  "spi",
-  "alloy.spi.st-spi2s1-v3-3-cube",
-  "spi:spi2s1_v3_3_Cube",
-  "miso,mosi,nss,sck",
+  IpBlockId::ip_block_spi_spi2s1_v3_3_Cube,
+  PeripheralClassId::class_spi,
+  BackendSchemaId::schema_alloy_spi_st_spi2s1_v3_3_cube,
+  RegisterProfileId::register_profile_spi_spi2s1_v3_3_Cube,
+  0u,
+  4u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 4> kSignalRoles = {{
+  {IpBlockId::ip_block_spi_spi2s1_v3_3_Cube, SignalRoleId::signal_role_miso},
+  {IpBlockId::ip_block_spi_spi2s1_v3_3_Cube, SignalRoleId::signal_role_mosi},
+  {IpBlockId::ip_block_spi_spi2s1_v3_3_Cube, SignalRoleId::signal_role_nss},
+  {IpBlockId::ip_block_spi_spi2s1_v3_3_Cube, SignalRoleId::signal_role_sck},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 4> kCapabilities = {{
-  {"capability:spi:spi2s1-v3-3-cube:miso", "ip-block", "spi", "signal-role", "miso", "spi", "spi2s1_v3_3_Cube", nullptr, nullptr},
-  {"capability:spi:spi2s1-v3-3-cube:mosi", "ip-block", "spi", "signal-role", "mosi", "spi", "spi2s1_v3_3_Cube", nullptr, nullptr},
-  {"capability:spi:spi2s1-v3-3-cube:nss", "ip-block", "spi", "signal-role", "nss", "spi", "spi2s1_v3_3_Cube", nullptr, nullptr},
-  {"capability:spi:spi2s1-v3-3-cube:sck", "ip-block", "spi", "signal-role", "sck", "spi", "spi2s1_v3_3_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_spi_spi2s1_v3_3_cube_miso, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_spi, CapabilityKeyId::capability_signal_role_miso, IpBlockId::ip_block_spi_spi2s1_v3_3_Cube},
+  {CapabilityId::capability_id_capability_spi_spi2s1_v3_3_cube_mosi, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_spi, CapabilityKeyId::capability_signal_role_mosi, IpBlockId::ip_block_spi_spi2s1_v3_3_Cube},
+  {CapabilityId::capability_id_capability_spi_spi2s1_v3_3_cube_nss, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_spi, CapabilityKeyId::capability_signal_role_nss, IpBlockId::ip_block_spi_spi2s1_v3_3_Cube},
+  {CapabilityId::capability_id_capability_spi_spi2s1_v3_3_cube_sck, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_spi, CapabilityKeyId::capability_signal_role_sck, IpBlockId::ip_block_spi_spi2s1_v3_3_Cube},
 }};
 }
 }
