@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include "runtime_refs.hpp"
 
 namespace nxp {
 namespace imxrt1060 {
@@ -35,6 +36,7 @@ enum class ClockNodeId : std::uint16_t {
 };
 
 enum class ClockSelectorId : std::uint16_t {
+  none,
   mimxrt1062_selector_lpi2c_root,
   mimxrt1062_selector_lpspi_root,
   mimxrt1062_selector_lpuart_root,
@@ -44,6 +46,7 @@ enum class ClockSelectorId : std::uint16_t {
 };
 
 enum class ClockGateId : std::uint16_t {
+  none,
   mimxrt1062_gate_flexspi,
   mimxrt1062_gate_flexspi2,
   mimxrt1062_gate_gpio1,
@@ -143,16 +146,16 @@ struct ClockSelectorDescriptor {
   const char* register_peripheral;
   const char* register_name;
   int register_offset;
-  const char* register_id;
-  const char* register_field_id;
+  RegisterRefId register_id;
+  RegisterFieldRefId register_field_id;
 };
 inline constexpr std::array<ClockSelectorDescriptor, 6> kClockSelectors = {{
-  {"mimxrt1062", ClockSelectorId::mimxrt1062_selector_lpi2c_root, "selector:lpi2c-root", 0u, 2u, "CCM_CSCDR2.LPI2C_CLK_SEL", "CCM", "CSCDR2", 56, "register:ccm:cscdr2", "field:ccm:cscdr2:lpi2c-clk-sel"},
-  {"mimxrt1062", ClockSelectorId::mimxrt1062_selector_lpspi_root, "selector:lpspi-root", 2u, 2u, "CCM_CBCMR.LPSPI_CLK_SEL", "CCM", "CBCMR", 24, "register:ccm:cbcmr", "field:ccm:cbcmr:lpspi-clk-sel"},
-  {"mimxrt1062", ClockSelectorId::mimxrt1062_selector_lpuart_root, "selector:lpuart-root", 4u, 2u, "CCM_CSCDR1.UART_CLK_SEL", "CCM", "CSCDR1", 36, "register:ccm:cscdr1", "field:ccm:cscdr1:uart-clk-sel"},
-  {"mimxrt1064", ClockSelectorId::mimxrt1064_selector_lpi2c_root, "selector:lpi2c-root", 6u, 2u, "CCM_CSCDR2.LPI2C_CLK_SEL", "CCM", "CSCDR2", 56, "register:ccm:cscdr2", "field:ccm:cscdr2:lpi2c-clk-sel"},
-  {"mimxrt1064", ClockSelectorId::mimxrt1064_selector_lpspi_root, "selector:lpspi-root", 8u, 2u, "CCM_CBCMR.LPSPI_CLK_SEL", "CCM", "CBCMR", 24, "register:ccm:cbcmr", "field:ccm:cbcmr:lpspi-clk-sel"},
-  {"mimxrt1064", ClockSelectorId::mimxrt1064_selector_lpuart_root, "selector:lpuart-root", 10u, 2u, "CCM_CSCDR1.UART_CLK_SEL", "CCM", "CSCDR1", 36, "register:ccm:cscdr1", "field:ccm:cscdr1:uart-clk-sel"},
+  {"mimxrt1062", ClockSelectorId::mimxrt1062_selector_lpi2c_root, "selector:lpi2c-root", 0u, 2u, "CCM_CSCDR2.LPI2C_CLK_SEL", "CCM", "CSCDR2", 56, RegisterRefId::mimxrt1062_register_ccm_cscdr2, RegisterFieldRefId::mimxrt1062_field_ccm_cscdr2_lpi2c_clk_sel},
+  {"mimxrt1062", ClockSelectorId::mimxrt1062_selector_lpspi_root, "selector:lpspi-root", 2u, 2u, "CCM_CBCMR.LPSPI_CLK_SEL", "CCM", "CBCMR", 24, RegisterRefId::mimxrt1062_register_ccm_cbcmr, RegisterFieldRefId::mimxrt1062_field_ccm_cbcmr_lpspi_clk_sel},
+  {"mimxrt1062", ClockSelectorId::mimxrt1062_selector_lpuart_root, "selector:lpuart-root", 4u, 2u, "CCM_CSCDR1.UART_CLK_SEL", "CCM", "CSCDR1", 36, RegisterRefId::mimxrt1062_register_ccm_cscdr1, RegisterFieldRefId::mimxrt1062_field_ccm_cscdr1_uart_clk_sel},
+  {"mimxrt1064", ClockSelectorId::mimxrt1064_selector_lpi2c_root, "selector:lpi2c-root", 6u, 2u, "CCM_CSCDR2.LPI2C_CLK_SEL", "CCM", "CSCDR2", 56, RegisterRefId::mimxrt1064_register_ccm_cscdr2, RegisterFieldRefId::mimxrt1064_field_ccm_cscdr2_lpi2c_clk_sel},
+  {"mimxrt1064", ClockSelectorId::mimxrt1064_selector_lpspi_root, "selector:lpspi-root", 8u, 2u, "CCM_CBCMR.LPSPI_CLK_SEL", "CCM", "CBCMR", 24, RegisterRefId::mimxrt1064_register_ccm_cbcmr, RegisterFieldRefId::mimxrt1064_field_ccm_cbcmr_lpspi_clk_sel},
+  {"mimxrt1064", ClockSelectorId::mimxrt1064_selector_lpuart_root, "selector:lpuart-root", 10u, 2u, "CCM_CSCDR1.UART_CLK_SEL", "CCM", "CSCDR1", 36, RegisterRefId::mimxrt1064_register_ccm_cscdr1, RegisterFieldRefId::mimxrt1064_field_ccm_cscdr1_uart_clk_sel},
 }};
 
 struct ClockSelectorParentOption {
@@ -184,56 +187,56 @@ struct ClockGateDescriptor {
   const char* register_peripheral;
   const char* register_name;
   int register_offset;
-  const char* register_id;
-  const char* register_field_id;
+  RegisterRefId register_id;
+  RegisterFieldRefId register_field_id;
 };
 inline constexpr std::array<ClockGateDescriptor, 46> kClockGates = {{
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_flexspi, "gate:flexspi", "FLEXSPI", 5, "CCM_CCGR6.CG5", "CCM", "CCGR6", 128, "register:ccm:ccgr6", "field:ccm:ccgr6:cg5"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_flexspi2, "gate:flexspi2", "FLEXSPI2", 6, "CCM_CCGR7.CG3", "CCM", "CCGR7", 132, "register:ccm:ccgr7", "field:ccm:ccgr7:cg3"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio1, "gate:gpio1", "GPIO1", 1, "CCM_CCGR1.CG13", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg13"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio2, "gate:gpio2", "GPIO2", 0, "CCM_CCGR0.CG15", "CCM", "CCGR0", 104, "register:ccm:ccgr0", "field:ccm:ccgr0:cg15"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio3, "gate:gpio3", "GPIO3", 2, "CCM_CCGR2.CG13", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg13"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio4, "gate:gpio4", "GPIO4", 3, "CCM_CCGR3.CG13", "CCM", "CCGR3", 116, "register:ccm:ccgr3", "field:ccm:ccgr3:cg13"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio5, "gate:gpio5", "GPIO5", 1, "CCM_CCGR1.CG15", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg15"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c1, "gate:lpi2c1", "LPI2C1", 7, "CCM_CCGR2.CG2", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg2"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c2, "gate:lpi2c2", "LPI2C2", 2, "CCM_CCGR2.CG3", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg3"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c3, "gate:lpi2c3", "LPI2C3", 2, "CCM_CCGR2.CG4", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg4"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c4, "gate:lpi2c4", "LPI2C4", 5, "CCM_CCGR6.CG12", "CCM", "CCGR6", 128, "register:ccm:ccgr6", "field:ccm:ccgr6:cg12"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi1, "gate:lpspi1", "LPSPI1", 8, "CCM_CCGR1.CG0", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg0"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi2, "gate:lpspi2", "LPSPI2", 1, "CCM_CCGR1.CG1", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg1"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi3, "gate:lpspi3", "LPSPI3", 1, "CCM_CCGR1.CG2", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg2"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi4, "gate:lpspi4", "LPSPI4", 1, "CCM_CCGR1.CG3", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg3"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart1, "gate:lpuart1", "LPUART1", 9, "CCM_CCGR5.CG12", "CCM", "CCGR5", 124, "register:ccm:ccgr5", "field:ccm:ccgr5:cg12"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart2, "gate:lpuart2", "LPUART2", 0, "CCM_CCGR0.CG14", "CCM", "CCGR0", 104, "register:ccm:ccgr0", "field:ccm:ccgr0:cg14"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart3, "gate:lpuart3", "LPUART3", 0, "CCM_CCGR0.CG6", "CCM", "CCGR0", 104, "register:ccm:ccgr0", "field:ccm:ccgr0:cg6"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart4, "gate:lpuart4", "LPUART4", 1, "CCM_CCGR1.CG12", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg12"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart5, "gate:lpuart5", "LPUART5", 3, "CCM_CCGR3.CG1", "CCM", "CCGR3", 116, "register:ccm:ccgr3", "field:ccm:ccgr3:cg1"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart6, "gate:lpuart6", "LPUART6", 3, "CCM_CCGR3.CG3", "CCM", "CCGR3", 116, "register:ccm:ccgr3", "field:ccm:ccgr3:cg3"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart7, "gate:lpuart7", "LPUART7", 4, "CCM_CCGR5.CG13", "CCM", "CCGR5", 124, "register:ccm:ccgr5", "field:ccm:ccgr5:cg13"},
-  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart8, "gate:lpuart8", "LPUART8", 5, "CCM_CCGR6.CG7", "CCM", "CCGR6", 128, "register:ccm:ccgr6", "field:ccm:ccgr6:cg7"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_flexspi, "gate:flexspi", "FLEXSPI", 18, "CCM_CCGR6.CG5", "CCM", "CCGR6", 128, "register:ccm:ccgr6", "field:ccm:ccgr6:cg5"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_flexspi2, "gate:flexspi2", "FLEXSPI2", 19, "CCM_CCGR7.CG3", "CCM", "CCGR7", 132, "register:ccm:ccgr7", "field:ccm:ccgr7:cg3"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio1, "gate:gpio1", "GPIO1", 14, "CCM_CCGR1.CG13", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg13"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio2, "gate:gpio2", "GPIO2", 13, "CCM_CCGR0.CG15", "CCM", "CCGR0", 104, "register:ccm:ccgr0", "field:ccm:ccgr0:cg15"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio3, "gate:gpio3", "GPIO3", 15, "CCM_CCGR2.CG13", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg13"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio4, "gate:gpio4", "GPIO4", 16, "CCM_CCGR3.CG13", "CCM", "CCGR3", 116, "register:ccm:ccgr3", "field:ccm:ccgr3:cg13"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio5, "gate:gpio5", "GPIO5", 14, "CCM_CCGR1.CG15", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg15"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c1, "gate:lpi2c1", "LPI2C1", 20, "CCM_CCGR2.CG2", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg2"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c2, "gate:lpi2c2", "LPI2C2", 15, "CCM_CCGR2.CG3", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg3"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c3, "gate:lpi2c3", "LPI2C3", 15, "CCM_CCGR2.CG4", "CCM", "CCGR2", 112, "register:ccm:ccgr2", "field:ccm:ccgr2:cg4"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c4, "gate:lpi2c4", "LPI2C4", 18, "CCM_CCGR6.CG12", "CCM", "CCGR6", 128, "register:ccm:ccgr6", "field:ccm:ccgr6:cg12"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi1, "gate:lpspi1", "LPSPI1", 21, "CCM_CCGR1.CG0", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg0"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi2, "gate:lpspi2", "LPSPI2", 14, "CCM_CCGR1.CG1", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg1"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi3, "gate:lpspi3", "LPSPI3", 14, "CCM_CCGR1.CG2", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg2"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi4, "gate:lpspi4", "LPSPI4", 14, "CCM_CCGR1.CG3", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg3"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart1, "gate:lpuart1", "LPUART1", 22, "CCM_CCGR5.CG12", "CCM", "CCGR5", 124, "register:ccm:ccgr5", "field:ccm:ccgr5:cg12"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart2, "gate:lpuart2", "LPUART2", 13, "CCM_CCGR0.CG14", "CCM", "CCGR0", 104, "register:ccm:ccgr0", "field:ccm:ccgr0:cg14"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart3, "gate:lpuart3", "LPUART3", 13, "CCM_CCGR0.CG6", "CCM", "CCGR0", 104, "register:ccm:ccgr0", "field:ccm:ccgr0:cg6"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart4, "gate:lpuart4", "LPUART4", 14, "CCM_CCGR1.CG12", "CCM", "CCGR1", 108, "register:ccm:ccgr1", "field:ccm:ccgr1:cg12"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart5, "gate:lpuart5", "LPUART5", 16, "CCM_CCGR3.CG1", "CCM", "CCGR3", 116, "register:ccm:ccgr3", "field:ccm:ccgr3:cg1"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart6, "gate:lpuart6", "LPUART6", 16, "CCM_CCGR3.CG3", "CCM", "CCGR3", 116, "register:ccm:ccgr3", "field:ccm:ccgr3:cg3"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart7, "gate:lpuart7", "LPUART7", 17, "CCM_CCGR5.CG13", "CCM", "CCGR5", 124, "register:ccm:ccgr5", "field:ccm:ccgr5:cg13"},
-  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart8, "gate:lpuart8", "LPUART8", 18, "CCM_CCGR6.CG7", "CCM", "CCGR6", 128, "register:ccm:ccgr6", "field:ccm:ccgr6:cg7"},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_flexspi, "gate:flexspi", "FLEXSPI", 5, "CCM_CCGR6.CG5", "CCM", "CCGR6", 128, RegisterRefId::mimxrt1062_register_ccm_ccgr6, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr6_cg5},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_flexspi2, "gate:flexspi2", "FLEXSPI2", 6, "CCM_CCGR7.CG3", "CCM", "CCGR7", 132, RegisterRefId::mimxrt1062_register_ccm_ccgr7, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr7_cg3},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio1, "gate:gpio1", "GPIO1", 1, "CCM_CCGR1.CG13", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg13},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio2, "gate:gpio2", "GPIO2", 0, "CCM_CCGR0.CG15", "CCM", "CCGR0", 104, RegisterRefId::mimxrt1062_register_ccm_ccgr0, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr0_cg15},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio3, "gate:gpio3", "GPIO3", 2, "CCM_CCGR2.CG13", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1062_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr2_cg13},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio4, "gate:gpio4", "GPIO4", 3, "CCM_CCGR3.CG13", "CCM", "CCGR3", 116, RegisterRefId::mimxrt1062_register_ccm_ccgr3, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr3_cg13},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_gpio5, "gate:gpio5", "GPIO5", 1, "CCM_CCGR1.CG15", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg15},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c1, "gate:lpi2c1", "LPI2C1", 7, "CCM_CCGR2.CG2", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1062_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr2_cg2},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c2, "gate:lpi2c2", "LPI2C2", 2, "CCM_CCGR2.CG3", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1062_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr2_cg3},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c3, "gate:lpi2c3", "LPI2C3", 2, "CCM_CCGR2.CG4", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1062_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr2_cg4},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpi2c4, "gate:lpi2c4", "LPI2C4", 5, "CCM_CCGR6.CG12", "CCM", "CCGR6", 128, RegisterRefId::mimxrt1062_register_ccm_ccgr6, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr6_cg12},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi1, "gate:lpspi1", "LPSPI1", 8, "CCM_CCGR1.CG0", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg0},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi2, "gate:lpspi2", "LPSPI2", 1, "CCM_CCGR1.CG1", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg1},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi3, "gate:lpspi3", "LPSPI3", 1, "CCM_CCGR1.CG2", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg2},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpspi4, "gate:lpspi4", "LPSPI4", 1, "CCM_CCGR1.CG3", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg3},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart1, "gate:lpuart1", "LPUART1", 9, "CCM_CCGR5.CG12", "CCM", "CCGR5", 124, RegisterRefId::mimxrt1062_register_ccm_ccgr5, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr5_cg12},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart2, "gate:lpuart2", "LPUART2", 0, "CCM_CCGR0.CG14", "CCM", "CCGR0", 104, RegisterRefId::mimxrt1062_register_ccm_ccgr0, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr0_cg14},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart3, "gate:lpuart3", "LPUART3", 0, "CCM_CCGR0.CG6", "CCM", "CCGR0", 104, RegisterRefId::mimxrt1062_register_ccm_ccgr0, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr0_cg6},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart4, "gate:lpuart4", "LPUART4", 1, "CCM_CCGR1.CG12", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1062_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr1_cg12},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart5, "gate:lpuart5", "LPUART5", 3, "CCM_CCGR3.CG1", "CCM", "CCGR3", 116, RegisterRefId::mimxrt1062_register_ccm_ccgr3, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr3_cg1},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart6, "gate:lpuart6", "LPUART6", 3, "CCM_CCGR3.CG3", "CCM", "CCGR3", 116, RegisterRefId::mimxrt1062_register_ccm_ccgr3, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr3_cg3},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart7, "gate:lpuart7", "LPUART7", 4, "CCM_CCGR5.CG13", "CCM", "CCGR5", 124, RegisterRefId::mimxrt1062_register_ccm_ccgr5, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr5_cg13},
+  {"mimxrt1062", ClockGateId::mimxrt1062_gate_lpuart8, "gate:lpuart8", "LPUART8", 5, "CCM_CCGR6.CG7", "CCM", "CCGR6", 128, RegisterRefId::mimxrt1062_register_ccm_ccgr6, RegisterFieldRefId::mimxrt1062_field_ccm_ccgr6_cg7},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_flexspi, "gate:flexspi", "FLEXSPI", 18, "CCM_CCGR6.CG5", "CCM", "CCGR6", 128, RegisterRefId::mimxrt1064_register_ccm_ccgr6, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr6_cg5},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_flexspi2, "gate:flexspi2", "FLEXSPI2", 19, "CCM_CCGR7.CG3", "CCM", "CCGR7", 132, RegisterRefId::mimxrt1064_register_ccm_ccgr7, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr7_cg3},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio1, "gate:gpio1", "GPIO1", 14, "CCM_CCGR1.CG13", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg13},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio2, "gate:gpio2", "GPIO2", 13, "CCM_CCGR0.CG15", "CCM", "CCGR0", 104, RegisterRefId::mimxrt1064_register_ccm_ccgr0, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr0_cg15},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio3, "gate:gpio3", "GPIO3", 15, "CCM_CCGR2.CG13", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1064_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr2_cg13},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio4, "gate:gpio4", "GPIO4", 16, "CCM_CCGR3.CG13", "CCM", "CCGR3", 116, RegisterRefId::mimxrt1064_register_ccm_ccgr3, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr3_cg13},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_gpio5, "gate:gpio5", "GPIO5", 14, "CCM_CCGR1.CG15", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg15},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c1, "gate:lpi2c1", "LPI2C1", 20, "CCM_CCGR2.CG2", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1064_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr2_cg2},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c2, "gate:lpi2c2", "LPI2C2", 15, "CCM_CCGR2.CG3", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1064_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr2_cg3},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c3, "gate:lpi2c3", "LPI2C3", 15, "CCM_CCGR2.CG4", "CCM", "CCGR2", 112, RegisterRefId::mimxrt1064_register_ccm_ccgr2, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr2_cg4},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpi2c4, "gate:lpi2c4", "LPI2C4", 18, "CCM_CCGR6.CG12", "CCM", "CCGR6", 128, RegisterRefId::mimxrt1064_register_ccm_ccgr6, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr6_cg12},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi1, "gate:lpspi1", "LPSPI1", 21, "CCM_CCGR1.CG0", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg0},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi2, "gate:lpspi2", "LPSPI2", 14, "CCM_CCGR1.CG1", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg1},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi3, "gate:lpspi3", "LPSPI3", 14, "CCM_CCGR1.CG2", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg2},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpspi4, "gate:lpspi4", "LPSPI4", 14, "CCM_CCGR1.CG3", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg3},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart1, "gate:lpuart1", "LPUART1", 22, "CCM_CCGR5.CG12", "CCM", "CCGR5", 124, RegisterRefId::mimxrt1064_register_ccm_ccgr5, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr5_cg12},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart2, "gate:lpuart2", "LPUART2", 13, "CCM_CCGR0.CG14", "CCM", "CCGR0", 104, RegisterRefId::mimxrt1064_register_ccm_ccgr0, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr0_cg14},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart3, "gate:lpuart3", "LPUART3", 13, "CCM_CCGR0.CG6", "CCM", "CCGR0", 104, RegisterRefId::mimxrt1064_register_ccm_ccgr0, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr0_cg6},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart4, "gate:lpuart4", "LPUART4", 14, "CCM_CCGR1.CG12", "CCM", "CCGR1", 108, RegisterRefId::mimxrt1064_register_ccm_ccgr1, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr1_cg12},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart5, "gate:lpuart5", "LPUART5", 16, "CCM_CCGR3.CG1", "CCM", "CCGR3", 116, RegisterRefId::mimxrt1064_register_ccm_ccgr3, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr3_cg1},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart6, "gate:lpuart6", "LPUART6", 16, "CCM_CCGR3.CG3", "CCM", "CCGR3", 116, RegisterRefId::mimxrt1064_register_ccm_ccgr3, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr3_cg3},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart7, "gate:lpuart7", "LPUART7", 17, "CCM_CCGR5.CG13", "CCM", "CCGR5", 124, RegisterRefId::mimxrt1064_register_ccm_ccgr5, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr5_cg13},
+  {"mimxrt1064", ClockGateId::mimxrt1064_gate_lpuart8, "gate:lpuart8", "LPUART8", 18, "CCM_CCGR6.CG7", "CCM", "CCGR6", 128, RegisterRefId::mimxrt1064_register_ccm_ccgr6, RegisterFieldRefId::mimxrt1064_field_ccm_ccgr6_cg7},
 }};
 
 struct ResetDescriptor {
@@ -246,65 +249,65 @@ struct ResetDescriptor {
   const char* register_peripheral;
   const char* register_name;
   int register_offset;
-  const char* register_id;
-  const char* register_field_id;
+  RegisterRefId register_id;
+  RegisterFieldRefId register_field_id;
 };
 inline constexpr std::array<ResetDescriptor, 0> kResets = {};
 
 struct PeripheralClockBindingDescriptor {
   const char* device;
   const char* peripheral;
-  int clock_gate_index;
-  int reset_index;
-  int selector_index;
+  ClockGateId clock_gate_id;
+  ResetId reset_id;
+  ClockSelectorId selector_id;
 };
 inline constexpr std::array<PeripheralClockBindingDescriptor, 46> kPeripheralClockBindings = {{
-  {"mimxrt1062", "FLEXSPI", 0, -1, -1},
-  {"mimxrt1062", "FLEXSPI2", 1, -1, -1},
-  {"mimxrt1062", "GPIO1", 2, -1, -1},
-  {"mimxrt1062", "GPIO2", 3, -1, -1},
-  {"mimxrt1062", "GPIO3", 4, -1, -1},
-  {"mimxrt1062", "GPIO4", 5, -1, -1},
-  {"mimxrt1062", "GPIO5", 6, -1, -1},
-  {"mimxrt1062", "LPI2C1", 7, -1, 0},
-  {"mimxrt1062", "LPI2C2", 8, -1, -1},
-  {"mimxrt1062", "LPI2C3", 9, -1, -1},
-  {"mimxrt1062", "LPI2C4", 10, -1, -1},
-  {"mimxrt1062", "LPSPI1", 11, -1, 1},
-  {"mimxrt1062", "LPSPI2", 12, -1, -1},
-  {"mimxrt1062", "LPSPI3", 13, -1, -1},
-  {"mimxrt1062", "LPSPI4", 14, -1, -1},
-  {"mimxrt1062", "LPUART1", 15, -1, 2},
-  {"mimxrt1062", "LPUART2", 16, -1, -1},
-  {"mimxrt1062", "LPUART3", 17, -1, -1},
-  {"mimxrt1062", "LPUART4", 18, -1, -1},
-  {"mimxrt1062", "LPUART5", 19, -1, -1},
-  {"mimxrt1062", "LPUART6", 20, -1, -1},
-  {"mimxrt1062", "LPUART7", 21, -1, -1},
-  {"mimxrt1062", "LPUART8", 22, -1, -1},
-  {"mimxrt1064", "FLEXSPI", 23, -1, -1},
-  {"mimxrt1064", "FLEXSPI2", 24, -1, -1},
-  {"mimxrt1064", "GPIO1", 25, -1, -1},
-  {"mimxrt1064", "GPIO2", 26, -1, -1},
-  {"mimxrt1064", "GPIO3", 27, -1, -1},
-  {"mimxrt1064", "GPIO4", 28, -1, -1},
-  {"mimxrt1064", "GPIO5", 29, -1, -1},
-  {"mimxrt1064", "LPI2C1", 30, -1, 3},
-  {"mimxrt1064", "LPI2C2", 31, -1, -1},
-  {"mimxrt1064", "LPI2C3", 32, -1, -1},
-  {"mimxrt1064", "LPI2C4", 33, -1, -1},
-  {"mimxrt1064", "LPSPI1", 34, -1, 4},
-  {"mimxrt1064", "LPSPI2", 35, -1, -1},
-  {"mimxrt1064", "LPSPI3", 36, -1, -1},
-  {"mimxrt1064", "LPSPI4", 37, -1, -1},
-  {"mimxrt1064", "LPUART1", 38, -1, 5},
-  {"mimxrt1064", "LPUART2", 39, -1, -1},
-  {"mimxrt1064", "LPUART3", 40, -1, -1},
-  {"mimxrt1064", "LPUART4", 41, -1, -1},
-  {"mimxrt1064", "LPUART5", 42, -1, -1},
-  {"mimxrt1064", "LPUART6", 43, -1, -1},
-  {"mimxrt1064", "LPUART7", 44, -1, -1},
-  {"mimxrt1064", "LPUART8", 45, -1, -1},
+  {"mimxrt1062", "FLEXSPI", ClockGateId::mimxrt1062_gate_flexspi, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "FLEXSPI2", ClockGateId::mimxrt1062_gate_flexspi2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "GPIO1", ClockGateId::mimxrt1062_gate_gpio1, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "GPIO2", ClockGateId::mimxrt1062_gate_gpio2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "GPIO3", ClockGateId::mimxrt1062_gate_gpio3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "GPIO4", ClockGateId::mimxrt1062_gate_gpio4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "GPIO5", ClockGateId::mimxrt1062_gate_gpio5, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPI2C1", ClockGateId::mimxrt1062_gate_lpi2c1, ResetId::none, ClockSelectorId::mimxrt1062_selector_lpi2c_root},
+  {"mimxrt1062", "LPI2C2", ClockGateId::mimxrt1062_gate_lpi2c2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPI2C3", ClockGateId::mimxrt1062_gate_lpi2c3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPI2C4", ClockGateId::mimxrt1062_gate_lpi2c4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPSPI1", ClockGateId::mimxrt1062_gate_lpspi1, ResetId::none, ClockSelectorId::mimxrt1062_selector_lpspi_root},
+  {"mimxrt1062", "LPSPI2", ClockGateId::mimxrt1062_gate_lpspi2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPSPI3", ClockGateId::mimxrt1062_gate_lpspi3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPSPI4", ClockGateId::mimxrt1062_gate_lpspi4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART1", ClockGateId::mimxrt1062_gate_lpuart1, ResetId::none, ClockSelectorId::mimxrt1062_selector_lpuart_root},
+  {"mimxrt1062", "LPUART2", ClockGateId::mimxrt1062_gate_lpuart2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART3", ClockGateId::mimxrt1062_gate_lpuart3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART4", ClockGateId::mimxrt1062_gate_lpuart4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART5", ClockGateId::mimxrt1062_gate_lpuart5, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART6", ClockGateId::mimxrt1062_gate_lpuart6, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART7", ClockGateId::mimxrt1062_gate_lpuart7, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1062", "LPUART8", ClockGateId::mimxrt1062_gate_lpuart8, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "FLEXSPI", ClockGateId::mimxrt1064_gate_flexspi, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "FLEXSPI2", ClockGateId::mimxrt1064_gate_flexspi2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "GPIO1", ClockGateId::mimxrt1064_gate_gpio1, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "GPIO2", ClockGateId::mimxrt1064_gate_gpio2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "GPIO3", ClockGateId::mimxrt1064_gate_gpio3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "GPIO4", ClockGateId::mimxrt1064_gate_gpio4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "GPIO5", ClockGateId::mimxrt1064_gate_gpio5, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPI2C1", ClockGateId::mimxrt1064_gate_lpi2c1, ResetId::none, ClockSelectorId::mimxrt1064_selector_lpi2c_root},
+  {"mimxrt1064", "LPI2C2", ClockGateId::mimxrt1064_gate_lpi2c2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPI2C3", ClockGateId::mimxrt1064_gate_lpi2c3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPI2C4", ClockGateId::mimxrt1064_gate_lpi2c4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPSPI1", ClockGateId::mimxrt1064_gate_lpspi1, ResetId::none, ClockSelectorId::mimxrt1064_selector_lpspi_root},
+  {"mimxrt1064", "LPSPI2", ClockGateId::mimxrt1064_gate_lpspi2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPSPI3", ClockGateId::mimxrt1064_gate_lpspi3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPSPI4", ClockGateId::mimxrt1064_gate_lpspi4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART1", ClockGateId::mimxrt1064_gate_lpuart1, ResetId::none, ClockSelectorId::mimxrt1064_selector_lpuart_root},
+  {"mimxrt1064", "LPUART2", ClockGateId::mimxrt1064_gate_lpuart2, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART3", ClockGateId::mimxrt1064_gate_lpuart3, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART4", ClockGateId::mimxrt1064_gate_lpuart4, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART5", ClockGateId::mimxrt1064_gate_lpuart5, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART6", ClockGateId::mimxrt1064_gate_lpuart6, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART7", ClockGateId::mimxrt1064_gate_lpuart7, ResetId::none, ClockSelectorId::none},
+  {"mimxrt1064", "LPUART8", ClockGateId::mimxrt1064_gate_lpuart8, ResetId::none, ClockSelectorId::none},
 }};
 }
 }
