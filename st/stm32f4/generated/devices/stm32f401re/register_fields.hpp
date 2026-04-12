@@ -2937,6 +2937,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apb1rstr_spi2rst,
   field_rcc_apb1rstr_spi3rst,
   field_rcc_apb1rstr_uart2rst,
+  field_rcc_apb1rstr_usart2rst,
   field_rcc_apb1rstr_i2c1rst,
   field_rcc_apb1rstr_i2c2rst,
   field_rcc_apb1rstr_i2c3rst,
@@ -4405,7 +4406,7 @@ struct RegisterFieldDescriptor {
   std::uint16_t bit_width;
   AccessKindId access_id;
 };
-inline constexpr std::array<RegisterFieldDescriptor, 4384> kRegisterFields = {{
+inline constexpr std::array<RegisterFieldDescriptor, 4385> kRegisterFields = {{
   {FieldId::field_adc1_cr1_awdch, RegisterId::register_adc1_cr1, PeripheralId::ADC1, 0u, 5u, AccessKindId::access_kind_read_write},
   {FieldId::field_adc1_cr1_eocie, RegisterId::register_adc1_cr1, PeripheralId::ADC1, 5u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_adc1_cr1_awdie, RegisterId::register_adc1_cr1, PeripheralId::ADC1, 6u, 1u, AccessKindId::access_kind_read_write},
@@ -7332,6 +7333,7 @@ inline constexpr std::array<RegisterFieldDescriptor, 4384> kRegisterFields = {{
   {FieldId::field_rcc_apb1rstr_spi2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 14u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_spi3rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 15u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_uart2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 17u, 1u, AccessKindId::access_kind_read_write},
+  {FieldId::field_rcc_apb1rstr_usart2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 17u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_i2c1rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 21u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_i2c2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 22u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_i2c3rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 23u, 1u, AccessKindId::access_kind_read_write},

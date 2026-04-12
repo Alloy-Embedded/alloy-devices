@@ -2800,6 +2800,7 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32F401.svd"
           },
+          "register_field_id": "field:rcc:apb1rstr:usart2rst",
           "register_id": "register:rcc:apb1rstr",
           "register_name": "APB1RSTR",
           "register_offset": 32,
@@ -7224,6 +7225,7 @@
             "source_id": "cmsis-svd-data",
             "source_path": "STM32F405.svd"
           },
+          "register_field_id": "field:rcc:apb1rstr:usart2rst",
           "register_id": "register:rcc:apb1rstr",
           "register_name": "APB1RSTR",
           "register_offset": 32,

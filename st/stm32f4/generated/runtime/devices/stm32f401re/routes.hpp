@@ -129,7 +129,7 @@ struct RouteTraits<PinId::PA1, PeripheralId::USART2, SignalId::signal_rts> {
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr std::array<RouteOperation, 3> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1enr, FieldId::field_rcc_apb1enr_usart2en, PinId::none, ClockGateId::gate_usart2, ResetId::none, 1},
-    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::none, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
+    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::field_rcc_apb1rstr_usart2rst, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
     {BackendSchemaId::schema_alloy_pinmux_stm32_af_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA1, ClockGateId::none, ResetId::none, 7},
   }};
 };
@@ -141,7 +141,7 @@ struct RouteTraits<PinId::PA2, PeripheralId::USART2, SignalId::signal_tx> {
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr std::array<RouteOperation, 3> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1enr, FieldId::field_rcc_apb1enr_usart2en, PinId::none, ClockGateId::gate_usart2, ResetId::none, 1},
-    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::none, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
+    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::field_rcc_apb1rstr_usart2rst, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
     {BackendSchemaId::schema_alloy_pinmux_stm32_af_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA2, ClockGateId::none, ResetId::none, 7},
   }};
 };
@@ -153,7 +153,7 @@ struct RouteTraits<PinId::PA3, PeripheralId::USART2, SignalId::signal_rx> {
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr std::array<RouteOperation, 3> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1enr, FieldId::field_rcc_apb1enr_usart2en, PinId::none, ClockGateId::gate_usart2, ResetId::none, 1},
-    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::none, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
+    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::field_rcc_apb1rstr_usart2rst, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
     {BackendSchemaId::schema_alloy_pinmux_stm32_af_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA3, ClockGateId::none, ResetId::none, 7},
   }};
 };
@@ -177,7 +177,7 @@ struct RouteTraits<PinId::PA4, PeripheralId::USART2, SignalId::signal_ck> {
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr std::array<RouteOperation, 3> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1enr, FieldId::field_rcc_apb1enr_usart2en, PinId::none, ClockGateId::gate_usart2, ResetId::none, 1},
-    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::none, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
+    {BackendSchemaId::schema_alloy_clock_st_stm32f417_rcc_v1_0, OperationKindId::operation_kind_clear_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_rcc_apb1rstr, FieldId::field_rcc_apb1rstr_usart2rst, PinId::none, ClockGateId::none, ResetId::reset_usart2, 0},
     {BackendSchemaId::schema_alloy_pinmux_stm32_af_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA4, ClockGateId::none, ResetId::none, 7},
   }};
 };

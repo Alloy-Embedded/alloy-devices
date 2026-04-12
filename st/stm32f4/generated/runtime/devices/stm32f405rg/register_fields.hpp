@@ -1797,6 +1797,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apb1enr_spi2en,
   field_rcc_apb1enr_usart2en,
   field_rcc_apb1rstr_spi2rst,
+  field_rcc_apb1rstr_usart2rst,
   field_rcc_apb2enr_usart1en,
   field_rcc_apb2enr_spi1en,
   field_rcc_apb2rstr_usart1rst,
@@ -18499,6 +18500,15 @@ struct RegisterFieldTraits<FieldId::field_rcc_apb1rstr_spi2rst> {
 };
 
 template<>
+struct RegisterFieldTraits<FieldId::field_rcc_apb1rstr_usart2rst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apb1rstr;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
 struct RegisterFieldTraits<FieldId::field_rcc_apb2enr_usart1en> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apb2enr;
@@ -24204,7 +24214,7 @@ struct RegisterFieldTraits<FieldId::field_usart6_sr_cts> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
-inline constexpr std::array<FieldId, 2418> kRegisterFields = {{
+inline constexpr std::array<FieldId, 2419> kRegisterFields = {{
   FieldId::field_gpioa_afrh_afrh8,
   FieldId::field_gpioa_afrh_afrh9,
   FieldId::field_gpioa_afrh_afrh10,
@@ -25989,6 +25999,7 @@ inline constexpr std::array<FieldId, 2418> kRegisterFields = {{
   FieldId::field_rcc_apb1enr_spi2en,
   FieldId::field_rcc_apb1enr_usart2en,
   FieldId::field_rcc_apb1rstr_spi2rst,
+  FieldId::field_rcc_apb1rstr_usart2rst,
   FieldId::field_rcc_apb2enr_usart1en,
   FieldId::field_rcc_apb2enr_spi1en,
   FieldId::field_rcc_apb2rstr_usart1rst,

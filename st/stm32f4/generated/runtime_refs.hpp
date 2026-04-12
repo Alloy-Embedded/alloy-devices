@@ -5762,6 +5762,7 @@ enum class RegisterFieldRefId : std::uint16_t {
   stm32f401re_field_rcc_apb1rstr_tim4rst,
   stm32f401re_field_rcc_apb1rstr_tim5rst,
   stm32f401re_field_rcc_apb1rstr_uart2rst,
+  stm32f401re_field_rcc_apb1rstr_usart2rst,
   stm32f401re_field_rcc_apb1rstr_wwdgrst,
   stm32f401re_field_rcc_apb2enr_adc1en,
   stm32f401re_field_rcc_apb2enr_sdioen,
@@ -17416,6 +17417,7 @@ enum class RegisterFieldRefId : std::uint16_t {
   stm32f405rg_field_rcc_apb1rstr_uart3rst,
   stm32f405rg_field_rcc_apb1rstr_uart4rst,
   stm32f405rg_field_rcc_apb1rstr_uart5rst,
+  stm32f405rg_field_rcc_apb1rstr_usart2rst,
   stm32f405rg_field_rcc_apb1rstr_wwdgrst,
   stm32f405rg_field_rcc_apb2enr_adc1en,
   stm32f405rg_field_rcc_apb2enr_adc2en,
@@ -22307,7 +22309,7 @@ struct RegisterFieldRefDescriptor {
   std::uint16_t bit_offset;
   std::uint16_t bit_width;
 };
-inline constexpr std::array<RegisterFieldRefDescriptor, 16561> kRegisterFieldRefs = {{
+inline constexpr std::array<RegisterFieldRefDescriptor, 16563> kRegisterFieldRefs = {{
   {RegisterFieldRefId::none, DeviceRefId::none, RegisterRefId::none, 0u, 0u},
   {RegisterFieldRefId::stm32f401re_field_adc_common_ccr_adcpre, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_adc_common_ccr, 16u, 2u},
   {RegisterFieldRefId::stm32f401re_field_adc_common_ccr_dds, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_adc_common_ccr, 13u, 1u},
@@ -25238,6 +25240,7 @@ inline constexpr std::array<RegisterFieldRefDescriptor, 16561> kRegisterFieldRef
   {RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_tim4rst, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb1rstr, 2u, 1u},
   {RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_tim5rst, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb1rstr, 3u, 1u},
   {RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_uart2rst, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb1rstr, 17u, 1u},
+  {RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_usart2rst, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb1rstr, 17u, 1u},
   {RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_wwdgrst, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb1rstr, 11u, 1u},
   {RegisterFieldRefId::stm32f401re_field_rcc_apb2enr_adc1en, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb2enr, 8u, 1u},
   {RegisterFieldRefId::stm32f401re_field_rcc_apb2enr_sdioen, DeviceRefId::stm32f401re, RegisterRefId::stm32f401re_register_rcc_apb2enr, 11u, 1u},
@@ -36892,6 +36895,7 @@ inline constexpr std::array<RegisterFieldRefDescriptor, 16561> kRegisterFieldRef
   {RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_uart3rst, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, 18u, 1u},
   {RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_uart4rst, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, 19u, 1u},
   {RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_uart5rst, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, 20u, 1u},
+  {RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_usart2rst, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, 17u, 1u},
   {RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_wwdgrst, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, 11u, 1u},
   {RegisterFieldRefId::stm32f405rg_field_rcc_apb2enr_adc1en, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb2enr, 8u, 1u},
   {RegisterFieldRefId::stm32f405rg_field_rcc_apb2enr_adc2en, DeviceRefId::stm32f405rg, RegisterRefId::stm32f405rg_register_rcc_apb2enr, 9u, 1u},

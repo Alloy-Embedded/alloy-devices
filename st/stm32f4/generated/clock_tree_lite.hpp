@@ -210,7 +210,7 @@ inline constexpr std::array<ResetDescriptor, 36> kResets = {{
   {DeviceRefId::stm32f401re, ResetId::stm32f401re_reset_tim4, PeripheralRefId::stm32f401re_TIM4, ActiveLevelId::active_level_high, RegisterRefId::stm32f401re_register_rcc_apb1rstr, RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_tim4rst},
   {DeviceRefId::stm32f401re, ResetId::stm32f401re_reset_tim5, PeripheralRefId::stm32f401re_TIM5, ActiveLevelId::active_level_high, RegisterRefId::stm32f401re_register_rcc_apb1rstr, RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_tim5rst},
   {DeviceRefId::stm32f401re, ResetId::stm32f401re_reset_usart1, PeripheralRefId::stm32f401re_USART1, ActiveLevelId::active_level_high, RegisterRefId::stm32f401re_register_rcc_apb2rstr, RegisterFieldRefId::stm32f401re_field_rcc_apb2rstr_usart1rst},
-  {DeviceRefId::stm32f401re, ResetId::stm32f401re_reset_usart2, PeripheralRefId::stm32f401re_USART2, ActiveLevelId::active_level_high, RegisterRefId::stm32f401re_register_rcc_apb1rstr, RegisterFieldRefId::none},
+  {DeviceRefId::stm32f401re, ResetId::stm32f401re_reset_usart2, PeripheralRefId::stm32f401re_USART2, ActiveLevelId::active_level_high, RegisterRefId::stm32f401re_register_rcc_apb1rstr, RegisterFieldRefId::stm32f401re_field_rcc_apb1rstr_usart2rst},
   {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_dma1, PeripheralRefId::stm32f405rg_DMA1, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_ahb1rstr, RegisterFieldRefId::stm32f405rg_field_rcc_ahb1rstr_dma1rst},
   {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_dma2, PeripheralRefId::stm32f405rg_DMA2, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_ahb1rstr, RegisterFieldRefId::stm32f405rg_field_rcc_ahb1rstr_dma2rst},
   {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_gpioa, PeripheralRefId::stm32f405rg_GPIOA, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_ahb1rstr, RegisterFieldRefId::stm32f405rg_field_rcc_ahb1rstr_gpioarst},
@@ -228,7 +228,7 @@ inline constexpr std::array<ResetDescriptor, 36> kResets = {{
   {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_tim4, PeripheralRefId::stm32f405rg_TIM4, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_tim4rst},
   {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_tim5, PeripheralRefId::stm32f405rg_TIM5, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_tim5rst},
   {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_usart1, PeripheralRefId::stm32f405rg_USART1, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_apb2rstr, RegisterFieldRefId::stm32f405rg_field_rcc_apb2rstr_usart1rst},
-  {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_usart2, PeripheralRefId::stm32f405rg_USART2, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, RegisterFieldRefId::none},
+  {DeviceRefId::stm32f405rg, ResetId::stm32f405rg_reset_usart2, PeripheralRefId::stm32f405rg_USART2, ActiveLevelId::active_level_high, RegisterRefId::stm32f405rg_register_rcc_apb1rstr, RegisterFieldRefId::stm32f405rg_field_rcc_apb1rstr_usart2rst},
 }};
 
 struct PeripheralClockBindingDescriptor {

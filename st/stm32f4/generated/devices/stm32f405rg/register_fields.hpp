@@ -10201,6 +10201,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apb1rstr_spi2rst,
   field_rcc_apb1rstr_spi3rst,
   field_rcc_apb1rstr_uart2rst,
+  field_rcc_apb1rstr_usart2rst,
   field_rcc_apb1rstr_uart3rst,
   field_rcc_apb1rstr_uart4rst,
   field_rcc_apb1rstr_uart5rst,
@@ -12197,7 +12198,7 @@ struct RegisterFieldDescriptor {
   std::uint16_t bit_width;
   AccessKindId access_id;
 };
-inline constexpr std::array<RegisterFieldDescriptor, 12176> kRegisterFields = {{
+inline constexpr std::array<RegisterFieldDescriptor, 12177> kRegisterFields = {{
   {FieldId::field_adc1_cr1_awdch, RegisterId::register_adc1_cr1, PeripheralId::ADC1, 0u, 5u, AccessKindId::access_kind_read_write},
   {FieldId::field_adc1_cr1_eocie, RegisterId::register_adc1_cr1, PeripheralId::ADC1, 5u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_adc1_cr1_awdie, RegisterId::register_adc1_cr1, PeripheralId::ADC1, 6u, 1u, AccessKindId::access_kind_read_write},
@@ -22388,6 +22389,7 @@ inline constexpr std::array<RegisterFieldDescriptor, 12176> kRegisterFields = {{
   {FieldId::field_rcc_apb1rstr_spi2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 14u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_spi3rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 15u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_uart2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 17u, 1u, AccessKindId::access_kind_read_write},
+  {FieldId::field_rcc_apb1rstr_usart2rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 17u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_uart3rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 18u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_uart4rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 19u, 1u, AccessKindId::access_kind_read_write},
   {FieldId::field_rcc_apb1rstr_uart5rst, RegisterId::register_rcc_apb1rstr, PeripheralId::RCC, 20u, 1u, AccessKindId::access_kind_read_write},

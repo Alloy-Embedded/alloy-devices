@@ -159,7 +159,7 @@ template<>
 struct ResetTraits<ResetId::reset_usart2> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apb1rstr;
-  static constexpr FieldId kFieldId = FieldId::none;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apb1rstr_usart2rst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 

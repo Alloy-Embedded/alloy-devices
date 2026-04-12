@@ -90136,6 +90136,24 @@
       },
       "register_id": "register:scb-actrl:actrl",
       "register_name": "ACTRL"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 17,
+      "bit_width": 1,
+      "field_id": "field:rcc:apb1rstr:usart2rst",
+      "name": "USART2RST",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:apb1rstr",
+      "register_name": "APB1RSTR"
     }
   ],
   "registers": [
@@ -101803,6 +101821,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32F401.svd"
       },
+      "register_field_id": "field:rcc:apb1rstr:usart2rst",
       "register_id": "register:rcc:apb1rstr",
       "register_name": "APB1RSTR",
       "register_offset": 32,
@@ -102733,6 +102752,7 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32F401.svd"
       },
+      "register_field_id": "field:rcc:apb1rstr:usart2rst",
       "register_id": "register:rcc:apb1rstr",
       "register_name": "APB1RSTR",
       "register_offset": 32,
