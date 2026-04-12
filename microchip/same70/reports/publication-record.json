@@ -222,7 +222,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 94,
+  "published_artifact_count": 107,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -700,6 +700,84 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 9737,
+      "content_sha256": "18469434159584d2186396bcf19fb43aacc76a7f1155757c1b0055e02402d28b",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 10700,
+      "content_sha256": "04b766fb3c73dd1130728d573564ac967aa516162e84a72a7a19e44bd5937c45",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 14993,
+      "content_sha256": "c7f31e63b259ec0a22b87abfa9b918a6045880ddaaf9c05cc0e3c80c21a36642",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2386168,
+      "content_sha256": "dc09034ca94fe5efd1dcc53f3b8296bce99ed011a91f412182aa98debc0d809b",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 150418,
+      "content_sha256": "41195b3d43657dbb451a27aa45af95a5245f164005925df554e5715c73ca9c82",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/registers.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 77490,
+      "content_sha256": "28f3e3fc59c1e369d31787af9c3dfaf225615c8ecdedacb880652d70f9544256",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 11398,
+      "content_sha256": "623ef6802da945e73c9096fc66c5ca55cd2a3c8889d1fefb421a15c8afac9687",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 12617,
+      "content_sha256": "77d983ca96a388815c0cc27ab8ca7614877e5559e277fa4172508223e3c32311",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 23452,
+      "content_sha256": "087b4331effe2f607a27a52350b427b840ab224cb700ffddcc3401c8653dde3f",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3674086,
+      "content_sha256": "352a0d6f4f0ebd41e98be1e94b541755cfd6b57cf13d50060980a20df5856daa",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 198640,
+      "content_sha256": "7c34eefd24540585a574961885346107fae3c26a1c8bb8930eb4f3d480d01698",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/registers.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 90878,
+      "content_sha256": "faefb9a8057be0e4bf434a9880676aa0e51c9bbd4bc46c0a0c49dd017a2d5e6f",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 15996,
+      "content_sha256": "f0eb8d7676db5594ea0b9ae6d991e5025d9d14c5396fec3360a8fac69401bf05",
+      "path": "microchip/same70/generated/runtime/types.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 65925,
       "content_sha256": "d472642b45ae05dd092da12ae4389e909ed375032fabd8e4405d36fa83f81e2f",
       "path": "microchip/same70/generated/runtime_profiles.hpp"
@@ -794,7 +872,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "58a22bae3c88f0bc5e2257a9982c49f53d2a52049bd8f76e95fb8c388e5868e1",
+  "target_artifact_revision": "b75f065cd168eafb89c5831cfa91b02f63cf5f4fda03286e288aa2385fc606d3",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
