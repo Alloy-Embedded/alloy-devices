@@ -1,49 +1,63 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32f4 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "tim",
-  "gptimer2_v2_x_Cube",
-  "timer",
-  "alloy.timer.st-gptimer2-v2-x-cube",
-  "tim:gptimer2_v2_x_Cube",
-  "bkin,ch1,ch1n,ch2,ch2n,ch3,ch3n,ch4,etr",
+  IpBlockId::ip_block_tim_gptimer2_v2_x_Cube,
+  PeripheralClassId::class_timer,
+  BackendSchemaId::schema_alloy_timer_st_gptimer2_v2_x_cube,
+  RegisterProfileId::register_profile_tim_gptimer2_v2_x_Cube,
+  0u,
+  9u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 9> kSignalRoles = {{
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_bkin},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch1},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch1n},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch2},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch2n},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch3},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch3n},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_ch4},
+  {IpBlockId::ip_block_tim_gptimer2_v2_x_Cube, SignalRoleId::signal_role_etr},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 9> kCapabilities = {{
-  {"capability:tim:gptimer2-v2-x-cube:bkin", "ip-block", "timer", "signal-role", "bkin", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch1", "ip-block", "timer", "signal-role", "ch1", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch1n", "ip-block", "timer", "signal-role", "ch1n", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch2", "ip-block", "timer", "signal-role", "ch2", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch2n", "ip-block", "timer", "signal-role", "ch2n", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch3", "ip-block", "timer", "signal-role", "ch3", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch3n", "ip-block", "timer", "signal-role", "ch3n", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:ch4", "ip-block", "timer", "signal-role", "ch4", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
-  {"capability:tim:gptimer2-v2-x-cube:etr", "ip-block", "timer", "signal-role", "etr", "tim", "gptimer2_v2_x_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_bkin, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_bkin, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch1, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch1n, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch1n, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch2, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch2, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch2n, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch2n, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch3, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch3, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch3n, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch3n, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_ch4, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_ch4, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
+  {CapabilityId::capability_id_capability_tim_gptimer2_v2_x_cube_etr, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_timer, CapabilityKeyId::capability_signal_role_etr, IpBlockId::ip_block_tim_gptimer2_v2_x_Cube},
 }};
 }
 }

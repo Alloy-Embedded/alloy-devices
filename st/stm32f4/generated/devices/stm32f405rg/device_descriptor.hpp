@@ -1,17 +1,16 @@
 #pragma once
 
+#include "../../runtime_refs.hpp"
+#include "../../runtime_semantics.hpp"
+
 namespace st {
 namespace stm32f4 {
 namespace generated {
 namespace devices {
 namespace stm32f405rg {
 struct DeviceDescriptor {
-  const char* vendor;
-  const char* family;
-  const char* device;
-  const char* package_name;
-  const char* core;
-  const char* summary;
+  PackageRefId package_id;
+  CoreId core_id;
   int pin_count;
   int peripheral_count;
   int interrupt_count;
@@ -20,12 +19,8 @@ struct DeviceDescriptor {
   int startup_descriptor_count;
 };
 inline constexpr DeviceDescriptor kDeviceDescriptor = {
-  "st",
-  "stm32f4",
-  "stm32f405rg",
-  "lqfp64",
-  "cortex-m4f",
-  "Representative higher-feature F4 device with USB OTG.",
+  PackageRefId::stm32f405rg_lqfp64,
+  CoreId::core_cortex_m4f,
   51,
   91,
   83,

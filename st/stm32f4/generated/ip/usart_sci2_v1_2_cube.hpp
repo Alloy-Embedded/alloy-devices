@@ -1,45 +1,55 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32f4 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "usart",
-  "sci2_v1_2_Cube",
-  "uart",
-  "alloy.uart.st-sci2-v1-2-cube",
-  "usart:sci2_v1_2_Cube",
-  "ck,cts,rts,rx,tx",
+  IpBlockId::ip_block_usart_sci2_v1_2_Cube,
+  PeripheralClassId::class_uart,
+  BackendSchemaId::schema_alloy_uart_st_sci2_v1_2_cube,
+  RegisterProfileId::register_profile_usart_sci2_v1_2_Cube,
+  0u,
+  5u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 5> kSignalRoles = {{
+  {IpBlockId::ip_block_usart_sci2_v1_2_Cube, SignalRoleId::signal_role_ck},
+  {IpBlockId::ip_block_usart_sci2_v1_2_Cube, SignalRoleId::signal_role_cts},
+  {IpBlockId::ip_block_usart_sci2_v1_2_Cube, SignalRoleId::signal_role_rts},
+  {IpBlockId::ip_block_usart_sci2_v1_2_Cube, SignalRoleId::signal_role_rx},
+  {IpBlockId::ip_block_usart_sci2_v1_2_Cube, SignalRoleId::signal_role_tx},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 5> kCapabilities = {{
-  {"capability:usart:sci2-v1-2-cube:ck", "ip-block", "uart", "signal-role", "ck", "usart", "sci2_v1_2_Cube", nullptr, nullptr},
-  {"capability:usart:sci2-v1-2-cube:cts", "ip-block", "uart", "signal-role", "cts", "usart", "sci2_v1_2_Cube", nullptr, nullptr},
-  {"capability:usart:sci2-v1-2-cube:rts", "ip-block", "uart", "signal-role", "rts", "usart", "sci2_v1_2_Cube", nullptr, nullptr},
-  {"capability:usart:sci2-v1-2-cube:rx", "ip-block", "uart", "signal-role", "rx", "usart", "sci2_v1_2_Cube", nullptr, nullptr},
-  {"capability:usart:sci2-v1-2-cube:tx", "ip-block", "uart", "signal-role", "tx", "usart", "sci2_v1_2_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_usart_sci2_v1_2_cube_ck, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_uart, CapabilityKeyId::capability_signal_role_ck, IpBlockId::ip_block_usart_sci2_v1_2_Cube},
+  {CapabilityId::capability_id_capability_usart_sci2_v1_2_cube_cts, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_uart, CapabilityKeyId::capability_signal_role_cts, IpBlockId::ip_block_usart_sci2_v1_2_Cube},
+  {CapabilityId::capability_id_capability_usart_sci2_v1_2_cube_rts, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_uart, CapabilityKeyId::capability_signal_role_rts, IpBlockId::ip_block_usart_sci2_v1_2_Cube},
+  {CapabilityId::capability_id_capability_usart_sci2_v1_2_cube_rx, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_uart, CapabilityKeyId::capability_signal_role_rx, IpBlockId::ip_block_usart_sci2_v1_2_Cube},
+  {CapabilityId::capability_id_capability_usart_sci2_v1_2_cube_tx, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_uart, CapabilityKeyId::capability_signal_role_tx, IpBlockId::ip_block_usart_sci2_v1_2_Cube},
 }};
 }
 }

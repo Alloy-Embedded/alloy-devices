@@ -1,43 +1,51 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
+#include "../runtime_semantics.hpp"
 
 namespace st {
 namespace stm32f4 {
 namespace generated {
 namespace ip {
 struct IpBlockDescriptor {
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral_class;
-  const char* backend_schema_id;
-  const char* register_profile;
-  const char* signal_roles;
+  IpBlockId ip_block_id;
+  PeripheralClassId peripheral_class_id;
+  BackendSchemaId schema_id;
+  RegisterProfileId register_profile_id;
+  std::uint16_t signal_role_offset;
+  std::uint16_t signal_role_count;
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
-  "i2c1",
-  "i2c1_v1_5_Cube",
-  "i2c1",
-  "alloy.i2c1.st-i2c1-v1-5-cube",
-  "i2c1:i2c1_v1_5_Cube",
-  "scl,sda,smba",
+  IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube,
+  PeripheralClassId::class_i2c1,
+  BackendSchemaId::schema_alloy_i2c1_st_i2c1_v1_5_cube,
+  RegisterProfileId::register_profile_i2c1_i2c1_v1_5_Cube,
+  0u,
+  3u,
 };
 
+struct IpBlockSignalRoleRef {
+  IpBlockId ip_block_id;
+  SignalRoleId signal_role_id;
+};
+inline constexpr std::array<IpBlockSignalRoleRef, 3> kSignalRoles = {{
+  {IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube, SignalRoleId::signal_role_scl},
+  {IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube, SignalRoleId::signal_role_sda},
+  {IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube, SignalRoleId::signal_role_smba},
+}};
+
 struct CapabilityDescriptor {
-  const char* capability_id;
-  const char* scope;
-  const char* peripheral_class;
-  const char* name;
-  const char* value;
-  const char* ip_name;
-  const char* ip_version;
-  const char* peripheral;
-  const char* package;
+  CapabilityId capability_id;
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityKeyId capability_key_id;
+  IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 3> kCapabilities = {{
-  {"capability:i2c1:i2c1-v1-5-cube:scl", "ip-block", "i2c1", "signal-role", "scl", "i2c1", "i2c1_v1_5_Cube", nullptr, nullptr},
-  {"capability:i2c1:i2c1-v1-5-cube:sda", "ip-block", "i2c1", "signal-role", "sda", "i2c1", "i2c1_v1_5_Cube", nullptr, nullptr},
-  {"capability:i2c1:i2c1-v1-5-cube:smba", "ip-block", "i2c1", "signal-role", "smba", "i2c1", "i2c1_v1_5_Cube", nullptr, nullptr},
+  {CapabilityId::capability_id_capability_i2c1_i2c1_v1_5_cube_scl, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_i2c1, CapabilityKeyId::capability_signal_role_scl, IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube},
+  {CapabilityId::capability_id_capability_i2c1_i2c1_v1_5_cube_sda, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_i2c1, CapabilityKeyId::capability_signal_role_sda, IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube},
+  {CapabilityId::capability_id_capability_i2c1_i2c1_v1_5_cube_smba, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_i2c1, CapabilityKeyId::capability_signal_role_smba, IpBlockId::ip_block_i2c1_i2c1_v1_5_Cube},
 }};
 }
 }
