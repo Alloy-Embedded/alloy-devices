@@ -1,22 +1,27 @@
 #pragma once
 
 #include <cstdint>
+#include "../clock_tree_lite.hpp"
 
 namespace st {
 namespace stm32f4 {
 namespace generated {
 namespace peripherals {
 struct PeripheralDescriptor {
+  const char* device;
   const char* name;
+  const char* backend_schema_id;
   std::uintptr_t base_address;
-  const char* rcc_enable_signal;
-  const char* rcc_reset_signal;
+  ClockGateId clock_gate_id;
+  ResetId reset_id;
 };
 inline constexpr PeripheralDescriptor kPeripheral = {
+  "stm32f401re",
   "GPIOB",
+  "alloy.gpio.st-gpio",
   0x40020400u,
-  "RCC_AHB1ENR.GPIOBEN",
-  "RCC_AHB1RSTR.GPIOBRST",
+  ClockGateId::stm32f401re_gate_gpiob,
+  ResetId::stm32f401re_reset_gpiob,
 };
 }
 }
