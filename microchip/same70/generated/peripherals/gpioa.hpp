@@ -1,22 +1,27 @@
 #pragma once
 
 #include <cstdint>
+#include "../clock_tree_lite.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
 namespace peripherals {
 struct PeripheralDescriptor {
+  const char* device;
   const char* name;
+  const char* backend_schema_id;
   std::uintptr_t base_address;
-  const char* rcc_enable_signal;
-  const char* rcc_reset_signal;
+  ClockGateId clock_gate_id;
+  ResetId reset_id;
 };
 inline constexpr PeripheralDescriptor kPeripheral = {
+  "atsame70n21b",
   "GPIOA",
+  "alloy.gpio.microchip-pio-v",
   0x400E0E00u,
-  "PMC.PID10",
-  nullptr,
+  ClockGateId::atsame70n21b_gate_gpioa,
+  ResetId::none,
 };
 }
 }
