@@ -30,6 +30,7 @@ enum class PeripheralId : std::uint16_t {
   USART0,
   USART1,
   USART2,
+  XDMAC,
 };
 
 enum class ClockGateId : std::uint16_t {
@@ -52,6 +53,7 @@ enum class ClockGateId : std::uint16_t {
   gate_usart0,
   gate_usart1,
   gate_usart2,
+  gate_xdmac,
 };
 
 enum class ResetId : std::uint16_t {
@@ -290,7 +292,19 @@ struct PeripheralInstanceTraits<PeripheralId::USART2> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 18> kRuntimePeripherals = {{
+template<>
+struct PeripheralInstanceTraits<PeripheralId::XDMAC> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_dma;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x40078000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_xdmac;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+inline constexpr std::array<PeripheralId, 19> kRuntimePeripherals = {{
   PeripheralId::GPIOA,
   PeripheralId::GPIOB,
   PeripheralId::GPIOC,
@@ -309,6 +323,7 @@ inline constexpr std::array<PeripheralId, 18> kRuntimePeripherals = {{
   PeripheralId::USART0,
   PeripheralId::USART1,
   PeripheralId::USART2,
+  PeripheralId::XDMAC,
 }};
 }
 }

@@ -12,6 +12,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_0",
+      "request_value": 0,
       "signal": "RX"
     },
     {
@@ -26,6 +27,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_1",
+      "request_value": 1,
       "signal": "TX"
     },
     {
@@ -40,6 +42,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_10",
+      "request_value": 10,
       "signal": "RX"
     },
     {
@@ -54,6 +57,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_11",
+      "request_value": 11,
       "signal": "TX"
     },
     {
@@ -68,6 +72,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_12",
+      "request_value": 12,
       "signal": "RX"
     },
     {
@@ -82,6 +87,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_13",
+      "request_value": 13,
       "signal": "TX"
     },
     {
@@ -96,6 +102,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_14",
+      "request_value": 14,
       "signal": "TX"
     },
     {
@@ -110,6 +117,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_15",
+      "request_value": 15,
       "signal": "RX"
     },
     {
@@ -124,6 +132,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_16",
+      "request_value": 16,
       "signal": "TX"
     },
     {
@@ -138,6 +147,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_17",
+      "request_value": 17,
       "signal": "RX"
     },
     {
@@ -152,6 +162,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_18",
+      "request_value": 18,
       "signal": "TX"
     },
     {
@@ -166,6 +177,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_19",
+      "request_value": 19,
       "signal": "RX"
     },
     {
@@ -180,6 +192,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_2",
+      "request_value": 2,
       "signal": "RX"
     },
     {
@@ -194,6 +207,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_20",
+      "request_value": 20,
       "signal": "TX"
     },
     {
@@ -208,6 +222,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_21",
+      "request_value": 21,
       "signal": "RX"
     },
     {
@@ -222,6 +237,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_22",
+      "request_value": 22,
       "signal": "TX"
     },
     {
@@ -236,6 +252,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_23",
+      "request_value": 23,
       "signal": "RX"
     },
     {
@@ -250,6 +267,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_24",
+      "request_value": 24,
       "signal": "TX"
     },
     {
@@ -264,6 +282,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_25",
+      "request_value": 25,
       "signal": "RX"
     },
     {
@@ -278,6 +297,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_26",
+      "request_value": 26,
       "signal": "TX"
     },
     {
@@ -292,6 +312,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_27",
+      "request_value": 27,
       "signal": "RX"
     },
     {
@@ -306,6 +327,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_28",
+      "request_value": 28,
       "signal": "TX"
     },
     {
@@ -320,6 +342,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_29",
+      "request_value": 29,
       "signal": "RX"
     },
     {
@@ -334,6 +357,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
       },
       "request_line": "PERID_3",
+      "request_value": 3,
       "signal": "TX"
     },
     {
@@ -348,6 +372,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_30",
+      "request_value": 30,
       "signal": "CH0_TX"
     },
     {
@@ -362,6 +387,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_31",
+      "request_value": 31,
       "signal": "CH1_TX"
     },
     {
@@ -376,6 +402,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_32",
+      "request_value": 32,
       "signal": "TX"
     },
     {
@@ -390,6 +417,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_33",
+      "request_value": 33,
       "signal": "RX"
     },
     {
@@ -404,6 +432,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_34",
+      "request_value": 34,
       "signal": "RX"
     },
     {
@@ -418,6 +447,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_35",
+      "request_value": 35,
       "signal": "RX"
     },
     {
@@ -432,6 +462,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_36",
+      "request_value": 36,
       "signal": "RX"
     },
     {
@@ -446,6 +477,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_37",
+      "request_value": 37,
       "signal": "TX"
     },
     {
@@ -460,6 +492,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_38",
+      "request_value": 38,
       "signal": "RX"
     },
     {
@@ -474,6 +507,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_39",
+      "request_value": 39,
       "signal": "TX"
     },
     {
@@ -488,6 +522,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
       },
       "request_line": "PERID_4",
+      "request_value": 4,
       "signal": "RX"
     },
     {
@@ -502,6 +537,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_40",
+      "request_value": 40,
       "signal": "RX"
     },
     {
@@ -516,6 +552,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_41",
+      "request_value": 41,
       "signal": "RX"
     },
     {
@@ -530,6 +567,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_42",
+      "request_value": 42,
       "signal": "RX"
     },
     {
@@ -544,6 +582,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_43",
+      "request_value": 43,
       "signal": "RX"
     },
     {
@@ -558,6 +597,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_44",
+      "request_value": 44,
       "signal": "TX_LEFT"
     },
     {
@@ -572,6 +612,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_45",
+      "request_value": 45,
       "signal": "RX_LEFT"
     },
     {
@@ -586,6 +627,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
       },
       "request_line": "PERID_46",
+      "request_value": 46,
       "signal": "TX_LEFT"
     },
     {
@@ -600,6 +642,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
       },
       "request_line": "PERID_47",
+      "request_value": 47,
       "signal": "RX_LEFT"
     },
     {
@@ -614,6 +657,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_48",
+      "request_value": 48,
       "signal": "TX_RIGHT"
     },
     {
@@ -628,6 +672,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_49",
+      "request_value": 49,
       "signal": "RX_RIGHT"
     },
     {
@@ -642,6 +687,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_5",
+      "request_value": 5,
       "signal": "TX"
     },
     {
@@ -656,6 +702,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
       },
       "request_line": "PERID_50",
+      "request_value": 50,
       "signal": "TX_RIGHT"
     },
     {
@@ -670,6 +717,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
       },
       "request_line": "PERID_51",
+      "request_value": 51,
       "signal": "RX_RIGHT"
     },
     {
@@ -684,6 +732,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_6",
+      "request_value": 6,
       "signal": "RX"
     },
     {
@@ -698,6 +747,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_7",
+      "request_value": 7,
       "signal": "TX"
     },
     {
@@ -712,6 +762,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_8",
+      "request_value": 8,
       "signal": "RX"
     },
     {
@@ -726,6 +777,7 @@
         "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
       },
       "request_line": "PERID_9",
+      "request_value": 9,
       "signal": "TX"
     }
   ],

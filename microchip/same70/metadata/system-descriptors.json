@@ -931,6 +931,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_0",
+          "request_value": 0,
           "route_id": "dma-route:xdmac:perid-0:hsmci:rx",
           "signal": "RX"
         },
@@ -947,6 +948,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_10",
+          "request_value": 10,
           "route_id": "dma-route:xdmac:perid-10:usart1:rx",
           "signal": "RX"
         },
@@ -963,6 +965,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_11",
+          "request_value": 11,
           "route_id": "dma-route:xdmac:perid-11:usart2:tx",
           "signal": "TX"
         },
@@ -979,6 +982,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_12",
+          "request_value": 12,
           "route_id": "dma-route:xdmac:perid-12:usart2:rx",
           "signal": "RX"
         },
@@ -995,6 +999,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_13",
+          "request_value": 13,
           "route_id": "dma-route:xdmac:perid-13:pwm0:tx",
           "signal": "TX"
         },
@@ -1011,6 +1016,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_14",
+          "request_value": 14,
           "route_id": "dma-route:xdmac:perid-14:twihs0:tx",
           "signal": "TX"
         },
@@ -1027,6 +1033,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_15",
+          "request_value": 15,
           "route_id": "dma-route:xdmac:perid-15:twihs0:rx",
           "signal": "RX"
         },
@@ -1043,6 +1050,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_16",
+          "request_value": 16,
           "route_id": "dma-route:xdmac:perid-16:twihs1:tx",
           "signal": "TX"
         },
@@ -1059,6 +1067,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_17",
+          "request_value": 17,
           "route_id": "dma-route:xdmac:perid-17:twihs1:rx",
           "signal": "RX"
         },
@@ -1075,6 +1084,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_18",
+          "request_value": 18,
           "route_id": "dma-route:xdmac:perid-18:twihs2:tx",
           "signal": "TX"
         },
@@ -1091,6 +1101,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_19",
+          "request_value": 19,
           "route_id": "dma-route:xdmac:perid-19:twihs2:rx",
           "signal": "RX"
         },
@@ -1107,6 +1118,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_1",
+          "request_value": 1,
           "route_id": "dma-route:xdmac:perid-1:spi0:tx",
           "signal": "TX"
         },
@@ -1123,6 +1135,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_20",
+          "request_value": 20,
           "route_id": "dma-route:xdmac:perid-20:uart0:tx",
           "signal": "TX"
         },
@@ -1139,6 +1152,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_21",
+          "request_value": 21,
           "route_id": "dma-route:xdmac:perid-21:uart0:rx",
           "signal": "RX"
         },
@@ -1155,6 +1169,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_22",
+          "request_value": 22,
           "route_id": "dma-route:xdmac:perid-22:uart1:tx",
           "signal": "TX"
         },
@@ -1171,6 +1186,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_23",
+          "request_value": 23,
           "route_id": "dma-route:xdmac:perid-23:uart1:rx",
           "signal": "RX"
         },
@@ -1187,6 +1203,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_24",
+          "request_value": 24,
           "route_id": "dma-route:xdmac:perid-24:uart2:tx",
           "signal": "TX"
         },
@@ -1203,6 +1220,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_25",
+          "request_value": 25,
           "route_id": "dma-route:xdmac:perid-25:uart2:rx",
           "signal": "RX"
         },
@@ -1219,6 +1237,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_26",
+          "request_value": 26,
           "route_id": "dma-route:xdmac:perid-26:uart3:tx",
           "signal": "TX"
         },
@@ -1235,6 +1254,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_27",
+          "request_value": 27,
           "route_id": "dma-route:xdmac:perid-27:uart3:rx",
           "signal": "RX"
         },
@@ -1251,6 +1271,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_28",
+          "request_value": 28,
           "route_id": "dma-route:xdmac:perid-28:uart4:tx",
           "signal": "TX"
         },
@@ -1267,6 +1288,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_29",
+          "request_value": 29,
           "route_id": "dma-route:xdmac:perid-29:uart4:rx",
           "signal": "RX"
         },
@@ -1283,6 +1305,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_2",
+          "request_value": 2,
           "route_id": "dma-route:xdmac:perid-2:spi0:rx",
           "signal": "RX"
         },
@@ -1299,6 +1322,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_30",
+          "request_value": 30,
           "route_id": "dma-route:xdmac:perid-30:dacc:ch0-tx",
           "signal": "CH0_TX"
         },
@@ -1315,6 +1339,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_31",
+          "request_value": 31,
           "route_id": "dma-route:xdmac:perid-31:dacc:ch1-tx",
           "signal": "CH1_TX"
         },
@@ -1331,6 +1356,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_32",
+          "request_value": 32,
           "route_id": "dma-route:xdmac:perid-32:ssc:tx",
           "signal": "TX"
         },
@@ -1347,6 +1373,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_33",
+          "request_value": 33,
           "route_id": "dma-route:xdmac:perid-33:ssc:rx",
           "signal": "RX"
         },
@@ -1363,6 +1390,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_34",
+          "request_value": 34,
           "route_id": "dma-route:xdmac:perid-34:gpioa:rx",
           "signal": "RX"
         },
@@ -1379,6 +1407,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_35",
+          "request_value": 35,
           "route_id": "dma-route:xdmac:perid-35:afec0:rx",
           "signal": "RX"
         },
@@ -1395,6 +1424,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_36",
+          "request_value": 36,
           "route_id": "dma-route:xdmac:perid-36:afec1:rx",
           "signal": "RX"
         },
@@ -1411,6 +1441,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_37",
+          "request_value": 37,
           "route_id": "dma-route:xdmac:perid-37:aes:tx",
           "signal": "TX"
         },
@@ -1427,6 +1458,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_38",
+          "request_value": 38,
           "route_id": "dma-route:xdmac:perid-38:aes:rx",
           "signal": "RX"
         },
@@ -1443,6 +1475,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_39",
+          "request_value": 39,
           "route_id": "dma-route:xdmac:perid-39:pwm1:tx",
           "signal": "TX"
         },
@@ -1459,6 +1492,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_40",
+          "request_value": 40,
           "route_id": "dma-route:xdmac:perid-40:tc0:rx",
           "signal": "RX"
         },
@@ -1475,6 +1509,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_41",
+          "request_value": 41,
           "route_id": "dma-route:xdmac:perid-41:tc1:rx",
           "signal": "RX"
         },
@@ -1491,6 +1526,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_42",
+          "request_value": 42,
           "route_id": "dma-route:xdmac:perid-42:tc2:rx",
           "signal": "RX"
         },
@@ -1507,6 +1543,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_43",
+          "request_value": 43,
           "route_id": "dma-route:xdmac:perid-43:tc3:rx",
           "signal": "RX"
         },
@@ -1523,6 +1560,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_44",
+          "request_value": 44,
           "route_id": "dma-route:xdmac:perid-44:i2sc0:tx-left",
           "signal": "TX_LEFT"
         },
@@ -1539,6 +1577,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_45",
+          "request_value": 45,
           "route_id": "dma-route:xdmac:perid-45:i2sc0:rx-left",
           "signal": "RX_LEFT"
         },
@@ -1555,6 +1594,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_48",
+          "request_value": 48,
           "route_id": "dma-route:xdmac:perid-48:i2sc0:tx-right",
           "signal": "TX_RIGHT"
         },
@@ -1571,6 +1611,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_49",
+          "request_value": 49,
           "route_id": "dma-route:xdmac:perid-49:i2sc0:rx-right",
           "signal": "RX_RIGHT"
         },
@@ -1587,6 +1628,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_5",
+          "request_value": 5,
           "route_id": "dma-route:xdmac:perid-5:qspi:tx",
           "signal": "TX"
         },
@@ -1603,6 +1645,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_6",
+          "request_value": 6,
           "route_id": "dma-route:xdmac:perid-6:qspi:rx",
           "signal": "RX"
         },
@@ -1619,6 +1662,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_7",
+          "request_value": 7,
           "route_id": "dma-route:xdmac:perid-7:usart0:tx",
           "signal": "TX"
         },
@@ -1635,6 +1679,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_8",
+          "request_value": 8,
           "route_id": "dma-route:xdmac:perid-8:usart0:rx",
           "signal": "RX"
         },
@@ -1651,6 +1696,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70n21b.json"
           },
           "request_line": "PERID_9",
+          "request_value": 9,
           "route_id": "dma-route:xdmac:perid-9:usart1:tx",
           "signal": "TX"
         }
@@ -7850,6 +7896,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_0",
+          "request_value": 0,
           "route_id": "dma-route:xdmac:perid-0:hsmci:rx",
           "signal": "RX"
         },
@@ -7866,6 +7913,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_10",
+          "request_value": 10,
           "route_id": "dma-route:xdmac:perid-10:usart1:rx",
           "signal": "RX"
         },
@@ -7882,6 +7930,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_11",
+          "request_value": 11,
           "route_id": "dma-route:xdmac:perid-11:usart2:tx",
           "signal": "TX"
         },
@@ -7898,6 +7947,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_12",
+          "request_value": 12,
           "route_id": "dma-route:xdmac:perid-12:usart2:rx",
           "signal": "RX"
         },
@@ -7914,6 +7964,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_13",
+          "request_value": 13,
           "route_id": "dma-route:xdmac:perid-13:pwm0:tx",
           "signal": "TX"
         },
@@ -7930,6 +7981,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_14",
+          "request_value": 14,
           "route_id": "dma-route:xdmac:perid-14:twihs0:tx",
           "signal": "TX"
         },
@@ -7946,6 +7998,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_15",
+          "request_value": 15,
           "route_id": "dma-route:xdmac:perid-15:twihs0:rx",
           "signal": "RX"
         },
@@ -7962,6 +8015,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_16",
+          "request_value": 16,
           "route_id": "dma-route:xdmac:perid-16:twihs1:tx",
           "signal": "TX"
         },
@@ -7978,6 +8032,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_17",
+          "request_value": 17,
           "route_id": "dma-route:xdmac:perid-17:twihs1:rx",
           "signal": "RX"
         },
@@ -7994,6 +8049,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_18",
+          "request_value": 18,
           "route_id": "dma-route:xdmac:perid-18:twihs2:tx",
           "signal": "TX"
         },
@@ -8010,6 +8066,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_19",
+          "request_value": 19,
           "route_id": "dma-route:xdmac:perid-19:twihs2:rx",
           "signal": "RX"
         },
@@ -8026,6 +8083,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_1",
+          "request_value": 1,
           "route_id": "dma-route:xdmac:perid-1:spi0:tx",
           "signal": "TX"
         },
@@ -8042,6 +8100,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_20",
+          "request_value": 20,
           "route_id": "dma-route:xdmac:perid-20:uart0:tx",
           "signal": "TX"
         },
@@ -8058,6 +8117,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_21",
+          "request_value": 21,
           "route_id": "dma-route:xdmac:perid-21:uart0:rx",
           "signal": "RX"
         },
@@ -8074,6 +8134,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_22",
+          "request_value": 22,
           "route_id": "dma-route:xdmac:perid-22:uart1:tx",
           "signal": "TX"
         },
@@ -8090,6 +8151,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_23",
+          "request_value": 23,
           "route_id": "dma-route:xdmac:perid-23:uart1:rx",
           "signal": "RX"
         },
@@ -8106,6 +8168,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_24",
+          "request_value": 24,
           "route_id": "dma-route:xdmac:perid-24:uart2:tx",
           "signal": "TX"
         },
@@ -8122,6 +8185,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_25",
+          "request_value": 25,
           "route_id": "dma-route:xdmac:perid-25:uart2:rx",
           "signal": "RX"
         },
@@ -8138,6 +8202,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_26",
+          "request_value": 26,
           "route_id": "dma-route:xdmac:perid-26:uart3:tx",
           "signal": "TX"
         },
@@ -8154,6 +8219,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_27",
+          "request_value": 27,
           "route_id": "dma-route:xdmac:perid-27:uart3:rx",
           "signal": "RX"
         },
@@ -8170,6 +8236,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_28",
+          "request_value": 28,
           "route_id": "dma-route:xdmac:perid-28:uart4:tx",
           "signal": "TX"
         },
@@ -8186,6 +8253,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_29",
+          "request_value": 29,
           "route_id": "dma-route:xdmac:perid-29:uart4:rx",
           "signal": "RX"
         },
@@ -8202,6 +8270,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_2",
+          "request_value": 2,
           "route_id": "dma-route:xdmac:perid-2:spi0:rx",
           "signal": "RX"
         },
@@ -8218,6 +8287,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_30",
+          "request_value": 30,
           "route_id": "dma-route:xdmac:perid-30:dacc:ch0-tx",
           "signal": "CH0_TX"
         },
@@ -8234,6 +8304,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_31",
+          "request_value": 31,
           "route_id": "dma-route:xdmac:perid-31:dacc:ch1-tx",
           "signal": "CH1_TX"
         },
@@ -8250,6 +8321,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_32",
+          "request_value": 32,
           "route_id": "dma-route:xdmac:perid-32:ssc:tx",
           "signal": "TX"
         },
@@ -8266,6 +8338,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_33",
+          "request_value": 33,
           "route_id": "dma-route:xdmac:perid-33:ssc:rx",
           "signal": "RX"
         },
@@ -8282,6 +8355,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_34",
+          "request_value": 34,
           "route_id": "dma-route:xdmac:perid-34:gpioa:rx",
           "signal": "RX"
         },
@@ -8298,6 +8372,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_35",
+          "request_value": 35,
           "route_id": "dma-route:xdmac:perid-35:afec0:rx",
           "signal": "RX"
         },
@@ -8314,6 +8389,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_36",
+          "request_value": 36,
           "route_id": "dma-route:xdmac:perid-36:afec1:rx",
           "signal": "RX"
         },
@@ -8330,6 +8406,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_37",
+          "request_value": 37,
           "route_id": "dma-route:xdmac:perid-37:aes:tx",
           "signal": "TX"
         },
@@ -8346,6 +8423,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_38",
+          "request_value": 38,
           "route_id": "dma-route:xdmac:perid-38:aes:rx",
           "signal": "RX"
         },
@@ -8362,6 +8440,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_39",
+          "request_value": 39,
           "route_id": "dma-route:xdmac:perid-39:pwm1:tx",
           "signal": "TX"
         },
@@ -8378,6 +8457,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_3",
+          "request_value": 3,
           "route_id": "dma-route:xdmac:perid-3:spi1:tx",
           "signal": "TX"
         },
@@ -8394,6 +8474,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_40",
+          "request_value": 40,
           "route_id": "dma-route:xdmac:perid-40:tc0:rx",
           "signal": "RX"
         },
@@ -8410,6 +8491,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_41",
+          "request_value": 41,
           "route_id": "dma-route:xdmac:perid-41:tc1:rx",
           "signal": "RX"
         },
@@ -8426,6 +8508,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_42",
+          "request_value": 42,
           "route_id": "dma-route:xdmac:perid-42:tc2:rx",
           "signal": "RX"
         },
@@ -8442,6 +8525,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_43",
+          "request_value": 43,
           "route_id": "dma-route:xdmac:perid-43:tc3:rx",
           "signal": "RX"
         },
@@ -8458,6 +8542,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_44",
+          "request_value": 44,
           "route_id": "dma-route:xdmac:perid-44:i2sc0:tx-left",
           "signal": "TX_LEFT"
         },
@@ -8474,6 +8559,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_45",
+          "request_value": 45,
           "route_id": "dma-route:xdmac:perid-45:i2sc0:rx-left",
           "signal": "RX_LEFT"
         },
@@ -8490,6 +8576,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_46",
+          "request_value": 46,
           "route_id": "dma-route:xdmac:perid-46:i2sc1:tx-left",
           "signal": "TX_LEFT"
         },
@@ -8506,6 +8593,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_47",
+          "request_value": 47,
           "route_id": "dma-route:xdmac:perid-47:i2sc1:rx-left",
           "signal": "RX_LEFT"
         },
@@ -8522,6 +8610,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_48",
+          "request_value": 48,
           "route_id": "dma-route:xdmac:perid-48:i2sc0:tx-right",
           "signal": "TX_RIGHT"
         },
@@ -8538,6 +8627,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_49",
+          "request_value": 49,
           "route_id": "dma-route:xdmac:perid-49:i2sc0:rx-right",
           "signal": "RX_RIGHT"
         },
@@ -8554,6 +8644,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_4",
+          "request_value": 4,
           "route_id": "dma-route:xdmac:perid-4:spi1:rx",
           "signal": "RX"
         },
@@ -8570,6 +8661,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_50",
+          "request_value": 50,
           "route_id": "dma-route:xdmac:perid-50:i2sc1:tx-right",
           "signal": "TX_RIGHT"
         },
@@ -8586,6 +8678,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_51",
+          "request_value": 51,
           "route_id": "dma-route:xdmac:perid-51:i2sc1:rx-right",
           "signal": "RX_RIGHT"
         },
@@ -8602,6 +8695,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_5",
+          "request_value": 5,
           "route_id": "dma-route:xdmac:perid-5:qspi:tx",
           "signal": "TX"
         },
@@ -8618,6 +8712,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_6",
+          "request_value": 6,
           "route_id": "dma-route:xdmac:perid-6:qspi:rx",
           "signal": "RX"
         },
@@ -8634,6 +8729,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_7",
+          "request_value": 7,
           "route_id": "dma-route:xdmac:perid-7:usart0:tx",
           "signal": "TX"
         },
@@ -8650,6 +8746,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_8",
+          "request_value": 8,
           "route_id": "dma-route:xdmac:perid-8:usart0:rx",
           "signal": "RX"
         },
@@ -8666,6 +8763,7 @@
             "source_path": "patches/microchip/same70/devices/atsame70q21b.json"
           },
           "request_line": "PERID_9",
+          "request_value": 9,
           "route_id": "dma-route:xdmac:perid-9:usart1:tx",
           "signal": "TX"
         }
