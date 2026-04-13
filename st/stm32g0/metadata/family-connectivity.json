@@ -1,6 +1,7 @@
 {
   "dma_requests": [
     {
+      "channel_index": 0,
       "controller": "DMA1",
       "peripheral": "USART1",
       "provenance": {
@@ -12,9 +13,11 @@
         "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
       },
       "request_line": "DMA1_CH1",
+      "request_value": 50,
       "signal": "RX"
     },
     {
+      "channel_index": 0,
       "controller": "DMA1",
       "peripheral": "USART2",
       "provenance": {
@@ -26,9 +29,11 @@
         "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
       },
       "request_line": "DMA1_CH1",
+      "request_value": 53,
       "signal": "TX"
     },
     {
+      "channel_index": 1,
       "controller": "DMA1",
       "peripheral": "USART1",
       "provenance": {
@@ -40,9 +45,11 @@
         "source_path": "patches/st/stm32g0/devices/stm32g071rb.json"
       },
       "request_line": "DMA1_CH2",
+      "request_value": 51,
       "signal": "TX"
     },
     {
+      "channel_index": 1,
       "controller": "DMA1",
       "peripheral": "USART2",
       "provenance": {
@@ -54,6 +61,7 @@
         "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
       },
       "request_line": "DMA1_CH2",
+      "request_value": 52,
       "signal": "RX"
     }
   ],
