@@ -1,6 +1,8 @@
 {
   "dma_requests": [
     {
+      "channel_index": 5,
+      "channel_selector": 4,
       "controller": "DMA1",
       "peripheral": "USART2",
       "provenance": {
@@ -15,6 +17,8 @@
       "signal": "RX"
     },
     {
+      "channel_index": 6,
+      "channel_selector": 4,
       "controller": "DMA1",
       "peripheral": "USART2",
       "provenance": {
@@ -29,6 +33,8 @@
       "signal": "TX"
     },
     {
+      "channel_index": 2,
+      "channel_selector": 4,
       "controller": "DMA2",
       "peripheral": "USART1",
       "provenance": {
@@ -43,6 +49,8 @@
       "signal": "RX"
     },
     {
+      "channel_index": 7,
+      "channel_selector": 4,
       "controller": "DMA2",
       "peripheral": "USART1",
       "provenance": {

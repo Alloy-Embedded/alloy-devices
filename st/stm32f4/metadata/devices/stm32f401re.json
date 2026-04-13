@@ -4606,6 +4606,8 @@
   "dma_bindings": [
     {
       "binding_id": "dma-binding:usart2:rx:dma1:dma1-stream5",
+      "channel_index": 5,
+      "channel_selector": 4,
       "conflict_group": null,
       "controller": "DMA1",
       "peripheral": "USART2",
@@ -4623,6 +4625,8 @@
     },
     {
       "binding_id": "dma-binding:usart2:tx:dma1:dma1-stream6",
+      "channel_index": 6,
+      "channel_selector": 4,
       "conflict_group": null,
       "controller": "DMA1",
       "peripheral": "USART2",
@@ -4657,6 +4661,8 @@
   ],
   "dma_requests": [
     {
+      "channel_index": 5,
+      "channel_selector": 4,
       "controller": "DMA1",
       "peripheral": "USART2",
       "provenance": {
@@ -4671,6 +4677,8 @@
       "signal": "RX"
     },
     {
+      "channel_index": 6,
+      "channel_selector": 4,
       "controller": "DMA1",
       "peripheral": "USART2",
       "provenance": {
@@ -4687,6 +4695,8 @@
   ],
   "dma_routes": [
     {
+      "channel_index": 5,
+      "channel_selector": 4,
       "conflict_group": null,
       "controller": "DMA1",
       "peripheral": "USART2",
@@ -4703,6 +4713,8 @@
       "signal": "RX"
     },
     {
+      "channel_index": 6,
+      "channel_selector": 4,
       "conflict_group": null,
       "controller": "DMA1",
       "peripheral": "USART2",

@@ -424,6 +424,8 @@
       ],
       "dma_routes": [
         {
+          "channel_index": 5,
+          "channel_selector": 4,
           "conflict_group": null,
           "controller": "DMA1",
           "peripheral": "USART2",
@@ -440,6 +442,8 @@
           "signal": "RX"
         },
         {
+          "channel_index": 6,
+          "channel_selector": 4,
           "conflict_group": null,
           "controller": "DMA1",
           "peripheral": "USART2",
@@ -4028,6 +4032,8 @@
       ],
       "dma_routes": [
         {
+          "channel_index": 2,
+          "channel_selector": 4,
           "conflict_group": null,
           "controller": "DMA2",
           "peripheral": "USART1",
@@ -4044,6 +4050,8 @@
           "signal": "RX"
         },
         {
+          "channel_index": 7,
+          "channel_selector": 4,
           "conflict_group": null,
           "controller": "DMA2",
           "peripheral": "USART1",
