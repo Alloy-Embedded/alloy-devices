@@ -177,6 +177,22 @@ struct PeripheralClockBindingTraits {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::DMA0> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::DMAMUX1> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::GPIO1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpio1;
@@ -352,7 +368,9 @@ struct PeripheralClockBindingTraits<PeripheralId::LPUART8> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 22> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 24> kClockBoundPeripherals = {{
+  PeripheralId::DMA0,
+  PeripheralId::DMAMUX1,
   PeripheralId::GPIO1,
   PeripheralId::GPIO10,
   PeripheralId::GPIO2,

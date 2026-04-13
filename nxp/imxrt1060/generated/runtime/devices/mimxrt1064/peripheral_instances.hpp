@@ -12,6 +12,8 @@ namespace devices {
 namespace mimxrt1064 {
 enum class PeripheralId : std::uint16_t {
   none,
+  DMA0,
+  DMAMUX1,
   GPIO1,
   GPIO10,
   GPIO2,
@@ -74,6 +76,30 @@ struct PeripheralInstanceTraits {
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
   static constexpr int kInstance = -1;
   static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::DMA0> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_dma;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_dma_nxp_dma;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x400E8000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::DMAMUX1> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_dma_router;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_dma_router_nxp_dmamux;
+  static constexpr int kInstance = 1;
+  static constexpr std::uintptr_t kBaseAddress = 0x400EC000u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
@@ -343,7 +369,9 @@ struct PeripheralInstanceTraits<PeripheralId::LPUART8> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 22> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 24> kRuntimePeripherals = {{
+  PeripheralId::DMA0,
+  PeripheralId::DMAMUX1,
   PeripheralId::GPIO1,
   PeripheralId::GPIO10,
   PeripheralId::GPIO2,
