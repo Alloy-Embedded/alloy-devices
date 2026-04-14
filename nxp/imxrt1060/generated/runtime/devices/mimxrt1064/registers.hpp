@@ -12,14 +12,19 @@ namespace devices {
 namespace mimxrt1064 {
 enum class RegisterId : std::uint16_t {
   none,
+  register_ccm_cacrr,
+  register_ccm_cbcdr,
   register_ccm_cbcmr,
   register_ccm_cscdr1,
+  register_ccm_cdhipr,
   register_ccm_ccgr0,
   register_ccm_ccgr1,
   register_ccm_ccgr2,
   register_ccm_ccgr3,
   register_ccm_ccgr5,
   register_ccm_ccgr6,
+  register_dcdc_reg0,
+  register_dcdc_reg3,
   register_dma0_cr,
   register_dma0_es,
   register_dma0_erq,
@@ -707,6 +712,24 @@ struct RegisterTraits {
 };
 
 template<>
+struct RegisterTraits<RegisterId::register_ccm_cacrr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400FC000u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_ccm_cbcdr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400FC000u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
 struct RegisterTraits<RegisterId::register_ccm_cbcmr> {
   static constexpr bool kPresent = true;
   static constexpr std::uintptr_t kBaseAddress = 0x400FC000u;
@@ -721,6 +744,15 @@ struct RegisterTraits<RegisterId::register_ccm_cscdr1> {
   static constexpr std::uintptr_t kBaseAddress = 0x400FC000u;
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_ccm_cdhipr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400FC000u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
 };
 
@@ -774,6 +806,24 @@ struct RegisterTraits<RegisterId::register_ccm_ccgr6> {
   static constexpr bool kPresent = true;
   static constexpr std::uintptr_t kBaseAddress = 0x400FC000u;
   static constexpr std::uint32_t kOffsetBytes = 128u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_dcdc_reg0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40080000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_dcdc_reg3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40080000u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
 };
@@ -6853,15 +6903,20 @@ struct RegisterTraits<RegisterId::register_lpuart8_water> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 683> kRegisters = {{
+inline constexpr std::array<RegisterId, 688> kRegisters = {{
+  RegisterId::register_ccm_cacrr,
+  RegisterId::register_ccm_cbcdr,
   RegisterId::register_ccm_cbcmr,
   RegisterId::register_ccm_cscdr1,
+  RegisterId::register_ccm_cdhipr,
   RegisterId::register_ccm_ccgr0,
   RegisterId::register_ccm_ccgr1,
   RegisterId::register_ccm_ccgr2,
   RegisterId::register_ccm_ccgr3,
   RegisterId::register_ccm_ccgr5,
   RegisterId::register_ccm_ccgr6,
+  RegisterId::register_dcdc_reg0,
+  RegisterId::register_dcdc_reg3,
   RegisterId::register_dma0_cr,
   RegisterId::register_dma0_es,
   RegisterId::register_dma0_erq,
