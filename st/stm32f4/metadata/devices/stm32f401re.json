@@ -90166,6 +90166,114 @@
       },
       "register_id": "register:rcc:apb1rstr",
       "register_name": "APB1RSTR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 0,
+      "bit_width": 6,
+      "field_id": "field:rcc:pllcfgr:pllm",
+      "name": "PLLM",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:pllcfgr",
+      "register_name": "PLLCFGR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 6,
+      "bit_width": 9,
+      "field_id": "field:rcc:pllcfgr:plln",
+      "name": "PLLN",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:pllcfgr",
+      "register_name": "PLLCFGR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 16,
+      "bit_width": 2,
+      "field_id": "field:rcc:pllcfgr:pllp",
+      "name": "PLLP",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:pllcfgr",
+      "register_name": "PLLCFGR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 24,
+      "bit_width": 4,
+      "field_id": "field:rcc:pllcfgr:pllq",
+      "name": "PLLQ",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:pllcfgr",
+      "register_name": "PLLCFGR"
+    },
+    {
+      "access": "read-write",
+      "bit_offset": 0,
+      "bit_width": 2,
+      "field_id": "field:rcc:cfgr:sw",
+      "name": "SW",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:cfgr",
+      "register_name": "CFGR"
+    },
+    {
+      "access": "read-only",
+      "bit_offset": 2,
+      "bit_width": 2,
+      "field_id": "field:rcc:cfgr:sws",
+      "name": "SWS",
+      "peripheral": "RCC",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "register_id": "register:rcc:cfgr",
+      "register_name": "CFGR"
     }
   ],
   "registers": [
@@ -108013,6 +108121,53 @@
       "source_region": null,
       "symbol": null,
       "target_region": "sram"
+    }
+  ],
+  "system_clock_profiles": [
+    {
+      "apb1_hz": 16000000,
+      "apb2_hz": 16000000,
+      "flash_latency": 0,
+      "hclk_hz": 16000000,
+      "kind": "safe",
+      "profile_id": "safe-reset-default",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "source_hz": 16000000,
+      "source_kind": "reset-default",
+      "sysclk_hz": 16000000
+    },
+    {
+      "ahb_prescaler": 1,
+      "apb1_hz": 42000000,
+      "apb1_prescaler": 2,
+      "apb2_hz": 84000000,
+      "apb2_prescaler": 1,
+      "flash_latency": 2,
+      "hclk_hz": 84000000,
+      "kind": "default",
+      "pll_m": 4,
+      "pll_n": 168,
+      "pll_p": 4,
+      "pll_q": 7,
+      "profile_id": "default-hse-pll-84mhz",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "source_hz": 8000000,
+      "source_kind": "pll-external",
+      "sysclk_hz": 84000000
     }
   ],
   "vector_slots": [
