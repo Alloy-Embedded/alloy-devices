@@ -75780,6 +75780,47 @@
       "target_region": "sram"
     }
   ],
+  "system_clock_profiles": [
+    {
+      "flash_latency": 0,
+      "hclk_hz": 16000000,
+      "kind": "safe",
+      "pclk_hz": 16000000,
+      "profile_id": "safe-hsi16",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g030f6-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
+      },
+      "source_hz": 16000000,
+      "source_kind": "internal-oscillator",
+      "sysclk_hz": 16000000
+    },
+    {
+      "flash_latency": 2,
+      "hclk_hz": 64000000,
+      "kind": "default",
+      "pclk_hz": 64000000,
+      "pll_m": 0,
+      "pll_n": 8,
+      "pll_r": 0,
+      "profile_id": "default-pll-64mhz",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g030f6-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32g0/devices/stm32g030f6.json"
+      },
+      "source_hz": 16000000,
+      "source_kind": "pll-internal",
+      "sysclk_hz": 64000000
+    }
+  ],
   "vector_slots": [
     {
       "interrupt": null,

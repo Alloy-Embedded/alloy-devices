@@ -87,6 +87,7 @@ enum class RegisterId : std::uint16_t {
   register_dmamux1_dmamux_rg3cr,
   register_dmamux1_dmamux_rgsr,
   register_dmamux1_dmamux_rgcfr,
+  register_flash_acr,
   register_gpioa_moder,
   register_gpioa_otyper,
   register_gpioa_ospeedr,
@@ -173,6 +174,9 @@ enum class RegisterId : std::uint16_t {
   register_lpuart2_lpuart_rdr,
   register_lpuart2_lpuart_tdr,
   register_lpuart2_lpuart_presc,
+  register_rcc_cr,
+  register_rcc_cfgr,
+  register_rcc_pllcfgr,
   register_rcc_ioprstr,
   register_rcc_ahbrstr,
   register_rcc_apbrstr1,
@@ -968,6 +972,15 @@ struct RegisterTraits<RegisterId::register_dmamux1_dmamux_rgcfr> {
 };
 
 template<>
+struct RegisterTraits<RegisterId::register_flash_acr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40022000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
 struct RegisterTraits<RegisterId::register_gpioa_moder> {
   static constexpr bool kPresent = true;
   static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
@@ -1738,6 +1751,33 @@ struct RegisterTraits<RegisterId::register_lpuart2_lpuart_presc> {
   static constexpr std::uintptr_t kBaseAddress = 0x40008400u;
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rcc_cr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40021000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rcc_cfgr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40021000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rcc_pllcfgr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40021000u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
 };
 
@@ -2713,7 +2753,7 @@ struct RegisterTraits<RegisterId::register_usart6_presc> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 269> kRegisters = {{
+inline constexpr std::array<RegisterId, 273> kRegisters = {{
   RegisterId::register_dma1_dma_isr,
   RegisterId::register_dma1_dma_ifcr,
   RegisterId::register_dma1_dma_ccr1,
@@ -2789,6 +2829,7 @@ inline constexpr std::array<RegisterId, 269> kRegisters = {{
   RegisterId::register_dmamux1_dmamux_rg3cr,
   RegisterId::register_dmamux1_dmamux_rgsr,
   RegisterId::register_dmamux1_dmamux_rgcfr,
+  RegisterId::register_flash_acr,
   RegisterId::register_gpioa_moder,
   RegisterId::register_gpioa_otyper,
   RegisterId::register_gpioa_ospeedr,
@@ -2875,6 +2916,9 @@ inline constexpr std::array<RegisterId, 269> kRegisters = {{
   RegisterId::register_lpuart2_lpuart_rdr,
   RegisterId::register_lpuart2_lpuart_tdr,
   RegisterId::register_lpuart2_lpuart_presc,
+  RegisterId::register_rcc_cr,
+  RegisterId::register_rcc_cfgr,
+  RegisterId::register_rcc_pllcfgr,
   RegisterId::register_rcc_ioprstr,
   RegisterId::register_rcc_ahbrstr,
   RegisterId::register_rcc_apbrstr1,
