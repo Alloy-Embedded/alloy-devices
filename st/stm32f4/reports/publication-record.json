@@ -571,8 +571,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 63774,
-      "content_sha256": "4826c8986c29f076d1d182efb5b116eca8279cebca0a5e523363a5b4b5f05afc",
+      "content_bytes": 111663,
+      "content_sha256": "88654a014f622e2a20fc60ffc99cdd440ffc112effb33712c41c1de4a6fe647d",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/pwm.hpp"
     },
     {
@@ -583,8 +583,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 79216,
-      "content_sha256": "46974ce241e5a3accb3636d0e0eca18098d5a2290dee5d7f8762b6110c00fd05",
+      "content_bytes": 137933,
+      "content_sha256": "7a8bb9971b76d3099184033109f1364859b49acd04c56f1e577c129ec908f4e7",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/timer.hpp"
     },
     {
@@ -673,8 +673,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 63774,
-      "content_sha256": "330efa0018494a1a58f4bbd45acb4a97115481e8c7a89b41ecbbf6e3103ffd43",
+      "content_bytes": 168387,
+      "content_sha256": "91c25ad7d380f21f690c8c4b61b0e6e4f8b92c841358d234c425fcf9a67affff",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/pwm.hpp"
     },
     {
@@ -685,8 +685,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 79216,
-      "content_sha256": "036c57db2f0d5d8d2c48e0d0a6e3f29d5327f10038d83c3bd1ccea79db41dd67",
+      "content_bytes": 209285,
+      "content_sha256": "74ada957c1631ff16e66a6f11340c2f8c6c3fde10573abf6640332b583e24ba8",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/timer.hpp"
     },
     {
@@ -839,7 +839,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "ff9deb44ffd6acd59c4e3b3d185245b302a7429d684522f4f2994e8defac3460",
+  "target_artifact_revision": "108d83ecd3bad2e786a2c165b1e8e73850313426026dd5714a3cb547837a63c6",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
