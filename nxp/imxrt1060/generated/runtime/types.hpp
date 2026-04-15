@@ -126,6 +126,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_spi,
   class_src,
   class_systemcontrol,
+  class_timer,
   class_tmr,
   class_trng,
   class_tsc,
