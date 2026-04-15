@@ -29,52 +29,132 @@ struct RouteOperation {
 
 enum class RouteId : std::uint16_t {
   none,
+  candidate_pa0_pwm0_pwmh0,
+  candidate_pa0_tc0_tioa0,
   candidate_pa10_gpioa_piodc4,
+  candidate_pa10_pwm0_pwmextrg0,
   candidate_pa10_uart0_utxd0,
   candidate_pa11_gpioa_piodc5,
+  candidate_pa11_pwm0_pwmh0,
+  candidate_pa11_pwm1_pwml0,
   candidate_pa12_gpioa_piodc6,
+  candidate_pa12_pwm0_pwmh1,
+  candidate_pa12_pwm1_pwmh0,
   candidate_pa13_gpioa_piodc7,
+  candidate_pa13_pwm0_pwmh2,
+  candidate_pa13_pwm1_pwml1,
   candidate_pa14_gpioa_piodcen1,
+  candidate_pa14_pwm0_pwmh3,
+  candidate_pa14_pwm1_pwmh1,
+  candidate_pa15_pwm0_pwml3,
+  candidate_pa15_tc0_tioa1,
+  candidate_pa16_pwm0_pwml2,
+  candidate_pa16_tc0_tiob1,
+  candidate_pa17_pwm0_pwmh3,
+  candidate_pa18_pwm1_pwmextrg1,
+  candidate_pa19_pwm0_pwml0,
+  candidate_pa1_pwm0_pwml0,
+  candidate_pa1_tc0_tiob0,
+  candidate_pa20_pwm0_pwml1,
   candidate_pa21_gpioa_piodcen2,
+  candidate_pa21_pwm1_pwmfi0,
   candidate_pa21_usart1_rxd1,
   candidate_pa22_gpioa_piodcclk,
+  candidate_pa22_pwm0_pwmextrg1,
+  candidate_pa23_pwm0_pwmh0,
+  candidate_pa23_pwm1_pwml2,
   candidate_pa23_usart1_sck1,
+  candidate_pa24_pwm0_pwmh1,
   candidate_pa24_usart1_rts1,
+  candidate_pa25_pwm0_pwmh2,
   candidate_pa25_usart1_cts1,
+  candidate_pa26_pwm1_pwmfi1,
+  candidate_pa26_tc0_tioa2,
   candidate_pa26_usart1_dcd1,
+  candidate_pa27_tc0_tiob2,
   candidate_pa27_usart1_dtr1,
+  candidate_pa28_pwm1_pwmfi2,
+  candidate_pa28_tc0_tclk1,
   candidate_pa28_usart1_dsr1,
+  candidate_pa29_tc0_tclk2,
   candidate_pa29_usart1_ri1,
+  candidate_pa2_pwm0_pwmh1,
+  candidate_pa30_pwm0_pwml2,
+  candidate_pa30_pwm1_pwmextrg0,
+  candidate_pa31_pwm1_pwmh2,
   candidate_pa31_spi0_npcs1,
   candidate_pa3_gpioa_piodc0,
   candidate_pa3_twihs0_twd0,
   candidate_pa3_usart1_loncol1,
   candidate_pa4_gpioa_piodc1,
+  candidate_pa4_tc0_tclk0,
   candidate_pa4_twihs0_twck0,
   candidate_pa4_uart1_utxd1,
   candidate_pa5_gpioa_piodc2,
+  candidate_pa5_pwm1_pwml3,
   candidate_pa5_uart1_urxd1,
   candidate_pa6_uart1_utxd1,
+  candidate_pa7_pwm0_pwmh3,
+  candidate_pa8_pwm1_pwmh3,
   candidate_pa9_gpioa_piodc3,
+  candidate_pa9_pwm0_pwmfi0,
   candidate_pa9_uart0_urxd0,
+  candidate_pb0_pwm0_pwmh0,
   candidate_pb0_usart0_rxd0,
+  candidate_pb12_pwm0_pwml1,
+  candidate_pb13_pwm0_pwml2,
   candidate_pb13_usart0_sck0,
+  candidate_pb1_pwm0_pwmh1,
   candidate_pb1_usart0_txd0,
   candidate_pb2_spi0_npcs0,
   candidate_pb2_usart0_cts0,
   candidate_pb3_usart0_rts0,
+  candidate_pb4_pwm0_pwmh2,
   candidate_pb4_twihs1_twd1,
   candidate_pb4_usart1_txd1,
+  candidate_pb5_pwm0_pwml0,
   candidate_pb5_twihs1_twck1,
+  candidate_pc0_pwm0_pwml0,
+  candidate_pc10_tc2_tclk7,
+  candidate_pc11_tc2_tioa8,
+  candidate_pc12_tc2_tiob8,
+  candidate_pc13_pwm0_pwmh3,
+  candidate_pc14_tc2_tclk8,
+  candidate_pc15_pwm0_pwml3,
+  candidate_pc18_pwm0_pwml1,
+  candidate_pc19_pwm0_pwmh2,
+  candidate_pc1_pwm0_pwml1,
+  candidate_pc20_pwm0_pwml2,
+  candidate_pc21_pwm0_pwmh3,
+  candidate_pc22_pwm0_pwml3,
+  candidate_pc23_tc1_tioa3,
   candidate_pc24_spi1_spck,
+  candidate_pc24_tc1_tiob3,
   candidate_pc25_spi1_npcs0,
+  candidate_pc25_tc1_tclk3,
   candidate_pc26_spi1_miso,
+  candidate_pc26_tc1_tioa4,
   candidate_pc27_spi1_mosi,
+  candidate_pc27_tc1_tiob4,
   candidate_pc28_spi1_npcs1,
+  candidate_pc28_tc1_tclk4,
   candidate_pc29_spi1_npcs2,
+  candidate_pc29_tc1_tioa5,
+  candidate_pc2_pwm0_pwml2,
   candidate_pc30_spi1_npcs3,
+  candidate_pc30_tc1_tiob5,
+  candidate_pc31_tc1_tclk5,
+  candidate_pc3_pwm0_pwml3,
+  candidate_pc5_tc2_tioa6,
+  candidate_pc6_tc2_tiob6,
+  candidate_pc7_tc2_tclk6,
+  candidate_pc8_tc2_tioa7,
+  candidate_pc9_tc2_tiob7,
+  candidate_pd0_pwm1_pwml0,
   candidate_pd0_spi1_npcs1,
   candidate_pd0_usart0_dcd0,
+  candidate_pd10_pwm0_pwml0,
+  candidate_pd11_pwm0_pwmh0,
   candidate_pd12_spi0_npcs2,
   candidate_pd15_usart2_rxd2,
   candidate_pd16_usart2_txd2,
@@ -83,29 +163,55 @@ enum class RouteId : std::uint16_t {
   candidate_pd18_usart2_rts2,
   candidate_pd19_uart4_utxd4,
   candidate_pd19_usart2_cts2,
+  candidate_pd1_pwm1_pwmh0,
   candidate_pd1_spi1_npcs2,
   candidate_pd1_usart0_dtr0,
+  candidate_pd20_pwm0_pwmh0,
   candidate_pd20_spi0_miso,
+  candidate_pd21_pwm0_pwmh1,
   candidate_pd21_spi0_mosi,
+  candidate_pd21_tc3_tioa11,
+  candidate_pd22_pwm0_pwmh2,
   candidate_pd22_spi0_spck,
+  candidate_pd22_tc3_tiob11,
+  candidate_pd23_pwm0_pwmh3,
+  candidate_pd24_pwm0_pwml0,
+  candidate_pd24_tc3_tclk11,
+  candidate_pd25_pwm0_pwml1,
   candidate_pd25_spi0_npcs1,
   candidate_pd25_uart2_urxd2,
+  candidate_pd26_pwm0_pwml2,
   candidate_pd26_uart1_utxd1,
   candidate_pd26_uart2_utxd2,
+  candidate_pd27_pwm0_pwml3,
   candidate_pd27_spi0_npcs3,
   candidate_pd27_twihs2_twd2,
   candidate_pd28_twihs2_twck2,
   candidate_pd28_uart3_urxd3,
+  candidate_pd2_pwm1_pwml1,
   candidate_pd2_spi1_npcs3,
   candidate_pd2_usart0_dsr0,
   candidate_pd30_uart3_utxd3,
   candidate_pd31_uart3_utxd3,
+  candidate_pd3_pwm1_pwmh1,
   candidate_pd3_uart4_utxd4,
   candidate_pd3_usart0_ri0,
+  candidate_pd4_pwm1_pwml2,
   candidate_pd4_usart2_dcd2,
+  candidate_pd5_pwm1_pwmh2,
   candidate_pd5_usart2_dtr2,
+  candidate_pd6_pwm1_pwml3,
   candidate_pd6_usart2_dsr2,
+  candidate_pd7_pwm1_pwmh3,
   candidate_pd7_usart2_ri2,
+  candidate_pd8_pwm0_pwmfi1,
+  candidate_pd9_pwm0_pwmfi2,
+  candidate_pe0_tc3_tioa9,
+  candidate_pe1_tc3_tiob9,
+  candidate_pe2_tc3_tclk9,
+  candidate_pe3_tc3_tioa10,
+  candidate_pe4_tc3_tiob10,
+  candidate_pe5_tc3_tclk10,
 };
 
 struct RouteDescriptor {
@@ -125,6 +231,28 @@ struct RouteTraits {
 };
 
 template<>
+struct RouteTraits<PinId::PA0, PeripheralId::PWM0, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa0_pwm0_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA0, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA0, PeripheralId::TC0, SignalId::signal_tioa0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa0_tc0_tioa0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA0, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA10, PeripheralId::GPIOA, SignalId::signal_piodc4> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa10_gpioa_piodc4;
@@ -132,6 +260,17 @@ struct RouteTraits<PinId::PA10, PeripheralId::GPIOA, SignalId::signal_piodc4> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid10, PinId::none, ClockGateId::gate_gpioa, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA10, ClockGateId::none, ResetId::none, 101},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA10, PeripheralId::PWM0, SignalId::signal_pwmextrg0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa10_pwm0_pwmextrg0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA10, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -158,6 +297,28 @@ struct RouteTraits<PinId::PA11, PeripheralId::GPIOA, SignalId::signal_piodc5> {
 };
 
 template<>
+struct RouteTraits<PinId::PA11, PeripheralId::PWM0, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa11_pwm0_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA11, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA11, PeripheralId::PWM1, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa11_pwm1_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA11, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA12, PeripheralId::GPIOA, SignalId::signal_piodc6> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa12_gpioa_piodc6;
@@ -165,6 +326,28 @@ struct RouteTraits<PinId::PA12, PeripheralId::GPIOA, SignalId::signal_piodc6> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid10, PinId::none, ClockGateId::gate_gpioa, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA12, ClockGateId::none, ResetId::none, 101},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA12, PeripheralId::PWM0, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa12_pwm0_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA12, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA12, PeripheralId::PWM1, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa12_pwm1_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA12, ClockGateId::none, ResetId::none, 2},
   }};
 };
 
@@ -180,6 +363,28 @@ struct RouteTraits<PinId::PA13, PeripheralId::GPIOA, SignalId::signal_piodc7> {
 };
 
 template<>
+struct RouteTraits<PinId::PA13, PeripheralId::PWM0, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa13_pwm0_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA13, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA13, PeripheralId::PWM1, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa13_pwm1_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA13, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA14, PeripheralId::GPIOA, SignalId::signal_piodcen1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa14_gpioa_piodcen1;
@@ -191,6 +396,138 @@ struct RouteTraits<PinId::PA14, PeripheralId::GPIOA, SignalId::signal_piodcen1> 
 };
 
 template<>
+struct RouteTraits<PinId::PA14, PeripheralId::PWM0, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa14_pwm0_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA14, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA14, PeripheralId::PWM1, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa14_pwm1_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA14, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA15, PeripheralId::PWM0, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa15_pwm0_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA15, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA15, PeripheralId::TC0, SignalId::signal_tioa1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa15_tc0_tioa1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA15, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA16, PeripheralId::PWM0, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa16_pwm0_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA16, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA16, PeripheralId::TC0, SignalId::signal_tiob1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa16_tc0_tiob1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA16, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA17, PeripheralId::PWM0, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa17_pwm0_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA17, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA18, PeripheralId::PWM1, SignalId::signal_pwmextrg1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa18_pwm1_pwmextrg1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA18, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA19, PeripheralId::PWM0, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa19_pwm0_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA19, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA1, PeripheralId::PWM0, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa1_pwm0_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA1, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA1, PeripheralId::TC0, SignalId::signal_tiob0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa1_tc0_tiob0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA1, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA20, PeripheralId::PWM0, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa20_pwm0_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA20, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA21, PeripheralId::GPIOA, SignalId::signal_piodcen2> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa21_gpioa_piodcen2;
@@ -198,6 +535,17 @@ struct RouteTraits<PinId::PA21, PeripheralId::GPIOA, SignalId::signal_piodcen2> 
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid10, PinId::none, ClockGateId::gate_gpioa, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA21, ClockGateId::none, ResetId::none, 101},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA21, PeripheralId::PWM1, SignalId::signal_pwmfi0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa21_pwm1_pwmfi0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA21, ClockGateId::none, ResetId::none, 2},
   }};
 };
 
@@ -224,6 +572,39 @@ struct RouteTraits<PinId::PA22, PeripheralId::GPIOA, SignalId::signal_piodcclk> 
 };
 
 template<>
+struct RouteTraits<PinId::PA22, PeripheralId::PWM0, SignalId::signal_pwmextrg1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa22_pwm0_pwmextrg1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA22, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA23, PeripheralId::PWM0, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa23_pwm0_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA23, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA23, PeripheralId::PWM1, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa23_pwm1_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA23, ClockGateId::none, ResetId::none, 3},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA23, PeripheralId::USART1, SignalId::signal_sck1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa23_usart1_sck1;
@@ -231,6 +612,17 @@ struct RouteTraits<PinId::PA23, PeripheralId::USART1, SignalId::signal_sck1> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid14, PinId::none, ClockGateId::gate_usart1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA23, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA24, PeripheralId::PWM0, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa24_pwm0_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA24, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -246,6 +638,17 @@ struct RouteTraits<PinId::PA24, PeripheralId::USART1, SignalId::signal_rts1> {
 };
 
 template<>
+struct RouteTraits<PinId::PA25, PeripheralId::PWM0, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa25_pwm0_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA25, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA25, PeripheralId::USART1, SignalId::signal_cts1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa25_usart1_cts1;
@@ -253,6 +656,28 @@ struct RouteTraits<PinId::PA25, PeripheralId::USART1, SignalId::signal_cts1> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid14, PinId::none, ClockGateId::gate_usart1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA25, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA26, PeripheralId::PWM1, SignalId::signal_pwmfi1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa26_pwm1_pwmfi1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA26, ClockGateId::none, ResetId::none, 3},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA26, PeripheralId::TC0, SignalId::signal_tioa2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa26_tc0_tioa2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA26, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -268,6 +693,17 @@ struct RouteTraits<PinId::PA26, PeripheralId::USART1, SignalId::signal_dcd1> {
 };
 
 template<>
+struct RouteTraits<PinId::PA27, PeripheralId::TC0, SignalId::signal_tiob2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa27_tc0_tiob2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA27, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA27, PeripheralId::USART1, SignalId::signal_dtr1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa27_usart1_dtr1;
@@ -275,6 +711,28 @@ struct RouteTraits<PinId::PA27, PeripheralId::USART1, SignalId::signal_dtr1> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid14, PinId::none, ClockGateId::gate_usart1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA27, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA28, PeripheralId::PWM1, SignalId::signal_pwmfi2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa28_pwm1_pwmfi2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA28, ClockGateId::none, ResetId::none, 3},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA28, PeripheralId::TC0, SignalId::signal_tclk1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa28_tc0_tclk1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA28, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -290,6 +748,17 @@ struct RouteTraits<PinId::PA28, PeripheralId::USART1, SignalId::signal_dsr1> {
 };
 
 template<>
+struct RouteTraits<PinId::PA29, PeripheralId::TC0, SignalId::signal_tclk2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa29_tc0_tclk2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA29, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA29, PeripheralId::USART1, SignalId::signal_ri1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa29_usart1_ri1;
@@ -297,6 +766,50 @@ struct RouteTraits<PinId::PA29, PeripheralId::USART1, SignalId::signal_ri1> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid14, PinId::none, ClockGateId::gate_usart1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA29, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA2, PeripheralId::PWM0, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa2_pwm0_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA2, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA30, PeripheralId::PWM0, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa30_pwm0_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA30, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA30, PeripheralId::PWM1, SignalId::signal_pwmextrg0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa30_pwm1_pwmextrg0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA30, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA31, PeripheralId::PWM1, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa31_pwm1_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA31, ClockGateId::none, ResetId::none, 3},
   }};
 };
 
@@ -356,6 +869,17 @@ struct RouteTraits<PinId::PA4, PeripheralId::GPIOA, SignalId::signal_piodc1> {
 };
 
 template<>
+struct RouteTraits<PinId::PA4, PeripheralId::TC0, SignalId::signal_tclk0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa4_tc0_tclk0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid23, PinId::none, ClockGateId::gate_tc0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA4, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA4, PeripheralId::TWIHS0, SignalId::signal_twck0> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa4_twihs0_twck0;
@@ -389,6 +913,17 @@ struct RouteTraits<PinId::PA5, PeripheralId::GPIOA, SignalId::signal_piodc2> {
 };
 
 template<>
+struct RouteTraits<PinId::PA5, PeripheralId::PWM1, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa5_pwm1_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA5, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA5, PeripheralId::UART1, SignalId::signal_urxd1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa5_uart1_urxd1;
@@ -411,6 +946,28 @@ struct RouteTraits<PinId::PA6, PeripheralId::UART1, SignalId::signal_utxd1> {
 };
 
 template<>
+struct RouteTraits<PinId::PA7, PeripheralId::PWM0, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa7_pwm0_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA7, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA8, PeripheralId::PWM1, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa8_pwm1_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA8, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PA9, PeripheralId::GPIOA, SignalId::signal_piodc3> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pa9_gpioa_piodc3;
@@ -418,6 +975,17 @@ struct RouteTraits<PinId::PA9, PeripheralId::GPIOA, SignalId::signal_piodc3> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid10, PinId::none, ClockGateId::gate_gpioa, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA9, ClockGateId::none, ResetId::none, 101},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PA9, PeripheralId::PWM0, SignalId::signal_pwmfi0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa9_pwm0_pwmfi0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PA9, ClockGateId::none, ResetId::none, 2},
   }};
 };
 
@@ -433,6 +1001,17 @@ struct RouteTraits<PinId::PA9, PeripheralId::UART0, SignalId::signal_urxd0> {
 };
 
 template<>
+struct RouteTraits<PinId::PB0, PeripheralId::PWM0, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb0_pwm0_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB0, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PB0, PeripheralId::USART0, SignalId::signal_rxd0> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pb0_usart0_rxd0;
@@ -444,6 +1023,28 @@ struct RouteTraits<PinId::PB0, PeripheralId::USART0, SignalId::signal_rxd0> {
 };
 
 template<>
+struct RouteTraits<PinId::PB12, PeripheralId::PWM0, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb12_pwm0_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB12, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PB13, PeripheralId::PWM0, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb13_pwm0_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB13, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PB13, PeripheralId::USART0, SignalId::signal_sck0> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pb13_usart0_sck0;
@@ -451,6 +1052,17 @@ struct RouteTraits<PinId::PB13, PeripheralId::USART0, SignalId::signal_sck0> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid13, PinId::none, ClockGateId::gate_usart0, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB13, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PB1, PeripheralId::PWM0, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb1_pwm0_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB1, ClockGateId::none, ResetId::none, 0},
   }};
 };
 
@@ -499,6 +1111,17 @@ struct RouteTraits<PinId::PB3, PeripheralId::USART0, SignalId::signal_rts0> {
 };
 
 template<>
+struct RouteTraits<PinId::PB4, PeripheralId::PWM0, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb4_pwm0_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB4, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PB4, PeripheralId::TWIHS1, SignalId::signal_twd1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pb4_twihs1_twd1;
@@ -521,6 +1144,17 @@ struct RouteTraits<PinId::PB4, PeripheralId::USART1, SignalId::signal_txd1> {
 };
 
 template<>
+struct RouteTraits<PinId::PB5, PeripheralId::PWM0, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb5_pwm0_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB5, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PB5, PeripheralId::TWIHS1, SignalId::signal_twck1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pb5_twihs1_twck1;
@@ -528,6 +1162,160 @@ struct RouteTraits<PinId::PB5, PeripheralId::TWIHS1, SignalId::signal_twck1> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid20, PinId::none, ClockGateId::gate_twihs1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PB5, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC0, PeripheralId::PWM0, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc0_pwm0_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC0, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC10, PeripheralId::TC2, SignalId::signal_tclk7> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc10_tc2_tclk7;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC10, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC11, PeripheralId::TC2, SignalId::signal_tioa8> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc11_tc2_tioa8;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC11, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC12, PeripheralId::TC2, SignalId::signal_tiob8> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc12_tc2_tiob8;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC12, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC13, PeripheralId::PWM0, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc13_pwm0_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC13, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC14, PeripheralId::TC2, SignalId::signal_tclk8> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc14_tc2_tclk8;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC14, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC15, PeripheralId::PWM0, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc15_pwm0_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC15, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC18, PeripheralId::PWM0, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc18_pwm0_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC18, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC19, PeripheralId::PWM0, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc19_pwm0_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC19, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC1, PeripheralId::PWM0, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc1_pwm0_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC1, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC20, PeripheralId::PWM0, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc20_pwm0_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC20, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC21, PeripheralId::PWM0, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc21_pwm0_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC21, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC22, PeripheralId::PWM0, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc22_pwm0_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC22, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC23, PeripheralId::TC1, SignalId::signal_tioa3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc23_tc1_tioa3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC23, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -543,6 +1331,17 @@ struct RouteTraits<PinId::PC24, PeripheralId::SPI1, SignalId::signal_spck> {
 };
 
 template<>
+struct RouteTraits<PinId::PC24, PeripheralId::TC1, SignalId::signal_tiob3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc24_tc1_tiob3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC24, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PC25, PeripheralId::SPI1, SignalId::signal_npcs0> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pc25_spi1_npcs0;
@@ -550,6 +1349,17 @@ struct RouteTraits<PinId::PC25, PeripheralId::SPI1, SignalId::signal_npcs0> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid42, PinId::none, ClockGateId::gate_spi1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC25, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC25, PeripheralId::TC1, SignalId::signal_tclk3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc25_tc1_tclk3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC25, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -565,6 +1375,17 @@ struct RouteTraits<PinId::PC26, PeripheralId::SPI1, SignalId::signal_miso> {
 };
 
 template<>
+struct RouteTraits<PinId::PC26, PeripheralId::TC1, SignalId::signal_tioa4> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc26_tc1_tioa4;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC26, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PC27, PeripheralId::SPI1, SignalId::signal_mosi> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pc27_spi1_mosi;
@@ -572,6 +1393,17 @@ struct RouteTraits<PinId::PC27, PeripheralId::SPI1, SignalId::signal_mosi> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid42, PinId::none, ClockGateId::gate_spi1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC27, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC27, PeripheralId::TC1, SignalId::signal_tiob4> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc27_tc1_tiob4;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC27, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -587,6 +1419,17 @@ struct RouteTraits<PinId::PC28, PeripheralId::SPI1, SignalId::signal_npcs1> {
 };
 
 template<>
+struct RouteTraits<PinId::PC28, PeripheralId::TC1, SignalId::signal_tclk4> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc28_tc1_tclk4;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC28, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PC29, PeripheralId::SPI1, SignalId::signal_npcs2> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pc29_spi1_npcs2;
@@ -598,6 +1441,28 @@ struct RouteTraits<PinId::PC29, PeripheralId::SPI1, SignalId::signal_npcs2> {
 };
 
 template<>
+struct RouteTraits<PinId::PC29, PeripheralId::TC1, SignalId::signal_tioa5> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc29_tc1_tioa5;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC29, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC2, PeripheralId::PWM0, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc2_pwm0_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC2, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PC30, PeripheralId::SPI1, SignalId::signal_npcs3> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pc30_spi1_npcs3;
@@ -605,6 +1470,105 @@ struct RouteTraits<PinId::PC30, PeripheralId::SPI1, SignalId::signal_npcs3> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid42, PinId::none, ClockGateId::gate_spi1, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC30, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC30, PeripheralId::TC1, SignalId::signal_tiob5> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc30_tc1_tiob5;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC30, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC31, PeripheralId::TC1, SignalId::signal_tclk5> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc31_tc1_tclk5;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid26, PinId::none, ClockGateId::gate_tc1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC31, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC3, PeripheralId::PWM0, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc3_pwm0_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC3, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC5, PeripheralId::TC2, SignalId::signal_tioa6> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc5_tc2_tioa6;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC5, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC6, PeripheralId::TC2, SignalId::signal_tiob6> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc6_tc2_tiob6;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC6, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC7, PeripheralId::TC2, SignalId::signal_tclk6> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc7_tc2_tclk6;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC7, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC8, PeripheralId::TC2, SignalId::signal_tioa7> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc8_tc2_tioa7;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC8, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PC9, PeripheralId::TC2, SignalId::signal_tiob7> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc9_tc2_tiob7;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid47, PinId::none, ClockGateId::gate_tc2, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PC9, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD0, PeripheralId::PWM1, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd0_pwm1_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD0, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -627,6 +1591,28 @@ struct RouteTraits<PinId::PD0, PeripheralId::USART0, SignalId::signal_dcd0> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid13, PinId::none, ClockGateId::gate_usart0, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD0, ClockGateId::none, ResetId::none, 3},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD10, PeripheralId::PWM0, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd10_pwm0_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD10, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD11, PeripheralId::PWM0, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd11_pwm0_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD11, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -719,6 +1705,17 @@ struct RouteTraits<PinId::PD19, PeripheralId::USART2, SignalId::signal_cts2> {
 };
 
 template<>
+struct RouteTraits<PinId::PD1, PeripheralId::PWM1, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd1_pwm1_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD1, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD1, PeripheralId::SPI1, SignalId::signal_npcs2> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd1_spi1_npcs2;
@@ -741,6 +1738,17 @@ struct RouteTraits<PinId::PD1, PeripheralId::USART0, SignalId::signal_dtr0> {
 };
 
 template<>
+struct RouteTraits<PinId::PD20, PeripheralId::PWM0, SignalId::signal_pwmh0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd20_pwm0_pwmh0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD20, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD20, PeripheralId::SPI0, SignalId::signal_miso> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd20_spi0_miso;
@@ -748,6 +1756,17 @@ struct RouteTraits<PinId::PD20, PeripheralId::SPI0, SignalId::signal_miso> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid21, PinId::none, ClockGateId::gate_spi0, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD20, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD21, PeripheralId::PWM0, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd21_pwm0_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD21, ClockGateId::none, ResetId::none, 0},
   }};
 };
 
@@ -763,6 +1782,28 @@ struct RouteTraits<PinId::PD21, PeripheralId::SPI0, SignalId::signal_mosi> {
 };
 
 template<>
+struct RouteTraits<PinId::PD21, PeripheralId::TC3, SignalId::signal_tioa11> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd21_tc3_tioa11;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD21, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD22, PeripheralId::PWM0, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd22_pwm0_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD22, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD22, PeripheralId::SPI0, SignalId::signal_spck> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd22_spi0_spck;
@@ -770,6 +1811,61 @@ struct RouteTraits<PinId::PD22, PeripheralId::SPI0, SignalId::signal_spck> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid21, PinId::none, ClockGateId::gate_spi0, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD22, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD22, PeripheralId::TC3, SignalId::signal_tiob11> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd22_tc3_tiob11;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD22, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD23, PeripheralId::PWM0, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd23_pwm0_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD23, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD24, PeripheralId::PWM0, SignalId::signal_pwml0> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd24_pwm0_pwml0;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD24, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD24, PeripheralId::TC3, SignalId::signal_tclk11> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd24_tc3_tclk11;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD24, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD25, PeripheralId::PWM0, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd25_pwm0_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD25, ClockGateId::none, ResetId::none, 0},
   }};
 };
 
@@ -796,6 +1892,17 @@ struct RouteTraits<PinId::PD25, PeripheralId::UART2, SignalId::signal_urxd2> {
 };
 
 template<>
+struct RouteTraits<PinId::PD26, PeripheralId::PWM0, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd26_pwm0_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD26, ClockGateId::none, ResetId::none, 0},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD26, PeripheralId::UART1, SignalId::signal_utxd1> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd26_uart1_utxd1;
@@ -814,6 +1921,17 @@ struct RouteTraits<PinId::PD26, PeripheralId::UART2, SignalId::signal_utxd2> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid44, PinId::none, ClockGateId::gate_uart2, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD26, ClockGateId::none, ResetId::none, 2},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD27, PeripheralId::PWM0, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd27_pwm0_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD27, ClockGateId::none, ResetId::none, 0},
   }};
 };
 
@@ -862,6 +1980,17 @@ struct RouteTraits<PinId::PD28, PeripheralId::UART3, SignalId::signal_urxd3> {
 };
 
 template<>
+struct RouteTraits<PinId::PD2, PeripheralId::PWM1, SignalId::signal_pwml1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd2_pwm1_pwml1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD2, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD2, PeripheralId::SPI1, SignalId::signal_npcs3> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd2_spi1_npcs3;
@@ -906,6 +2035,17 @@ struct RouteTraits<PinId::PD31, PeripheralId::UART3, SignalId::signal_utxd3> {
 };
 
 template<>
+struct RouteTraits<PinId::PD3, PeripheralId::PWM1, SignalId::signal_pwmh1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd3_pwm1_pwmh1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD3, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD3, PeripheralId::UART4, SignalId::signal_utxd4> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd3_uart4_utxd4;
@@ -928,6 +2068,17 @@ struct RouteTraits<PinId::PD3, PeripheralId::USART0, SignalId::signal_ri0> {
 };
 
 template<>
+struct RouteTraits<PinId::PD4, PeripheralId::PWM1, SignalId::signal_pwml2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd4_pwm1_pwml2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD4, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD4, PeripheralId::USART2, SignalId::signal_dcd2> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd4_usart2_dcd2;
@@ -935,6 +2086,17 @@ struct RouteTraits<PinId::PD4, PeripheralId::USART2, SignalId::signal_dcd2> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid15, PinId::none, ClockGateId::gate_usart2, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD4, ClockGateId::none, ResetId::none, 3},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD5, PeripheralId::PWM1, SignalId::signal_pwmh2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd5_pwm1_pwmh2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD5, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -950,6 +2112,17 @@ struct RouteTraits<PinId::PD5, PeripheralId::USART2, SignalId::signal_dtr2> {
 };
 
 template<>
+struct RouteTraits<PinId::PD6, PeripheralId::PWM1, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd6_pwm1_pwml3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD6, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
 struct RouteTraits<PinId::PD6, PeripheralId::USART2, SignalId::signal_dsr2> {
   static constexpr bool kPresent = true;
   static constexpr RouteId kRouteId = RouteId::candidate_pd6_usart2_dsr2;
@@ -957,6 +2130,17 @@ struct RouteTraits<PinId::PD6, PeripheralId::USART2, SignalId::signal_dsr2> {
   static constexpr std::array<RouteOperation, 2> kOperations = {{
     {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid15, PinId::none, ClockGateId::gate_usart2, ResetId::none, 1},
     {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD6, ClockGateId::none, ResetId::none, 3},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD7, PeripheralId::PWM1, SignalId::signal_pwmh3> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd7_pwm1_pwmh3;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60, PinId::none, ClockGateId::gate_pwm1, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD7, ClockGateId::none, ResetId::none, 1},
   }};
 };
 
@@ -971,53 +2155,221 @@ struct RouteTraits<PinId::PD7, PeripheralId::USART2, SignalId::signal_ri2> {
   }};
 };
 
-inline constexpr std::array<RouteDescriptor, 77> kRuntimeRoutes = {{
+template<>
+struct RouteTraits<PinId::PD8, PeripheralId::PWM0, SignalId::signal_pwmfi1> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd8_pwm0_pwmfi1;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD8, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PD9, PeripheralId::PWM0, SignalId::signal_pwmfi2> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pd9_pwm0_pwmfi2;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31, PinId::none, ClockGateId::gate_pwm0, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PD9, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PE0, PeripheralId::TC3, SignalId::signal_tioa9> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pe0_tc3_tioa9;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PE0, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PE1, PeripheralId::TC3, SignalId::signal_tiob9> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pe1_tc3_tiob9;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PE1, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PE2, PeripheralId::TC3, SignalId::signal_tclk9> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pe2_tc3_tclk9;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PE2, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PE3, PeripheralId::TC3, SignalId::signal_tioa10> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pe3_tc3_tioa10;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PE3, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PE4, PeripheralId::TC3, SignalId::signal_tiob10> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pe4_tc3_tiob10;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PE4, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+template<>
+struct RouteTraits<PinId::PE5, PeripheralId::TC3, SignalId::signal_tclk10> {
+  static constexpr bool kPresent = true;
+  static constexpr RouteId kRouteId = RouteId::candidate_pe5_tc3_tclk10;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_peripheral_mux;
+  static constexpr std::array<RouteOperation, 2> kOperations = {{
+    {BackendSchemaId::schema_alloy_clock_microchip_pmc_p, OperationKindId::operation_kind_set_bit, OperationSubjectKindId::operation_subject_peripheral, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid50, PinId::none, ClockGateId::gate_tc3, ResetId::none, 1},
+    {BackendSchemaId::schema_alloy_pinmux_sam_pio_v1, OperationKindId::operation_kind_write_selector, OperationSubjectKindId::operation_subject_pin, RegisterId::none, FieldId::none, PinId::PE5, ClockGateId::none, ResetId::none, 1},
+  }};
+};
+
+inline constexpr std::array<RouteDescriptor, 183> kRuntimeRoutes = {{
+  {RouteId::candidate_pa0_pwm0_pwmh0, PinId::PA0, PeripheralId::PWM0, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa0_tc0_tioa0, PinId::PA0, PeripheralId::TC0, SignalId::signal_tioa0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa10_gpioa_piodc4, PinId::PA10, PeripheralId::GPIOA, SignalId::signal_piodc4, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa10_pwm0_pwmextrg0, PinId::PA10, PeripheralId::PWM0, SignalId::signal_pwmextrg0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa10_uart0_utxd0, PinId::PA10, PeripheralId::UART0, SignalId::signal_utxd0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa11_gpioa_piodc5, PinId::PA11, PeripheralId::GPIOA, SignalId::signal_piodc5, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa11_pwm0_pwmh0, PinId::PA11, PeripheralId::PWM0, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa11_pwm1_pwml0, PinId::PA11, PeripheralId::PWM1, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa12_gpioa_piodc6, PinId::PA12, PeripheralId::GPIOA, SignalId::signal_piodc6, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa12_pwm0_pwmh1, PinId::PA12, PeripheralId::PWM0, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa12_pwm1_pwmh0, PinId::PA12, PeripheralId::PWM1, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa13_gpioa_piodc7, PinId::PA13, PeripheralId::GPIOA, SignalId::signal_piodc7, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa13_pwm0_pwmh2, PinId::PA13, PeripheralId::PWM0, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa13_pwm1_pwml1, PinId::PA13, PeripheralId::PWM1, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa14_gpioa_piodcen1, PinId::PA14, PeripheralId::GPIOA, SignalId::signal_piodcen1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa14_pwm0_pwmh3, PinId::PA14, PeripheralId::PWM0, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa14_pwm1_pwmh1, PinId::PA14, PeripheralId::PWM1, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa15_pwm0_pwml3, PinId::PA15, PeripheralId::PWM0, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa15_tc0_tioa1, PinId::PA15, PeripheralId::TC0, SignalId::signal_tioa1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa16_pwm0_pwml2, PinId::PA16, PeripheralId::PWM0, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa16_tc0_tiob1, PinId::PA16, PeripheralId::TC0, SignalId::signal_tiob1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa17_pwm0_pwmh3, PinId::PA17, PeripheralId::PWM0, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa18_pwm1_pwmextrg1, PinId::PA18, PeripheralId::PWM1, SignalId::signal_pwmextrg1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa19_pwm0_pwml0, PinId::PA19, PeripheralId::PWM0, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa1_pwm0_pwml0, PinId::PA1, PeripheralId::PWM0, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa1_tc0_tiob0, PinId::PA1, PeripheralId::TC0, SignalId::signal_tiob0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa20_pwm0_pwml1, PinId::PA20, PeripheralId::PWM0, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa21_gpioa_piodcen2, PinId::PA21, PeripheralId::GPIOA, SignalId::signal_piodcen2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa21_pwm1_pwmfi0, PinId::PA21, PeripheralId::PWM1, SignalId::signal_pwmfi0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa21_usart1_rxd1, PinId::PA21, PeripheralId::USART1, SignalId::signal_rxd1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa22_gpioa_piodcclk, PinId::PA22, PeripheralId::GPIOA, SignalId::signal_piodcclk, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa22_pwm0_pwmextrg1, PinId::PA22, PeripheralId::PWM0, SignalId::signal_pwmextrg1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa23_pwm0_pwmh0, PinId::PA23, PeripheralId::PWM0, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa23_pwm1_pwml2, PinId::PA23, PeripheralId::PWM1, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa23_usart1_sck1, PinId::PA23, PeripheralId::USART1, SignalId::signal_sck1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa24_pwm0_pwmh1, PinId::PA24, PeripheralId::PWM0, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa24_usart1_rts1, PinId::PA24, PeripheralId::USART1, SignalId::signal_rts1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa25_pwm0_pwmh2, PinId::PA25, PeripheralId::PWM0, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa25_usart1_cts1, PinId::PA25, PeripheralId::USART1, SignalId::signal_cts1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa26_pwm1_pwmfi1, PinId::PA26, PeripheralId::PWM1, SignalId::signal_pwmfi1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa26_tc0_tioa2, PinId::PA26, PeripheralId::TC0, SignalId::signal_tioa2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa26_usart1_dcd1, PinId::PA26, PeripheralId::USART1, SignalId::signal_dcd1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa27_tc0_tiob2, PinId::PA27, PeripheralId::TC0, SignalId::signal_tiob2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa27_usart1_dtr1, PinId::PA27, PeripheralId::USART1, SignalId::signal_dtr1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa28_pwm1_pwmfi2, PinId::PA28, PeripheralId::PWM1, SignalId::signal_pwmfi2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa28_tc0_tclk1, PinId::PA28, PeripheralId::TC0, SignalId::signal_tclk1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa28_usart1_dsr1, PinId::PA28, PeripheralId::USART1, SignalId::signal_dsr1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa29_tc0_tclk2, PinId::PA29, PeripheralId::TC0, SignalId::signal_tclk2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa29_usart1_ri1, PinId::PA29, PeripheralId::USART1, SignalId::signal_ri1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa2_pwm0_pwmh1, PinId::PA2, PeripheralId::PWM0, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa30_pwm0_pwml2, PinId::PA30, PeripheralId::PWM0, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa30_pwm1_pwmextrg0, PinId::PA30, PeripheralId::PWM1, SignalId::signal_pwmextrg0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa31_pwm1_pwmh2, PinId::PA31, PeripheralId::PWM1, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa31_spi0_npcs1, PinId::PA31, PeripheralId::SPI0, SignalId::signal_npcs1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa3_gpioa_piodc0, PinId::PA3, PeripheralId::GPIOA, SignalId::signal_piodc0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa3_twihs0_twd0, PinId::PA3, PeripheralId::TWIHS0, SignalId::signal_twd0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa3_usart1_loncol1, PinId::PA3, PeripheralId::USART1, SignalId::signal_loncol1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa4_gpioa_piodc1, PinId::PA4, PeripheralId::GPIOA, SignalId::signal_piodc1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa4_tc0_tclk0, PinId::PA4, PeripheralId::TC0, SignalId::signal_tclk0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa4_twihs0_twck0, PinId::PA4, PeripheralId::TWIHS0, SignalId::signal_twck0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa4_uart1_utxd1, PinId::PA4, PeripheralId::UART1, SignalId::signal_utxd1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa5_gpioa_piodc2, PinId::PA5, PeripheralId::GPIOA, SignalId::signal_piodc2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa5_pwm1_pwml3, PinId::PA5, PeripheralId::PWM1, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa5_uart1_urxd1, PinId::PA5, PeripheralId::UART1, SignalId::signal_urxd1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa6_uart1_utxd1, PinId::PA6, PeripheralId::UART1, SignalId::signal_utxd1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa7_pwm0_pwmh3, PinId::PA7, PeripheralId::PWM0, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa8_pwm1_pwmh3, PinId::PA8, PeripheralId::PWM1, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa9_gpioa_piodc3, PinId::PA9, PeripheralId::GPIOA, SignalId::signal_piodc3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pa9_pwm0_pwmfi0, PinId::PA9, PeripheralId::PWM0, SignalId::signal_pwmfi0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pa9_uart0_urxd0, PinId::PA9, PeripheralId::UART0, SignalId::signal_urxd0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pb0_pwm0_pwmh0, PinId::PB0, PeripheralId::PWM0, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb0_usart0_rxd0, PinId::PB0, PeripheralId::USART0, SignalId::signal_rxd0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pb12_pwm0_pwml1, PinId::PB12, PeripheralId::PWM0, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pb13_pwm0_pwml2, PinId::PB13, PeripheralId::PWM0, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb13_usart0_sck0, PinId::PB13, PeripheralId::USART0, SignalId::signal_sck0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pb1_pwm0_pwmh1, PinId::PB1, PeripheralId::PWM0, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb1_usart0_txd0, PinId::PB1, PeripheralId::USART0, SignalId::signal_txd0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb2_spi0_npcs0, PinId::PB2, PeripheralId::SPI0, SignalId::signal_npcs0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb2_usart0_cts0, PinId::PB2, PeripheralId::USART0, SignalId::signal_cts0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb3_usart0_rts0, PinId::PB3, PeripheralId::USART0, SignalId::signal_rts0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pb4_pwm0_pwmh2, PinId::PB4, PeripheralId::PWM0, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb4_twihs1_twd1, PinId::PB4, PeripheralId::TWIHS1, SignalId::signal_twd1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb4_usart1_txd1, PinId::PB4, PeripheralId::USART1, SignalId::signal_txd1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pb5_pwm0_pwml0, PinId::PB5, PeripheralId::PWM0, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pb5_twihs1_twck1, PinId::PB5, PeripheralId::TWIHS1, SignalId::signal_twck1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc0_pwm0_pwml0, PinId::PC0, PeripheralId::PWM0, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc10_tc2_tclk7, PinId::PC10, PeripheralId::TC2, SignalId::signal_tclk7, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc11_tc2_tioa8, PinId::PC11, PeripheralId::TC2, SignalId::signal_tioa8, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc12_tc2_tiob8, PinId::PC12, PeripheralId::TC2, SignalId::signal_tiob8, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc13_pwm0_pwmh3, PinId::PC13, PeripheralId::PWM0, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc14_tc2_tclk8, PinId::PC14, PeripheralId::TC2, SignalId::signal_tclk8, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc15_pwm0_pwml3, PinId::PC15, PeripheralId::PWM0, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc18_pwm0_pwml1, PinId::PC18, PeripheralId::PWM0, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc19_pwm0_pwmh2, PinId::PC19, PeripheralId::PWM0, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc1_pwm0_pwml1, PinId::PC1, PeripheralId::PWM0, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc20_pwm0_pwml2, PinId::PC20, PeripheralId::PWM0, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc21_pwm0_pwmh3, PinId::PC21, PeripheralId::PWM0, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc22_pwm0_pwml3, PinId::PC22, PeripheralId::PWM0, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc23_tc1_tioa3, PinId::PC23, PeripheralId::TC1, SignalId::signal_tioa3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc24_spi1_spck, PinId::PC24, PeripheralId::SPI1, SignalId::signal_spck, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc24_tc1_tiob3, PinId::PC24, PeripheralId::TC1, SignalId::signal_tiob3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc25_spi1_npcs0, PinId::PC25, PeripheralId::SPI1, SignalId::signal_npcs0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc25_tc1_tclk3, PinId::PC25, PeripheralId::TC1, SignalId::signal_tclk3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc26_spi1_miso, PinId::PC26, PeripheralId::SPI1, SignalId::signal_miso, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc26_tc1_tioa4, PinId::PC26, PeripheralId::TC1, SignalId::signal_tioa4, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc27_spi1_mosi, PinId::PC27, PeripheralId::SPI1, SignalId::signal_mosi, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc27_tc1_tiob4, PinId::PC27, PeripheralId::TC1, SignalId::signal_tiob4, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc28_spi1_npcs1, PinId::PC28, PeripheralId::SPI1, SignalId::signal_npcs1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc28_tc1_tclk4, PinId::PC28, PeripheralId::TC1, SignalId::signal_tclk4, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc29_spi1_npcs2, PinId::PC29, PeripheralId::SPI1, SignalId::signal_npcs2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc29_tc1_tioa5, PinId::PC29, PeripheralId::TC1, SignalId::signal_tioa5, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc2_pwm0_pwml2, PinId::PC2, PeripheralId::PWM0, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pc30_spi1_npcs3, PinId::PC30, PeripheralId::SPI1, SignalId::signal_npcs3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc30_tc1_tiob5, PinId::PC30, PeripheralId::TC1, SignalId::signal_tiob5, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc31_tc1_tclk5, PinId::PC31, PeripheralId::TC1, SignalId::signal_tclk5, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc3_pwm0_pwml3, PinId::PC3, PeripheralId::PWM0, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc5_tc2_tioa6, PinId::PC5, PeripheralId::TC2, SignalId::signal_tioa6, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc6_tc2_tiob6, PinId::PC6, PeripheralId::TC2, SignalId::signal_tiob6, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc7_tc2_tclk6, PinId::PC7, PeripheralId::TC2, SignalId::signal_tclk6, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc8_tc2_tioa7, PinId::PC8, PeripheralId::TC2, SignalId::signal_tioa7, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pc9_tc2_tiob7, PinId::PC9, PeripheralId::TC2, SignalId::signal_tiob7, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd0_pwm1_pwml0, PinId::PD0, PeripheralId::PWM1, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd0_spi1_npcs1, PinId::PD0, PeripheralId::SPI1, SignalId::signal_npcs1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd0_usart0_dcd0, PinId::PD0, PeripheralId::USART0, SignalId::signal_dcd0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd10_pwm0_pwml0, PinId::PD10, PeripheralId::PWM0, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd11_pwm0_pwmh0, PinId::PD11, PeripheralId::PWM0, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd12_spi0_npcs2, PinId::PD12, PeripheralId::SPI0, SignalId::signal_npcs2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd15_usart2_rxd2, PinId::PD15, PeripheralId::USART2, SignalId::signal_rxd2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd16_usart2_txd2, PinId::PD16, PeripheralId::USART2, SignalId::signal_txd2, RouteKindId::route_kind_peripheral_mux},
@@ -1026,38 +2378,70 @@ inline constexpr std::array<RouteDescriptor, 77> kRuntimeRoutes = {{
   {RouteId::candidate_pd18_usart2_rts2, PinId::PD18, PeripheralId::USART2, SignalId::signal_rts2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd19_uart4_utxd4, PinId::PD19, PeripheralId::UART4, SignalId::signal_utxd4, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd19_usart2_cts2, PinId::PD19, PeripheralId::USART2, SignalId::signal_cts2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd1_pwm1_pwmh0, PinId::PD1, PeripheralId::PWM1, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd1_spi1_npcs2, PinId::PD1, PeripheralId::SPI1, SignalId::signal_npcs2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd1_usart0_dtr0, PinId::PD1, PeripheralId::USART0, SignalId::signal_dtr0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd20_pwm0_pwmh0, PinId::PD20, PeripheralId::PWM0, SignalId::signal_pwmh0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd20_spi0_miso, PinId::PD20, PeripheralId::SPI0, SignalId::signal_miso, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd21_pwm0_pwmh1, PinId::PD21, PeripheralId::PWM0, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd21_spi0_mosi, PinId::PD21, PeripheralId::SPI0, SignalId::signal_mosi, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd21_tc3_tioa11, PinId::PD21, PeripheralId::TC3, SignalId::signal_tioa11, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd22_pwm0_pwmh2, PinId::PD22, PeripheralId::PWM0, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd22_spi0_spck, PinId::PD22, PeripheralId::SPI0, SignalId::signal_spck, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd22_tc3_tiob11, PinId::PD22, PeripheralId::TC3, SignalId::signal_tiob11, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd23_pwm0_pwmh3, PinId::PD23, PeripheralId::PWM0, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd24_pwm0_pwml0, PinId::PD24, PeripheralId::PWM0, SignalId::signal_pwml0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd24_tc3_tclk11, PinId::PD24, PeripheralId::TC3, SignalId::signal_tclk11, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd25_pwm0_pwml1, PinId::PD25, PeripheralId::PWM0, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd25_spi0_npcs1, PinId::PD25, PeripheralId::SPI0, SignalId::signal_npcs1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd25_uart2_urxd2, PinId::PD25, PeripheralId::UART2, SignalId::signal_urxd2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd26_pwm0_pwml2, PinId::PD26, PeripheralId::PWM0, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd26_uart1_utxd1, PinId::PD26, PeripheralId::UART1, SignalId::signal_utxd1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd26_uart2_utxd2, PinId::PD26, PeripheralId::UART2, SignalId::signal_utxd2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd27_pwm0_pwml3, PinId::PD27, PeripheralId::PWM0, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd27_spi0_npcs3, PinId::PD27, PeripheralId::SPI0, SignalId::signal_npcs3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd27_twihs2_twd2, PinId::PD27, PeripheralId::TWIHS2, SignalId::signal_twd2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd28_twihs2_twck2, PinId::PD28, PeripheralId::TWIHS2, SignalId::signal_twck2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd28_uart3_urxd3, PinId::PD28, PeripheralId::UART3, SignalId::signal_urxd3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd2_pwm1_pwml1, PinId::PD2, PeripheralId::PWM1, SignalId::signal_pwml1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd2_spi1_npcs3, PinId::PD2, PeripheralId::SPI1, SignalId::signal_npcs3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd2_usart0_dsr0, PinId::PD2, PeripheralId::USART0, SignalId::signal_dsr0, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd30_uart3_utxd3, PinId::PD30, PeripheralId::UART3, SignalId::signal_utxd3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd31_uart3_utxd3, PinId::PD31, PeripheralId::UART3, SignalId::signal_utxd3, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd3_pwm1_pwmh1, PinId::PD3, PeripheralId::PWM1, SignalId::signal_pwmh1, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd3_uart4_utxd4, PinId::PD3, PeripheralId::UART4, SignalId::signal_utxd4, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd3_usart0_ri0, PinId::PD3, PeripheralId::USART0, SignalId::signal_ri0, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd4_pwm1_pwml2, PinId::PD4, PeripheralId::PWM1, SignalId::signal_pwml2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd4_usart2_dcd2, PinId::PD4, PeripheralId::USART2, SignalId::signal_dcd2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd5_pwm1_pwmh2, PinId::PD5, PeripheralId::PWM1, SignalId::signal_pwmh2, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd5_usart2_dtr2, PinId::PD5, PeripheralId::USART2, SignalId::signal_dtr2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd6_pwm1_pwml3, PinId::PD6, PeripheralId::PWM1, SignalId::signal_pwml3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd6_usart2_dsr2, PinId::PD6, PeripheralId::USART2, SignalId::signal_dsr2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd7_pwm1_pwmh3, PinId::PD7, PeripheralId::PWM1, SignalId::signal_pwmh3, RouteKindId::route_kind_peripheral_mux},
   {RouteId::candidate_pd7_usart2_ri2, PinId::PD7, PeripheralId::USART2, SignalId::signal_ri2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd8_pwm0_pwmfi1, PinId::PD8, PeripheralId::PWM0, SignalId::signal_pwmfi1, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pd9_pwm0_pwmfi2, PinId::PD9, PeripheralId::PWM0, SignalId::signal_pwmfi2, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pe0_tc3_tioa9, PinId::PE0, PeripheralId::TC3, SignalId::signal_tioa9, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pe1_tc3_tiob9, PinId::PE1, PeripheralId::TC3, SignalId::signal_tiob9, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pe2_tc3_tclk9, PinId::PE2, PeripheralId::TC3, SignalId::signal_tclk9, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pe3_tc3_tioa10, PinId::PE3, PeripheralId::TC3, SignalId::signal_tioa10, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pe4_tc3_tiob10, PinId::PE4, PeripheralId::TC3, SignalId::signal_tiob10, RouteKindId::route_kind_peripheral_mux},
+  {RouteId::candidate_pe5_tc3_tclk10, PinId::PE5, PeripheralId::TC3, SignalId::signal_tclk10, RouteKindId::route_kind_peripheral_mux},
 }};
 
 enum class ConnectionGroupId : std::uint16_t {
   none,
   group_gpioa_lqfp144_all_signals,
+  group_pwm0_lqfp144_all_signals,
+  group_pwm1_lqfp144_all_signals,
   group_spi0_lqfp144_sck_cs,
   group_spi0_lqfp144_sck_mosi_miso,
   group_spi1_lqfp144_sck_cs,
   group_spi1_lqfp144_sck_mosi_miso,
+  group_tc0_lqfp144_all_signals,
+  group_tc1_lqfp144_all_signals,
+  group_tc2_lqfp144_all_signals,
+  group_tc3_lqfp144_all_signals,
   group_twihs0_lqfp144_scl_sda,
   group_twihs1_lqfp144_scl_sda,
   group_twihs2_lqfp144_scl_sda,
@@ -1097,6 +2481,92 @@ struct ConnectionGroupTraits<PeripheralId::GPIOA, SignalId::signal_piodc0, Signa
     RouteId::candidate_pa4_gpioa_piodc1,
     RouteId::candidate_pa5_gpioa_piodc2,
     RouteId::candidate_pa9_gpioa_piodc3,
+  }};
+};
+
+template<>
+struct ConnectionGroupTraits<PeripheralId::PWM0, SignalId::signal_pwmextrg0, SignalId::signal_pwmextrg1, SignalId::signal_pwmfi0, SignalId::signal_pwmfi1, SignalId::signal_pwmfi2, SignalId::signal_pwmh0, SignalId::signal_pwmh1, SignalId::signal_pwmh2, SignalId::signal_pwmh3, SignalId::signal_pwml0, SignalId::signal_pwml1, SignalId::signal_pwml2, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectionGroupId kGroupId = ConnectionGroupId::group_pwm0_lqfp144_all_signals;
+  static constexpr std::array<RouteId, 49> kRoutes = {{
+    RouteId::candidate_pa0_pwm0_pwmh0,
+    RouteId::candidate_pa10_pwm0_pwmextrg0,
+    RouteId::candidate_pa11_pwm0_pwmh0,
+    RouteId::candidate_pa12_pwm0_pwmh1,
+    RouteId::candidate_pa13_pwm0_pwmh2,
+    RouteId::candidate_pa14_pwm0_pwmh3,
+    RouteId::candidate_pa15_pwm0_pwml3,
+    RouteId::candidate_pa16_pwm0_pwml2,
+    RouteId::candidate_pa17_pwm0_pwmh3,
+    RouteId::candidate_pa19_pwm0_pwml0,
+    RouteId::candidate_pa1_pwm0_pwml0,
+    RouteId::candidate_pa20_pwm0_pwml1,
+    RouteId::candidate_pa22_pwm0_pwmextrg1,
+    RouteId::candidate_pa23_pwm0_pwmh0,
+    RouteId::candidate_pa24_pwm0_pwmh1,
+    RouteId::candidate_pa25_pwm0_pwmh2,
+    RouteId::candidate_pa2_pwm0_pwmh1,
+    RouteId::candidate_pa30_pwm0_pwml2,
+    RouteId::candidate_pa7_pwm0_pwmh3,
+    RouteId::candidate_pa9_pwm0_pwmfi0,
+    RouteId::candidate_pb0_pwm0_pwmh0,
+    RouteId::candidate_pb12_pwm0_pwml1,
+    RouteId::candidate_pb13_pwm0_pwml2,
+    RouteId::candidate_pb1_pwm0_pwmh1,
+    RouteId::candidate_pb4_pwm0_pwmh2,
+    RouteId::candidate_pb5_pwm0_pwml0,
+    RouteId::candidate_pc0_pwm0_pwml0,
+    RouteId::candidate_pc13_pwm0_pwmh3,
+    RouteId::candidate_pc15_pwm0_pwml3,
+    RouteId::candidate_pc18_pwm0_pwml1,
+    RouteId::candidate_pc19_pwm0_pwmh2,
+    RouteId::candidate_pc1_pwm0_pwml1,
+    RouteId::candidate_pc20_pwm0_pwml2,
+    RouteId::candidate_pc21_pwm0_pwmh3,
+    RouteId::candidate_pc22_pwm0_pwml3,
+    RouteId::candidate_pc2_pwm0_pwml2,
+    RouteId::candidate_pc3_pwm0_pwml3,
+    RouteId::candidate_pd10_pwm0_pwml0,
+    RouteId::candidate_pd11_pwm0_pwmh0,
+    RouteId::candidate_pd20_pwm0_pwmh0,
+    RouteId::candidate_pd21_pwm0_pwmh1,
+    RouteId::candidate_pd22_pwm0_pwmh2,
+    RouteId::candidate_pd23_pwm0_pwmh3,
+    RouteId::candidate_pd24_pwm0_pwml0,
+    RouteId::candidate_pd25_pwm0_pwml1,
+    RouteId::candidate_pd26_pwm0_pwml2,
+    RouteId::candidate_pd27_pwm0_pwml3,
+    RouteId::candidate_pd8_pwm0_pwmfi1,
+    RouteId::candidate_pd9_pwm0_pwmfi2,
+  }};
+};
+
+template<>
+struct ConnectionGroupTraits<PeripheralId::PWM1, SignalId::signal_pwmextrg0, SignalId::signal_pwmextrg1, SignalId::signal_pwmfi0, SignalId::signal_pwmfi1, SignalId::signal_pwmfi2, SignalId::signal_pwmh0, SignalId::signal_pwmh1, SignalId::signal_pwmh2, SignalId::signal_pwmh3, SignalId::signal_pwml0, SignalId::signal_pwml1, SignalId::signal_pwml2, SignalId::signal_pwml3> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectionGroupId kGroupId = ConnectionGroupId::group_pwm1_lqfp144_all_signals;
+  static constexpr std::array<RouteId, 21> kRoutes = {{
+    RouteId::candidate_pa11_pwm1_pwml0,
+    RouteId::candidate_pa12_pwm1_pwmh0,
+    RouteId::candidate_pa13_pwm1_pwml1,
+    RouteId::candidate_pa14_pwm1_pwmh1,
+    RouteId::candidate_pa18_pwm1_pwmextrg1,
+    RouteId::candidate_pa21_pwm1_pwmfi0,
+    RouteId::candidate_pa23_pwm1_pwml2,
+    RouteId::candidate_pa26_pwm1_pwmfi1,
+    RouteId::candidate_pa28_pwm1_pwmfi2,
+    RouteId::candidate_pa30_pwm1_pwmextrg0,
+    RouteId::candidate_pa31_pwm1_pwmh2,
+    RouteId::candidate_pa5_pwm1_pwml3,
+    RouteId::candidate_pa8_pwm1_pwmh3,
+    RouteId::candidate_pd0_pwm1_pwml0,
+    RouteId::candidate_pd1_pwm1_pwmh0,
+    RouteId::candidate_pd2_pwm1_pwml1,
+    RouteId::candidate_pd3_pwm1_pwmh1,
+    RouteId::candidate_pd4_pwm1_pwml2,
+    RouteId::candidate_pd5_pwm1_pwmh2,
+    RouteId::candidate_pd6_pwm1_pwml3,
+    RouteId::candidate_pd7_pwm1_pwmh3,
   }};
 };
 
@@ -1149,6 +2619,74 @@ struct ConnectionGroupTraits<PeripheralId::SPI1, SignalId::signal_sck, SignalId:
     RouteId::candidate_pc24_spi1_spck,
     RouteId::candidate_pc26_spi1_miso,
     RouteId::candidate_pc27_spi1_mosi,
+  }};
+};
+
+template<>
+struct ConnectionGroupTraits<PeripheralId::TC0, SignalId::signal_tclk0, SignalId::signal_tclk1, SignalId::signal_tclk2, SignalId::signal_tioa0, SignalId::signal_tioa1, SignalId::signal_tioa2, SignalId::signal_tiob0, SignalId::signal_tiob1, SignalId::signal_tiob2> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectionGroupId kGroupId = ConnectionGroupId::group_tc0_lqfp144_all_signals;
+  static constexpr std::array<RouteId, 9> kRoutes = {{
+    RouteId::candidate_pa0_tc0_tioa0,
+    RouteId::candidate_pa15_tc0_tioa1,
+    RouteId::candidate_pa16_tc0_tiob1,
+    RouteId::candidate_pa1_tc0_tiob0,
+    RouteId::candidate_pa26_tc0_tioa2,
+    RouteId::candidate_pa27_tc0_tiob2,
+    RouteId::candidate_pa28_tc0_tclk1,
+    RouteId::candidate_pa29_tc0_tclk2,
+    RouteId::candidate_pa4_tc0_tclk0,
+  }};
+};
+
+template<>
+struct ConnectionGroupTraits<PeripheralId::TC1, SignalId::signal_tclk3, SignalId::signal_tclk4, SignalId::signal_tclk5, SignalId::signal_tioa3, SignalId::signal_tioa4, SignalId::signal_tioa5, SignalId::signal_tiob3, SignalId::signal_tiob4, SignalId::signal_tiob5> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectionGroupId kGroupId = ConnectionGroupId::group_tc1_lqfp144_all_signals;
+  static constexpr std::array<RouteId, 9> kRoutes = {{
+    RouteId::candidate_pc23_tc1_tioa3,
+    RouteId::candidate_pc24_tc1_tiob3,
+    RouteId::candidate_pc25_tc1_tclk3,
+    RouteId::candidate_pc26_tc1_tioa4,
+    RouteId::candidate_pc27_tc1_tiob4,
+    RouteId::candidate_pc28_tc1_tclk4,
+    RouteId::candidate_pc29_tc1_tioa5,
+    RouteId::candidate_pc30_tc1_tiob5,
+    RouteId::candidate_pc31_tc1_tclk5,
+  }};
+};
+
+template<>
+struct ConnectionGroupTraits<PeripheralId::TC2, SignalId::signal_tclk6, SignalId::signal_tclk7, SignalId::signal_tclk8, SignalId::signal_tioa6, SignalId::signal_tioa7, SignalId::signal_tioa8, SignalId::signal_tiob6, SignalId::signal_tiob7, SignalId::signal_tiob8> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectionGroupId kGroupId = ConnectionGroupId::group_tc2_lqfp144_all_signals;
+  static constexpr std::array<RouteId, 9> kRoutes = {{
+    RouteId::candidate_pc10_tc2_tclk7,
+    RouteId::candidate_pc11_tc2_tioa8,
+    RouteId::candidate_pc12_tc2_tiob8,
+    RouteId::candidate_pc14_tc2_tclk8,
+    RouteId::candidate_pc5_tc2_tioa6,
+    RouteId::candidate_pc6_tc2_tiob6,
+    RouteId::candidate_pc7_tc2_tclk6,
+    RouteId::candidate_pc8_tc2_tioa7,
+    RouteId::candidate_pc9_tc2_tiob7,
+  }};
+};
+
+template<>
+struct ConnectionGroupTraits<PeripheralId::TC3, SignalId::signal_tclk10, SignalId::signal_tclk11, SignalId::signal_tclk9, SignalId::signal_tioa10, SignalId::signal_tioa11, SignalId::signal_tioa9, SignalId::signal_tiob10, SignalId::signal_tiob11, SignalId::signal_tiob9> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectionGroupId kGroupId = ConnectionGroupId::group_tc3_lqfp144_all_signals;
+  static constexpr std::array<RouteId, 9> kRoutes = {{
+    RouteId::candidate_pd21_tc3_tioa11,
+    RouteId::candidate_pd22_tc3_tiob11,
+    RouteId::candidate_pd24_tc3_tclk11,
+    RouteId::candidate_pe0_tc3_tioa9,
+    RouteId::candidate_pe1_tc3_tiob9,
+    RouteId::candidate_pe2_tc3_tclk9,
+    RouteId::candidate_pe3_tc3_tioa10,
+    RouteId::candidate_pe4_tc3_tiob10,
+    RouteId::candidate_pe5_tc3_tclk10,
   }};
 };
 
@@ -1307,12 +2845,18 @@ struct ConnectionGroupDescriptor {
   PeripheralId peripheral_id;
   std::uint16_t route_count;
 };
-inline constexpr std::array<ConnectionGroupDescriptor, 19> kRuntimeConnectionGroups = {{
+inline constexpr std::array<ConnectionGroupDescriptor, 25> kRuntimeConnectionGroups = {{
   {ConnectionGroupId::group_gpioa_lqfp144_all_signals, PeripheralId::GPIOA, 11u},
+  {ConnectionGroupId::group_pwm0_lqfp144_all_signals, PeripheralId::PWM0, 49u},
+  {ConnectionGroupId::group_pwm1_lqfp144_all_signals, PeripheralId::PWM1, 21u},
   {ConnectionGroupId::group_spi0_lqfp144_sck_cs, PeripheralId::SPI0, 6u},
   {ConnectionGroupId::group_spi0_lqfp144_sck_mosi_miso, PeripheralId::SPI0, 3u},
   {ConnectionGroupId::group_spi1_lqfp144_sck_cs, PeripheralId::SPI1, 8u},
   {ConnectionGroupId::group_spi1_lqfp144_sck_mosi_miso, PeripheralId::SPI1, 3u},
+  {ConnectionGroupId::group_tc0_lqfp144_all_signals, PeripheralId::TC0, 9u},
+  {ConnectionGroupId::group_tc1_lqfp144_all_signals, PeripheralId::TC1, 9u},
+  {ConnectionGroupId::group_tc2_lqfp144_all_signals, PeripheralId::TC2, 9u},
+  {ConnectionGroupId::group_tc3_lqfp144_all_signals, PeripheralId::TC3, 9u},
   {ConnectionGroupId::group_twihs0_lqfp144_scl_sda, PeripheralId::TWIHS0, 2u},
   {ConnectionGroupId::group_twihs1_lqfp144_scl_sda, PeripheralId::TWIHS1, 2u},
   {ConnectionGroupId::group_twihs2_lqfp144_scl_sda, PeripheralId::TWIHS2, 2u},

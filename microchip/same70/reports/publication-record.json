@@ -223,7 +223,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 125,
+  "published_artifact_count": 131,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -713,14 +713,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10786,
-      "content_sha256": "9ac7e921af8bfb6561c07c4c43e47abd3865b54da27c684209400fc00670972c",
+      "content_bytes": 15392,
+      "content_sha256": "ee028aad26c734aad2b577056554e3d1eeed5f722206568ab74038cf11392869",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 27329,
-      "content_sha256": "800c3f8565465401d8abdb139954d7a80be7981e08826fcd66c63178ea02de71",
+      "content_bytes": 33237,
+      "content_sha256": "17824172dc49f63c56d1264aedc11b6d7d53c8492c3c0b1e01604810ed444a28",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/dma_bindings.hpp"
     },
     {
@@ -749,9 +749,21 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 27298,
+      "content_sha256": "4033e12aa964ba11ef25e3a25661221075d6a2e22f7e1c09fd468c64ab9254d7",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/pwm.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 9365,
       "content_sha256": "f28fb8053a1f969c2108a45fb1a99120edb46474d94b9218a9b1d14d2c2256d0",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/spi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 23804,
+      "content_sha256": "5918ed06173701c0eebedb400d5a600b41bea1157ea0cd57950127dd69f1a95e",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/timer.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -761,8 +773,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 11341,
-      "content_sha256": "71522eda1d1c0f7af17904e7ca26da2bc6ffbd00720c0221f0e62b491581e499",
+      "content_bytes": 16415,
+      "content_sha256": "8606cffcdc7309a35460b783e5af49a0a3381d255d09c498670e4263915b08bb",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/peripheral_instances.hpp"
     },
     {
@@ -773,20 +785,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2550396,
-      "content_sha256": "6f512a3910b7100cb08b99567a48f4924ed15489f158e651073b4813fef44740",
+      "content_bytes": 2859158,
+      "content_sha256": "844fb3cae9832fdc6662ab87cd942670e6a8ef40c3f752e9a084e9e7ae0c8281",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 160001,
-      "content_sha256": "6d01090a8e92d634e883959c40b5a9cf46569a8602b649f36555b7b274dab2cd",
+      "content_bytes": 209161,
+      "content_sha256": "32643517606cda02d5c5edb33ffe4c2da0728340c676fb8602e2e38287202d77",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/registers.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 79500,
-      "content_sha256": "647f96444e1ee10b6cb4fdb3228e0c5e0f57454706bf2fb8a553efd412e68843",
+      "content_bytes": 156215,
+      "content_sha256": "471bb579353a550f46bfdc613b892a212f02a465be4cbdce5732d8bc15bdcc76",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp"
     },
     {
@@ -797,14 +809,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 12540,
-      "content_sha256": "53a36e07e3279d3bcd202d41c9ced678b5f6052d3c9d2cbb25d95d370998b137",
+      "content_bytes": 5790,
+      "content_sha256": "7d4bebbe8aeacad003d95e1314b7811a91fbdd2945433de56886068f984f49ab",
+      "path": "microchip/same70/generated/runtime/devices/atsame70n21b/systick.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 17146,
+      "content_sha256": "aa636bf8a104148a5d38b0c3c74848047b91ccf6d20258fbcf0a7bd28ea8a5b4",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 29287,
-      "content_sha256": "c33246d79968b7235ca3c244f84212a144f743b7e6531fc325c36bdcc94ec2a5",
+      "content_bytes": 35195,
+      "content_sha256": "40bcbf52863bc912efeb5e2bb0b068f116b8067f6e76f6707e9f7825681db8fa",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/dma_bindings.hpp"
     },
     {
@@ -833,9 +851,21 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 27298,
+      "content_sha256": "85735a20291d84f4ed70f1e584a3560bdd2fd63990c0401ab585941b8c5f4945",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/driver_semantics/pwm.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 15323,
       "content_sha256": "2b6540711243b2eb319656b43285f77226fbf86d3c954580c26a1dde8101c9c5",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/driver_semantics/spi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 43492,
+      "content_sha256": "d57cfd241f54df0ada5c36b60090c4147e49182c1e2b16a7203ebab989d369e9",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/driver_semantics/timer.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -845,8 +875,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 13258,
-      "content_sha256": "2ebf0207f25035934e057a4963d8f348c65772b13678c527b23575559b1ef3d6",
+      "content_bytes": 18332,
+      "content_sha256": "6c872936fb900642cc77d3c0ec84eb92d57dd35e013375b6cf4d1c2df6576e0c",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/peripheral_instances.hpp"
     },
     {
@@ -857,20 +887,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3839616,
-      "content_sha256": "0b7744968ea84971ec1931cc0b72979b44356c1eaa23fa0a42938dccf517aec5",
+      "content_bytes": 4148378,
+      "content_sha256": "997dcd8ba5b3ebf19b067d85f5d44de41043e8f25de1be5260003165ffca109d",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 208223,
-      "content_sha256": "4fdd66cdf154be68e99b0105dc41346018c6a621a5d8d9d976a7925e997db7df",
+      "content_bytes": 257383,
+      "content_sha256": "753a8a0f2c58fea90b421d439bb358c221665b2eaf6777a65b1486027a76ca0d",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/registers.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 93259,
-      "content_sha256": "c446da96777493c88b40c44f6555c9cc3ccc41910df31554ad5499d429764cb4",
+      "content_bytes": 210951,
+      "content_sha256": "68650441f8656aef84c5ab85fc99ae8f1edc420960e8f43f3f66ab0dd0aea821",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp"
     },
     {
@@ -878,6 +908,12 @@
       "content_bytes": 18246,
       "content_sha256": "1b124d00c17472eec941344891fbba0387004f4a1e77bbb759002b3aac85c8b9",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/system_clock.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 5790,
+      "content_sha256": "ac9d5d9a9a0e4d529ca1fc71548639eed47063a17f431f76633127e03ffbfad4",
+      "path": "microchip/same70/generated/runtime/devices/atsame70q21b/systick.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -981,7 +1017,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "5ed5db1d7662d644d988fb421bb5e95c1729658d30bfa7517a8c1e011a8bface",
+  "target_artifact_revision": "0ea2da7dfde5e54eef9af78884e7399f996d7f097ee09df86682b4585f169d1c",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
