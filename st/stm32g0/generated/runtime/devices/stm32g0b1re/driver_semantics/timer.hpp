@@ -345,6 +345,80 @@ struct TimerSemanticTraits<PeripheralId::TIM4> {
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
 };
 
+template<>
+struct TimerSemanticTraits<PeripheralId::TIM6> {
+  static constexpr bool kPresent = true;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_timer_st_gptimer2_v3_x_cube;
+  static constexpr std::uint32_t kCounterBits = 16u;
+  static constexpr std::uint32_t kChannelCount = 4u;
+  static constexpr bool kHasCompare = true;
+  static constexpr bool kHasCapture = true;
+  static constexpr bool kHasPwm = true;
+  static constexpr bool kHasOnePulse = true;
+  static constexpr bool kHasCenterAligned = true;
+  static constexpr bool kHasComplementaryOutputs = false;
+  static constexpr bool kHasDeadtime = false;
+  static constexpr bool kHasBreakInput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim6_cr1, 0x40001000u, 0u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true};
+  static constexpr RuntimeRegisterRef kEventRegister = RuntimeRegisterRef{RegisterId::register_tim6_egr, 0x40001000u, 20u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim6_cnt, 0x40001000u, 36u, true};
+  static constexpr RuntimeRegisterRef kPrescalerRegister = RuntimeRegisterRef{RegisterId::register_tim6_psc, 0x40001000u, 40u, true};
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim6_arr, 0x40001000u, 44u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::field_tim6_cr1_cen, RuntimeRegisterRef{RegisterId::register_tim6_cr1, 0x40001000u, 0u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kDisableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kModuleDisableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kSoftwareResetField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStartField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStopField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kUpdateInterruptEnableField = RuntimeFieldRef{FieldId::field_tim6_dier_uie, RuntimeRegisterRef{RegisterId::register_tim6_dier, 0x40001000u, 12u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kUpdateFlagField = RuntimeFieldRef{FieldId::field_tim6_sr_uif, RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kUpdateGenerationField = RuntimeFieldRef{FieldId::field_tim6_egr_ug, RuntimeRegisterRef{RegisterId::register_tim6_egr, 0x40001000u, 20u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kPrescalerField = RuntimeFieldRef{FieldId::field_tim6_psc_psc, RuntimeRegisterRef{RegisterId::register_tim6_psc, 0x40001000u, 40u, true}, 0u, 16u, true};
+  static constexpr RuntimeFieldRef kPeriodField = RuntimeFieldRef{FieldId::field_tim6_arr_arr, RuntimeRegisterRef{RegisterId::register_tim6_arr, 0x40001000u, 44u, true}, 0u, 16u, true};
+  static constexpr RuntimeFieldRef kOnePulseField = RuntimeFieldRef{FieldId::field_tim6_cr1_opm, RuntimeRegisterRef{RegisterId::register_tim6_cr1, 0x40001000u, 0u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_cr1, 0x40001000u, 0u, true}, 5u, 2u, true};
+  static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim6_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim6_cr1, 0x40001000u, 0u, true}, 7u, 1u, true};
+  static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+};
+
+template<>
+struct TimerSemanticTraits<PeripheralId::TIM7> {
+  static constexpr bool kPresent = true;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_timer_st_gptimer2_v3_x_cube;
+  static constexpr std::uint32_t kCounterBits = 16u;
+  static constexpr std::uint32_t kChannelCount = 4u;
+  static constexpr bool kHasCompare = true;
+  static constexpr bool kHasCapture = true;
+  static constexpr bool kHasPwm = true;
+  static constexpr bool kHasOnePulse = true;
+  static constexpr bool kHasCenterAligned = true;
+  static constexpr bool kHasComplementaryOutputs = false;
+  static constexpr bool kHasDeadtime = false;
+  static constexpr bool kHasBreakInput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim7_cr1, 0x40001400u, 0u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true};
+  static constexpr RuntimeRegisterRef kEventRegister = RuntimeRegisterRef{RegisterId::register_tim7_egr, 0x40001400u, 20u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim7_cnt, 0x40001400u, 36u, true};
+  static constexpr RuntimeRegisterRef kPrescalerRegister = RuntimeRegisterRef{RegisterId::register_tim7_psc, 0x40001400u, 40u, true};
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim7_arr, 0x40001400u, 44u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::field_tim7_cr1_cen, RuntimeRegisterRef{RegisterId::register_tim7_cr1, 0x40001400u, 0u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kDisableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kModuleDisableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kSoftwareResetField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStartField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStopField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kUpdateInterruptEnableField = RuntimeFieldRef{FieldId::field_tim7_dier_uie, RuntimeRegisterRef{RegisterId::register_tim7_dier, 0x40001400u, 12u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kUpdateFlagField = RuntimeFieldRef{FieldId::field_tim7_sr_uif, RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kUpdateGenerationField = RuntimeFieldRef{FieldId::field_tim7_egr_ug, RuntimeRegisterRef{RegisterId::register_tim7_egr, 0x40001400u, 20u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kPrescalerField = RuntimeFieldRef{FieldId::field_tim7_psc_psc, RuntimeRegisterRef{RegisterId::register_tim7_psc, 0x40001400u, 40u, true}, 0u, 16u, true};
+  static constexpr RuntimeFieldRef kPeriodField = RuntimeFieldRef{FieldId::field_tim7_arr_arr, RuntimeRegisterRef{RegisterId::register_tim7_arr, 0x40001400u, 44u, true}, 0u, 16u, true};
+  static constexpr RuntimeFieldRef kOnePulseField = RuntimeFieldRef{FieldId::field_tim7_cr1_opm, RuntimeRegisterRef{RegisterId::register_tim7_cr1, 0x40001400u, 0u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_cr1, 0x40001400u, 0u, true}, 5u, 2u, true};
+  static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim7_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim7_cr1, 0x40001400u, 0u, true}, 7u, 1u, true};
+  static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+};
+
 template<PeripheralId Id, std::size_t ChannelIndex>
 struct TimerChannelSemanticTraits {
   static constexpr bool kPresent = false;
@@ -1170,7 +1244,207 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM4, 3u> {
   static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::field_tim4_ccmr2_input_cc4s, RuntimeRegisterRef{RegisterId::register_tim4_ccmr2_input, 0x40000800u, 28u, true}, 8u, 2u, true};
 };
 
-inline constexpr std::array<PeripheralId, 8> kTimerSemanticPeripherals = {{
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM6, 0u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 52u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim6_arr, 0x40001000u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim6_cnt, 0x40001000u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 52u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_dier, 0x40001000u, 12u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true}, 4u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true}, 0u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM6, 1u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 56u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim6_arr, 0x40001000u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim6_cnt, 0x40001000u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 56u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_dier, 0x40001000u, 12u, true}, 2u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true}, 2u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true}, 12u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true}, 11u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 5u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 24u, true}, 8u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM6, 2u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 60u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim6_arr, 0x40001000u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim6_cnt, 0x40001000u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 60u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 8u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_dier, 0x40001000u, 12u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true}, 4u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 8u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 9u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true}, 0u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM6, 3u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 64u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim6_arr, 0x40001000u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim6_cnt, 0x40001000u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001000u, 64u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 12u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_dier, 0x40001000u, 12u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim6_sr, 0x40001000u, 16u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true}, 12u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true}, 11u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 12u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 32u, true}, 13u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001000u, 28u, true}, 8u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM7, 0u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 52u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim7_arr, 0x40001400u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim7_cnt, 0x40001400u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 52u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_dier, 0x40001400u, 12u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true}, 4u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true}, 0u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM7, 1u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 56u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim7_arr, 0x40001400u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim7_cnt, 0x40001400u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 56u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_dier, 0x40001400u, 12u, true}, 2u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true}, 2u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true}, 12u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true}, 11u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 5u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 24u, true}, 8u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM7, 2u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 60u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim7_arr, 0x40001400u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim7_cnt, 0x40001400u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 60u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 8u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_dier, 0x40001400u, 12u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true}, 4u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true}, 3u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 8u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 9u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true}, 0u, 2u, true};
+};
+
+template<>
+struct TimerChannelSemanticTraits<PeripheralId::TIM7, 3u> {
+  static constexpr bool kPresent = true;
+  static constexpr bool kSupportsCompare = true;
+  static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsPwm = true;
+  static constexpr bool kSupportsComplementaryOutput = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true};
+  static constexpr RuntimeRegisterRef kCompareRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 64u, true};
+  static constexpr RuntimeRegisterRef kSecondaryCompareRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kPeriodRegister = RuntimeRegisterRef{RegisterId::register_tim7_arr, 0x40001400u, 44u, true};
+  static constexpr RuntimeRegisterRef kCounterRegister = RuntimeRegisterRef{RegisterId::register_tim7_cnt, 0x40001400u, 36u, true};
+  static constexpr RuntimeRegisterRef kCaptureRegister = RuntimeRegisterRef{RegisterId::none, 0x40001400u, 64u, true};
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 12u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_dier, 0x40001400u, 12u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kInterruptFlagField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim7_sr, 0x40001400u, 16u, true}, 4u, 1u, true};
+  static constexpr RuntimeFieldRef kModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true}, 12u, 3u, true};
+  static constexpr RuntimeFieldRef kPreloadField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true}, 11u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 12u, 1u, true};
+  static constexpr RuntimeFieldRef kOutputPolarityField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 32u, true}, 13u, 1u, true};
+  static constexpr RuntimeFieldRef kComplementaryOutputEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kCaptureSelectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40001400u, 28u, true}, 8u, 2u, true};
+};
+
+inline constexpr std::array<PeripheralId, 10> kTimerSemanticPeripherals = {{
   PeripheralId::TIM1,
   PeripheralId::TIM14,
   PeripheralId::TIM15,
@@ -1179,6 +1453,8 @@ inline constexpr std::array<PeripheralId, 8> kTimerSemanticPeripherals = {{
   PeripheralId::TIM2,
   PeripheralId::TIM3,
   PeripheralId::TIM4,
+  PeripheralId::TIM6,
+  PeripheralId::TIM7,
 }};
 }
 }
