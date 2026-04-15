@@ -761,8 +761,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 23804,
-      "content_sha256": "5918ed06173701c0eebedb400d5a600b41bea1157ea0cd57950127dd69f1a95e",
+      "content_bytes": 43492,
+      "content_sha256": "94be2ec5c80a5388cf022273db7d1d48f17bb113389321f2a3f69750cb3743e7",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/timer.hpp"
     },
     {
@@ -1017,7 +1017,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "0ea2da7dfde5e54eef9af78884e7399f996d7f097ee09df86682b4585f169d1c",
+  "target_artifact_revision": "bd03814046a4ea062386a9658b9339fa60c51addec5bcdc87f300d8a9bf5022b",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
