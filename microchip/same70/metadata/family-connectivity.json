@@ -2040,7 +2040,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.afec.microchip-afec-s",
+      "backend_schema_id": "alloy.adc.microchip-afec-s",
       "base_address": 1073987584,
       "instance": 0,
       "ip_name": "afec",
@@ -2058,7 +2058,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.afec.microchip-afec-s",
+      "backend_schema_id": "alloy.adc.microchip-afec-s",
       "base_address": 1074151424,
       "instance": 1,
       "ip_name": "afec",
@@ -2112,7 +2112,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.dacc.microchip-dacc-e",
+      "backend_schema_id": "alloy.dac.microchip-dacc-e",
       "base_address": 1074003968,
       "instance": 0,
       "ip_name": "dacc",

@@ -18,8 +18,8 @@ struct IpBlockDescriptor {
 };
 inline constexpr IpBlockDescriptor kIpBlock = {
   IpBlockId::ip_block_dacc_dacc_e,
-  PeripheralClassId::class_dacc,
-  BackendSchemaId::schema_alloy_dacc_microchip_dacc_e,
+  PeripheralClassId::class_dac,
+  BackendSchemaId::schema_alloy_dac_microchip_dacc_e,
   RegisterProfileId::register_profile_dacc_dacc_e,
   0u,
   3u,
@@ -43,9 +43,9 @@ struct CapabilityDescriptor {
   IpBlockId ip_block_id;
 };
 inline constexpr std::array<CapabilityDescriptor, 3> kCapabilities = {{
-  {CapabilityId::capability_id_capability_dacc_dacc_e_dac0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dacc, CapabilityKeyId::capability_signal_role_dac0, IpBlockId::ip_block_dacc_dacc_e},
-  {CapabilityId::capability_id_capability_dacc_dacc_e_dac1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dacc, CapabilityKeyId::capability_signal_role_dac1, IpBlockId::ip_block_dacc_dacc_e},
-  {CapabilityId::capability_id_capability_dacc_dacc_e_datrg, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dacc, CapabilityKeyId::capability_signal_role_datrg, IpBlockId::ip_block_dacc_dacc_e},
+  {CapabilityId::capability_id_capability_dacc_dacc_e_dac0, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dac, CapabilityKeyId::capability_signal_role_dac0, IpBlockId::ip_block_dacc_dacc_e},
+  {CapabilityId::capability_id_capability_dacc_dacc_e_dac1, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dac, CapabilityKeyId::capability_signal_role_dac1, IpBlockId::ip_block_dacc_dacc_e},
+  {CapabilityId::capability_id_capability_dacc_dacc_e_datrg, CapabilityScopeId::capability_scope_ip_block, PeripheralClassId::class_dac, CapabilityKeyId::capability_signal_role_datrg, IpBlockId::ip_block_dacc_dacc_e},
 }};
 }
 }

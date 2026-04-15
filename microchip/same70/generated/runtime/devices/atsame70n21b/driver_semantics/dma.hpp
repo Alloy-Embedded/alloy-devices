@@ -31,6 +31,78 @@ struct DmaSemanticTraits {
 };
 
 template<>
+struct DmaSemanticTraits<PeripheralId::AFEC0, SignalId::signal_RX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_afec0_rx_xdmac_perid_35;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_35;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_35_afec0_rx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr PeripheralId kControllerPeripheralId = PeripheralId::XDMAC;
+  static constexpr PeripheralId kRouterPeripheralId = PeripheralId::none;
+  static constexpr BackendSchemaId kControllerSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr BackendSchemaId kRouterSchemaId = BackendSchemaId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 35;
+  static constexpr int kChannelSelector = -1;
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
+};
+
+template<>
+struct DmaSemanticTraits<PeripheralId::AFEC1, SignalId::signal_RX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_afec1_rx_xdmac_perid_36;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_36;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_36_afec1_rx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr PeripheralId kControllerPeripheralId = PeripheralId::XDMAC;
+  static constexpr PeripheralId kRouterPeripheralId = PeripheralId::none;
+  static constexpr BackendSchemaId kControllerSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr BackendSchemaId kRouterSchemaId = BackendSchemaId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 36;
+  static constexpr int kChannelSelector = -1;
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
+};
+
+template<>
+struct DmaSemanticTraits<PeripheralId::DACC, SignalId::signal_CH0_TX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_dacc_ch0_tx_xdmac_perid_30;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_30;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_30_dacc_ch0_tx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr PeripheralId kControllerPeripheralId = PeripheralId::XDMAC;
+  static constexpr PeripheralId kRouterPeripheralId = PeripheralId::none;
+  static constexpr BackendSchemaId kControllerSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr BackendSchemaId kRouterSchemaId = BackendSchemaId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 30;
+  static constexpr int kChannelSelector = -1;
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
+};
+
+template<>
+struct DmaSemanticTraits<PeripheralId::DACC, SignalId::signal_CH1_TX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_dacc_ch1_tx_xdmac_perid_31;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_31;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_31_dacc_ch1_tx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr PeripheralId kControllerPeripheralId = PeripheralId::XDMAC;
+  static constexpr PeripheralId kRouterPeripheralId = PeripheralId::none;
+  static constexpr BackendSchemaId kControllerSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr BackendSchemaId kRouterSchemaId = BackendSchemaId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 31;
+  static constexpr int kChannelSelector = -1;
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
+};
+
+template<>
 struct DmaSemanticTraits<PeripheralId::GPIOA, SignalId::signal_RX> {
   static constexpr bool kPresent = true;
   static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_gpioa_rx_xdmac_perid_34;
@@ -45,7 +117,43 @@ struct DmaSemanticTraits<PeripheralId::GPIOA, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 34;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
+};
+
+template<>
+struct DmaSemanticTraits<PeripheralId::PWM0, SignalId::signal_TX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_pwm0_tx_xdmac_perid_13;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_13;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_13_pwm0_tx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr PeripheralId kControllerPeripheralId = PeripheralId::XDMAC;
+  static constexpr PeripheralId kRouterPeripheralId = PeripheralId::none;
+  static constexpr BackendSchemaId kControllerSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr BackendSchemaId kRouterSchemaId = BackendSchemaId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 13;
+  static constexpr int kChannelSelector = -1;
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
+};
+
+template<>
+struct DmaSemanticTraits<PeripheralId::PWM1, SignalId::signal_TX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_pwm1_tx_xdmac_perid_39;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_39;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_39_pwm1_tx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr PeripheralId kControllerPeripheralId = PeripheralId::XDMAC;
+  static constexpr PeripheralId kRouterPeripheralId = PeripheralId::none;
+  static constexpr BackendSchemaId kControllerSchemaId = BackendSchemaId::schema_alloy_dma_microchip_xdmac_k;
+  static constexpr BackendSchemaId kRouterSchemaId = BackendSchemaId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 39;
+  static constexpr int kChannelSelector = -1;
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -63,7 +171,7 @@ struct DmaSemanticTraits<PeripheralId::SPI0, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 2;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -81,7 +189,7 @@ struct DmaSemanticTraits<PeripheralId::SPI0, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 1;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -99,7 +207,7 @@ struct DmaSemanticTraits<PeripheralId::TWIHS0, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 15;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -117,7 +225,7 @@ struct DmaSemanticTraits<PeripheralId::TWIHS0, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 14;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -135,7 +243,7 @@ struct DmaSemanticTraits<PeripheralId::TWIHS1, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 17;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -153,7 +261,7 @@ struct DmaSemanticTraits<PeripheralId::TWIHS1, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 16;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -171,7 +279,7 @@ struct DmaSemanticTraits<PeripheralId::TWIHS2, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 19;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -189,7 +297,7 @@ struct DmaSemanticTraits<PeripheralId::TWIHS2, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 18;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -207,7 +315,7 @@ struct DmaSemanticTraits<PeripheralId::UART0, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 21;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -225,7 +333,7 @@ struct DmaSemanticTraits<PeripheralId::UART0, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 20;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -243,7 +351,7 @@ struct DmaSemanticTraits<PeripheralId::UART1, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 23;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -261,7 +369,7 @@ struct DmaSemanticTraits<PeripheralId::UART1, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 22;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -279,7 +387,7 @@ struct DmaSemanticTraits<PeripheralId::UART2, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 25;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -297,7 +405,7 @@ struct DmaSemanticTraits<PeripheralId::UART2, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 24;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -315,7 +423,7 @@ struct DmaSemanticTraits<PeripheralId::UART3, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 27;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -333,7 +441,7 @@ struct DmaSemanticTraits<PeripheralId::UART3, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 26;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -351,7 +459,7 @@ struct DmaSemanticTraits<PeripheralId::UART4, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 29;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -369,7 +477,7 @@ struct DmaSemanticTraits<PeripheralId::UART4, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 28;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -387,7 +495,7 @@ struct DmaSemanticTraits<PeripheralId::USART0, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 8;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -405,7 +513,7 @@ struct DmaSemanticTraits<PeripheralId::USART0, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 7;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -423,7 +531,7 @@ struct DmaSemanticTraits<PeripheralId::USART1, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 10;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -441,7 +549,7 @@ struct DmaSemanticTraits<PeripheralId::USART1, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 9;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -459,7 +567,7 @@ struct DmaSemanticTraits<PeripheralId::USART2, SignalId::signal_RX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 12;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
 template<>
@@ -477,11 +585,17 @@ struct DmaSemanticTraits<PeripheralId::USART2, SignalId::signal_TX> {
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 11;
   static constexpr int kChannelSelector = -1;
-  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, true};
+  static constexpr RuntimeIndexedFieldRef kRouteSelectorField = RuntimeIndexedFieldRef{0x40078000u, 120u, 64u, 24u, 7u, 0u, true};
 };
 
-inline constexpr std::array<PeripheralId, 25> kDmaSemanticPeripherals = {{
+inline constexpr std::array<PeripheralId, 31> kDmaSemanticPeripherals = {{
+  PeripheralId::AFEC0,
+  PeripheralId::AFEC1,
+  PeripheralId::DACC,
+  PeripheralId::DACC,
   PeripheralId::GPIOA,
+  PeripheralId::PWM0,
+  PeripheralId::PWM1,
   PeripheralId::SPI0,
   PeripheralId::SPI0,
   PeripheralId::TWIHS0,

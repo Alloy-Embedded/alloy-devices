@@ -834,7 +834,7 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.afec.microchip-afec-s",
+      "backend_schema_id": "alloy.adc.microchip-afec-s",
       "capability_ids": [
         "capability:afec:afec-s:ad0",
         "capability:afec:afec-s:ad1",
@@ -849,7 +849,7 @@
       ],
       "ip_name": "afec",
       "ip_version": "afec_s",
-      "peripheral_class": "afec",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -890,7 +890,7 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.dacc.microchip-dacc-e",
+      "backend_schema_id": "alloy.dac.microchip-dacc-e",
       "capability_ids": [
         "capability:dacc:dacc-e:dac0",
         "capability:dacc:dacc-e:dac1",
@@ -898,7 +898,7 @@
       ],
       "ip_name": "dacc",
       "ip_version": "dacc_e",
-      "peripheral_class": "dacc",
+      "peripheral_class": "dac",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",

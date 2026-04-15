@@ -52384,8 +52384,8 @@
   "signal_endpoints": [
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad0",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad0",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52398,8 +52398,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad1",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad1",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52412,8 +52412,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad10",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad10",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52426,8 +52426,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad11",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad11",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52440,8 +52440,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad2",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad2",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52454,8 +52454,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad3",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad3",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52468,8 +52468,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad4",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad4",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52482,8 +52482,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad5",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad5",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52496,8 +52496,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad6",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad6",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52510,8 +52510,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad7",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad7",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52524,8 +52524,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad8",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad8",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52538,8 +52538,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:ad9",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:ad9",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52552,8 +52552,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:afec:adtrg",
-      "peripheral_class": "afec",
+      "endpoint_id": "endpoint:adc:adtrg",
+      "peripheral_class": "adc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52622,8 +52622,8 @@
     },
     {
       "direction": "input",
-      "endpoint_id": "endpoint:dacc:dac0",
-      "peripheral_class": "dacc",
+      "endpoint_id": "endpoint:dac:dac0",
+      "peripheral_class": "dac",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52636,8 +52636,8 @@
     },
     {
       "direction": "input",
-      "endpoint_id": "endpoint:dacc:dac1",
-      "peripheral_class": "dacc",
+      "endpoint_id": "endpoint:dac:dac1",
+      "peripheral_class": "dac",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52650,8 +52650,8 @@
     },
     {
       "direction": "input",
-      "endpoint_id": "endpoint:dacc:datrg",
-      "peripheral_class": "dacc",
+      "endpoint_id": "endpoint:dac:datrg",
+      "peripheral_class": "dac",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
