@@ -12,6 +12,8 @@ namespace devices {
 namespace mimxrt1062 {
 enum class PeripheralId : std::uint16_t {
   none,
+  ADC1,
+  ADC2,
   DMA0,
   DMAMUX1,
   GPIO1,
@@ -83,6 +85,30 @@ struct PeripheralInstanceTraits {
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
   static constexpr int kInstance = -1;
   static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::ADC1> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_adc_nxp_adc;
+  static constexpr int kInstance = 1;
+  static constexpr std::uintptr_t kBaseAddress = 0x400C4000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::ADC2> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_adc_nxp_adc;
+  static constexpr int kInstance = 2;
+  static constexpr std::uintptr_t kBaseAddress = 0x400C8000u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
@@ -460,7 +486,9 @@ struct PeripheralInstanceTraits<PeripheralId::PWM4> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 31> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 33> kRuntimePeripherals = {{
+  PeripheralId::ADC1,
+  PeripheralId::ADC2,
   PeripheralId::DMA0,
   PeripheralId::DMAMUX1,
   PeripheralId::GPIO1,
