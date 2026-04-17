@@ -2,12 +2,12 @@
 
 #include <array>
 #include <cstdint>
-#include "../../runtime_semantics.hpp"
-#include "interrupt_bindings.hpp"
+#include "../../types.hpp"
 
 namespace st {
 namespace stm32g0 {
 namespace generated {
+namespace runtime {
 namespace devices {
 namespace stm32g071rb {
 enum class StartupMemoryRegionId : std::uint16_t {
@@ -77,6 +77,42 @@ enum class StartupDescriptorId : std::uint16_t {
   startup_vector_source_flash,
   startup_vectors,
   startup_zero_target_sram,
+};
+
+enum class InterruptBindingId : std::uint16_t {
+  none,
+  interrupt_binding_adc1_adc_comp,
+  interrupt_binding_crc_cec,
+  interrupt_binding_dma1_dma_channel1,
+  interrupt_binding_dma1_dma_channel2_3,
+  interrupt_binding_dmamux1_dma_channel4_5_6_7,
+  interrupt_binding_exti_exti0_1,
+  interrupt_binding_exti_exti2_3,
+  interrupt_binding_exti_exti4_15,
+  interrupt_binding_flash_flash,
+  interrupt_binding_i2c1_i2c1,
+  interrupt_binding_i2c2_i2c2,
+  interrupt_binding_pwr_pvd,
+  interrupt_binding_rcc_rcc,
+  interrupt_binding_rng_rng,
+  interrupt_binding_rtc_rtc_stamp,
+  interrupt_binding_spi1_spi1,
+  interrupt_binding_spi2_spi2,
+  interrupt_binding_tim1_tim1_brk_up_trg_comp,
+  interrupt_binding_tim1_tim1_cc,
+  interrupt_binding_tim14_tim14,
+  interrupt_binding_tim15_tim15,
+  interrupt_binding_tim16_tim16,
+  interrupt_binding_tim17_tim17,
+  interrupt_binding_tim2_tim2,
+  interrupt_binding_tim2_tim3,
+  interrupt_binding_tim6_tim6_dac_lptim1,
+  interrupt_binding_tim7_tim7_lptim2,
+  interrupt_binding_ucpd1_ucpd1_ucpd2,
+  interrupt_binding_usart1_usart1,
+  interrupt_binding_usart2_usart2,
+  interrupt_binding_usart3_usart3_usart4_lpuart1,
+  interrupt_binding_wwdg_wwdg,
 };
 
 struct VectorSlotDescriptor {
@@ -151,6 +187,7 @@ inline constexpr std::array<StartupDescriptor, 6> kStartupDescriptors = {{
   {StartupDescriptorId::startup_vectors, StartupKindId::startup_kind_vector_table, StartupMemoryRegionId::none, StartupMemoryRegionId::none, StartupSymbolId::_vectors},
   {StartupDescriptorId::startup_zero_target_sram, StartupKindId::startup_kind_zero_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::sram, StartupSymbolId::none},
 }};
+}
 }
 }
 }

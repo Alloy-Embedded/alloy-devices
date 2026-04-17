@@ -1,1 +1,1 @@
-#include "startup_descriptors.hpp"
+#include "../../runtime/devices/stm32g0b1re/startup.hpp"
