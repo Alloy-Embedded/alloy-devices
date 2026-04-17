@@ -2,14 +2,14 @@
 
 #include <array>
 #include <cstdint>
-#include "../../runtime_semantics.hpp"
-#include "interrupt_bindings.hpp"
+#include "../../types.hpp"
 
 namespace microchip {
 namespace same70 {
 namespace generated {
+namespace runtime {
 namespace devices {
-namespace atsame70n21b {
+namespace atsame70q21b {
 enum class StartupMemoryRegionId : std::uint16_t {
   none,
   itcm,
@@ -18,6 +18,10 @@ enum class StartupMemoryRegionId : std::uint16_t {
   dtcm,
   iram,
   peripherals,
+  ebi_cs0,
+  ebi_cs1,
+  ebi_cs2,
+  ebi_cs3,
   qspimem,
   aximx,
   system,
@@ -45,6 +49,7 @@ enum class StartupSymbolId : std::uint16_t {
   HSMCI_IRQHandler,
   HardFault_Handler,
   I2SC0_IRQHandler,
+  I2SC1_IRQHandler,
   ICM_IRQHandler,
   ISI_IRQHandler,
   IXC_IRQHandler,
@@ -56,7 +61,9 @@ enum class StartupSymbolId : std::uint16_t {
   NMI_Handler,
   PIOA_IRQHandler,
   PIOB_IRQHandler,
+  PIOC_IRQHandler,
   PIOD_IRQHandler,
+  PIOE_IRQHandler,
   PMC_IRQHandler,
   PWM0_IRQHandler,
   PWM1_IRQHandler,
@@ -73,6 +80,7 @@ enum class StartupSymbolId : std::uint16_t {
   Reserved_Handler_9,
   Reset_Handler,
   SPI0_IRQHandler,
+  SPI1_IRQHandler,
   SSC_IRQHandler,
   SUPC_IRQHandler,
   SVCall_Handler,
@@ -125,13 +133,86 @@ enum class StartupDescriptorId : std::uint16_t {
   startup_zero_target_itcm,
 };
 
+enum class InterruptBindingId : std::uint16_t {
+  none,
+  interrupt_binding_acc_acc,
+  interrupt_binding_aes_aes,
+  interrupt_binding_afec0_afec0,
+  interrupt_binding_afec1_afec1,
+  interrupt_binding_dacc_dacc,
+  interrupt_binding_efc_efc,
+  interrupt_binding_fpu_fpu,
+  interrupt_binding_fpu_ixc,
+  interrupt_binding_gmac_gmac,
+  interrupt_binding_gmac_gmac_q1,
+  interrupt_binding_gmac_gmac_q2,
+  interrupt_binding_gmac_gmac_q3,
+  interrupt_binding_gmac_gmac_q4,
+  interrupt_binding_gmac_gmac_q5,
+  interrupt_binding_gpioa_pioa,
+  interrupt_binding_gpiob_piob,
+  interrupt_binding_gpioc_pioc,
+  interrupt_binding_gpiod_piod,
+  interrupt_binding_gpioe_pioe,
+  interrupt_binding_hsmci_hsmci,
+  interrupt_binding_i2sc0_i2sc0,
+  interrupt_binding_i2sc1_i2sc1,
+  interrupt_binding_icm_icm,
+  interrupt_binding_isi_isi,
+  interrupt_binding_mcan0_mcan0_int0,
+  interrupt_binding_mcan0_mcan0_int1,
+  interrupt_binding_mcan1_mcan1_int0,
+  interrupt_binding_mcan1_mcan1_int1,
+  interrupt_binding_pmc_pmc,
+  interrupt_binding_pwm0_pwm0,
+  interrupt_binding_pwm1_pwm1,
+  interrupt_binding_qspi_qspi,
+  interrupt_binding_rstc_rstc,
+  interrupt_binding_rswdt_rswdt,
+  interrupt_binding_rtc_rtc,
+  interrupt_binding_rtt_rtt,
+  interrupt_binding_scb_ccw,
+  interrupt_binding_scb_ccf,
+  interrupt_binding_spi0_spi0,
+  interrupt_binding_spi1_spi1,
+  interrupt_binding_ssc_ssc,
+  interrupt_binding_supc_supc,
+  interrupt_binding_tc0_tc0,
+  interrupt_binding_tc0_tc1,
+  interrupt_binding_tc0_tc2,
+  interrupt_binding_tc1_tc3,
+  interrupt_binding_tc1_tc4,
+  interrupt_binding_tc1_tc5,
+  interrupt_binding_tc2_tc6,
+  interrupt_binding_tc2_tc7,
+  interrupt_binding_tc2_tc8,
+  interrupt_binding_tc3_tc9,
+  interrupt_binding_tc3_tc10,
+  interrupt_binding_tc3_tc11,
+  interrupt_binding_trng_trng,
+  interrupt_binding_twihs0_twihs0,
+  interrupt_binding_twihs1_twihs1,
+  interrupt_binding_twihs2_twihs2,
+  interrupt_binding_uart0_uart0,
+  interrupt_binding_uart1_uart1,
+  interrupt_binding_uart2_uart2,
+  interrupt_binding_uart3_uart3,
+  interrupt_binding_uart4_uart4,
+  interrupt_binding_usart0_usart0,
+  interrupt_binding_usart1_usart1,
+  interrupt_binding_usart2_usart2,
+  interrupt_binding_usbhs_usbhs,
+  interrupt_binding_wdt_wdt,
+  interrupt_binding_xdmac_xdmac,
+};
+
 struct VectorSlotDescriptor {
   int slot;
   StartupSymbolId symbol_id;
   InterruptBindingId interrupt_binding_id;
   VectorKindId kind_id;
 };
-inline constexpr std::array<VectorSlotDescriptor, 81> kVectorSlots = {{
+inline constexpr std::array<VectorSlotDescriptor, 85> kVectorSlots = {{
   {0, StartupSymbolId::__stack_top, InterruptBindingId::none, VectorKindId::vector_kind_initial_stack_pointer},
   {1, StartupSymbolId::Reset_Handler, InterruptBindingId::none, VectorKindId::vector_kind_reset_handler},
   {2, StartupSymbolId::NMI_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
@@ -159,10 +240,12 @@ inline constexpr std::array<VectorSlotDescriptor, 81> kVectorSlots = {{
   {24, StartupSymbolId::UART1_IRQHandler, InterruptBindingId::interrupt_binding_uart1_uart1, VectorKindId::vector_kind_external_interrupt},
   {26, StartupSymbolId::PIOA_IRQHandler, InterruptBindingId::interrupt_binding_gpioa_pioa, VectorKindId::vector_kind_external_interrupt},
   {27, StartupSymbolId::PIOB_IRQHandler, InterruptBindingId::interrupt_binding_gpiob_piob, VectorKindId::vector_kind_external_interrupt},
+  {28, StartupSymbolId::PIOC_IRQHandler, InterruptBindingId::interrupt_binding_gpioc_pioc, VectorKindId::vector_kind_external_interrupt},
   {29, StartupSymbolId::USART0_IRQHandler, InterruptBindingId::interrupt_binding_usart0_usart0, VectorKindId::vector_kind_external_interrupt},
   {30, StartupSymbolId::USART1_IRQHandler, InterruptBindingId::interrupt_binding_usart1_usart1, VectorKindId::vector_kind_external_interrupt},
   {31, StartupSymbolId::USART2_IRQHandler, InterruptBindingId::interrupt_binding_usart2_usart2, VectorKindId::vector_kind_external_interrupt},
   {32, StartupSymbolId::PIOD_IRQHandler, InterruptBindingId::interrupt_binding_gpiod_piod, VectorKindId::vector_kind_external_interrupt},
+  {33, StartupSymbolId::PIOE_IRQHandler, InterruptBindingId::interrupt_binding_gpioe_pioe, VectorKindId::vector_kind_external_interrupt},
   {34, StartupSymbolId::HSMCI_IRQHandler, InterruptBindingId::interrupt_binding_hsmci_hsmci, VectorKindId::vector_kind_external_interrupt},
   {35, StartupSymbolId::TWIHS0_IRQHandler, InterruptBindingId::interrupt_binding_twihs0_twihs0, VectorKindId::vector_kind_external_interrupt},
   {36, StartupSymbolId::TWIHS1_IRQHandler, InterruptBindingId::interrupt_binding_twihs1_twihs1, VectorKindId::vector_kind_external_interrupt},
@@ -187,6 +270,7 @@ inline constexpr std::array<VectorSlotDescriptor, 81> kVectorSlots = {{
   {55, StartupSymbolId::GMAC_IRQHandler, InterruptBindingId::interrupt_binding_gmac_gmac, VectorKindId::vector_kind_external_interrupt},
   {56, StartupSymbolId::AFEC1_IRQHandler, InterruptBindingId::interrupt_binding_afec1_afec1, VectorKindId::vector_kind_external_interrupt},
   {57, StartupSymbolId::TWIHS2_IRQHandler, InterruptBindingId::interrupt_binding_twihs2_twihs2, VectorKindId::vector_kind_external_interrupt},
+  {58, StartupSymbolId::SPI1_IRQHandler, InterruptBindingId::interrupt_binding_spi1_spi1, VectorKindId::vector_kind_external_interrupt},
   {59, StartupSymbolId::QSPI_IRQHandler, InterruptBindingId::interrupt_binding_qspi_qspi, VectorKindId::vector_kind_external_interrupt},
   {60, StartupSymbolId::UART2_IRQHandler, InterruptBindingId::interrupt_binding_uart2_uart2, VectorKindId::vector_kind_external_interrupt},
   {61, StartupSymbolId::UART3_IRQHandler, InterruptBindingId::interrupt_binding_uart3_uart3, VectorKindId::vector_kind_external_interrupt},
@@ -210,6 +294,7 @@ inline constexpr std::array<VectorSlotDescriptor, 81> kVectorSlots = {{
   {83, StartupSymbolId::GMAC_Q2_IRQHandler, InterruptBindingId::interrupt_binding_gmac_gmac_q2, VectorKindId::vector_kind_external_interrupt},
   {84, StartupSymbolId::IXC_IRQHandler, InterruptBindingId::interrupt_binding_fpu_ixc, VectorKindId::vector_kind_external_interrupt},
   {85, StartupSymbolId::I2SC0_IRQHandler, InterruptBindingId::interrupt_binding_i2sc0_i2sc0, VectorKindId::vector_kind_external_interrupt},
+  {86, StartupSymbolId::I2SC1_IRQHandler, InterruptBindingId::interrupt_binding_i2sc1_i2sc1, VectorKindId::vector_kind_external_interrupt},
   {87, StartupSymbolId::GMAC_Q3_IRQHandler, InterruptBindingId::interrupt_binding_gmac_gmac_q3, VectorKindId::vector_kind_external_interrupt},
   {88, StartupSymbolId::GMAC_Q4_IRQHandler, InterruptBindingId::interrupt_binding_gmac_gmac_q4, VectorKindId::vector_kind_external_interrupt},
   {89, StartupSymbolId::GMAC_Q5_IRQHandler, InterruptBindingId::interrupt_binding_gmac_gmac_q5, VectorKindId::vector_kind_external_interrupt},
@@ -236,6 +321,7 @@ inline constexpr std::array<StartupDescriptor, 12> kStartupDescriptors = {{
   {StartupDescriptorId::startup_zero_target_iram, StartupKindId::startup_kind_zero_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::iram, StartupSymbolId::none},
   {StartupDescriptorId::startup_zero_target_itcm, StartupKindId::startup_kind_zero_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::itcm, StartupSymbolId::none},
 }};
+}
 }
 }
 }

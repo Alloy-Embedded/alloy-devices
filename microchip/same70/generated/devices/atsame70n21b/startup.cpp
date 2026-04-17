@@ -1,6 +1,6 @@
 #include <cstdint>
 
-#include "startup_descriptors.hpp"
+#include "../../runtime/devices/atsame70n21b/startup.hpp"
 
 extern "C" {
 #if defined(ALLOY_CODEGEN_HOST_SMOKE)
