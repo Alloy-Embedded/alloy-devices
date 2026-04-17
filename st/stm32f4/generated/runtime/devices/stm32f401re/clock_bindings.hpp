@@ -284,6 +284,14 @@ struct PeripheralClockBindingTraits {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::ADC1> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::DMA1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_dma1;
@@ -475,7 +483,8 @@ struct PeripheralClockBindingTraits<PeripheralId::USART6> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 24> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
+  PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMA2,
   PeripheralId::GPIOA,

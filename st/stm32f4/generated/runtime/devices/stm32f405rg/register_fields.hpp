@@ -13,6 +13,241 @@ namespace devices {
 namespace stm32f405rg {
 enum class FieldId : std::uint16_t {
   none,
+  field_adc1_cr1_awdch,
+  field_adc1_cr1_eocie,
+  field_adc1_cr1_awdie,
+  field_adc1_cr1_jeocie,
+  field_adc1_cr1_scan,
+  field_adc1_cr1_awdsgl,
+  field_adc1_cr1_jauto,
+  field_adc1_cr1_discen,
+  field_adc1_cr1_jdiscen,
+  field_adc1_cr1_discnum,
+  field_adc1_cr1_jawden,
+  field_adc1_cr1_awden,
+  field_adc1_cr1_res,
+  field_adc1_cr1_ovrie,
+  field_adc1_cr2_adon,
+  field_adc1_cr2_cont,
+  field_adc1_cr2_dma,
+  field_adc1_cr2_dds,
+  field_adc1_cr2_eocs,
+  field_adc1_cr2_align,
+  field_adc1_cr2_jextsel,
+  field_adc1_cr2_jexten,
+  field_adc1_cr2_jswstart,
+  field_adc1_cr2_extsel,
+  field_adc1_cr2_exten,
+  field_adc1_cr2_swstart,
+  field_adc1_dr_data,
+  field_adc1_htr_ht,
+  field_adc1_jdr1_jdata,
+  field_adc1_jdr2_jdata,
+  field_adc1_jdr3_jdata,
+  field_adc1_jdr4_jdata,
+  field_adc1_jofr1_joffset1,
+  field_adc1_jofr2_joffset2,
+  field_adc1_jofr3_joffset3,
+  field_adc1_jofr4_joffset4,
+  field_adc1_jsqr_jsq1,
+  field_adc1_jsqr_jsq2,
+  field_adc1_jsqr_jsq3,
+  field_adc1_jsqr_jsq4,
+  field_adc1_jsqr_jl,
+  field_adc1_ltr_lt,
+  field_adc1_smpr1_smpx_x,
+  field_adc1_smpr2_smpx_x,
+  field_adc1_sqr1_sq13,
+  field_adc1_sqr1_sq14,
+  field_adc1_sqr1_sq15,
+  field_adc1_sqr1_sq16,
+  field_adc1_sqr1_l,
+  field_adc1_sqr2_sq7,
+  field_adc1_sqr2_sq8,
+  field_adc1_sqr2_sq9,
+  field_adc1_sqr2_sq10,
+  field_adc1_sqr2_sq11,
+  field_adc1_sqr2_sq12,
+  field_adc1_sqr3_sq1,
+  field_adc1_sqr3_sq2,
+  field_adc1_sqr3_sq3,
+  field_adc1_sqr3_sq4,
+  field_adc1_sqr3_sq5,
+  field_adc1_sqr3_sq6,
+  field_adc1_sr_awd,
+  field_adc1_sr_eoc,
+  field_adc1_sr_jeoc,
+  field_adc1_sr_jstrt,
+  field_adc1_sr_strt,
+  field_adc1_sr_ovr,
+  field_adc2_cr1_awdch,
+  field_adc2_cr1_eocie,
+  field_adc2_cr1_awdie,
+  field_adc2_cr1_jeocie,
+  field_adc2_cr1_scan,
+  field_adc2_cr1_awdsgl,
+  field_adc2_cr1_jauto,
+  field_adc2_cr1_discen,
+  field_adc2_cr1_jdiscen,
+  field_adc2_cr1_discnum,
+  field_adc2_cr1_jawden,
+  field_adc2_cr1_awden,
+  field_adc2_cr1_res,
+  field_adc2_cr1_ovrie,
+  field_adc2_cr2_adon,
+  field_adc2_cr2_cont,
+  field_adc2_cr2_dma,
+  field_adc2_cr2_dds,
+  field_adc2_cr2_eocs,
+  field_adc2_cr2_align,
+  field_adc2_cr2_jextsel,
+  field_adc2_cr2_jexten,
+  field_adc2_cr2_jswstart,
+  field_adc2_cr2_extsel,
+  field_adc2_cr2_exten,
+  field_adc2_cr2_swstart,
+  field_adc2_dr_data,
+  field_adc2_htr_ht,
+  field_adc2_jdr1_jdata,
+  field_adc2_jdr2_jdata,
+  field_adc2_jdr3_jdata,
+  field_adc2_jdr4_jdata,
+  field_adc2_jofr1_joffset1,
+  field_adc2_jofr2_joffset2,
+  field_adc2_jofr3_joffset3,
+  field_adc2_jofr4_joffset4,
+  field_adc2_jsqr_jsq1,
+  field_adc2_jsqr_jsq2,
+  field_adc2_jsqr_jsq3,
+  field_adc2_jsqr_jsq4,
+  field_adc2_jsqr_jl,
+  field_adc2_ltr_lt,
+  field_adc2_smpr1_smpx_x,
+  field_adc2_smpr2_smpx_x,
+  field_adc2_sqr1_sq13,
+  field_adc2_sqr1_sq14,
+  field_adc2_sqr1_sq15,
+  field_adc2_sqr1_sq16,
+  field_adc2_sqr1_l,
+  field_adc2_sqr2_sq7,
+  field_adc2_sqr2_sq8,
+  field_adc2_sqr2_sq9,
+  field_adc2_sqr2_sq10,
+  field_adc2_sqr2_sq11,
+  field_adc2_sqr2_sq12,
+  field_adc2_sqr3_sq1,
+  field_adc2_sqr3_sq2,
+  field_adc2_sqr3_sq3,
+  field_adc2_sqr3_sq4,
+  field_adc2_sqr3_sq5,
+  field_adc2_sqr3_sq6,
+  field_adc2_sr_awd,
+  field_adc2_sr_eoc,
+  field_adc2_sr_jeoc,
+  field_adc2_sr_jstrt,
+  field_adc2_sr_strt,
+  field_adc2_sr_ovr,
+  field_adc3_cr1_awdch,
+  field_adc3_cr1_eocie,
+  field_adc3_cr1_awdie,
+  field_adc3_cr1_jeocie,
+  field_adc3_cr1_scan,
+  field_adc3_cr1_awdsgl,
+  field_adc3_cr1_jauto,
+  field_adc3_cr1_discen,
+  field_adc3_cr1_jdiscen,
+  field_adc3_cr1_discnum,
+  field_adc3_cr1_jawden,
+  field_adc3_cr1_awden,
+  field_adc3_cr1_res,
+  field_adc3_cr1_ovrie,
+  field_adc3_cr2_adon,
+  field_adc3_cr2_cont,
+  field_adc3_cr2_dma,
+  field_adc3_cr2_dds,
+  field_adc3_cr2_eocs,
+  field_adc3_cr2_align,
+  field_adc3_cr2_jextsel,
+  field_adc3_cr2_jexten,
+  field_adc3_cr2_jswstart,
+  field_adc3_cr2_extsel,
+  field_adc3_cr2_exten,
+  field_adc3_cr2_swstart,
+  field_adc3_dr_data,
+  field_adc3_htr_ht,
+  field_adc3_jdr1_jdata,
+  field_adc3_jdr2_jdata,
+  field_adc3_jdr3_jdata,
+  field_adc3_jdr4_jdata,
+  field_adc3_jofr1_joffset1,
+  field_adc3_jofr2_joffset2,
+  field_adc3_jofr3_joffset3,
+  field_adc3_jofr4_joffset4,
+  field_adc3_jsqr_jsq1,
+  field_adc3_jsqr_jsq2,
+  field_adc3_jsqr_jsq3,
+  field_adc3_jsqr_jsq4,
+  field_adc3_jsqr_jl,
+  field_adc3_ltr_lt,
+  field_adc3_smpr1_smpx_x,
+  field_adc3_smpr2_smpx_x,
+  field_adc3_sqr1_sq13,
+  field_adc3_sqr1_sq14,
+  field_adc3_sqr1_sq15,
+  field_adc3_sqr1_sq16,
+  field_adc3_sqr1_l,
+  field_adc3_sqr2_sq7,
+  field_adc3_sqr2_sq8,
+  field_adc3_sqr2_sq9,
+  field_adc3_sqr2_sq10,
+  field_adc3_sqr2_sq11,
+  field_adc3_sqr2_sq12,
+  field_adc3_sqr3_sq1,
+  field_adc3_sqr3_sq2,
+  field_adc3_sqr3_sq3,
+  field_adc3_sqr3_sq4,
+  field_adc3_sqr3_sq5,
+  field_adc3_sqr3_sq6,
+  field_adc3_sr_awd,
+  field_adc3_sr_eoc,
+  field_adc3_sr_jeoc,
+  field_adc3_sr_jstrt,
+  field_adc3_sr_strt,
+  field_adc3_sr_ovr,
+  field_dac_cr_en1,
+  field_dac_cr_boff1,
+  field_dac_cr_ten1,
+  field_dac_cr_tsel1,
+  field_dac_cr_wave1,
+  field_dac_cr_mamp1,
+  field_dac_cr_dmaen1,
+  field_dac_cr_dmaudrie1,
+  field_dac_cr_en2,
+  field_dac_cr_boff2,
+  field_dac_cr_ten2,
+  field_dac_cr_tsel2,
+  field_dac_cr_wave2,
+  field_dac_cr_mamp2,
+  field_dac_cr_dmaen2,
+  field_dac_cr_dmaudrie2,
+  field_dac_dhr12l1_dacc1dhr,
+  field_dac_dhr12l2_dacc2dhr,
+  field_dac_dhr12ld_dacc1dhr,
+  field_dac_dhr12ld_dacc2dhr,
+  field_dac_dhr12r1_dacc1dhr,
+  field_dac_dhr12r2_dacc2dhr,
+  field_dac_dhr12rd_dacc1dhr,
+  field_dac_dhr12rd_dacc2dhr,
+  field_dac_dhr8r1_dacc1dhr,
+  field_dac_dhr8r2_dacc2dhr,
+  field_dac_dhr8rd_dacc1dhr,
+  field_dac_dhr8rd_dacc2dhr,
+  field_dac_dor1_dacc1dor,
+  field_dac_dor2_dacc2dor,
+  field_dac_sr_dmaudr1,
+  field_dac_sr_dmaudr2,
+  field_dac_swtrigr_swtrig1,
+  field_dac_swtrigr_swtrig2,
   field_dma1_hifcr_cfeif4,
   field_dma1_hifcr_cdmeif4,
   field_dma1_hifcr_cteif4,
@@ -3833,6 +4068,2121 @@ struct RegisterFieldTraits {
   static constexpr std::uint16_t kBitOffset = 0u;
   static constexpr std::uint16_t kBitWidth = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_awdch> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_eocie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_awdie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_jeocie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_scan> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_awdsgl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_jauto> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_discen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_jdiscen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_discnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_jawden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_awden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 23u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_res> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr1_ovrie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr1;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_adon> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_cont> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_dma> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_dds> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_eocs> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_align> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_jextsel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_jexten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_jswstart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_extsel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_exten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_cr2_swstart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_cr2;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_dr_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_dr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_htr_ht> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_htr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jdr1_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jdr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jdr2_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jdr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jdr3_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jdr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jdr4_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jdr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jofr1_joffset1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jofr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jofr2_joffset2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jofr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jofr3_joffset3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jofr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jofr4_joffset4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jofr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jsqr_jsq1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jsqr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jsqr_jsq2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jsqr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jsqr_jsq3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jsqr;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jsqr_jsq4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jsqr;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_jsqr_jl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_jsqr;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_ltr_lt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_ltr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_smpr1_smpx_x> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_smpr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_smpr2_smpx_x> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_smpr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr1_sq13> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr1_sq14> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr1_sq15> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr1_sq16> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr1;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr1;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr2_sq7> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr2_sq8> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr2;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr2_sq9> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr2_sq10> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr2;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr2_sq11> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr2_sq12> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr2;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr3_sq1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr3_sq2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr3;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr3_sq3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr3;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr3_sq4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr3;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr3_sq5> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr3;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sqr3_sq6> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sqr3;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sr_awd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sr_eoc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sr_jeoc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sr_jstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sr_strt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sr;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc1_sr_ovr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc1_sr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_awdch> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_eocie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_awdie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_jeocie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_scan> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_awdsgl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_jauto> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_discen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_jdiscen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_discnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_jawden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_awden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 23u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_res> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr1_ovrie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr1;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_adon> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_cont> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_dma> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_dds> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_eocs> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_align> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_jextsel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_jexten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_jswstart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_extsel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_exten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_cr2_swstart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_cr2;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_dr_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_dr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_htr_ht> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_htr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jdr1_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jdr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jdr2_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jdr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jdr3_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jdr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jdr4_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jdr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jofr1_joffset1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jofr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jofr2_joffset2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jofr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jofr3_joffset3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jofr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jofr4_joffset4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jofr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jsqr_jsq1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jsqr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jsqr_jsq2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jsqr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jsqr_jsq3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jsqr;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jsqr_jsq4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jsqr;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_jsqr_jl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_jsqr;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_ltr_lt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_ltr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_smpr1_smpx_x> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_smpr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_smpr2_smpx_x> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_smpr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr1_sq13> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr1_sq14> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr1_sq15> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr1_sq16> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr1;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr1;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr2_sq7> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr2_sq8> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr2;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr2_sq9> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr2_sq10> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr2;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr2_sq11> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr2_sq12> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr2;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr3_sq1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr3_sq2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr3;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr3_sq3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr3;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr3_sq4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr3;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr3_sq5> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr3;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sqr3_sq6> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sqr3;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sr_awd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sr_eoc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sr_jeoc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sr_jstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sr_strt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sr;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc2_sr_ovr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc2_sr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_awdch> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_eocie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_awdie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_jeocie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_scan> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_awdsgl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_jauto> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_discen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_jdiscen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_discnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_jawden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_awden> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 23u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_res> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr1_ovrie> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr1;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_adon> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_cont> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_dma> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_dds> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_eocs> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_align> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_jextsel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_jexten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_jswstart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_extsel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_exten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_cr2_swstart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_cr2;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_dr_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_dr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_htr_ht> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_htr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jdr1_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jdr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jdr2_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jdr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jdr3_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jdr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jdr4_jdata> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jdr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jofr1_joffset1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jofr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jofr2_joffset2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jofr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jofr3_joffset3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jofr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jofr4_joffset4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jofr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jsqr_jsq1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jsqr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jsqr_jsq2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jsqr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jsqr_jsq3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jsqr;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jsqr_jsq4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jsqr;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_jsqr_jl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_jsqr;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_ltr_lt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_ltr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_smpr1_smpx_x> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_smpr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_smpr2_smpx_x> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_smpr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr1_sq13> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr1_sq14> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr1_sq15> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr1_sq16> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr1;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr1;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr2_sq7> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr2_sq8> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr2;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr2_sq9> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr2_sq10> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr2;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr2_sq11> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr2_sq12> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr2;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr3_sq1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr3_sq2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr3;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr3_sq3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr3;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr3_sq4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr3;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr3_sq5> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr3;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sqr3_sq6> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sqr3;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sr_awd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sr_eoc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sr_jeoc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sr_jstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sr_strt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sr;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_adc3_sr_ovr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_adc3_sr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_en1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_boff1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_ten1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_tsel1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_wave1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_mamp1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_dmaen1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_dmaudrie1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_en2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_boff2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_ten2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_tsel2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_wave2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_mamp2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_dmaen2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_cr_dmaudrie2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_cr;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12l1_dacc1dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12l1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12l2_dacc2dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12l2;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12ld_dacc1dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12ld;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12ld_dacc2dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12ld;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12r1_dacc1dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12r1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12r2_dacc2dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12r2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12rd_dacc1dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12rd;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr12rd_dacc2dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr12rd;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr8r1_dacc1dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr8r1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr8r2_dacc2dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr8r2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr8rd_dacc1dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr8rd;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dhr8rd_dacc2dhr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dhr8rd;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dor1_dacc1dor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dor1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_dor2_dacc2dor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_dor2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_sr_dmaudr1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_sr;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_sr_dmaudr2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_sr;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_swtrigr_swtrig1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_swtrigr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_dac_swtrigr_swtrig2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_dac_swtrigr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
 };
 
 template<>
@@ -38134,7 +40484,242 @@ struct RegisterFieldTraits<FieldId::field_usart6_sr_cts> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
-inline constexpr std::array<FieldId, 3811> kRegisterFields = {{
+inline constexpr std::array<FieldId, 4046> kRegisterFields = {{
+  FieldId::field_adc1_cr1_awdch,
+  FieldId::field_adc1_cr1_eocie,
+  FieldId::field_adc1_cr1_awdie,
+  FieldId::field_adc1_cr1_jeocie,
+  FieldId::field_adc1_cr1_scan,
+  FieldId::field_adc1_cr1_awdsgl,
+  FieldId::field_adc1_cr1_jauto,
+  FieldId::field_adc1_cr1_discen,
+  FieldId::field_adc1_cr1_jdiscen,
+  FieldId::field_adc1_cr1_discnum,
+  FieldId::field_adc1_cr1_jawden,
+  FieldId::field_adc1_cr1_awden,
+  FieldId::field_adc1_cr1_res,
+  FieldId::field_adc1_cr1_ovrie,
+  FieldId::field_adc1_cr2_adon,
+  FieldId::field_adc1_cr2_cont,
+  FieldId::field_adc1_cr2_dma,
+  FieldId::field_adc1_cr2_dds,
+  FieldId::field_adc1_cr2_eocs,
+  FieldId::field_adc1_cr2_align,
+  FieldId::field_adc1_cr2_jextsel,
+  FieldId::field_adc1_cr2_jexten,
+  FieldId::field_adc1_cr2_jswstart,
+  FieldId::field_adc1_cr2_extsel,
+  FieldId::field_adc1_cr2_exten,
+  FieldId::field_adc1_cr2_swstart,
+  FieldId::field_adc1_dr_data,
+  FieldId::field_adc1_htr_ht,
+  FieldId::field_adc1_jdr1_jdata,
+  FieldId::field_adc1_jdr2_jdata,
+  FieldId::field_adc1_jdr3_jdata,
+  FieldId::field_adc1_jdr4_jdata,
+  FieldId::field_adc1_jofr1_joffset1,
+  FieldId::field_adc1_jofr2_joffset2,
+  FieldId::field_adc1_jofr3_joffset3,
+  FieldId::field_adc1_jofr4_joffset4,
+  FieldId::field_adc1_jsqr_jsq1,
+  FieldId::field_adc1_jsqr_jsq2,
+  FieldId::field_adc1_jsqr_jsq3,
+  FieldId::field_adc1_jsqr_jsq4,
+  FieldId::field_adc1_jsqr_jl,
+  FieldId::field_adc1_ltr_lt,
+  FieldId::field_adc1_smpr1_smpx_x,
+  FieldId::field_adc1_smpr2_smpx_x,
+  FieldId::field_adc1_sqr1_sq13,
+  FieldId::field_adc1_sqr1_sq14,
+  FieldId::field_adc1_sqr1_sq15,
+  FieldId::field_adc1_sqr1_sq16,
+  FieldId::field_adc1_sqr1_l,
+  FieldId::field_adc1_sqr2_sq7,
+  FieldId::field_adc1_sqr2_sq8,
+  FieldId::field_adc1_sqr2_sq9,
+  FieldId::field_adc1_sqr2_sq10,
+  FieldId::field_adc1_sqr2_sq11,
+  FieldId::field_adc1_sqr2_sq12,
+  FieldId::field_adc1_sqr3_sq1,
+  FieldId::field_adc1_sqr3_sq2,
+  FieldId::field_adc1_sqr3_sq3,
+  FieldId::field_adc1_sqr3_sq4,
+  FieldId::field_adc1_sqr3_sq5,
+  FieldId::field_adc1_sqr3_sq6,
+  FieldId::field_adc1_sr_awd,
+  FieldId::field_adc1_sr_eoc,
+  FieldId::field_adc1_sr_jeoc,
+  FieldId::field_adc1_sr_jstrt,
+  FieldId::field_adc1_sr_strt,
+  FieldId::field_adc1_sr_ovr,
+  FieldId::field_adc2_cr1_awdch,
+  FieldId::field_adc2_cr1_eocie,
+  FieldId::field_adc2_cr1_awdie,
+  FieldId::field_adc2_cr1_jeocie,
+  FieldId::field_adc2_cr1_scan,
+  FieldId::field_adc2_cr1_awdsgl,
+  FieldId::field_adc2_cr1_jauto,
+  FieldId::field_adc2_cr1_discen,
+  FieldId::field_adc2_cr1_jdiscen,
+  FieldId::field_adc2_cr1_discnum,
+  FieldId::field_adc2_cr1_jawden,
+  FieldId::field_adc2_cr1_awden,
+  FieldId::field_adc2_cr1_res,
+  FieldId::field_adc2_cr1_ovrie,
+  FieldId::field_adc2_cr2_adon,
+  FieldId::field_adc2_cr2_cont,
+  FieldId::field_adc2_cr2_dma,
+  FieldId::field_adc2_cr2_dds,
+  FieldId::field_adc2_cr2_eocs,
+  FieldId::field_adc2_cr2_align,
+  FieldId::field_adc2_cr2_jextsel,
+  FieldId::field_adc2_cr2_jexten,
+  FieldId::field_adc2_cr2_jswstart,
+  FieldId::field_adc2_cr2_extsel,
+  FieldId::field_adc2_cr2_exten,
+  FieldId::field_adc2_cr2_swstart,
+  FieldId::field_adc2_dr_data,
+  FieldId::field_adc2_htr_ht,
+  FieldId::field_adc2_jdr1_jdata,
+  FieldId::field_adc2_jdr2_jdata,
+  FieldId::field_adc2_jdr3_jdata,
+  FieldId::field_adc2_jdr4_jdata,
+  FieldId::field_adc2_jofr1_joffset1,
+  FieldId::field_adc2_jofr2_joffset2,
+  FieldId::field_adc2_jofr3_joffset3,
+  FieldId::field_adc2_jofr4_joffset4,
+  FieldId::field_adc2_jsqr_jsq1,
+  FieldId::field_adc2_jsqr_jsq2,
+  FieldId::field_adc2_jsqr_jsq3,
+  FieldId::field_adc2_jsqr_jsq4,
+  FieldId::field_adc2_jsqr_jl,
+  FieldId::field_adc2_ltr_lt,
+  FieldId::field_adc2_smpr1_smpx_x,
+  FieldId::field_adc2_smpr2_smpx_x,
+  FieldId::field_adc2_sqr1_sq13,
+  FieldId::field_adc2_sqr1_sq14,
+  FieldId::field_adc2_sqr1_sq15,
+  FieldId::field_adc2_sqr1_sq16,
+  FieldId::field_adc2_sqr1_l,
+  FieldId::field_adc2_sqr2_sq7,
+  FieldId::field_adc2_sqr2_sq8,
+  FieldId::field_adc2_sqr2_sq9,
+  FieldId::field_adc2_sqr2_sq10,
+  FieldId::field_adc2_sqr2_sq11,
+  FieldId::field_adc2_sqr2_sq12,
+  FieldId::field_adc2_sqr3_sq1,
+  FieldId::field_adc2_sqr3_sq2,
+  FieldId::field_adc2_sqr3_sq3,
+  FieldId::field_adc2_sqr3_sq4,
+  FieldId::field_adc2_sqr3_sq5,
+  FieldId::field_adc2_sqr3_sq6,
+  FieldId::field_adc2_sr_awd,
+  FieldId::field_adc2_sr_eoc,
+  FieldId::field_adc2_sr_jeoc,
+  FieldId::field_adc2_sr_jstrt,
+  FieldId::field_adc2_sr_strt,
+  FieldId::field_adc2_sr_ovr,
+  FieldId::field_adc3_cr1_awdch,
+  FieldId::field_adc3_cr1_eocie,
+  FieldId::field_adc3_cr1_awdie,
+  FieldId::field_adc3_cr1_jeocie,
+  FieldId::field_adc3_cr1_scan,
+  FieldId::field_adc3_cr1_awdsgl,
+  FieldId::field_adc3_cr1_jauto,
+  FieldId::field_adc3_cr1_discen,
+  FieldId::field_adc3_cr1_jdiscen,
+  FieldId::field_adc3_cr1_discnum,
+  FieldId::field_adc3_cr1_jawden,
+  FieldId::field_adc3_cr1_awden,
+  FieldId::field_adc3_cr1_res,
+  FieldId::field_adc3_cr1_ovrie,
+  FieldId::field_adc3_cr2_adon,
+  FieldId::field_adc3_cr2_cont,
+  FieldId::field_adc3_cr2_dma,
+  FieldId::field_adc3_cr2_dds,
+  FieldId::field_adc3_cr2_eocs,
+  FieldId::field_adc3_cr2_align,
+  FieldId::field_adc3_cr2_jextsel,
+  FieldId::field_adc3_cr2_jexten,
+  FieldId::field_adc3_cr2_jswstart,
+  FieldId::field_adc3_cr2_extsel,
+  FieldId::field_adc3_cr2_exten,
+  FieldId::field_adc3_cr2_swstart,
+  FieldId::field_adc3_dr_data,
+  FieldId::field_adc3_htr_ht,
+  FieldId::field_adc3_jdr1_jdata,
+  FieldId::field_adc3_jdr2_jdata,
+  FieldId::field_adc3_jdr3_jdata,
+  FieldId::field_adc3_jdr4_jdata,
+  FieldId::field_adc3_jofr1_joffset1,
+  FieldId::field_adc3_jofr2_joffset2,
+  FieldId::field_adc3_jofr3_joffset3,
+  FieldId::field_adc3_jofr4_joffset4,
+  FieldId::field_adc3_jsqr_jsq1,
+  FieldId::field_adc3_jsqr_jsq2,
+  FieldId::field_adc3_jsqr_jsq3,
+  FieldId::field_adc3_jsqr_jsq4,
+  FieldId::field_adc3_jsqr_jl,
+  FieldId::field_adc3_ltr_lt,
+  FieldId::field_adc3_smpr1_smpx_x,
+  FieldId::field_adc3_smpr2_smpx_x,
+  FieldId::field_adc3_sqr1_sq13,
+  FieldId::field_adc3_sqr1_sq14,
+  FieldId::field_adc3_sqr1_sq15,
+  FieldId::field_adc3_sqr1_sq16,
+  FieldId::field_adc3_sqr1_l,
+  FieldId::field_adc3_sqr2_sq7,
+  FieldId::field_adc3_sqr2_sq8,
+  FieldId::field_adc3_sqr2_sq9,
+  FieldId::field_adc3_sqr2_sq10,
+  FieldId::field_adc3_sqr2_sq11,
+  FieldId::field_adc3_sqr2_sq12,
+  FieldId::field_adc3_sqr3_sq1,
+  FieldId::field_adc3_sqr3_sq2,
+  FieldId::field_adc3_sqr3_sq3,
+  FieldId::field_adc3_sqr3_sq4,
+  FieldId::field_adc3_sqr3_sq5,
+  FieldId::field_adc3_sqr3_sq6,
+  FieldId::field_adc3_sr_awd,
+  FieldId::field_adc3_sr_eoc,
+  FieldId::field_adc3_sr_jeoc,
+  FieldId::field_adc3_sr_jstrt,
+  FieldId::field_adc3_sr_strt,
+  FieldId::field_adc3_sr_ovr,
+  FieldId::field_dac_cr_en1,
+  FieldId::field_dac_cr_boff1,
+  FieldId::field_dac_cr_ten1,
+  FieldId::field_dac_cr_tsel1,
+  FieldId::field_dac_cr_wave1,
+  FieldId::field_dac_cr_mamp1,
+  FieldId::field_dac_cr_dmaen1,
+  FieldId::field_dac_cr_dmaudrie1,
+  FieldId::field_dac_cr_en2,
+  FieldId::field_dac_cr_boff2,
+  FieldId::field_dac_cr_ten2,
+  FieldId::field_dac_cr_tsel2,
+  FieldId::field_dac_cr_wave2,
+  FieldId::field_dac_cr_mamp2,
+  FieldId::field_dac_cr_dmaen2,
+  FieldId::field_dac_cr_dmaudrie2,
+  FieldId::field_dac_dhr12l1_dacc1dhr,
+  FieldId::field_dac_dhr12l2_dacc2dhr,
+  FieldId::field_dac_dhr12ld_dacc1dhr,
+  FieldId::field_dac_dhr12ld_dacc2dhr,
+  FieldId::field_dac_dhr12r1_dacc1dhr,
+  FieldId::field_dac_dhr12r2_dacc2dhr,
+  FieldId::field_dac_dhr12rd_dacc1dhr,
+  FieldId::field_dac_dhr12rd_dacc2dhr,
+  FieldId::field_dac_dhr8r1_dacc1dhr,
+  FieldId::field_dac_dhr8r2_dacc2dhr,
+  FieldId::field_dac_dhr8rd_dacc1dhr,
+  FieldId::field_dac_dhr8rd_dacc2dhr,
+  FieldId::field_dac_dor1_dacc1dor,
+  FieldId::field_dac_dor2_dacc2dor,
+  FieldId::field_dac_sr_dmaudr1,
+  FieldId::field_dac_sr_dmaudr2,
+  FieldId::field_dac_swtrigr_swtrig1,
+  FieldId::field_dac_swtrigr_swtrig2,
   FieldId::field_dma1_hifcr_cfeif4,
   FieldId::field_dma1_hifcr_cdmeif4,
   FieldId::field_dma1_hifcr_cteif4,
