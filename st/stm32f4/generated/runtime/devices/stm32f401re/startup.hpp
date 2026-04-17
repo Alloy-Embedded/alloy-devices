@@ -2,12 +2,12 @@
 
 #include <array>
 #include <cstdint>
-#include "../../runtime_semantics.hpp"
-#include "interrupt_bindings.hpp"
+#include "../../types.hpp"
 
 namespace st {
 namespace stm32f4 {
 namespace generated {
+namespace runtime {
 namespace devices {
 namespace stm32f401re {
 enum class StartupMemoryRegionId : std::uint16_t {
@@ -79,6 +79,44 @@ enum class StartupDescriptorId : std::uint16_t {
   startup_vector_source_flash,
   startup_vectors,
   startup_zero_target_sram,
+};
+
+enum class InterruptBindingId : std::uint16_t {
+  none,
+  interrupt_binding_adc1_adc,
+  interrupt_binding_adc_common_fpu,
+  interrupt_binding_dma1_rtc_wkup,
+  interrupt_binding_dma1_rtc_alarm,
+  interrupt_binding_dma2_rcc,
+  interrupt_binding_exti_tamp_stamp,
+  interrupt_binding_exti_exti0,
+  interrupt_binding_exti_exti1,
+  interrupt_binding_exti_exti2,
+  interrupt_binding_exti_exti3,
+  interrupt_binding_exti_exti4,
+  interrupt_binding_exti_exti9_5,
+  interrupt_binding_exti_exti15_10,
+  interrupt_binding_flash_flash,
+  interrupt_binding_gpioa_tim2,
+  interrupt_binding_gpiod_tim1_brk_tim9,
+  interrupt_binding_gpiod_tim1_up_tim10,
+  interrupt_binding_gpiod_tim1_trg_com_tim11,
+  interrupt_binding_gpiod_tim1_cc,
+  interrupt_binding_gpioh_sdio,
+  interrupt_binding_i2c3_tim3,
+  interrupt_binding_rcc_i2c1_ev,
+  interrupt_binding_rcc_i2c1_er,
+  interrupt_binding_rtc_i2c2_ev,
+  interrupt_binding_rtc_i2c2_er,
+  interrupt_binding_sdio_i2c3_ev,
+  interrupt_binding_sdio_i2c3_er,
+  interrupt_binding_tim10_spi1,
+  interrupt_binding_tim11_spi2,
+  interrupt_binding_tim2_spi3,
+  interrupt_binding_tim3_spi4,
+  interrupt_binding_usart1_otg_fs_wkup,
+  interrupt_binding_usart1_otg_fs,
+  interrupt_binding_wwdg_pvd,
 };
 
 struct VectorSlotDescriptor {
@@ -155,6 +193,7 @@ inline constexpr std::array<StartupDescriptor, 6> kStartupDescriptors = {{
   {StartupDescriptorId::startup_vectors, StartupKindId::startup_kind_vector_table, StartupMemoryRegionId::none, StartupMemoryRegionId::none, StartupSymbolId::_vectors},
   {StartupDescriptorId::startup_zero_target_sram, StartupKindId::startup_kind_zero_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::sram, StartupSymbolId::none},
 }};
+}
 }
 }
 }

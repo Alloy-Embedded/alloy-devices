@@ -2,12 +2,12 @@
 
 #include <array>
 #include <cstdint>
-#include "../../runtime_semantics.hpp"
-#include "interrupt_bindings.hpp"
+#include "../../types.hpp"
 
 namespace st {
 namespace stm32f4 {
 namespace generated {
+namespace runtime {
 namespace devices {
 namespace stm32f405rg {
 enum class StartupMemoryRegionId : std::uint16_t {
@@ -128,6 +128,93 @@ enum class StartupDescriptorId : std::uint16_t {
   startup_vector_source_flash,
   startup_vectors,
   startup_zero_target_sram,
+};
+
+enum class InterruptBindingId : std::uint16_t {
+  none,
+  interrupt_binding_adc1_adc,
+  interrupt_binding_can1_can1_tx,
+  interrupt_binding_can1_can1_rx0,
+  interrupt_binding_can1_can1_rx1,
+  interrupt_binding_can1_can1_sce,
+  interrupt_binding_can2_can2_tx,
+  interrupt_binding_can2_can2_rx0,
+  interrupt_binding_can2_can2_rx1,
+  interrupt_binding_can2_can2_sce,
+  interrupt_binding_cryp_cryp,
+  interrupt_binding_dac_tim6_dac,
+  interrupt_binding_dcmi_dcmi,
+  interrupt_binding_dma1_dma1_stream0,
+  interrupt_binding_dma1_dma1_stream1,
+  interrupt_binding_dma1_dma1_stream2,
+  interrupt_binding_dma1_dma1_stream3,
+  interrupt_binding_dma1_dma1_stream4,
+  interrupt_binding_dma1_dma1_stream5,
+  interrupt_binding_dma1_dma1_stream6,
+  interrupt_binding_dma1_dma1_stream7,
+  interrupt_binding_dma2_dma2_stream0,
+  interrupt_binding_dma2_dma2_stream1,
+  interrupt_binding_dma2_dma2_stream2,
+  interrupt_binding_dma2_dma2_stream3,
+  interrupt_binding_dma2_dma2_stream4,
+  interrupt_binding_dma2_dma2_stream5,
+  interrupt_binding_dma2_dma2_stream6,
+  interrupt_binding_dma2_dma2_stream7,
+  interrupt_binding_exti_tamp_stamp,
+  interrupt_binding_exti_exti0,
+  interrupt_binding_exti_exti1,
+  interrupt_binding_exti_exti2,
+  interrupt_binding_exti_exti3,
+  interrupt_binding_exti_exti4,
+  interrupt_binding_exti_exti9_5,
+  interrupt_binding_exti_exti15_10,
+  interrupt_binding_ethernet_mac_eth,
+  interrupt_binding_ethernet_mac_eth_wkup,
+  interrupt_binding_fsmc_fsmc,
+  interrupt_binding_hash_hash_rng,
+  interrupt_binding_i2c1_i2c1_ev,
+  interrupt_binding_i2c1_i2c1_er,
+  interrupt_binding_i2c2_i2c2_ev,
+  interrupt_binding_i2c2_i2c2_er,
+  interrupt_binding_i2c3_i2c3_ev,
+  interrupt_binding_i2c3_i2c3_er,
+  interrupt_binding_ltdc_lcd_tft,
+  interrupt_binding_ltdc_lcd_tft_1,
+  interrupt_binding_otg_fs_global_otg_fs_wkup,
+  interrupt_binding_otg_fs_global_otg_fs,
+  interrupt_binding_otg_hs_global_otg_hs_ep1_out,
+  interrupt_binding_otg_hs_global_otg_hs_ep1_in,
+  interrupt_binding_otg_hs_global_otg_hs_wkup,
+  interrupt_binding_otg_hs_global_otg_hs,
+  interrupt_binding_pwr_pvd,
+  interrupt_binding_rcc_rcc,
+  interrupt_binding_rng_fpu,
+  interrupt_binding_rtc_rtc_wkup,
+  interrupt_binding_rtc_rtc_alarm,
+  interrupt_binding_sdio_sdio,
+  interrupt_binding_spi1_spi1,
+  interrupt_binding_spi2_spi2,
+  interrupt_binding_spi3_spi3,
+  interrupt_binding_tim1_tim1_brk_tim9,
+  interrupt_binding_tim1_tim1_up_tim10,
+  interrupt_binding_tim1_tim1_trg_com_tim11,
+  interrupt_binding_tim1_tim1_cc,
+  interrupt_binding_tim2_tim2,
+  interrupt_binding_tim3_tim3,
+  interrupt_binding_tim4_tim4,
+  interrupt_binding_tim5_tim5,
+  interrupt_binding_tim7_tim7,
+  interrupt_binding_tim8_tim8_brk_tim12,
+  interrupt_binding_tim8_tim8_up_tim13,
+  interrupt_binding_tim8_tim8_trg_com_tim14,
+  interrupt_binding_tim8_tim8_cc,
+  interrupt_binding_uart4_uart4,
+  interrupt_binding_uart5_uart5,
+  interrupt_binding_usart1_usart1,
+  interrupt_binding_usart2_usart2,
+  interrupt_binding_usart3_usart3,
+  interrupt_binding_usart6_usart6,
+  interrupt_binding_wwdg_wwdg,
 };
 
 struct VectorSlotDescriptor {
@@ -253,6 +340,7 @@ inline constexpr std::array<StartupDescriptor, 6> kStartupDescriptors = {{
   {StartupDescriptorId::startup_vectors, StartupKindId::startup_kind_vector_table, StartupMemoryRegionId::none, StartupMemoryRegionId::none, StartupSymbolId::_vectors},
   {StartupDescriptorId::startup_zero_target_sram, StartupKindId::startup_kind_zero_target_region, StartupMemoryRegionId::none, StartupMemoryRegionId::sram, StartupSymbolId::none},
 }};
+}
 }
 }
 }
