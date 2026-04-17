@@ -12,6 +12,8 @@ namespace devices {
 namespace stm32g071rb {
 enum class PeripheralId : std::uint16_t {
   none,
+  ADC1,
+  DAC,
   DMA1,
   DMAMUX1,
   GPIOA,
@@ -39,6 +41,7 @@ enum class PeripheralId : std::uint16_t {
 
 enum class ClockGateId : std::uint16_t {
   none,
+  gate_adc1,
   gate_dma1,
   gate_dmamux1,
   gate_gpioa,
@@ -66,6 +69,7 @@ enum class ClockGateId : std::uint16_t {
 
 enum class ResetId : std::uint16_t {
   none,
+  reset_adc1,
   reset_dma1,
   reset_dmamux1,
   reset_gpioa,
@@ -104,6 +108,30 @@ struct PeripheralInstanceTraits {
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
   static constexpr int kInstance = -1;
   static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::ADC1> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_adc_st_aditf4_v3_0_g0_cube;
+  static constexpr int kInstance = 1;
+  static constexpr std::uintptr_t kBaseAddress = 0x40012400u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_adc1;
+  static constexpr ResetId kResetId = ResetId::reset_adc1;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::DAC> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_dac;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_dac_st_dac;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x40007400u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
@@ -385,7 +413,9 @@ struct PeripheralInstanceTraits<PeripheralId::USART4> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 23> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 25> kRuntimePeripherals = {{
+  PeripheralId::ADC1,
+  PeripheralId::DAC,
   PeripheralId::DMA1,
   PeripheralId::DMAMUX1,
   PeripheralId::GPIOA,
