@@ -1,0 +1,153 @@
+#pragma once
+
+#include <array>
+#include <cstdint>
+#include "peripheral_instances.hpp"
+
+namespace st {
+namespace stm32f4 {
+namespace generated {
+namespace runtime {
+namespace devices {
+namespace stm32f405rg {
+enum class InterruptId : std::uint16_t {
+  none,
+  ADC,
+  CAN1_RX0,
+  CAN1_RX1,
+  CAN1_SCE,
+  CAN1_TX,
+  CAN2_RX0,
+  CAN2_RX1,
+  CAN2_SCE,
+  CAN2_TX,
+  CRYP,
+  DCMI,
+  DMA1_Stream0,
+  DMA1_Stream1,
+  DMA1_Stream2,
+  DMA1_Stream3,
+  DMA1_Stream4,
+  DMA1_Stream5,
+  DMA1_Stream6,
+  DMA1_Stream7,
+  DMA2_Stream0,
+  DMA2_Stream1,
+  DMA2_Stream2,
+  DMA2_Stream3,
+  DMA2_Stream4,
+  DMA2_Stream5,
+  DMA2_Stream6,
+  DMA2_Stream7,
+  ETH,
+  ETH_WKUP,
+  EXTI0,
+  EXTI1,
+  EXTI15_10,
+  EXTI2,
+  EXTI3,
+  EXTI4,
+  EXTI9_5,
+  FPU,
+  FSMC,
+  HASH_RNG,
+  I2C1_ER,
+  I2C1_EV,
+  I2C2_ER,
+  I2C2_EV,
+  I2C3_ER,
+  I2C3_EV,
+  LCD_TFT,
+  LCD_TFT_1,
+  OTG_FS,
+  OTG_FS_WKUP,
+  OTG_HS,
+  OTG_HS_EP1_IN,
+  OTG_HS_EP1_OUT,
+  OTG_HS_WKUP,
+  PVD,
+  RCC,
+  RTC_Alarm,
+  RTC_WKUP,
+  SDIO,
+  SPI1,
+  SPI2,
+  SPI3,
+  TAMP_STAMP,
+  TIM1_BRK_TIM9,
+  TIM1_CC,
+  TIM1_TRG_COM_TIM11,
+  TIM1_UP_TIM10,
+  TIM2,
+  TIM3,
+  TIM4,
+  TIM5,
+  TIM6_DAC,
+  TIM7,
+  TIM8_BRK_TIM12,
+  TIM8_CC,
+  TIM8_TRG_COM_TIM14,
+  TIM8_UP_TIM13,
+  UART4,
+  UART5,
+  USART1,
+  USART2,
+  USART3,
+  USART6,
+  WWDG,
+};
+
+struct InterruptDescriptor {
+  InterruptId interrupt_id;
+  PeripheralId peripheral_id;
+  std::uint16_t line;
+  std::uint16_t vector_slot;
+};
+inline constexpr std::array<InterruptDescriptor, 40> kInterruptDescriptors = {{
+  {InterruptId::ADC, PeripheralId::ADC1, 18u, 34u},
+  {InterruptId::TIM6_DAC, PeripheralId::DAC, 54u, 70u},
+  {InterruptId::DMA1_Stream0, PeripheralId::DMA1, 11u, 27u},
+  {InterruptId::DMA1_Stream1, PeripheralId::DMA1, 12u, 28u},
+  {InterruptId::DMA1_Stream2, PeripheralId::DMA1, 13u, 29u},
+  {InterruptId::DMA1_Stream3, PeripheralId::DMA1, 14u, 30u},
+  {InterruptId::DMA1_Stream4, PeripheralId::DMA1, 15u, 31u},
+  {InterruptId::DMA1_Stream5, PeripheralId::DMA1, 16u, 32u},
+  {InterruptId::DMA1_Stream6, PeripheralId::DMA1, 17u, 33u},
+  {InterruptId::DMA1_Stream7, PeripheralId::DMA1, 47u, 63u},
+  {InterruptId::DMA2_Stream0, PeripheralId::DMA2, 56u, 72u},
+  {InterruptId::DMA2_Stream1, PeripheralId::DMA2, 57u, 73u},
+  {InterruptId::DMA2_Stream2, PeripheralId::DMA2, 58u, 74u},
+  {InterruptId::DMA2_Stream3, PeripheralId::DMA2, 59u, 75u},
+  {InterruptId::DMA2_Stream4, PeripheralId::DMA2, 60u, 76u},
+  {InterruptId::DMA2_Stream5, PeripheralId::DMA2, 68u, 84u},
+  {InterruptId::DMA2_Stream6, PeripheralId::DMA2, 69u, 85u},
+  {InterruptId::DMA2_Stream7, PeripheralId::DMA2, 70u, 86u},
+  {InterruptId::SPI1, PeripheralId::SPI1, 35u, 51u},
+  {InterruptId::SPI2, PeripheralId::SPI2, 36u, 52u},
+  {InterruptId::SPI3, PeripheralId::SPI3, 51u, 67u},
+  {InterruptId::TIM1_BRK_TIM9, PeripheralId::TIM1, 24u, 40u},
+  {InterruptId::TIM1_UP_TIM10, PeripheralId::TIM1, 25u, 41u},
+  {InterruptId::TIM1_TRG_COM_TIM11, PeripheralId::TIM1, 26u, 42u},
+  {InterruptId::TIM1_CC, PeripheralId::TIM1, 27u, 43u},
+  {InterruptId::TIM2, PeripheralId::TIM2, 28u, 44u},
+  {InterruptId::TIM3, PeripheralId::TIM3, 29u, 45u},
+  {InterruptId::TIM4, PeripheralId::TIM4, 30u, 46u},
+  {InterruptId::TIM5, PeripheralId::TIM5, 50u, 66u},
+  {InterruptId::TIM7, PeripheralId::TIM7, 55u, 71u},
+  {InterruptId::TIM8_BRK_TIM12, PeripheralId::TIM8, 43u, 59u},
+  {InterruptId::TIM8_UP_TIM13, PeripheralId::TIM8, 44u, 60u},
+  {InterruptId::TIM8_TRG_COM_TIM14, PeripheralId::TIM8, 45u, 61u},
+  {InterruptId::TIM8_CC, PeripheralId::TIM8, 46u, 62u},
+  {InterruptId::UART4, PeripheralId::UART4, 52u, 68u},
+  {InterruptId::UART5, PeripheralId::UART5, 53u, 69u},
+  {InterruptId::USART1, PeripheralId::USART1, 37u, 53u},
+  {InterruptId::USART2, PeripheralId::USART2, 38u, 54u},
+  {InterruptId::USART3, PeripheralId::USART3, 39u, 55u},
+  {InterruptId::USART6, PeripheralId::USART6, 71u, 87u},
+}};
+}
+}
+}
+}
+}
+}
