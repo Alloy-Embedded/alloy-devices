@@ -1,0 +1,130 @@
+#pragma once
+
+#include <array>
+#include <cstdint>
+#include "peripheral_instances.hpp"
+
+namespace microchip {
+namespace same70 {
+namespace generated {
+namespace runtime {
+namespace devices {
+namespace atsame70n21b {
+enum class InterruptId : std::uint16_t {
+  none,
+  ACC,
+  AES,
+  AFEC0,
+  AFEC1,
+  CCF,
+  CCW,
+  DACC,
+  EFC,
+  FPU,
+  GMAC,
+  GMAC_Q1,
+  GMAC_Q2,
+  GMAC_Q3,
+  GMAC_Q4,
+  GMAC_Q5,
+  HSMCI,
+  I2SC0,
+  ICM,
+  ISI,
+  IXC,
+  MCAN0_INT0,
+  MCAN0_INT1,
+  MCAN1_INT0,
+  MCAN1_INT1,
+  PIOA,
+  PIOB,
+  PIOD,
+  PMC,
+  PWM0,
+  PWM1,
+  QSPI,
+  RSTC,
+  RSWDT,
+  RTC,
+  RTT,
+  SPI0,
+  SSC,
+  SUPC,
+  TC0,
+  TC1,
+  TC10,
+  TC11,
+  TC2,
+  TC3,
+  TC4,
+  TC5,
+  TC6,
+  TC7,
+  TC8,
+  TC9,
+  TRNG,
+  TWIHS0,
+  TWIHS1,
+  TWIHS2,
+  UART0,
+  UART1,
+  UART2,
+  UART3,
+  UART4,
+  USART0,
+  USART1,
+  USART2,
+  USBHS,
+  WDT,
+  XDMAC,
+};
+
+struct InterruptDescriptor {
+  InterruptId interrupt_id;
+  PeripheralId peripheral_id;
+  std::uint16_t line;
+  std::uint16_t vector_slot;
+};
+inline constexpr std::array<InterruptDescriptor, 35> kInterruptDescriptors = {{
+  {InterruptId::AFEC0, PeripheralId::AFEC0, 29u, 45u},
+  {InterruptId::AFEC1, PeripheralId::AFEC1, 40u, 56u},
+  {InterruptId::DACC, PeripheralId::DACC, 30u, 46u},
+  {InterruptId::PIOA, PeripheralId::GPIOA, 10u, 26u},
+  {InterruptId::PIOB, PeripheralId::GPIOB, 11u, 27u},
+  {InterruptId::PIOD, PeripheralId::GPIOD, 16u, 32u},
+  {InterruptId::PWM0, PeripheralId::PWM0, 31u, 47u},
+  {InterruptId::PWM1, PeripheralId::PWM1, 60u, 76u},
+  {InterruptId::RSWDT, PeripheralId::RSWDT, 63u, 79u},
+  {InterruptId::SPI0, PeripheralId::SPI0, 21u, 37u},
+  {InterruptId::TC0, PeripheralId::TC0, 23u, 39u},
+  {InterruptId::TC1, PeripheralId::TC0, 24u, 40u},
+  {InterruptId::TC2, PeripheralId::TC0, 25u, 41u},
+  {InterruptId::TC3, PeripheralId::TC1, 26u, 42u},
+  {InterruptId::TC4, PeripheralId::TC1, 27u, 43u},
+  {InterruptId::TC5, PeripheralId::TC1, 28u, 44u},
+  {InterruptId::TC6, PeripheralId::TC2, 47u, 63u},
+  {InterruptId::TC7, PeripheralId::TC2, 48u, 64u},
+  {InterruptId::TC8, PeripheralId::TC2, 49u, 65u},
+  {InterruptId::TC9, PeripheralId::TC3, 50u, 66u},
+  {InterruptId::TC10, PeripheralId::TC3, 51u, 67u},
+  {InterruptId::TC11, PeripheralId::TC3, 52u, 68u},
+  {InterruptId::TWIHS0, PeripheralId::TWIHS0, 19u, 35u},
+  {InterruptId::TWIHS1, PeripheralId::TWIHS1, 20u, 36u},
+  {InterruptId::TWIHS2, PeripheralId::TWIHS2, 41u, 57u},
+  {InterruptId::UART0, PeripheralId::UART0, 7u, 23u},
+  {InterruptId::UART1, PeripheralId::UART1, 8u, 24u},
+  {InterruptId::UART2, PeripheralId::UART2, 44u, 60u},
+  {InterruptId::UART3, PeripheralId::UART3, 45u, 61u},
+  {InterruptId::UART4, PeripheralId::UART4, 46u, 62u},
+  {InterruptId::USART0, PeripheralId::USART0, 13u, 29u},
+  {InterruptId::USART1, PeripheralId::USART1, 14u, 30u},
+  {InterruptId::USART2, PeripheralId::USART2, 15u, 31u},
+  {InterruptId::WDT, PeripheralId::WDT, 4u, 20u},
+  {InterruptId::XDMAC, PeripheralId::XDMAC, 58u, 74u},
+}};
+}
+}
+}
+}
+}
+}
