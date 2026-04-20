@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "561f0ac9e187497bad33c58e2daa5cf2ff3a068a8417130d6a3c04b8b0672143",
+    "canonical_ir_sha256": "f84033e8f35a5292f9a186d225da5fbbd51449a867b56d0d343a0ae999423748",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.1.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -40,7 +40,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:5a1a424977221ae3c0ce1125e9579a5bbef121eb8123b733d37628ec8579c427",
+          "revision": "content-sha256:442cc803a13261f173f4b81e28076a45374621e71fd7be8ab7082aa3135cd505",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -53,7 +53,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:23e4e777bec37ed6f114210834ea548804b04c3ca0f708387ed10dd66bef7ddf",
+          "revision": "content-sha256:83454d7600f6483535c927c4ca37718a84bac2174eabfc8397fa2ef50a32f43a",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -66,7 +66,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:5a1a424977221ae3c0ce1125e9579a5bbef121eb8123b733d37628ec8579c427",
+          "revision": "content-sha256:442cc803a13261f173f4b81e28076a45374621e71fd7be8ab7082aa3135cd505",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -79,7 +79,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:23e4e777bec37ed6f114210834ea548804b04c3ca0f708387ed10dd66bef7ddf",
+          "revision": "content-sha256:83454d7600f6483535c927c4ca37718a84bac2174eabfc8397fa2ef50a32f43a",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -125,6 +125,9 @@
       "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_DMA_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/dma.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_ADC_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/adc.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_DAC_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/dac.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CAN_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/can.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_RTC_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/rtc.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_WATCHDOG_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/watchdog.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_TIMER_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/timer.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_PWM_SEMANTICS_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/pwm.hpp\"",
       "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_SYSTICK_HEADER=\"nxp/imxrt1060/generated/runtime/devices/mimxrt1062/systick.hpp\"",
@@ -152,12 +155,12 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 72,
+  "published_artifact_count": 78,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3740,
-      "content_sha256": "7d96f2cc68e9f4aaabf226ba5ab3d7a4612ccd18eb69baf82b56dd6f7c0b26b6",
+      "content_sha256": "a35f86d148d32be65875b45babf9efce9ccc2c258926c530eb91c2d8669ed4c8",
       "path": "nxp/imxrt1060/artifact-manifest.json"
     },
     {
@@ -186,14 +189,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 203788,
-      "content_sha256": "e4687459955f574ba39d46883c7b1cae8746dd5be573cc6c1875cf68de8253b0",
+      "content_bytes": 206951,
+      "content_sha256": "361419fe90987af64f1e6832c8fc05768591fc5728f92f70837dcf8e36f4c0d4",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 17223,
-      "content_sha256": "d72b12dc0b927eeb0cd08e125f8af0926ca2c9cfce34ac16bd423a69b02a2f76",
+      "content_bytes": 19187,
+      "content_sha256": "b8ee6b8272b5a481a8bec040cd367ab652c2069349ef6d6c8f56d3a97ad52288",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/clock_bindings.hpp"
     },
     {
@@ -213,6 +216,12 @@
       "content_bytes": 10185,
       "content_sha256": "69b96098f08e758a052171cd9f946bcd2b58515ad4130248649d11d2462cae34",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/adc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 27268,
+      "content_sha256": "b8399793a79006f1e7a4d51ecfd6822fab5d16316d42460eba686c3480c5d9c9",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/can.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -252,14 +261,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 3605,
+      "content_sha256": "c57c6ecacffc135ae87e464f030f95bdc57e8c6cb53aecda6e15e202430404e5",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/rtc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 26026,
       "content_sha256": "960b77b394e92086252a80a348a93ec5b15d1f38c86679f0fc353e49b9493df7",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/spi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 26149,
-      "content_sha256": "f7cc8f5f3e492dfd922e320e8df703022a82a37864973a2140af409be61c7f80",
+      "content_bytes": 28554,
+      "content_sha256": "c7c34addbc946a7873fb357bf1d113e5d559806a1b6725367564a4962c8b0a3e",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/timer.hpp"
     },
     {
@@ -270,20 +285,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 12247,
+      "content_sha256": "d942ec203d213bdf869a407ddb49718ae204b5304a399703905d33e36e23c0f5",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/watchdog.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 15981,
       "content_sha256": "3ba637ce8e60746abb8121cc1805f430af56e3c3f33e92a3c752d4047e4e4298",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/enable_domains.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 6879,
-      "content_sha256": "51ed063ee25b8ad70114ac5a6a630c46a41527fe9b48385b8f7bde13b6fc5146",
+      "content_bytes": 7209,
+      "content_sha256": "843f5dbae82fcc66c4ce58cef723090e160f965e56bbcaef08e8033918fa98e7",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 21882,
-      "content_sha256": "cd3fb667430366ac6993ae6b93d9e650b007361e3294ef8339f93e3ca02fe8f1",
+      "content_bytes": 25577,
+      "content_sha256": "798e657ab9ab0e74dd8d885d72385c37d7c516020fc037856422b773a7d7984a",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/peripheral_instances.hpp"
     },
     {
@@ -294,14 +315,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1380717,
-      "content_sha256": "5d64bd73500eb2d501ebaff0ebe263bff1e0b2d0d907ecdd9f277de33c1267f1",
+      "content_bytes": 2131569,
+      "content_sha256": "b504fc17c1a1859dbd3ca951b6f14ce7719c46b92c75c7e225603360ec2843a3",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 324249,
-      "content_sha256": "4414639ed3821f7395ebb2f94a74f583a703d698bff794a31d9d1a08096dfc2f",
+      "content_bytes": 463916,
+      "content_sha256": "4ef609bd1914bab0c94a906bc9fc1b7ea62804e66979eafb8c9f4d0f631b464f",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/registers.hpp"
     },
     {
@@ -342,14 +363,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 203788,
-      "content_sha256": "943eabff7c7812a9cfb2b0c4ed5227bf8fc4300d51d70d80d7d4075b1581e772",
+      "content_bytes": 206951,
+      "content_sha256": "8c70947df8944a5063dc481905c671652a15e76353b30ccee35c978bcb2712a1",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 17223,
-      "content_sha256": "32c57e4712e4da8d630f355c707950528107faa86ed77d3c809e5a15da6ae731",
+      "content_bytes": 19187,
+      "content_sha256": "e136729854b802636e4436cc399abed9671d37fa6d1f2cbd07548f7ac812003e",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/clock_bindings.hpp"
     },
     {
@@ -369,6 +390,12 @@
       "content_bytes": 10185,
       "content_sha256": "0448c8194563818b1dafaa727d2454347008e5507897768aa1c8c733840274e7",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/adc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 27268,
+      "content_sha256": "7179b483154436a8e1be42a213543a47f2cdf398573489a6ad7f03c6bcae84e0",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/can.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -408,14 +435,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 3605,
+      "content_sha256": "53cef45ebafaa83df214201993b8db840814d0af4cf0f7048421fd42198af2c7",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/rtc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 26026,
       "content_sha256": "b096f2818768ffe75b8379db511cd0b8d5bdc210b9e2c0f0c97b3108edc32cae",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/spi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 26289,
-      "content_sha256": "2d58f60238337b749d7b8525fd9013c6722010e12c417155d54d55d654127a14",
+      "content_bytes": 28694,
+      "content_sha256": "fd5e4c9bef5053eb5534c2b14b190acffff4036a519d5bc81606587619473c72",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/timer.hpp"
     },
     {
@@ -426,20 +459,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 12247,
+      "content_sha256": "b73cd1050eb5ea5060ec018483dc41abd8559fc4ee70ad47999c1976571f5981",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/watchdog.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 15981,
       "content_sha256": "2ba932443feacb9b32f0f3cc9eac1152b7269ae82ce873fce449c90441396ae5",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/enable_domains.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 6851,
-      "content_sha256": "c218b115e10901ac1c85b6e2c833d167732bc36b7d9bb7c285e8334206c94775",
+      "content_bytes": 7181,
+      "content_sha256": "0178818f9ef89cae1060afee015aedb0e3c0413e66b084774d69ca17beed99b0",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 21882,
-      "content_sha256": "24f1371c24a479a9bd251cd900bfb67ad579704c774484ada7ee935163492f97",
+      "content_bytes": 25577,
+      "content_sha256": "d2d79e1f309f206c89244c921f646b48fd40b6291b1774153d882bc93f312c14",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/peripheral_instances.hpp"
     },
     {
@@ -450,14 +489,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1383285,
-      "content_sha256": "bf5883e817ca8da566f559eaefe73bb0f7d67159c4ca4f5cc1c88793a4aeb91b",
+      "content_bytes": 2134137,
+      "content_sha256": "2db8a98b933e90f223e95daa4301b0b25deed6e10bd36abf85385a668e41e05e",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 326659,
-      "content_sha256": "a01f078cb3b8c47fdf7a17e4d84afb05f2a08642b81d7c5fe8132c65bd245b7e",
+      "content_bytes": 466326,
+      "content_sha256": "11de9c1ba2d9d26010ba2d1ae48eba88d6ff9ee28d754aa2ff80b805c866c868",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/registers.hpp"
     },
     {
@@ -498,8 +537,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10970,
-      "content_sha256": "0e8eb05d9f86074531406b59cf97c97c5b4abb73b419dd7e3dd24c4617a06e5a",
+      "content_bytes": 10964,
+      "content_sha256": "df81dcea5ce77f2ddba938373976276b0d0ed5004670c3239bea2c67c1b6b20d",
       "path": "nxp/imxrt1060/generated/runtime/types.hpp"
     },
     {
@@ -516,20 +555,20 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 10896695,
-      "content_sha256": "0ce6285d0ba8c8c8426eb91bee0c7f1f7cfc96d804d3c65c3c9237eee57c5664",
+      "content_bytes": 10896705,
+      "content_sha256": "400edbe6da4177666f88d64aea0e42bf5d856cbe372468d26da7e5e6f382477a",
       "path": "nxp/imxrt1060/metadata/devices/mimxrt1062.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 10725204,
-      "content_sha256": "7b2bd7e9beffe5ce5db0327049952f959f4122f01e23dadb8e8725b7003d6a21",
+      "content_bytes": 10725214,
+      "content_sha256": "fcd052524d114995f9a271150084668f9f94b9d3da2ece72577a74c4d9b649d5",
       "path": "nxp/imxrt1060/metadata/devices/mimxrt1064.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 269649,
-      "content_sha256": "dd2078f6e511b7c9419399e1e1522e9d1aa7772de37f9b9d65651b54234e3c04",
+      "content_bytes": 269659,
+      "content_sha256": "107e26c62700a3cadc71434310e5959be7f1b7e14700023dc07072eb31ce62ac",
       "path": "nxp/imxrt1060/metadata/family-connectivity.json"
     },
     {
@@ -564,14 +603,14 @@
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 805458,
-      "content_sha256": "ca3de5c64212147acae43927adc4c6bfc66cdc281a61bca6b5eecce6c59d5f20",
+      "content_bytes": 818148,
+      "content_sha256": "6a44effa8b9e37c6a8cd914b77776bcc827b2f7ae932018624fe89dba4c50eea",
       "path": "nxp/imxrt1060/reports/runtime-explainability.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 1480007,
-      "content_sha256": "b95d08343cf0a69b00e57fb933568bb9cf731aa61d81005b1ab305480590d37f",
+      "content_bytes": 1495249,
+      "content_sha256": "d4e8812c9b6188c8584f5a54e34dcd54111de6f884439e954f94f12df3856b1f",
       "path": "nxp/imxrt1060/reports/runtime-provenance.json"
     },
     {
@@ -592,7 +631,7 @@
     "family": "imxrt1060",
     "vendor": "nxp"
   },
-  "target_artifact_revision": "9ad197a4279b397b94382a321f5e6f4d818667d31bc903e5ef169ba8ff4b82d9",
+  "target_artifact_revision": "a84558b7034a3641015f1acd36adfe776ce4bd6eda3ba7131affac6857a5f1bf",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

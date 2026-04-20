@@ -178,9 +178,12 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 74> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 80> kInterruptDescriptors = {{
   {InterruptId::ADC1, PeripheralId::ADC1, 67u, 83u},
   {InterruptId::ADC2, PeripheralId::ADC2, 68u, 84u},
+  {InterruptId::CAN1, PeripheralId::CAN1, 36u, 52u},
+  {InterruptId::CAN2, PeripheralId::CAN2, 37u, 53u},
+  {InterruptId::CAN3, PeripheralId::CAN3, 154u, 170u},
   {InterruptId::DMA0_DMA16, PeripheralId::DMA0, 0u, 16u},
   {InterruptId::DMA1_DMA17, PeripheralId::DMA0, 1u, 17u},
   {InterruptId::DMA2_DMA18, PeripheralId::DMA0, 2u, 18u},
@@ -253,6 +256,9 @@ inline constexpr std::array<InterruptDescriptor, 74> kInterruptDescriptors = {{
   {InterruptId::PWM4_2, PeripheralId::PWM4, 149u, 165u},
   {InterruptId::PWM4_3, PeripheralId::PWM4, 150u, 166u},
   {InterruptId::PWM4_FAULT, PeripheralId::PWM4, 151u, 167u},
+  {InterruptId::RTWDOG, PeripheralId::RTWDOG, 93u, 109u},
+  {InterruptId::WDOG1, PeripheralId::WDOG1, 92u, 108u},
+  {InterruptId::WDOG2, PeripheralId::WDOG2, 45u, 61u},
 }};
 }
 }

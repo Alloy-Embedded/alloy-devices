@@ -20,6 +20,7 @@ struct TimerSemanticTraits {
   static constexpr std::uint32_t kChannelCount = 0u;
   static constexpr bool kHasCompare = false;
   static constexpr bool kHasCapture = false;
+  static constexpr bool kHasEncoder = false;
   static constexpr bool kHasPwm = false;
   static constexpr bool kHasOnePulse = false;
   static constexpr bool kHasCenterAligned = false;
@@ -47,6 +48,12 @@ struct TimerSemanticTraits {
   static constexpr RuntimeFieldRef kCenterAlignedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
 };
 
 template<>
@@ -57,6 +64,7 @@ struct TimerSemanticTraits<PeripheralId::GPT1> {
   static constexpr std::uint32_t kChannelCount = 1u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = false;
   static constexpr bool kHasPwm = false;
   static constexpr bool kHasOnePulse = false;
   static constexpr bool kHasCenterAligned = false;
@@ -84,6 +92,12 @@ struct TimerSemanticTraits<PeripheralId::GPT1> {
   static constexpr RuntimeFieldRef kCenterAlignedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockSourceField = RuntimeFieldRef{FieldId::field_gpt1_cr_clksrc, RuntimeRegisterRef{RegisterId::register_gpt1_cr, 0x401EC000u, 0u, true}, 6u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
 };
 
 template<>
@@ -94,6 +108,7 @@ struct TimerSemanticTraits<PeripheralId::GPT2> {
   static constexpr std::uint32_t kChannelCount = 1u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = false;
   static constexpr bool kHasPwm = false;
   static constexpr bool kHasOnePulse = false;
   static constexpr bool kHasCenterAligned = false;
@@ -121,6 +136,12 @@ struct TimerSemanticTraits<PeripheralId::GPT2> {
   static constexpr RuntimeFieldRef kCenterAlignedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockSourceField = RuntimeFieldRef{FieldId::field_gpt2_cr_clksrc, RuntimeRegisterRef{RegisterId::register_gpt2_cr, 0x401F0000u, 0u, true}, 6u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
 };
 
 template<>
@@ -131,6 +152,7 @@ struct TimerSemanticTraits<PeripheralId::PIT> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = false;
   static constexpr bool kHasCapture = false;
+  static constexpr bool kHasEncoder = false;
   static constexpr bool kHasPwm = false;
   static constexpr bool kHasOnePulse = false;
   static constexpr bool kHasCenterAligned = false;
@@ -158,6 +180,12 @@ struct TimerSemanticTraits<PeripheralId::PIT> {
   static constexpr RuntimeFieldRef kCenterAlignedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
 };
 
 template<PeripheralId Id, std::size_t ChannelIndex>
@@ -165,6 +193,7 @@ struct TimerChannelSemanticTraits {
   static constexpr bool kPresent = false;
   static constexpr bool kSupportsCompare = false;
   static constexpr bool kSupportsCapture = false;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = kInvalidRegisterRef;
@@ -190,6 +219,7 @@ struct TimerChannelSemanticTraits<PeripheralId::GPT1, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_gpt1_cr, 0x401EC000u, 0u, true};
@@ -215,6 +245,7 @@ struct TimerChannelSemanticTraits<PeripheralId::GPT2, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_gpt2_cr, 0x401F0000u, 0u, true};
@@ -240,6 +271,7 @@ struct TimerChannelSemanticTraits<PeripheralId::PIT, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = false;
   static constexpr bool kSupportsCapture = false;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40084000u, 264u, true};
@@ -265,6 +297,7 @@ struct TimerChannelSemanticTraits<PeripheralId::PIT, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = false;
   static constexpr bool kSupportsCapture = false;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40084000u, 280u, true};
@@ -290,6 +323,7 @@ struct TimerChannelSemanticTraits<PeripheralId::PIT, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = false;
   static constexpr bool kSupportsCapture = false;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40084000u, 296u, true};
@@ -315,6 +349,7 @@ struct TimerChannelSemanticTraits<PeripheralId::PIT, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = false;
   static constexpr bool kSupportsCapture = false;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40084000u, 312u, true};

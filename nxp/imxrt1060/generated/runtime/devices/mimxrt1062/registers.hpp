@@ -34,6 +34,326 @@ enum class RegisterId : std::uint16_t {
   register_adc2_cv,
   register_adc2_ofs,
   register_adc2_cal,
+  register_can1_mcr,
+  register_can1_ctrl1,
+  register_can1_timer,
+  register_can1_rxmgmask,
+  register_can1_rx14mask,
+  register_can1_rx15mask,
+  register_can1_ecr,
+  register_can1_esr1,
+  register_can1_imask2,
+  register_can1_imask1,
+  register_can1_iflag2,
+  register_can1_iflag1,
+  register_can1_ctrl2,
+  register_can1_esr2,
+  register_can1_crcr,
+  register_can1_rxfgmask,
+  register_can1_rxfir,
+  register_can1_dbg1,
+  register_can1_dbg2,
+  register_can1_rximr_s,
+  register_can1_gfwr,
+  register_can2_mcr,
+  register_can2_ctrl1,
+  register_can2_timer,
+  register_can2_rxmgmask,
+  register_can2_rx14mask,
+  register_can2_rx15mask,
+  register_can2_ecr,
+  register_can2_esr1,
+  register_can2_imask2,
+  register_can2_imask1,
+  register_can2_iflag2,
+  register_can2_iflag1,
+  register_can2_ctrl2,
+  register_can2_esr2,
+  register_can2_crcr,
+  register_can2_rxfgmask,
+  register_can2_rxfir,
+  register_can2_dbg1,
+  register_can2_dbg2,
+  register_can2_rximr_s,
+  register_can2_gfwr,
+  register_can3_mcr,
+  register_can3_ctrl1,
+  register_can3_timer,
+  register_can3_rxmgmask,
+  register_can3_rx14mask,
+  register_can3_rx15mask,
+  register_can3_ecr,
+  register_can3_esr1,
+  register_can3_imask2,
+  register_can3_imask1,
+  register_can3_iflag2,
+  register_can3_iflag1,
+  register_can3_ctrl2,
+  register_can3_esr2,
+  register_can3_crcr,
+  register_can3_rxfgmask,
+  register_can3_rxfir,
+  register_can3_cbt,
+  register_can3_cs0,
+  register_can3_id0,
+  register_can3_mb0_16b_word0_l,
+  register_can3_mb0_16b_word1_l,
+  register_can3_cs1,
+  register_can3_id1,
+  register_can3_mb0_32b_word4_l,
+  register_can3_mb0_32b_word5_l,
+  register_can3_cs2,
+  register_can3_id2,
+  register_can3_mb0_64b_word8_l,
+  register_can3_mb0_64b_word9_l,
+  register_can3_cs3,
+  register_can3_id3,
+  register_can3_mb0_64b_word12_l,
+  register_can3_mb0_64b_word13_l,
+  register_can3_cs4,
+  register_can3_id4,
+  register_can3_mb1_32b_word6_l,
+  register_can3_mb1_32b_word7_l,
+  register_can3_cs5,
+  register_can3_id5,
+  register_can3_mb1_64b_word2_l,
+  register_can3_mb1_64b_word3_l,
+  register_can3_cs6,
+  register_can3_id6,
+  register_can3_mb1_64b_word6_l,
+  register_can3_mb1_64b_word7_l,
+  register_can3_cs7,
+  register_can3_id7,
+  register_can3_mb1_64b_word10_l,
+  register_can3_mb1_64b_word11_l,
+  register_can3_cs8,
+  register_can3_id8,
+  register_can3_mb1_64b_word14_l,
+  register_can3_mb1_64b_word15_l,
+  register_can3_cs9,
+  register_can3_id9,
+  register_can3_mb2_64b_word0_l,
+  register_can3_mb2_64b_word1_l,
+  register_can3_cs10,
+  register_can3_id10,
+  register_can3_mb10_8b_word0,
+  register_can3_mb10_8b_word1,
+  register_can3_cs11,
+  register_can3_id11,
+  register_can3_mb11_8b_word0,
+  register_can3_mb11_8b_word1,
+  register_can3_cs12,
+  register_can3_id12,
+  register_can3_mb12_8b_word0,
+  register_can3_mb12_8b_word1,
+  register_can3_cs13,
+  register_can3_id13,
+  register_can3_mb13_8b_word0,
+  register_can3_mb13_8b_word1,
+  register_can3_cs14,
+  register_can3_id14,
+  register_can3_mb14_8b_word0,
+  register_can3_mb14_8b_word1,
+  register_can3_cs15,
+  register_can3_id15,
+  register_can3_mb10_16b_word0_l,
+  register_can3_mb10_16b_word1_l,
+  register_can3_cs16,
+  register_can3_id16,
+  register_can3_mb11_16b_cs_l,
+  register_can3_mb11_16b_id_l,
+  register_can3_cs17,
+  register_can3_id17,
+  register_can3_mb11_16b_word2_l,
+  register_can3_mb11_16b_word3_l,
+  register_can3_cs18,
+  register_can3_id18,
+  register_can3_mb12_16b_word0_l,
+  register_can3_mb12_16b_word1_l,
+  register_can3_cs19,
+  register_can3_id19,
+  register_can3_mb13_16b_cs_l,
+  register_can3_mb13_16b_id_l,
+  register_can3_cs20,
+  register_can3_id20,
+  register_can3_mb13_16b_word2_l,
+  register_can3_mb13_16b_word3_l,
+  register_can3_cs21,
+  register_can3_id21,
+  register_can3_mb14_16b_word0_l,
+  register_can3_mb14_16b_word1_l,
+  register_can3_cs22,
+  register_can3_id22,
+  register_can3_mb15_16b_cs_l,
+  register_can3_mb15_16b_id_l,
+  register_can3_cs23,
+  register_can3_id23,
+  register_can3_mb15_16b_word2_l,
+  register_can3_mb15_16b_word3_l,
+  register_can3_cs24,
+  register_can3_id24,
+  register_can3_mb16_16b_word0_l,
+  register_can3_mb16_16b_word1_l,
+  register_can3_cs25,
+  register_can3_id25,
+  register_can3_mb10_32b_word0_l,
+  register_can3_mb10_32b_word1_l,
+  register_can3_cs26,
+  register_can3_id26,
+  register_can3_mb10_32b_word4_l,
+  register_can3_mb10_32b_word5_l,
+  register_can3_cs27,
+  register_can3_id27,
+  register_can3_mb11_32b_cs_l,
+  register_can3_mb11_32b_id_l,
+  register_can3_cs28,
+  register_can3_id28,
+  register_can3_mb11_32b_word2_l,
+  register_can3_mb11_32b_word3_l,
+  register_can3_cs29,
+  register_can3_id29,
+  register_can3_mb11_32b_word6_l,
+  register_can3_mb11_32b_word7_l,
+  register_can3_cs30,
+  register_can3_id30,
+  register_can3_mb20_16b_word0_l,
+  register_can3_mb20_16b_word1_l,
+  register_can3_cs31,
+  register_can3_id31,
+  register_can3_mb31_8b_word0,
+  register_can3_mb31_8b_word1,
+  register_can3_cs32,
+  register_can3_id32,
+  register_can3_mb0_16b_word0_h,
+  register_can3_mb0_16b_word1_h,
+  register_can3_cs33,
+  register_can3_id33,
+  register_can3_mb0_32b_word4_h,
+  register_can3_mb0_32b_word5_h,
+  register_can3_cs34,
+  register_can3_id34,
+  register_can3_mb0_64b_word8_h,
+  register_can3_mb0_64b_word9_h,
+  register_can3_cs35,
+  register_can3_id35,
+  register_can3_mb0_64b_word12_h,
+  register_can3_mb0_64b_word13_h,
+  register_can3_cs36,
+  register_can3_id36,
+  register_can3_mb1_32b_word6_h,
+  register_can3_mb1_32b_word7_h,
+  register_can3_cs37,
+  register_can3_id37,
+  register_can3_mb1_64b_word2_h,
+  register_can3_mb1_64b_word3_h,
+  register_can3_cs38,
+  register_can3_id38,
+  register_can3_mb1_64b_word6_h,
+  register_can3_mb1_64b_word7_h,
+  register_can3_cs39,
+  register_can3_id39,
+  register_can3_mb1_64b_word10_h,
+  register_can3_mb1_64b_word11_h,
+  register_can3_cs40,
+  register_can3_id40,
+  register_can3_mb1_64b_word14_h,
+  register_can3_mb1_64b_word15_h,
+  register_can3_cs41,
+  register_can3_id41,
+  register_can3_mb2_64b_word0_h,
+  register_can3_mb2_64b_word1_h,
+  register_can3_cs42,
+  register_can3_id42,
+  register_can3_mb2_64b_word4_h,
+  register_can3_mb2_64b_word5_h,
+  register_can3_cs43,
+  register_can3_id43,
+  register_can3_mb2_64b_word8_h,
+  register_can3_mb2_64b_word9_h,
+  register_can3_cs44,
+  register_can3_id44,
+  register_can3_mb2_64b_word12_h,
+  register_can3_mb2_64b_word13_h,
+  register_can3_cs45,
+  register_can3_id45,
+  register_can3_mb3_64b_cs_h,
+  register_can3_mb3_64b_id_h,
+  register_can3_cs46,
+  register_can3_id46,
+  register_can3_mb3_64b_word2_h,
+  register_can3_mb3_64b_word3_h,
+  register_can3_cs47,
+  register_can3_id47,
+  register_can3_mb10_16b_word0_h,
+  register_can3_mb10_16b_word1_h,
+  register_can3_cs48,
+  register_can3_id48,
+  register_can3_mb11_16b_cs_h,
+  register_can3_mb11_16b_id_h,
+  register_can3_cs49,
+  register_can3_id49,
+  register_can3_mb11_16b_word2_h,
+  register_can3_mb11_16b_word3_h,
+  register_can3_cs50,
+  register_can3_id50,
+  register_can3_mb12_16b_word0_h,
+  register_can3_mb12_16b_word1_h,
+  register_can3_cs51,
+  register_can3_id51,
+  register_can3_mb13_16b_cs_h,
+  register_can3_mb13_16b_id_h,
+  register_can3_cs52,
+  register_can3_id52,
+  register_can3_mb13_16b_word2_h,
+  register_can3_mb13_16b_word3_h,
+  register_can3_cs53,
+  register_can3_id53,
+  register_can3_mb14_16b_word0_h,
+  register_can3_mb14_16b_word1_h,
+  register_can3_cs54,
+  register_can3_id54,
+  register_can3_mb15_16b_cs_h,
+  register_can3_mb15_16b_id_h,
+  register_can3_cs55,
+  register_can3_id55,
+  register_can3_mb15_16b_word2_h,
+  register_can3_mb15_16b_word3_h,
+  register_can3_cs56,
+  register_can3_id56,
+  register_can3_mb16_16b_word0_h,
+  register_can3_mb16_16b_word1_h,
+  register_can3_cs57,
+  register_can3_id57,
+  register_can3_mb10_32b_word0_h,
+  register_can3_mb10_32b_word1_h,
+  register_can3_cs58,
+  register_can3_id58,
+  register_can3_mb10_32b_word4_h,
+  register_can3_mb10_32b_word5_h,
+  register_can3_cs59,
+  register_can3_id59,
+  register_can3_mb11_32b_cs_h,
+  register_can3_mb11_32b_id_h,
+  register_can3_cs60,
+  register_can3_id60,
+  register_can3_mb11_32b_word2_h,
+  register_can3_mb11_32b_word3_h,
+  register_can3_cs61,
+  register_can3_id61,
+  register_can3_mb11_32b_word6_h,
+  register_can3_mb11_32b_word7_h,
+  register_can3_cs62,
+  register_can3_id62,
+  register_can3_mb20_16b_word0_h,
+  register_can3_mb20_16b_word1_h,
+  register_can3_cs63,
+  register_can3_id63,
+  register_can3_mb63_8b_word0,
+  register_can3_mb63_8b_word1,
+  register_can3_rximr__s,
+  register_can3_fdctrl,
+  register_can3_fdcbt,
+  register_can3_fdcrc,
   register_ccm_cacrr,
   register_ccm_cbcdr,
   register_ccm_cbcmr,
@@ -783,6 +1103,20 @@ enum class RegisterId : std::uint16_t {
   register_pwm4_ffilt0,
   register_pwm4_ftst0,
   register_pwm4_fctrl20,
+  register_rtwdog_cs,
+  register_rtwdog_cnt,
+  register_rtwdog_toval,
+  register_rtwdog_win,
+  register_wdog1_wcr,
+  register_wdog1_wsr,
+  register_wdog1_wrsr,
+  register_wdog1_wicr,
+  register_wdog1_wmcr,
+  register_wdog2_wcr,
+  register_wdog2_wsr,
+  register_wdog2_wrsr,
+  register_wdog2_wicr,
+  register_wdog2_wmcr,
 };
 
 template<RegisterId Id>
@@ -989,6 +1323,2886 @@ struct RegisterTraits<RegisterId::register_adc2_cal> {
   static constexpr std::uintptr_t kBaseAddress = 0x400C8000u;
   static constexpr std::uint32_t kOffsetBytes = 88u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_mcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_ctrl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_timer> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_rxmgmask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_rx14mask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_rx15mask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_ecr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_esr1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_imask2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 36u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_imask1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_iflag2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_iflag1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 48u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 52u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_esr2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 56u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_crcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 68u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_rxfgmask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_rxfir> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 76u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_dbg1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 88u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_dbg2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 92u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_rximr_s> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 2176u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can1_gfwr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 2528u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_mcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_ctrl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_timer> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_rxmgmask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_rx14mask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_rx15mask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_ecr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_esr1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_imask2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 36u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_imask1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_iflag2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_iflag1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 48u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 52u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_esr2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 56u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_crcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 68u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_rxfgmask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_rxfir> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 76u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_dbg1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 88u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_dbg2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 92u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_rximr_s> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 2176u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can2_gfwr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D4000u;
+  static constexpr std::uint32_t kOffsetBytes = 2528u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_ctrl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_timer> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_rxmgmask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_rx14mask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_rx15mask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_ecr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_esr1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_imask2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 36u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_imask1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_iflag2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_iflag1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 48u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 52u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_esr2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 56u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_crcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 68u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_rxfgmask> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_rxfir> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 76u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cbt> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 80u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 128u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 132u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_16b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 136u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_16b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 140u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 144u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 148u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_32b_word4_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 152u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_32b_word5_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 156u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 160u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 164u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word8_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 168u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word9_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 172u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 176u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 180u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word12_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 184u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word13_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 188u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 192u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 196u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_32b_word6_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 200u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_32b_word7_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 204u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 208u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 212u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word2_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 216u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word3_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 220u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 224u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 228u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word6_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 232u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word7_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 236u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 240u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 244u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word10_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 248u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word11_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 252u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs8> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 256u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id8> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 260u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word14_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 264u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word15_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 268u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs9> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 272u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id9> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 276u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 280u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 284u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs10> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 288u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id10> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 292u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 296u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 300u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs11> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 304u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id11> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 308u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 312u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 316u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs12> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 320u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id12> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 324u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb12_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 328u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb12_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 332u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs13> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 336u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id13> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 340u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 344u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 348u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs14> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 352u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id14> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 356u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb14_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 360u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb14_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 364u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs15> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 368u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id15> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 372u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_16b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 376u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_16b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 380u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs16> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 384u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id16> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 388u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_cs_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 392u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_id_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 396u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs17> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 400u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id17> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 404u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_word2_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 408u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_word3_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 412u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs18> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 416u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id18> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 420u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb12_16b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 424u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb12_16b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 428u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs19> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 432u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id19> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 436u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_cs_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 440u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_id_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 444u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs20> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 448u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id20> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 452u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_word2_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 456u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_word3_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 460u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs21> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 464u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id21> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 468u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb14_16b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 472u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb14_16b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 476u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs22> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 480u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id22> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 484u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_cs_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 488u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_id_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 492u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs23> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 496u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id23> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 500u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_word2_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 504u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_word3_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 508u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs24> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 512u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id24> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 516u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb16_16b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 520u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb16_16b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 524u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs25> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 528u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id25> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 532u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 536u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 540u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs26> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 544u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id26> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 548u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word4_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 552u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word5_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 556u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs27> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 560u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id27> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 564u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_cs_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 568u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_id_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 572u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs28> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 576u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id28> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 580u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word2_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 584u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word3_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 588u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs29> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 592u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id29> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 596u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word6_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 600u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word7_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 604u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs30> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 608u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id30> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 612u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb20_16b_word0_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 616u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb20_16b_word1_l> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 620u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs31> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 624u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id31> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 628u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb31_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 632u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb31_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 636u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs32> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 640u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id32> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 644u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_16b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 648u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_16b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 652u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs33> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 656u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id33> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 660u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_32b_word4_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 664u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_32b_word5_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 668u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs34> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 672u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id34> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 676u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word8_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 680u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word9_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 684u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs35> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 688u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id35> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 692u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word12_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 696u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb0_64b_word13_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 700u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs36> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 704u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id36> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 708u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_32b_word6_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 712u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_32b_word7_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 716u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs37> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 720u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id37> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 724u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word2_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 728u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word3_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 732u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs38> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 736u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id38> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 740u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word6_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 744u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word7_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 748u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs39> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 752u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id39> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 756u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word10_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 760u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word11_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 764u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs40> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 768u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id40> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 772u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word14_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 776u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb1_64b_word15_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 780u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs41> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 784u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id41> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 788u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 792u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 796u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs42> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 800u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id42> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 804u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word4_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 808u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word5_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 812u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs43> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 816u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id43> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 820u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word8_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 824u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word9_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 828u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs44> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 832u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id44> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 836u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word12_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 840u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb2_64b_word13_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 844u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs45> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 848u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id45> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 852u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb3_64b_cs_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 856u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb3_64b_id_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 860u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs46> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 864u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id46> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 868u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb3_64b_word2_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 872u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb3_64b_word3_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 876u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs47> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 880u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id47> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 884u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_16b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 888u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_16b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 892u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs48> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 896u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id48> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 900u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_cs_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 904u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_id_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 908u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs49> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 912u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id49> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 916u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_word2_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 920u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_16b_word3_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 924u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs50> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 928u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id50> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 932u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb12_16b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 936u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb12_16b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 940u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs51> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 944u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id51> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 948u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_cs_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 952u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_id_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 956u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs52> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 960u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id52> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 964u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_word2_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 968u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb13_16b_word3_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 972u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs53> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 976u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id53> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 980u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb14_16b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 984u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb14_16b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 988u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs54> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 992u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id54> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 996u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_cs_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1000u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_id_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1004u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs55> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1008u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id55> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1012u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_word2_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1016u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb15_16b_word3_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1020u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs56> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1024u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id56> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1028u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb16_16b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1032u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb16_16b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1036u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs57> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1040u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id57> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1044u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1048u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1052u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs58> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1056u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id58> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1060u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word4_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1064u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb10_32b_word5_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1068u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs59> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1072u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id59> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1076u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_cs_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1080u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_id_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1084u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs60> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1088u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id60> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1092u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word2_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1096u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word3_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1100u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs61> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1104u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id61> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1108u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word6_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1112u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb11_32b_word7_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1116u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs62> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1120u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id62> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1124u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb20_16b_word0_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1128u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb20_16b_word1_h> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1132u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_cs63> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1136u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_id63> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1140u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb63_8b_word0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1144u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_mb63_8b_word1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 1148u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_rximr__s> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 2176u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_fdctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 3072u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_fdcbt> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 3076u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_can3_fdcrc> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x401D8000u;
+  static constexpr std::uint32_t kOffsetBytes = 3080u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
 };
 
@@ -7733,7 +10947,133 @@ struct RegisterTraits<RegisterId::register_pwm4_fctrl20> {
   static constexpr int kSizeBits = 16;
 };
 
-inline constexpr std::array<RegisterId, 771> kRegisters = {{
+template<>
+struct RegisterTraits<RegisterId::register_rtwdog_cs> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400BC000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtwdog_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400BC000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtwdog_toval> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400BC000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtwdog_win> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400BC000u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog1_wcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400B8000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog1_wsr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400B8000u;
+  static constexpr std::uint32_t kOffsetBytes = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog1_wrsr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400B8000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog1_wicr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400B8000u;
+  static constexpr std::uint32_t kOffsetBytes = 6u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog1_wmcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400B8000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog2_wcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog2_wsr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog2_wrsr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog2_wicr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 6u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wdog2_wmcr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x400D0000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 16;
+};
+
+inline constexpr std::array<RegisterId, 1105> kRegisters = {{
   RegisterId::register_adc1_hc0,
   RegisterId::register_adc1_hc_s,
   RegisterId::register_adc1_hs,
@@ -7756,6 +11096,326 @@ inline constexpr std::array<RegisterId, 771> kRegisters = {{
   RegisterId::register_adc2_cv,
   RegisterId::register_adc2_ofs,
   RegisterId::register_adc2_cal,
+  RegisterId::register_can1_mcr,
+  RegisterId::register_can1_ctrl1,
+  RegisterId::register_can1_timer,
+  RegisterId::register_can1_rxmgmask,
+  RegisterId::register_can1_rx14mask,
+  RegisterId::register_can1_rx15mask,
+  RegisterId::register_can1_ecr,
+  RegisterId::register_can1_esr1,
+  RegisterId::register_can1_imask2,
+  RegisterId::register_can1_imask1,
+  RegisterId::register_can1_iflag2,
+  RegisterId::register_can1_iflag1,
+  RegisterId::register_can1_ctrl2,
+  RegisterId::register_can1_esr2,
+  RegisterId::register_can1_crcr,
+  RegisterId::register_can1_rxfgmask,
+  RegisterId::register_can1_rxfir,
+  RegisterId::register_can1_dbg1,
+  RegisterId::register_can1_dbg2,
+  RegisterId::register_can1_rximr_s,
+  RegisterId::register_can1_gfwr,
+  RegisterId::register_can2_mcr,
+  RegisterId::register_can2_ctrl1,
+  RegisterId::register_can2_timer,
+  RegisterId::register_can2_rxmgmask,
+  RegisterId::register_can2_rx14mask,
+  RegisterId::register_can2_rx15mask,
+  RegisterId::register_can2_ecr,
+  RegisterId::register_can2_esr1,
+  RegisterId::register_can2_imask2,
+  RegisterId::register_can2_imask1,
+  RegisterId::register_can2_iflag2,
+  RegisterId::register_can2_iflag1,
+  RegisterId::register_can2_ctrl2,
+  RegisterId::register_can2_esr2,
+  RegisterId::register_can2_crcr,
+  RegisterId::register_can2_rxfgmask,
+  RegisterId::register_can2_rxfir,
+  RegisterId::register_can2_dbg1,
+  RegisterId::register_can2_dbg2,
+  RegisterId::register_can2_rximr_s,
+  RegisterId::register_can2_gfwr,
+  RegisterId::register_can3_mcr,
+  RegisterId::register_can3_ctrl1,
+  RegisterId::register_can3_timer,
+  RegisterId::register_can3_rxmgmask,
+  RegisterId::register_can3_rx14mask,
+  RegisterId::register_can3_rx15mask,
+  RegisterId::register_can3_ecr,
+  RegisterId::register_can3_esr1,
+  RegisterId::register_can3_imask2,
+  RegisterId::register_can3_imask1,
+  RegisterId::register_can3_iflag2,
+  RegisterId::register_can3_iflag1,
+  RegisterId::register_can3_ctrl2,
+  RegisterId::register_can3_esr2,
+  RegisterId::register_can3_crcr,
+  RegisterId::register_can3_rxfgmask,
+  RegisterId::register_can3_rxfir,
+  RegisterId::register_can3_cbt,
+  RegisterId::register_can3_cs0,
+  RegisterId::register_can3_id0,
+  RegisterId::register_can3_mb0_16b_word0_l,
+  RegisterId::register_can3_mb0_16b_word1_l,
+  RegisterId::register_can3_cs1,
+  RegisterId::register_can3_id1,
+  RegisterId::register_can3_mb0_32b_word4_l,
+  RegisterId::register_can3_mb0_32b_word5_l,
+  RegisterId::register_can3_cs2,
+  RegisterId::register_can3_id2,
+  RegisterId::register_can3_mb0_64b_word8_l,
+  RegisterId::register_can3_mb0_64b_word9_l,
+  RegisterId::register_can3_cs3,
+  RegisterId::register_can3_id3,
+  RegisterId::register_can3_mb0_64b_word12_l,
+  RegisterId::register_can3_mb0_64b_word13_l,
+  RegisterId::register_can3_cs4,
+  RegisterId::register_can3_id4,
+  RegisterId::register_can3_mb1_32b_word6_l,
+  RegisterId::register_can3_mb1_32b_word7_l,
+  RegisterId::register_can3_cs5,
+  RegisterId::register_can3_id5,
+  RegisterId::register_can3_mb1_64b_word2_l,
+  RegisterId::register_can3_mb1_64b_word3_l,
+  RegisterId::register_can3_cs6,
+  RegisterId::register_can3_id6,
+  RegisterId::register_can3_mb1_64b_word6_l,
+  RegisterId::register_can3_mb1_64b_word7_l,
+  RegisterId::register_can3_cs7,
+  RegisterId::register_can3_id7,
+  RegisterId::register_can3_mb1_64b_word10_l,
+  RegisterId::register_can3_mb1_64b_word11_l,
+  RegisterId::register_can3_cs8,
+  RegisterId::register_can3_id8,
+  RegisterId::register_can3_mb1_64b_word14_l,
+  RegisterId::register_can3_mb1_64b_word15_l,
+  RegisterId::register_can3_cs9,
+  RegisterId::register_can3_id9,
+  RegisterId::register_can3_mb2_64b_word0_l,
+  RegisterId::register_can3_mb2_64b_word1_l,
+  RegisterId::register_can3_cs10,
+  RegisterId::register_can3_id10,
+  RegisterId::register_can3_mb10_8b_word0,
+  RegisterId::register_can3_mb10_8b_word1,
+  RegisterId::register_can3_cs11,
+  RegisterId::register_can3_id11,
+  RegisterId::register_can3_mb11_8b_word0,
+  RegisterId::register_can3_mb11_8b_word1,
+  RegisterId::register_can3_cs12,
+  RegisterId::register_can3_id12,
+  RegisterId::register_can3_mb12_8b_word0,
+  RegisterId::register_can3_mb12_8b_word1,
+  RegisterId::register_can3_cs13,
+  RegisterId::register_can3_id13,
+  RegisterId::register_can3_mb13_8b_word0,
+  RegisterId::register_can3_mb13_8b_word1,
+  RegisterId::register_can3_cs14,
+  RegisterId::register_can3_id14,
+  RegisterId::register_can3_mb14_8b_word0,
+  RegisterId::register_can3_mb14_8b_word1,
+  RegisterId::register_can3_cs15,
+  RegisterId::register_can3_id15,
+  RegisterId::register_can3_mb10_16b_word0_l,
+  RegisterId::register_can3_mb10_16b_word1_l,
+  RegisterId::register_can3_cs16,
+  RegisterId::register_can3_id16,
+  RegisterId::register_can3_mb11_16b_cs_l,
+  RegisterId::register_can3_mb11_16b_id_l,
+  RegisterId::register_can3_cs17,
+  RegisterId::register_can3_id17,
+  RegisterId::register_can3_mb11_16b_word2_l,
+  RegisterId::register_can3_mb11_16b_word3_l,
+  RegisterId::register_can3_cs18,
+  RegisterId::register_can3_id18,
+  RegisterId::register_can3_mb12_16b_word0_l,
+  RegisterId::register_can3_mb12_16b_word1_l,
+  RegisterId::register_can3_cs19,
+  RegisterId::register_can3_id19,
+  RegisterId::register_can3_mb13_16b_cs_l,
+  RegisterId::register_can3_mb13_16b_id_l,
+  RegisterId::register_can3_cs20,
+  RegisterId::register_can3_id20,
+  RegisterId::register_can3_mb13_16b_word2_l,
+  RegisterId::register_can3_mb13_16b_word3_l,
+  RegisterId::register_can3_cs21,
+  RegisterId::register_can3_id21,
+  RegisterId::register_can3_mb14_16b_word0_l,
+  RegisterId::register_can3_mb14_16b_word1_l,
+  RegisterId::register_can3_cs22,
+  RegisterId::register_can3_id22,
+  RegisterId::register_can3_mb15_16b_cs_l,
+  RegisterId::register_can3_mb15_16b_id_l,
+  RegisterId::register_can3_cs23,
+  RegisterId::register_can3_id23,
+  RegisterId::register_can3_mb15_16b_word2_l,
+  RegisterId::register_can3_mb15_16b_word3_l,
+  RegisterId::register_can3_cs24,
+  RegisterId::register_can3_id24,
+  RegisterId::register_can3_mb16_16b_word0_l,
+  RegisterId::register_can3_mb16_16b_word1_l,
+  RegisterId::register_can3_cs25,
+  RegisterId::register_can3_id25,
+  RegisterId::register_can3_mb10_32b_word0_l,
+  RegisterId::register_can3_mb10_32b_word1_l,
+  RegisterId::register_can3_cs26,
+  RegisterId::register_can3_id26,
+  RegisterId::register_can3_mb10_32b_word4_l,
+  RegisterId::register_can3_mb10_32b_word5_l,
+  RegisterId::register_can3_cs27,
+  RegisterId::register_can3_id27,
+  RegisterId::register_can3_mb11_32b_cs_l,
+  RegisterId::register_can3_mb11_32b_id_l,
+  RegisterId::register_can3_cs28,
+  RegisterId::register_can3_id28,
+  RegisterId::register_can3_mb11_32b_word2_l,
+  RegisterId::register_can3_mb11_32b_word3_l,
+  RegisterId::register_can3_cs29,
+  RegisterId::register_can3_id29,
+  RegisterId::register_can3_mb11_32b_word6_l,
+  RegisterId::register_can3_mb11_32b_word7_l,
+  RegisterId::register_can3_cs30,
+  RegisterId::register_can3_id30,
+  RegisterId::register_can3_mb20_16b_word0_l,
+  RegisterId::register_can3_mb20_16b_word1_l,
+  RegisterId::register_can3_cs31,
+  RegisterId::register_can3_id31,
+  RegisterId::register_can3_mb31_8b_word0,
+  RegisterId::register_can3_mb31_8b_word1,
+  RegisterId::register_can3_cs32,
+  RegisterId::register_can3_id32,
+  RegisterId::register_can3_mb0_16b_word0_h,
+  RegisterId::register_can3_mb0_16b_word1_h,
+  RegisterId::register_can3_cs33,
+  RegisterId::register_can3_id33,
+  RegisterId::register_can3_mb0_32b_word4_h,
+  RegisterId::register_can3_mb0_32b_word5_h,
+  RegisterId::register_can3_cs34,
+  RegisterId::register_can3_id34,
+  RegisterId::register_can3_mb0_64b_word8_h,
+  RegisterId::register_can3_mb0_64b_word9_h,
+  RegisterId::register_can3_cs35,
+  RegisterId::register_can3_id35,
+  RegisterId::register_can3_mb0_64b_word12_h,
+  RegisterId::register_can3_mb0_64b_word13_h,
+  RegisterId::register_can3_cs36,
+  RegisterId::register_can3_id36,
+  RegisterId::register_can3_mb1_32b_word6_h,
+  RegisterId::register_can3_mb1_32b_word7_h,
+  RegisterId::register_can3_cs37,
+  RegisterId::register_can3_id37,
+  RegisterId::register_can3_mb1_64b_word2_h,
+  RegisterId::register_can3_mb1_64b_word3_h,
+  RegisterId::register_can3_cs38,
+  RegisterId::register_can3_id38,
+  RegisterId::register_can3_mb1_64b_word6_h,
+  RegisterId::register_can3_mb1_64b_word7_h,
+  RegisterId::register_can3_cs39,
+  RegisterId::register_can3_id39,
+  RegisterId::register_can3_mb1_64b_word10_h,
+  RegisterId::register_can3_mb1_64b_word11_h,
+  RegisterId::register_can3_cs40,
+  RegisterId::register_can3_id40,
+  RegisterId::register_can3_mb1_64b_word14_h,
+  RegisterId::register_can3_mb1_64b_word15_h,
+  RegisterId::register_can3_cs41,
+  RegisterId::register_can3_id41,
+  RegisterId::register_can3_mb2_64b_word0_h,
+  RegisterId::register_can3_mb2_64b_word1_h,
+  RegisterId::register_can3_cs42,
+  RegisterId::register_can3_id42,
+  RegisterId::register_can3_mb2_64b_word4_h,
+  RegisterId::register_can3_mb2_64b_word5_h,
+  RegisterId::register_can3_cs43,
+  RegisterId::register_can3_id43,
+  RegisterId::register_can3_mb2_64b_word8_h,
+  RegisterId::register_can3_mb2_64b_word9_h,
+  RegisterId::register_can3_cs44,
+  RegisterId::register_can3_id44,
+  RegisterId::register_can3_mb2_64b_word12_h,
+  RegisterId::register_can3_mb2_64b_word13_h,
+  RegisterId::register_can3_cs45,
+  RegisterId::register_can3_id45,
+  RegisterId::register_can3_mb3_64b_cs_h,
+  RegisterId::register_can3_mb3_64b_id_h,
+  RegisterId::register_can3_cs46,
+  RegisterId::register_can3_id46,
+  RegisterId::register_can3_mb3_64b_word2_h,
+  RegisterId::register_can3_mb3_64b_word3_h,
+  RegisterId::register_can3_cs47,
+  RegisterId::register_can3_id47,
+  RegisterId::register_can3_mb10_16b_word0_h,
+  RegisterId::register_can3_mb10_16b_word1_h,
+  RegisterId::register_can3_cs48,
+  RegisterId::register_can3_id48,
+  RegisterId::register_can3_mb11_16b_cs_h,
+  RegisterId::register_can3_mb11_16b_id_h,
+  RegisterId::register_can3_cs49,
+  RegisterId::register_can3_id49,
+  RegisterId::register_can3_mb11_16b_word2_h,
+  RegisterId::register_can3_mb11_16b_word3_h,
+  RegisterId::register_can3_cs50,
+  RegisterId::register_can3_id50,
+  RegisterId::register_can3_mb12_16b_word0_h,
+  RegisterId::register_can3_mb12_16b_word1_h,
+  RegisterId::register_can3_cs51,
+  RegisterId::register_can3_id51,
+  RegisterId::register_can3_mb13_16b_cs_h,
+  RegisterId::register_can3_mb13_16b_id_h,
+  RegisterId::register_can3_cs52,
+  RegisterId::register_can3_id52,
+  RegisterId::register_can3_mb13_16b_word2_h,
+  RegisterId::register_can3_mb13_16b_word3_h,
+  RegisterId::register_can3_cs53,
+  RegisterId::register_can3_id53,
+  RegisterId::register_can3_mb14_16b_word0_h,
+  RegisterId::register_can3_mb14_16b_word1_h,
+  RegisterId::register_can3_cs54,
+  RegisterId::register_can3_id54,
+  RegisterId::register_can3_mb15_16b_cs_h,
+  RegisterId::register_can3_mb15_16b_id_h,
+  RegisterId::register_can3_cs55,
+  RegisterId::register_can3_id55,
+  RegisterId::register_can3_mb15_16b_word2_h,
+  RegisterId::register_can3_mb15_16b_word3_h,
+  RegisterId::register_can3_cs56,
+  RegisterId::register_can3_id56,
+  RegisterId::register_can3_mb16_16b_word0_h,
+  RegisterId::register_can3_mb16_16b_word1_h,
+  RegisterId::register_can3_cs57,
+  RegisterId::register_can3_id57,
+  RegisterId::register_can3_mb10_32b_word0_h,
+  RegisterId::register_can3_mb10_32b_word1_h,
+  RegisterId::register_can3_cs58,
+  RegisterId::register_can3_id58,
+  RegisterId::register_can3_mb10_32b_word4_h,
+  RegisterId::register_can3_mb10_32b_word5_h,
+  RegisterId::register_can3_cs59,
+  RegisterId::register_can3_id59,
+  RegisterId::register_can3_mb11_32b_cs_h,
+  RegisterId::register_can3_mb11_32b_id_h,
+  RegisterId::register_can3_cs60,
+  RegisterId::register_can3_id60,
+  RegisterId::register_can3_mb11_32b_word2_h,
+  RegisterId::register_can3_mb11_32b_word3_h,
+  RegisterId::register_can3_cs61,
+  RegisterId::register_can3_id61,
+  RegisterId::register_can3_mb11_32b_word6_h,
+  RegisterId::register_can3_mb11_32b_word7_h,
+  RegisterId::register_can3_cs62,
+  RegisterId::register_can3_id62,
+  RegisterId::register_can3_mb20_16b_word0_h,
+  RegisterId::register_can3_mb20_16b_word1_h,
+  RegisterId::register_can3_cs63,
+  RegisterId::register_can3_id63,
+  RegisterId::register_can3_mb63_8b_word0,
+  RegisterId::register_can3_mb63_8b_word1,
+  RegisterId::register_can3_rximr__s,
+  RegisterId::register_can3_fdctrl,
+  RegisterId::register_can3_fdcbt,
+  RegisterId::register_can3_fdcrc,
   RegisterId::register_ccm_cacrr,
   RegisterId::register_ccm_cbcdr,
   RegisterId::register_ccm_cbcmr,
@@ -8505,6 +12165,20 @@ inline constexpr std::array<RegisterId, 771> kRegisters = {{
   RegisterId::register_pwm4_ffilt0,
   RegisterId::register_pwm4_ftst0,
   RegisterId::register_pwm4_fctrl20,
+  RegisterId::register_rtwdog_cs,
+  RegisterId::register_rtwdog_cnt,
+  RegisterId::register_rtwdog_toval,
+  RegisterId::register_rtwdog_win,
+  RegisterId::register_wdog1_wcr,
+  RegisterId::register_wdog1_wsr,
+  RegisterId::register_wdog1_wrsr,
+  RegisterId::register_wdog1_wicr,
+  RegisterId::register_wdog1_wmcr,
+  RegisterId::register_wdog2_wcr,
+  RegisterId::register_wdog2_wsr,
+  RegisterId::register_wdog2_wrsr,
+  RegisterId::register_wdog2_wicr,
+  RegisterId::register_wdog2_wmcr,
 }};
 }
 }

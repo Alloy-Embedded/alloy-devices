@@ -26,6 +26,33 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "CAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN2",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN3",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "DMA0",
           "peripheral_class": "dma"
         },
@@ -298,9 +325,36 @@
           "instance_capability_count": 0,
           "peripheral": "PWM4",
           "peripheral_class": "pwm"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTWDOG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG1",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG2",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 222,
+      "capability_decision_count": 224,
       "capability_decisions": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
@@ -310,6 +364,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "adc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "decision_id": "runtime-support:can",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "can",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -2743,17 +2808,34 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "mimxrt1062",
       "dma_binding_decision_count": 0,
       "dma_binding_decisions": [],
-      "heuristic_fact_count": 13,
+      "heuristic_fact_count": 15,
       "heuristic_facts": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:adc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:can",
           "fact_kind": "capability"
         },
         {
@@ -2796,6 +2878,12 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:uart",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -2848,6 +2936,33 @@
           "instance_capability_count": 0,
           "peripheral": "ADC2",
           "peripheral_class": "adc"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN2",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN3",
+          "peripheral_class": "can"
         },
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
@@ -2983,6 +3098,33 @@
           "instance_capability_count": 0,
           "peripheral": "PWM4",
           "peripheral_class": "pwm"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTWDOG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG1",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG2",
+          "peripheral_class": "watchdog"
         }
       ],
       "route_decision_count": 222,
@@ -9364,6 +9506,33 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "CAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN2",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN3",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "DMA0",
           "peripheral_class": "dma"
         },
@@ -9636,9 +9805,36 @@
           "instance_capability_count": 0,
           "peripheral": "PWM4",
           "peripheral_class": "pwm"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTWDOG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG1",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG2",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 222,
+      "capability_decision_count": 224,
       "capability_decisions": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
@@ -9648,6 +9844,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "adc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "decision_id": "runtime-support:can",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "can",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -12081,17 +12288,34 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "mimxrt1064",
       "dma_binding_decision_count": 0,
       "dma_binding_decisions": [],
-      "heuristic_fact_count": 14,
+      "heuristic_fact_count": 16,
       "heuristic_facts": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:adc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:can",
           "fact_kind": "capability"
         },
         {
@@ -12134,6 +12358,12 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:uart",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -12192,6 +12422,33 @@
           "instance_capability_count": 0,
           "peripheral": "ADC2",
           "peripheral_class": "adc"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN2",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN3",
+          "peripheral_class": "can"
         },
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
@@ -12327,6 +12584,33 @@
           "instance_capability_count": 0,
           "peripheral": "PWM4",
           "peripheral_class": "pwm"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTWDOG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG1",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WDOG2",
+          "peripheral_class": "watchdog"
         }
       ],
       "route_decision_count": 222,

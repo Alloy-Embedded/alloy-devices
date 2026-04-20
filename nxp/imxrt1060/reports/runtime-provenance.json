@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "mimxrt1062",
-      "fact_count": 774,
+      "fact_count": 782,
       "facts": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/startup.hpp",
@@ -4694,6 +4694,87 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:can1:can1",
+            "interrupt": "CAN1",
+            "line": 36,
+            "peripheral": "CAN1",
+            "vector_slot": 52
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can1:can1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can2:can2",
+            "interrupt": "CAN2",
+            "line": 37,
+            "peripheral": "CAN2",
+            "vector_slot": 53
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can2:can2",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can3:can3",
+            "interrupt": "CAN3",
+            "line": 154,
+            "peripheral": "CAN3",
+            "vector_slot": 170
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can3:can3",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:dma0:dma0-dma16",
             "interrupt": "DMA0_DMA16",
             "line": 0,
@@ -6618,6 +6699,87 @@
             "vector_slot": 167
           },
           "fact_id": "interrupt-binding:interrupt-binding:pwm4:pwm4-fault",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtwdog:rtwdog",
+            "interrupt": "RTWDOG",
+            "line": 93,
+            "peripheral": "RTWDOG",
+            "vector_slot": 109
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtwdog:rtwdog",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:wdog1:wdog1",
+            "interrupt": "WDOG1",
+            "line": 92,
+            "peripheral": "WDOG1",
+            "vector_slot": 108
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:wdog1:wdog1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:wdog2:wdog2",
+            "interrupt": "WDOG2",
+            "line": 45,
+            "peripheral": "WDOG2",
+            "vector_slot": 61
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:wdog2:wdog2",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -15270,6 +15432,38 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:can",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:can",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:CAN1",
+            "runtime-peripheral:CAN2",
+            "runtime-peripheral:CAN3"
+          ]
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:dma",
             "name": "runtime-supported",
             "peripheral": null,
@@ -21493,6 +21687,38 @@
           "supporting_fact_ids": []
         },
         {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:watchdog",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "watchdog",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:watchdog",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:RTWDOG",
+            "runtime-peripheral:WDOG1",
+            "runtime-peripheral:WDOG2"
+          ]
+        },
+        {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/system_sequences.hpp",
           "derivation_kind": "inferred",
           "detail": {
@@ -21647,7 +21873,7 @@
     },
     {
       "device": "mimxrt1064",
-      "fact_count": 776,
+      "fact_count": 784,
       "facts": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/startup.hpp",
@@ -26366,6 +26592,87 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:can1:can1",
+            "interrupt": "CAN1",
+            "line": 36,
+            "peripheral": "CAN1",
+            "vector_slot": 52
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can1:can1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can2:can2",
+            "interrupt": "CAN2",
+            "line": 37,
+            "peripheral": "CAN2",
+            "vector_slot": 53
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can2:can2",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can3:can3",
+            "interrupt": "CAN3",
+            "line": 154,
+            "peripheral": "CAN3",
+            "vector_slot": 170
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can3:can3",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:dma0:dma0-dma16",
             "interrupt": "DMA0_DMA16",
             "line": 0,
@@ -28290,6 +28597,87 @@
             "vector_slot": 167
           },
           "fact_id": "interrupt-binding:interrupt-binding:pwm4:pwm4-fault",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtwdog:rtwdog",
+            "interrupt": "RTWDOG",
+            "line": 93,
+            "peripheral": "RTWDOG",
+            "vector_slot": 109
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtwdog:rtwdog",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:wdog1:wdog1",
+            "interrupt": "WDOG1",
+            "line": 92,
+            "peripheral": "WDOG1",
+            "vector_slot": 108
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:wdog1:wdog1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:wdog2:wdog2",
+            "interrupt": "WDOG2",
+            "line": 45,
+            "peripheral": "WDOG2",
+            "vector_slot": 61
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:wdog2:wdog2",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -36942,6 +37330,38 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:can",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:can",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:CAN1",
+            "runtime-peripheral:CAN2",
+            "runtime-peripheral:CAN3"
+          ]
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:dma",
             "name": "runtime-supported",
             "peripheral": null,
@@ -43163,6 +43583,38 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:watchdog",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "watchdog",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:watchdog",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:RTWDOG",
+            "runtime-peripheral:WDOG1",
+            "runtime-peripheral:WDOG2"
+          ]
         },
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/system_sequences.hpp",
