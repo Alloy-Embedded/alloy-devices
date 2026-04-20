@@ -1,0 +1,1152 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "runtime-support:adc",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "adc",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability:fdcan:fdcan1-v1-0-cube:rx",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "can",
+      "scope": "ip_block",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability:fdcan:fdcan1-v1-0-cube:tx",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "can",
+      "scope": "ip_block",
+      "value": "tx"
+    },
+    {
+      "capability_id": "runtime-support:can",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "can",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:fdcan1:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "FDCAN1",
+      "peripheral_class": "can",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:fdcan1:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "FDCAN1",
+      "peripheral_class": "can",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:fdcan2:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "FDCAN2",
+      "peripheral_class": "can",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:fdcan2:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "FDCAN2",
+      "peripheral_class": "can",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "runtime-support:dac",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "dac",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "runtime-support:dma",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "dma",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "runtime-support:dma-router",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "dma-router",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "runtime-support:gpio",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "gpio",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "runtime-support:rtc",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "rtc",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v3-5-cube:miso",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "scope": "ip_block",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v3-5-cube:mosi",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "scope": "ip_block",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v3-5-cube:nss",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "scope": "ip_block",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability:spi:spi2s1-v3-5-cube:sck",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "scope": "ip_block",
+      "value": "sck"
+    },
+    {
+      "capability_id": "runtime-support:spi",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:miso",
+      "name": "available-signal",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:mosi",
+      "name": "available-signal",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:spi1:lqfp64:sck",
+      "name": "available-signal",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:miso",
+      "name": "available-signal",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:mosi",
+      "name": "available-signal",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:spi2:lqfp64:sck",
+      "name": "available-signal",
+      "peripheral": "SPI2",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi3:lqfp64:miso",
+      "name": "available-signal",
+      "peripheral": "SPI3",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "miso"
+    },
+    {
+      "capability_id": "capability-instance:spi3:lqfp64:mosi",
+      "name": "available-signal",
+      "peripheral": "SPI3",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "mosi"
+    },
+    {
+      "capability_id": "capability-instance:spi3:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "SPI3",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:spi3:lqfp64:sck",
+      "name": "available-signal",
+      "peripheral": "SPI3",
+      "peripheral_class": "spi",
+      "scope": "instance_overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:bk",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "bk"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:bk2",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "bk2"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch1",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch1n",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch2",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch2n",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch2n"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch3",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch3n",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch3n"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:ch4",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability:tim:gptimer2-v3-x-cube:etr",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "ip_block",
+      "value": "etr"
+    },
+    {
+      "capability_id": "runtime-support:timer",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "timer",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:bk",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "bk"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:bk2",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "bk2"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch1n",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch2",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch2n",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch2n"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch3",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch3n",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch3n"
+    },
+    {
+      "capability_id": "capability-instance:tim1:lqfp64:ch4",
+      "name": "available-signal",
+      "peripheral": "TIM1",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim14:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM14",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim15:lqfp64:bk",
+      "name": "available-signal",
+      "peripheral": "TIM15",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "bk"
+    },
+    {
+      "capability_id": "capability-instance:tim15:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM15",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim15:lqfp64:ch1n",
+      "name": "available-signal",
+      "peripheral": "TIM15",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability-instance:tim15:lqfp64:ch2",
+      "name": "available-signal",
+      "peripheral": "TIM15",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim16:lqfp64:bk",
+      "name": "available-signal",
+      "peripheral": "TIM16",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "bk"
+    },
+    {
+      "capability_id": "capability-instance:tim16:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM16",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim16:lqfp64:ch1n",
+      "name": "available-signal",
+      "peripheral": "TIM16",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability-instance:tim17:lqfp64:bk",
+      "name": "available-signal",
+      "peripheral": "TIM17",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "bk"
+    },
+    {
+      "capability_id": "capability-instance:tim17:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM17",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim17:lqfp64:ch1n",
+      "name": "available-signal",
+      "peripheral": "TIM17",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1n"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch2",
+      "name": "available-signal",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch3",
+      "name": "available-signal",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:ch4",
+      "name": "available-signal",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim2:lqfp64:etr",
+      "name": "available-signal",
+      "peripheral": "TIM2",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "etr"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch2",
+      "name": "available-signal",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch3",
+      "name": "available-signal",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:ch4",
+      "name": "available-signal",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability-instance:tim3:lqfp64:etr",
+      "name": "available-signal",
+      "peripheral": "TIM3",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "etr"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch1",
+      "name": "available-signal",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch2",
+      "name": "available-signal",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch3",
+      "name": "available-signal",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:tim4:lqfp64:ch4",
+      "name": "available-signal",
+      "peripheral": "TIM4",
+      "peripheral_class": "timer",
+      "scope": "instance_overlay",
+      "value": "ch4"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:ck",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability:lpuart:sci3-v1-4-cube:cts",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:cts",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability:lpuart:sci3-v1-4-cube:de",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:de",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:nss",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability:lpuart:sci3-v1-4-cube:rts",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:rts",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability:lpuart:sci3-v1-4-cube:rx",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:rx",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability:lpuart:sci3-v1-4-cube:tx",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability:usart:sci3-v2-1-cube:tx",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "ip_block",
+      "value": "tx"
+    },
+    {
+      "capability_id": "runtime-support:uart",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:lpuart1:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "LPUART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:lpuart1:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "LPUART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:lpuart1:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "LPUART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:lpuart1:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "LPUART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:lpuart1:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "LPUART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:lpuart2:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "LPUART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:lpuart2:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "LPUART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:lpuart2:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "LPUART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:lpuart2:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "LPUART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:lpuart2:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "LPUART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "runtime-dma:USART1:DMA1:DMA1_CH1:RX",
+      "name": "dma-compatible-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "dma_binding",
+      "value": "RX"
+    },
+    {
+      "capability_id": "runtime-dma:USART1:DMA1:DMA1_CH2:TX",
+      "name": "dma-compatible-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "dma_binding",
+      "value": "TX"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:ck",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart1:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "USART1",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:ck",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart2:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "USART2",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:ck",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart3:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "USART3",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:ck",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart4:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "USART4",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:ck",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart5:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "USART5",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:ck",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "ck"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:cts",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:de",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "de"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:nss",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "nss"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:rts",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:rx",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:usart6:lqfp64:tx",
+      "name": "available-signal",
+      "peripheral": "USART6",
+      "peripheral_class": "uart",
+      "scope": "instance_overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "runtime-support:watchdog",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "watchdog",
+      "scope": "runtime_contract",
+      "value": "true"
+    }
+  ],
+  "device": "stm32g0b1re",
+  "family": "stm32g0",
+  "schema_version": "1.1.0",
+  "vendor": "st"
+}
