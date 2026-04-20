@@ -2220,7 +2220,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.gmac.microchip-gmac-s",
+      "backend_schema_id": "alloy.eth.microchip-gmac-s",
       "base_address": 1074069504,
       "instance": 0,
       "ip_name": "gmac",
@@ -3156,7 +3156,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.usbhs.microchip-usbhs-g",
+      "backend_schema_id": "alloy.usb.microchip-usbhs-g",
       "base_address": 1073971200,
       "instance": 0,
       "ip_name": "usbhs",

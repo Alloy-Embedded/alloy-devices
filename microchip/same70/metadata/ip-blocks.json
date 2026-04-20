@@ -1004,7 +1004,7 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.gmac.microchip-gmac-s",
+      "backend_schema_id": "alloy.eth.microchip-gmac-s",
       "capability_ids": [
         "capability:gmac:gmac-s:gcol",
         "capability:gmac:gmac-s:gcrs",
@@ -1028,7 +1028,7 @@
       ],
       "ip_name": "gmac",
       "ip_version": "gmac_s",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1898,11 +1898,11 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.usbhs.microchip-usbhs-g",
+      "backend_schema_id": "alloy.usb.microchip-usbhs-g",
       "capability_ids": [],
       "ip_name": "usbhs",
       "ip_version": "usbhs_g",
-      "peripheral_class": "usbhs",
+      "peripheral_class": "usb",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",

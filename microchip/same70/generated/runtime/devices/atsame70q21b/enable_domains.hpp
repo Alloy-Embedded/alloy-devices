@@ -25,19 +25,22 @@ struct EnableDomainDescriptor {
   RegisterId register_id;
   FieldId field_id;
 };
-inline constexpr std::array<EnableDomainDescriptor, 33> kEnableDomains = {{
+inline constexpr std::array<EnableDomainDescriptor, 37> kEnableDomains = {{
   {EnableDomainId::gate_afec0, PeripheralId::AFEC0, ClockGateId::gate_afec0, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid29},
   {EnableDomainId::gate_afec1, PeripheralId::AFEC1, ClockGateId::gate_afec1, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid40},
   {EnableDomainId::gate_dacc, PeripheralId::DACC, ClockGateId::gate_dacc, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid30},
+  {EnableDomainId::gate_gmac, PeripheralId::GMAC, ClockGateId::gate_gmac, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid39},
   {EnableDomainId::gate_gpioa, PeripheralId::GPIOA, ClockGateId::gate_gpioa, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid10},
   {EnableDomainId::gate_gpiob, PeripheralId::GPIOB, ClockGateId::gate_gpiob, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid11},
   {EnableDomainId::gate_gpioc, PeripheralId::GPIOC, ClockGateId::gate_gpioc, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid12},
   {EnableDomainId::gate_gpiod, PeripheralId::GPIOD, ClockGateId::gate_gpiod, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid16},
   {EnableDomainId::gate_gpioe, PeripheralId::GPIOE, ClockGateId::gate_gpioe, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid17},
+  {EnableDomainId::gate_hsmci, PeripheralId::HSMCI, ClockGateId::gate_hsmci, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid18},
   {EnableDomainId::gate_mcan0, PeripheralId::MCAN0, ClockGateId::gate_mcan0, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid35},
   {EnableDomainId::gate_mcan1, PeripheralId::MCAN1, ClockGateId::gate_mcan1, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid37},
   {EnableDomainId::gate_pwm0, PeripheralId::PWM0, ClockGateId::gate_pwm0, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid31},
   {EnableDomainId::gate_pwm1, PeripheralId::PWM1, ClockGateId::gate_pwm1, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid60},
+  {EnableDomainId::gate_qspi, PeripheralId::QSPI, ClockGateId::gate_qspi, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid43},
   {EnableDomainId::gate_rswdt, PeripheralId::RSWDT, ClockGateId::gate_rswdt, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::none},
   {EnableDomainId::gate_rtc, PeripheralId::RTC, ClockGateId::gate_rtc, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::none},
   {EnableDomainId::gate_spi0, PeripheralId::SPI0, ClockGateId::gate_spi0, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid21},
@@ -57,6 +60,7 @@ inline constexpr std::array<EnableDomainDescriptor, 33> kEnableDomains = {{
   {EnableDomainId::gate_usart0, PeripheralId::USART0, ClockGateId::gate_usart0, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid13},
   {EnableDomainId::gate_usart1, PeripheralId::USART1, ClockGateId::gate_usart1, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid14},
   {EnableDomainId::gate_usart2, PeripheralId::USART2, ClockGateId::gate_usart2, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::field_pmc_pcer0_pid15},
+  {EnableDomainId::gate_usbhs, PeripheralId::USBHS, ClockGateId::gate_usbhs, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid34},
   {EnableDomainId::gate_wdt, PeripheralId::WDT, ClockGateId::gate_wdt, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer0, FieldId::none},
   {EnableDomainId::gate_xdmac, PeripheralId::XDMAC, ClockGateId::gate_xdmac, ClockNodeId::clock_node_pmc, RegisterId::register_pmc_pcer1, FieldId::field_pmc_pcer1_pid58},
 }};
@@ -123,6 +127,22 @@ template<>
 struct PeripheralEnableDomainTraits<PeripheralId::DACC> {
   static constexpr bool kPresent = true;
   static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_dacc;
+};
+
+template<>
+struct EnableDomainTraits<EnableDomainId::gate_gmac> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::GMAC;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gmac;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_pmc;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid39;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::GMAC> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_gmac;
 };
 
 template<>
@@ -206,6 +226,22 @@ struct PeripheralEnableDomainTraits<PeripheralId::GPIOE> {
 };
 
 template<>
+struct EnableDomainTraits<EnableDomainId::gate_hsmci> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::HSMCI;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_hsmci;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_pmc;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer0_pid18;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::HSMCI> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_hsmci;
+};
+
+template<>
 struct EnableDomainTraits<EnableDomainId::gate_mcan0> {
   static constexpr bool kPresent = true;
   static constexpr PeripheralId kPeripheralId = PeripheralId::MCAN0;
@@ -267,6 +303,22 @@ template<>
 struct PeripheralEnableDomainTraits<PeripheralId::PWM1> {
   static constexpr bool kPresent = true;
   static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_pwm1;
+};
+
+template<>
+struct EnableDomainTraits<EnableDomainId::gate_qspi> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::QSPI;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_qspi;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_pmc;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid43;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::QSPI> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_qspi;
 };
 
 template<>
@@ -571,6 +623,22 @@ template<>
 struct PeripheralEnableDomainTraits<PeripheralId::USART2> {
   static constexpr bool kPresent = true;
   static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_usart2;
+};
+
+template<>
+struct EnableDomainTraits<EnableDomainId::gate_usbhs> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::USBHS;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_usbhs;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_pmc;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid34;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::USBHS> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_usbhs;
 };
 
 template<>

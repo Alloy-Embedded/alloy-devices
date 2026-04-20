@@ -52678,8 +52678,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gcol",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gcol",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52692,8 +52692,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gcrs",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gcrs",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52706,8 +52706,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gmdc",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gmdc",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52720,8 +52720,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gmdio",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gmdio",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52734,8 +52734,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grx0",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grx0",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52748,8 +52748,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grx1",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grx1",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52762,8 +52762,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grx2",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grx2",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52776,8 +52776,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grx3",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grx3",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52790,8 +52790,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grxck",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grxck",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52804,8 +52804,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grxdv",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grxdv",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52818,8 +52818,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:grxer",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:grxer",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52832,8 +52832,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtsucomp",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtsucomp",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52846,8 +52846,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtx0",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtx0",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52860,8 +52860,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtx1",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtx1",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52874,8 +52874,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtx2",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtx2",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52888,8 +52888,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtx3",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtx3",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52902,8 +52902,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtxck",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtxck",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52916,8 +52916,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtxen",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtxen",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -52930,8 +52930,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:gmac:gtxer",
-      "peripheral_class": "gmac",
+      "endpoint_id": "endpoint:eth:gtxer",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",

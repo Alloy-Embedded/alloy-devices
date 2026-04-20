@@ -18,8 +18,11 @@ enum class DmaBindingId : std::uint16_t {
   dma_binding_dacc_ch0_tx_xdmac_perid_30,
   dma_binding_dacc_ch1_tx_xdmac_perid_31,
   dma_binding_gpioa_rx_xdmac_perid_34,
+  dma_binding_hsmci_rx_xdmac_perid_0,
   dma_binding_pwm0_tx_xdmac_perid_13,
   dma_binding_pwm1_tx_xdmac_perid_39,
+  dma_binding_qspi_rx_xdmac_perid_6,
+  dma_binding_qspi_tx_xdmac_perid_5,
   dma_binding_spi0_rx_xdmac_perid_2,
   dma_binding_spi0_tx_xdmac_perid_1,
   dma_binding_spi1_rx_xdmac_perid_4,
@@ -64,8 +67,11 @@ enum class DmaRequestLineId : std::uint16_t {
   PERID_30,
   PERID_31,
   PERID_34,
+  PERID_0,
   PERID_13,
   PERID_39,
+  PERID_6,
+  PERID_5,
   PERID_2,
   PERID_1,
   PERID_4,
@@ -105,8 +111,11 @@ enum class DmaRouteId : std::uint16_t {
   dma_route_xdmac_perid_30_dacc_ch0_tx,
   dma_route_xdmac_perid_31_dacc_ch1_tx,
   dma_route_xdmac_perid_34_gpioa_rx,
+  dma_route_xdmac_perid_0_hsmci_rx,
   dma_route_xdmac_perid_13_pwm0_tx,
   dma_route_xdmac_perid_39_pwm1_tx,
+  dma_route_xdmac_perid_6_qspi_rx,
+  dma_route_xdmac_perid_5_qspi_tx,
   dma_route_xdmac_perid_2_spi0_rx,
   dma_route_xdmac_perid_1_spi0_tx,
   dma_route_xdmac_perid_4_spi1_rx,
@@ -235,6 +244,19 @@ struct BindingTraits<PeripheralId::GPIOA, SignalId::signal_RX> {
 };
 
 template<>
+struct BindingTraits<PeripheralId::HSMCI, SignalId::signal_RX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_hsmci_rx_xdmac_perid_0;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_0;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_0_hsmci_rx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 0;
+  static constexpr int kChannelSelector = -1;
+};
+
+template<>
 struct BindingTraits<PeripheralId::PWM0, SignalId::signal_TX> {
   static constexpr bool kPresent = true;
   static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_pwm0_tx_xdmac_perid_13;
@@ -257,6 +279,32 @@ struct BindingTraits<PeripheralId::PWM1, SignalId::signal_TX> {
   static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
   static constexpr int kChannelIndex = -1;
   static constexpr int kRequestValue = 39;
+  static constexpr int kChannelSelector = -1;
+};
+
+template<>
+struct BindingTraits<PeripheralId::QSPI, SignalId::signal_RX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_qspi_rx_xdmac_perid_6;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_6;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_6_qspi_rx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 6;
+  static constexpr int kChannelSelector = -1;
+};
+
+template<>
+struct BindingTraits<PeripheralId::QSPI, SignalId::signal_TX> {
+  static constexpr bool kPresent = true;
+  static constexpr DmaBindingId kBindingId = DmaBindingId::dma_binding_qspi_tx_xdmac_perid_5;
+  static constexpr DmaControllerId kControllerId = DmaControllerId::XDMAC;
+  static constexpr DmaRequestLineId kRequestLineId = DmaRequestLineId::PERID_5;
+  static constexpr DmaRouteId kRouteId = DmaRouteId::dma_route_xdmac_perid_5_qspi_tx;
+  static constexpr DmaConflictGroupId kConflictGroupId = DmaConflictGroupId::none;
+  static constexpr int kChannelIndex = -1;
+  static constexpr int kRequestValue = 5;
   static constexpr int kChannelSelector = -1;
 };
 
@@ -668,14 +716,17 @@ struct ControllerTraits<DmaControllerId::XDMAC> {
   static constexpr int kRequestCount = 52;
 };
 
-inline constexpr std::array<DmaBindingDescriptor, 37> kDmaBindings = {{
+inline constexpr std::array<DmaBindingDescriptor, 40> kDmaBindings = {{
   {DmaBindingId::dma_binding_afec0_rx_xdmac_perid_35, PeripheralId::AFEC0, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_35, DmaRouteId::dma_route_xdmac_perid_35_afec0_rx, DmaConflictGroupId::none, -1, 35, -1},
   {DmaBindingId::dma_binding_afec1_rx_xdmac_perid_36, PeripheralId::AFEC1, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_36, DmaRouteId::dma_route_xdmac_perid_36_afec1_rx, DmaConflictGroupId::none, -1, 36, -1},
   {DmaBindingId::dma_binding_dacc_ch0_tx_xdmac_perid_30, PeripheralId::DACC, SignalId::signal_CH0_TX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_30, DmaRouteId::dma_route_xdmac_perid_30_dacc_ch0_tx, DmaConflictGroupId::none, -1, 30, -1},
   {DmaBindingId::dma_binding_dacc_ch1_tx_xdmac_perid_31, PeripheralId::DACC, SignalId::signal_CH1_TX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_31, DmaRouteId::dma_route_xdmac_perid_31_dacc_ch1_tx, DmaConflictGroupId::none, -1, 31, -1},
   {DmaBindingId::dma_binding_gpioa_rx_xdmac_perid_34, PeripheralId::GPIOA, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_34, DmaRouteId::dma_route_xdmac_perid_34_gpioa_rx, DmaConflictGroupId::none, -1, 34, -1},
+  {DmaBindingId::dma_binding_hsmci_rx_xdmac_perid_0, PeripheralId::HSMCI, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_0, DmaRouteId::dma_route_xdmac_perid_0_hsmci_rx, DmaConflictGroupId::none, -1, 0, -1},
   {DmaBindingId::dma_binding_pwm0_tx_xdmac_perid_13, PeripheralId::PWM0, SignalId::signal_TX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_13, DmaRouteId::dma_route_xdmac_perid_13_pwm0_tx, DmaConflictGroupId::none, -1, 13, -1},
   {DmaBindingId::dma_binding_pwm1_tx_xdmac_perid_39, PeripheralId::PWM1, SignalId::signal_TX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_39, DmaRouteId::dma_route_xdmac_perid_39_pwm1_tx, DmaConflictGroupId::none, -1, 39, -1},
+  {DmaBindingId::dma_binding_qspi_rx_xdmac_perid_6, PeripheralId::QSPI, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_6, DmaRouteId::dma_route_xdmac_perid_6_qspi_rx, DmaConflictGroupId::none, -1, 6, -1},
+  {DmaBindingId::dma_binding_qspi_tx_xdmac_perid_5, PeripheralId::QSPI, SignalId::signal_TX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_5, DmaRouteId::dma_route_xdmac_perid_5_qspi_tx, DmaConflictGroupId::none, -1, 5, -1},
   {DmaBindingId::dma_binding_spi0_rx_xdmac_perid_2, PeripheralId::SPI0, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_2, DmaRouteId::dma_route_xdmac_perid_2_spi0_rx, DmaConflictGroupId::none, -1, 2, -1},
   {DmaBindingId::dma_binding_spi0_tx_xdmac_perid_1, PeripheralId::SPI0, SignalId::signal_TX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_1, DmaRouteId::dma_route_xdmac_perid_1_spi0_tx, DmaConflictGroupId::none, -1, 1, -1},
   {DmaBindingId::dma_binding_spi1_rx_xdmac_perid_4, PeripheralId::SPI1, SignalId::signal_RX, DmaControllerId::XDMAC, DmaRequestLineId::PERID_4, DmaRouteId::dma_route_xdmac_perid_4_spi1_rx, DmaConflictGroupId::none, -1, 4, -1},

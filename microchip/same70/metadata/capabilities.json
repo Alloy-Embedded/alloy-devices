@@ -862,7 +862,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -881,7 +881,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -900,7 +900,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -919,7 +919,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -938,7 +938,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -957,7 +957,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -976,7 +976,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -995,7 +995,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1014,7 +1014,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1033,7 +1033,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1052,7 +1052,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1071,7 +1071,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1090,7 +1090,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1109,7 +1109,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1128,7 +1128,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1147,7 +1147,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1166,7 +1166,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1185,7 +1185,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1204,7 +1204,7 @@
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1223,7 +1223,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1242,7 +1242,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1261,7 +1261,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1280,7 +1280,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1299,7 +1299,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1318,7 +1318,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1337,7 +1337,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1356,7 +1356,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1375,7 +1375,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1394,7 +1394,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1413,7 +1413,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1432,7 +1432,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1451,7 +1451,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1470,7 +1470,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1489,7 +1489,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1508,7 +1508,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1527,7 +1527,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1546,7 +1546,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1565,7 +1565,7 @@
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "GMAC",
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8652,7 +8652,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8671,7 +8671,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8690,7 +8690,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8709,7 +8709,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8728,7 +8728,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8747,7 +8747,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8766,7 +8766,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8785,7 +8785,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8804,7 +8804,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8823,7 +8823,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8842,7 +8842,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8861,7 +8861,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8880,7 +8880,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8899,7 +8899,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8918,7 +8918,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8937,7 +8937,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8956,7 +8956,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8975,7 +8975,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -8994,7 +8994,7 @@
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "gmac",
+      "peripheral_class": "eth",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",

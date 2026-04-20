@@ -337,6 +337,318 @@
       "value": "true"
     },
     {
+      "capability_id": "capability:gmac:gmac-s:gcol",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gcol"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gcrs",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gcrs"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gmdc",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gmdc"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gmdio",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gmdio"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grx0",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grx0"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grx1",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grx1"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grx2",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grx2"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grx3",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grx3"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grxck",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grxck"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grxdv",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grxdv"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:grxer",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "grxer"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtsucomp",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtsucomp"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtx0",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtx0"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtx1",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtx1"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtx2",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtx2"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtx3",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtx3"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtxck",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtxck"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtxen",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtxen"
+    },
+    {
+      "capability_id": "capability:gmac:gmac-s:gtxer",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "ip_block",
+      "value": "gtxer"
+    },
+    {
+      "capability_id": "runtime-support:eth",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "eth",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gcol",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gcol"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gcrs",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gcrs"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gmdc",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gmdc"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gmdio",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gmdio"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grx0",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grx0"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grx1",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grx1"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grx2",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grx2"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grx3",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grx3"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grxck",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grxck"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grxdv",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grxdv"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:grxer",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "grxer"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtsucomp",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtsucomp"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtx0",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtx0"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtx1",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtx1"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtx2",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtx2"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtx3",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtx3"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtxck",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtxck"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtxen",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtxen"
+    },
+    {
+      "capability_id": "capability-instance:gmac:lqfp100:gtxer",
+      "name": "available-signal",
+      "peripheral": "GMAC",
+      "peripheral_class": "eth",
+      "scope": "instance_overlay",
+      "value": "gtxer"
+    },
+    {
       "capability_id": "capability:gpio:pio-v:piodc0",
       "name": "signal-role",
       "peripheral": null,
@@ -985,6 +1297,126 @@
       "value": "pwml3"
     },
     {
+      "capability_id": "capability:qspi:qspi-j:qcs",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "ip_block",
+      "value": "qcs"
+    },
+    {
+      "capability_id": "capability:qspi:qspi-j:qio0",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "ip_block",
+      "value": "qio0"
+    },
+    {
+      "capability_id": "capability:qspi:qspi-j:qio1",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "ip_block",
+      "value": "qio1"
+    },
+    {
+      "capability_id": "capability:qspi:qspi-j:qio2",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "ip_block",
+      "value": "qio2"
+    },
+    {
+      "capability_id": "capability:qspi:qspi-j:qio3",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "ip_block",
+      "value": "qio3"
+    },
+    {
+      "capability_id": "capability:qspi:qspi-j:qsck",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "ip_block",
+      "value": "qsck"
+    },
+    {
+      "capability_id": "runtime-support:qspi",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "qspi",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "runtime-dma:QSPI:XDMAC:PERID_6:RX",
+      "name": "dma-compatible-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "dma_binding",
+      "value": "RX"
+    },
+    {
+      "capability_id": "runtime-dma:QSPI:XDMAC:PERID_5:TX",
+      "name": "dma-compatible-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "dma_binding",
+      "value": "TX"
+    },
+    {
+      "capability_id": "capability-instance:qspi:lqfp100:qcs",
+      "name": "available-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "instance_overlay",
+      "value": "qcs"
+    },
+    {
+      "capability_id": "capability-instance:qspi:lqfp100:qio0",
+      "name": "available-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "instance_overlay",
+      "value": "qio0"
+    },
+    {
+      "capability_id": "capability-instance:qspi:lqfp100:qio1",
+      "name": "available-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "instance_overlay",
+      "value": "qio1"
+    },
+    {
+      "capability_id": "capability-instance:qspi:lqfp100:qio2",
+      "name": "available-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "instance_overlay",
+      "value": "qio2"
+    },
+    {
+      "capability_id": "capability-instance:qspi:lqfp100:qio3",
+      "name": "available-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "instance_overlay",
+      "value": "qio3"
+    },
+    {
+      "capability_id": "capability-instance:qspi:lqfp100:qsck",
+      "name": "available-signal",
+      "peripheral": "QSPI",
+      "peripheral_class": "qspi",
+      "scope": "instance_overlay",
+      "value": "qsck"
+    },
+    {
       "capability_id": "capability:rtc:rtc-zb:rtcout0",
       "name": "signal-role",
       "peripheral": null,
@@ -1023,6 +1455,118 @@
       "peripheral_class": "rtc",
       "scope": "instance_overlay",
       "value": "rtcout1"
+    },
+    {
+      "capability_id": "capability:hsmci:hsmci-r:mccda",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "ip_block",
+      "value": "mccda"
+    },
+    {
+      "capability_id": "capability:hsmci:hsmci-r:mcck",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "ip_block",
+      "value": "mcck"
+    },
+    {
+      "capability_id": "capability:hsmci:hsmci-r:mcda0",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "ip_block",
+      "value": "mcda0"
+    },
+    {
+      "capability_id": "capability:hsmci:hsmci-r:mcda1",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "ip_block",
+      "value": "mcda1"
+    },
+    {
+      "capability_id": "capability:hsmci:hsmci-r:mcda2",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "ip_block",
+      "value": "mcda2"
+    },
+    {
+      "capability_id": "capability:hsmci:hsmci-r:mcda3",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "ip_block",
+      "value": "mcda3"
+    },
+    {
+      "capability_id": "runtime-support:sdmmc",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "sdmmc",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "runtime-dma:HSMCI:XDMAC:PERID_0:RX",
+      "name": "dma-compatible-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "dma_binding",
+      "value": "RX"
+    },
+    {
+      "capability_id": "capability-instance:hsmci:lqfp100:mccda",
+      "name": "available-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "instance_overlay",
+      "value": "mccda"
+    },
+    {
+      "capability_id": "capability-instance:hsmci:lqfp100:mcck",
+      "name": "available-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "instance_overlay",
+      "value": "mcck"
+    },
+    {
+      "capability_id": "capability-instance:hsmci:lqfp100:mcda0",
+      "name": "available-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "instance_overlay",
+      "value": "mcda0"
+    },
+    {
+      "capability_id": "capability-instance:hsmci:lqfp100:mcda1",
+      "name": "available-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "instance_overlay",
+      "value": "mcda1"
+    },
+    {
+      "capability_id": "capability-instance:hsmci:lqfp100:mcda2",
+      "name": "available-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "instance_overlay",
+      "value": "mcda2"
+    },
+    {
+      "capability_id": "capability-instance:hsmci:lqfp100:mcda3",
+      "name": "available-signal",
+      "peripheral": "HSMCI",
+      "peripheral_class": "sdmmc",
+      "scope": "instance_overlay",
+      "value": "mcda3"
     },
     {
       "capability_id": "capability:spi:spi-zm:cs",
@@ -1991,6 +2535,14 @@
       "peripheral_class": "uart",
       "scope": "instance_overlay",
       "value": "tx"
+    },
+    {
+      "capability_id": "runtime-support:usb",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "usb",
+      "scope": "runtime_contract",
+      "value": "true"
     },
     {
       "capability_id": "runtime-support:watchdog",

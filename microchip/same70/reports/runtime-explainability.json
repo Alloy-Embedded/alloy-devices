@@ -31,6 +31,15 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "class_capability_count": 20,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 19,
+          "peripheral": "GMAC",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "class_capability_count": 12,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
@@ -55,6 +64,15 @@
           "instance_capability_count": 0,
           "peripheral": "GPIOD",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "class_capability_count": 7,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 7,
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -91,6 +109,15 @@
           "instance_capability_count": 14,
           "peripheral": "PWM1",
           "peripheral_class": "pwm"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "class_capability_count": 7,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 8,
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -260,6 +287,15 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "USBHS",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "WDT",
           "peripheral_class": "watchdog"
         },
@@ -273,7 +309,7 @@
           "peripheral_class": "dma"
         }
       ],
-      "capability_decision_count": 250,
+      "capability_decision_count": 319,
       "capability_decisions": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -736,6 +772,435 @@
           "peripheral_class": "dma",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gcol",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gcol"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gcrs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gcrs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gmdc",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gmdc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gmdio",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gmdio"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grxdv",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grxdv"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grxer"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtsucomp",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtxen",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtxen"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtxer"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-support:eth",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gcol",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gcol"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gcrs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gcrs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gmdc",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gmdc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gmdio",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gmdio"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grxdv",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grxdv"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:grxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grxer"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtsucomp",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtxen",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtxen"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp100:gtxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtxer"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -1630,6 +2095,171 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qcs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qcs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qsck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qsck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-support:qspi",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-dma:QSPI:XDMAC:PERID_6:RX",
+          "decision_kind": "inferred_dma_capability",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "name": "dma-compatible-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "dma_binding",
+          "value": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-dma:QSPI:XDMAC:PERID_5:TX",
+          "decision_kind": "inferred_dma_capability",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "name": "dma-compatible-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "dma_binding",
+          "value": "TX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp100:qcs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qcs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp100:qio0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp100:qio1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp100:qio2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp100:qio3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp100:qsck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qsck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "decision_id": "capability:rtc:rtc-zb:rtcout0",
           "decision_kind": "direct_capability",
           "explanation": "Capability is published directly from canonical capability data.",
@@ -1682,6 +2312,160 @@
           "peripheral_class": "rtc",
           "scope": "instance_overlay",
           "value": "rtcout1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mccda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mccda"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-support:sdmmc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-dma:HSMCI:XDMAC:PERID_0:RX",
+          "decision_kind": "inferred_dma_capability",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "name": "dma-compatible-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "dma_binding",
+          "value": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp100:mccda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mccda"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp100:mcck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp100:mcda0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp100:mcda1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp100:mcda2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp100:mcda3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda3"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -3016,6 +3800,17 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "decision_id": "runtime-support:usb",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "usb",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "decision_id": "runtime-support:watchdog",
           "decision_kind": "inferred_runtime_support",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
@@ -3027,7 +3822,7 @@
         }
       ],
       "device": "atsame70n21b",
-      "dma_binding_decision_count": 35,
+      "dma_binding_decision_count": 38,
       "dma_binding_decisions": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/dma_bindings.hpp",
@@ -3093,6 +3888,18 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/dma_bindings.hpp",
           "conflict_group": null,
           "controller": "XDMAC",
+          "decision_id": "dma-binding:hsmci:rx:xdmac:perid-0",
+          "decision_kind": "accepted_runtime_dma_binding",
+          "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
+          "peripheral": "HSMCI",
+          "request_line": "PERID_0",
+          "route_id": "dma-route:xdmac:perid-0:hsmci:rx",
+          "signal": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/dma_bindings.hpp",
+          "conflict_group": null,
+          "controller": "XDMAC",
           "decision_id": "dma-binding:pwm0:tx:xdmac:perid-13",
           "decision_kind": "accepted_runtime_dma_binding",
           "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
@@ -3111,6 +3918,30 @@
           "peripheral": "PWM1",
           "request_line": "PERID_39",
           "route_id": "dma-route:xdmac:perid-39:pwm1:tx",
+          "signal": "TX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/dma_bindings.hpp",
+          "conflict_group": null,
+          "controller": "XDMAC",
+          "decision_id": "dma-binding:qspi:rx:xdmac:perid-6",
+          "decision_kind": "accepted_runtime_dma_binding",
+          "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
+          "peripheral": "QSPI",
+          "request_line": "PERID_6",
+          "route_id": "dma-route:xdmac:perid-6:qspi:rx",
+          "signal": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/dma_bindings.hpp",
+          "conflict_group": null,
+          "controller": "XDMAC",
+          "decision_id": "dma-binding:qspi:tx:xdmac:perid-5",
+          "decision_kind": "accepted_runtime_dma_binding",
+          "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
+          "peripheral": "QSPI",
+          "request_line": "PERID_5",
+          "route_id": "dma-route:xdmac:perid-5:qspi:tx",
           "signal": "TX"
         },
         {
@@ -3450,7 +4281,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 62,
+      "heuristic_fact_count": 69,
       "heuristic_facts": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -3498,6 +4329,12 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:dma",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:eth",
           "fact_kind": "capability"
         },
         {
@@ -3575,7 +4412,37 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:qspi",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "fact_id": "runtime-dma:QSPI:XDMAC:PERID_6:RX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "fact_id": "runtime-dma:QSPI:XDMAC:PERID_5:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:rtc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:sdmmc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "fact_id": "runtime-dma:HSMCI:XDMAC:PERID_0:RX",
           "fact_kind": "capability"
         },
         {
@@ -3731,6 +4598,12 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:usb",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
@@ -3860,6 +4733,15 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "USBHS",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "WDT",
           "peripheral_class": "watchdog"
         },
@@ -3873,7 +4755,7 @@
           "peripheral_class": "dma"
         }
       ],
-      "route_decision_count": 155,
+      "route_decision_count": 189,
       "route_decisions": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -4083,6 +4965,32 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:qspi:qspi-j:qcs",
+            "capability-instance:qspi:lqfp100:qcs"
+          ],
+          "decision_id": "candidate:pa11:qspi:qcs",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa11:qspi:qcs"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA11",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa11",
+            "requirement:constraint:PA11:wakeup-capable",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa11:qspi:qcs"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qcs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:gpio:pio-v:piodc6",
             "capability-instance:gpioa:lqfp100:piodc6"
           ],
@@ -4154,6 +5062,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "pwmh0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:qspi:qspi-j:qio1",
+            "capability-instance:qspi:lqfp100:qio1"
+          ],
+          "decision_id": "candidate:pa12:qspi:qio1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa12:qspi:qio1"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA12",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa12",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa12:qspi:qio1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio1"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -4233,6 +5166,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:qspi:qspi-j:qio0",
+            "capability-instance:qspi:lqfp100:qio0"
+          ],
+          "decision_id": "candidate:pa13:qspi:qio0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa13:qspi:qio0"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA13",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa13",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa13:qspi:qio0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:gpio:pio-v:piodcen1",
             "capability-instance:gpioa:lqfp100:piodcen1"
           ],
@@ -4307,6 +5265,32 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "pwmh1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:qspi:qspi-j:qsck",
+            "capability-instance:qspi:lqfp100:qsck"
+          ],
+          "decision_id": "candidate:pa14:qspi:qsck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa14:qspi:qsck"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA14",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa14",
+            "requirement:constraint:PA14:wakeup-capable",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa14:qspi:qsck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qsck"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -4457,6 +5441,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "pwmh3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:qspi:qspi-j:qio2",
+            "capability-instance:qspi:lqfp100:qio2"
+          ],
+          "decision_id": "candidate:pa17:qspi:qio2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa17:qspi:qio2"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA17",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa17",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa17:qspi:qio2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio2"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -4942,6 +5951,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:hsmci:hsmci-r:mcck",
+            "capability-instance:hsmci:lqfp100:mcck"
+          ],
+          "decision_id": "candidate:pa25:hsmci:mcck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa25:hsmci:mcck"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA25",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa25",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa25:hsmci:mcck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:3",
+          "signal": "mcck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmh2",
             "capability-instance:pwm0:lqfp100:pwmh2"
           ],
@@ -4988,6 +6022,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:0",
           "signal": "cts1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda2",
+            "capability-instance:hsmci:lqfp100:mcda2"
+          ],
+          "decision_id": "candidate:pa26:hsmci:mcda2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa26:hsmci:mcda2"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA26",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa26",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa26:hsmci:mcda2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda2"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -5067,6 +6126,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda3",
+            "capability-instance:hsmci:lqfp100:mcda3"
+          ],
+          "decision_id": "candidate:pa27:hsmci:mcda3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa27:hsmci:mcda3"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA27",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa27",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa27:hsmci:mcda3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:tc:tc-zl:tiob2",
             "capability-instance:tc0:lqfp100:tiob2"
           ],
@@ -5113,6 +6197,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:0",
           "signal": "dtr1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:hsmci:hsmci-r:mccda",
+            "capability-instance:hsmci:lqfp100:mccda"
+          ],
+          "decision_id": "candidate:pa28:hsmci:mccda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa28:hsmci:mccda"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA28",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa28",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa28:hsmci:mccda"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mccda"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -5244,6 +6353,32 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda0",
+            "capability-instance:hsmci:lqfp100:mcda0"
+          ],
+          "decision_id": "candidate:pa30:hsmci:mcda0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa30:hsmci:mcda0"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA30",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa30",
+            "requirement:constraint:PA30:wakeup-capable",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa30:hsmci:mcda0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml2",
             "capability-instance:pwm0:lqfp100:pwml2"
           ],
@@ -5292,6 +6427,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "pwmextrg0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda1",
+            "capability-instance:hsmci:lqfp100:mcda1"
+          ],
+          "decision_id": "candidate:pa31:hsmci:mcda1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa31:hsmci:mcda1"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA31",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pa31",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa31:hsmci:mcda1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda1"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -5856,6 +7016,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp100:gtsucomp"
+          ],
+          "decision_id": "candidate:pb12:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pb12:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PB12",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pb12",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pb12:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:1",
+          "signal": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml1",
             "capability-instance:pwm0:lqfp100:pwml1"
           ],
@@ -5977,6 +7162,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:101",
           "signal": "ad0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp100:gtsucomp"
+          ],
+          "decision_id": "candidate:pb1:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pb1:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PB1",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pb1",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pb1:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:1",
+          "signal": "gtsucomp"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -6386,6 +7596,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtxck",
+            "capability-instance:gmac:lqfp100:gtxck"
+          ],
+          "decision_id": "candidate:pd0:gmac:gtxck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd0:gmac:gtxck"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD0",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd0",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd0:gmac:gtxck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml0",
             "capability-instance:pwm1:lqfp100:pwml0"
           ],
@@ -6436,6 +7671,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gcrs",
+            "capability-instance:gmac:lqfp100:gcrs"
+          ],
+          "decision_id": "candidate:pd10:gmac:gcrs",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd10:gmac:gcrs"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD10",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd10",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd10:gmac:gcrs"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gcrs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml0",
             "capability-instance:pwm0:lqfp100:pwml0"
           ],
@@ -6461,6 +7721,56 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:grx2",
+            "capability-instance:gmac:lqfp100:grx2"
+          ],
+          "decision_id": "candidate:pd11:gmac:grx2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd11:gmac:grx2"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD11",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd11",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd11:gmac:grx2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp100:gtsucomp"
+          ],
+          "decision_id": "candidate:pd11:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd11:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD11",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd11",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd11:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmh0",
             "capability-instance:pwm0:lqfp100:pwmh0"
           ],
@@ -6482,6 +7792,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "pwmh0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grx3",
+            "capability-instance:gmac:lqfp100:grx3"
+          ],
+          "decision_id": "candidate:pd12:gmac:grx3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd12:gmac:grx3"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD12",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd12",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd12:gmac:grx3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx3"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -6536,6 +7871,81 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gcol",
+            "capability-instance:gmac:lqfp100:gcol"
+          ],
+          "decision_id": "candidate:pd13:gmac:gcol",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd13:gmac:gcol"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD13",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd13",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd13:gmac:gcol"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gcol"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grxck",
+            "capability-instance:gmac:lqfp100:grxck"
+          ],
+          "decision_id": "candidate:pd14:gmac:grxck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd14:gmac:grxck"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD14",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd14",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd14:gmac:grxck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtx2",
+            "capability-instance:gmac:lqfp100:gtx2"
+          ],
+          "decision_id": "candidate:pd15:gmac:gtx2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd15:gmac:gtx2"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD15",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd15",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd15:gmac:gtx2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:usart:usart-zw:rx",
             "capability-instance:usart2:lqfp100:rx"
           ],
@@ -6561,6 +7971,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtx3",
+            "capability-instance:gmac:lqfp100:gtx3"
+          ],
+          "decision_id": "candidate:pd16:gmac:gtx3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd16:gmac:gtx3"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD16",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd16",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd16:gmac:gtx3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:usart:usart-zw:tx",
             "capability-instance:usart2:lqfp100:tx"
           ],
@@ -6582,6 +8017,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "txd2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtxer",
+            "capability-instance:gmac:lqfp100:gtxer"
+          ],
+          "decision_id": "candidate:pd17:gmac:gtxer",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd17:gmac:gtxer"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD17",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd17",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd17:gmac:gtxer"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtxer"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -6711,6 +8171,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtxen",
+            "capability-instance:gmac:lqfp100:gtxen"
+          ],
+          "decision_id": "candidate:pd1:gmac:gtxen",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd1:gmac:gtxen"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD1",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd1",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd1:gmac:gtxen"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtxen"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmh0",
             "capability-instance:pwm1:lqfp100:pwmh0"
           ],
@@ -6757,6 +8242,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:3",
           "signal": "dtr0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp100:gtsucomp"
+          ],
+          "decision_id": "candidate:pd20:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd20:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD20",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd20",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd20:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "gtsucomp"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -7314,6 +8824,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtx0",
+            "capability-instance:gmac:lqfp100:gtx0"
+          ],
+          "decision_id": "candidate:pd2:gmac:gtx0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd2:gmac:gtx0"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD2",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd2",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd2:gmac:gtx0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml1",
             "capability-instance:pwm1:lqfp100:pwml1"
           ],
@@ -7414,6 +8949,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:qspi:qspi-j:qio3",
+            "capability-instance:qspi:lqfp100:qio3"
+          ],
+          "decision_id": "candidate:pd31:qspi:qio3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pd31:qspi:qio3"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PD31",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd31",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pd31:qspi:qio3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:uart:uart-r:utxd3",
             "capability-instance:uart3:lqfp100:utxd3"
           ],
@@ -7435,6 +8995,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "utxd3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtx1",
+            "capability-instance:gmac:lqfp100:gtx1"
+          ],
+          "decision_id": "candidate:pd3:gmac:gtx1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd3:gmac:gtx1"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD3",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd3",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd3:gmac:gtx1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx1"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -7514,6 +9099,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:grxdv",
+            "capability-instance:gmac:lqfp100:grxdv"
+          ],
+          "decision_id": "candidate:pd4:gmac:grxdv",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd4:gmac:grxdv"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD4",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd4",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd4:gmac:grxdv"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grxdv"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml2",
             "capability-instance:pwm1:lqfp100:pwml2"
           ],
@@ -7560,6 +9170,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:3",
           "signal": "dcd2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grx0",
+            "capability-instance:gmac:lqfp100:grx0"
+          ],
+          "decision_id": "candidate:pd5:gmac:grx0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd5:gmac:grx0"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD5",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd5",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd5:gmac:grx0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx0"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -7614,6 +9249,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:grx1",
+            "capability-instance:gmac:lqfp100:grx1"
+          ],
+          "decision_id": "candidate:pd6:gmac:grx1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd6:gmac:grx1"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD6",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd6",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd6:gmac:grx1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml3",
             "capability-instance:pwm1:lqfp100:pwml3"
           ],
@@ -7660,6 +9320,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:3",
           "signal": "dsr2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grxer",
+            "capability-instance:gmac:lqfp100:grxer"
+          ],
+          "decision_id": "candidate:pd7:gmac:grxer",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd7:gmac:grxer"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD7",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd7",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd7:gmac:grxer"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grxer"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -7714,6 +9399,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gmdc",
+            "capability-instance:gmac:lqfp100:gmdc"
+          ],
+          "decision_id": "candidate:pd8:gmac:gmdc",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd8:gmac:gmdc"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD8",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd8",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd8:gmac:gmdc"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gmdc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmfi1",
             "capability-instance:pwm0:lqfp100:pwmfi1"
           ],
@@ -7760,6 +9470,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "adtrg"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gmdio",
+            "capability-instance:gmac:lqfp100:gmdio"
+          ],
+          "decision_id": "candidate:pd9:gmac:gmdio",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd9:gmac:gmdio"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD9",
+          "requirement_ids": [
+            "requirement:package:lqfp100",
+            "requirement:bonded-pin:lqfp100:pd9",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd9:gmac:gmdio"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gmdio"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
@@ -7860,6 +9595,60 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "candidate_ids": [
+            "candidate:pb12:gmac:gtsucomp",
+            "candidate:pb1:gmac:gtsucomp",
+            "candidate:pd0:gmac:gtxck",
+            "candidate:pd10:gmac:gcrs",
+            "candidate:pd11:gmac:grx2",
+            "candidate:pd11:gmac:gtsucomp",
+            "candidate:pd12:gmac:grx3",
+            "candidate:pd13:gmac:gcol",
+            "candidate:pd14:gmac:grxck",
+            "candidate:pd15:gmac:gtx2",
+            "candidate:pd16:gmac:gtx3",
+            "candidate:pd17:gmac:gtxer",
+            "candidate:pd1:gmac:gtxen",
+            "candidate:pd20:gmac:gtsucomp",
+            "candidate:pd2:gmac:gtx0",
+            "candidate:pd3:gmac:gtx1",
+            "candidate:pd4:gmac:grxdv",
+            "candidate:pd5:gmac:grx0",
+            "candidate:pd6:gmac:grx1",
+            "candidate:pd7:gmac:grxer",
+            "candidate:pd8:gmac:gmdc",
+            "candidate:pd9:gmac:gmdio"
+          ],
+          "conflict_group": "conflict:gmac:lqfp100:all-signals",
+          "decision_id": "group:gmac:lqfp100:all-signals",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp100",
+          "peripheral": "GMAC",
+          "signals": [
+            "gcol",
+            "gcrs",
+            "gmdc",
+            "gmdio",
+            "grx0",
+            "grx1",
+            "grx2",
+            "grx3",
+            "grxck",
+            "grxdv",
+            "grxer",
+            "gtsucomp",
+            "gtx0",
+            "gtx1",
+            "gtx2",
+            "gtx3",
+            "gtxck",
+            "gtxen",
+            "gtxer"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "candidate_ids": [
             "candidate:pa10:gpioa:piodc4",
             "candidate:pa11:gpioa:piodc5",
             "candidate:pa12:gpioa:piodc6",
@@ -7890,6 +9679,31 @@
             "piodcclk",
             "piodcen1",
             "piodcen2"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "candidate_ids": [
+            "candidate:pa25:hsmci:mcck",
+            "candidate:pa26:hsmci:mcda2",
+            "candidate:pa27:hsmci:mcda3",
+            "candidate:pa28:hsmci:mccda",
+            "candidate:pa30:hsmci:mcda0",
+            "candidate:pa31:hsmci:mcda1"
+          ],
+          "conflict_group": "conflict:hsmci:lqfp100:all-signals",
+          "decision_id": "group:hsmci:lqfp100:all-signals",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp100",
+          "peripheral": "HSMCI",
+          "signals": [
+            "mccda",
+            "mcck",
+            "mcda0",
+            "mcda1",
+            "mcda2",
+            "mcda3"
           ]
         },
         {
@@ -8034,6 +9848,31 @@
             "pwml1",
             "pwml2",
             "pwml3"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "candidate_ids": [
+            "candidate:pa11:qspi:qcs",
+            "candidate:pa12:qspi:qio1",
+            "candidate:pa13:qspi:qio0",
+            "candidate:pa14:qspi:qsck",
+            "candidate:pa17:qspi:qio2",
+            "candidate:pd31:qspi:qio3"
+          ],
+          "conflict_group": "conflict:qspi:lqfp100:all-signals",
+          "decision_id": "group:qspi:lqfp100:all-signals",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp100",
+          "peripheral": "QSPI",
+          "signals": [
+            "qcs",
+            "qio0",
+            "qio1",
+            "qio2",
+            "qio3",
+            "qsck"
           ]
         },
         {
@@ -8610,6 +10449,15 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "class_capability_count": 20,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 19,
+          "peripheral": "GMAC",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "class_capability_count": 12,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
@@ -8655,6 +10503,15 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "class_capability_count": 7,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 7,
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "class_capability_count": 3,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
@@ -8688,6 +10545,15 @@
           "instance_capability_count": 14,
           "peripheral": "PWM1",
           "peripheral_class": "pwm"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "class_capability_count": 7,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 8,
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
@@ -8866,6 +10732,15 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "USBHS",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "WDT",
           "peripheral_class": "watchdog"
         },
@@ -8879,7 +10754,7 @@
           "peripheral_class": "dma"
         }
       ],
-      "capability_decision_count": 324,
+      "capability_decision_count": 393,
       "capability_decisions": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
@@ -9518,6 +11393,435 @@
           "peripheral_class": "dma",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gcol",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gcol"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gcrs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gcrs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gmdc",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gmdc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gmdio",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gmdio"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grxdv",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grxdv"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:grxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "grxer"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtsucomp",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtxen",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtxen"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:gmac:gmac-s:gtxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "ip_block",
+          "value": "gtxer"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-support:eth",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "eth",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gcol",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gcol"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gcrs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gcrs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gmdc",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gmdc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gmdio",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gmdio"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grxdv",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grxdv"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:grxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "grxer"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtsucomp",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtx0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtx1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtx2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtx3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtxck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtxen",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtxen"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:gmac:lqfp144:gtxer",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "GMAC",
+          "peripheral_class": "eth",
+          "scope": "instance_overlay",
+          "value": "gtxer"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
@@ -10412,6 +12716,171 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qcs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qcs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qio3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qio3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:qspi:qspi-j:qsck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "ip_block",
+          "value": "qsck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-support:qspi",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "qspi",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-dma:QSPI:XDMAC:PERID_6:RX",
+          "decision_kind": "inferred_dma_capability",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "name": "dma-compatible-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "dma_binding",
+          "value": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-dma:QSPI:XDMAC:PERID_5:TX",
+          "decision_kind": "inferred_dma_capability",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "name": "dma-compatible-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "dma_binding",
+          "value": "TX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp144:qcs",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qcs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp144:qio0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp144:qio1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp144:qio2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp144:qio3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qio3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:qspi:lqfp144:qsck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "QSPI",
+          "peripheral_class": "qspi",
+          "scope": "instance_overlay",
+          "value": "qsck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "decision_id": "capability:rtc:rtc-zb:rtcout0",
           "decision_kind": "direct_capability",
           "explanation": "Capability is published directly from canonical capability data.",
@@ -10464,6 +12933,160 @@
           "peripheral_class": "rtc",
           "scope": "instance_overlay",
           "value": "rtcout1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mccda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mccda"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability:hsmci:hsmci-r:mcda3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "ip_block",
+          "value": "mcda3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-support:sdmmc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "sdmmc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-dma:HSMCI:XDMAC:PERID_0:RX",
+          "decision_kind": "inferred_dma_capability",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "name": "dma-compatible-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "dma_binding",
+          "value": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp144:mccda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mccda"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp144:mcck",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp144:mcda0",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp144:mcda1",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp144:mcda2",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "capability-instance:hsmci:lqfp144:mcda3",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "HSMCI",
+          "peripheral_class": "sdmmc",
+          "scope": "instance_overlay",
+          "value": "mcda3"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
@@ -12436,6 +15059,17 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "decision_id": "runtime-support:usb",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "usb",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "decision_id": "runtime-support:watchdog",
           "decision_kind": "inferred_runtime_support",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
@@ -12447,7 +15081,7 @@
         }
       ],
       "device": "atsame70q21b",
-      "dma_binding_decision_count": 37,
+      "dma_binding_decision_count": 40,
       "dma_binding_decisions": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/dma_bindings.hpp",
@@ -12513,6 +15147,18 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/dma_bindings.hpp",
           "conflict_group": null,
           "controller": "XDMAC",
+          "decision_id": "dma-binding:hsmci:rx:xdmac:perid-0",
+          "decision_kind": "accepted_runtime_dma_binding",
+          "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
+          "peripheral": "HSMCI",
+          "request_line": "PERID_0",
+          "route_id": "dma-route:xdmac:perid-0:hsmci:rx",
+          "signal": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/dma_bindings.hpp",
+          "conflict_group": null,
+          "controller": "XDMAC",
           "decision_id": "dma-binding:pwm0:tx:xdmac:perid-13",
           "decision_kind": "accepted_runtime_dma_binding",
           "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
@@ -12531,6 +15177,30 @@
           "peripheral": "PWM1",
           "request_line": "PERID_39",
           "route_id": "dma-route:xdmac:perid-39:pwm1:tx",
+          "signal": "TX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/dma_bindings.hpp",
+          "conflict_group": null,
+          "controller": "XDMAC",
+          "decision_id": "dma-binding:qspi:rx:xdmac:perid-6",
+          "decision_kind": "accepted_runtime_dma_binding",
+          "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
+          "peripheral": "QSPI",
+          "request_line": "PERID_6",
+          "route_id": "dma-route:xdmac:perid-6:qspi:rx",
+          "signal": "RX"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/dma_bindings.hpp",
+          "conflict_group": null,
+          "controller": "XDMAC",
+          "decision_id": "dma-binding:qspi:tx:xdmac:perid-5",
+          "decision_kind": "accepted_runtime_dma_binding",
+          "explanation": "DMA binding is published because the peripheral participates in the runtime contract.",
+          "peripheral": "QSPI",
+          "request_line": "PERID_5",
+          "route_id": "dma-route:xdmac:perid-5:qspi:tx",
           "signal": "TX"
         },
         {
@@ -12894,7 +15564,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 64,
+      "heuristic_fact_count": 71,
       "heuristic_facts": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
@@ -12942,6 +15612,12 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:dma",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:eth",
           "fact_kind": "capability"
         },
         {
@@ -13019,7 +15695,37 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:qspi",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "fact_id": "runtime-dma:QSPI:XDMAC:PERID_6:RX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "fact_id": "runtime-dma:QSPI:XDMAC:PERID_5:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:rtc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:sdmmc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized from a published DMA binding for the signal.",
+          "fact_id": "runtime-dma:HSMCI:XDMAC:PERID_0:RX",
           "fact_kind": "capability"
         },
         {
@@ -13187,6 +15893,12 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:usb",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
@@ -13334,6 +16046,15 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "USBHS",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "WDT",
           "peripheral_class": "watchdog"
         },
@@ -13347,7 +16068,7 @@
           "peripheral_class": "dma"
         }
       ],
-      "route_decision_count": 218,
+      "route_decision_count": 252,
       "route_decisions": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -13557,6 +16278,32 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:qspi:qspi-j:qcs",
+            "capability-instance:qspi:lqfp144:qcs"
+          ],
+          "decision_id": "candidate:pa11:qspi:qcs",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa11:qspi:qcs"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA11",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa11",
+            "requirement:constraint:PA11:wakeup-capable",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa11:qspi:qcs"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qcs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:gpio:pio-v:piodc6",
             "capability-instance:gpioa:lqfp144:piodc6"
           ],
@@ -13628,6 +16375,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "pwmh0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:qspi:qspi-j:qio1",
+            "capability-instance:qspi:lqfp144:qio1"
+          ],
+          "decision_id": "candidate:pa12:qspi:qio1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa12:qspi:qio1"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA12",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa12",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa12:qspi:qio1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio1"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -13707,6 +16479,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:qspi:qspi-j:qio0",
+            "capability-instance:qspi:lqfp144:qio0"
+          ],
+          "decision_id": "candidate:pa13:qspi:qio0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa13:qspi:qio0"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA13",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa13",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa13:qspi:qio0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:gpio:pio-v:piodcen1",
             "capability-instance:gpioa:lqfp144:piodcen1"
           ],
@@ -13781,6 +16578,32 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "pwmh1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:qspi:qspi-j:qsck",
+            "capability-instance:qspi:lqfp144:qsck"
+          ],
+          "decision_id": "candidate:pa14:qspi:qsck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa14:qspi:qsck"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA14",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa14",
+            "requirement:constraint:PA14:wakeup-capable",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa14:qspi:qsck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qsck"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -13931,6 +16754,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "pwmh3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:qspi:qspi-j:qio2",
+            "capability-instance:qspi:lqfp144:qio2"
+          ],
+          "decision_id": "candidate:pa17:qspi:qio2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pa17:qspi:qio2"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PA17",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa17",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pa17:qspi:qio2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio2"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -14416,6 +17264,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:hsmci:hsmci-r:mcck",
+            "capability-instance:hsmci:lqfp144:mcck"
+          ],
+          "decision_id": "candidate:pa25:hsmci:mcck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa25:hsmci:mcck"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA25",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa25",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa25:hsmci:mcck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:3",
+          "signal": "mcck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmh2",
             "capability-instance:pwm0:lqfp144:pwmh2"
           ],
@@ -14462,6 +17335,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:0",
           "signal": "cts1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda2",
+            "capability-instance:hsmci:lqfp144:mcda2"
+          ],
+          "decision_id": "candidate:pa26:hsmci:mcda2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa26:hsmci:mcda2"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA26",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa26",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa26:hsmci:mcda2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda2"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -14541,6 +17439,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda3",
+            "capability-instance:hsmci:lqfp144:mcda3"
+          ],
+          "decision_id": "candidate:pa27:hsmci:mcda3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa27:hsmci:mcda3"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA27",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa27",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa27:hsmci:mcda3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:tc:tc-zl:tiob2",
             "capability-instance:tc0:lqfp144:tiob2"
           ],
@@ -14587,6 +17510,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:0",
           "signal": "dtr1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:hsmci:hsmci-r:mccda",
+            "capability-instance:hsmci:lqfp144:mccda"
+          ],
+          "decision_id": "candidate:pa28:hsmci:mccda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa28:hsmci:mccda"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA28",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa28",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa28:hsmci:mccda"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mccda"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -14768,6 +17716,32 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda0",
+            "capability-instance:hsmci:lqfp144:mcda0"
+          ],
+          "decision_id": "candidate:pa30:hsmci:mcda0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa30:hsmci:mcda0"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA30",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa30",
+            "requirement:constraint:PA30:wakeup-capable",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa30:hsmci:mcda0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml2",
             "capability-instance:pwm0:lqfp144:pwml2"
           ],
@@ -14816,6 +17790,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "pwmextrg0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:hsmci:hsmci-r:mcda1",
+            "capability-instance:hsmci:lqfp144:mcda1"
+          ],
+          "decision_id": "candidate:pa31:hsmci:mcda1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:hsmci",
+            "operation:route:pa31:hsmci:mcda1"
+          ],
+          "peripheral": "HSMCI",
+          "pin": "PA31",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pa31",
+            "requirement:clock-enable:hsmci",
+            "requirement:source-select:pa31:hsmci:mcda1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "mcda1"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -15405,6 +18404,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp144:gtsucomp"
+          ],
+          "decision_id": "candidate:pb12:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pb12:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PB12",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pb12",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pb12:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:1",
+          "signal": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml1",
             "capability-instance:pwm0:lqfp144:pwml1"
           ],
@@ -15526,6 +18550,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:101",
           "signal": "ad0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp144:gtsucomp"
+          ],
+          "decision_id": "candidate:pb1:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pb1:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PB1",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pb1",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pb1:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:1",
+          "signal": "gtsucomp"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -17110,6 +20159,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtxck",
+            "capability-instance:gmac:lqfp144:gtxck"
+          ],
+          "decision_id": "candidate:pd0:gmac:gtxck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd0:gmac:gtxck"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD0",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd0",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd0:gmac:gtxck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml0",
             "capability-instance:pwm1:lqfp144:pwml0"
           ],
@@ -17185,6 +20259,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gcrs",
+            "capability-instance:gmac:lqfp144:gcrs"
+          ],
+          "decision_id": "candidate:pd10:gmac:gcrs",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd10:gmac:gcrs"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD10",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd10",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd10:gmac:gcrs"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gcrs"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml0",
             "capability-instance:pwm0:lqfp144:pwml0"
           ],
@@ -17210,6 +20309,56 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:grx2",
+            "capability-instance:gmac:lqfp144:grx2"
+          ],
+          "decision_id": "candidate:pd11:gmac:grx2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd11:gmac:grx2"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD11",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd11",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd11:gmac:grx2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp144:gtsucomp"
+          ],
+          "decision_id": "candidate:pd11:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd11:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD11",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd11",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd11:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "gtsucomp"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmh0",
             "capability-instance:pwm0:lqfp144:pwmh0"
           ],
@@ -17231,6 +20380,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "pwmh0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grx3",
+            "capability-instance:gmac:lqfp144:grx3"
+          ],
+          "decision_id": "candidate:pd12:gmac:grx3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd12:gmac:grx3"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD12",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd12",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd12:gmac:grx3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx3"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -17285,6 +20459,81 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gcol",
+            "capability-instance:gmac:lqfp144:gcol"
+          ],
+          "decision_id": "candidate:pd13:gmac:gcol",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd13:gmac:gcol"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD13",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd13",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd13:gmac:gcol"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gcol"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grxck",
+            "capability-instance:gmac:lqfp144:grxck"
+          ],
+          "decision_id": "candidate:pd14:gmac:grxck",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd14:gmac:grxck"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD14",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd14",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd14:gmac:grxck"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grxck"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtx2",
+            "capability-instance:gmac:lqfp144:gtx2"
+          ],
+          "decision_id": "candidate:pd15:gmac:gtx2",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd15:gmac:gtx2"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD15",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd15",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd15:gmac:gtx2"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:usart:usart-zw:rx",
             "capability-instance:usart2:lqfp144:rx"
           ],
@@ -17310,6 +20559,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtx3",
+            "capability-instance:gmac:lqfp144:gtx3"
+          ],
+          "decision_id": "candidate:pd16:gmac:gtx3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd16:gmac:gtx3"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD16",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd16",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd16:gmac:gtx3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:usart:usart-zw:tx",
             "capability-instance:usart2:lqfp144:tx"
           ],
@@ -17331,6 +20605,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "txd2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtxer",
+            "capability-instance:gmac:lqfp144:gtxer"
+          ],
+          "decision_id": "candidate:pd17:gmac:gtxer",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd17:gmac:gtxer"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD17",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd17",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd17:gmac:gtxer"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtxer"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -17460,6 +20759,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtxen",
+            "capability-instance:gmac:lqfp144:gtxen"
+          ],
+          "decision_id": "candidate:pd1:gmac:gtxen",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd1:gmac:gtxen"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD1",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd1",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd1:gmac:gtxen"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtxen"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmh0",
             "capability-instance:pwm1:lqfp144:pwmh0"
           ],
@@ -17531,6 +20855,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:3",
           "signal": "dtr0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtsucomp",
+            "capability-instance:gmac:lqfp144:gtsucomp"
+          ],
+          "decision_id": "candidate:pd20:gmac:gtsucomp",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd20:gmac:gtsucomp"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD20",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd20",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd20:gmac:gtsucomp"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:2",
+          "signal": "gtsucomp"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -18087,6 +21436,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gtx0",
+            "capability-instance:gmac:lqfp144:gtx0"
+          ],
+          "decision_id": "candidate:pd2:gmac:gtx0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd2:gmac:gtx0"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD2",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd2",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd2:gmac:gtx0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx0"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml1",
             "capability-instance:pwm1:lqfp144:pwml1"
           ],
@@ -18212,6 +21586,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:qspi:qspi-j:qio3",
+            "capability-instance:qspi:lqfp144:qio3"
+          ],
+          "decision_id": "candidate:pd31:qspi:qio3",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:qspi",
+            "operation:route:pd31:qspi:qio3"
+          ],
+          "peripheral": "QSPI",
+          "pin": "PD31",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd31",
+            "requirement:clock-enable:qspi",
+            "requirement:source-select:pd31:qspi:qio3"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "qio3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:uart:uart-r:utxd3",
             "capability-instance:uart3:lqfp144:utxd3"
           ],
@@ -18233,6 +21632,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:1",
           "signal": "utxd3"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gtx1",
+            "capability-instance:gmac:lqfp144:gtx1"
+          ],
+          "decision_id": "candidate:pd3:gmac:gtx1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd3:gmac:gtx1"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD3",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd3",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd3:gmac:gtx1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gtx1"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -18312,6 +21736,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:grxdv",
+            "capability-instance:gmac:lqfp144:grxdv"
+          ],
+          "decision_id": "candidate:pd4:gmac:grxdv",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd4:gmac:grxdv"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD4",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd4",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd4:gmac:grxdv"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grxdv"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml2",
             "capability-instance:pwm1:lqfp144:pwml2"
           ],
@@ -18358,6 +21807,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:3",
           "signal": "dcd2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grx0",
+            "capability-instance:gmac:lqfp144:grx0"
+          ],
+          "decision_id": "candidate:pd5:gmac:grx0",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd5:gmac:grx0"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD5",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd5",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd5:gmac:grx0"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx0"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -18412,6 +21886,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:grx1",
+            "capability-instance:gmac:lqfp144:grx1"
+          ],
+          "decision_id": "candidate:pd6:gmac:grx1",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd6:gmac:grx1"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD6",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd6",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd6:gmac:grx1"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grx1"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwml3",
             "capability-instance:pwm1:lqfp144:pwml3"
           ],
@@ -18458,6 +21957,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:3",
           "signal": "dsr2"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:grxer",
+            "capability-instance:gmac:lqfp144:grxer"
+          ],
+          "decision_id": "candidate:pd7:gmac:grxer",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd7:gmac:grxer"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD7",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd7",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd7:gmac:grxer"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "grxer"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -18512,6 +22036,31 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "capability_ids": [
+            "capability:gmac:gmac-s:gmdc",
+            "capability-instance:gmac:lqfp144:gmdc"
+          ],
+          "decision_id": "candidate:pd8:gmac:gmdc",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd8:gmac:gmdc"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD8",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd8",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd8:gmac:gmdc"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gmdc"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
             "capability:pwm:pwm-y:pwmfi1",
             "capability-instance:pwm0:lqfp144:pwmfi1"
           ],
@@ -18558,6 +22107,31 @@
           "route_kind": "peripheral-mux",
           "route_selector": "selector:2",
           "signal": "adtrg"
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "capability_ids": [
+            "capability:gmac:gmac-s:gmdio",
+            "capability-instance:gmac:lqfp144:gmdio"
+          ],
+          "decision_id": "candidate:pd9:gmac:gmdio",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:gmac",
+            "operation:route:pd9:gmac:gmdio"
+          ],
+          "peripheral": "GMAC",
+          "pin": "PD9",
+          "requirement_ids": [
+            "requirement:package:lqfp144",
+            "requirement:bonded-pin:lqfp144:pd9",
+            "requirement:clock-enable:gmac",
+            "requirement:source-select:pd9:gmac:gmdio"
+          ],
+          "route_kind": "peripheral-mux",
+          "route_selector": "selector:0",
+          "signal": "gmdio"
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
@@ -18934,6 +22508,60 @@
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "candidate_ids": [
+            "candidate:pb12:gmac:gtsucomp",
+            "candidate:pb1:gmac:gtsucomp",
+            "candidate:pd0:gmac:gtxck",
+            "candidate:pd10:gmac:gcrs",
+            "candidate:pd11:gmac:grx2",
+            "candidate:pd11:gmac:gtsucomp",
+            "candidate:pd12:gmac:grx3",
+            "candidate:pd13:gmac:gcol",
+            "candidate:pd14:gmac:grxck",
+            "candidate:pd15:gmac:gtx2",
+            "candidate:pd16:gmac:gtx3",
+            "candidate:pd17:gmac:gtxer",
+            "candidate:pd1:gmac:gtxen",
+            "candidate:pd20:gmac:gtsucomp",
+            "candidate:pd2:gmac:gtx0",
+            "candidate:pd3:gmac:gtx1",
+            "candidate:pd4:gmac:grxdv",
+            "candidate:pd5:gmac:grx0",
+            "candidate:pd6:gmac:grx1",
+            "candidate:pd7:gmac:grxer",
+            "candidate:pd8:gmac:gmdc",
+            "candidate:pd9:gmac:gmdio"
+          ],
+          "conflict_group": "conflict:gmac:lqfp144:all-signals",
+          "decision_id": "group:gmac:lqfp144:all-signals",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp144",
+          "peripheral": "GMAC",
+          "signals": [
+            "gcol",
+            "gcrs",
+            "gmdc",
+            "gmdio",
+            "grx0",
+            "grx1",
+            "grx2",
+            "grx3",
+            "grxck",
+            "grxdv",
+            "grxer",
+            "gtsucomp",
+            "gtx0",
+            "gtx1",
+            "gtx2",
+            "gtx3",
+            "gtxck",
+            "gtxen",
+            "gtxer"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "candidate_ids": [
             "candidate:pa10:gpioa:piodc4",
             "candidate:pa11:gpioa:piodc5",
             "candidate:pa12:gpioa:piodc6",
@@ -18964,6 +22592,31 @@
             "piodcclk",
             "piodcen1",
             "piodcen2"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "candidate_ids": [
+            "candidate:pa25:hsmci:mcck",
+            "candidate:pa26:hsmci:mcda2",
+            "candidate:pa27:hsmci:mcda3",
+            "candidate:pa28:hsmci:mccda",
+            "candidate:pa30:hsmci:mcda0",
+            "candidate:pa31:hsmci:mcda1"
+          ],
+          "conflict_group": "conflict:hsmci:lqfp144:all-signals",
+          "decision_id": "group:hsmci:lqfp144:all-signals",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp144",
+          "peripheral": "HSMCI",
+          "signals": [
+            "mccda",
+            "mcck",
+            "mcda0",
+            "mcda1",
+            "mcda2",
+            "mcda3"
           ]
         },
         {
@@ -19121,6 +22774,31 @@
             "pwml1",
             "pwml2",
             "pwml3"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "candidate_ids": [
+            "candidate:pa11:qspi:qcs",
+            "candidate:pa12:qspi:qio1",
+            "candidate:pa13:qspi:qio0",
+            "candidate:pa14:qspi:qsck",
+            "candidate:pa17:qspi:qio2",
+            "candidate:pd31:qspi:qio3"
+          ],
+          "conflict_group": "conflict:qspi:lqfp144:all-signals",
+          "decision_id": "group:qspi:lqfp144:all-signals",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp144",
+          "peripheral": "QSPI",
+          "signals": [
+            "qcs",
+            "qio0",
+            "qio1",
+            "qio2",
+            "qio3",
+            "qsck"
           ]
         },
         {
