@@ -4069,11 +4069,11 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.iwdg.st-iwdg1-v2-0",
+      "backend_schema_id": "alloy.watchdog.st-iwdg1-v2-0",
       "capability_ids": [],
       "ip_name": "iwdg",
       "ip_version": "iwdg1_v2_0",
-      "peripheral_class": "iwdg",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -4211,11 +4211,11 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.wwdg.st-wwdg1-v2-0",
+      "backend_schema_id": "alloy.watchdog.st-wwdg1-v2-0",
       "capability_ids": [],
       "ip_name": "wwdg",
       "ip_version": "wwdg1_v2_0",
-      "peripheral_class": "wwdg",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -4929,7 +4929,7 @@
       "rcc_reset_signal": "RCC_APBRSTR2.ADCRST"
     },
     {
-      "backend_schema_id": "alloy.iwdg.st-iwdg1-v2-0",
+      "backend_schema_id": "alloy.watchdog.st-iwdg1-v2-0",
       "base_address": 1073754112,
       "instance": 0,
       "ip_name": "iwdg",
@@ -4947,7 +4947,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.wwdg.st-wwdg1-v2-0",
+      "backend_schema_id": "alloy.watchdog.st-wwdg1-v2-0",
       "base_address": 1073753088,
       "instance": 0,
       "ip_name": "wwdg",

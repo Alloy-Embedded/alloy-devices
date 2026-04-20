@@ -32029,7 +32029,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pb0:fdcan2:rx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -32689,7 +32689,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pb12:fdcan2:rx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -32986,7 +32986,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pb13:fdcan2:tx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -33844,7 +33844,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pb1:fdcan2:tx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -34999,7 +34999,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pb5:fdcan2:rx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -35329,7 +35329,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pb6:fdcan2:tx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -35989,7 +35989,7 @@
             "requirement:reset-release:fdcan1",
             "requirement:source-select:pb8:fdcan1:rx"
           ],
-          "route_group_id": "group:fdcan1:lqfp64:all-signals",
+          "route_group_id": "group:fdcan1:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -36253,7 +36253,7 @@
             "requirement:reset-release:fdcan1",
             "requirement:source-select:pb9:fdcan1:tx"
           ],
-          "route_group_id": "group:fdcan1:lqfp64:all-signals",
+          "route_group_id": "group:fdcan1:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -37441,7 +37441,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pc2:fdcan2:rx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -37573,7 +37573,7 @@
             "requirement:reset-release:fdcan2",
             "requirement:source-select:pc3:fdcan2:tx"
           ],
-          "route_group_id": "group:fdcan2:lqfp64:all-signals",
+          "route_group_id": "group:fdcan2:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -37705,7 +37705,7 @@
             "requirement:reset-release:fdcan1",
             "requirement:source-select:pc4:fdcan1:rx"
           ],
-          "route_group_id": "group:fdcan1:lqfp64:all-signals",
+          "route_group_id": "group:fdcan1:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -37870,7 +37870,7 @@
             "requirement:reset-release:fdcan1",
             "requirement:source-select:pc5:fdcan1:tx"
           ],
-          "route_group_id": "group:fdcan1:lqfp64:all-signals",
+          "route_group_id": "group:fdcan1:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -38629,7 +38629,7 @@
             "requirement:reset-release:fdcan1",
             "requirement:source-select:pd0:fdcan1:rx"
           ],
-          "route_group_id": "group:fdcan1:lqfp64:all-signals",
+          "route_group_id": "group:fdcan1:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "rx"
@@ -38728,7 +38728,7 @@
             "requirement:reset-release:fdcan1",
             "requirement:source-select:pd1:fdcan1:tx"
           ],
-          "route_group_id": "group:fdcan1:lqfp64:all-signals",
+          "route_group_id": "group:fdcan1:lqfp64:tx-rx",
           "route_kind": "alternate-function",
           "route_selector": "selector:3",
           "signal": "tx"
@@ -39899,8 +39899,8 @@
             "candidate:pd0:fdcan1:rx",
             "candidate:pd1:fdcan1:tx"
           ],
-          "conflict_group": "conflict:fdcan1:lqfp64:all-signals",
-          "group_id": "group:fdcan1:lqfp64:all-signals",
+          "conflict_group": "conflict:fdcan1:lqfp64:tx-rx",
+          "group_id": "group:fdcan1:lqfp64:tx-rx",
           "package": "lqfp64",
           "peripheral": "FDCAN1",
           "provenance": {
@@ -39912,8 +39912,8 @@
             "source_path": "STM32G0B1R(B-C-E)Tx.xml"
           },
           "signals": [
-            "rx",
-            "tx"
+            "tx",
+            "rx"
           ]
         },
         {
@@ -39927,8 +39927,8 @@
             "candidate:pc2:fdcan2:rx",
             "candidate:pc3:fdcan2:tx"
           ],
-          "conflict_group": "conflict:fdcan2:lqfp64:all-signals",
-          "group_id": "group:fdcan2:lqfp64:all-signals",
+          "conflict_group": "conflict:fdcan2:lqfp64:tx-rx",
+          "group_id": "group:fdcan2:lqfp64:tx-rx",
           "package": "lqfp64",
           "peripheral": "FDCAN2",
           "provenance": {
@@ -39940,8 +39940,8 @@
             "source_path": "STM32G0B1R(B-C-E)Tx.xml"
           },
           "signals": [
-            "rx",
-            "tx"
+            "tx",
+            "rx"
           ]
         },
         {
@@ -60157,8 +60157,8 @@
   "signal_endpoints": [
     {
       "direction": "input",
-      "endpoint_id": "endpoint:fdcan:rx",
-      "peripheral_class": "fdcan",
+      "endpoint_id": "endpoint:can:rx",
+      "peripheral_class": "can",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -60171,8 +60171,8 @@
     },
     {
       "direction": "output",
-      "endpoint_id": "endpoint:fdcan:tx",
-      "peripheral_class": "fdcan",
+      "endpoint_id": "endpoint:can:tx",
+      "peripheral_class": "can",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",

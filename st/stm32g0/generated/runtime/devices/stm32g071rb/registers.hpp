@@ -157,6 +157,15 @@ enum class RegisterId : std::uint16_t {
   register_gpiof_afrl,
   register_gpiof_afrh,
   register_gpiof_brr,
+  register_iwdg_kr,
+  register_iwdg_pr,
+  register_iwdg_rlr,
+  register_iwdg_sr,
+  register_iwdg_winr,
+  register_iwdg_hwcfgr,
+  register_iwdg_verr,
+  register_iwdg_ipidr,
+  register_iwdg_sidr,
   register_lpuart1_cr1,
   register_lpuart1_cr2,
   register_lpuart1_cr3,
@@ -183,6 +192,30 @@ enum class RegisterId : std::uint16_t {
   register_rcc_apbenr1,
   register_rcc_apbenr2,
   register_rcc_ccipr,
+  register_rtc_tr,
+  register_rtc_dr,
+  register_rtc_ssr,
+  register_rtc_icsr,
+  register_rtc_prer,
+  register_rtc_wutr,
+  register_rtc_cr,
+  register_rtc_wpr,
+  register_rtc_calr,
+  register_rtc_shiftr,
+  register_rtc_tstr,
+  register_rtc_tsdr,
+  register_rtc_tsssr,
+  register_rtc_alrmar,
+  register_rtc_alrmassr,
+  register_rtc_alrmbr,
+  register_rtc_alrmbssr,
+  register_rtc_sr,
+  register_rtc_misr,
+  register_rtc_scr,
+  register_rtc_hwcfgr,
+  register_rtc_verr,
+  register_rtc_ipidr,
+  register_rtc_sidr,
   register_spi1_cr1,
   register_spi1_cr2,
   register_spi1_sr,
@@ -405,6 +438,9 @@ enum class RegisterId : std::uint16_t {
   register_usart4_rdr,
   register_usart4_tdr,
   register_usart4_presc,
+  register_wwdg_cr,
+  register_wwdg_cfr,
+  register_wwdg_sr,
 };
 
 template<RegisterId Id>
@@ -1722,6 +1758,87 @@ struct RegisterTraits<RegisterId::register_gpiof_brr> {
 };
 
 template<>
+struct RegisterTraits<RegisterId::register_iwdg_kr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_pr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_rlr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_sr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_winr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_hwcfgr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 1008u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_verr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 1012u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_ipidr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 1016u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_iwdg_sidr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr std::uint32_t kOffsetBytes = 1020u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
 struct RegisterTraits<RegisterId::register_lpuart1_cr1> {
   static constexpr bool kPresent = true;
   static constexpr std::uintptr_t kBaseAddress = 0x40008000u;
@@ -1952,6 +2069,222 @@ struct RegisterTraits<RegisterId::register_rcc_ccipr> {
   static constexpr std::uintptr_t kBaseAddress = 0x40021000u;
   static constexpr std::uint32_t kOffsetBytes = 84u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_tr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_dr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_ssr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_icsr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_prer> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_wutr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_cr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_wpr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 36u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_calr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_shiftr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_tstr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 48u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_tsdr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 52u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_tsssr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 56u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_alrmar> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 64u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_alrmassr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 68u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_alrmbr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_alrmbssr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 76u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_sr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 80u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_misr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 84u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_scr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 92u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_hwcfgr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 1008u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_verr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 1012u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_ipidr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 1016u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_rtc_sidr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002800u;
+  static constexpr std::uint32_t kOffsetBytes = 1020u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
 };
 
@@ -3953,7 +4286,34 @@ struct RegisterTraits<RegisterId::register_usart4_presc> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 393> kRegisters = {{
+template<>
+struct RegisterTraits<RegisterId::register_wwdg_cr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002C00u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wwdg_cfr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002C00u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_wwdg_sr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40002C00u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+inline constexpr std::array<RegisterId, 429> kRegisters = {{
   RegisterId::register_adc1_adc_isr,
   RegisterId::register_adc1_adc_ier,
   RegisterId::register_adc1_adc_cr,
@@ -4099,6 +4459,15 @@ inline constexpr std::array<RegisterId, 393> kRegisters = {{
   RegisterId::register_gpiof_afrl,
   RegisterId::register_gpiof_afrh,
   RegisterId::register_gpiof_brr,
+  RegisterId::register_iwdg_kr,
+  RegisterId::register_iwdg_pr,
+  RegisterId::register_iwdg_rlr,
+  RegisterId::register_iwdg_sr,
+  RegisterId::register_iwdg_winr,
+  RegisterId::register_iwdg_hwcfgr,
+  RegisterId::register_iwdg_verr,
+  RegisterId::register_iwdg_ipidr,
+  RegisterId::register_iwdg_sidr,
   RegisterId::register_lpuart1_cr1,
   RegisterId::register_lpuart1_cr2,
   RegisterId::register_lpuart1_cr3,
@@ -4125,6 +4494,30 @@ inline constexpr std::array<RegisterId, 393> kRegisters = {{
   RegisterId::register_rcc_apbenr1,
   RegisterId::register_rcc_apbenr2,
   RegisterId::register_rcc_ccipr,
+  RegisterId::register_rtc_tr,
+  RegisterId::register_rtc_dr,
+  RegisterId::register_rtc_ssr,
+  RegisterId::register_rtc_icsr,
+  RegisterId::register_rtc_prer,
+  RegisterId::register_rtc_wutr,
+  RegisterId::register_rtc_cr,
+  RegisterId::register_rtc_wpr,
+  RegisterId::register_rtc_calr,
+  RegisterId::register_rtc_shiftr,
+  RegisterId::register_rtc_tstr,
+  RegisterId::register_rtc_tsdr,
+  RegisterId::register_rtc_tsssr,
+  RegisterId::register_rtc_alrmar,
+  RegisterId::register_rtc_alrmassr,
+  RegisterId::register_rtc_alrmbr,
+  RegisterId::register_rtc_alrmbssr,
+  RegisterId::register_rtc_sr,
+  RegisterId::register_rtc_misr,
+  RegisterId::register_rtc_scr,
+  RegisterId::register_rtc_hwcfgr,
+  RegisterId::register_rtc_verr,
+  RegisterId::register_rtc_ipidr,
+  RegisterId::register_rtc_sidr,
   RegisterId::register_spi1_cr1,
   RegisterId::register_spi1_cr2,
   RegisterId::register_spi1_sr,
@@ -4347,6 +4740,9 @@ inline constexpr std::array<RegisterId, 393> kRegisters = {{
   RegisterId::register_usart4_rdr,
   RegisterId::register_usart4_tdr,
   RegisterId::register_usart4_presc,
+  RegisterId::register_wwdg_cr,
+  RegisterId::register_wwdg_cfr,
+  RegisterId::register_wwdg_sr,
 }};
 }
 }

@@ -385,6 +385,22 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOF> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::IWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::RTC> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::SPI1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_spi1;
@@ -464,7 +480,15 @@ struct PeripheralClockBindingTraits<PeripheralId::USART2> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 18> kClockBoundPeripherals = {{
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+inline constexpr std::array<PeripheralId, 21> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMAMUX1,
@@ -473,6 +497,8 @@ inline constexpr std::array<PeripheralId, 18> kClockBoundPeripherals = {{
   PeripheralId::GPIOC,
   PeripheralId::GPIOD,
   PeripheralId::GPIOF,
+  PeripheralId::IWDG,
+  PeripheralId::RTC,
   PeripheralId::SPI1,
   PeripheralId::SPI2,
   PeripheralId::TIM1,
@@ -483,6 +509,7 @@ inline constexpr std::array<PeripheralId, 18> kClockBoundPeripherals = {{
   PeripheralId::TIM3,
   PeripheralId::USART1,
   PeripheralId::USART2,
+  PeripheralId::WWDG,
 }};
 }
 }

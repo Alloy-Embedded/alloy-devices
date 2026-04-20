@@ -76,6 +76,24 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
           "class_capability_count": 5,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
@@ -163,9 +181,18 @@
           "instance_capability_count": 9,
           "peripheral": "USART2",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 55,
+      "capability_decision_count": 57,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
@@ -208,6 +235,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "decision_id": "runtime-support:rtc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "rtc",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -771,6 +809,17 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "stm32g030f6",
@@ -801,7 +850,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 16,
+      "heuristic_fact_count": 18,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
@@ -825,6 +874,12 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:rtc",
           "fact_kind": "capability"
         },
         {
@@ -855,6 +910,12 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART2:DMA1:DMA1_CH1:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -976,12 +1037,39 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
           "class_capability_count": 7,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
           "peripheral": "TIM2",
           "peripheral_class": "timer"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
       "route_decision_count": 35,
@@ -2265,12 +2353,30 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
           "class_capability_count": 13,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
           "instance_capability_count": 5,
           "peripheral": "LPUART1",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
@@ -2406,9 +2512,18 @@
           "instance_capability_count": 7,
           "peripheral": "USART4",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 107,
+      "capability_decision_count": 109,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
@@ -2462,6 +2577,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "decision_id": "runtime-support:rtc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "rtc",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -3586,6 +3712,17 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "stm32g071rb",
@@ -3616,7 +3753,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 17,
+      "heuristic_fact_count": 19,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
@@ -3651,6 +3788,12 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:rtc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:spi",
           "fact_kind": "capability"
         },
@@ -3676,6 +3819,12 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART1:DMA1:DMA1_CH2:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -3806,6 +3955,24 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
           "class_capability_count": 11,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -3821,6 +3988,15 @@
           "instance_capability_count": 0,
           "peripheral": "TIM7",
           "peripheral_class": "timer"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
       "route_decision_count": 192,
@@ -9638,6 +9814,24 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "FDCAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "FDCAN2",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -9692,6 +9886,15 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
           "class_capability_count": 13,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
@@ -9707,6 +9910,15 @@
           "instance_capability_count": 5,
           "peripheral": "LPUART2",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
@@ -9878,9 +10090,18 @@
           "instance_capability_count": 7,
           "peripheral": "USART6",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 134,
+      "capability_decision_count": 143,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
@@ -9892,6 +10113,83 @@
           "peripheral_class": "adc",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "capability:fdcan:fdcan1-v1-0-cube:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "can",
+          "scope": "ip_block",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "capability:fdcan:fdcan1-v1-0-cube:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "can",
+          "scope": "ip_block",
+          "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "runtime-support:can",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "can",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "capability-instance:fdcan1:lqfp64:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "FDCAN1",
+          "peripheral_class": "can",
+          "scope": "instance_overlay",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "capability-instance:fdcan1:lqfp64:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "FDCAN1",
+          "peripheral_class": "can",
+          "scope": "instance_overlay",
+          "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "capability-instance:fdcan2:lqfp64:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "FDCAN2",
+          "peripheral_class": "can",
+          "scope": "instance_overlay",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "capability-instance:fdcan2:lqfp64:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "FDCAN2",
+          "peripheral_class": "can",
+          "scope": "instance_overlay",
+          "value": "tx"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
@@ -9934,6 +10232,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "runtime-support:rtc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "rtc",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -11355,6 +11664,17 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "stm32g0b1re",
@@ -11385,12 +11705,18 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 17,
+      "heuristic_fact_count": 20,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:adc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:can",
           "fact_kind": "capability"
         },
         {
@@ -11415,6 +11741,12 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:rtc",
           "fact_kind": "capability"
         },
         {
@@ -11445,6 +11777,12 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART1:DMA1:DMA1_CH2:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -11593,6 +11931,24 @@
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
           "class_capability_count": 11,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -11608,9 +11964,18 @@
           "instance_capability_count": 0,
           "peripheral": "TIM7",
           "peripheral_class": "timer"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
-      "route_decision_count": 250,
+      "route_decision_count": 264,
       "route_decisions": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
@@ -13559,6 +13924,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan2:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pb0:fdcan2:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pb0:fdcan2:rx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PB0",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb0",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pb0:fdcan2:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:lpuart:sci3-v1-4-cube:cts",
             "capability-instance:lpuart2:lqfp64:cts"
           ],
@@ -13937,6 +14329,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan2:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pb12:fdcan2:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pb12:fdcan2:rx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PB12",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb12",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pb12:fdcan2:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:lpuart:sci3-v1-4-cube:de",
             "capability-instance:lpuart1:lqfp64:de"
           ],
@@ -14068,6 +14487,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:2",
           "signal": "bk"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan2:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pb13:fdcan2:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pb13:fdcan2:tx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PB13",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb13",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pb13:fdcan2:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "tx"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
@@ -14635,6 +15081,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:8",
           "signal": "nss"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan2:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pb1:fdcan2:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pb1:fdcan2:tx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PB1",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb1",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pb1:fdcan2:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "tx"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
@@ -15395,6 +15868,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan2:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pb5:fdcan2:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pb5:fdcan2:rx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PB5",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb5",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pb5:fdcan2:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v3-5-cube:mosi",
             "capability-instance:spi1:lqfp64:mosi"
           ],
@@ -15580,6 +16080,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:8",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan2:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pb6:fdcan2:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pb6:fdcan2:tx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PB6",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb6",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pb6:fdcan2:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "tx"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
@@ -15989,6 +16516,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan1:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pb8:fdcan1:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan1",
+            "operation:reset-release:fdcan1",
+            "operation:route:pb8:fdcan1:rx"
+          ],
+          "peripheral": "FDCAN1",
+          "pin": "PB8",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb8",
+            "requirement:clock-enable:fdcan1",
+            "requirement:reset-release:fdcan1",
+            "requirement:source-select:pb8:fdcan1:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v3-5-cube:sck",
             "capability-instance:spi2:lqfp64:sck"
           ],
@@ -16146,6 +16700,33 @@
           ],
           "route_kind": "alternate-function",
           "route_selector": "selector:8",
+          "signal": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan1:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pb9:fdcan1:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan1",
+            "operation:reset-release:fdcan1",
+            "operation:route:pb9:fdcan1:tx"
+          ],
+          "peripheral": "FDCAN1",
+          "pin": "PB9",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb9",
+            "requirement:clock-enable:fdcan1",
+            "requirement:reset-release:fdcan1",
+            "requirement:source-select:pb9:fdcan1:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
           "signal": "tx"
         },
         {
@@ -16799,6 +17380,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan2:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pc2:fdcan2:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pc2:fdcan2:rx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PC2",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pc2",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pc2:fdcan2:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v3-5-cube:miso",
             "capability-instance:spi2:lqfp64:miso"
           ],
@@ -16853,6 +17461,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan2:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pc3:fdcan2:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan2",
+            "operation:reset-release:fdcan2",
+            "operation:route:pc3:fdcan2:tx"
+          ],
+          "peripheral": "FDCAN2",
+          "pin": "PC3",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pc3",
+            "requirement:clock-enable:fdcan2",
+            "requirement:reset-release:fdcan2",
+            "requirement:source-select:pc3:fdcan2:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v3-5-cube:mosi",
             "capability-instance:spi2:lqfp64:mosi"
           ],
@@ -16876,6 +17511,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:1",
           "signal": "mosi"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan1:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pc4:fdcan1:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan1",
+            "operation:reset-release:fdcan1",
+            "operation:route:pc4:fdcan1:rx"
+          ],
+          "peripheral": "FDCAN1",
+          "pin": "PC4",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pc4",
+            "requirement:clock-enable:fdcan1",
+            "requirement:reset-release:fdcan1",
+            "requirement:source-select:pc4:fdcan1:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
@@ -16983,6 +17645,33 @@
           ],
           "route_kind": "alternate-function",
           "route_selector": "selector:0",
+          "signal": "tx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan1:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pc5:fdcan1:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan1",
+            "operation:reset-release:fdcan1",
+            "operation:route:pc5:fdcan1:tx"
+          ],
+          "peripheral": "FDCAN1",
+          "pin": "PC5",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pc5",
+            "requirement:clock-enable:fdcan1",
+            "requirement:reset-release:fdcan1",
+            "requirement:source-select:pc5:fdcan1:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
           "signal": "tx"
         },
         {
@@ -17420,6 +18109,33 @@
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:rx",
+            "capability-instance:fdcan1:lqfp64:rx"
+          ],
+          "decision_id": "candidate:pd0:fdcan1:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan1",
+            "operation:reset-release:fdcan1",
+            "operation:route:pd0:fdcan1:rx"
+          ],
+          "peripheral": "FDCAN1",
+          "pin": "PD0",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pd0",
+            "requirement:clock-enable:fdcan1",
+            "requirement:reset-release:fdcan1",
+            "requirement:source-select:pd0:fdcan1:rx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "rx"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v3-5-cube:nss",
             "capability-instance:spi2:lqfp64:nss"
           ],
@@ -17470,6 +18186,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:2",
           "signal": "ch1"
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "capability_ids": [
+            "capability:fdcan:fdcan1-v1-0-cube:tx",
+            "capability-instance:fdcan1:lqfp64:tx"
+          ],
+          "decision_id": "candidate:pd1:fdcan1:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:fdcan1",
+            "operation:reset-release:fdcan1",
+            "operation:route:pd1:fdcan1:tx"
+          ],
+          "peripheral": "FDCAN1",
+          "pin": "PD1",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pd1",
+            "requirement:clock-enable:fdcan1",
+            "requirement:reset-release:fdcan1",
+            "requirement:source-select:pd1:fdcan1:tx"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:3",
+          "signal": "tx"
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
@@ -18364,6 +19107,50 @@
         }
       ],
       "route_group_decisions": [
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "candidate_ids": [
+            "candidate:pb8:fdcan1:rx",
+            "candidate:pb9:fdcan1:tx",
+            "candidate:pc4:fdcan1:rx",
+            "candidate:pc5:fdcan1:tx",
+            "candidate:pd0:fdcan1:rx",
+            "candidate:pd1:fdcan1:tx"
+          ],
+          "conflict_group": "conflict:fdcan1:lqfp64:tx-rx",
+          "decision_id": "group:fdcan1:lqfp64:tx-rx",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp64",
+          "peripheral": "FDCAN1",
+          "signals": [
+            "tx",
+            "rx"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "candidate_ids": [
+            "candidate:pb0:fdcan2:rx",
+            "candidate:pb12:fdcan2:rx",
+            "candidate:pb13:fdcan2:tx",
+            "candidate:pb1:fdcan2:tx",
+            "candidate:pb5:fdcan2:rx",
+            "candidate:pb6:fdcan2:tx",
+            "candidate:pc2:fdcan2:rx",
+            "candidate:pc3:fdcan2:tx"
+          ],
+          "conflict_group": "conflict:fdcan2:lqfp64:tx-rx",
+          "decision_id": "group:fdcan2:lqfp64:tx-rx",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp64",
+          "peripheral": "FDCAN2",
+          "signals": [
+            "tx",
+            "rx"
+          ]
+        },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "candidate_ids": [

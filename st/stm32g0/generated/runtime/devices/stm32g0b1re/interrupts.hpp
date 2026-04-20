@@ -51,12 +51,13 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 19> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 21> kInterruptDescriptors = {{
   {InterruptId::ADC_COMP, PeripheralId::ADC1, 12u, 28u},
   {InterruptId::TIM6_DAC_LPTIM1, PeripheralId::DAC, 17u, 33u},
   {InterruptId::DMA1_Channel1, PeripheralId::DMA1, 9u, 25u},
   {InterruptId::DMA1_Channel2_3, PeripheralId::DMA1, 10u, 26u},
   {InterruptId::DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5, PeripheralId::DMA1, 11u, 27u},
+  {InterruptId::RTC_TAMP, PeripheralId::RTC, 2u, 18u},
   {InterruptId::SPI1, PeripheralId::SPI1, 25u, 41u},
   {InterruptId::SPI2_SPI3, PeripheralId::SPI2, 26u, 42u},
   {InterruptId::TIM1_BRK_UP_TRG_COM, PeripheralId::TIM1, 13u, 29u},
@@ -71,6 +72,7 @@ inline constexpr std::array<InterruptDescriptor, 19> kInterruptDescriptors = {{
   {InterruptId::USART1, PeripheralId::USART1, 27u, 43u},
   {InterruptId::USART2_LPUART2, PeripheralId::USART2, 28u, 44u},
   {InterruptId::USART3_USART4_USART5_USART6_LPUART1, PeripheralId::USART3, 29u, 45u},
+  {InterruptId::WWDG, PeripheralId::WWDG, 0u, 16u},
 }};
 }
 }

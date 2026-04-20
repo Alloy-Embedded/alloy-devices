@@ -21,10 +21,12 @@ struct ResetDescriptor {
   FieldId field_id;
   ActiveLevelId active_level_id;
 };
-inline constexpr std::array<ResetDescriptor, 29> kResetDescriptors = {{
+inline constexpr std::array<ResetDescriptor, 31> kResetDescriptors = {{
   {ResetId::reset_adc1, PeripheralId::ADC1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_adcrst, ActiveLevelId::active_level_high},
   {ResetId::reset_dma1, PeripheralId::DMA1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
   {ResetId::reset_dmamux1, PeripheralId::DMAMUX1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
+  {ResetId::reset_fdcan1, PeripheralId::FDCAN1, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_fdcanrst, ActiveLevelId::active_level_high},
+  {ResetId::reset_fdcan2, PeripheralId::FDCAN2, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_fdcanrst, ActiveLevelId::active_level_high},
   {ResetId::reset_gpioa, PeripheralId::GPIOA, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpioarst, ActiveLevelId::active_level_high},
   {ResetId::reset_gpiob, PeripheralId::GPIOB, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiobrst, ActiveLevelId::active_level_high},
   {ResetId::reset_gpioc, PeripheralId::GPIOC, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiocrst, ActiveLevelId::active_level_high},

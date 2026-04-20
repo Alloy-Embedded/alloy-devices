@@ -490,11 +490,27 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOF> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::IWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::LPUART1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart1;
   static constexpr ResetId kResetId = ResetId::reset_lpuart1;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::selector_lpuart1_kernel;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::RTC> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
 template<>
@@ -617,7 +633,15 @@ struct PeripheralClockBindingTraits<PeripheralId::USART4> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+inline constexpr std::array<PeripheralId, 28> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DAC,
   PeripheralId::DMA1,
@@ -627,7 +651,9 @@ inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
   PeripheralId::GPIOC,
   PeripheralId::GPIOD,
   PeripheralId::GPIOF,
+  PeripheralId::IWDG,
   PeripheralId::LPUART1,
+  PeripheralId::RTC,
   PeripheralId::SPI1,
   PeripheralId::SPI2,
   PeripheralId::TIM1,
@@ -643,6 +669,7 @@ inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
   PeripheralId::USART2,
   PeripheralId::USART3,
   PeripheralId::USART4,
+  PeripheralId::WWDG,
 }};
 }
 }

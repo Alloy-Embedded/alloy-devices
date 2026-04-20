@@ -9,6 +9,7 @@ namespace runtime {
 enum class BackendSchemaId : std::uint16_t {
   none,
   schema_alloy_adc_st_aditf4_v3_0_g0_cube,
+  schema_alloy_can_st_fdcan1_v1_0_cube,
   schema_alloy_clock_st_stm32g0_512_rcc_v1_0,
   schema_alloy_clock_st_stm32g0_64_rcc_v1_0,
   schema_alloy_clock_st_stm32g05_rcc_v1_0,
@@ -19,14 +20,12 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_dma_router_st_dmamux,
   schema_alloy_dma_st_dma,
   schema_alloy_exti_st_exti,
-  schema_alloy_fdcan_st_fdcan1_v1_0_cube,
   schema_alloy_flash_st_flash,
   schema_alloy_gpio_st_gpio,
   schema_alloy_hdmi_cec_st_hdmi_cec_v2_0_cube,
   schema_alloy_i2c1_st_i2c2_v1_1_cube,
   schema_alloy_i2c2_st_i2c2_v1_1_cube,
   schema_alloy_i2c3_st_i2c2_v1_1_cube,
-  schema_alloy_iwdg_st_iwdg1_v2_0,
   schema_alloy_lptim_st_g0xx_lptimer1_v1_4_cube,
   schema_alloy_pinmux_stm32_af_v1,
   schema_alloy_pwr_st_pwr,
@@ -48,12 +47,14 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_ucpd_st_ucpd_v1_0_cube,
   schema_alloy_usb_st_usb,
   schema_alloy_vrefbuf_st_vrefbuf,
-  schema_alloy_wwdg_st_wwdg1_v2_0,
+  schema_alloy_watchdog_st_iwdg1_v2_0,
+  schema_alloy_watchdog_st_wwdg1_v2_0,
 };
 
 enum class PeripheralClassId : std::uint16_t {
   none,
   class_adc,
+  class_can,
   class_comp,
   class_crc,
   class_dac,
@@ -61,14 +62,12 @@ enum class PeripheralClassId : std::uint16_t {
   class_dma,
   class_dma_router,
   class_exti,
-  class_fdcan,
   class_flash,
   class_gpio,
   class_hdmi_cec,
   class_i2c1,
   class_i2c2,
   class_i2c3,
-  class_iwdg,
   class_lptim,
   class_pwr,
   class_rcc,
@@ -83,7 +82,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_ucpd,
   class_usb,
   class_vrefbuf,
-  class_wwdg,
+  class_watchdog,
 };
 
 enum class SignalId : std::uint16_t {

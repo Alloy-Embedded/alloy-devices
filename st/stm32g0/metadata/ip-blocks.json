@@ -845,14 +845,14 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.fdcan.st-fdcan1-v1-0-cube",
+      "backend_schema_id": "alloy.can.st-fdcan1-v1-0-cube",
       "capability_ids": [
         "capability:fdcan:fdcan1-v1-0-cube:rx",
         "capability:fdcan:fdcan1-v1-0-cube:tx"
       ],
       "ip_name": "fdcan",
       "ip_version": "fdcan1_v1_0_Cube",
-      "peripheral_class": "fdcan",
+      "peripheral_class": "can",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -948,11 +948,11 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.iwdg.st-iwdg1-v2-0",
+      "backend_schema_id": "alloy.watchdog.st-iwdg1-v2-0",
       "capability_ids": [],
       "ip_name": "iwdg",
       "ip_version": "iwdg1_v2_0",
-      "peripheral_class": "iwdg",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -1259,11 +1259,11 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.wwdg.st-wwdg1-v2-0",
+      "backend_schema_id": "alloy.watchdog.st-wwdg1-v2-0",
       "capability_ids": [],
       "ip_name": "wwdg",
       "ip_version": "wwdg1_v2_0",
-      "peripheral_class": "wwdg",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",

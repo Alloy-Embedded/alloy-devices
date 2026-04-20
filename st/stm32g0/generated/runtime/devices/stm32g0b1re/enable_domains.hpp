@@ -25,10 +25,12 @@ struct EnableDomainDescriptor {
   RegisterId register_id;
   FieldId field_id;
 };
-inline constexpr std::array<EnableDomainDescriptor, 29> kEnableDomains = {{
+inline constexpr std::array<EnableDomainDescriptor, 31> kEnableDomains = {{
   {EnableDomainId::gate_adc1, PeripheralId::ADC1, ClockGateId::gate_adc1, ClockNodeId::clock_node_rcc_apbenr2, RegisterId::register_rcc_apbenr2, FieldId::field_rcc_apbenr2_adcen},
   {EnableDomainId::gate_dma1, PeripheralId::DMA1, ClockGateId::gate_dma1, ClockNodeId::clock_node_rcc_ahbenr, RegisterId::register_rcc_ahbenr, FieldId::field_rcc_ahbenr_dma1en},
   {EnableDomainId::gate_dmamux1, PeripheralId::DMAMUX1, ClockGateId::gate_dmamux1, ClockNodeId::clock_node_rcc_ahbenr, RegisterId::register_rcc_ahbenr, FieldId::field_rcc_ahbenr_dma1en},
+  {EnableDomainId::gate_fdcan1, PeripheralId::FDCAN1, ClockGateId::gate_fdcan1, ClockNodeId::clock_node_rcc_apbenr1, RegisterId::register_rcc_apbenr1, FieldId::field_rcc_apbenr1_fdcanen},
+  {EnableDomainId::gate_fdcan2, PeripheralId::FDCAN2, ClockGateId::gate_fdcan2, ClockNodeId::clock_node_rcc_apbenr1, RegisterId::register_rcc_apbenr1, FieldId::field_rcc_apbenr1_fdcanen},
   {EnableDomainId::gate_gpioa, PeripheralId::GPIOA, ClockGateId::gate_gpioa, ClockNodeId::clock_node_rcc_iopenr, RegisterId::register_rcc_iopenr, FieldId::field_rcc_iopenr_gpioaen},
   {EnableDomainId::gate_gpiob, PeripheralId::GPIOB, ClockGateId::gate_gpiob, ClockNodeId::clock_node_rcc_iopenr, RegisterId::register_rcc_iopenr, FieldId::field_rcc_iopenr_gpioben},
   {EnableDomainId::gate_gpioc, PeripheralId::GPIOC, ClockGateId::gate_gpioc, ClockNodeId::clock_node_rcc_iopenr, RegisterId::register_rcc_iopenr, FieldId::field_rcc_iopenr_gpiocen},
@@ -119,6 +121,38 @@ template<>
 struct PeripheralEnableDomainTraits<PeripheralId::DMAMUX1> {
   static constexpr bool kPresent = true;
   static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_dmamux1;
+};
+
+template<>
+struct EnableDomainTraits<EnableDomainId::gate_fdcan1> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::FDCAN1;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_fdcan1;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_rcc_apbenr1;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_fdcanen;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::FDCAN1> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_fdcan1;
+};
+
+template<>
+struct EnableDomainTraits<EnableDomainId::gate_fdcan2> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::FDCAN2;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_fdcan2;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_rcc_apbenr1;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_fdcanen;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::FDCAN2> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_fdcan2;
 };
 
 template<>
