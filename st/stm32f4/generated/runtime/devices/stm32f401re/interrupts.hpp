@@ -54,7 +54,7 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 16> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 19> kInterruptDescriptors = {{
   {InterruptId::ADC, PeripheralId::ADC1, 18u, 34u},
   {InterruptId::RTC_WKUP, PeripheralId::DMA1, 3u, 19u},
   {InterruptId::RTC_Alarm, PeripheralId::DMA1, 41u, 57u},
@@ -65,12 +65,15 @@ inline constexpr std::array<InterruptDescriptor, 16> kInterruptDescriptors = {{
   {InterruptId::TIM1_TRG_COM_TIM11, PeripheralId::GPIOD, 26u, 42u},
   {InterruptId::TIM1_CC, PeripheralId::GPIOD, 27u, 43u},
   {InterruptId::SDIO, PeripheralId::GPIOH, 49u, 65u},
+  {InterruptId::I2C2_EV, PeripheralId::RTC, 33u, 49u},
+  {InterruptId::I2C2_ER, PeripheralId::RTC, 34u, 50u},
   {InterruptId::SPI1, PeripheralId::TIM10, 35u, 51u},
   {InterruptId::SPI2, PeripheralId::TIM11, 36u, 52u},
   {InterruptId::SPI3, PeripheralId::TIM2, 51u, 67u},
   {InterruptId::SPI4, PeripheralId::TIM3, 84u, 100u},
   {InterruptId::OTG_FS_WKUP, PeripheralId::USART1, 42u, 58u},
   {InterruptId::OTG_FS, PeripheralId::USART1, 67u, 83u},
+  {InterruptId::PVD, PeripheralId::WWDG, 1u, 17u},
 }};
 }
 }

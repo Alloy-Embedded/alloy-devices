@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "stm32f401re",
-      "fact_count": 281,
+      "fact_count": 286,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/startup.hpp",
@@ -1740,6 +1740,60 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:rtc:i2c2-er",
+            "interrupt": "I2C2_ER",
+            "line": 34,
+            "peripheral": "RTC",
+            "vector_slot": 50
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtc:i2c2-er",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtc:i2c2-ev",
+            "interrupt": "I2C2_EV",
+            "line": 33,
+            "peripheral": "RTC",
+            "vector_slot": 49
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtc:i2c2-ev",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:tim10:spi1",
             "interrupt": "SPI1",
             "line": 35,
@@ -1882,6 +1936,33 @@
             "vector_slot": 58
           },
           "fact_id": "interrupt-binding:interrupt-binding:usart1:otg-fs-wkup",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:wwdg:pvd",
+            "interrupt": "PVD",
+            "line": 1,
+            "peripheral": "WWDG",
+            "vector_slot": 17
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:wwdg:pvd",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -5732,6 +5813,36 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:rtc",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "rtc",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:rtc",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:RTC"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "derivation_kind": "patched",
           "detail": {
             "capability_id": "capability:spi:spi2s1-v2-2-cube:miso",
@@ -7602,6 +7713,37 @@
           "supporting_fact_ids": []
         },
         {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:watchdog",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "watchdog",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:watchdog",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:IWDG",
+            "runtime-peripheral:WWDG"
+          ]
+        },
+        {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/system_sequences.hpp",
           "derivation_kind": "inferred",
           "detail": {
@@ -7816,7 +7958,7 @@
     },
     {
       "device": "stm32f405rg",
-      "fact_count": 356,
+      "fact_count": 370,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/startup.hpp",
@@ -10585,6 +10727,222 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:can1:can1-rx0",
+            "interrupt": "CAN1_RX0",
+            "line": 20,
+            "peripheral": "CAN1",
+            "vector_slot": 36
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can1:can1-rx0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can1:can1-rx1",
+            "interrupt": "CAN1_RX1",
+            "line": 21,
+            "peripheral": "CAN1",
+            "vector_slot": 37
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can1:can1-rx1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can1:can1-sce",
+            "interrupt": "CAN1_SCE",
+            "line": 22,
+            "peripheral": "CAN1",
+            "vector_slot": 38
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can1:can1-sce",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can1:can1-tx",
+            "interrupt": "CAN1_TX",
+            "line": 19,
+            "peripheral": "CAN1",
+            "vector_slot": 35
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can1:can1-tx",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can2:can2-rx0",
+            "interrupt": "CAN2_RX0",
+            "line": 64,
+            "peripheral": "CAN2",
+            "vector_slot": 80
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can2:can2-rx0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can2:can2-rx1",
+            "interrupt": "CAN2_RX1",
+            "line": 65,
+            "peripheral": "CAN2",
+            "vector_slot": 81
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can2:can2-rx1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can2:can2-sce",
+            "interrupt": "CAN2_SCE",
+            "line": 66,
+            "peripheral": "CAN2",
+            "vector_slot": 82
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can2:can2-sce",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:can2:can2-tx",
+            "interrupt": "CAN2_TX",
+            "line": 63,
+            "peripheral": "CAN2",
+            "vector_slot": 79
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:can2:can2-tx",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:dac:tim6-dac",
             "interrupt": "TIM6_DAC",
             "line": 54,
@@ -11024,6 +11382,60 @@
             "vector_slot": 86
           },
           "fact_id": "interrupt-binding:interrupt-binding:dma2:dma2-stream7",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtc:rtc-alarm",
+            "interrupt": "RTC_Alarm",
+            "line": 41,
+            "peripheral": "RTC",
+            "vector_slot": 57
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtc:rtc-alarm",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtc:rtc-wkup",
+            "interrupt": "RTC_WKUP",
+            "line": 3,
+            "peripheral": "RTC",
+            "vector_slot": 19
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtc:rtc-wkup",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -11618,6 +12030,33 @@
             "vector_slot": 87
           },
           "fact_id": "interrupt-binding:interrupt-binding:usart6:usart6",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:wwdg:wwdg",
+            "interrupt": "WWDG",
+            "line": 0,
+            "peripheral": "WWDG",
+            "vector_slot": 16
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:wwdg:wwdg",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -15435,6 +15874,37 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:can",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:can",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:CAN1",
+            "runtime-peripheral:CAN2"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:dac",
             "name": "runtime-supported",
             "peripheral": null,
@@ -15530,6 +16000,36 @@
             "runtime-peripheral:GPIOI",
             "runtime-peripheral:GPIOJ",
             "runtime-peripheral:GPIOK"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:rtc",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "rtc",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:rtc",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:RTC"
           ]
         },
         {
@@ -17414,6 +17914,37 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:watchdog",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "watchdog",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:watchdog",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:IWDG",
+            "runtime-peripheral:WWDG"
+          ]
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/system_sequences.hpp",

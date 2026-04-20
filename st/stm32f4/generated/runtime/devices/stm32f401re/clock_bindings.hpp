@@ -356,6 +356,22 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOH> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::IWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::RTC> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::SPI1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_spi1;
@@ -483,7 +499,15 @@ struct PeripheralClockBindingTraits<PeripheralId::USART6> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+inline constexpr std::array<PeripheralId, 28> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMA2,
@@ -493,6 +517,8 @@ inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
   PeripheralId::GPIOD,
   PeripheralId::GPIOE,
   PeripheralId::GPIOH,
+  PeripheralId::IWDG,
+  PeripheralId::RTC,
   PeripheralId::SPI1,
   PeripheralId::SPI2,
   PeripheralId::SPI3,
@@ -509,6 +535,7 @@ inline constexpr std::array<PeripheralId, 25> kClockBoundPeripherals = {{
   PeripheralId::USART1,
   PeripheralId::USART2,
   PeripheralId::USART6,
+  PeripheralId::WWDG,
 }};
 }
 }

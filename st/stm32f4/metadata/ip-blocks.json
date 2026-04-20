@@ -1019,11 +1019,11 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.iwdg.st-iwdg1-v1-1",
+      "backend_schema_id": "alloy.watchdog.st-iwdg1-v1-1",
       "capability_ids": [],
       "ip_name": "iwdg",
       "ip_version": "iwdg1_v1_1",
-      "peripheral_class": "iwdg",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
@@ -1248,11 +1248,11 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.wwdg.st-wwdg1-v1-0",
+      "backend_schema_id": "alloy.watchdog.st-wwdg1-v1-0",
       "capability_ids": [],
       "ip_name": "wwdg",
       "ip_version": "wwdg1_v1_0",
-      "peripheral_class": "wwdg",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",

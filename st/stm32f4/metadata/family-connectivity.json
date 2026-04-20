@@ -2678,7 +2678,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.iwdg.st-iwdg1-v1-1",
+      "backend_schema_id": "alloy.watchdog.st-iwdg1-v1-1",
       "base_address": 1073754112,
       "instance": 0,
       "ip_name": "iwdg",
@@ -3596,7 +3596,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.wwdg.st-wwdg1-v1-0",
+      "backend_schema_id": "alloy.watchdog.st-wwdg1-v1-0",
       "base_address": 1073753088,
       "instance": 0,
       "ip_name": "wwdg",

@@ -20,6 +20,7 @@ struct TimerSemanticTraits {
   static constexpr std::uint32_t kChannelCount = 0u;
   static constexpr bool kHasCompare = false;
   static constexpr bool kHasCapture = false;
+  static constexpr bool kHasEncoder = false;
   static constexpr bool kHasPwm = false;
   static constexpr bool kHasOnePulse = false;
   static constexpr bool kHasCenterAligned = false;
@@ -47,6 +48,12 @@ struct TimerSemanticTraits {
   static constexpr RuntimeFieldRef kCenterAlignedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
 };
 
 template<>
@@ -57,6 +64,7 @@ struct TimerSemanticTraits<PeripheralId::TIM1> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -84,6 +92,12 @@ struct TimerSemanticTraits<PeripheralId::TIM1> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::field_tim1_cr1_cms, RuntimeRegisterRef{RegisterId::register_tim1_cr1, 0x40010000u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim1_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim1_cr1, 0x40010000u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim1_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim1_smcr, 0x40010000u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tim1_cr1_dir, RuntimeRegisterRef{RegisterId::register_tim1_cr1, 0x40010000u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -94,6 +108,7 @@ struct TimerSemanticTraits<PeripheralId::TIM10> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -121,6 +136,12 @@ struct TimerSemanticTraits<PeripheralId::TIM10> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim10_cr1, 0x40014400u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim10_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim10_cr1, 0x40014400u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40014400u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim10_cr1, 0x40014400u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -131,6 +152,7 @@ struct TimerSemanticTraits<PeripheralId::TIM11> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -158,6 +180,12 @@ struct TimerSemanticTraits<PeripheralId::TIM11> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim11_cr1, 0x40014800u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim11_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim11_cr1, 0x40014800u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40014800u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim11_cr1, 0x40014800u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -168,6 +196,7 @@ struct TimerSemanticTraits<PeripheralId::TIM2> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -195,6 +224,12 @@ struct TimerSemanticTraits<PeripheralId::TIM2> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::field_tim2_cr1_cms, RuntimeRegisterRef{RegisterId::register_tim2_cr1, 0x40000000u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim2_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim2_cr1, 0x40000000u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim2_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim2_smcr, 0x40000000u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tim2_cr1_dir, RuntimeRegisterRef{RegisterId::register_tim2_cr1, 0x40000000u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -205,6 +240,7 @@ struct TimerSemanticTraits<PeripheralId::TIM3> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -232,6 +268,12 @@ struct TimerSemanticTraits<PeripheralId::TIM3> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::field_tim3_cr1_cms, RuntimeRegisterRef{RegisterId::register_tim3_cr1, 0x40000400u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim3_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim3_cr1, 0x40000400u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim3_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim3_smcr, 0x40000400u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tim3_cr1_dir, RuntimeRegisterRef{RegisterId::register_tim3_cr1, 0x40000400u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -242,6 +284,7 @@ struct TimerSemanticTraits<PeripheralId::TIM4> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -269,6 +312,12 @@ struct TimerSemanticTraits<PeripheralId::TIM4> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::field_tim4_cr1_cms, RuntimeRegisterRef{RegisterId::register_tim4_cr1, 0x40000800u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim4_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim4_cr1, 0x40000800u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim4_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim4_smcr, 0x40000800u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tim4_cr1_dir, RuntimeRegisterRef{RegisterId::register_tim4_cr1, 0x40000800u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -279,6 +328,7 @@ struct TimerSemanticTraits<PeripheralId::TIM5> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -306,6 +356,12 @@ struct TimerSemanticTraits<PeripheralId::TIM5> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::field_tim5_cr1_cms, RuntimeRegisterRef{RegisterId::register_tim5_cr1, 0x40000C00u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim5_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim5_cr1, 0x40000C00u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim5_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim5_smcr, 0x40000C00u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tim5_cr1_dir, RuntimeRegisterRef{RegisterId::register_tim5_cr1, 0x40000C00u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -316,6 +372,7 @@ struct TimerSemanticTraits<PeripheralId::TIM8> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -343,6 +400,12 @@ struct TimerSemanticTraits<PeripheralId::TIM8> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::field_tim8_cr1_cms, RuntimeRegisterRef{RegisterId::register_tim8_cr1, 0x40010400u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim8_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim8_cr1, 0x40010400u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim8_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim8_smcr, 0x40010400u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tim8_cr1_dir, RuntimeRegisterRef{RegisterId::register_tim8_cr1, 0x40010400u, 0u, true}, 4u, 1u, true};
 };
 
 template<>
@@ -353,6 +416,7 @@ struct TimerSemanticTraits<PeripheralId::TIM9> {
   static constexpr std::uint32_t kChannelCount = 4u;
   static constexpr bool kHasCompare = true;
   static constexpr bool kHasCapture = true;
+  static constexpr bool kHasEncoder = true;
   static constexpr bool kHasPwm = true;
   static constexpr bool kHasOnePulse = true;
   static constexpr bool kHasCenterAligned = true;
@@ -380,6 +444,12 @@ struct TimerSemanticTraits<PeripheralId::TIM9> {
   static constexpr RuntimeFieldRef kCenterAlignedField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim9_cr1, 0x40014000u, 0u, true}, 5u, 2u, true};
   static constexpr RuntimeFieldRef kAutoReloadPreloadField = RuntimeFieldRef{FieldId::field_tim9_cr1_arpe, RuntimeRegisterRef{RegisterId::register_tim9_cr1, 0x40014000u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kClockSourceField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderModeField = RuntimeFieldRef{FieldId::field_tim9_smcr_sms, RuntimeRegisterRef{RegisterId::register_tim9_smcr, 0x40014000u, 8u, true}, 0u, 3u, true};
+  static constexpr RuntimeFieldRef kEncoderEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPositionEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_tim9_cr1, 0x40014000u, 0u, true}, 4u, 1u, true};
 };
 
 template<PeripheralId Id, std::size_t ChannelIndex>
@@ -387,6 +457,7 @@ struct TimerChannelSemanticTraits {
   static constexpr bool kPresent = false;
   static constexpr bool kSupportsCompare = false;
   static constexpr bool kSupportsCapture = false;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = false;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = kInvalidRegisterRef;
@@ -412,6 +483,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM1, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = true;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim1_ccmr1_input, 0x40010000u, 24u, true};
@@ -437,6 +509,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM1, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = true;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim1_ccmr1_input, 0x40010000u, 24u, true};
@@ -462,6 +535,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM1, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = true;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim1_ccmr2_input, 0x40010000u, 28u, true};
@@ -487,6 +561,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM1, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim1_ccmr2_input, 0x40010000u, 28u, true};
@@ -512,6 +587,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM10, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim10_ccmr1_input, 0x40014400u, 24u, true};
@@ -537,6 +613,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM10, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim10_ccmr1_input, 0x40014400u, 24u, true};
@@ -562,6 +639,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM10, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40014400u, 28u, true};
@@ -587,6 +665,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM10, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40014400u, 28u, true};
@@ -612,6 +691,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM11, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim11_ccmr1_input, 0x40014800u, 24u, true};
@@ -637,6 +717,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM11, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim11_ccmr1_input, 0x40014800u, 24u, true};
@@ -662,6 +743,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM11, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40014800u, 28u, true};
@@ -687,6 +769,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM11, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40014800u, 28u, true};
@@ -712,6 +795,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM2, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim2_ccmr1_input, 0x40000000u, 24u, true};
@@ -737,6 +821,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM2, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim2_ccmr1_input, 0x40000000u, 24u, true};
@@ -762,6 +847,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM2, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim2_ccmr2_input, 0x40000000u, 28u, true};
@@ -787,6 +873,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM2, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim2_ccmr2_input, 0x40000000u, 28u, true};
@@ -812,6 +899,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM3, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim3_ccmr1_input, 0x40000400u, 24u, true};
@@ -837,6 +925,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM3, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim3_ccmr1_input, 0x40000400u, 24u, true};
@@ -862,6 +951,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM3, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim3_ccmr2_input, 0x40000400u, 28u, true};
@@ -887,6 +977,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM3, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim3_ccmr2_input, 0x40000400u, 28u, true};
@@ -912,6 +1003,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM4, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim4_ccmr1_input, 0x40000800u, 24u, true};
@@ -937,6 +1029,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM4, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim4_ccmr1_input, 0x40000800u, 24u, true};
@@ -962,6 +1055,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM4, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim4_ccmr2_input, 0x40000800u, 28u, true};
@@ -987,6 +1081,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM4, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim4_ccmr2_input, 0x40000800u, 28u, true};
@@ -1012,6 +1107,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM5, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim5_ccmr1_input, 0x40000C00u, 24u, true};
@@ -1037,6 +1133,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM5, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim5_ccmr1_input, 0x40000C00u, 24u, true};
@@ -1062,6 +1159,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM5, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim5_ccmr2_input, 0x40000C00u, 28u, true};
@@ -1087,6 +1185,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM5, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim5_ccmr2_input, 0x40000C00u, 28u, true};
@@ -1112,6 +1211,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM8, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = true;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim8_ccmr1_input, 0x40010400u, 24u, true};
@@ -1137,6 +1237,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM8, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = true;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim8_ccmr1_input, 0x40010400u, 24u, true};
@@ -1162,6 +1263,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM8, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = true;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim8_ccmr2_input, 0x40010400u, 28u, true};
@@ -1187,6 +1289,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM8, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim8_ccmr2_input, 0x40010400u, 28u, true};
@@ -1212,6 +1315,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM9, 0u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim9_ccmr1_input, 0x40014000u, 24u, true};
@@ -1237,6 +1341,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM9, 1u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = true;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_tim9_ccmr1_input, 0x40014000u, 24u, true};
@@ -1262,6 +1367,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM9, 2u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40014000u, 28u, true};
@@ -1287,6 +1393,7 @@ struct TimerChannelSemanticTraits<PeripheralId::TIM9, 3u> {
   static constexpr bool kPresent = true;
   static constexpr bool kSupportsCompare = true;
   static constexpr bool kSupportsCapture = true;
+  static constexpr bool kSupportsEncoderInput = false;
   static constexpr bool kSupportsPwm = true;
   static constexpr bool kSupportsComplementaryOutput = false;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40014000u, 28u, true};

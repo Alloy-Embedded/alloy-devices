@@ -35,7 +35,6 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_i2c3_st_i2c1_v1_5_cube,
   schema_alloy_i2s2ext_st_i2s2ext,
   schema_alloy_i2s3ext_st_i2s3ext,
-  schema_alloy_iwdg_st_iwdg1_v1_1,
   schema_alloy_ltdc_st_ltdc,
   schema_alloy_mpu_st_mpu,
   schema_alloy_nvic_st_stm32f401,
@@ -67,7 +66,8 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_uart_st_sci2_v1_2_cube,
   schema_alloy_uart_st_sci2_v1_2_f4_cube,
   schema_alloy_uart_st_uart,
-  schema_alloy_wwdg_st_wwdg1_v1_0,
+  schema_alloy_watchdog_st_iwdg1_v1_1,
+  schema_alloy_watchdog_st_wwdg1_v1_0,
 };
 
 enum class PeripheralClassId : std::uint16_t {
@@ -98,7 +98,6 @@ enum class PeripheralClassId : std::uint16_t {
   class_i2c3,
   class_i2s2ext,
   class_i2s3ext,
-  class_iwdg,
   class_ltdc,
   class_mpu,
   class_nvic,
@@ -124,7 +123,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_syscfg,
   class_timer,
   class_uart,
-  class_wwdg,
+  class_watchdog,
 };
 
 enum class SignalId : std::uint16_t {

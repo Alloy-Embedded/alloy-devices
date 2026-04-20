@@ -103,8 +103,16 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 40> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 51> kInterruptDescriptors = {{
   {InterruptId::ADC, PeripheralId::ADC1, 18u, 34u},
+  {InterruptId::CAN1_TX, PeripheralId::CAN1, 19u, 35u},
+  {InterruptId::CAN1_RX0, PeripheralId::CAN1, 20u, 36u},
+  {InterruptId::CAN1_RX1, PeripheralId::CAN1, 21u, 37u},
+  {InterruptId::CAN1_SCE, PeripheralId::CAN1, 22u, 38u},
+  {InterruptId::CAN2_TX, PeripheralId::CAN2, 63u, 79u},
+  {InterruptId::CAN2_RX0, PeripheralId::CAN2, 64u, 80u},
+  {InterruptId::CAN2_RX1, PeripheralId::CAN2, 65u, 81u},
+  {InterruptId::CAN2_SCE, PeripheralId::CAN2, 66u, 82u},
   {InterruptId::TIM6_DAC, PeripheralId::DAC, 54u, 70u},
   {InterruptId::DMA1_Stream0, PeripheralId::DMA1, 11u, 27u},
   {InterruptId::DMA1_Stream1, PeripheralId::DMA1, 12u, 28u},
@@ -122,6 +130,8 @@ inline constexpr std::array<InterruptDescriptor, 40> kInterruptDescriptors = {{
   {InterruptId::DMA2_Stream5, PeripheralId::DMA2, 68u, 84u},
   {InterruptId::DMA2_Stream6, PeripheralId::DMA2, 69u, 85u},
   {InterruptId::DMA2_Stream7, PeripheralId::DMA2, 70u, 86u},
+  {InterruptId::RTC_WKUP, PeripheralId::RTC, 3u, 19u},
+  {InterruptId::RTC_Alarm, PeripheralId::RTC, 41u, 57u},
   {InterruptId::SPI1, PeripheralId::SPI1, 35u, 51u},
   {InterruptId::SPI2, PeripheralId::SPI2, 36u, 52u},
   {InterruptId::SPI3, PeripheralId::SPI3, 51u, 67u},
@@ -144,6 +154,7 @@ inline constexpr std::array<InterruptDescriptor, 40> kInterruptDescriptors = {{
   {InterruptId::USART2, PeripheralId::USART2, 38u, 54u},
   {InterruptId::USART3, PeripheralId::USART3, 39u, 55u},
   {InterruptId::USART6, PeripheralId::USART6, 71u, 87u},
+  {InterruptId::WWDG, PeripheralId::WWDG, 0u, 16u},
 }};
 }
 }

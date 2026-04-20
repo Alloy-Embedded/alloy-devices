@@ -85,6 +85,24 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "class_capability_count": 5,
           "coverage_kind": "instance",
           "explanation": "Peripheral has instance-specific published capability facts.",
@@ -226,9 +244,18 @@
           "instance_capability_count": 0,
           "peripheral": "USART6",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 69,
+      "capability_decision_count": 71,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -260,6 +287,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "runtime-support:rtc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "rtc",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -988,6 +1026,17 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "stm32f401re",
@@ -1018,7 +1067,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 15,
+      "heuristic_fact_count": 17,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -1036,6 +1085,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:rtc",
           "fact_kind": "capability"
         },
         {
@@ -1066,6 +1121,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART2:DMA1:DMA1_STREAM6:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -1196,6 +1257,24 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "class_capability_count": 5,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -1256,6 +1335,15 @@
           "instance_capability_count": 0,
           "peripheral": "USART6",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
       "route_decision_count": 67,
@@ -3429,6 +3517,24 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "CAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN2",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "DAC",
           "peripheral_class": "dac"
         },
@@ -3548,6 +3654,24 @@
           "instance_capability_count": 0,
           "peripheral": "GPIOK",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -3800,9 +3924,18 @@
           "instance_capability_count": 0,
           "peripheral": "USART6",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 70,
+      "capability_decision_count": 73,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -3812,6 +3945,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "adc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "runtime-support:can",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "can",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -3845,6 +3989,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "runtime-support:rtc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "rtc",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -4573,6 +4728,17 @@
           "peripheral_class": "uart",
           "scope": "instance_overlay",
           "value": "tx"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "runtime-support:watchdog",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "watchdog",
+          "scope": "runtime_contract",
+          "value": "true"
         }
       ],
       "device": "stm32f405rg",
@@ -4603,12 +4769,18 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 16,
+      "heuristic_fact_count": 19,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:adc",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:can",
           "fact_kind": "capability"
         },
         {
@@ -4627,6 +4799,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:rtc",
           "fact_kind": "capability"
         },
         {
@@ -4657,6 +4835,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART1:DMA2:DMA2_STREAM7:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:watchdog",
           "fact_kind": "capability"
         },
         {
@@ -4730,6 +4914,24 @@
           "instance_capability_count": 0,
           "peripheral": "ADC3",
           "peripheral_class": "adc"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN1",
+          "peripheral_class": "can"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "CAN2",
+          "peripheral_class": "can"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -4856,6 +5058,24 @@
           "instance_capability_count": 0,
           "peripheral": "GPIOK",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "IWDG",
+          "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "RTC",
+          "peripheral_class": "rtc"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -5027,6 +5247,15 @@
           "instance_capability_count": 0,
           "peripheral": "USART6",
           "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "WWDG",
+          "peripheral_class": "watchdog"
         }
       ],
       "route_decision_count": 68,
