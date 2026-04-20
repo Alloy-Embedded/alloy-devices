@@ -18,9 +18,12 @@ enum class PeripheralId : std::uint16_t {
   GPIOA,
   GPIOB,
   GPIOD,
+  MCAN0,
+  MCAN1,
   PWM0,
   PWM1,
   RSWDT,
+  RTC,
   SPI0,
   TC0,
   TC1,
@@ -49,9 +52,12 @@ enum class ClockGateId : std::uint16_t {
   gate_gpioa,
   gate_gpiob,
   gate_gpiod,
+  gate_mcan0,
+  gate_mcan1,
   gate_pwm0,
   gate_pwm1,
   gate_rswdt,
+  gate_rtc,
   gate_spi0,
   gate_tc0,
   gate_tc1,
@@ -165,6 +171,30 @@ struct PeripheralInstanceTraits<PeripheralId::GPIOD> {
 };
 
 template<>
+struct PeripheralInstanceTraits<PeripheralId::MCAN0> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_can_microchip_mcan_n;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x40030000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_mcan0;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::MCAN1> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_can_microchip_mcan_n;
+  static constexpr int kInstance = 1;
+  static constexpr std::uintptr_t kBaseAddress = 0x40034000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_mcan1;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralInstanceTraits<PeripheralId::PWM0> {
   static constexpr bool kPresent = true;
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_pwm;
@@ -191,11 +221,23 @@ struct PeripheralInstanceTraits<PeripheralId::PWM1> {
 template<>
 struct PeripheralInstanceTraits<PeripheralId::RSWDT> {
   static constexpr bool kPresent = true;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rswdt;
-  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_rswdt_microchip_rswdt_g;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_watchdog;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_watchdog_microchip_rswdt_g;
   static constexpr int kInstance = 0;
   static constexpr std::uintptr_t kBaseAddress = 0x400E1900u;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_rswdt;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::RTC> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rtc;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_rtc_microchip_rtc_zb;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x400E1860u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_rtc;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
@@ -395,8 +437,8 @@ struct PeripheralInstanceTraits<PeripheralId::USART2> {
 template<>
 struct PeripheralInstanceTraits<PeripheralId::WDT> {
   static constexpr bool kPresent = true;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_wdt;
-  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_wdt_microchip_wdt_n;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_watchdog;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_watchdog_microchip_wdt_n;
   static constexpr int kInstance = 0;
   static constexpr std::uintptr_t kBaseAddress = 0x400E1850u;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_wdt;
@@ -416,16 +458,19 @@ struct PeripheralInstanceTraits<PeripheralId::XDMAC> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 27> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 30> kRuntimePeripherals = {{
   PeripheralId::AFEC0,
   PeripheralId::AFEC1,
   PeripheralId::DACC,
   PeripheralId::GPIOA,
   PeripheralId::GPIOB,
   PeripheralId::GPIOD,
+  PeripheralId::MCAN0,
+  PeripheralId::MCAN1,
   PeripheralId::PWM0,
   PeripheralId::PWM1,
   PeripheralId::RSWDT,
+  PeripheralId::RTC,
   PeripheralId::SPI0,
   PeripheralId::TC0,
   PeripheralId::TC1,

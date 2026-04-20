@@ -37,6 +37,13 @@ enum class CapabilityId : std::uint16_t {
   runtime_dma_AFEC1_XDMAC_PERID_36_RX,
   capability_instance_afec1_lqfp100_ad0,
   capability_instance_afec1_lqfp100_adtrg,
+  capability_mcan_mcan_n_rx,
+  capability_mcan_mcan_n_tx,
+  runtime_support_can,
+  capability_instance_mcan0_lqfp100_rx,
+  capability_instance_mcan0_lqfp100_tx,
+  capability_instance_mcan1_lqfp100_rx,
+  capability_instance_mcan1_lqfp100_tx,
   capability_dacc_dacc_e_dac0,
   capability_dacc_dacc_e_dac1,
   capability_dacc_dacc_e_datrg,
@@ -128,7 +135,11 @@ enum class CapabilityId : std::uint16_t {
   capability_instance_pwm1_lqfp100_pwml1,
   capability_instance_pwm1_lqfp100_pwml2,
   capability_instance_pwm1_lqfp100_pwml3,
-  runtime_support_rswdt,
+  capability_rtc_rtc_zb_rtcout0,
+  capability_rtc_rtc_zb_rtcout1,
+  runtime_support_rtc,
+  capability_instance_rtc_lqfp100_rtcout0,
+  capability_instance_rtc_lqfp100_rtcout1,
   capability_spi_spi_zm_cs,
   capability_spi_spi_zm_miso,
   capability_spi_spi_zm_mosi,
@@ -250,7 +261,7 @@ enum class CapabilityId : std::uint16_t {
   capability_instance_usart2_lqfp100_rx,
   capability_instance_usart2_lqfp100_sck2,
   capability_instance_usart2_lqfp100_tx,
-  runtime_support_wdt,
+  runtime_support_watchdog,
 };
 
 enum class CapabilityScopeId : std::uint16_t {
@@ -328,6 +339,8 @@ enum class CapabilityValueId : std::uint16_t {
   pwml3,
   ri0,
   ri2,
+  rtcout0,
+  rtcout1,
   rts,
   rx,
   sck,
@@ -369,7 +382,7 @@ struct CapabilityDescriptor {
   CapabilityValueId value_id;
   PeripheralId peripheral_id;
 };
-inline constexpr std::array<CapabilityDescriptor, 239> kCapabilities = {{
+inline constexpr std::array<CapabilityDescriptor, 250> kCapabilities = {{
   {CapabilityId::capability_afec_afec_s_ad0, CapabilityScopeId::ip_block, PeripheralClassId::class_adc, CapabilityNameId::signal_role, CapabilityValueId::ad0, PeripheralId::none},
   {CapabilityId::capability_afec_afec_s_ad1, CapabilityScopeId::ip_block, PeripheralClassId::class_adc, CapabilityNameId::signal_role, CapabilityValueId::ad1, PeripheralId::none},
   {CapabilityId::capability_afec_afec_s_ad10, CapabilityScopeId::ip_block, PeripheralClassId::class_adc, CapabilityNameId::signal_role, CapabilityValueId::ad10, PeripheralId::none},
@@ -395,6 +408,13 @@ inline constexpr std::array<CapabilityDescriptor, 239> kCapabilities = {{
   {CapabilityId::runtime_dma_AFEC1_XDMAC_PERID_36_RX, CapabilityScopeId::dma_binding, PeripheralClassId::class_adc, CapabilityNameId::dma_compatible_signal, CapabilityValueId::RX, PeripheralId::AFEC1},
   {CapabilityId::capability_instance_afec1_lqfp100_ad0, CapabilityScopeId::instance_overlay, PeripheralClassId::class_adc, CapabilityNameId::available_signal, CapabilityValueId::ad0, PeripheralId::AFEC1},
   {CapabilityId::capability_instance_afec1_lqfp100_adtrg, CapabilityScopeId::instance_overlay, PeripheralClassId::class_adc, CapabilityNameId::available_signal, CapabilityValueId::adtrg, PeripheralId::AFEC1},
+  {CapabilityId::capability_mcan_mcan_n_rx, CapabilityScopeId::ip_block, PeripheralClassId::class_can, CapabilityNameId::signal_role, CapabilityValueId::rx, PeripheralId::none},
+  {CapabilityId::capability_mcan_mcan_n_tx, CapabilityScopeId::ip_block, PeripheralClassId::class_can, CapabilityNameId::signal_role, CapabilityValueId::tx, PeripheralId::none},
+  {CapabilityId::runtime_support_can, CapabilityScopeId::runtime_contract, PeripheralClassId::class_can, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::capability_instance_mcan0_lqfp100_rx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_can, CapabilityNameId::available_signal, CapabilityValueId::rx, PeripheralId::MCAN0},
+  {CapabilityId::capability_instance_mcan0_lqfp100_tx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_can, CapabilityNameId::available_signal, CapabilityValueId::tx, PeripheralId::MCAN0},
+  {CapabilityId::capability_instance_mcan1_lqfp100_rx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_can, CapabilityNameId::available_signal, CapabilityValueId::rx, PeripheralId::MCAN1},
+  {CapabilityId::capability_instance_mcan1_lqfp100_tx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_can, CapabilityNameId::available_signal, CapabilityValueId::tx, PeripheralId::MCAN1},
   {CapabilityId::capability_dacc_dacc_e_dac0, CapabilityScopeId::ip_block, PeripheralClassId::class_dac, CapabilityNameId::signal_role, CapabilityValueId::dac0, PeripheralId::none},
   {CapabilityId::capability_dacc_dacc_e_dac1, CapabilityScopeId::ip_block, PeripheralClassId::class_dac, CapabilityNameId::signal_role, CapabilityValueId::dac1, PeripheralId::none},
   {CapabilityId::capability_dacc_dacc_e_datrg, CapabilityScopeId::ip_block, PeripheralClassId::class_dac, CapabilityNameId::signal_role, CapabilityValueId::datrg, PeripheralId::none},
@@ -486,7 +506,11 @@ inline constexpr std::array<CapabilityDescriptor, 239> kCapabilities = {{
   {CapabilityId::capability_instance_pwm1_lqfp100_pwml1, CapabilityScopeId::instance_overlay, PeripheralClassId::class_pwm, CapabilityNameId::available_signal, CapabilityValueId::pwml1, PeripheralId::PWM1},
   {CapabilityId::capability_instance_pwm1_lqfp100_pwml2, CapabilityScopeId::instance_overlay, PeripheralClassId::class_pwm, CapabilityNameId::available_signal, CapabilityValueId::pwml2, PeripheralId::PWM1},
   {CapabilityId::capability_instance_pwm1_lqfp100_pwml3, CapabilityScopeId::instance_overlay, PeripheralClassId::class_pwm, CapabilityNameId::available_signal, CapabilityValueId::pwml3, PeripheralId::PWM1},
-  {CapabilityId::runtime_support_rswdt, CapabilityScopeId::runtime_contract, PeripheralClassId::class_rswdt, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::capability_rtc_rtc_zb_rtcout0, CapabilityScopeId::ip_block, PeripheralClassId::class_rtc, CapabilityNameId::signal_role, CapabilityValueId::rtcout0, PeripheralId::none},
+  {CapabilityId::capability_rtc_rtc_zb_rtcout1, CapabilityScopeId::ip_block, PeripheralClassId::class_rtc, CapabilityNameId::signal_role, CapabilityValueId::rtcout1, PeripheralId::none},
+  {CapabilityId::runtime_support_rtc, CapabilityScopeId::runtime_contract, PeripheralClassId::class_rtc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::capability_instance_rtc_lqfp100_rtcout0, CapabilityScopeId::instance_overlay, PeripheralClassId::class_rtc, CapabilityNameId::available_signal, CapabilityValueId::rtcout0, PeripheralId::RTC},
+  {CapabilityId::capability_instance_rtc_lqfp100_rtcout1, CapabilityScopeId::instance_overlay, PeripheralClassId::class_rtc, CapabilityNameId::available_signal, CapabilityValueId::rtcout1, PeripheralId::RTC},
   {CapabilityId::capability_spi_spi_zm_cs, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::cs, PeripheralId::none},
   {CapabilityId::capability_spi_spi_zm_miso, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::miso, PeripheralId::none},
   {CapabilityId::capability_spi_spi_zm_mosi, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::mosi, PeripheralId::none},
@@ -608,7 +632,7 @@ inline constexpr std::array<CapabilityDescriptor, 239> kCapabilities = {{
   {CapabilityId::capability_instance_usart2_lqfp100_rx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::rx, PeripheralId::USART2},
   {CapabilityId::capability_instance_usart2_lqfp100_sck2, CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::sck2, PeripheralId::USART2},
   {CapabilityId::capability_instance_usart2_lqfp100_tx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::tx, PeripheralId::USART2},
-  {CapabilityId::runtime_support_wdt, CapabilityScopeId::runtime_contract, PeripheralClassId::class_wdt, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::runtime_support_watchdog, CapabilityScopeId::runtime_contract, PeripheralClassId::class_watchdog, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
 }};
 
 template<CapabilityId Id>
@@ -869,6 +893,76 @@ struct CapabilityTraits<CapabilityId::capability_instance_afec1_lqfp100_adtrg> {
   static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::adtrg;
   static constexpr PeripheralId kPeripheralId = PeripheralId::AFEC1;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_mcan_mcan_n_rx> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rx;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_mcan_mcan_n_tx> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::tx;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::runtime_support_can> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_mcan0_lqfp100_rx> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rx;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::MCAN0;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_mcan0_lqfp100_tx> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::tx;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::MCAN0;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_mcan1_lqfp100_rx> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rx;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::MCAN1;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_mcan1_lqfp100_tx> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_can;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::tx;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::MCAN1;
 };
 
 template<>
@@ -1782,13 +1876,53 @@ struct CapabilityTraits<CapabilityId::capability_instance_pwm1_lqfp100_pwml3> {
 };
 
 template<>
-struct CapabilityTraits<CapabilityId::runtime_support_rswdt> {
+struct CapabilityTraits<CapabilityId::capability_rtc_rtc_zb_rtcout0> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rtc;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rtcout0;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_rtc_rtc_zb_rtcout1> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rtc;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rtcout1;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::runtime_support_rtc> {
   static constexpr bool kPresent = true;
   static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rswdt;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rtc;
   static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
   static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_rtc_lqfp100_rtcout0> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rtc;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rtcout0;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::RTC;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_rtc_lqfp100_rtcout1> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_rtc;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::rtcout1;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::RTC;
 };
 
 template<>
@@ -3002,10 +3136,10 @@ struct CapabilityTraits<CapabilityId::capability_instance_usart2_lqfp100_tx> {
 };
 
 template<>
-struct CapabilityTraits<CapabilityId::runtime_support_wdt> {
+struct CapabilityTraits<CapabilityId::runtime_support_watchdog> {
   static constexpr bool kPresent = true;
   static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_wdt;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_watchdog;
   static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
   static constexpr PeripheralId kPeripheralId = PeripheralId::none;
@@ -3046,6 +3180,20 @@ struct PeripheralClassCapabilityTraits<PeripheralClassId::class_adc> {
     CapabilityId::runtime_dma_AFEC1_XDMAC_PERID_36_RX,
     CapabilityId::capability_instance_afec1_lqfp100_ad0,
     CapabilityId::capability_instance_afec1_lqfp100_adtrg,
+  }};
+};
+
+template<>
+struct PeripheralClassCapabilityTraits<PeripheralClassId::class_can> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 7> kCapabilityIds = {{
+    CapabilityId::capability_mcan_mcan_n_rx,
+    CapabilityId::capability_mcan_mcan_n_tx,
+    CapabilityId::runtime_support_can,
+    CapabilityId::capability_instance_mcan0_lqfp100_rx,
+    CapabilityId::capability_instance_mcan0_lqfp100_tx,
+    CapabilityId::capability_instance_mcan1_lqfp100_rx,
+    CapabilityId::capability_instance_mcan1_lqfp100_tx,
   }};
 };
 
@@ -3176,10 +3324,14 @@ struct PeripheralClassCapabilityTraits<PeripheralClassId::class_pwm> {
 };
 
 template<>
-struct PeripheralClassCapabilityTraits<PeripheralClassId::class_rswdt> {
+struct PeripheralClassCapabilityTraits<PeripheralClassId::class_rtc> {
   static constexpr bool kPresent = true;
-  inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
-    CapabilityId::runtime_support_rswdt,
+  inline static constexpr std::array<CapabilityId, 5> kCapabilityIds = {{
+    CapabilityId::capability_rtc_rtc_zb_rtcout0,
+    CapabilityId::capability_rtc_rtc_zb_rtcout1,
+    CapabilityId::runtime_support_rtc,
+    CapabilityId::capability_instance_rtc_lqfp100_rtcout0,
+    CapabilityId::capability_instance_rtc_lqfp100_rtcout1,
   }};
 };
 
@@ -3326,10 +3478,10 @@ struct PeripheralClassCapabilityTraits<PeripheralClassId::class_uart> {
 };
 
 template<>
-struct PeripheralClassCapabilityTraits<PeripheralClassId::class_wdt> {
+struct PeripheralClassCapabilityTraits<PeripheralClassId::class_watchdog> {
   static constexpr bool kPresent = true;
   inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
-    CapabilityId::runtime_support_wdt,
+    CapabilityId::runtime_support_watchdog,
   }};
 };
 
@@ -3413,6 +3565,24 @@ struct PeripheralCapabilityTraits<PeripheralId::GPIOD> {
 };
 
 template<>
+struct PeripheralCapabilityTraits<PeripheralId::MCAN0> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 2> kCapabilityIds = {{
+    CapabilityId::capability_instance_mcan0_lqfp100_rx,
+    CapabilityId::capability_instance_mcan0_lqfp100_tx,
+  }};
+};
+
+template<>
+struct PeripheralCapabilityTraits<PeripheralId::MCAN1> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 2> kCapabilityIds = {{
+    CapabilityId::capability_instance_mcan1_lqfp100_rx,
+    CapabilityId::capability_instance_mcan1_lqfp100_tx,
+  }};
+};
+
+template<>
 struct PeripheralCapabilityTraits<PeripheralId::PWM0> {
   static constexpr bool kPresent = true;
   inline static constexpr std::array<CapabilityId, 14> kCapabilityIds = {{
@@ -3458,6 +3628,15 @@ template<>
 struct PeripheralCapabilityTraits<PeripheralId::RSWDT> {
   static constexpr bool kPresent = false;
   inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
+  }};
+};
+
+template<>
+struct PeripheralCapabilityTraits<PeripheralId::RTC> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 2> kCapabilityIds = {{
+    CapabilityId::capability_instance_rtc_lqfp100_rtcout0,
+    CapabilityId::capability_instance_rtc_lqfp100_rtcout1,
   }};
 };
 

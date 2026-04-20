@@ -2652,7 +2652,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.rswdt.microchip-rswdt-g",
+      "backend_schema_id": "alloy.watchdog.microchip-rswdt-g",
       "base_address": 1074665728,
       "instance": 0,
       "ip_name": "rswdt",
@@ -3192,7 +3192,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.wdt.microchip-wdt-n",
+      "backend_schema_id": "alloy.watchdog.microchip-wdt-n",
       "base_address": 1074665552,
       "instance": 0,
       "ip_name": "wdt",

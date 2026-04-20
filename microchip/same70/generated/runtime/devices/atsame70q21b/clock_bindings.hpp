@@ -77,6 +77,20 @@ struct ClockGateTraits<ClockGateId::gate_gpioe> {
 };
 
 template<>
+struct ClockGateTraits<ClockGateId::gate_mcan0> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid35;
+};
+
+template<>
+struct ClockGateTraits<ClockGateId::gate_mcan1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::field_pmc_pcer1_pid37;
+};
+
+template<>
 struct ClockGateTraits<ClockGateId::gate_pwm0> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
@@ -94,6 +108,13 @@ template<>
 struct ClockGateTraits<ClockGateId::gate_rswdt> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer1;
+  static constexpr FieldId kFieldId = FieldId::none;
+};
+
+template<>
+struct ClockGateTraits<ClockGateId::gate_rtc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_pmc_pcer0;
   static constexpr FieldId kFieldId = FieldId::none;
 };
 
@@ -318,6 +339,22 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOE> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::MCAN0> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_mcan0;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::MCAN1> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_mcan1;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::PWM0> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_pwm0;
@@ -337,6 +374,14 @@ template<>
 struct PeripheralClockBindingTraits<PeripheralId::RSWDT> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_rswdt;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::RTC> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_rtc;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
@@ -493,7 +538,7 @@ struct PeripheralClockBindingTraits<PeripheralId::XDMAC> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 30> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 33> kClockBoundPeripherals = {{
   PeripheralId::AFEC0,
   PeripheralId::AFEC1,
   PeripheralId::DACC,
@@ -502,9 +547,12 @@ inline constexpr std::array<PeripheralId, 30> kClockBoundPeripherals = {{
   PeripheralId::GPIOC,
   PeripheralId::GPIOD,
   PeripheralId::GPIOE,
+  PeripheralId::MCAN0,
+  PeripheralId::MCAN1,
   PeripheralId::PWM0,
   PeripheralId::PWM1,
   PeripheralId::RSWDT,
+  PeripheralId::RTC,
   PeripheralId::SPI0,
   PeripheralId::SPI1,
   PeripheralId::TC0,

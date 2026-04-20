@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "atsame70n21b",
-      "fact_count": 650,
+      "fact_count": 681,
       "facts": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/startup.hpp",
@@ -2600,6 +2600,114 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:mcan0:mcan0-int0",
+            "interrupt": "MCAN0_INT0",
+            "line": 35,
+            "peripheral": "MCAN0",
+            "vector_slot": 51
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan0:mcan0-int0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:mcan0:mcan0-int1",
+            "interrupt": "MCAN0_INT1",
+            "line": 36,
+            "peripheral": "MCAN0",
+            "vector_slot": 52
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan0:mcan0-int1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:mcan1:mcan1-int0",
+            "interrupt": "MCAN1_INT0",
+            "line": 37,
+            "peripheral": "MCAN1",
+            "vector_slot": 53
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan1:mcan1-int0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:mcan1:mcan1-int1",
+            "interrupt": "MCAN1_INT1",
+            "line": 38,
+            "peripheral": "MCAN1",
+            "vector_slot": 54
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan1:mcan1-int1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:pwm0:pwm0",
             "interrupt": "PWM0",
             "line": 31,
@@ -2661,6 +2769,33 @@
             "vector_slot": 79
           },
           "fact_id": "interrupt-binding:interrupt-binding:rswdt:rswdt",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtc:rtc",
+            "interrupt": "RTC",
+            "line": 2,
+            "peripheral": "RTC",
+            "vector_slot": 18
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtc:rtc",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -3597,6 +3732,60 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:mcan0",
+            "parent_clock_node": "clock-node:pmc",
+            "peripheral": "MCAN0",
+            "register_field_id": "field:pmc:pcer1:pid35",
+            "register_id": "register:pmc:pcer1"
+          },
+          "fact_id": "enable-domain:gate:mcan0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:mcan1",
+            "parent_clock_node": "clock-node:pmc",
+            "peripheral": "MCAN1",
+            "register_field_id": "field:pmc:pcer1:pid37",
+            "register_id": "register:pmc:pcer1"
+          },
+          "fact_id": "enable-domain:gate:mcan1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:pwm0",
             "parent_clock_node": "clock-node:pmc",
             "peripheral": "PWM0",
@@ -3658,6 +3847,33 @@
             "register_id": "register:pmc:pcer1"
           },
           "fact_id": "enable-domain:gate:rswdt",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:rtc",
+            "parent_clock_node": "clock-node:pmc",
+            "peripheral": "RTC",
+            "register_field_id": null,
+            "register_id": "register:pmc:pcer0"
+          },
+          "fact_id": "enable-domain:gate:rtc",
           "fact_kind": "enable_domain",
           "inference_rule": null,
           "provenance": {
@@ -4320,6 +4536,58 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "clock_gate_id": "gate:mcan0",
+            "peripheral": "MCAN0",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:MCAN0",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:mcan1",
+            "peripheral": "MCAN1",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:MCAN1",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "clock_gate_id": "gate:pwm0",
             "peripheral": "PWM0",
             "reset_id": null,
@@ -4378,6 +4646,32 @@
             "selector_id": null
           },
           "fact_id": "clock-binding:RSWDT",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:rtc",
+            "peripheral": "RTC",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:RTC",
           "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
@@ -7974,6 +8268,34 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb0:rtc:rtcout0",
+            "peripheral": "RTC",
+            "pin": "PB0",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:101",
+            "signal": "rtcout0"
+          },
+          "fact_id": "route-candidate:candidate:pb0:rtc:rtcout0",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb0:usart0:rxd0",
             "peripheral": "USART0",
             "pin": "PB0",
@@ -8170,6 +8492,34 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb1:rtc:rtcout1",
+            "peripheral": "RTC",
+            "pin": "PB1",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:101",
+            "signal": "rtcout1"
+          },
+          "fact_id": "route-candidate:candidate:pb1:rtc:rtcout1",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb1:usart0:txd0",
             "peripheral": "USART0",
             "pin": "PB1",
@@ -8206,6 +8556,34 @@
             "signal": "ad5"
           },
           "fact_id": "route-candidate:candidate:pb2:afec0:ad5",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb2:mcan0:cantx0",
+            "peripheral": "MCAN0",
+            "pin": "PB2",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:0",
+            "signal": "cantx0"
+          },
+          "fact_id": "route-candidate:candidate:pb2:mcan0:cantx0",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -8290,6 +8668,34 @@
             "signal": "ad2"
           },
           "fact_id": "route-candidate:candidate:pb3:afec0:ad2",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb3:mcan0:canrx0",
+            "peripheral": "MCAN0",
+            "pin": "PB3",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:0",
+            "signal": "canrx0"
+          },
+          "fact_id": "route-candidate:candidate:pb3:mcan0:canrx0",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -8598,6 +9004,34 @@
             "signal": "pwmh0"
           },
           "fact_id": "route-candidate:candidate:pd11:pwm0:pwmh0",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pd12:mcan1:cantx1",
+            "peripheral": "MCAN1",
+            "pin": "PD12",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:1",
+            "signal": "cantx1"
+          },
+          "fact_id": "route-candidate:candidate:pd12:mcan1:cantx1",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9430,6 +9864,34 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pd28:mcan1:canrx1",
+            "peripheral": "MCAN1",
+            "pin": "PD28",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:1",
+            "signal": "canrx1"
+          },
+          "fact_id": "route-candidate:candidate:pd28:mcan1:canrx1",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pd28:twihs2:twck2",
             "peripheral": "TWIHS2",
             "pin": "PD28",
@@ -10183,6 +10645,70 @@
           "derivation_kind": "patched",
           "detail": {
             "candidate_ids": [
+              "candidate:pb2:mcan0:cantx0",
+              "candidate:pb3:mcan0:canrx0"
+            ],
+            "group_id": "group:mcan0:lqfp100:tx-rx",
+            "peripheral": "MCAN0",
+            "signals": [
+              "tx",
+              "rx"
+            ]
+          },
+          "fact_id": "route-group:group:mcan0:lqfp100:tx-rx",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pd12:mcan1:cantx1",
+              "candidate:pd28:mcan1:canrx1"
+            ],
+            "group_id": "group:mcan1:lqfp100:tx-rx",
+            "peripheral": "MCAN1",
+            "signals": [
+              "tx",
+              "rx"
+            ]
+          },
+          "fact_id": "route-group:group:mcan1:lqfp100:tx-rx",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
               "candidate:pa0:pwm0:pwmh0",
               "candidate:pa10:pwm0:pwmextrg0",
               "candidate:pa11:pwm0:pwmh0",
@@ -10302,6 +10828,38 @@
             ]
           },
           "fact_id": "route-group:group:pwm1:lqfp100:all-signals",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pb0:rtc:rtcout0",
+              "candidate:pb1:rtc:rtcout1"
+            ],
+            "group_id": "group:rtc:lqfp100:all-signals",
+            "peripheral": "RTC",
+            "signals": [
+              "rtcout0",
+              "rtcout1"
+            ]
+          },
+          "fact_id": "route-group:group:rtc:lqfp100:all-signals",
           "fact_kind": "route_group",
           "inference_rule": null,
           "provenance": {
@@ -11724,6 +12282,205 @@
             "value": "adtrg"
           },
           "fact_id": "capability:capability-instance:afec1:lqfp100:adtrg",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:mcan:mcan-n:rx",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "ip_block",
+            "value": "rx"
+          },
+          "fact_id": "capability:capability:mcan:mcan-n:rx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:mcan:mcan-n:tx",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "ip_block",
+            "value": "tx"
+          },
+          "fact_id": "capability:capability:mcan:mcan-n:tx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:can",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:can",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:MCAN0",
+            "runtime-peripheral:MCAN1"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan0:lqfp100:rx",
+            "name": "available-signal",
+            "peripheral": "MCAN0",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "rx"
+          },
+          "fact_id": "capability:capability-instance:mcan0:lqfp100:rx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan0:lqfp100:tx",
+            "name": "available-signal",
+            "peripheral": "MCAN0",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "tx"
+          },
+          "fact_id": "capability:capability-instance:mcan0:lqfp100:tx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan1:lqfp100:rx",
+            "name": "available-signal",
+            "peripheral": "MCAN1",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "rx"
+          },
+          "fact_id": "capability:capability-instance:mcan1:lqfp100:rx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan1:lqfp100:tx",
+            "name": "available-signal",
+            "peripheral": "MCAN1",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "tx"
+          },
+          "fact_id": "capability:capability-instance:mcan1:lqfp100:tx",
           "fact_kind": "capability",
           "inference_rule": null,
           "provenance": {
@@ -14327,16 +15084,72 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:rtc:rtc-zb:rtcout0",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "rtc",
+            "scope": "ip_block",
+            "value": "rtcout0"
+          },
+          "fact_id": "capability:capability:rtc:rtc-zb:rtcout0",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:rtc:rtc-zb:rtcout1",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "rtc",
+            "scope": "ip_block",
+            "value": "rtcout1"
+          },
+          "fact_id": "capability:capability:rtc:rtc-zb:rtcout1",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
-            "capability_id": "runtime-support:rswdt",
+            "capability_id": "runtime-support:rtc",
             "name": "runtime-supported",
             "peripheral": null,
-            "peripheral_class": "rswdt",
+            "peripheral_class": "rtc",
             "scope": "runtime_contract",
             "value": "true"
           },
-          "fact_id": "capability:runtime-support:rswdt",
+          "fact_id": "capability:runtime-support:rtc",
           "fact_kind": "capability",
           "inference_rule": "runtime-class-support-baseline",
           "provenance": {
@@ -14352,8 +15165,64 @@
             ]
           },
           "supporting_fact_ids": [
-            "runtime-peripheral:RSWDT"
+            "runtime-peripheral:RTC"
           ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:rtc:lqfp100:rtcout0",
+            "name": "available-signal",
+            "peripheral": "RTC",
+            "peripheral_class": "rtc",
+            "scope": "instance_overlay",
+            "value": "rtcout0"
+          },
+          "fact_id": "capability:capability-instance:rtc:lqfp100:rtcout0",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:rtc:lqfp100:rtcout1",
+            "name": "available-signal",
+            "peripheral": "RTC",
+            "peripheral_class": "rtc",
+            "scope": "instance_overlay",
+            "value": "rtcout1"
+          },
+          "fact_id": "capability:capability-instance:rtc:lqfp100:rtcout1",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70N21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
@@ -17807,14 +18676,14 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
-            "capability_id": "runtime-support:wdt",
+            "capability_id": "runtime-support:watchdog",
             "name": "runtime-supported",
             "peripheral": null,
-            "peripheral_class": "wdt",
+            "peripheral_class": "watchdog",
             "scope": "runtime_contract",
             "value": "true"
           },
-          "fact_id": "capability:runtime-support:wdt",
+          "fact_id": "capability:runtime-support:watchdog",
           "fact_kind": "capability",
           "inference_rule": "runtime-class-support-baseline",
           "provenance": {
@@ -17830,6 +18699,7 @@
             ]
           },
           "supporting_fact_ids": [
+            "runtime-peripheral:RSWDT",
             "runtime-peripheral:WDT"
           ]
         },
@@ -18288,7 +19158,7 @@
     },
     {
       "device": "atsame70q21b",
-      "fact_count": 805,
+      "fact_count": 837,
       "facts": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/startup.hpp",
@@ -21044,6 +21914,114 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:mcan0:mcan0-int0",
+            "interrupt": "MCAN0_INT0",
+            "line": 35,
+            "peripheral": "MCAN0",
+            "vector_slot": 51
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan0:mcan0-int0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:mcan0:mcan0-int1",
+            "interrupt": "MCAN0_INT1",
+            "line": 36,
+            "peripheral": "MCAN0",
+            "vector_slot": 52
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan0:mcan0-int1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:mcan1:mcan1-int0",
+            "interrupt": "MCAN1_INT0",
+            "line": 37,
+            "peripheral": "MCAN1",
+            "vector_slot": 53
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan1:mcan1-int0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:mcan1:mcan1-int1",
+            "interrupt": "MCAN1_INT1",
+            "line": 38,
+            "peripheral": "MCAN1",
+            "vector_slot": 54
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:mcan1:mcan1-int1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:pwm0:pwm0",
             "interrupt": "PWM0",
             "line": 31,
@@ -21105,6 +22083,33 @@
             "vector_slot": 79
           },
           "fact_id": "interrupt-binding:interrupt-binding:rswdt:rswdt",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:rtc:rtc",
+            "interrupt": "RTC",
+            "line": 2,
+            "peripheral": "RTC",
+            "vector_slot": 18
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:rtc:rtc",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -22122,6 +23127,60 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:mcan0",
+            "parent_clock_node": "clock-node:pmc",
+            "peripheral": "MCAN0",
+            "register_field_id": "field:pmc:pcer1:pid35",
+            "register_id": "register:pmc:pcer1"
+          },
+          "fact_id": "enable-domain:gate:mcan0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:mcan1",
+            "parent_clock_node": "clock-node:pmc",
+            "peripheral": "MCAN1",
+            "register_field_id": "field:pmc:pcer1:pid37",
+            "register_id": "register:pmc:pcer1"
+          },
+          "fact_id": "enable-domain:gate:mcan1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:pwm0",
             "parent_clock_node": "clock-node:pmc",
             "peripheral": "PWM0",
@@ -22183,6 +23242,33 @@
             "register_id": "register:pmc:pcer1"
           },
           "fact_id": "enable-domain:gate:rswdt",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:rtc",
+            "parent_clock_node": "clock-node:pmc",
+            "peripheral": "RTC",
+            "register_field_id": null,
+            "register_id": "register:pmc:pcer0"
+          },
+          "fact_id": "enable-domain:gate:rtc",
           "fact_kind": "enable_domain",
           "inference_rule": null,
           "provenance": {
@@ -22924,6 +24010,58 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "clock_gate_id": "gate:mcan0",
+            "peripheral": "MCAN0",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:MCAN0",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:mcan1",
+            "peripheral": "MCAN1",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:MCAN1",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "clock_gate_id": "gate:pwm0",
             "peripheral": "PWM0",
             "reset_id": null,
@@ -22982,6 +24120,32 @@
             "selector_id": null
           },
           "fact_id": "clock-binding:RSWDT",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:rtc",
+            "peripheral": "RTC",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:RTC",
           "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
@@ -26744,6 +27908,34 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb0:rtc:rtcout0",
+            "peripheral": "RTC",
+            "pin": "PB0",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:101",
+            "signal": "rtcout0"
+          },
+          "fact_id": "route-candidate:candidate:pb0:rtc:rtcout0",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb0:usart0:rxd0",
             "peripheral": "USART0",
             "pin": "PB0",
@@ -26940,6 +28132,34 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb1:rtc:rtcout1",
+            "peripheral": "RTC",
+            "pin": "PB1",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:101",
+            "signal": "rtcout1"
+          },
+          "fact_id": "route-candidate:candidate:pb1:rtc:rtcout1",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb1:usart0:txd0",
             "peripheral": "USART0",
             "pin": "PB1",
@@ -26976,6 +28196,34 @@
             "signal": "ad5"
           },
           "fact_id": "route-candidate:candidate:pb2:afec0:ad5",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb2:mcan0:cantx0",
+            "peripheral": "MCAN0",
+            "pin": "PB2",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:0",
+            "signal": "cantx0"
+          },
+          "fact_id": "route-candidate:candidate:pb2:mcan0:cantx0",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -27060,6 +28308,34 @@
             "signal": "ad2"
           },
           "fact_id": "route-candidate:candidate:pb3:afec0:ad2",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb3:mcan0:canrx0",
+            "peripheral": "MCAN0",
+            "pin": "PB3",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:0",
+            "signal": "canrx0"
+          },
+          "fact_id": "route-candidate:candidate:pb3:mcan0:canrx0",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -27388,6 +28664,34 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pc12:mcan1:canrx1",
+            "peripheral": "MCAN1",
+            "pin": "PC12",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:2",
+            "signal": "canrx1"
+          },
+          "fact_id": "route-candidate:candidate:pc12:mcan1:canrx1",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pc12:tc2:tiob8",
             "peripheral": "TC2",
             "pin": "PC12",
@@ -27452,6 +28756,34 @@
             "signal": "pwmh3"
           },
           "fact_id": "route-candidate:candidate:pc13:pwm0:pwmh3",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pc14:mcan1:cantx1",
+            "peripheral": "MCAN1",
+            "pin": "PC14",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:2",
+            "signal": "cantx1"
+          },
+          "fact_id": "route-candidate:candidate:pc14:mcan1:cantx1",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -28656,6 +29988,34 @@
             "signal": "pwmh0"
           },
           "fact_id": "route-candidate:candidate:pd11:pwm0:pwmh0",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pd12:mcan1:cantx1",
+            "peripheral": "MCAN1",
+            "pin": "PD12",
+            "route_kind": "peripheral-mux",
+            "route_selector": "selector:1",
+            "signal": "cantx1"
+          },
+          "fact_id": "route-candidate:candidate:pd12:mcan1:cantx1",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -30631,6 +31991,71 @@
           "derivation_kind": "patched",
           "detail": {
             "candidate_ids": [
+              "candidate:pb2:mcan0:cantx0",
+              "candidate:pb3:mcan0:canrx0"
+            ],
+            "group_id": "group:mcan0:lqfp144:tx-rx",
+            "peripheral": "MCAN0",
+            "signals": [
+              "tx",
+              "rx"
+            ]
+          },
+          "fact_id": "route-group:group:mcan0:lqfp144:tx-rx",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pc12:mcan1:canrx1",
+              "candidate:pc14:mcan1:cantx1",
+              "candidate:pd12:mcan1:cantx1"
+            ],
+            "group_id": "group:mcan1:lqfp144:tx-rx",
+            "peripheral": "MCAN1",
+            "signals": [
+              "tx",
+              "rx"
+            ]
+          },
+          "fact_id": "route-group:group:mcan1:lqfp144:tx-rx",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
               "candidate:pa0:pwm0:pwmh0",
               "candidate:pa10:pwm0:pwmextrg0",
               "candidate:pa11:pwm0:pwmh0",
@@ -30762,6 +32187,38 @@
             ]
           },
           "fact_id": "route-group:group:pwm1:lqfp144:all-signals",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pb0:rtc:rtcout0",
+              "candidate:pb1:rtc:rtcout1"
+            ],
+            "group_id": "group:rtc:lqfp144:all-signals",
+            "peripheral": "RTC",
+            "signals": [
+              "rtcout0",
+              "rtcout1"
+            ]
+          },
+          "fact_id": "route-group:group:rtc:lqfp144:all-signals",
           "fact_kind": "route_group",
           "inference_rule": null,
           "provenance": {
@@ -32811,6 +34268,205 @@
             "value": "adtrg"
           },
           "fact_id": "capability:capability-instance:afec1:lqfp144:adtrg",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:mcan:mcan-n:rx",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "ip_block",
+            "value": "rx"
+          },
+          "fact_id": "capability:capability:mcan:mcan-n:rx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:mcan:mcan-n:tx",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "ip_block",
+            "value": "tx"
+          },
+          "fact_id": "capability:capability:mcan:mcan-n:tx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:can",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "can",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:can",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:MCAN0",
+            "runtime-peripheral:MCAN1"
+          ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan0:lqfp144:rx",
+            "name": "available-signal",
+            "peripheral": "MCAN0",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "rx"
+          },
+          "fact_id": "capability:capability-instance:mcan0:lqfp144:rx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan0:lqfp144:tx",
+            "name": "available-signal",
+            "peripheral": "MCAN0",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "tx"
+          },
+          "fact_id": "capability:capability-instance:mcan0:lqfp144:tx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan1:lqfp144:rx",
+            "name": "available-signal",
+            "peripheral": "MCAN1",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "rx"
+          },
+          "fact_id": "capability:capability-instance:mcan1:lqfp144:rx",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:mcan1:lqfp144:tx",
+            "name": "available-signal",
+            "peripheral": "MCAN1",
+            "peripheral_class": "can",
+            "scope": "instance_overlay",
+            "value": "tx"
+          },
+          "fact_id": "capability:capability-instance:mcan1:lqfp144:tx",
           "fact_kind": "capability",
           "inference_rule": null,
           "provenance": {
@@ -35416,16 +37072,72 @@
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:rtc:rtc-zb:rtcout0",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "rtc",
+            "scope": "ip_block",
+            "value": "rtcout0"
+          },
+          "fact_id": "capability:capability:rtc:rtc-zb:rtcout0",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:rtc:rtc-zb:rtcout1",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "rtc",
+            "scope": "ip_block",
+            "value": "rtcout1"
+          },
+          "fact_id": "capability:capability:rtc:rtc-zb:rtcout1",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
-            "capability_id": "runtime-support:rswdt",
+            "capability_id": "runtime-support:rtc",
             "name": "runtime-supported",
             "peripheral": null,
-            "peripheral_class": "rswdt",
+            "peripheral_class": "rtc",
             "scope": "runtime_contract",
             "value": "true"
           },
-          "fact_id": "capability:runtime-support:rswdt",
+          "fact_id": "capability:runtime-support:rtc",
           "fact_kind": "capability",
           "inference_rule": "runtime-class-support-baseline",
           "provenance": {
@@ -35441,8 +37153,64 @@
             ]
           },
           "supporting_fact_ids": [
-            "runtime-peripheral:RSWDT"
+            "runtime-peripheral:RTC"
           ]
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:rtc:lqfp144:rtcout0",
+            "name": "available-signal",
+            "peripheral": "RTC",
+            "peripheral_class": "rtc",
+            "scope": "instance_overlay",
+            "value": "rtcout0"
+          },
+          "fact_id": "capability:capability-instance:rtc:lqfp144:rtcout0",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:rtc:lqfp144:rtcout1",
+            "name": "available-signal",
+            "peripheral": "RTC",
+            "peripheral_class": "rtc",
+            "scope": "instance_overlay",
+            "value": "rtcout1"
+          },
+          "fact_id": "capability:capability-instance:rtc:lqfp144:rtcout1",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
@@ -40525,14 +42293,14 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
-            "capability_id": "runtime-support:wdt",
+            "capability_id": "runtime-support:watchdog",
             "name": "runtime-supported",
             "peripheral": null,
-            "peripheral_class": "wdt",
+            "peripheral_class": "watchdog",
             "scope": "runtime_contract",
             "value": "true"
           },
-          "fact_id": "capability:runtime-support:wdt",
+          "fact_id": "capability:runtime-support:watchdog",
           "fact_kind": "capability",
           "inference_rule": "runtime-class-support-baseline",
           "provenance": {
@@ -40548,6 +42316,7 @@
             ]
           },
           "supporting_fact_ids": [
+            "runtime-peripheral:RSWDT",
             "runtime-peripheral:WDT"
           ]
         },

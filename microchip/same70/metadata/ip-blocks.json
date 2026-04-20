@@ -1508,11 +1508,11 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.rswdt.microchip-rswdt-g",
+      "backend_schema_id": "alloy.watchdog.microchip-rswdt-g",
       "capability_ids": [],
       "ip_name": "rswdt",
       "ip_version": "rswdt_g",
-      "peripheral_class": "rswdt",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1932,11 +1932,11 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.wdt.microchip-wdt-n",
+      "backend_schema_id": "alloy.watchdog.microchip-wdt-n",
       "capability_ids": [],
       "ip_name": "wdt",
       "ip_version": "wdt_n",
-      "peripheral_class": "wdt",
+      "peripheral_class": "watchdog",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",

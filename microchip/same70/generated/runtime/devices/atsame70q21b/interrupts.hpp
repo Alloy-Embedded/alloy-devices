@@ -89,7 +89,7 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 38> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 43> kInterruptDescriptors = {{
   {InterruptId::AFEC0, PeripheralId::AFEC0, 29u, 45u},
   {InterruptId::AFEC1, PeripheralId::AFEC1, 40u, 56u},
   {InterruptId::DACC, PeripheralId::DACC, 30u, 46u},
@@ -98,9 +98,14 @@ inline constexpr std::array<InterruptDescriptor, 38> kInterruptDescriptors = {{
   {InterruptId::PIOC, PeripheralId::GPIOC, 12u, 28u},
   {InterruptId::PIOD, PeripheralId::GPIOD, 16u, 32u},
   {InterruptId::PIOE, PeripheralId::GPIOE, 17u, 33u},
+  {InterruptId::MCAN0_INT0, PeripheralId::MCAN0, 35u, 51u},
+  {InterruptId::MCAN0_INT1, PeripheralId::MCAN0, 36u, 52u},
+  {InterruptId::MCAN1_INT0, PeripheralId::MCAN1, 37u, 53u},
+  {InterruptId::MCAN1_INT1, PeripheralId::MCAN1, 38u, 54u},
   {InterruptId::PWM0, PeripheralId::PWM0, 31u, 47u},
   {InterruptId::PWM1, PeripheralId::PWM1, 60u, 76u},
   {InterruptId::RSWDT, PeripheralId::RSWDT, 63u, 79u},
+  {InterruptId::RTC, PeripheralId::RTC, 2u, 18u},
   {InterruptId::SPI0, PeripheralId::SPI0, 21u, 37u},
   {InterruptId::SPI1, PeripheralId::SPI1, 42u, 58u},
   {InterruptId::TC0, PeripheralId::TC0, 23u, 39u},

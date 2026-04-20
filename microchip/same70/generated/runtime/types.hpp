@@ -41,7 +41,6 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_pwm_microchip_pwm_y,
   schema_alloy_qspi_microchip_qspi_j,
   schema_alloy_rstc_microchip_rstc_n,
-  schema_alloy_rswdt_microchip_rswdt_g,
   schema_alloy_rtc_microchip_rtc_zb,
   schema_alloy_rtt_microchip_rtt_m,
   schema_alloy_scb_microchip_scb,
@@ -58,7 +57,8 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_uart_microchip_usart_zw,
   schema_alloy_usbhs_microchip_usbhs_g,
   schema_alloy_utmi_microchip_utmi_a,
-  schema_alloy_wdt_microchip_wdt_n,
+  schema_alloy_watchdog_microchip_rswdt_g,
+  schema_alloy_watchdog_microchip_wdt_n,
 };
 
 enum class PeripheralClassId : std::uint16_t {
@@ -94,7 +94,6 @@ enum class PeripheralClassId : std::uint16_t {
   class_pwm,
   class_qspi,
   class_rstc,
-  class_rswdt,
   class_rtc,
   class_rtt,
   class_scb,
@@ -110,7 +109,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_uart,
   class_usbhs,
   class_utmi,
-  class_wdt,
+  class_watchdog,
 };
 
 enum class SignalId : std::uint16_t {
