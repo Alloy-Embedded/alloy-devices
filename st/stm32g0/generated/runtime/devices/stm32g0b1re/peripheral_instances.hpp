@@ -48,6 +48,7 @@ enum class PeripheralId : std::uint16_t {
   USART4,
   USART5,
   USART6,
+  USB,
   WWDG,
 };
 
@@ -572,6 +573,18 @@ struct PeripheralInstanceTraits<PeripheralId::USART6> {
 };
 
 template<>
+struct PeripheralInstanceTraits<PeripheralId::USB> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_usb;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_usb;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralInstanceTraits<PeripheralId::WWDG> {
   static constexpr bool kPresent = true;
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_watchdog;
@@ -583,7 +596,7 @@ struct PeripheralInstanceTraits<PeripheralId::WWDG> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 37> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 38> kRuntimePeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DAC,
   PeripheralId::DMA1,
@@ -620,6 +633,7 @@ inline constexpr std::array<PeripheralId, 37> kRuntimePeripherals = {{
   PeripheralId::USART4,
   PeripheralId::USART5,
   PeripheralId::USART6,
+  PeripheralId::USB,
   PeripheralId::WWDG,
 }};
 }

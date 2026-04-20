@@ -811,6 +811,14 @@ struct PeripheralClockBindingTraits<PeripheralId::USART6> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::USB> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
@@ -818,7 +826,7 @@ struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 37> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 38> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DAC,
   PeripheralId::DMA1,
@@ -855,6 +863,7 @@ inline constexpr std::array<PeripheralId, 37> kClockBoundPeripherals = {{
   PeripheralId::USART4,
   PeripheralId::USART5,
   PeripheralId::USART6,
+  PeripheralId::USB,
   PeripheralId::WWDG,
 }};
 }

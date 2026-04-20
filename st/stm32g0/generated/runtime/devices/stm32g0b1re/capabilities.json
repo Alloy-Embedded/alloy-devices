@@ -1137,6 +1137,14 @@
       "value": "tx"
     },
     {
+      "capability_id": "runtime-support:usb",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "usb",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
       "capability_id": "runtime-support:watchdog",
       "name": "runtime-supported",
       "peripheral": null,

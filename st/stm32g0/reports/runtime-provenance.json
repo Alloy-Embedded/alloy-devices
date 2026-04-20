@@ -20167,7 +20167,7 @@
     },
     {
       "device": "stm32g0b1re",
-      "fact_count": 621,
+      "fact_count": 622,
       "facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/startup.hpp",
@@ -37445,6 +37445,36 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:usb",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "usb",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:usb",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:USB"
+          ]
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",

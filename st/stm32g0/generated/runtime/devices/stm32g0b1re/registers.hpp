@@ -589,6 +589,20 @@ enum class RegisterId : std::uint16_t {
   register_usart6_rdr,
   register_usart6_tdr,
   register_usart6_presc,
+  register_usb_usb_chep0r,
+  register_usb_usb_chep1r,
+  register_usb_usb_chep2r,
+  register_usb_usb_chep3r,
+  register_usb_usb_chep4r,
+  register_usb_usb_chep5r,
+  register_usb_usb_chep6r,
+  register_usb_usb_chep7r,
+  register_usb_usb_cntr,
+  register_usb_usb_istr,
+  register_usb_usb_fnr,
+  register_usb_usb_daddr,
+  register_usb_usb_lpmcsr,
+  register_usb_usb_bcdr,
   register_wwdg_wwdg_cr,
   register_wwdg_wwdg_cfr,
   register_wwdg_wwdg_sr,
@@ -5797,6 +5811,132 @@ struct RegisterTraits<RegisterId::register_usart6_presc> {
 };
 
 template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep0r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep1r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep2r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep3r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep4r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep5r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep6r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_chep7r> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_cntr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 64u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_istr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 68u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_fnr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_daddr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 76u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_lpmcsr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 84u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_usb_usb_bcdr> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
+  static constexpr std::uint32_t kOffsetBytes = 88u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
 struct RegisterTraits<RegisterId::register_wwdg_wwdg_cr> {
   static constexpr bool kPresent = true;
   static constexpr std::uintptr_t kBaseAddress = 0x40002C00u;
@@ -5823,7 +5963,7 @@ struct RegisterTraits<RegisterId::register_wwdg_wwdg_sr> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 580> kRegisters = {{
+inline constexpr std::array<RegisterId, 594> kRegisters = {{
   RegisterId::register_adc1_adc_isr,
   RegisterId::register_adc1_adc_ier,
   RegisterId::register_adc1_adc_cr,
@@ -6401,6 +6541,20 @@ inline constexpr std::array<RegisterId, 580> kRegisters = {{
   RegisterId::register_usart6_rdr,
   RegisterId::register_usart6_tdr,
   RegisterId::register_usart6_presc,
+  RegisterId::register_usb_usb_chep0r,
+  RegisterId::register_usb_usb_chep1r,
+  RegisterId::register_usb_usb_chep2r,
+  RegisterId::register_usb_usb_chep3r,
+  RegisterId::register_usb_usb_chep4r,
+  RegisterId::register_usb_usb_chep5r,
+  RegisterId::register_usb_usb_chep6r,
+  RegisterId::register_usb_usb_chep7r,
+  RegisterId::register_usb_usb_cntr,
+  RegisterId::register_usb_usb_istr,
+  RegisterId::register_usb_usb_fnr,
+  RegisterId::register_usb_usb_daddr,
+  RegisterId::register_usb_usb_lpmcsr,
+  RegisterId::register_usb_usb_bcdr,
   RegisterId::register_wwdg_wwdg_cr,
   RegisterId::register_wwdg_wwdg_cfr,
   RegisterId::register_wwdg_wwdg_sr,
