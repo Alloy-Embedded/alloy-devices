@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "stm32f401re",
-      "fact_count": 286,
+      "fact_count": 287,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/startup.hpp",
@@ -7716,6 +7716,39 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:usb",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "usb",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:usb",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:OTG_FS_DEVICE",
+            "runtime-peripheral:OTG_FS_GLOBAL",
+            "runtime-peripheral:OTG_FS_HOST",
+            "runtime-peripheral:OTG_FS_PWRCLK"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:watchdog",
             "name": "runtime-supported",
             "peripheral": null,
@@ -7958,7 +7991,7 @@
     },
     {
       "device": "stm32f405rg",
-      "fact_count": 370,
+      "fact_count": 380,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/startup.hpp",
@@ -11382,6 +11415,222 @@
             "vector_slot": 86
           },
           "fact_id": "interrupt-binding:interrupt-binding:dma2:dma2-stream7",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:ethernet-mac:eth",
+            "interrupt": "ETH",
+            "line": 61,
+            "peripheral": "Ethernet_MAC",
+            "vector_slot": 77
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:ethernet-mac:eth",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:ethernet-mac:eth-wkup",
+            "interrupt": "ETH_WKUP",
+            "line": 62,
+            "peripheral": "Ethernet_MAC",
+            "vector_slot": 78
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:ethernet-mac:eth-wkup",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:otg-fs-global:otg-fs",
+            "interrupt": "OTG_FS",
+            "line": 67,
+            "peripheral": "OTG_FS_GLOBAL",
+            "vector_slot": 83
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:otg-fs-global:otg-fs",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:otg-fs-global:otg-fs-wkup",
+            "interrupt": "OTG_FS_WKUP",
+            "line": 42,
+            "peripheral": "OTG_FS_GLOBAL",
+            "vector_slot": 58
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:otg-fs-global:otg-fs-wkup",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:otg-hs-global:otg-hs",
+            "interrupt": "OTG_HS",
+            "line": 77,
+            "peripheral": "OTG_HS_GLOBAL",
+            "vector_slot": 93
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:otg-hs-global:otg-hs",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:otg-hs-global:otg-hs-ep1-in",
+            "interrupt": "OTG_HS_EP1_IN",
+            "line": 75,
+            "peripheral": "OTG_HS_GLOBAL",
+            "vector_slot": 91
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:otg-hs-global:otg-hs-ep1-in",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:otg-hs-global:otg-hs-ep1-out",
+            "interrupt": "OTG_HS_EP1_OUT",
+            "line": 74,
+            "peripheral": "OTG_HS_GLOBAL",
+            "vector_slot": 90
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:otg-hs-global:otg-hs-ep1-out",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:otg-hs-global:otg-hs-wkup",
+            "interrupt": "OTG_HS_WKUP",
+            "line": 76,
+            "peripheral": "OTG_HS_GLOBAL",
+            "vector_slot": 92
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:otg-hs-global:otg-hs-wkup",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -15966,6 +16215,38 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:eth",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "eth",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:eth",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:Ethernet_DMA",
+            "runtime-peripheral:Ethernet_MAC",
+            "runtime-peripheral:Ethernet_MMC"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:gpio",
             "name": "runtime-supported",
             "peripheral": null,
@@ -17914,6 +18195,43 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:usb",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "usb",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:usb",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:OTG_FS_DEVICE",
+            "runtime-peripheral:OTG_FS_GLOBAL",
+            "runtime-peripheral:OTG_FS_HOST",
+            "runtime-peripheral:OTG_FS_PWRCLK",
+            "runtime-peripheral:OTG_HS_DEVICE",
+            "runtime-peripheral:OTG_HS_GLOBAL",
+            "runtime-peripheral:OTG_HS_HOST",
+            "runtime-peripheral:OTG_HS_PWRCLK"
+          ]
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",

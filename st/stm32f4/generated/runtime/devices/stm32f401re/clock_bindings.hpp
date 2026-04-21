@@ -364,6 +364,38 @@ struct PeripheralClockBindingTraits<PeripheralId::IWDG> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_DEVICE> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_GLOBAL> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_HOST> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_PWRCLK> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::RTC> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
@@ -507,7 +539,7 @@ struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 28> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 32> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMA2,
@@ -518,6 +550,10 @@ inline constexpr std::array<PeripheralId, 28> kClockBoundPeripherals = {{
   PeripheralId::GPIOE,
   PeripheralId::GPIOH,
   PeripheralId::IWDG,
+  PeripheralId::OTG_FS_DEVICE,
+  PeripheralId::OTG_FS_GLOBAL,
+  PeripheralId::OTG_FS_HOST,
+  PeripheralId::OTG_FS_PWRCLK,
   PeripheralId::RTC,
   PeripheralId::SPI1,
   PeripheralId::SPI2,

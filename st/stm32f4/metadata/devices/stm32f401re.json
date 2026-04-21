@@ -7880,7 +7880,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.otg_fs_device.st-otg-fs-device",
+      "backend_schema_id": "alloy.usb.st-otg-fs-device",
       "base_address": 1342179328,
       "instance": 0,
       "ip_name": "otg_fs_device",
@@ -7898,7 +7898,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.otg_fs_global.st-otg-fs-global",
+      "backend_schema_id": "alloy.usb.st-otg-fs-global",
       "base_address": 1342177280,
       "instance": 0,
       "ip_name": "otg_fs_global",
@@ -7916,7 +7916,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.otg_fs_host.st-otg-fs-host",
+      "backend_schema_id": "alloy.usb.st-otg-fs-host",
       "base_address": 1342178304,
       "instance": 0,
       "ip_name": "otg_fs_host",
@@ -7934,7 +7934,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.otg_fs_pwrclk.st-otg-fs-pwrclk",
+      "backend_schema_id": "alloy.usb.st-otg-fs-pwrclk",
       "base_address": 1342180864,
       "instance": 0,
       "ip_name": "otg_fs_pwrclk",

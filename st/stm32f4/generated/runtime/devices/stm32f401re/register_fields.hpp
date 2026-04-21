@@ -1658,6 +1658,600 @@ enum class FieldId : std::uint16_t {
   field_iwdg_rlr_rl,
   field_iwdg_sr_pvu,
   field_iwdg_sr_rvu,
+  field_otg_fs_device_diepctl1_mpsiz,
+  field_otg_fs_device_diepctl1_usbaep,
+  field_otg_fs_device_diepctl1_eonum_dpid,
+  field_otg_fs_device_diepctl1_naksts,
+  field_otg_fs_device_diepctl1_eptyp,
+  field_otg_fs_device_diepctl1_stall,
+  field_otg_fs_device_diepctl1_txfnum,
+  field_otg_fs_device_diepctl1_cnak,
+  field_otg_fs_device_diepctl1_snak,
+  field_otg_fs_device_diepctl1_sd0pid_sevnfrm,
+  field_otg_fs_device_diepctl1_soddfrm_sd1pid,
+  field_otg_fs_device_diepctl1_epdis,
+  field_otg_fs_device_diepctl1_epena,
+  field_otg_fs_device_diepctl2_mpsiz,
+  field_otg_fs_device_diepctl2_usbaep,
+  field_otg_fs_device_diepctl2_eonum_dpid,
+  field_otg_fs_device_diepctl2_naksts,
+  field_otg_fs_device_diepctl2_eptyp,
+  field_otg_fs_device_diepctl2_stall,
+  field_otg_fs_device_diepctl2_txfnum,
+  field_otg_fs_device_diepctl2_cnak,
+  field_otg_fs_device_diepctl2_snak,
+  field_otg_fs_device_diepctl2_sd0pid_sevnfrm,
+  field_otg_fs_device_diepctl2_soddfrm,
+  field_otg_fs_device_diepctl2_epdis,
+  field_otg_fs_device_diepctl2_epena,
+  field_otg_fs_device_diepctl3_mpsiz,
+  field_otg_fs_device_diepctl3_usbaep,
+  field_otg_fs_device_diepctl3_eonum_dpid,
+  field_otg_fs_device_diepctl3_naksts,
+  field_otg_fs_device_diepctl3_eptyp,
+  field_otg_fs_device_diepctl3_stall,
+  field_otg_fs_device_diepctl3_txfnum,
+  field_otg_fs_device_diepctl3_cnak,
+  field_otg_fs_device_diepctl3_snak,
+  field_otg_fs_device_diepctl3_sd0pid_sevnfrm,
+  field_otg_fs_device_diepctl3_soddfrm,
+  field_otg_fs_device_diepctl3_epdis,
+  field_otg_fs_device_diepctl3_epena,
+  field_otg_fs_device_diepempmsk_ineptxfem,
+  field_otg_fs_device_diepint0_xfrc,
+  field_otg_fs_device_diepint0_epdisd,
+  field_otg_fs_device_diepint0_toc,
+  field_otg_fs_device_diepint0_ittxfe,
+  field_otg_fs_device_diepint0_inepne,
+  field_otg_fs_device_diepint0_txfe,
+  field_otg_fs_device_diepint1_xfrc,
+  field_otg_fs_device_diepint1_epdisd,
+  field_otg_fs_device_diepint1_toc,
+  field_otg_fs_device_diepint1_ittxfe,
+  field_otg_fs_device_diepint1_inepne,
+  field_otg_fs_device_diepint1_txfe,
+  field_otg_fs_device_diepint2_xfrc,
+  field_otg_fs_device_diepint2_epdisd,
+  field_otg_fs_device_diepint2_toc,
+  field_otg_fs_device_diepint2_ittxfe,
+  field_otg_fs_device_diepint2_inepne,
+  field_otg_fs_device_diepint2_txfe,
+  field_otg_fs_device_diepint3_xfrc,
+  field_otg_fs_device_diepint3_epdisd,
+  field_otg_fs_device_diepint3_toc,
+  field_otg_fs_device_diepint3_ittxfe,
+  field_otg_fs_device_diepint3_inepne,
+  field_otg_fs_device_diepint3_txfe,
+  field_otg_fs_device_dieptsiz0_xfrsiz,
+  field_otg_fs_device_dieptsiz0_pktcnt,
+  field_otg_fs_device_dieptsiz1_xfrsiz,
+  field_otg_fs_device_dieptsiz1_pktcnt,
+  field_otg_fs_device_dieptsiz1_mcnt,
+  field_otg_fs_device_dieptsiz2_xfrsiz,
+  field_otg_fs_device_dieptsiz2_pktcnt,
+  field_otg_fs_device_dieptsiz2_mcnt,
+  field_otg_fs_device_dieptsiz3_xfrsiz,
+  field_otg_fs_device_dieptsiz3_pktcnt,
+  field_otg_fs_device_dieptsiz3_mcnt,
+  field_otg_fs_device_doepctl0_mpsiz,
+  field_otg_fs_device_doepctl0_usbaep,
+  field_otg_fs_device_doepctl0_naksts,
+  field_otg_fs_device_doepctl0_eptyp,
+  field_otg_fs_device_doepctl0_snpm,
+  field_otg_fs_device_doepctl0_stall,
+  field_otg_fs_device_doepctl0_cnak,
+  field_otg_fs_device_doepctl0_snak,
+  field_otg_fs_device_doepctl0_epdis,
+  field_otg_fs_device_doepctl0_epena,
+  field_otg_fs_device_doepctl1_mpsiz,
+  field_otg_fs_device_doepctl1_usbaep,
+  field_otg_fs_device_doepctl1_eonum_dpid,
+  field_otg_fs_device_doepctl1_naksts,
+  field_otg_fs_device_doepctl1_eptyp,
+  field_otg_fs_device_doepctl1_snpm,
+  field_otg_fs_device_doepctl1_stall,
+  field_otg_fs_device_doepctl1_cnak,
+  field_otg_fs_device_doepctl1_snak,
+  field_otg_fs_device_doepctl1_sd0pid_sevnfrm,
+  field_otg_fs_device_doepctl1_soddfrm,
+  field_otg_fs_device_doepctl1_epdis,
+  field_otg_fs_device_doepctl1_epena,
+  field_otg_fs_device_doepctl2_mpsiz,
+  field_otg_fs_device_doepctl2_usbaep,
+  field_otg_fs_device_doepctl2_eonum_dpid,
+  field_otg_fs_device_doepctl2_naksts,
+  field_otg_fs_device_doepctl2_eptyp,
+  field_otg_fs_device_doepctl2_snpm,
+  field_otg_fs_device_doepctl2_stall,
+  field_otg_fs_device_doepctl2_cnak,
+  field_otg_fs_device_doepctl2_snak,
+  field_otg_fs_device_doepctl2_sd0pid_sevnfrm,
+  field_otg_fs_device_doepctl2_soddfrm,
+  field_otg_fs_device_doepctl2_epdis,
+  field_otg_fs_device_doepctl2_epena,
+  field_otg_fs_device_doepctl3_mpsiz,
+  field_otg_fs_device_doepctl3_usbaep,
+  field_otg_fs_device_doepctl3_eonum_dpid,
+  field_otg_fs_device_doepctl3_naksts,
+  field_otg_fs_device_doepctl3_eptyp,
+  field_otg_fs_device_doepctl3_snpm,
+  field_otg_fs_device_doepctl3_stall,
+  field_otg_fs_device_doepctl3_cnak,
+  field_otg_fs_device_doepctl3_snak,
+  field_otg_fs_device_doepctl3_sd0pid_sevnfrm,
+  field_otg_fs_device_doepctl3_soddfrm,
+  field_otg_fs_device_doepctl3_epdis,
+  field_otg_fs_device_doepctl3_epena,
+  field_otg_fs_device_doepint0_xfrc,
+  field_otg_fs_device_doepint0_epdisd,
+  field_otg_fs_device_doepint0_stup,
+  field_otg_fs_device_doepint0_otepdis,
+  field_otg_fs_device_doepint0_b2bstup,
+  field_otg_fs_device_doepint1_xfrc,
+  field_otg_fs_device_doepint1_epdisd,
+  field_otg_fs_device_doepint1_stup,
+  field_otg_fs_device_doepint1_otepdis,
+  field_otg_fs_device_doepint1_b2bstup,
+  field_otg_fs_device_doepint2_xfrc,
+  field_otg_fs_device_doepint2_epdisd,
+  field_otg_fs_device_doepint2_stup,
+  field_otg_fs_device_doepint2_otepdis,
+  field_otg_fs_device_doepint2_b2bstup,
+  field_otg_fs_device_doepint3_xfrc,
+  field_otg_fs_device_doepint3_epdisd,
+  field_otg_fs_device_doepint3_stup,
+  field_otg_fs_device_doepint3_otepdis,
+  field_otg_fs_device_doepint3_b2bstup,
+  field_otg_fs_device_doeptsiz0_xfrsiz,
+  field_otg_fs_device_doeptsiz0_pktcnt,
+  field_otg_fs_device_doeptsiz0_stupcnt,
+  field_otg_fs_device_doeptsiz1_xfrsiz,
+  field_otg_fs_device_doeptsiz1_pktcnt,
+  field_otg_fs_device_doeptsiz1_rxdpid_stupcnt,
+  field_otg_fs_device_doeptsiz2_xfrsiz,
+  field_otg_fs_device_doeptsiz2_pktcnt,
+  field_otg_fs_device_doeptsiz2_rxdpid_stupcnt,
+  field_otg_fs_device_doeptsiz3_xfrsiz,
+  field_otg_fs_device_doeptsiz3_pktcnt,
+  field_otg_fs_device_doeptsiz3_rxdpid_stupcnt,
+  field_otg_fs_device_dtxfsts0_ineptfsav,
+  field_otg_fs_device_dtxfsts1_ineptfsav,
+  field_otg_fs_device_dtxfsts2_ineptfsav,
+  field_otg_fs_device_dtxfsts3_ineptfsav,
+  field_otg_fs_device_dvbusdis_vbusdt,
+  field_otg_fs_device_dvbuspulse_dvbusp,
+  field_otg_fs_device_fs_daint_iepint,
+  field_otg_fs_device_fs_daint_oepint,
+  field_otg_fs_device_fs_daintmsk_iepm,
+  field_otg_fs_device_fs_daintmsk_oepint,
+  field_otg_fs_device_fs_dcfg_dspd,
+  field_otg_fs_device_fs_dcfg_nzlsohsk,
+  field_otg_fs_device_fs_dcfg_dad,
+  field_otg_fs_device_fs_dcfg_pfivl,
+  field_otg_fs_device_fs_dctl_rwusig,
+  field_otg_fs_device_fs_dctl_sdis,
+  field_otg_fs_device_fs_dctl_ginsts,
+  field_otg_fs_device_fs_dctl_gonsts,
+  field_otg_fs_device_fs_dctl_tctl,
+  field_otg_fs_device_fs_dctl_sginak,
+  field_otg_fs_device_fs_dctl_cginak,
+  field_otg_fs_device_fs_dctl_sgonak,
+  field_otg_fs_device_fs_dctl_cgonak,
+  field_otg_fs_device_fs_dctl_poprgdne,
+  field_otg_fs_device_fs_diepctl0_mpsiz,
+  field_otg_fs_device_fs_diepctl0_usbaep,
+  field_otg_fs_device_fs_diepctl0_naksts,
+  field_otg_fs_device_fs_diepctl0_eptyp,
+  field_otg_fs_device_fs_diepctl0_stall,
+  field_otg_fs_device_fs_diepctl0_txfnum,
+  field_otg_fs_device_fs_diepctl0_cnak,
+  field_otg_fs_device_fs_diepctl0_snak,
+  field_otg_fs_device_fs_diepctl0_epdis,
+  field_otg_fs_device_fs_diepctl0_epena,
+  field_otg_fs_device_fs_diepmsk_xfrcm,
+  field_otg_fs_device_fs_diepmsk_epdm,
+  field_otg_fs_device_fs_diepmsk_tom,
+  field_otg_fs_device_fs_diepmsk_ittxfemsk,
+  field_otg_fs_device_fs_diepmsk_inepnmm,
+  field_otg_fs_device_fs_diepmsk_inepnem,
+  field_otg_fs_device_fs_doepmsk_xfrcm,
+  field_otg_fs_device_fs_doepmsk_epdm,
+  field_otg_fs_device_fs_doepmsk_stupm,
+  field_otg_fs_device_fs_doepmsk_otepdm,
+  field_otg_fs_device_fs_dsts_suspsts,
+  field_otg_fs_device_fs_dsts_enumspd,
+  field_otg_fs_device_fs_dsts_eerr,
+  field_otg_fs_device_fs_dsts_fnsof,
+  field_otg_fs_global_fs_cid_product_id,
+  field_otg_fs_global_fs_dieptxf1_ineptxsa,
+  field_otg_fs_global_fs_dieptxf1_ineptxfd,
+  field_otg_fs_global_fs_dieptxf2_ineptxsa,
+  field_otg_fs_global_fs_dieptxf2_ineptxfd,
+  field_otg_fs_global_fs_dieptxf3_ineptxsa,
+  field_otg_fs_global_fs_dieptxf3_ineptxfd,
+  field_otg_fs_global_fs_gahbcfg_gint,
+  field_otg_fs_global_fs_gahbcfg_txfelvl,
+  field_otg_fs_global_fs_gahbcfg_ptxfelvl,
+  field_otg_fs_global_fs_gccfg_pwrdwn,
+  field_otg_fs_global_fs_gccfg_vbusasen,
+  field_otg_fs_global_fs_gccfg_vbusbsen,
+  field_otg_fs_global_fs_gccfg_sofouten,
+  field_otg_fs_global_fs_gintmsk_mmism,
+  field_otg_fs_global_fs_gintmsk_otgint,
+  field_otg_fs_global_fs_gintmsk_sofm,
+  field_otg_fs_global_fs_gintmsk_rxflvlm,
+  field_otg_fs_global_fs_gintmsk_nptxfem,
+  field_otg_fs_global_fs_gintmsk_ginakeffm,
+  field_otg_fs_global_fs_gintmsk_gonakeffm,
+  field_otg_fs_global_fs_gintmsk_esuspm,
+  field_otg_fs_global_fs_gintmsk_usbsuspm,
+  field_otg_fs_global_fs_gintmsk_usbrst,
+  field_otg_fs_global_fs_gintmsk_enumdnem,
+  field_otg_fs_global_fs_gintmsk_isoodrpm,
+  field_otg_fs_global_fs_gintmsk_eopfm,
+  field_otg_fs_global_fs_gintmsk_epmism,
+  field_otg_fs_global_fs_gintmsk_iepint,
+  field_otg_fs_global_fs_gintmsk_oepint,
+  field_otg_fs_global_fs_gintmsk_iisoixfrm,
+  field_otg_fs_global_fs_gintmsk_ipxfrm_iisooxfrm,
+  field_otg_fs_global_fs_gintmsk_prtim,
+  field_otg_fs_global_fs_gintmsk_hcim,
+  field_otg_fs_global_fs_gintmsk_ptxfem,
+  field_otg_fs_global_fs_gintmsk_cidschgm,
+  field_otg_fs_global_fs_gintmsk_discint,
+  field_otg_fs_global_fs_gintmsk_srqim,
+  field_otg_fs_global_fs_gintmsk_wuim,
+  field_otg_fs_global_fs_gintsts_cmod,
+  field_otg_fs_global_fs_gintsts_mmis,
+  field_otg_fs_global_fs_gintsts_otgint,
+  field_otg_fs_global_fs_gintsts_sof,
+  field_otg_fs_global_fs_gintsts_rxflvl,
+  field_otg_fs_global_fs_gintsts_nptxfe,
+  field_otg_fs_global_fs_gintsts_ginakeff,
+  field_otg_fs_global_fs_gintsts_goutnakeff,
+  field_otg_fs_global_fs_gintsts_esusp,
+  field_otg_fs_global_fs_gintsts_usbsusp,
+  field_otg_fs_global_fs_gintsts_usbrst,
+  field_otg_fs_global_fs_gintsts_enumdne,
+  field_otg_fs_global_fs_gintsts_isoodrp,
+  field_otg_fs_global_fs_gintsts_eopf,
+  field_otg_fs_global_fs_gintsts_iepint,
+  field_otg_fs_global_fs_gintsts_oepint,
+  field_otg_fs_global_fs_gintsts_iisoixfr,
+  field_otg_fs_global_fs_gintsts_ipxfr_incompisoout,
+  field_otg_fs_global_fs_gintsts_hprtint,
+  field_otg_fs_global_fs_gintsts_hcint,
+  field_otg_fs_global_fs_gintsts_ptxfe,
+  field_otg_fs_global_fs_gintsts_cidschg,
+  field_otg_fs_global_fs_gintsts_discint,
+  field_otg_fs_global_fs_gintsts_srqint,
+  field_otg_fs_global_fs_gintsts_wkupint,
+  field_otg_fs_global_fs_gnptxfsiz_device_tx0fsa,
+  field_otg_fs_global_fs_gnptxfsiz_device_tx0fd,
+  field_otg_fs_global_fs_gnptxsts_nptxfsav,
+  field_otg_fs_global_fs_gnptxsts_nptqxsav,
+  field_otg_fs_global_fs_gnptxsts_nptxqtop,
+  field_otg_fs_global_fs_gotgctl_srqscs,
+  field_otg_fs_global_fs_gotgctl_srq,
+  field_otg_fs_global_fs_gotgctl_hngscs,
+  field_otg_fs_global_fs_gotgctl_hnprq,
+  field_otg_fs_global_fs_gotgctl_hshnpen,
+  field_otg_fs_global_fs_gotgctl_dhnpen,
+  field_otg_fs_global_fs_gotgctl_cidsts,
+  field_otg_fs_global_fs_gotgctl_dbct,
+  field_otg_fs_global_fs_gotgctl_asvld,
+  field_otg_fs_global_fs_gotgctl_bsvld,
+  field_otg_fs_global_fs_gotgint_sedet,
+  field_otg_fs_global_fs_gotgint_srsschg,
+  field_otg_fs_global_fs_gotgint_hnsschg,
+  field_otg_fs_global_fs_gotgint_hngdet,
+  field_otg_fs_global_fs_gotgint_adtochg,
+  field_otg_fs_global_fs_gotgint_dbcdne,
+  field_otg_fs_global_fs_grstctl_csrst,
+  field_otg_fs_global_fs_grstctl_hsrst,
+  field_otg_fs_global_fs_grstctl_fcrst,
+  field_otg_fs_global_fs_grstctl_rxfflsh,
+  field_otg_fs_global_fs_grstctl_txfflsh,
+  field_otg_fs_global_fs_grstctl_txfnum,
+  field_otg_fs_global_fs_grstctl_ahbidl,
+  field_otg_fs_global_fs_grxfsiz_rxfd,
+  field_otg_fs_global_fs_grxstsr_device_epnum,
+  field_otg_fs_global_fs_grxstsr_device_bcnt,
+  field_otg_fs_global_fs_grxstsr_device_dpid,
+  field_otg_fs_global_fs_grxstsr_device_pktsts,
+  field_otg_fs_global_fs_grxstsr_device_frmnum,
+  field_otg_fs_global_fs_gusbcfg_tocal,
+  field_otg_fs_global_fs_gusbcfg_physel,
+  field_otg_fs_global_fs_gusbcfg_srpcap,
+  field_otg_fs_global_fs_gusbcfg_hnpcap,
+  field_otg_fs_global_fs_gusbcfg_trdt,
+  field_otg_fs_global_fs_gusbcfg_fhmod,
+  field_otg_fs_global_fs_gusbcfg_fdmod,
+  field_otg_fs_global_fs_gusbcfg_ctxpkt,
+  field_otg_fs_global_fs_hptxfsiz_ptxsa,
+  field_otg_fs_global_fs_hptxfsiz_ptxfsiz,
+  field_otg_fs_host_fs_hcchar0_mpsiz,
+  field_otg_fs_host_fs_hcchar0_epnum,
+  field_otg_fs_host_fs_hcchar0_epdir,
+  field_otg_fs_host_fs_hcchar0_lsdev,
+  field_otg_fs_host_fs_hcchar0_eptyp,
+  field_otg_fs_host_fs_hcchar0_mcnt,
+  field_otg_fs_host_fs_hcchar0_dad,
+  field_otg_fs_host_fs_hcchar0_oddfrm,
+  field_otg_fs_host_fs_hcchar0_chdis,
+  field_otg_fs_host_fs_hcchar0_chena,
+  field_otg_fs_host_fs_hcchar1_mpsiz,
+  field_otg_fs_host_fs_hcchar1_epnum,
+  field_otg_fs_host_fs_hcchar1_epdir,
+  field_otg_fs_host_fs_hcchar1_lsdev,
+  field_otg_fs_host_fs_hcchar1_eptyp,
+  field_otg_fs_host_fs_hcchar1_mcnt,
+  field_otg_fs_host_fs_hcchar1_dad,
+  field_otg_fs_host_fs_hcchar1_oddfrm,
+  field_otg_fs_host_fs_hcchar1_chdis,
+  field_otg_fs_host_fs_hcchar1_chena,
+  field_otg_fs_host_fs_hcchar2_mpsiz,
+  field_otg_fs_host_fs_hcchar2_epnum,
+  field_otg_fs_host_fs_hcchar2_epdir,
+  field_otg_fs_host_fs_hcchar2_lsdev,
+  field_otg_fs_host_fs_hcchar2_eptyp,
+  field_otg_fs_host_fs_hcchar2_mcnt,
+  field_otg_fs_host_fs_hcchar2_dad,
+  field_otg_fs_host_fs_hcchar2_oddfrm,
+  field_otg_fs_host_fs_hcchar2_chdis,
+  field_otg_fs_host_fs_hcchar2_chena,
+  field_otg_fs_host_fs_hcchar3_mpsiz,
+  field_otg_fs_host_fs_hcchar3_epnum,
+  field_otg_fs_host_fs_hcchar3_epdir,
+  field_otg_fs_host_fs_hcchar3_lsdev,
+  field_otg_fs_host_fs_hcchar3_eptyp,
+  field_otg_fs_host_fs_hcchar3_mcnt,
+  field_otg_fs_host_fs_hcchar3_dad,
+  field_otg_fs_host_fs_hcchar3_oddfrm,
+  field_otg_fs_host_fs_hcchar3_chdis,
+  field_otg_fs_host_fs_hcchar3_chena,
+  field_otg_fs_host_fs_hcchar4_mpsiz,
+  field_otg_fs_host_fs_hcchar4_epnum,
+  field_otg_fs_host_fs_hcchar4_epdir,
+  field_otg_fs_host_fs_hcchar4_lsdev,
+  field_otg_fs_host_fs_hcchar4_eptyp,
+  field_otg_fs_host_fs_hcchar4_mcnt,
+  field_otg_fs_host_fs_hcchar4_dad,
+  field_otg_fs_host_fs_hcchar4_oddfrm,
+  field_otg_fs_host_fs_hcchar4_chdis,
+  field_otg_fs_host_fs_hcchar4_chena,
+  field_otg_fs_host_fs_hcchar5_mpsiz,
+  field_otg_fs_host_fs_hcchar5_epnum,
+  field_otg_fs_host_fs_hcchar5_epdir,
+  field_otg_fs_host_fs_hcchar5_lsdev,
+  field_otg_fs_host_fs_hcchar5_eptyp,
+  field_otg_fs_host_fs_hcchar5_mcnt,
+  field_otg_fs_host_fs_hcchar5_dad,
+  field_otg_fs_host_fs_hcchar5_oddfrm,
+  field_otg_fs_host_fs_hcchar5_chdis,
+  field_otg_fs_host_fs_hcchar5_chena,
+  field_otg_fs_host_fs_hcchar6_mpsiz,
+  field_otg_fs_host_fs_hcchar6_epnum,
+  field_otg_fs_host_fs_hcchar6_epdir,
+  field_otg_fs_host_fs_hcchar6_lsdev,
+  field_otg_fs_host_fs_hcchar6_eptyp,
+  field_otg_fs_host_fs_hcchar6_mcnt,
+  field_otg_fs_host_fs_hcchar6_dad,
+  field_otg_fs_host_fs_hcchar6_oddfrm,
+  field_otg_fs_host_fs_hcchar6_chdis,
+  field_otg_fs_host_fs_hcchar6_chena,
+  field_otg_fs_host_fs_hcchar7_mpsiz,
+  field_otg_fs_host_fs_hcchar7_epnum,
+  field_otg_fs_host_fs_hcchar7_epdir,
+  field_otg_fs_host_fs_hcchar7_lsdev,
+  field_otg_fs_host_fs_hcchar7_eptyp,
+  field_otg_fs_host_fs_hcchar7_mcnt,
+  field_otg_fs_host_fs_hcchar7_dad,
+  field_otg_fs_host_fs_hcchar7_oddfrm,
+  field_otg_fs_host_fs_hcchar7_chdis,
+  field_otg_fs_host_fs_hcchar7_chena,
+  field_otg_fs_host_fs_hcfg_fslspcs,
+  field_otg_fs_host_fs_hcfg_fslss,
+  field_otg_fs_host_fs_hcint0_xfrc,
+  field_otg_fs_host_fs_hcint0_chh,
+  field_otg_fs_host_fs_hcint0_stall,
+  field_otg_fs_host_fs_hcint0_nak,
+  field_otg_fs_host_fs_hcint0_ack,
+  field_otg_fs_host_fs_hcint0_txerr,
+  field_otg_fs_host_fs_hcint0_bberr,
+  field_otg_fs_host_fs_hcint0_frmor,
+  field_otg_fs_host_fs_hcint0_dterr,
+  field_otg_fs_host_fs_hcint1_xfrc,
+  field_otg_fs_host_fs_hcint1_chh,
+  field_otg_fs_host_fs_hcint1_stall,
+  field_otg_fs_host_fs_hcint1_nak,
+  field_otg_fs_host_fs_hcint1_ack,
+  field_otg_fs_host_fs_hcint1_txerr,
+  field_otg_fs_host_fs_hcint1_bberr,
+  field_otg_fs_host_fs_hcint1_frmor,
+  field_otg_fs_host_fs_hcint1_dterr,
+  field_otg_fs_host_fs_hcint2_xfrc,
+  field_otg_fs_host_fs_hcint2_chh,
+  field_otg_fs_host_fs_hcint2_stall,
+  field_otg_fs_host_fs_hcint2_nak,
+  field_otg_fs_host_fs_hcint2_ack,
+  field_otg_fs_host_fs_hcint2_txerr,
+  field_otg_fs_host_fs_hcint2_bberr,
+  field_otg_fs_host_fs_hcint2_frmor,
+  field_otg_fs_host_fs_hcint2_dterr,
+  field_otg_fs_host_fs_hcint3_xfrc,
+  field_otg_fs_host_fs_hcint3_chh,
+  field_otg_fs_host_fs_hcint3_stall,
+  field_otg_fs_host_fs_hcint3_nak,
+  field_otg_fs_host_fs_hcint3_ack,
+  field_otg_fs_host_fs_hcint3_txerr,
+  field_otg_fs_host_fs_hcint3_bberr,
+  field_otg_fs_host_fs_hcint3_frmor,
+  field_otg_fs_host_fs_hcint3_dterr,
+  field_otg_fs_host_fs_hcint4_xfrc,
+  field_otg_fs_host_fs_hcint4_chh,
+  field_otg_fs_host_fs_hcint4_stall,
+  field_otg_fs_host_fs_hcint4_nak,
+  field_otg_fs_host_fs_hcint4_ack,
+  field_otg_fs_host_fs_hcint4_txerr,
+  field_otg_fs_host_fs_hcint4_bberr,
+  field_otg_fs_host_fs_hcint4_frmor,
+  field_otg_fs_host_fs_hcint4_dterr,
+  field_otg_fs_host_fs_hcint5_xfrc,
+  field_otg_fs_host_fs_hcint5_chh,
+  field_otg_fs_host_fs_hcint5_stall,
+  field_otg_fs_host_fs_hcint5_nak,
+  field_otg_fs_host_fs_hcint5_ack,
+  field_otg_fs_host_fs_hcint5_txerr,
+  field_otg_fs_host_fs_hcint5_bberr,
+  field_otg_fs_host_fs_hcint5_frmor,
+  field_otg_fs_host_fs_hcint5_dterr,
+  field_otg_fs_host_fs_hcint6_xfrc,
+  field_otg_fs_host_fs_hcint6_chh,
+  field_otg_fs_host_fs_hcint6_stall,
+  field_otg_fs_host_fs_hcint6_nak,
+  field_otg_fs_host_fs_hcint6_ack,
+  field_otg_fs_host_fs_hcint6_txerr,
+  field_otg_fs_host_fs_hcint6_bberr,
+  field_otg_fs_host_fs_hcint6_frmor,
+  field_otg_fs_host_fs_hcint6_dterr,
+  field_otg_fs_host_fs_hcint7_xfrc,
+  field_otg_fs_host_fs_hcint7_chh,
+  field_otg_fs_host_fs_hcint7_stall,
+  field_otg_fs_host_fs_hcint7_nak,
+  field_otg_fs_host_fs_hcint7_ack,
+  field_otg_fs_host_fs_hcint7_txerr,
+  field_otg_fs_host_fs_hcint7_bberr,
+  field_otg_fs_host_fs_hcint7_frmor,
+  field_otg_fs_host_fs_hcint7_dterr,
+  field_otg_fs_host_fs_hcintmsk0_xfrcm,
+  field_otg_fs_host_fs_hcintmsk0_chhm,
+  field_otg_fs_host_fs_hcintmsk0_stallm,
+  field_otg_fs_host_fs_hcintmsk0_nakm,
+  field_otg_fs_host_fs_hcintmsk0_ackm,
+  field_otg_fs_host_fs_hcintmsk0_nyet,
+  field_otg_fs_host_fs_hcintmsk0_txerrm,
+  field_otg_fs_host_fs_hcintmsk0_bberrm,
+  field_otg_fs_host_fs_hcintmsk0_frmorm,
+  field_otg_fs_host_fs_hcintmsk0_dterrm,
+  field_otg_fs_host_fs_hcintmsk1_xfrcm,
+  field_otg_fs_host_fs_hcintmsk1_chhm,
+  field_otg_fs_host_fs_hcintmsk1_stallm,
+  field_otg_fs_host_fs_hcintmsk1_nakm,
+  field_otg_fs_host_fs_hcintmsk1_ackm,
+  field_otg_fs_host_fs_hcintmsk1_nyet,
+  field_otg_fs_host_fs_hcintmsk1_txerrm,
+  field_otg_fs_host_fs_hcintmsk1_bberrm,
+  field_otg_fs_host_fs_hcintmsk1_frmorm,
+  field_otg_fs_host_fs_hcintmsk1_dterrm,
+  field_otg_fs_host_fs_hcintmsk2_xfrcm,
+  field_otg_fs_host_fs_hcintmsk2_chhm,
+  field_otg_fs_host_fs_hcintmsk2_stallm,
+  field_otg_fs_host_fs_hcintmsk2_nakm,
+  field_otg_fs_host_fs_hcintmsk2_ackm,
+  field_otg_fs_host_fs_hcintmsk2_nyet,
+  field_otg_fs_host_fs_hcintmsk2_txerrm,
+  field_otg_fs_host_fs_hcintmsk2_bberrm,
+  field_otg_fs_host_fs_hcintmsk2_frmorm,
+  field_otg_fs_host_fs_hcintmsk2_dterrm,
+  field_otg_fs_host_fs_hcintmsk3_xfrcm,
+  field_otg_fs_host_fs_hcintmsk3_chhm,
+  field_otg_fs_host_fs_hcintmsk3_stallm,
+  field_otg_fs_host_fs_hcintmsk3_nakm,
+  field_otg_fs_host_fs_hcintmsk3_ackm,
+  field_otg_fs_host_fs_hcintmsk3_nyet,
+  field_otg_fs_host_fs_hcintmsk3_txerrm,
+  field_otg_fs_host_fs_hcintmsk3_bberrm,
+  field_otg_fs_host_fs_hcintmsk3_frmorm,
+  field_otg_fs_host_fs_hcintmsk3_dterrm,
+  field_otg_fs_host_fs_hcintmsk4_xfrcm,
+  field_otg_fs_host_fs_hcintmsk4_chhm,
+  field_otg_fs_host_fs_hcintmsk4_stallm,
+  field_otg_fs_host_fs_hcintmsk4_nakm,
+  field_otg_fs_host_fs_hcintmsk4_ackm,
+  field_otg_fs_host_fs_hcintmsk4_nyet,
+  field_otg_fs_host_fs_hcintmsk4_txerrm,
+  field_otg_fs_host_fs_hcintmsk4_bberrm,
+  field_otg_fs_host_fs_hcintmsk4_frmorm,
+  field_otg_fs_host_fs_hcintmsk4_dterrm,
+  field_otg_fs_host_fs_hcintmsk5_xfrcm,
+  field_otg_fs_host_fs_hcintmsk5_chhm,
+  field_otg_fs_host_fs_hcintmsk5_stallm,
+  field_otg_fs_host_fs_hcintmsk5_nakm,
+  field_otg_fs_host_fs_hcintmsk5_ackm,
+  field_otg_fs_host_fs_hcintmsk5_nyet,
+  field_otg_fs_host_fs_hcintmsk5_txerrm,
+  field_otg_fs_host_fs_hcintmsk5_bberrm,
+  field_otg_fs_host_fs_hcintmsk5_frmorm,
+  field_otg_fs_host_fs_hcintmsk5_dterrm,
+  field_otg_fs_host_fs_hcintmsk6_xfrcm,
+  field_otg_fs_host_fs_hcintmsk6_chhm,
+  field_otg_fs_host_fs_hcintmsk6_stallm,
+  field_otg_fs_host_fs_hcintmsk6_nakm,
+  field_otg_fs_host_fs_hcintmsk6_ackm,
+  field_otg_fs_host_fs_hcintmsk6_nyet,
+  field_otg_fs_host_fs_hcintmsk6_txerrm,
+  field_otg_fs_host_fs_hcintmsk6_bberrm,
+  field_otg_fs_host_fs_hcintmsk6_frmorm,
+  field_otg_fs_host_fs_hcintmsk6_dterrm,
+  field_otg_fs_host_fs_hcintmsk7_xfrcm,
+  field_otg_fs_host_fs_hcintmsk7_chhm,
+  field_otg_fs_host_fs_hcintmsk7_stallm,
+  field_otg_fs_host_fs_hcintmsk7_nakm,
+  field_otg_fs_host_fs_hcintmsk7_ackm,
+  field_otg_fs_host_fs_hcintmsk7_nyet,
+  field_otg_fs_host_fs_hcintmsk7_txerrm,
+  field_otg_fs_host_fs_hcintmsk7_bberrm,
+  field_otg_fs_host_fs_hcintmsk7_frmorm,
+  field_otg_fs_host_fs_hcintmsk7_dterrm,
+  field_otg_fs_host_fs_hctsiz0_xfrsiz,
+  field_otg_fs_host_fs_hctsiz0_pktcnt,
+  field_otg_fs_host_fs_hctsiz0_dpid,
+  field_otg_fs_host_fs_hctsiz1_xfrsiz,
+  field_otg_fs_host_fs_hctsiz1_pktcnt,
+  field_otg_fs_host_fs_hctsiz1_dpid,
+  field_otg_fs_host_fs_hctsiz2_xfrsiz,
+  field_otg_fs_host_fs_hctsiz2_pktcnt,
+  field_otg_fs_host_fs_hctsiz2_dpid,
+  field_otg_fs_host_fs_hctsiz3_xfrsiz,
+  field_otg_fs_host_fs_hctsiz3_pktcnt,
+  field_otg_fs_host_fs_hctsiz3_dpid,
+  field_otg_fs_host_fs_hctsiz4_xfrsiz,
+  field_otg_fs_host_fs_hctsiz4_pktcnt,
+  field_otg_fs_host_fs_hctsiz4_dpid,
+  field_otg_fs_host_fs_hctsiz5_xfrsiz,
+  field_otg_fs_host_fs_hctsiz5_pktcnt,
+  field_otg_fs_host_fs_hctsiz5_dpid,
+  field_otg_fs_host_fs_hctsiz6_xfrsiz,
+  field_otg_fs_host_fs_hctsiz6_pktcnt,
+  field_otg_fs_host_fs_hctsiz6_dpid,
+  field_otg_fs_host_fs_hctsiz7_xfrsiz,
+  field_otg_fs_host_fs_hctsiz7_pktcnt,
+  field_otg_fs_host_fs_hctsiz7_dpid,
+  field_otg_fs_host_fs_hfnum_frnum,
+  field_otg_fs_host_fs_hfnum_ftrem,
+  field_otg_fs_host_fs_hprt_pcsts,
+  field_otg_fs_host_fs_hprt_pcdet,
+  field_otg_fs_host_fs_hprt_pena,
+  field_otg_fs_host_fs_hprt_penchng,
+  field_otg_fs_host_fs_hprt_poca,
+  field_otg_fs_host_fs_hprt_pocchng,
+  field_otg_fs_host_fs_hprt_pres,
+  field_otg_fs_host_fs_hprt_psusp,
+  field_otg_fs_host_fs_hprt_prst,
+  field_otg_fs_host_fs_hprt_plsts,
+  field_otg_fs_host_fs_hprt_ppwr,
+  field_otg_fs_host_fs_hprt_ptctl,
+  field_otg_fs_host_fs_hprt_pspd,
+  field_otg_fs_host_fs_hptxsts_ptxfsavl,
+  field_otg_fs_host_fs_hptxsts_ptxqsav,
+  field_otg_fs_host_fs_hptxsts_ptxqtop,
+  field_otg_fs_host_haint_haint,
+  field_otg_fs_host_haintmsk_haintm,
+  field_otg_fs_host_hfir_frivl,
+  field_otg_fs_pwrclk_fs_pcgcctl_stppclk,
+  field_otg_fs_pwrclk_fs_pcgcctl_gatehclk,
+  field_otg_fs_pwrclk_fs_pcgcctl_physusp,
   field_rcc_ahb1enr_gpioaen,
   field_rcc_ahb1enr_gpioben,
   field_rcc_ahb1enr_gpiocen,
@@ -17649,6 +18243,5352 @@ struct RegisterFieldTraits<FieldId::field_iwdg_sr_rvu> {
 };
 
 template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_eonum_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_txfnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_sd0pid_sevnfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_soddfrm_sd1pid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl1_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl1;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_eonum_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_txfnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_sd0pid_sevnfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_soddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl2_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl2;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_eonum_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_txfnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_sd0pid_sevnfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_soddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepctl3_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepctl3;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepempmsk_ineptxfem> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepempmsk;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint0_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint0_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint0;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint0_toc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint0;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint0_ittxfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint0;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint0_inepne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint0;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint0_txfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint0;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint1_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint1_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint1;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint1_toc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint1;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint1_ittxfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint1_inepne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint1_txfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint2_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint2_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint2_toc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint2;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint2_ittxfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint2;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint2_inepne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint2;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint2_txfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint2;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint3_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint3_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint3;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint3_toc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint3;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint3_ittxfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint3;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint3_inepne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint3;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_diepint3_txfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_diepint3;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz0_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz0_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz0;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz1_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz1_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz1;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz1_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz2_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz2_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz2;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz2_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz3_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz3_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz3;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dieptsiz3_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dieptsiz3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_snpm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl0_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl0;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_eonum_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_snpm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_sd0pid_sevnfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_soddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl1_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl1;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_eonum_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_snpm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_sd0pid_sevnfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_soddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl2_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl2;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_eonum_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_snpm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_sd0pid_sevnfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_soddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepctl3_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepctl3;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint0_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint0_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint0;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint0_stup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint0;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint0_otepdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint0;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint0_b2bstup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint0;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint1_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint1_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint1;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint1_stup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint1;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint1_otepdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint1_b2bstup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint2_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint2_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint2_stup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint2;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint2_otepdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint2;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint2_b2bstup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint2;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint3_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint3_epdisd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint3;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint3_stup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint3;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint3_otepdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint3;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doepint3_b2bstup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doepint3;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz0_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz0_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz0;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz0_stupcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz0;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz1_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz1_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz1;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz1_rxdpid_stupcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz2_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz2_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz2;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz2_rxdpid_stupcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz3_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz3_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz3;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_doeptsiz3_rxdpid_stupcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_doeptsiz3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dtxfsts0_ineptfsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dtxfsts0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dtxfsts1_ineptfsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dtxfsts1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dtxfsts2_ineptfsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dtxfsts2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dtxfsts3_ineptfsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dtxfsts3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dvbusdis_vbusdt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dvbusdis;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_dvbuspulse_dvbusp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_dvbuspulse;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_daint_iepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_daint;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_daint_oepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_daint;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_daintmsk_iepm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_daintmsk;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_daintmsk_oepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_daintmsk;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dcfg_dspd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dcfg;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dcfg_nzlsohsk> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dcfg;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dcfg_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dcfg;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dcfg_pfivl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dcfg;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_rwusig> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_sdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_ginsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_gonsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_tctl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_sginak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_cginak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_sgonak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_cgonak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dctl_poprgdne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dctl;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_usbaep> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_naksts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_txfnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_cnak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_snak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_epdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepctl0_epena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepctl0;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepmsk_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepmsk;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepmsk_epdm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepmsk;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepmsk_tom> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepmsk;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepmsk_ittxfemsk> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepmsk;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepmsk_inepnmm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepmsk;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_diepmsk_inepnem> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_diepmsk;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_doepmsk_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_doepmsk;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_doepmsk_epdm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_doepmsk;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_doepmsk_stupm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_doepmsk;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_doepmsk_otepdm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_doepmsk;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dsts_suspsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dsts;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dsts_enumspd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dsts;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dsts_eerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dsts;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_device_fs_dsts_fnsof> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_device_fs_dsts;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 14u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_cid_product_id> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_cid;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_dieptxf1_ineptxsa> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_dieptxf1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_dieptxf1_ineptxfd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_dieptxf1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_dieptxf2_ineptxsa> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_dieptxf2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_dieptxf2_ineptxfd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_dieptxf2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_dieptxf3_ineptxsa> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_dieptxf3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_dieptxf3_ineptxfd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_dieptxf3;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gahbcfg_gint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gahbcfg;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gahbcfg_txfelvl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gahbcfg;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gahbcfg_ptxfelvl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gahbcfg;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gccfg_pwrdwn> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gccfg;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gccfg_vbusasen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gccfg;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gccfg_vbusbsen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gccfg;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gccfg_sofouten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gccfg;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_mmism> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_otgint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_sofm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_rxflvlm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_nptxfem> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_ginakeffm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_gonakeffm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_esuspm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_usbsuspm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_usbrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_enumdnem> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_isoodrpm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_eopfm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_epmism> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_iepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_oepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_iisoixfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_ipxfrm_iisooxfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_prtim> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_hcim> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_ptxfem> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_cidschgm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_discint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_srqim> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintmsk_wuim> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintmsk;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_cmod> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_mmis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_otgint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_sof> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_rxflvl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_nptxfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_ginakeff> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_goutnakeff> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_esusp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_usbsusp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_usbrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_enumdne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_isoodrp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_eopf> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_iepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_oepint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_iisoixfr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_ipxfr_incompisoout> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_hprtint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_hcint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_ptxfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_cidschg> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_discint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_srqint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gintsts_wkupint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gintsts;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gnptxfsiz_device_tx0fsa> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gnptxfsiz_device;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gnptxfsiz_device_tx0fd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gnptxfsiz_device;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gnptxsts_nptxfsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gnptxsts;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gnptxsts_nptqxsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gnptxsts;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gnptxsts_nptxqtop> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gnptxsts;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_srqscs> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_srq> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_hngscs> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_hnprq> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_hshnpen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_dhnpen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_cidsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_dbct> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_asvld> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgctl_bsvld> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgctl;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgint_sedet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgint;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgint_srsschg> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgint;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgint_hnsschg> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgint;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgint_hngdet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgint;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgint_adtochg> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgint;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gotgint_dbcdne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gotgint;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_csrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_hsrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_fcrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_rxfflsh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_txfflsh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_txfnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grstctl_ahbidl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grstctl;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grxfsiz_rxfd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grxfsiz;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grxstsr_device_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grxstsr_device;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grxstsr_device_bcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grxstsr_device;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grxstsr_device_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grxstsr_device;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grxstsr_device_pktsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grxstsr_device;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_grxstsr_device_frmnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_grxstsr_device;
+  static constexpr std::uint16_t kBitOffset = 21u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_tocal> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_physel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_srpcap> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_hnpcap> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_trdt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_fhmod> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_fdmod> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_gusbcfg_ctxpkt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_gusbcfg;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_hptxfsiz_ptxsa> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_hptxfsiz;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_global_fs_hptxfsiz_ptxfsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_global_fs_hptxfsiz;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar0_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar0;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar1_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar1;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar2_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar2;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar3_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar3;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar4_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar4;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar5_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar5;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar6_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar6;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_mpsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_epnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_epdir> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_lsdev> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_eptyp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_mcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_dad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 7u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_oddfrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_chdis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcchar7_chena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcchar7;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcfg_fslspcs> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcfg;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcfg_fslss> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcfg;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint0_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint0;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint1_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint2_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint3_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint3;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint4_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint4;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint5_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint5;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint6_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint6;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_xfrc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_chh> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_stall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_nak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_ack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_txerr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_bberr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_frmor> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcint7_dterr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcint7;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk0_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk0;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk1_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk1;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk2_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk2;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk3_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk3;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk4_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk4;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk5_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk5;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk6_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk6;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_xfrcm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_chhm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_stallm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_nakm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_ackm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_nyet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_txerrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_bberrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_frmorm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hcintmsk7_dterrm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hcintmsk7;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz0_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz0;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz0_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz0;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz0_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz0;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz1_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz1_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz1;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz1_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz2_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz2_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz2;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz2_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz3_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz3_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz3;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz3_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz4_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz4_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz4;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz4_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz4;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz5_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz5;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz5_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz5;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz5_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz5;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz6_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz6;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz6_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz6;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz6_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz6;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz7_xfrsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz7;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 19u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz7_pktcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz7;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hctsiz7_dpid> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hctsiz7;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hfnum_frnum> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hfnum;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hfnum_ftrem> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hfnum;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_pcsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_pcdet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_pena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_penchng> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_poca> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_pocchng> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_pres> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_psusp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_prst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_plsts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_ppwr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_ptctl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hprt_pspd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hprt;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hptxsts_ptxfsavl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hptxsts;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hptxsts_ptxqsav> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hptxsts;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_fs_hptxsts_ptxqtop> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_fs_hptxsts;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_haint_haint> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_haint;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_haintmsk_haintm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_haintmsk;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_host_hfir_frivl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_host_hfir;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_pwrclk_fs_pcgcctl_stppclk> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_pwrclk_fs_pcgcctl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_pwrclk_fs_pcgcctl_gatehclk> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_pwrclk_fs_pcgcctl;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_otg_fs_pwrclk_fs_pcgcctl_physusp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_otg_fs_pwrclk_fs_pcgcctl;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
 struct RegisterFieldTraits<FieldId::field_rcc_ahb1enr_gpioaen> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ahb1enr;
@@ -28214,7 +34154,7 @@ struct RegisterFieldTraits<FieldId::field_wwdg_sr_ewif> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
-inline constexpr std::array<FieldId, 2819> kRegisterFields = {{
+inline constexpr std::array<FieldId, 3413> kRegisterFields = {{
   FieldId::field_adc1_cr1_awdch,
   FieldId::field_adc1_cr1_eocie,
   FieldId::field_adc1_cr1_awdie,
@@ -29860,6 +35800,600 @@ inline constexpr std::array<FieldId, 2819> kRegisterFields = {{
   FieldId::field_iwdg_rlr_rl,
   FieldId::field_iwdg_sr_pvu,
   FieldId::field_iwdg_sr_rvu,
+  FieldId::field_otg_fs_device_diepctl1_mpsiz,
+  FieldId::field_otg_fs_device_diepctl1_usbaep,
+  FieldId::field_otg_fs_device_diepctl1_eonum_dpid,
+  FieldId::field_otg_fs_device_diepctl1_naksts,
+  FieldId::field_otg_fs_device_diepctl1_eptyp,
+  FieldId::field_otg_fs_device_diepctl1_stall,
+  FieldId::field_otg_fs_device_diepctl1_txfnum,
+  FieldId::field_otg_fs_device_diepctl1_cnak,
+  FieldId::field_otg_fs_device_diepctl1_snak,
+  FieldId::field_otg_fs_device_diepctl1_sd0pid_sevnfrm,
+  FieldId::field_otg_fs_device_diepctl1_soddfrm_sd1pid,
+  FieldId::field_otg_fs_device_diepctl1_epdis,
+  FieldId::field_otg_fs_device_diepctl1_epena,
+  FieldId::field_otg_fs_device_diepctl2_mpsiz,
+  FieldId::field_otg_fs_device_diepctl2_usbaep,
+  FieldId::field_otg_fs_device_diepctl2_eonum_dpid,
+  FieldId::field_otg_fs_device_diepctl2_naksts,
+  FieldId::field_otg_fs_device_diepctl2_eptyp,
+  FieldId::field_otg_fs_device_diepctl2_stall,
+  FieldId::field_otg_fs_device_diepctl2_txfnum,
+  FieldId::field_otg_fs_device_diepctl2_cnak,
+  FieldId::field_otg_fs_device_diepctl2_snak,
+  FieldId::field_otg_fs_device_diepctl2_sd0pid_sevnfrm,
+  FieldId::field_otg_fs_device_diepctl2_soddfrm,
+  FieldId::field_otg_fs_device_diepctl2_epdis,
+  FieldId::field_otg_fs_device_diepctl2_epena,
+  FieldId::field_otg_fs_device_diepctl3_mpsiz,
+  FieldId::field_otg_fs_device_diepctl3_usbaep,
+  FieldId::field_otg_fs_device_diepctl3_eonum_dpid,
+  FieldId::field_otg_fs_device_diepctl3_naksts,
+  FieldId::field_otg_fs_device_diepctl3_eptyp,
+  FieldId::field_otg_fs_device_diepctl3_stall,
+  FieldId::field_otg_fs_device_diepctl3_txfnum,
+  FieldId::field_otg_fs_device_diepctl3_cnak,
+  FieldId::field_otg_fs_device_diepctl3_snak,
+  FieldId::field_otg_fs_device_diepctl3_sd0pid_sevnfrm,
+  FieldId::field_otg_fs_device_diepctl3_soddfrm,
+  FieldId::field_otg_fs_device_diepctl3_epdis,
+  FieldId::field_otg_fs_device_diepctl3_epena,
+  FieldId::field_otg_fs_device_diepempmsk_ineptxfem,
+  FieldId::field_otg_fs_device_diepint0_xfrc,
+  FieldId::field_otg_fs_device_diepint0_epdisd,
+  FieldId::field_otg_fs_device_diepint0_toc,
+  FieldId::field_otg_fs_device_diepint0_ittxfe,
+  FieldId::field_otg_fs_device_diepint0_inepne,
+  FieldId::field_otg_fs_device_diepint0_txfe,
+  FieldId::field_otg_fs_device_diepint1_xfrc,
+  FieldId::field_otg_fs_device_diepint1_epdisd,
+  FieldId::field_otg_fs_device_diepint1_toc,
+  FieldId::field_otg_fs_device_diepint1_ittxfe,
+  FieldId::field_otg_fs_device_diepint1_inepne,
+  FieldId::field_otg_fs_device_diepint1_txfe,
+  FieldId::field_otg_fs_device_diepint2_xfrc,
+  FieldId::field_otg_fs_device_diepint2_epdisd,
+  FieldId::field_otg_fs_device_diepint2_toc,
+  FieldId::field_otg_fs_device_diepint2_ittxfe,
+  FieldId::field_otg_fs_device_diepint2_inepne,
+  FieldId::field_otg_fs_device_diepint2_txfe,
+  FieldId::field_otg_fs_device_diepint3_xfrc,
+  FieldId::field_otg_fs_device_diepint3_epdisd,
+  FieldId::field_otg_fs_device_diepint3_toc,
+  FieldId::field_otg_fs_device_diepint3_ittxfe,
+  FieldId::field_otg_fs_device_diepint3_inepne,
+  FieldId::field_otg_fs_device_diepint3_txfe,
+  FieldId::field_otg_fs_device_dieptsiz0_xfrsiz,
+  FieldId::field_otg_fs_device_dieptsiz0_pktcnt,
+  FieldId::field_otg_fs_device_dieptsiz1_xfrsiz,
+  FieldId::field_otg_fs_device_dieptsiz1_pktcnt,
+  FieldId::field_otg_fs_device_dieptsiz1_mcnt,
+  FieldId::field_otg_fs_device_dieptsiz2_xfrsiz,
+  FieldId::field_otg_fs_device_dieptsiz2_pktcnt,
+  FieldId::field_otg_fs_device_dieptsiz2_mcnt,
+  FieldId::field_otg_fs_device_dieptsiz3_xfrsiz,
+  FieldId::field_otg_fs_device_dieptsiz3_pktcnt,
+  FieldId::field_otg_fs_device_dieptsiz3_mcnt,
+  FieldId::field_otg_fs_device_doepctl0_mpsiz,
+  FieldId::field_otg_fs_device_doepctl0_usbaep,
+  FieldId::field_otg_fs_device_doepctl0_naksts,
+  FieldId::field_otg_fs_device_doepctl0_eptyp,
+  FieldId::field_otg_fs_device_doepctl0_snpm,
+  FieldId::field_otg_fs_device_doepctl0_stall,
+  FieldId::field_otg_fs_device_doepctl0_cnak,
+  FieldId::field_otg_fs_device_doepctl0_snak,
+  FieldId::field_otg_fs_device_doepctl0_epdis,
+  FieldId::field_otg_fs_device_doepctl0_epena,
+  FieldId::field_otg_fs_device_doepctl1_mpsiz,
+  FieldId::field_otg_fs_device_doepctl1_usbaep,
+  FieldId::field_otg_fs_device_doepctl1_eonum_dpid,
+  FieldId::field_otg_fs_device_doepctl1_naksts,
+  FieldId::field_otg_fs_device_doepctl1_eptyp,
+  FieldId::field_otg_fs_device_doepctl1_snpm,
+  FieldId::field_otg_fs_device_doepctl1_stall,
+  FieldId::field_otg_fs_device_doepctl1_cnak,
+  FieldId::field_otg_fs_device_doepctl1_snak,
+  FieldId::field_otg_fs_device_doepctl1_sd0pid_sevnfrm,
+  FieldId::field_otg_fs_device_doepctl1_soddfrm,
+  FieldId::field_otg_fs_device_doepctl1_epdis,
+  FieldId::field_otg_fs_device_doepctl1_epena,
+  FieldId::field_otg_fs_device_doepctl2_mpsiz,
+  FieldId::field_otg_fs_device_doepctl2_usbaep,
+  FieldId::field_otg_fs_device_doepctl2_eonum_dpid,
+  FieldId::field_otg_fs_device_doepctl2_naksts,
+  FieldId::field_otg_fs_device_doepctl2_eptyp,
+  FieldId::field_otg_fs_device_doepctl2_snpm,
+  FieldId::field_otg_fs_device_doepctl2_stall,
+  FieldId::field_otg_fs_device_doepctl2_cnak,
+  FieldId::field_otg_fs_device_doepctl2_snak,
+  FieldId::field_otg_fs_device_doepctl2_sd0pid_sevnfrm,
+  FieldId::field_otg_fs_device_doepctl2_soddfrm,
+  FieldId::field_otg_fs_device_doepctl2_epdis,
+  FieldId::field_otg_fs_device_doepctl2_epena,
+  FieldId::field_otg_fs_device_doepctl3_mpsiz,
+  FieldId::field_otg_fs_device_doepctl3_usbaep,
+  FieldId::field_otg_fs_device_doepctl3_eonum_dpid,
+  FieldId::field_otg_fs_device_doepctl3_naksts,
+  FieldId::field_otg_fs_device_doepctl3_eptyp,
+  FieldId::field_otg_fs_device_doepctl3_snpm,
+  FieldId::field_otg_fs_device_doepctl3_stall,
+  FieldId::field_otg_fs_device_doepctl3_cnak,
+  FieldId::field_otg_fs_device_doepctl3_snak,
+  FieldId::field_otg_fs_device_doepctl3_sd0pid_sevnfrm,
+  FieldId::field_otg_fs_device_doepctl3_soddfrm,
+  FieldId::field_otg_fs_device_doepctl3_epdis,
+  FieldId::field_otg_fs_device_doepctl3_epena,
+  FieldId::field_otg_fs_device_doepint0_xfrc,
+  FieldId::field_otg_fs_device_doepint0_epdisd,
+  FieldId::field_otg_fs_device_doepint0_stup,
+  FieldId::field_otg_fs_device_doepint0_otepdis,
+  FieldId::field_otg_fs_device_doepint0_b2bstup,
+  FieldId::field_otg_fs_device_doepint1_xfrc,
+  FieldId::field_otg_fs_device_doepint1_epdisd,
+  FieldId::field_otg_fs_device_doepint1_stup,
+  FieldId::field_otg_fs_device_doepint1_otepdis,
+  FieldId::field_otg_fs_device_doepint1_b2bstup,
+  FieldId::field_otg_fs_device_doepint2_xfrc,
+  FieldId::field_otg_fs_device_doepint2_epdisd,
+  FieldId::field_otg_fs_device_doepint2_stup,
+  FieldId::field_otg_fs_device_doepint2_otepdis,
+  FieldId::field_otg_fs_device_doepint2_b2bstup,
+  FieldId::field_otg_fs_device_doepint3_xfrc,
+  FieldId::field_otg_fs_device_doepint3_epdisd,
+  FieldId::field_otg_fs_device_doepint3_stup,
+  FieldId::field_otg_fs_device_doepint3_otepdis,
+  FieldId::field_otg_fs_device_doepint3_b2bstup,
+  FieldId::field_otg_fs_device_doeptsiz0_xfrsiz,
+  FieldId::field_otg_fs_device_doeptsiz0_pktcnt,
+  FieldId::field_otg_fs_device_doeptsiz0_stupcnt,
+  FieldId::field_otg_fs_device_doeptsiz1_xfrsiz,
+  FieldId::field_otg_fs_device_doeptsiz1_pktcnt,
+  FieldId::field_otg_fs_device_doeptsiz1_rxdpid_stupcnt,
+  FieldId::field_otg_fs_device_doeptsiz2_xfrsiz,
+  FieldId::field_otg_fs_device_doeptsiz2_pktcnt,
+  FieldId::field_otg_fs_device_doeptsiz2_rxdpid_stupcnt,
+  FieldId::field_otg_fs_device_doeptsiz3_xfrsiz,
+  FieldId::field_otg_fs_device_doeptsiz3_pktcnt,
+  FieldId::field_otg_fs_device_doeptsiz3_rxdpid_stupcnt,
+  FieldId::field_otg_fs_device_dtxfsts0_ineptfsav,
+  FieldId::field_otg_fs_device_dtxfsts1_ineptfsav,
+  FieldId::field_otg_fs_device_dtxfsts2_ineptfsav,
+  FieldId::field_otg_fs_device_dtxfsts3_ineptfsav,
+  FieldId::field_otg_fs_device_dvbusdis_vbusdt,
+  FieldId::field_otg_fs_device_dvbuspulse_dvbusp,
+  FieldId::field_otg_fs_device_fs_daint_iepint,
+  FieldId::field_otg_fs_device_fs_daint_oepint,
+  FieldId::field_otg_fs_device_fs_daintmsk_iepm,
+  FieldId::field_otg_fs_device_fs_daintmsk_oepint,
+  FieldId::field_otg_fs_device_fs_dcfg_dspd,
+  FieldId::field_otg_fs_device_fs_dcfg_nzlsohsk,
+  FieldId::field_otg_fs_device_fs_dcfg_dad,
+  FieldId::field_otg_fs_device_fs_dcfg_pfivl,
+  FieldId::field_otg_fs_device_fs_dctl_rwusig,
+  FieldId::field_otg_fs_device_fs_dctl_sdis,
+  FieldId::field_otg_fs_device_fs_dctl_ginsts,
+  FieldId::field_otg_fs_device_fs_dctl_gonsts,
+  FieldId::field_otg_fs_device_fs_dctl_tctl,
+  FieldId::field_otg_fs_device_fs_dctl_sginak,
+  FieldId::field_otg_fs_device_fs_dctl_cginak,
+  FieldId::field_otg_fs_device_fs_dctl_sgonak,
+  FieldId::field_otg_fs_device_fs_dctl_cgonak,
+  FieldId::field_otg_fs_device_fs_dctl_poprgdne,
+  FieldId::field_otg_fs_device_fs_diepctl0_mpsiz,
+  FieldId::field_otg_fs_device_fs_diepctl0_usbaep,
+  FieldId::field_otg_fs_device_fs_diepctl0_naksts,
+  FieldId::field_otg_fs_device_fs_diepctl0_eptyp,
+  FieldId::field_otg_fs_device_fs_diepctl0_stall,
+  FieldId::field_otg_fs_device_fs_diepctl0_txfnum,
+  FieldId::field_otg_fs_device_fs_diepctl0_cnak,
+  FieldId::field_otg_fs_device_fs_diepctl0_snak,
+  FieldId::field_otg_fs_device_fs_diepctl0_epdis,
+  FieldId::field_otg_fs_device_fs_diepctl0_epena,
+  FieldId::field_otg_fs_device_fs_diepmsk_xfrcm,
+  FieldId::field_otg_fs_device_fs_diepmsk_epdm,
+  FieldId::field_otg_fs_device_fs_diepmsk_tom,
+  FieldId::field_otg_fs_device_fs_diepmsk_ittxfemsk,
+  FieldId::field_otg_fs_device_fs_diepmsk_inepnmm,
+  FieldId::field_otg_fs_device_fs_diepmsk_inepnem,
+  FieldId::field_otg_fs_device_fs_doepmsk_xfrcm,
+  FieldId::field_otg_fs_device_fs_doepmsk_epdm,
+  FieldId::field_otg_fs_device_fs_doepmsk_stupm,
+  FieldId::field_otg_fs_device_fs_doepmsk_otepdm,
+  FieldId::field_otg_fs_device_fs_dsts_suspsts,
+  FieldId::field_otg_fs_device_fs_dsts_enumspd,
+  FieldId::field_otg_fs_device_fs_dsts_eerr,
+  FieldId::field_otg_fs_device_fs_dsts_fnsof,
+  FieldId::field_otg_fs_global_fs_cid_product_id,
+  FieldId::field_otg_fs_global_fs_dieptxf1_ineptxsa,
+  FieldId::field_otg_fs_global_fs_dieptxf1_ineptxfd,
+  FieldId::field_otg_fs_global_fs_dieptxf2_ineptxsa,
+  FieldId::field_otg_fs_global_fs_dieptxf2_ineptxfd,
+  FieldId::field_otg_fs_global_fs_dieptxf3_ineptxsa,
+  FieldId::field_otg_fs_global_fs_dieptxf3_ineptxfd,
+  FieldId::field_otg_fs_global_fs_gahbcfg_gint,
+  FieldId::field_otg_fs_global_fs_gahbcfg_txfelvl,
+  FieldId::field_otg_fs_global_fs_gahbcfg_ptxfelvl,
+  FieldId::field_otg_fs_global_fs_gccfg_pwrdwn,
+  FieldId::field_otg_fs_global_fs_gccfg_vbusasen,
+  FieldId::field_otg_fs_global_fs_gccfg_vbusbsen,
+  FieldId::field_otg_fs_global_fs_gccfg_sofouten,
+  FieldId::field_otg_fs_global_fs_gintmsk_mmism,
+  FieldId::field_otg_fs_global_fs_gintmsk_otgint,
+  FieldId::field_otg_fs_global_fs_gintmsk_sofm,
+  FieldId::field_otg_fs_global_fs_gintmsk_rxflvlm,
+  FieldId::field_otg_fs_global_fs_gintmsk_nptxfem,
+  FieldId::field_otg_fs_global_fs_gintmsk_ginakeffm,
+  FieldId::field_otg_fs_global_fs_gintmsk_gonakeffm,
+  FieldId::field_otg_fs_global_fs_gintmsk_esuspm,
+  FieldId::field_otg_fs_global_fs_gintmsk_usbsuspm,
+  FieldId::field_otg_fs_global_fs_gintmsk_usbrst,
+  FieldId::field_otg_fs_global_fs_gintmsk_enumdnem,
+  FieldId::field_otg_fs_global_fs_gintmsk_isoodrpm,
+  FieldId::field_otg_fs_global_fs_gintmsk_eopfm,
+  FieldId::field_otg_fs_global_fs_gintmsk_epmism,
+  FieldId::field_otg_fs_global_fs_gintmsk_iepint,
+  FieldId::field_otg_fs_global_fs_gintmsk_oepint,
+  FieldId::field_otg_fs_global_fs_gintmsk_iisoixfrm,
+  FieldId::field_otg_fs_global_fs_gintmsk_ipxfrm_iisooxfrm,
+  FieldId::field_otg_fs_global_fs_gintmsk_prtim,
+  FieldId::field_otg_fs_global_fs_gintmsk_hcim,
+  FieldId::field_otg_fs_global_fs_gintmsk_ptxfem,
+  FieldId::field_otg_fs_global_fs_gintmsk_cidschgm,
+  FieldId::field_otg_fs_global_fs_gintmsk_discint,
+  FieldId::field_otg_fs_global_fs_gintmsk_srqim,
+  FieldId::field_otg_fs_global_fs_gintmsk_wuim,
+  FieldId::field_otg_fs_global_fs_gintsts_cmod,
+  FieldId::field_otg_fs_global_fs_gintsts_mmis,
+  FieldId::field_otg_fs_global_fs_gintsts_otgint,
+  FieldId::field_otg_fs_global_fs_gintsts_sof,
+  FieldId::field_otg_fs_global_fs_gintsts_rxflvl,
+  FieldId::field_otg_fs_global_fs_gintsts_nptxfe,
+  FieldId::field_otg_fs_global_fs_gintsts_ginakeff,
+  FieldId::field_otg_fs_global_fs_gintsts_goutnakeff,
+  FieldId::field_otg_fs_global_fs_gintsts_esusp,
+  FieldId::field_otg_fs_global_fs_gintsts_usbsusp,
+  FieldId::field_otg_fs_global_fs_gintsts_usbrst,
+  FieldId::field_otg_fs_global_fs_gintsts_enumdne,
+  FieldId::field_otg_fs_global_fs_gintsts_isoodrp,
+  FieldId::field_otg_fs_global_fs_gintsts_eopf,
+  FieldId::field_otg_fs_global_fs_gintsts_iepint,
+  FieldId::field_otg_fs_global_fs_gintsts_oepint,
+  FieldId::field_otg_fs_global_fs_gintsts_iisoixfr,
+  FieldId::field_otg_fs_global_fs_gintsts_ipxfr_incompisoout,
+  FieldId::field_otg_fs_global_fs_gintsts_hprtint,
+  FieldId::field_otg_fs_global_fs_gintsts_hcint,
+  FieldId::field_otg_fs_global_fs_gintsts_ptxfe,
+  FieldId::field_otg_fs_global_fs_gintsts_cidschg,
+  FieldId::field_otg_fs_global_fs_gintsts_discint,
+  FieldId::field_otg_fs_global_fs_gintsts_srqint,
+  FieldId::field_otg_fs_global_fs_gintsts_wkupint,
+  FieldId::field_otg_fs_global_fs_gnptxfsiz_device_tx0fsa,
+  FieldId::field_otg_fs_global_fs_gnptxfsiz_device_tx0fd,
+  FieldId::field_otg_fs_global_fs_gnptxsts_nptxfsav,
+  FieldId::field_otg_fs_global_fs_gnptxsts_nptqxsav,
+  FieldId::field_otg_fs_global_fs_gnptxsts_nptxqtop,
+  FieldId::field_otg_fs_global_fs_gotgctl_srqscs,
+  FieldId::field_otg_fs_global_fs_gotgctl_srq,
+  FieldId::field_otg_fs_global_fs_gotgctl_hngscs,
+  FieldId::field_otg_fs_global_fs_gotgctl_hnprq,
+  FieldId::field_otg_fs_global_fs_gotgctl_hshnpen,
+  FieldId::field_otg_fs_global_fs_gotgctl_dhnpen,
+  FieldId::field_otg_fs_global_fs_gotgctl_cidsts,
+  FieldId::field_otg_fs_global_fs_gotgctl_dbct,
+  FieldId::field_otg_fs_global_fs_gotgctl_asvld,
+  FieldId::field_otg_fs_global_fs_gotgctl_bsvld,
+  FieldId::field_otg_fs_global_fs_gotgint_sedet,
+  FieldId::field_otg_fs_global_fs_gotgint_srsschg,
+  FieldId::field_otg_fs_global_fs_gotgint_hnsschg,
+  FieldId::field_otg_fs_global_fs_gotgint_hngdet,
+  FieldId::field_otg_fs_global_fs_gotgint_adtochg,
+  FieldId::field_otg_fs_global_fs_gotgint_dbcdne,
+  FieldId::field_otg_fs_global_fs_grstctl_csrst,
+  FieldId::field_otg_fs_global_fs_grstctl_hsrst,
+  FieldId::field_otg_fs_global_fs_grstctl_fcrst,
+  FieldId::field_otg_fs_global_fs_grstctl_rxfflsh,
+  FieldId::field_otg_fs_global_fs_grstctl_txfflsh,
+  FieldId::field_otg_fs_global_fs_grstctl_txfnum,
+  FieldId::field_otg_fs_global_fs_grstctl_ahbidl,
+  FieldId::field_otg_fs_global_fs_grxfsiz_rxfd,
+  FieldId::field_otg_fs_global_fs_grxstsr_device_epnum,
+  FieldId::field_otg_fs_global_fs_grxstsr_device_bcnt,
+  FieldId::field_otg_fs_global_fs_grxstsr_device_dpid,
+  FieldId::field_otg_fs_global_fs_grxstsr_device_pktsts,
+  FieldId::field_otg_fs_global_fs_grxstsr_device_frmnum,
+  FieldId::field_otg_fs_global_fs_gusbcfg_tocal,
+  FieldId::field_otg_fs_global_fs_gusbcfg_physel,
+  FieldId::field_otg_fs_global_fs_gusbcfg_srpcap,
+  FieldId::field_otg_fs_global_fs_gusbcfg_hnpcap,
+  FieldId::field_otg_fs_global_fs_gusbcfg_trdt,
+  FieldId::field_otg_fs_global_fs_gusbcfg_fhmod,
+  FieldId::field_otg_fs_global_fs_gusbcfg_fdmod,
+  FieldId::field_otg_fs_global_fs_gusbcfg_ctxpkt,
+  FieldId::field_otg_fs_global_fs_hptxfsiz_ptxsa,
+  FieldId::field_otg_fs_global_fs_hptxfsiz_ptxfsiz,
+  FieldId::field_otg_fs_host_fs_hcchar0_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar0_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar0_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar0_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar0_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar0_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar0_dad,
+  FieldId::field_otg_fs_host_fs_hcchar0_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar0_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar0_chena,
+  FieldId::field_otg_fs_host_fs_hcchar1_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar1_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar1_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar1_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar1_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar1_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar1_dad,
+  FieldId::field_otg_fs_host_fs_hcchar1_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar1_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar1_chena,
+  FieldId::field_otg_fs_host_fs_hcchar2_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar2_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar2_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar2_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar2_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar2_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar2_dad,
+  FieldId::field_otg_fs_host_fs_hcchar2_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar2_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar2_chena,
+  FieldId::field_otg_fs_host_fs_hcchar3_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar3_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar3_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar3_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar3_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar3_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar3_dad,
+  FieldId::field_otg_fs_host_fs_hcchar3_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar3_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar3_chena,
+  FieldId::field_otg_fs_host_fs_hcchar4_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar4_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar4_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar4_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar4_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar4_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar4_dad,
+  FieldId::field_otg_fs_host_fs_hcchar4_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar4_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar4_chena,
+  FieldId::field_otg_fs_host_fs_hcchar5_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar5_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar5_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar5_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar5_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar5_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar5_dad,
+  FieldId::field_otg_fs_host_fs_hcchar5_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar5_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar5_chena,
+  FieldId::field_otg_fs_host_fs_hcchar6_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar6_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar6_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar6_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar6_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar6_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar6_dad,
+  FieldId::field_otg_fs_host_fs_hcchar6_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar6_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar6_chena,
+  FieldId::field_otg_fs_host_fs_hcchar7_mpsiz,
+  FieldId::field_otg_fs_host_fs_hcchar7_epnum,
+  FieldId::field_otg_fs_host_fs_hcchar7_epdir,
+  FieldId::field_otg_fs_host_fs_hcchar7_lsdev,
+  FieldId::field_otg_fs_host_fs_hcchar7_eptyp,
+  FieldId::field_otg_fs_host_fs_hcchar7_mcnt,
+  FieldId::field_otg_fs_host_fs_hcchar7_dad,
+  FieldId::field_otg_fs_host_fs_hcchar7_oddfrm,
+  FieldId::field_otg_fs_host_fs_hcchar7_chdis,
+  FieldId::field_otg_fs_host_fs_hcchar7_chena,
+  FieldId::field_otg_fs_host_fs_hcfg_fslspcs,
+  FieldId::field_otg_fs_host_fs_hcfg_fslss,
+  FieldId::field_otg_fs_host_fs_hcint0_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint0_chh,
+  FieldId::field_otg_fs_host_fs_hcint0_stall,
+  FieldId::field_otg_fs_host_fs_hcint0_nak,
+  FieldId::field_otg_fs_host_fs_hcint0_ack,
+  FieldId::field_otg_fs_host_fs_hcint0_txerr,
+  FieldId::field_otg_fs_host_fs_hcint0_bberr,
+  FieldId::field_otg_fs_host_fs_hcint0_frmor,
+  FieldId::field_otg_fs_host_fs_hcint0_dterr,
+  FieldId::field_otg_fs_host_fs_hcint1_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint1_chh,
+  FieldId::field_otg_fs_host_fs_hcint1_stall,
+  FieldId::field_otg_fs_host_fs_hcint1_nak,
+  FieldId::field_otg_fs_host_fs_hcint1_ack,
+  FieldId::field_otg_fs_host_fs_hcint1_txerr,
+  FieldId::field_otg_fs_host_fs_hcint1_bberr,
+  FieldId::field_otg_fs_host_fs_hcint1_frmor,
+  FieldId::field_otg_fs_host_fs_hcint1_dterr,
+  FieldId::field_otg_fs_host_fs_hcint2_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint2_chh,
+  FieldId::field_otg_fs_host_fs_hcint2_stall,
+  FieldId::field_otg_fs_host_fs_hcint2_nak,
+  FieldId::field_otg_fs_host_fs_hcint2_ack,
+  FieldId::field_otg_fs_host_fs_hcint2_txerr,
+  FieldId::field_otg_fs_host_fs_hcint2_bberr,
+  FieldId::field_otg_fs_host_fs_hcint2_frmor,
+  FieldId::field_otg_fs_host_fs_hcint2_dterr,
+  FieldId::field_otg_fs_host_fs_hcint3_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint3_chh,
+  FieldId::field_otg_fs_host_fs_hcint3_stall,
+  FieldId::field_otg_fs_host_fs_hcint3_nak,
+  FieldId::field_otg_fs_host_fs_hcint3_ack,
+  FieldId::field_otg_fs_host_fs_hcint3_txerr,
+  FieldId::field_otg_fs_host_fs_hcint3_bberr,
+  FieldId::field_otg_fs_host_fs_hcint3_frmor,
+  FieldId::field_otg_fs_host_fs_hcint3_dterr,
+  FieldId::field_otg_fs_host_fs_hcint4_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint4_chh,
+  FieldId::field_otg_fs_host_fs_hcint4_stall,
+  FieldId::field_otg_fs_host_fs_hcint4_nak,
+  FieldId::field_otg_fs_host_fs_hcint4_ack,
+  FieldId::field_otg_fs_host_fs_hcint4_txerr,
+  FieldId::field_otg_fs_host_fs_hcint4_bberr,
+  FieldId::field_otg_fs_host_fs_hcint4_frmor,
+  FieldId::field_otg_fs_host_fs_hcint4_dterr,
+  FieldId::field_otg_fs_host_fs_hcint5_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint5_chh,
+  FieldId::field_otg_fs_host_fs_hcint5_stall,
+  FieldId::field_otg_fs_host_fs_hcint5_nak,
+  FieldId::field_otg_fs_host_fs_hcint5_ack,
+  FieldId::field_otg_fs_host_fs_hcint5_txerr,
+  FieldId::field_otg_fs_host_fs_hcint5_bberr,
+  FieldId::field_otg_fs_host_fs_hcint5_frmor,
+  FieldId::field_otg_fs_host_fs_hcint5_dterr,
+  FieldId::field_otg_fs_host_fs_hcint6_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint6_chh,
+  FieldId::field_otg_fs_host_fs_hcint6_stall,
+  FieldId::field_otg_fs_host_fs_hcint6_nak,
+  FieldId::field_otg_fs_host_fs_hcint6_ack,
+  FieldId::field_otg_fs_host_fs_hcint6_txerr,
+  FieldId::field_otg_fs_host_fs_hcint6_bberr,
+  FieldId::field_otg_fs_host_fs_hcint6_frmor,
+  FieldId::field_otg_fs_host_fs_hcint6_dterr,
+  FieldId::field_otg_fs_host_fs_hcint7_xfrc,
+  FieldId::field_otg_fs_host_fs_hcint7_chh,
+  FieldId::field_otg_fs_host_fs_hcint7_stall,
+  FieldId::field_otg_fs_host_fs_hcint7_nak,
+  FieldId::field_otg_fs_host_fs_hcint7_ack,
+  FieldId::field_otg_fs_host_fs_hcint7_txerr,
+  FieldId::field_otg_fs_host_fs_hcint7_bberr,
+  FieldId::field_otg_fs_host_fs_hcint7_frmor,
+  FieldId::field_otg_fs_host_fs_hcint7_dterr,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk0_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk1_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk2_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk3_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk4_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk5_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk6_dterrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_xfrcm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_chhm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_stallm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_nakm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_ackm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_nyet,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_txerrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_bberrm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_frmorm,
+  FieldId::field_otg_fs_host_fs_hcintmsk7_dterrm,
+  FieldId::field_otg_fs_host_fs_hctsiz0_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz0_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz0_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz1_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz1_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz1_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz2_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz2_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz2_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz3_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz3_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz3_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz4_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz4_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz4_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz5_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz5_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz5_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz6_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz6_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz6_dpid,
+  FieldId::field_otg_fs_host_fs_hctsiz7_xfrsiz,
+  FieldId::field_otg_fs_host_fs_hctsiz7_pktcnt,
+  FieldId::field_otg_fs_host_fs_hctsiz7_dpid,
+  FieldId::field_otg_fs_host_fs_hfnum_frnum,
+  FieldId::field_otg_fs_host_fs_hfnum_ftrem,
+  FieldId::field_otg_fs_host_fs_hprt_pcsts,
+  FieldId::field_otg_fs_host_fs_hprt_pcdet,
+  FieldId::field_otg_fs_host_fs_hprt_pena,
+  FieldId::field_otg_fs_host_fs_hprt_penchng,
+  FieldId::field_otg_fs_host_fs_hprt_poca,
+  FieldId::field_otg_fs_host_fs_hprt_pocchng,
+  FieldId::field_otg_fs_host_fs_hprt_pres,
+  FieldId::field_otg_fs_host_fs_hprt_psusp,
+  FieldId::field_otg_fs_host_fs_hprt_prst,
+  FieldId::field_otg_fs_host_fs_hprt_plsts,
+  FieldId::field_otg_fs_host_fs_hprt_ppwr,
+  FieldId::field_otg_fs_host_fs_hprt_ptctl,
+  FieldId::field_otg_fs_host_fs_hprt_pspd,
+  FieldId::field_otg_fs_host_fs_hptxsts_ptxfsavl,
+  FieldId::field_otg_fs_host_fs_hptxsts_ptxqsav,
+  FieldId::field_otg_fs_host_fs_hptxsts_ptxqtop,
+  FieldId::field_otg_fs_host_haint_haint,
+  FieldId::field_otg_fs_host_haintmsk_haintm,
+  FieldId::field_otg_fs_host_hfir_frivl,
+  FieldId::field_otg_fs_pwrclk_fs_pcgcctl_stppclk,
+  FieldId::field_otg_fs_pwrclk_fs_pcgcctl_gatehclk,
+  FieldId::field_otg_fs_pwrclk_fs_pcgcctl_physusp,
   FieldId::field_rcc_ahb1enr_gpioaen,
   FieldId::field_rcc_ahb1enr_gpioben,
   FieldId::field_rcc_ahb1enr_gpiocen,

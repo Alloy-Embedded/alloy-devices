@@ -201,6 +201,101 @@ enum class RegisterId : std::uint16_t {
   register_iwdg_pr,
   register_iwdg_rlr,
   register_iwdg_sr,
+  register_otg_fs_device_fs_dcfg,
+  register_otg_fs_device_fs_dctl,
+  register_otg_fs_device_fs_dsts,
+  register_otg_fs_device_fs_diepmsk,
+  register_otg_fs_device_fs_doepmsk,
+  register_otg_fs_device_fs_daint,
+  register_otg_fs_device_fs_daintmsk,
+  register_otg_fs_device_dvbusdis,
+  register_otg_fs_device_dvbuspulse,
+  register_otg_fs_device_diepempmsk,
+  register_otg_fs_device_fs_diepctl0,
+  register_otg_fs_device_diepint0,
+  register_otg_fs_device_dieptsiz0,
+  register_otg_fs_device_dtxfsts0,
+  register_otg_fs_device_diepctl1,
+  register_otg_fs_device_diepint1,
+  register_otg_fs_device_dieptsiz1,
+  register_otg_fs_device_dtxfsts1,
+  register_otg_fs_device_diepctl2,
+  register_otg_fs_device_diepint2,
+  register_otg_fs_device_dieptsiz2,
+  register_otg_fs_device_dtxfsts2,
+  register_otg_fs_device_diepctl3,
+  register_otg_fs_device_diepint3,
+  register_otg_fs_device_dieptsiz3,
+  register_otg_fs_device_dtxfsts3,
+  register_otg_fs_device_doepctl0,
+  register_otg_fs_device_doepint0,
+  register_otg_fs_device_doeptsiz0,
+  register_otg_fs_device_doepctl1,
+  register_otg_fs_device_doepint1,
+  register_otg_fs_device_doeptsiz1,
+  register_otg_fs_device_doepctl2,
+  register_otg_fs_device_doepint2,
+  register_otg_fs_device_doeptsiz2,
+  register_otg_fs_device_doepctl3,
+  register_otg_fs_device_doepint3,
+  register_otg_fs_device_doeptsiz3,
+  register_otg_fs_global_fs_gotgctl,
+  register_otg_fs_global_fs_gotgint,
+  register_otg_fs_global_fs_gahbcfg,
+  register_otg_fs_global_fs_gusbcfg,
+  register_otg_fs_global_fs_grstctl,
+  register_otg_fs_global_fs_gintsts,
+  register_otg_fs_global_fs_gintmsk,
+  register_otg_fs_global_fs_grxstsr_device,
+  register_otg_fs_global_fs_grxfsiz,
+  register_otg_fs_global_fs_gnptxfsiz_device,
+  register_otg_fs_global_fs_gnptxsts,
+  register_otg_fs_global_fs_gccfg,
+  register_otg_fs_global_fs_cid,
+  register_otg_fs_global_fs_hptxfsiz,
+  register_otg_fs_global_fs_dieptxf1,
+  register_otg_fs_global_fs_dieptxf2,
+  register_otg_fs_global_fs_dieptxf3,
+  register_otg_fs_host_fs_hcfg,
+  register_otg_fs_host_hfir,
+  register_otg_fs_host_fs_hfnum,
+  register_otg_fs_host_fs_hptxsts,
+  register_otg_fs_host_haint,
+  register_otg_fs_host_haintmsk,
+  register_otg_fs_host_fs_hprt,
+  register_otg_fs_host_fs_hcchar0,
+  register_otg_fs_host_fs_hcint0,
+  register_otg_fs_host_fs_hcintmsk0,
+  register_otg_fs_host_fs_hctsiz0,
+  register_otg_fs_host_fs_hcchar1,
+  register_otg_fs_host_fs_hcint1,
+  register_otg_fs_host_fs_hcintmsk1,
+  register_otg_fs_host_fs_hctsiz1,
+  register_otg_fs_host_fs_hcchar2,
+  register_otg_fs_host_fs_hcint2,
+  register_otg_fs_host_fs_hcintmsk2,
+  register_otg_fs_host_fs_hctsiz2,
+  register_otg_fs_host_fs_hcchar3,
+  register_otg_fs_host_fs_hcint3,
+  register_otg_fs_host_fs_hcintmsk3,
+  register_otg_fs_host_fs_hctsiz3,
+  register_otg_fs_host_fs_hcchar4,
+  register_otg_fs_host_fs_hcint4,
+  register_otg_fs_host_fs_hcintmsk4,
+  register_otg_fs_host_fs_hctsiz4,
+  register_otg_fs_host_fs_hcchar5,
+  register_otg_fs_host_fs_hcint5,
+  register_otg_fs_host_fs_hcintmsk5,
+  register_otg_fs_host_fs_hctsiz5,
+  register_otg_fs_host_fs_hcchar6,
+  register_otg_fs_host_fs_hcint6,
+  register_otg_fs_host_fs_hcintmsk6,
+  register_otg_fs_host_fs_hctsiz6,
+  register_otg_fs_host_fs_hcchar7,
+  register_otg_fs_host_fs_hcint7,
+  register_otg_fs_host_fs_hcintmsk7,
+  register_otg_fs_host_fs_hctsiz7,
+  register_otg_fs_pwrclk_fs_pcgcctl,
   register_rcc_cr,
   register_rcc_pllcfgr,
   register_rcc_cfgr,
@@ -2166,6 +2261,861 @@ struct RegisterTraits<RegisterId::register_iwdg_sr> {
   static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_dcfg> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_dctl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_dsts> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_diepmsk> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_doepmsk> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_daint> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_daintmsk> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dvbusdis> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dvbuspulse> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepempmsk> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 52u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_fs_diepctl0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 256u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepint0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 264u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 272u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 280u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepctl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 288u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepint1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 296u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 304u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 312u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepctl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 320u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepint2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 328u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 336u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 344u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepctl3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 352u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_diepint3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 360u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 368u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 376u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 768u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepint0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 776u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 784u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 800u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepint1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 808u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 816u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 832u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepint2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 840u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 848u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 864u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doepint3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 872u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr std::uint32_t kOffsetBytes = 880u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gotgctl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gotgint> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gahbcfg> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gusbcfg> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_grstctl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gintsts> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gintmsk> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_grxstsr_device> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_grxfsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 36u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gnptxfsiz_device> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gnptxsts> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gccfg> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 56u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_cid> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 60u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_hptxfsiz> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 256u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_dieptxf1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 260u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_dieptxf2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 264u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_global_fs_dieptxf3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint32_t kOffsetBytes = 268u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcfg> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_hfir> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hfnum> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hptxsts> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_haint> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_haintmsk> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hprt> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 64u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 256u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 264u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 268u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 272u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 288u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 296u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 300u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 304u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 320u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 328u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 332u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 336u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 352u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 360u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 364u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 368u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 384u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 392u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 396u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 400u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 416u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 424u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 428u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 432u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 448u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 456u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 460u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 464u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 480u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 488u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 492u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr std::uint32_t kOffsetBytes = 496u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_otg_fs_pwrclk_fs_pcgcctl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000E00u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
 };
 
@@ -4473,7 +5423,7 @@ struct RegisterTraits<RegisterId::register_wwdg_sr> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 445> kRegisters = {{
+inline constexpr std::array<RegisterId, 540> kRegisters = {{
   RegisterId::register_adc1_sr,
   RegisterId::register_adc1_cr1,
   RegisterId::register_adc1_cr2,
@@ -4663,6 +5613,101 @@ inline constexpr std::array<RegisterId, 445> kRegisters = {{
   RegisterId::register_iwdg_pr,
   RegisterId::register_iwdg_rlr,
   RegisterId::register_iwdg_sr,
+  RegisterId::register_otg_fs_device_fs_dcfg,
+  RegisterId::register_otg_fs_device_fs_dctl,
+  RegisterId::register_otg_fs_device_fs_dsts,
+  RegisterId::register_otg_fs_device_fs_diepmsk,
+  RegisterId::register_otg_fs_device_fs_doepmsk,
+  RegisterId::register_otg_fs_device_fs_daint,
+  RegisterId::register_otg_fs_device_fs_daintmsk,
+  RegisterId::register_otg_fs_device_dvbusdis,
+  RegisterId::register_otg_fs_device_dvbuspulse,
+  RegisterId::register_otg_fs_device_diepempmsk,
+  RegisterId::register_otg_fs_device_fs_diepctl0,
+  RegisterId::register_otg_fs_device_diepint0,
+  RegisterId::register_otg_fs_device_dieptsiz0,
+  RegisterId::register_otg_fs_device_dtxfsts0,
+  RegisterId::register_otg_fs_device_diepctl1,
+  RegisterId::register_otg_fs_device_diepint1,
+  RegisterId::register_otg_fs_device_dieptsiz1,
+  RegisterId::register_otg_fs_device_dtxfsts1,
+  RegisterId::register_otg_fs_device_diepctl2,
+  RegisterId::register_otg_fs_device_diepint2,
+  RegisterId::register_otg_fs_device_dieptsiz2,
+  RegisterId::register_otg_fs_device_dtxfsts2,
+  RegisterId::register_otg_fs_device_diepctl3,
+  RegisterId::register_otg_fs_device_diepint3,
+  RegisterId::register_otg_fs_device_dieptsiz3,
+  RegisterId::register_otg_fs_device_dtxfsts3,
+  RegisterId::register_otg_fs_device_doepctl0,
+  RegisterId::register_otg_fs_device_doepint0,
+  RegisterId::register_otg_fs_device_doeptsiz0,
+  RegisterId::register_otg_fs_device_doepctl1,
+  RegisterId::register_otg_fs_device_doepint1,
+  RegisterId::register_otg_fs_device_doeptsiz1,
+  RegisterId::register_otg_fs_device_doepctl2,
+  RegisterId::register_otg_fs_device_doepint2,
+  RegisterId::register_otg_fs_device_doeptsiz2,
+  RegisterId::register_otg_fs_device_doepctl3,
+  RegisterId::register_otg_fs_device_doepint3,
+  RegisterId::register_otg_fs_device_doeptsiz3,
+  RegisterId::register_otg_fs_global_fs_gotgctl,
+  RegisterId::register_otg_fs_global_fs_gotgint,
+  RegisterId::register_otg_fs_global_fs_gahbcfg,
+  RegisterId::register_otg_fs_global_fs_gusbcfg,
+  RegisterId::register_otg_fs_global_fs_grstctl,
+  RegisterId::register_otg_fs_global_fs_gintsts,
+  RegisterId::register_otg_fs_global_fs_gintmsk,
+  RegisterId::register_otg_fs_global_fs_grxstsr_device,
+  RegisterId::register_otg_fs_global_fs_grxfsiz,
+  RegisterId::register_otg_fs_global_fs_gnptxfsiz_device,
+  RegisterId::register_otg_fs_global_fs_gnptxsts,
+  RegisterId::register_otg_fs_global_fs_gccfg,
+  RegisterId::register_otg_fs_global_fs_cid,
+  RegisterId::register_otg_fs_global_fs_hptxfsiz,
+  RegisterId::register_otg_fs_global_fs_dieptxf1,
+  RegisterId::register_otg_fs_global_fs_dieptxf2,
+  RegisterId::register_otg_fs_global_fs_dieptxf3,
+  RegisterId::register_otg_fs_host_fs_hcfg,
+  RegisterId::register_otg_fs_host_hfir,
+  RegisterId::register_otg_fs_host_fs_hfnum,
+  RegisterId::register_otg_fs_host_fs_hptxsts,
+  RegisterId::register_otg_fs_host_haint,
+  RegisterId::register_otg_fs_host_haintmsk,
+  RegisterId::register_otg_fs_host_fs_hprt,
+  RegisterId::register_otg_fs_host_fs_hcchar0,
+  RegisterId::register_otg_fs_host_fs_hcint0,
+  RegisterId::register_otg_fs_host_fs_hcintmsk0,
+  RegisterId::register_otg_fs_host_fs_hctsiz0,
+  RegisterId::register_otg_fs_host_fs_hcchar1,
+  RegisterId::register_otg_fs_host_fs_hcint1,
+  RegisterId::register_otg_fs_host_fs_hcintmsk1,
+  RegisterId::register_otg_fs_host_fs_hctsiz1,
+  RegisterId::register_otg_fs_host_fs_hcchar2,
+  RegisterId::register_otg_fs_host_fs_hcint2,
+  RegisterId::register_otg_fs_host_fs_hcintmsk2,
+  RegisterId::register_otg_fs_host_fs_hctsiz2,
+  RegisterId::register_otg_fs_host_fs_hcchar3,
+  RegisterId::register_otg_fs_host_fs_hcint3,
+  RegisterId::register_otg_fs_host_fs_hcintmsk3,
+  RegisterId::register_otg_fs_host_fs_hctsiz3,
+  RegisterId::register_otg_fs_host_fs_hcchar4,
+  RegisterId::register_otg_fs_host_fs_hcint4,
+  RegisterId::register_otg_fs_host_fs_hcintmsk4,
+  RegisterId::register_otg_fs_host_fs_hctsiz4,
+  RegisterId::register_otg_fs_host_fs_hcchar5,
+  RegisterId::register_otg_fs_host_fs_hcint5,
+  RegisterId::register_otg_fs_host_fs_hcintmsk5,
+  RegisterId::register_otg_fs_host_fs_hctsiz5,
+  RegisterId::register_otg_fs_host_fs_hcchar6,
+  RegisterId::register_otg_fs_host_fs_hcint6,
+  RegisterId::register_otg_fs_host_fs_hcintmsk6,
+  RegisterId::register_otg_fs_host_fs_hctsiz6,
+  RegisterId::register_otg_fs_host_fs_hcchar7,
+  RegisterId::register_otg_fs_host_fs_hcint7,
+  RegisterId::register_otg_fs_host_fs_hcintmsk7,
+  RegisterId::register_otg_fs_host_fs_hctsiz7,
+  RegisterId::register_otg_fs_pwrclk_fs_pcgcctl,
   RegisterId::register_rcc_cr,
   RegisterId::register_rcc_pllcfgr,
   RegisterId::register_rcc_cfgr,

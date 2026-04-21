@@ -1,0 +1,571 @@
+{
+  "classes": [
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "adc",
+      "total_peripheral_count": 4
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 1,
+      "devices": [
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "can",
+      "total_peripheral_count": 2
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 1,
+      "devices": [
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "dac",
+      "total_peripheral_count": 1
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "dma",
+      "total_peripheral_count": 4
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 1,
+      "devices": [
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "eth",
+      "total_peripheral_count": 3
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "gpio",
+      "total_peripheral_count": 17
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "rtc",
+      "total_peripheral_count": 2
+    },
+    {
+      "capability_names": [
+        "available-signal",
+        "runtime-supported",
+        "signal-role"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "spi",
+      "total_peripheral_count": 10
+    },
+    {
+      "capability_names": [
+        "available-signal",
+        "runtime-supported",
+        "signal-role"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "timer",
+      "total_peripheral_count": 23
+    },
+    {
+      "capability_names": [
+        "available-signal",
+        "dma-compatible-signal",
+        "runtime-supported",
+        "signal-role"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [
+        "RX",
+        "TX"
+      ],
+      "peripheral_class": "uart",
+      "total_peripheral_count": 11
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "usb",
+      "total_peripheral_count": 12
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "stm32f401re",
+        "stm32f405rg"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "watchdog",
+      "total_peripheral_count": 4
+    }
+  ],
+  "devices": [
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "ADC1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "dma",
+          "peripheral_count": 2,
+          "peripherals": [
+            "DMA1",
+            "DMA2"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "gpio",
+          "peripheral_count": 6,
+          "peripherals": [
+            "GPIOA",
+            "GPIOB",
+            "GPIOC",
+            "GPIOD",
+            "GPIOE",
+            "GPIOH"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "rtc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "RTC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [],
+          "instance_capability_count": 8,
+          "peripheral_class": "spi",
+          "peripheral_count": 4,
+          "peripherals": [
+            "SPI1",
+            "SPI2",
+            "SPI3",
+            "SPI4"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 10,
+          "dma_signals": [],
+          "instance_capability_count": 26,
+          "peripheral_class": "timer",
+          "peripheral_count": 9,
+          "peripherals": [
+            "TIM1",
+            "TIM10",
+            "TIM11",
+            "TIM2",
+            "TIM3",
+            "TIM4",
+            "TIM5",
+            "TIM8",
+            "TIM9"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 6,
+          "dma_signals": [
+            "RX",
+            "TX"
+          ],
+          "instance_capability_count": 11,
+          "peripheral_class": "uart",
+          "peripheral_count": 3,
+          "peripherals": [
+            "USART1",
+            "USART2",
+            "USART6"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "usb",
+          "peripheral_count": 4,
+          "peripherals": [
+            "OTG_FS_DEVICE",
+            "OTG_FS_GLOBAL",
+            "OTG_FS_HOST",
+            "OTG_FS_PWRCLK"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "watchdog",
+          "peripheral_count": 2,
+          "peripherals": [
+            "IWDG",
+            "WWDG"
+          ],
+          "present": true
+        }
+      ],
+      "device": "stm32f401re",
+      "package": "lqfp64"
+    },
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 3,
+          "peripherals": [
+            "ADC1",
+            "ADC2",
+            "ADC3"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "can",
+          "peripheral_count": 2,
+          "peripherals": [
+            "CAN1",
+            "CAN2"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "dac",
+          "peripheral_count": 1,
+          "peripherals": [
+            "DAC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "dma",
+          "peripheral_count": 2,
+          "peripherals": [
+            "DMA1",
+            "DMA2"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "eth",
+          "peripheral_count": 3,
+          "peripherals": [
+            "Ethernet_DMA",
+            "Ethernet_MAC",
+            "Ethernet_MMC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "gpio",
+          "peripheral_count": 11,
+          "peripherals": [
+            "GPIOA",
+            "GPIOB",
+            "GPIOC",
+            "GPIOD",
+            "GPIOE",
+            "GPIOF",
+            "GPIOG",
+            "GPIOH",
+            "GPIOI",
+            "GPIOJ",
+            "GPIOK"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "rtc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "RTC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [],
+          "instance_capability_count": 8,
+          "peripheral_class": "spi",
+          "peripheral_count": 6,
+          "peripherals": [
+            "SPI1",
+            "SPI2",
+            "SPI3",
+            "SPI4",
+            "SPI5",
+            "SPI6"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 10,
+          "dma_signals": [],
+          "instance_capability_count": 26,
+          "peripheral_class": "timer",
+          "peripheral_count": 14,
+          "peripherals": [
+            "TIM1",
+            "TIM10",
+            "TIM11",
+            "TIM12",
+            "TIM13",
+            "TIM14",
+            "TIM2",
+            "TIM3",
+            "TIM4",
+            "TIM5",
+            "TIM6",
+            "TIM7",
+            "TIM8",
+            "TIM9"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 6,
+          "dma_signals": [
+            "RX",
+            "TX"
+          ],
+          "instance_capability_count": 11,
+          "peripheral_class": "uart",
+          "peripheral_count": 8,
+          "peripherals": [
+            "UART4",
+            "UART5",
+            "UART7",
+            "UART8",
+            "USART1",
+            "USART2",
+            "USART3",
+            "USART6"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "usb",
+          "peripheral_count": 8,
+          "peripherals": [
+            "OTG_FS_DEVICE",
+            "OTG_FS_GLOBAL",
+            "OTG_FS_HOST",
+            "OTG_FS_PWRCLK",
+            "OTG_HS_DEVICE",
+            "OTG_HS_GLOBAL",
+            "OTG_HS_HOST",
+            "OTG_HS_PWRCLK"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "watchdog",
+          "peripheral_count": 2,
+          "peripherals": [
+            "IWDG",
+            "WWDG"
+          ],
+          "present": true
+        }
+      ],
+      "device": "stm32f405rg",
+      "package": "lqfp64"
+    }
+  ],
+  "family": "stm32f4",
+  "family_dir": "st/stm32f4",
+  "report_id": "runtime-capability-summary-v1",
+  "vendor": "st"
+}

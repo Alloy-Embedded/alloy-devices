@@ -98,6 +98,42 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "OTG_FS_DEVICE",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_GLOBAL",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_HOST",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_PWRCLK",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "RTC",
           "peripheral_class": "rtc"
         },
@@ -255,7 +291,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 71,
+      "capability_decision_count": 72,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -1029,6 +1065,17 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "runtime-support:usb",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "usb",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "decision_id": "runtime-support:watchdog",
           "decision_kind": "inferred_runtime_support",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
@@ -1067,7 +1114,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 17,
+      "heuristic_fact_count": 18,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -1121,6 +1168,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART2:DMA1:DMA1_STREAM6:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:usb",
           "fact_kind": "capability"
         },
         {
@@ -1263,6 +1316,42 @@
           "instance_capability_count": 0,
           "peripheral": "IWDG",
           "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_DEVICE",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_GLOBAL",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_HOST",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_PWRCLK",
+          "peripheral_class": "usb"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -3562,6 +3651,33 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "Ethernet_DMA",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "Ethernet_MAC",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "Ethernet_MMC",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "GPIOA",
           "peripheral_class": "gpio"
         },
@@ -3663,6 +3779,78 @@
           "instance_capability_count": 0,
           "peripheral": "IWDG",
           "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_DEVICE",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_GLOBAL",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_HOST",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_PWRCLK",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_DEVICE",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_GLOBAL",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_HOST",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_PWRCLK",
+          "peripheral_class": "usb"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -3935,7 +4123,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 73,
+      "capability_decision_count": 75,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -3978,6 +4166,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "dma",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "runtime-support:eth",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "eth",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -4731,6 +4930,17 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "runtime-support:usb",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "usb",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "decision_id": "runtime-support:watchdog",
           "decision_kind": "inferred_runtime_support",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
@@ -4769,7 +4979,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 19,
+      "heuristic_fact_count": 21,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -4793,6 +5003,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:dma",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:eth",
           "fact_kind": "capability"
         },
         {
@@ -4835,6 +5051,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:USART1:DMA2:DMA2_STREAM7:TX",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:usb",
           "fact_kind": "capability"
         },
         {
@@ -4966,6 +5188,33 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "Ethernet_DMA",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "Ethernet_MAC",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "Ethernet_MMC",
+          "peripheral_class": "eth"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "GPIOA",
           "peripheral_class": "gpio"
         },
@@ -5067,6 +5316,78 @@
           "instance_capability_count": 0,
           "peripheral": "IWDG",
           "peripheral_class": "watchdog"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_DEVICE",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_GLOBAL",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_HOST",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_FS_PWRCLK",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_DEVICE",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_GLOBAL",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_HOST",
+          "peripheral_class": "usb"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "OTG_HS_PWRCLK",
+          "peripheral_class": "usb"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",

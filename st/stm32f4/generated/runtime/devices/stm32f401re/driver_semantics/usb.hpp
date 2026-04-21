@@ -1,0 +1,206 @@
+#pragma once
+
+#include <array>
+#include <cstdint>
+#include "common.hpp"
+
+namespace st {
+namespace stm32f4 {
+namespace generated {
+namespace runtime {
+namespace devices {
+namespace stm32f401re {
+namespace driver_semantics {
+template<PeripheralId Id>
+struct UsbSemanticTraits {
+  static constexpr bool kPresent = false;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
+  static constexpr bool kSupportsDeviceMode = false;
+  static constexpr bool kSupportsHostMode = false;
+  static constexpr bool kHasDedicatedEndpointConfig = false;
+  static constexpr bool kHasClockFreeze = false;
+  static constexpr RuntimeRegisterRef kControlRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceControlRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostControlRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeFieldRef kEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kFreezeClockField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kForceDeviceModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kForceHostModeField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kModeStatusField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kSoftDisconnectField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kRemoteWakeupField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kAddressField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+};
+
+template<>
+struct UsbSemanticTraits<PeripheralId::OTG_FS_DEVICE> {
+  static constexpr bool kPresent = true;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_device;
+  static constexpr bool kSupportsDeviceMode = true;
+  static constexpr bool kSupportsHostMode = true;
+  static constexpr bool kHasDedicatedEndpointConfig = true;
+  static constexpr bool kHasClockFreeze = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 12u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 24u, true};
+  static constexpr RuntimeRegisterRef kDeviceControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 2052u, true};
+  static constexpr RuntimeRegisterRef kDeviceStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 2056u, true};
+  static constexpr RuntimeRegisterRef kDeviceInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 1024u, true};
+  static constexpr RuntimeRegisterRef kHostStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 1088u, true};
+  static constexpr RuntimeRegisterRef kHostInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 56u, true}, 16u, 1u, true};
+  static constexpr RuntimeFieldRef kFreezeClockField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kForceDeviceModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 12u, true}, 30u, 1u, true};
+  static constexpr RuntimeFieldRef kForceHostModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 12u, true}, 29u, 1u, true};
+  static constexpr RuntimeFieldRef kModeStatusField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 20u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kSoftDisconnectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 2052u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kRemoteWakeupField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 2052u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 2048u, true}, 4u, 7u, true};
+  static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+};
+
+template<>
+struct UsbSemanticTraits<PeripheralId::OTG_FS_GLOBAL> {
+  static constexpr bool kPresent = true;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_global;
+  static constexpr bool kSupportsDeviceMode = true;
+  static constexpr bool kSupportsHostMode = true;
+  static constexpr bool kHasDedicatedEndpointConfig = true;
+  static constexpr bool kHasClockFreeze = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 12u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 24u, true};
+  static constexpr RuntimeRegisterRef kDeviceControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 2052u, true};
+  static constexpr RuntimeRegisterRef kDeviceStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 2056u, true};
+  static constexpr RuntimeRegisterRef kDeviceInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 1024u, true};
+  static constexpr RuntimeRegisterRef kHostStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 1088u, true};
+  static constexpr RuntimeRegisterRef kHostInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 56u, true}, 16u, 1u, true};
+  static constexpr RuntimeFieldRef kFreezeClockField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kForceDeviceModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 12u, true}, 30u, 1u, true};
+  static constexpr RuntimeFieldRef kForceHostModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 12u, true}, 29u, 1u, true};
+  static constexpr RuntimeFieldRef kModeStatusField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 20u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kSoftDisconnectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 2052u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kRemoteWakeupField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 2052u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 2048u, true}, 4u, 7u, true};
+  static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+};
+
+template<>
+struct UsbSemanticTraits<PeripheralId::OTG_FS_HOST> {
+  static constexpr bool kPresent = true;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_host;
+  static constexpr bool kSupportsDeviceMode = true;
+  static constexpr bool kSupportsHostMode = true;
+  static constexpr bool kHasDedicatedEndpointConfig = true;
+  static constexpr bool kHasClockFreeze = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 12u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 24u, true};
+  static constexpr RuntimeRegisterRef kDeviceControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 2052u, true};
+  static constexpr RuntimeRegisterRef kDeviceStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 2056u, true};
+  static constexpr RuntimeRegisterRef kDeviceInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 1024u, true};
+  static constexpr RuntimeRegisterRef kHostStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 1088u, true};
+  static constexpr RuntimeRegisterRef kHostInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 56u, true}, 16u, 1u, true};
+  static constexpr RuntimeFieldRef kFreezeClockField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kForceDeviceModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 12u, true}, 30u, 1u, true};
+  static constexpr RuntimeFieldRef kForceHostModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 12u, true}, 29u, 1u, true};
+  static constexpr RuntimeFieldRef kModeStatusField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 20u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kSoftDisconnectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 2052u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kRemoteWakeupField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 2052u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 2048u, true}, 4u, 7u, true};
+  static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+};
+
+template<>
+struct UsbSemanticTraits<PeripheralId::OTG_FS_PWRCLK> {
+  static constexpr bool kPresent = true;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_pwrclk;
+  static constexpr bool kSupportsDeviceMode = true;
+  static constexpr bool kSupportsHostMode = true;
+  static constexpr bool kHasDedicatedEndpointConfig = true;
+  static constexpr bool kHasClockFreeze = false;
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 12u, true};
+  static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 20u, true};
+  static constexpr RuntimeRegisterRef kInterruptMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 24u, true};
+  static constexpr RuntimeRegisterRef kDeviceControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 2052u, true};
+  static constexpr RuntimeRegisterRef kDeviceStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 2056u, true};
+  static constexpr RuntimeRegisterRef kDeviceInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kDeviceInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 1024u, true};
+  static constexpr RuntimeRegisterRef kHostStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 1088u, true};
+  static constexpr RuntimeRegisterRef kHostInterruptStatusRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptMaskRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptEnableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kHostInterruptDisableRegister = kInvalidRegisterRef;
+  static constexpr RuntimeFieldRef kEnableField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 56u, true}, 16u, 1u, true};
+  static constexpr RuntimeFieldRef kFreezeClockField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kForceDeviceModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 12u, true}, 30u, 1u, true};
+  static constexpr RuntimeFieldRef kForceHostModeField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 12u, true}, 29u, 1u, true};
+  static constexpr RuntimeFieldRef kModeStatusField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 20u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kSoftDisconnectField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 2052u, true}, 1u, 1u, true};
+  static constexpr RuntimeFieldRef kRemoteWakeupField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 2052u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 2048u, true}, 4u, 7u, true};
+  static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+};
+
+inline constexpr std::array<PeripheralId, 4> kUsbSemanticPeripherals = {{
+  PeripheralId::OTG_FS_DEVICE,
+  PeripheralId::OTG_FS_GLOBAL,
+  PeripheralId::OTG_FS_HOST,
+  PeripheralId::OTG_FS_PWRCLK,
+}};
+}
+}
+}
+}
+}
+}
+}

@@ -348,6 +348,30 @@ struct PeripheralClockBindingTraits<PeripheralId::DMA2> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::Ethernet_DMA> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::Ethernet_MAC> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::Ethernet_MMC> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::GPIOA> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpioa;
@@ -437,6 +461,70 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOK> {
 
 template<>
 struct PeripheralClockBindingTraits<PeripheralId::IWDG> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_DEVICE> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_GLOBAL> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_HOST> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_FS_PWRCLK> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_HS_DEVICE> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_HS_GLOBAL> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_HS_HOST> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::OTG_HS_PWRCLK> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
@@ -683,7 +771,7 @@ struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 50> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 61> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::ADC2,
   PeripheralId::ADC3,
@@ -692,6 +780,9 @@ inline constexpr std::array<PeripheralId, 50> kClockBoundPeripherals = {{
   PeripheralId::DAC,
   PeripheralId::DMA1,
   PeripheralId::DMA2,
+  PeripheralId::Ethernet_DMA,
+  PeripheralId::Ethernet_MAC,
+  PeripheralId::Ethernet_MMC,
   PeripheralId::GPIOA,
   PeripheralId::GPIOB,
   PeripheralId::GPIOC,
@@ -704,6 +795,14 @@ inline constexpr std::array<PeripheralId, 50> kClockBoundPeripherals = {{
   PeripheralId::GPIOJ,
   PeripheralId::GPIOK,
   PeripheralId::IWDG,
+  PeripheralId::OTG_FS_DEVICE,
+  PeripheralId::OTG_FS_GLOBAL,
+  PeripheralId::OTG_FS_HOST,
+  PeripheralId::OTG_FS_PWRCLK,
+  PeripheralId::OTG_HS_DEVICE,
+  PeripheralId::OTG_HS_GLOBAL,
+  PeripheralId::OTG_HS_HOST,
+  PeripheralId::OTG_HS_PWRCLK,
   PeripheralId::RTC,
   PeripheralId::SPI1,
   PeripheralId::SPI2,

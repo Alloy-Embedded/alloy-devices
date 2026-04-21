@@ -22,6 +22,10 @@ enum class PeripheralId : std::uint16_t {
   GPIOE,
   GPIOH,
   IWDG,
+  OTG_FS_DEVICE,
+  OTG_FS_GLOBAL,
+  OTG_FS_HOST,
+  OTG_FS_PWRCLK,
   RTC,
   SPI1,
   SPI2,
@@ -213,6 +217,54 @@ struct PeripheralInstanceTraits<PeripheralId::IWDG> {
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_watchdog_st_iwdg1_v1_1;
   static constexpr int kInstance = 0;
   static constexpr std::uintptr_t kBaseAddress = 0x40003000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::OTG_FS_DEVICE> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_usb;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_device;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000800u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::OTG_FS_GLOBAL> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_usb;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_global;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000000u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::OTG_FS_HOST> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_usb;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_host;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000400u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::OTG_FS_PWRCLK> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_usb;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_otg_fs_pwrclk;
+  static constexpr int kInstance = 0;
+  static constexpr std::uintptr_t kBaseAddress = 0x50000E00u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
@@ -434,7 +486,7 @@ struct PeripheralInstanceTraits<PeripheralId::WWDG> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 28> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 32> kRuntimePeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMA2,
@@ -445,6 +497,10 @@ inline constexpr std::array<PeripheralId, 28> kRuntimePeripherals = {{
   PeripheralId::GPIOE,
   PeripheralId::GPIOH,
   PeripheralId::IWDG,
+  PeripheralId::OTG_FS_DEVICE,
+  PeripheralId::OTG_FS_GLOBAL,
+  PeripheralId::OTG_FS_HOST,
+  PeripheralId::OTG_FS_PWRCLK,
   PeripheralId::RTC,
   PeripheralId::SPI1,
   PeripheralId::SPI2,
