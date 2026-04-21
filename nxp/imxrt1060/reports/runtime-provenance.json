@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "mimxrt1062",
-      "fact_count": 782,
+      "fact_count": 790,
       "facts": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/startup.hpp",
@@ -5234,6 +5234,114 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:enet:enet",
+            "interrupt": "ENET",
+            "line": 114,
+            "peripheral": "ENET",
+            "vector_slot": 130
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet:enet",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:enet:enet-1588-timer",
+            "interrupt": "ENET_1588_Timer",
+            "line": 115,
+            "peripheral": "ENET",
+            "vector_slot": 131
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet:enet-1588-timer",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:enet2:enet2",
+            "interrupt": "ENET2",
+            "line": 152,
+            "peripheral": "ENET2",
+            "vector_slot": 168
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet2:enet2",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:enet2:enet2-1588-timer",
+            "interrupt": "ENET2_1588_Timer",
+            "line": 153,
+            "peripheral": "ENET2",
+            "vector_slot": 169
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet2:enet2-1588-timer",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:gpio1:gpio1-combined-0-15",
             "interrupt": "GPIO1_Combined_0_15",
             "line": 80,
@@ -6726,6 +6834,60 @@
             "vector_slot": 109
           },
           "fact_id": "interrupt-binding:interrupt-binding:rtwdog:rtwdog",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:usb1:usb-otg1",
+            "interrupt": "USB_OTG1",
+            "line": 113,
+            "peripheral": "USB1",
+            "vector_slot": 129
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:usb1:usb-otg1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:usb2:usb-otg2",
+            "interrupt": "USB_OTG2",
+            "line": 112,
+            "peripheral": "USB2",
+            "vector_slot": 128
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:usb2:usb-otg2",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -15522,6 +15684,37 @@
         },
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:eth",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "eth",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:eth",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:ENET",
+            "runtime-peripheral:ENET2"
+          ]
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
           "derivation_kind": "patched",
           "detail": {
             "capability_id": "capability:gpio:imxrt-gpio-v1:io00",
@@ -21690,6 +21883,37 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:usb",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "usb",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:usb",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1062-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1062/MIMXRT1062.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:USB1",
+            "runtime-peripheral:USB2"
+          ]
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:watchdog",
             "name": "runtime-supported",
             "peripheral": null,
@@ -21873,7 +22097,7 @@
     },
     {
       "device": "mimxrt1064",
-      "fact_count": 784,
+      "fact_count": 792,
       "facts": [
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/startup.hpp",
@@ -27132,6 +27356,114 @@
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:enet:enet",
+            "interrupt": "ENET",
+            "line": 114,
+            "peripheral": "ENET",
+            "vector_slot": 130
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet:enet",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:enet:enet-1588-timer",
+            "interrupt": "ENET_1588_Timer",
+            "line": 115,
+            "peripheral": "ENET",
+            "vector_slot": 131
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet:enet-1588-timer",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:enet2:enet2",
+            "interrupt": "ENET2",
+            "line": 152,
+            "peripheral": "ENET2",
+            "vector_slot": 168
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet2:enet2",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:enet2:enet2-1588-timer",
+            "interrupt": "ENET2_1588_Timer",
+            "line": 153,
+            "peripheral": "ENET2",
+            "vector_slot": 169
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:enet2:enet2-1588-timer",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:gpio1:gpio1-combined-0-15",
             "interrupt": "GPIO1_Combined_0_15",
             "line": 80,
@@ -28624,6 +28956,60 @@
             "vector_slot": 109
           },
           "fact_id": "interrupt-binding:interrupt-binding:rtwdog:rtwdog",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:usb1:usb-otg1",
+            "interrupt": "USB_OTG1",
+            "line": 113,
+            "peripheral": "USB1",
+            "vector_slot": 129
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:usb1:usb-otg1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:usb2:usb-otg2",
+            "interrupt": "USB_OTG2",
+            "line": 112,
+            "peripheral": "USB2",
+            "vector_slot": 128
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:usb2:usb-otg2",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {
@@ -37420,6 +37806,37 @@
         },
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:eth",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "eth",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:eth",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:ENET",
+            "runtime-peripheral:ENET2"
+          ]
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
           "derivation_kind": "patched",
           "detail": {
             "capability_id": "capability:gpio:imxrt-gpio-v1:io00",
@@ -43583,6 +44000,37 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:usb",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "usb",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:usb",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "nxp-imxrt1060-family-bootstrap-v1",
+              "nxp-imxrt1060-mimxrt1064-bootstrap"
+            ],
+            "source_ids": [
+              "nxp-mcux-soc-svd"
+            ],
+            "source_paths": [
+              "MIMXRT1064/MIMXRT1064.xml"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:USB1",
+            "runtime-peripheral:USB2"
+          ]
         },
         {
           "artifact_path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/capabilities.hpp",

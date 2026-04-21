@@ -3316,7 +3316,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.enet.nxp-enet",
+      "backend_schema_id": "alloy.eth.nxp-enet",
       "base_address": 1076723712,
       "instance": 0,
       "ip_name": "enet",
@@ -3334,7 +3334,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.enet.nxp-enet",
+      "backend_schema_id": "alloy.eth.nxp-enet",
       "base_address": 1076707328,
       "instance": 2,
       "ip_name": "enet",

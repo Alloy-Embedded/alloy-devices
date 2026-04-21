@@ -178,7 +178,7 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 80> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 86> kInterruptDescriptors = {{
   {InterruptId::ADC1, PeripheralId::ADC1, 67u, 83u},
   {InterruptId::ADC2, PeripheralId::ADC2, 68u, 84u},
   {InterruptId::CAN1, PeripheralId::CAN1, 36u, 52u},
@@ -201,6 +201,10 @@ inline constexpr std::array<InterruptDescriptor, 80> kInterruptDescriptors = {{
   {InterruptId::DMA14_DMA30, PeripheralId::DMA0, 14u, 30u},
   {InterruptId::DMA15_DMA31, PeripheralId::DMA0, 15u, 31u},
   {InterruptId::DMA_ERROR, PeripheralId::DMA0, 16u, 32u},
+  {InterruptId::ENET, PeripheralId::ENET, 114u, 130u},
+  {InterruptId::ENET_1588_Timer, PeripheralId::ENET, 115u, 131u},
+  {InterruptId::ENET2, PeripheralId::ENET2, 152u, 168u},
+  {InterruptId::ENET2_1588_Timer, PeripheralId::ENET2, 153u, 169u},
   {InterruptId::GPIO1_INT0, PeripheralId::GPIO1, 72u, 88u},
   {InterruptId::GPIO1_INT1, PeripheralId::GPIO1, 73u, 89u},
   {InterruptId::GPIO1_INT2, PeripheralId::GPIO1, 74u, 90u},
@@ -257,6 +261,8 @@ inline constexpr std::array<InterruptDescriptor, 80> kInterruptDescriptors = {{
   {InterruptId::PWM4_3, PeripheralId::PWM4, 150u, 166u},
   {InterruptId::PWM4_FAULT, PeripheralId::PWM4, 151u, 167u},
   {InterruptId::RTWDOG, PeripheralId::RTWDOG, 93u, 109u},
+  {InterruptId::USB_OTG1, PeripheralId::USB1, 113u, 129u},
+  {InterruptId::USB_OTG2, PeripheralId::USB2, 112u, 128u},
   {InterruptId::WDOG1, PeripheralId::WDOG1, 92u, 108u},
   {InterruptId::WDOG2, PeripheralId::WDOG2, 45u, 61u},
 }};
