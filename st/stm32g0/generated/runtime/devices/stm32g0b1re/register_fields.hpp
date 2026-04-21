@@ -2169,6 +2169,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apbenr1_usart5en,
   field_rcc_apbenr1_usart6en,
   field_rcc_apbenr1_fdcanen,
+  field_rcc_apbenr1_usben,
   field_rcc_apbenr1_spi2en,
   field_rcc_apbenr1_spi3en,
   field_rcc_apbenr1_usart2en,
@@ -2192,6 +2193,7 @@ enum class FieldId : std::uint16_t {
   field_rcc_apbrstr1_usart5rst,
   field_rcc_apbrstr1_usart6rst,
   field_rcc_apbrstr1_fdcanrst,
+  field_rcc_apbrstr1_usbrst,
   field_rcc_apbrstr1_spi2rst,
   field_rcc_apbrstr1_spi3rst,
   field_rcc_apbrstr1_usart2rst,
@@ -23512,6 +23514,15 @@ struct RegisterFieldTraits<FieldId::field_rcc_apbenr1_fdcanen> {
 };
 
 template<>
+struct RegisterFieldTraits<FieldId::field_rcc_apbenr1_usben> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
 struct RegisterFieldTraits<FieldId::field_rcc_apbenr1_spi2en> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
@@ -23714,6 +23725,15 @@ struct RegisterFieldTraits<FieldId::field_rcc_apbrstr1_fdcanrst> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
   static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_rcc_apbrstr1_usbrst> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
+  static constexpr std::uint16_t kBitOffset = 13u;
   static constexpr std::uint16_t kBitWidth = 1u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
@@ -40854,7 +40874,7 @@ struct RegisterFieldTraits<FieldId::field_wwdg_wwdg_sr_ewif> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
-inline constexpr std::array<FieldId, 4083> kRegisterFields = {{
+inline constexpr std::array<FieldId, 4085> kRegisterFields = {{
   FieldId::field_adc1_adc_awd1tr_lt1,
   FieldId::field_adc1_adc_awd1tr_ht1,
   FieldId::field_adc1_adc_awd2cr_awd2ch0,
@@ -43011,6 +43031,7 @@ inline constexpr std::array<FieldId, 4083> kRegisterFields = {{
   FieldId::field_rcc_apbenr1_usart5en,
   FieldId::field_rcc_apbenr1_usart6en,
   FieldId::field_rcc_apbenr1_fdcanen,
+  FieldId::field_rcc_apbenr1_usben,
   FieldId::field_rcc_apbenr1_spi2en,
   FieldId::field_rcc_apbenr1_spi3en,
   FieldId::field_rcc_apbenr1_usart2en,
@@ -43034,6 +43055,7 @@ inline constexpr std::array<FieldId, 4083> kRegisterFields = {{
   FieldId::field_rcc_apbrstr1_usart5rst,
   FieldId::field_rcc_apbrstr1_usart6rst,
   FieldId::field_rcc_apbrstr1_fdcanrst,
+  FieldId::field_rcc_apbrstr1_usbrst,
   FieldId::field_rcc_apbrstr1_spi2rst,
   FieldId::field_rcc_apbrstr1_spi3rst,
   FieldId::field_rcc_apbrstr1_usart2rst,

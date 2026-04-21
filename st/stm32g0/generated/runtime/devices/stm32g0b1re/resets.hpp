@@ -21,7 +21,7 @@ struct ResetDescriptor {
   FieldId field_id;
   ActiveLevelId active_level_id;
 };
-inline constexpr std::array<ResetDescriptor, 31> kResetDescriptors = {{
+inline constexpr std::array<ResetDescriptor, 32> kResetDescriptors = {{
   {ResetId::reset_adc1, PeripheralId::ADC1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_adcrst, ActiveLevelId::active_level_high},
   {ResetId::reset_dma1, PeripheralId::DMA1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
   {ResetId::reset_dmamux1, PeripheralId::DMAMUX1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
@@ -53,6 +53,7 @@ inline constexpr std::array<ResetDescriptor, 31> kResetDescriptors = {{
   {ResetId::reset_usart4, PeripheralId::USART4, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_usart4rst, ActiveLevelId::active_level_high},
   {ResetId::reset_usart5, PeripheralId::USART5, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_usart5rst, ActiveLevelId::active_level_high},
   {ResetId::reset_usart6, PeripheralId::USART6, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_usart6rst, ActiveLevelId::active_level_high},
+  {ResetId::reset_usb, PeripheralId::USB, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_usbrst, ActiveLevelId::active_level_high},
 }};
 }
 }

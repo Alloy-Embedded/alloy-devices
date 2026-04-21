@@ -1145,6 +1145,14 @@
       "value": "true"
     },
     {
+      "capability_id": "capability-instance:usb:lqfp64:noe",
+      "name": "available-signal",
+      "peripheral": "USB",
+      "peripheral_class": "usb",
+      "scope": "instance_overlay",
+      "value": "noe"
+    },
+    {
       "capability_id": "runtime-support:watchdog",
       "name": "runtime-supported",
       "peripheral": null,

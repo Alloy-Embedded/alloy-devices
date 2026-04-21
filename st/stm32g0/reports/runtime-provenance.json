@@ -20167,7 +20167,7 @@
     },
     {
       "device": "stm32g0b1re",
-      "fact_count": 622,
+      "fact_count": 630,
       "facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/startup.hpp",
@@ -23135,6 +23135,32 @@
           "supporting_fact_ids": []
         },
         {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "USB",
+            "register_field_id": "field:rcc:apbrstr1:usbrst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:usb"
+          },
+          "fact_id": "reset:reset:usb",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
@@ -23972,6 +23998,33 @@
           "supporting_fact_ids": []
         },
         {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:usb",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "USB",
+            "register_field_id": "field:rcc:apbenr1:usben",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:usb",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/clock_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
@@ -24778,6 +24831,32 @@
           "supporting_fact_ids": []
         },
         {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:usb",
+            "peripheral": "USB",
+            "reset_id": "reset:usb",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:USB",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/dma_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
@@ -25145,6 +25224,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa13:usb:noe",
+            "peripheral": "USB",
+            "pin": "PA13",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:2",
+            "signal": "noe"
+          },
+          "fact_id": "route-candidate:candidate:pa13:usb:noe",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa15:spi1:nss",
             "peripheral": "SPI1",
             "pin": "PA15",
@@ -25433,6 +25540,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:pa15:usart4:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa15:usb:noe",
+            "peripheral": "USB",
+            "pin": "PA15",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "noe"
+          },
+          "fact_id": "route-candidate:candidate:pa15:usb:noe",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -26049,6 +26184,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pa4:usart6:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa4:usb:noe",
+            "peripheral": "USB",
+            "pin": "PA4",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:2",
+            "signal": "noe"
+          },
+          "fact_id": "route-candidate:candidate:pa4:usb:noe",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -31173,6 +31336,34 @@
             "signal": "ch4"
           },
           "fact_id": "route-candidate:candidate:pc9:tim3:ch4",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pc9:usb:noe",
+            "peripheral": "USB",
+            "pin": "PC9",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "noe"
+          },
+          "fact_id": "route-candidate:candidate:pc9:usb:noe",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -37475,6 +37666,34 @@
           "supporting_fact_ids": [
             "runtime-peripheral:USB"
           ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:usb:lqfp64:noe",
+            "name": "available-signal",
+            "peripheral": "USB",
+            "peripheral_class": "usb",
+            "scope": "instance_overlay",
+            "value": "noe"
+          },
+          "fact_id": "capability:capability-instance:usb:lqfp64:noe",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",

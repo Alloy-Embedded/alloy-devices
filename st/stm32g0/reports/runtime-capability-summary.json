@@ -151,6 +151,7 @@
     },
     {
       "capability_names": [
+        "available-signal",
         "runtime-supported"
       ],
       "device_count": 1,
@@ -686,11 +687,12 @@
         },
         {
           "capability_names": [
+            "available-signal",
             "runtime-supported"
           ],
           "class_capability_count": 1,
           "dma_signals": [],
-          "instance_capability_count": 0,
+          "instance_capability_count": 1,
           "peripheral_class": "usb",
           "peripheral_count": 1,
           "peripherals": [

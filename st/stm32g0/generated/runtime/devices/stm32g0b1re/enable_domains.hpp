@@ -25,7 +25,7 @@ struct EnableDomainDescriptor {
   RegisterId register_id;
   FieldId field_id;
 };
-inline constexpr std::array<EnableDomainDescriptor, 31> kEnableDomains = {{
+inline constexpr std::array<EnableDomainDescriptor, 32> kEnableDomains = {{
   {EnableDomainId::gate_adc1, PeripheralId::ADC1, ClockGateId::gate_adc1, ClockNodeId::clock_node_rcc_apbenr2, RegisterId::register_rcc_apbenr2, FieldId::field_rcc_apbenr2_adcen},
   {EnableDomainId::gate_dma1, PeripheralId::DMA1, ClockGateId::gate_dma1, ClockNodeId::clock_node_rcc_ahbenr, RegisterId::register_rcc_ahbenr, FieldId::field_rcc_ahbenr_dma1en},
   {EnableDomainId::gate_dmamux1, PeripheralId::DMAMUX1, ClockGateId::gate_dmamux1, ClockNodeId::clock_node_rcc_ahbenr, RegisterId::register_rcc_ahbenr, FieldId::field_rcc_ahbenr_dma1en},
@@ -57,6 +57,7 @@ inline constexpr std::array<EnableDomainDescriptor, 31> kEnableDomains = {{
   {EnableDomainId::gate_usart4, PeripheralId::USART4, ClockGateId::gate_usart4, ClockNodeId::clock_node_rcc_apbenr1, RegisterId::register_rcc_apbenr1, FieldId::field_rcc_apbenr1_usart4en},
   {EnableDomainId::gate_usart5, PeripheralId::USART5, ClockGateId::gate_usart5, ClockNodeId::clock_node_rcc_apbenr1, RegisterId::register_rcc_apbenr1, FieldId::field_rcc_apbenr1_usart5en},
   {EnableDomainId::gate_usart6, PeripheralId::USART6, ClockGateId::gate_usart6, ClockNodeId::clock_node_rcc_apbenr1, RegisterId::register_rcc_apbenr1, FieldId::field_rcc_apbenr1_usart6en},
+  {EnableDomainId::gate_usb, PeripheralId::USB, ClockGateId::gate_usb, ClockNodeId::clock_node_rcc_apbenr1, RegisterId::register_rcc_apbenr1, FieldId::field_rcc_apbenr1_usben},
 }};
 
 template<EnableDomainId Id>
@@ -569,6 +570,22 @@ template<>
 struct PeripheralEnableDomainTraits<PeripheralId::USART6> {
   static constexpr bool kPresent = true;
   static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_usart6;
+};
+
+template<>
+struct EnableDomainTraits<EnableDomainId::gate_usb> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::USB;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_usb;
+  static constexpr ClockNodeId kParentClockNodeId = ClockNodeId::clock_node_rcc_apbenr1;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_usben;
+};
+
+template<>
+struct PeripheralEnableDomainTraits<PeripheralId::USB> {
+  static constexpr bool kPresent = true;
+  static constexpr EnableDomainId kEnableDomainId = EnableDomainId::gate_usb;
 };
 
 }

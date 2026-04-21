@@ -24,6 +24,7 @@ enum class ConnectorId : std::uint16_t {
   candidate_pa10_tim1_ch3,
   candidate_pa10_usart1_rx,
   candidate_pa13_lpuart2_rx,
+  candidate_pa13_usb_noe,
   candidate_pa15_spi1_nss,
   candidate_pa15_spi3_nss,
   candidate_pa15_tim2_ch1,
@@ -35,6 +36,7 @@ enum class ConnectorId : std::uint16_t {
   candidate_pa15_usart4_ck,
   candidate_pa15_usart4_de,
   candidate_pa15_usart4_rts,
+  candidate_pa15_usb_noe,
   candidate_pa1_spi1_sck,
   candidate_pa1_tim15_ch1n,
   candidate_pa1_tim2_ch2,
@@ -57,6 +59,7 @@ enum class ConnectorId : std::uint16_t {
   candidate_pa4_spi3_nss,
   candidate_pa4_tim14_ch1,
   candidate_pa4_usart6_tx,
+  candidate_pa4_usb_noe,
   candidate_pa5_spi1_sck,
   candidate_pa5_tim2_ch1,
   candidate_pa5_tim2_etr,
@@ -240,6 +243,7 @@ enum class ConnectorId : std::uint16_t {
   candidate_pc9_lpuart2_rts,
   candidate_pc9_tim1_ch2,
   candidate_pc9_tim3_ch4,
+  candidate_pc9_usb_noe,
   candidate_pd0_fdcan1_rx,
   candidate_pd0_spi2_nss,
   candidate_pd0_tim16_ch1,
@@ -410,6 +414,15 @@ struct ConnectorTraits<PinId::PA13, PeripheralId::LPUART2, SignalId::signal_rx> 
 };
 
 template<>
+struct ConnectorTraits<PinId::PA13, PeripheralId::USB, SignalId::signal_noe> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pa13_usb_noe;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa13_usb_noe;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+};
+
+template<>
 struct ConnectorTraits<PinId::PA15, PeripheralId::SPI1, SignalId::signal_nss> {
   static constexpr bool kPresent = true;
   static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pa15_spi1_nss;
@@ -506,6 +519,15 @@ struct ConnectorTraits<PinId::PA15, PeripheralId::USART4, SignalId::signal_rts> 
   static constexpr RouteId kRouteId = RouteId::candidate_pa15_usart4_rts;
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_usart4_lqfp64_tx_rx_cts_rts;
+};
+
+template<>
+struct ConnectorTraits<PinId::PA15, PeripheralId::USB, SignalId::signal_noe> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pa15_usb_noe;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa15_usb_noe;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
 };
 
 template<>
@@ -704,6 +726,15 @@ struct ConnectorTraits<PinId::PA4, PeripheralId::USART6, SignalId::signal_tx> {
   static constexpr RouteId kRouteId = RouteId::candidate_pa4_usart6_tx;
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_usart6_lqfp64_tx_rx;
+};
+
+template<>
+struct ConnectorTraits<PinId::PA4, PeripheralId::USB, SignalId::signal_noe> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pa4_usb_noe;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa4_usb_noe;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
 };
 
 template<>
@@ -2351,6 +2382,15 @@ struct ConnectorTraits<PinId::PC9, PeripheralId::TIM3, SignalId::signal_ch4> {
   static constexpr RouteId kRouteId = RouteId::candidate_pc9_tim3_ch4;
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_tim3_lqfp64_all_signals;
+};
+
+template<>
+struct ConnectorTraits<PinId::PC9, PeripheralId::USB, SignalId::signal_noe> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pc9_usb_noe;
+  static constexpr RouteId kRouteId = RouteId::candidate_pc9_usb_noe;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
 };
 
 template<>
@@ -5152,7 +5192,34 @@ struct ConnectorTraits<Pin, PeripheralId::USART6, SignalId::signal_tx> {
   static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for USART6 tx. Valid pins: PA4, PB8, PC0. Provenance: stm32-open-pin-data; patches=st-stm32g0-family-bootstrap-v1, st-stm32g0-stm32g0b1re-bootstrap.");
 };
 
-inline constexpr std::array<ConnectorDescriptor, 264> kConnectors = {{
+template<>
+struct ConnectorSignalTraits<PeripheralId::USB, SignalId::signal_noe> {
+  static constexpr bool kPresent = true;
+  static constexpr std::array<PinId, 4> kPins = {{
+    PinId::PA13,
+    PinId::PA15,
+    PinId::PA4,
+    PinId::PC9,
+  }};
+  static constexpr std::array<ConnectorId, 4> kConnectors = {{
+    ConnectorId::candidate_pa13_usb_noe,
+    ConnectorId::candidate_pa15_usb_noe,
+    ConnectorId::candidate_pa4_usb_noe,
+    ConnectorId::candidate_pc9_usb_noe,
+  }};
+};
+
+template<PinId Pin>
+struct ConnectorTraits<Pin, PeripheralId::USB, SignalId::signal_noe> {
+  static constexpr bool kPresent = false;
+  static constexpr ConnectorId kConnectorId = ConnectorId::none;
+  static constexpr RouteId kRouteId = RouteId::none;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::none;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+  static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for USB noe. Valid pins: PA13, PA15, PA4, PC9. Provenance: stm32-open-pin-data; patches=st-stm32g0-family-bootstrap-v1, st-stm32g0-stm32g0b1re-bootstrap.");
+};
+
+inline constexpr std::array<ConnectorDescriptor, 268> kConnectors = {{
   {ConnectorId::candidate_pa0_spi2_sck, PinId::PA0, PeripheralId::SPI2, SignalId::signal_sck, RouteId::candidate_pa0_spi2_sck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_spi2_lqfp64_sck_mosi_miso},
   {ConnectorId::candidate_pa0_tim2_ch1, PinId::PA0, PeripheralId::TIM2, SignalId::signal_ch1, RouteId::candidate_pa0_tim2_ch1, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim2_lqfp64_all_signals},
   {ConnectorId::candidate_pa0_tim2_etr, PinId::PA0, PeripheralId::TIM2, SignalId::signal_etr, RouteId::candidate_pa0_tim2_etr, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim2_lqfp64_all_signals},
@@ -5164,6 +5231,7 @@ inline constexpr std::array<ConnectorDescriptor, 264> kConnectors = {{
   {ConnectorId::candidate_pa10_tim1_ch3, PinId::PA10, PeripheralId::TIM1, SignalId::signal_ch3, RouteId::candidate_pa10_tim1_ch3, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim1_lqfp64_all_signals},
   {ConnectorId::candidate_pa10_usart1_rx, PinId::PA10, PeripheralId::USART1, SignalId::signal_rx, RouteId::candidate_pa10_usart1_rx, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart1_lqfp64_tx_rx},
   {ConnectorId::candidate_pa13_lpuart2_rx, PinId::PA13, PeripheralId::LPUART2, SignalId::signal_rx, RouteId::candidate_pa13_lpuart2_rx, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_lpuart2_lqfp64_tx_rx},
+  {ConnectorId::candidate_pa13_usb_noe, PinId::PA13, PeripheralId::USB, SignalId::signal_noe, RouteId::candidate_pa13_usb_noe, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa15_spi1_nss, PinId::PA15, PeripheralId::SPI1, SignalId::signal_nss, RouteId::candidate_pa15_spi1_nss, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa15_spi3_nss, PinId::PA15, PeripheralId::SPI3, SignalId::signal_nss, RouteId::candidate_pa15_spi3_nss, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa15_tim2_ch1, PinId::PA15, PeripheralId::TIM2, SignalId::signal_ch1, RouteId::candidate_pa15_tim2_ch1, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim2_lqfp64_all_signals},
@@ -5175,6 +5243,7 @@ inline constexpr std::array<ConnectorDescriptor, 264> kConnectors = {{
   {ConnectorId::candidate_pa15_usart4_ck, PinId::PA15, PeripheralId::USART4, SignalId::signal_ck, RouteId::candidate_pa15_usart4_ck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa15_usart4_de, PinId::PA15, PeripheralId::USART4, SignalId::signal_de, RouteId::candidate_pa15_usart4_de, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa15_usart4_rts, PinId::PA15, PeripheralId::USART4, SignalId::signal_rts, RouteId::candidate_pa15_usart4_rts, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart4_lqfp64_tx_rx_cts_rts},
+  {ConnectorId::candidate_pa15_usb_noe, PinId::PA15, PeripheralId::USB, SignalId::signal_noe, RouteId::candidate_pa15_usb_noe, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa1_spi1_sck, PinId::PA1, PeripheralId::SPI1, SignalId::signal_sck, RouteId::candidate_pa1_spi1_sck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_spi1_lqfp64_sck_mosi_miso},
   {ConnectorId::candidate_pa1_tim15_ch1n, PinId::PA1, PeripheralId::TIM15, SignalId::signal_ch1n, RouteId::candidate_pa1_tim15_ch1n, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim15_lqfp64_all_signals},
   {ConnectorId::candidate_pa1_tim2_ch2, PinId::PA1, PeripheralId::TIM2, SignalId::signal_ch2, RouteId::candidate_pa1_tim2_ch2, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim2_lqfp64_all_signals},
@@ -5197,6 +5266,7 @@ inline constexpr std::array<ConnectorDescriptor, 264> kConnectors = {{
   {ConnectorId::candidate_pa4_spi3_nss, PinId::PA4, PeripheralId::SPI3, SignalId::signal_nss, RouteId::candidate_pa4_spi3_nss, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa4_tim14_ch1, PinId::PA4, PeripheralId::TIM14, SignalId::signal_ch1, RouteId::candidate_pa4_tim14_ch1, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa4_usart6_tx, PinId::PA4, PeripheralId::USART6, SignalId::signal_tx, RouteId::candidate_pa4_usart6_tx, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart6_lqfp64_tx_rx},
+  {ConnectorId::candidate_pa4_usb_noe, PinId::PA4, PeripheralId::USB, SignalId::signal_noe, RouteId::candidate_pa4_usb_noe, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa5_spi1_sck, PinId::PA5, PeripheralId::SPI1, SignalId::signal_sck, RouteId::candidate_pa5_spi1_sck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_spi1_lqfp64_sck_mosi_miso},
   {ConnectorId::candidate_pa5_tim2_ch1, PinId::PA5, PeripheralId::TIM2, SignalId::signal_ch1, RouteId::candidate_pa5_tim2_ch1, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim2_lqfp64_all_signals},
   {ConnectorId::candidate_pa5_tim2_etr, PinId::PA5, PeripheralId::TIM2, SignalId::signal_etr, RouteId::candidate_pa5_tim2_etr, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim2_lqfp64_all_signals},
@@ -5380,6 +5450,7 @@ inline constexpr std::array<ConnectorDescriptor, 264> kConnectors = {{
   {ConnectorId::candidate_pc9_lpuart2_rts, PinId::PC9, PeripheralId::LPUART2, SignalId::signal_rts, RouteId::candidate_pc9_lpuart2_rts, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_lpuart2_lqfp64_tx_rx_cts_rts},
   {ConnectorId::candidate_pc9_tim1_ch2, PinId::PC9, PeripheralId::TIM1, SignalId::signal_ch2, RouteId::candidate_pc9_tim1_ch2, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim1_lqfp64_all_signals},
   {ConnectorId::candidate_pc9_tim3_ch4, PinId::PC9, PeripheralId::TIM3, SignalId::signal_ch4, RouteId::candidate_pc9_tim3_ch4, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim3_lqfp64_all_signals},
+  {ConnectorId::candidate_pc9_usb_noe, PinId::PC9, PeripheralId::USB, SignalId::signal_noe, RouteId::candidate_pc9_usb_noe, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pd0_fdcan1_rx, PinId::PD0, PeripheralId::FDCAN1, SignalId::signal_rx, RouteId::candidate_pd0_fdcan1_rx, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_fdcan1_lqfp64_tx_rx},
   {ConnectorId::candidate_pd0_spi2_nss, PinId::PD0, PeripheralId::SPI2, SignalId::signal_nss, RouteId::candidate_pd0_spi2_nss, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pd0_tim16_ch1, PinId::PD0, PeripheralId::TIM16, SignalId::signal_ch1, RouteId::candidate_pd0_tim16_ch1, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim16_lqfp64_all_signals},

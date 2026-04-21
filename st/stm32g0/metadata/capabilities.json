@@ -2889,6 +2889,25 @@
       "value": "tx"
     },
     {
+      "capability_id": "capability-instance:usb:lqfp64:noe",
+      "ip_name": "usb",
+      "ip_version": null,
+      "name": "available-signal",
+      "package": "lqfp64",
+      "peripheral": "USB",
+      "peripheral_class": "usb",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32g0-family-bootstrap-v1",
+          "st-stm32g0-stm32g0b1re-bootstrap"
+        ],
+        "source_id": "stm32-open-pin-data",
+        "source_path": "STM32G0B1R(B-C-E)Tx.xml"
+      },
+      "scope": "instance-overlay",
+      "value": "noe"
+    },
+    {
       "capability_id": "capability:fdcan:fdcan1-v1-0-cube:rx",
       "ip_name": "fdcan",
       "ip_version": "fdcan1_v1_0_Cube",

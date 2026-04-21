@@ -1926,8 +1926,8 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G0B1.svd"
       },
-      "rcc_enable_signal": null,
-      "rcc_reset_signal": null
+      "rcc_enable_signal": "RCC_APBENR1.USBEN",
+      "rcc_reset_signal": "RCC_APBRSTR1.USBRST"
     },
     {
       "backend_schema_id": "alloy.vrefbuf.st-vrefbuf",
@@ -2478,6 +2478,20 @@
             "source_path": "STM32G0B1R(B-C-E)Tx.xml"
           },
           "signal": "RX"
+        },
+        {
+          "af_number": 2,
+          "function": "usb_noe",
+          "peripheral": "USB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32G0B1R(B-C-E)Tx.xml"
+          },
+          "signal": "NOE"
         }
       ]
     },
@@ -2704,6 +2718,20 @@
             "source_path": "STM32G071R(6-8-B)Tx.xml"
           },
           "signal": "RTS"
+        },
+        {
+          "af_number": 6,
+          "function": "usb_noe",
+          "peripheral": "USB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32G0B1R(B-C-E)Tx.xml"
+          },
+          "signal": "NOE"
         }
       ]
     },
@@ -3102,6 +3130,20 @@
             "source_path": "STM32G0B1R(B-C-E)Tx.xml"
           },
           "signal": "TX"
+        },
+        {
+          "af_number": 2,
+          "function": "usb_noe",
+          "peripheral": "USB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32G0B1R(B-C-E)Tx.xml"
+          },
+          "signal": "NOE"
         }
       ]
     },
@@ -7528,6 +7570,20 @@
             "source_path": "STM32G071R(6-8-B)Tx.xml"
           },
           "signal": "CH4"
+        },
+        {
+          "af_number": 6,
+          "function": "usb_noe",
+          "peripheral": "USB",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_id": "stm32-open-pin-data",
+            "source_path": "STM32G0B1R(B-C-E)Tx.xml"
+          },
+          "signal": "NOE"
         }
       ]
     },

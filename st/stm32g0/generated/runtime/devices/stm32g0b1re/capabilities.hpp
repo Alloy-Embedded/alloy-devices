@@ -155,6 +155,7 @@ enum class CapabilityId : std::uint16_t {
   capability_instance_usart6_lqfp64_rx,
   capability_instance_usart6_lqfp64_tx,
   runtime_support_usb,
+  capability_instance_usb_lqfp64_noe,
   runtime_support_watchdog,
 };
 
@@ -193,6 +194,7 @@ enum class CapabilityValueId : std::uint16_t {
   etr,
   miso,
   mosi,
+  noe,
   nss,
   rts,
   rx,
@@ -209,7 +211,7 @@ struct CapabilityDescriptor {
   CapabilityValueId value_id;
   PeripheralId peripheral_id;
 };
-inline constexpr std::array<CapabilityDescriptor, 144> kCapabilities = {{
+inline constexpr std::array<CapabilityDescriptor, 145> kCapabilities = {{
   {CapabilityId::runtime_support_adc, CapabilityScopeId::runtime_contract, PeripheralClassId::class_adc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::capability_fdcan_fdcan1_v1_0_cube_rx, CapabilityScopeId::ip_block, PeripheralClassId::class_can, CapabilityNameId::signal_role, CapabilityValueId::rx, PeripheralId::none},
   {CapabilityId::capability_fdcan_fdcan1_v1_0_cube_tx, CapabilityScopeId::ip_block, PeripheralClassId::class_can, CapabilityNameId::signal_role, CapabilityValueId::tx, PeripheralId::none},
@@ -353,6 +355,7 @@ inline constexpr std::array<CapabilityDescriptor, 144> kCapabilities = {{
   {CapabilityId::capability_instance_usart6_lqfp64_rx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::rx, PeripheralId::USART6},
   {CapabilityId::capability_instance_usart6_lqfp64_tx, CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::tx, PeripheralId::USART6},
   {CapabilityId::runtime_support_usb, CapabilityScopeId::runtime_contract, PeripheralClassId::class_usb, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::capability_instance_usb_lqfp64_noe, CapabilityScopeId::instance_overlay, PeripheralClassId::class_usb, CapabilityNameId::available_signal, CapabilityValueId::noe, PeripheralId::USB},
   {CapabilityId::runtime_support_watchdog, CapabilityScopeId::runtime_contract, PeripheralClassId::class_watchdog, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
 }};
 
@@ -1797,6 +1800,16 @@ struct CapabilityTraits<CapabilityId::runtime_support_usb> {
 };
 
 template<>
+struct CapabilityTraits<CapabilityId::capability_instance_usb_lqfp64_noe> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_usb;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::noe;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::USB;
+};
+
+template<>
 struct CapabilityTraits<CapabilityId::runtime_support_watchdog> {
   static constexpr bool kPresent = true;
   static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
@@ -2027,8 +2040,9 @@ struct PeripheralClassCapabilityTraits<PeripheralClassId::class_uart> {
 template<>
 struct PeripheralClassCapabilityTraits<PeripheralClassId::class_usb> {
   static constexpr bool kPresent = true;
-  inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
+  inline static constexpr std::array<CapabilityId, 2> kCapabilityIds = {{
     CapabilityId::runtime_support_usb,
+    CapabilityId::capability_instance_usb_lqfp64_noe,
   }};
 };
 
@@ -2404,8 +2418,9 @@ struct PeripheralCapabilityTraits<PeripheralId::USART6> {
 
 template<>
 struct PeripheralCapabilityTraits<PeripheralId::USB> {
-  static constexpr bool kPresent = false;
-  inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
+    CapabilityId::capability_instance_usb_lqfp64_noe,
   }};
 };
 

@@ -237,6 +237,13 @@ struct ClockGateTraits<ClockGateId::gate_usart6> {
   static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_usart6en;
 };
 
+template<>
+struct ClockGateTraits<ClockGateId::gate_usb> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_usben;
+};
+
 template<ResetId Id>
 struct ResetTraits {
   static constexpr bool kPresent = false;
@@ -490,6 +497,14 @@ struct ResetTraits<ResetId::reset_usart6> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
   static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_usart6rst;
+  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
+};
+
+template<>
+struct ResetTraits<ResetId::reset_usb> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_usbrst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -813,8 +828,8 @@ struct PeripheralClockBindingTraits<PeripheralId::USART6> {
 template<>
 struct PeripheralClockBindingTraits<PeripheralId::USB> {
   static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_usb;
+  static constexpr ResetId kResetId = ResetId::reset_usb;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 

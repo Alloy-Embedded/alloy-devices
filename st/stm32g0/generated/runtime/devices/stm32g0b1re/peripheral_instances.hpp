@@ -85,6 +85,7 @@ enum class ClockGateId : std::uint16_t {
   gate_usart4,
   gate_usart5,
   gate_usart6,
+  gate_usb,
 };
 
 enum class ResetId : std::uint16_t {
@@ -120,6 +121,7 @@ enum class ResetId : std::uint16_t {
   reset_usart4,
   reset_usart5,
   reset_usart6,
+  reset_usb,
 };
 
 enum class ClockSelectorId : std::uint16_t {
@@ -579,8 +581,8 @@ struct PeripheralInstanceTraits<PeripheralId::USB> {
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_usb_st_usb;
   static constexpr int kInstance = 0;
   static constexpr std::uintptr_t kBaseAddress = 0x40005C00u;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_usb;
+  static constexpr ResetId kResetId = ResetId::reset_usb;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 

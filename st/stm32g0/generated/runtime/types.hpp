@@ -120,6 +120,7 @@ enum class SignalId : std::uint16_t {
   signal_IN9,
   signal_MISO,
   signal_MOSI,
+  signal_NOE,
   signal_NSS,
   signal_OUT,
   signal_RTS,
@@ -178,6 +179,7 @@ enum class SignalId : std::uint16_t {
   signal_lpuart2_tx,
   signal_miso,
   signal_mosi,
+  signal_noe,
   signal_nss,
   signal_out,
   signal_rts,
@@ -279,6 +281,7 @@ enum class SignalId : std::uint16_t {
   signal_usart6_rts,
   signal_usart6_rx,
   signal_usart6_tx,
+  signal_usb_noe,
 };
 
 enum class PortId : std::uint16_t {
