@@ -258,7 +258,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 145,
+  "published_artifact_count": 148,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -415,6 +415,12 @@
       "content_bytes": 5055,
       "content_sha256": "76bfbc316bc4039c25ff9aff027e18a9adaebbf80059c5c9cc38807caacf9734",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 411,
+      "content_sha256": "0954f75cd745bf28a223fe1568152ee4f6dd0c8bb1836a9fcdaef92e96feddcd",
+      "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -652,6 +658,12 @@
     },
     {
       "artifact_kind": "generated-cpp",
+      "content_bytes": 411,
+      "content_sha256": "bcab5f75a614ee933a1007799cdab23e5f241648e15a164933ebdf64d97bbe28",
+      "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/pio.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
       "content_bytes": 108384,
       "content_sha256": "920432e3ff869380d3e7a0f506b6522c67badb1a9583e67d3e7b2dea83249311",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/pwm.hpp"
@@ -883,6 +895,12 @@
       "content_bytes": 5055,
       "content_sha256": "0786047d89c476646000a45ef8e638a4df0ff3f76db90c36692a045dcb389a1e",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 411,
+      "content_sha256": "91c6cf79fd1d7c30cb634e65fe5f4262a5c8beb0fca626409c78af8c8f20aee1",
+      "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -1136,7 +1154,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "dbe2bf88e767651929e4b69960cd4d62cbb383eb4909877fa8c2affe0a8f9eb3",
+  "target_artifact_revision": "4dfd2eba3a4db1e7dd31a3d8237433f8c3704785866f47d2d98a26a50afc85aa",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
