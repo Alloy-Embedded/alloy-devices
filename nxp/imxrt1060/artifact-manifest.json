@@ -39,7 +39,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-        "revision": "content-sha256:514788aff6e8cb9d5a201df10834ada389c2fa2c616549e3782e8914f44a6117",
+        "revision": "content-sha256:415e77cf730622de9a6a44fa6b47cc1946bd879e22c563c722ac694d2a0efcf9",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -52,7 +52,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-        "revision": "content-sha256:ccc9fa245c74661a13f93e6e90e1871a63ea22ecb81959b304edaffa0f2dc003",
+        "revision": "content-sha256:608df0ce62f5341eac3c8b0c905753a59c0ec591fa2015858fdefefc93c61992",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -65,7 +65,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-        "revision": "content-sha256:514788aff6e8cb9d5a201df10834ada389c2fa2c616549e3782e8914f44a6117",
+        "revision": "content-sha256:415e77cf730622de9a6a44fa6b47cc1946bd879e22c563c722ac694d2a0efcf9",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -78,7 +78,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-        "revision": "content-sha256:ccc9fa245c74661a13f93e6e90e1871a63ea22ecb81959b304edaffa0f2dc003",
+        "revision": "content-sha256:608df0ce62f5341eac3c8b0c905753a59c0ec591fa2015858fdefefc93c61992",
         "scope": {
           "device": null,
           "family": "imxrt1060",
