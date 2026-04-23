@@ -1,0 +1,22 @@
+{
+  "device_count": 2,
+  "devices": [
+    {
+      "core": "cortex-m0plus-dual",
+      "device": "pico",
+      "metadata_path": "raspberrypi/rp2040/metadata/devices/pico.json",
+      "package": "pico",
+      "summary": "Raspberry Pi Pico development board (RP2040 SoC, 2 MB QSPI flash, onboard LED on GP25)."
+    },
+    {
+      "core": "cortex-m0plus-dual",
+      "device": "rp2040",
+      "metadata_path": "raspberrypi/rp2040/metadata/devices/rp2040.json",
+      "package": "qfn56",
+      "summary": "Raspberry Pi RP2040 dual-core Cortex-M0+ SoC (single-core-perspective, core 0)."
+    }
+  ],
+  "family": "rp2040",
+  "schema_version": "1.1.0",
+  "vendor": "raspberrypi"
+}

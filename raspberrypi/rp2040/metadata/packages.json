@@ -1,0 +1,1445 @@
+{
+  "family": "rp2040",
+  "packages": [
+    {
+      "devices": [
+        "pico"
+      ],
+      "name": "pico",
+      "pads": [
+        {
+          "pad_id": "GP0",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP0"
+        },
+        {
+          "pad_id": "GP1",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP1"
+        },
+        {
+          "pad_id": "GP10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP10"
+        },
+        {
+          "pad_id": "GP11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP11"
+        },
+        {
+          "pad_id": "GP12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP12"
+        },
+        {
+          "pad_id": "GP13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP13"
+        },
+        {
+          "pad_id": "GP14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP14"
+        },
+        {
+          "pad_id": "GP15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP15"
+        },
+        {
+          "pad_id": "GP16",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP16"
+        },
+        {
+          "pad_id": "GP17",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP17"
+        },
+        {
+          "pad_id": "GP18",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP18"
+        },
+        {
+          "pad_id": "GP19",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP19"
+        },
+        {
+          "pad_id": "GP2",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP2"
+        },
+        {
+          "pad_id": "GP20",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP20"
+        },
+        {
+          "pad_id": "GP21",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP21"
+        },
+        {
+          "pad_id": "GP22",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP22"
+        },
+        {
+          "pad_id": "GP25",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP25"
+        },
+        {
+          "pad_id": "GP26",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP26"
+        },
+        {
+          "pad_id": "GP27",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP27"
+        },
+        {
+          "pad_id": "GP28",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP28"
+        },
+        {
+          "pad_id": "GP3",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP3"
+        },
+        {
+          "pad_id": "GP4",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP4"
+        },
+        {
+          "pad_id": "GP5",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP5"
+        },
+        {
+          "pad_id": "GP6",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP6"
+        },
+        {
+          "pad_id": "GP7",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP7"
+        },
+        {
+          "pad_id": "GP8",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP8"
+        },
+        {
+          "pad_id": "GP9",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP9"
+        }
+      ],
+      "pin_count": 40,
+      "pinouts": [
+        {
+          "device": "pico",
+          "package": "pico",
+          "pin_constraints": [
+            {
+              "constraint_id": "constraint:GP26:analog-only",
+              "kind": "analog-only",
+              "pin": "GP26",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-pico-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch0"
+            },
+            {
+              "constraint_id": "constraint:GP27:analog-only",
+              "kind": "analog-only",
+              "pin": "GP27",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-pico-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch1"
+            },
+            {
+              "constraint_id": "constraint:GP28:analog-only",
+              "kind": "analog-only",
+              "pin": "GP28",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-pico-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch2"
+            }
+          ],
+          "pin_index": [
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP0"
+              ],
+              "pin": "GP0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP1"
+              ],
+              "pin": "GP1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP10"
+              ],
+              "pin": "GP10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP11"
+              ],
+              "pin": "GP11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP12"
+              ],
+              "pin": "GP12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP13"
+              ],
+              "pin": "GP13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP14"
+              ],
+              "pin": "GP14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP15"
+              ],
+              "pin": "GP15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP16"
+              ],
+              "pin": "GP16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP17"
+              ],
+              "pin": "GP17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP18"
+              ],
+              "pin": "GP18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP19"
+              ],
+              "pin": "GP19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP2"
+              ],
+              "pin": "GP2"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP20"
+              ],
+              "pin": "GP20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP21"
+              ],
+              "pin": "GP21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP22"
+              ],
+              "pin": "GP22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP25"
+              ],
+              "pin": "GP25"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP26:analog-only"
+              ],
+              "pad_ids": [
+                "GP26"
+              ],
+              "pin": "GP26"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP27:analog-only"
+              ],
+              "pad_ids": [
+                "GP27"
+              ],
+              "pin": "GP27"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP28:analog-only"
+              ],
+              "pad_ids": [
+                "GP28"
+              ],
+              "pin": "GP28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP3"
+              ],
+              "pin": "GP3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP4"
+              ],
+              "pin": "GP4"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP5"
+              ],
+              "pin": "GP5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP6"
+              ],
+              "pin": "GP6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP7"
+              ],
+              "pin": "GP7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP8"
+              ],
+              "pin": "GP8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP9"
+              ],
+              "pin": "GP9"
+            }
+          ],
+          "pinout": [
+            {
+              "bonded_pin": "GP0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP0",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP0"
+            },
+            {
+              "bonded_pin": "GP1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP1",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP1"
+            },
+            {
+              "bonded_pin": "GP10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP10"
+            },
+            {
+              "bonded_pin": "GP11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP11"
+            },
+            {
+              "bonded_pin": "GP12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP12"
+            },
+            {
+              "bonded_pin": "GP13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP13"
+            },
+            {
+              "bonded_pin": "GP14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP14"
+            },
+            {
+              "bonded_pin": "GP15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP15"
+            },
+            {
+              "bonded_pin": "GP16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP16",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP16"
+            },
+            {
+              "bonded_pin": "GP17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP17",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP17"
+            },
+            {
+              "bonded_pin": "GP18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP18",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP18"
+            },
+            {
+              "bonded_pin": "GP19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP19",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP19"
+            },
+            {
+              "bonded_pin": "GP2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP2",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP2"
+            },
+            {
+              "bonded_pin": "GP20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP20",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP20"
+            },
+            {
+              "bonded_pin": "GP21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP21",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP21"
+            },
+            {
+              "bonded_pin": "GP22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP22",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP22"
+            },
+            {
+              "bonded_pin": "GP25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP25",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP25"
+            },
+            {
+              "bonded_pin": "GP26",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP26:analog-only"
+              ],
+              "pad_id": "GP26",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP26"
+            },
+            {
+              "bonded_pin": "GP27",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP27:analog-only"
+              ],
+              "pad_id": "GP27",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP27"
+            },
+            {
+              "bonded_pin": "GP28",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP28:analog-only"
+              ],
+              "pad_id": "GP28",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP28"
+            },
+            {
+              "bonded_pin": "GP3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP3",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP3"
+            },
+            {
+              "bonded_pin": "GP4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP4",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP4"
+            },
+            {
+              "bonded_pin": "GP5",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP5",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP5"
+            },
+            {
+              "bonded_pin": "GP6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP6",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP6"
+            },
+            {
+              "bonded_pin": "GP7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP7",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP7"
+            },
+            {
+              "bonded_pin": "GP8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP8",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP8"
+            },
+            {
+              "bonded_pin": "GP9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP9",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP9"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      }
+    },
+    {
+      "devices": [
+        "rp2040"
+      ],
+      "name": "qfn56",
+      "pads": [
+        {
+          "pad_id": "GP0",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP0"
+        },
+        {
+          "pad_id": "GP1",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP1"
+        },
+        {
+          "pad_id": "GP10",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP10"
+        },
+        {
+          "pad_id": "GP11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP11"
+        },
+        {
+          "pad_id": "GP12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP12"
+        },
+        {
+          "pad_id": "GP13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP13"
+        },
+        {
+          "pad_id": "GP14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP14"
+        },
+        {
+          "pad_id": "GP15",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP15"
+        },
+        {
+          "pad_id": "GP16",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP16"
+        },
+        {
+          "pad_id": "GP17",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP17"
+        },
+        {
+          "pad_id": "GP18",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP18"
+        },
+        {
+          "pad_id": "GP19",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP19"
+        },
+        {
+          "pad_id": "GP2",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP2"
+        },
+        {
+          "pad_id": "GP20",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP20"
+        },
+        {
+          "pad_id": "GP21",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP21"
+        },
+        {
+          "pad_id": "GP22",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP22"
+        },
+        {
+          "pad_id": "GP23",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP23"
+        },
+        {
+          "pad_id": "GP24",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP24"
+        },
+        {
+          "pad_id": "GP25",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP25"
+        },
+        {
+          "pad_id": "GP26",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP26"
+        },
+        {
+          "pad_id": "GP27",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP27"
+        },
+        {
+          "pad_id": "GP28",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP28"
+        },
+        {
+          "pad_id": "GP29",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP29"
+        },
+        {
+          "pad_id": "GP3",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP3"
+        },
+        {
+          "pad_id": "GP4",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP4"
+        },
+        {
+          "pad_id": "GP5",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP5"
+        },
+        {
+          "pad_id": "GP6",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP6"
+        },
+        {
+          "pad_id": "GP7",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP7"
+        },
+        {
+          "pad_id": "GP8",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP8"
+        },
+        {
+          "pad_id": "GP9",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GP9"
+        }
+      ],
+      "pin_count": 56,
+      "pinouts": [
+        {
+          "device": "rp2040",
+          "package": "qfn56",
+          "pin_constraints": [
+            {
+              "constraint_id": "constraint:GP26:analog-only",
+              "kind": "analog-only",
+              "pin": "GP26",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-rp2040-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch0"
+            },
+            {
+              "constraint_id": "constraint:GP27:analog-only",
+              "kind": "analog-only",
+              "pin": "GP27",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-rp2040-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch1"
+            },
+            {
+              "constraint_id": "constraint:GP28:analog-only",
+              "kind": "analog-only",
+              "pin": "GP28",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-rp2040-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch2"
+            },
+            {
+              "constraint_id": "constraint:GP29:analog-only",
+              "kind": "analog-only",
+              "pin": "GP29",
+              "provenance": {
+                "patch_ids": [
+                  "raspberrypi-rp2040-family-bootstrap-v1",
+                  "raspberrypi-rp2040-bootstrap"
+                ],
+                "source_id": "pico-sdk",
+                "source_path": "rp2040.svd"
+              },
+              "value": "ch3"
+            }
+          ],
+          "pin_index": [
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP0"
+              ],
+              "pin": "GP0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP1"
+              ],
+              "pin": "GP1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP10"
+              ],
+              "pin": "GP10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP11"
+              ],
+              "pin": "GP11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP12"
+              ],
+              "pin": "GP12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP13"
+              ],
+              "pin": "GP13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP14"
+              ],
+              "pin": "GP14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP15"
+              ],
+              "pin": "GP15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP16"
+              ],
+              "pin": "GP16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP17"
+              ],
+              "pin": "GP17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP18"
+              ],
+              "pin": "GP18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP19"
+              ],
+              "pin": "GP19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP2"
+              ],
+              "pin": "GP2"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP20"
+              ],
+              "pin": "GP20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP21"
+              ],
+              "pin": "GP21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP22"
+              ],
+              "pin": "GP22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP23"
+              ],
+              "pin": "GP23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP24"
+              ],
+              "pin": "GP24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP25"
+              ],
+              "pin": "GP25"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP26:analog-only"
+              ],
+              "pad_ids": [
+                "GP26"
+              ],
+              "pin": "GP26"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP27:analog-only"
+              ],
+              "pad_ids": [
+                "GP27"
+              ],
+              "pin": "GP27"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP28:analog-only"
+              ],
+              "pad_ids": [
+                "GP28"
+              ],
+              "pin": "GP28"
+            },
+            {
+              "constraint_ids": [
+                "constraint:GP29:analog-only"
+              ],
+              "pad_ids": [
+                "GP29"
+              ],
+              "pin": "GP29"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP3"
+              ],
+              "pin": "GP3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP4"
+              ],
+              "pin": "GP4"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP5"
+              ],
+              "pin": "GP5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP6"
+              ],
+              "pin": "GP6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP7"
+              ],
+              "pin": "GP7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP8"
+              ],
+              "pin": "GP8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "GP9"
+              ],
+              "pin": "GP9"
+            }
+          ],
+          "pinout": [
+            {
+              "bonded_pin": "GP0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP0",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP0"
+            },
+            {
+              "bonded_pin": "GP1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP1",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP1"
+            },
+            {
+              "bonded_pin": "GP10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP10",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP10"
+            },
+            {
+              "bonded_pin": "GP11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP11",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP11"
+            },
+            {
+              "bonded_pin": "GP12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP12",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP12"
+            },
+            {
+              "bonded_pin": "GP13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP13",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP13"
+            },
+            {
+              "bonded_pin": "GP14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP14",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP14"
+            },
+            {
+              "bonded_pin": "GP15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP15",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP15"
+            },
+            {
+              "bonded_pin": "GP16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP16",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP16"
+            },
+            {
+              "bonded_pin": "GP17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP17",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP17"
+            },
+            {
+              "bonded_pin": "GP18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP18",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP18"
+            },
+            {
+              "bonded_pin": "GP19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP19",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP19"
+            },
+            {
+              "bonded_pin": "GP2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP2",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP2"
+            },
+            {
+              "bonded_pin": "GP20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP20",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP20"
+            },
+            {
+              "bonded_pin": "GP21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP21",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP21"
+            },
+            {
+              "bonded_pin": "GP22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP22",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP22"
+            },
+            {
+              "bonded_pin": "GP23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP23",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP23"
+            },
+            {
+              "bonded_pin": "GP24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP24",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP24"
+            },
+            {
+              "bonded_pin": "GP25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP25",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP25"
+            },
+            {
+              "bonded_pin": "GP26",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP26:analog-only"
+              ],
+              "pad_id": "GP26",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP26"
+            },
+            {
+              "bonded_pin": "GP27",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP27:analog-only"
+              ],
+              "pad_id": "GP27",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP27"
+            },
+            {
+              "bonded_pin": "GP28",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP28:analog-only"
+              ],
+              "pad_id": "GP28",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP28"
+            },
+            {
+              "bonded_pin": "GP29",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:GP29:analog-only"
+              ],
+              "pad_id": "GP29",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP29"
+            },
+            {
+              "bonded_pin": "GP3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP3",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP3"
+            },
+            {
+              "bonded_pin": "GP4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP4",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP4"
+            },
+            {
+              "bonded_pin": "GP5",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP5",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP5"
+            },
+            {
+              "bonded_pin": "GP6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP6",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP6"
+            },
+            {
+              "bonded_pin": "GP7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP7",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP7"
+            },
+            {
+              "bonded_pin": "GP8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP8",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP8"
+            },
+            {
+              "bonded_pin": "GP9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "GP9",
+              "pad_kind": "io",
+              "physical_index": null,
+              "position_label": "GP9"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      }
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "raspberrypi"
+}

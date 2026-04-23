@@ -1,0 +1,321 @@
+{
+  "devices": [
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 4,
+          "dma_signals": [
+            "FIFO"
+          ],
+          "instance_capability_count": 4,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "ADC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "dma",
+          "peripheral_count": 1,
+          "peripherals": [
+            "DMA"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "pwm",
+          "peripheral_count": 1,
+          "peripherals": [
+            "PWM"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "rtc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "RTC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [
+            "RX",
+            "TX"
+          ],
+          "instance_capability_count": 12,
+          "peripheral_class": "spi",
+          "peripheral_count": 2,
+          "peripherals": [
+            "SPI0",
+            "SPI1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "timer",
+          "peripheral_count": 1,
+          "peripherals": [
+            "TIMER"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [
+            "RX",
+            "TX"
+          ],
+          "instance_capability_count": 12,
+          "peripheral_class": "uart",
+          "peripheral_count": 2,
+          "peripherals": [
+            "UART0",
+            "UART1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "usb",
+          "peripheral_count": 1,
+          "peripherals": [
+            "USB"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "watchdog",
+          "peripheral_count": 1,
+          "peripherals": [
+            "WATCHDOG"
+          ],
+          "present": true
+        }
+      ],
+      "device": "pico",
+      "package": "pico"
+    },
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [
+            "FIFO"
+          ],
+          "instance_capability_count": 5,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "ADC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "dma",
+          "peripheral_count": 1,
+          "peripherals": [
+            "DMA"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "pwm",
+          "peripheral_count": 1,
+          "peripherals": [
+            "PWM"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "rtc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "RTC"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [
+            "RX",
+            "TX"
+          ],
+          "instance_capability_count": 12,
+          "peripheral_class": "spi",
+          "peripheral_count": 2,
+          "peripherals": [
+            "SPI0",
+            "SPI1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "timer",
+          "peripheral_count": 1,
+          "peripherals": [
+            "TIMER"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "dma-compatible-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [
+            "RX",
+            "TX"
+          ],
+          "instance_capability_count": 12,
+          "peripheral_class": "uart",
+          "peripheral_count": 2,
+          "peripherals": [
+            "UART0",
+            "UART1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "usb",
+          "peripheral_count": 1,
+          "peripherals": [
+            "USB"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "watchdog",
+          "peripheral_count": 1,
+          "peripherals": [
+            "WATCHDOG"
+          ],
+          "present": true
+        }
+      ],
+      "device": "rp2040",
+      "package": "qfn56"
+    }
+  ],
+  "driver_classes": [
+    "adc",
+    "dma",
+    "pwm",
+    "rtc",
+    "spi",
+    "timer",
+    "uart",
+    "usb",
+    "watchdog"
+  ],
+  "family": "rp2040",
+  "family_dir": "raspberrypi/rp2040",
+  "report_id": "runtime-compatibility-matrix-v1",
+  "vendor": "raspberrypi"
+}

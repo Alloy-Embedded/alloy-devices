@@ -1,0 +1,707 @@
+{
+  "device_usage": [
+    {
+      "device": "pico",
+      "peripherals": [
+        {
+          "base_address": 1074053120,
+          "ip_name": "adc",
+          "ip_version": "rp2040-adc-v1",
+          "name": "ADC"
+        },
+        {
+          "base_address": 1073938432,
+          "ip_name": "busctrl",
+          "ip_version": null,
+          "name": "BUSCTRL"
+        },
+        {
+          "base_address": 1073774592,
+          "ip_name": "clocks",
+          "ip_version": null,
+          "name": "CLOCKS"
+        },
+        {
+          "base_address": 1342177280,
+          "ip_name": "dma",
+          "ip_version": "rp2040-dma-v1",
+          "name": "DMA"
+        },
+        {
+          "base_address": 1074020352,
+          "ip_name": "i2c0",
+          "ip_version": "rp2040-i2c-v1",
+          "name": "I2C0"
+        },
+        {
+          "base_address": 1074036736,
+          "ip_name": "i2c1",
+          "ip_version": "rp2040-i2c-v1",
+          "name": "I2C1"
+        },
+        {
+          "base_address": 1073823744,
+          "ip_name": "io_bank0",
+          "ip_version": null,
+          "name": "IO_BANK0"
+        },
+        {
+          "base_address": 1073840128,
+          "ip_name": "io_qspi",
+          "ip_version": null,
+          "name": "IO_QSPI"
+        },
+        {
+          "base_address": 1073856512,
+          "ip_name": "pads_bank0",
+          "ip_version": null,
+          "name": "PADS_BANK0"
+        },
+        {
+          "base_address": 1073872896,
+          "ip_name": "pads_qspi",
+          "ip_version": null,
+          "name": "PADS_QSPI"
+        },
+        {
+          "base_address": 1344274432,
+          "ip_name": "pio",
+          "ip_version": "rp2040-pio-v1",
+          "name": "PIO0"
+        },
+        {
+          "base_address": 1345323008,
+          "ip_name": "pio",
+          "ip_version": "rp2040-pio-v1",
+          "name": "PIO1"
+        },
+        {
+          "base_address": 1073905664,
+          "ip_name": "pll_sys",
+          "ip_version": null,
+          "name": "PLL_SYS"
+        },
+        {
+          "base_address": 1073922048,
+          "ip_name": "pll_usb",
+          "ip_version": null,
+          "name": "PLL_USB"
+        },
+        {
+          "base_address": 3758096384,
+          "ip_name": "ppb",
+          "ip_version": null,
+          "name": "PPB"
+        },
+        {
+          "base_address": 1073807360,
+          "ip_name": "psm",
+          "ip_version": null,
+          "name": "PSM"
+        },
+        {
+          "base_address": 1074069504,
+          "ip_name": "pwm",
+          "ip_version": "rp2040-pwm-v1",
+          "name": "PWM"
+        },
+        {
+          "base_address": 1073790976,
+          "ip_name": "resets",
+          "ip_version": null,
+          "name": "RESETS"
+        },
+        {
+          "base_address": 1074135040,
+          "ip_name": "rosc",
+          "ip_version": null,
+          "name": "ROSC"
+        },
+        {
+          "base_address": 1074118656,
+          "ip_name": "rtc",
+          "ip_version": "rp2040-rtc-v1",
+          "name": "RTC"
+        },
+        {
+          "base_address": 3489660928,
+          "ip_name": "sio",
+          "ip_version": "rp2040-sio-v1",
+          "name": "SIO"
+        },
+        {
+          "base_address": 0,
+          "ip_name": "spare_irq",
+          "ip_version": null,
+          "name": "SPARE_IRQ"
+        },
+        {
+          "base_address": 1073987584,
+          "ip_name": "spi",
+          "ip_version": "rp2040-spi-v1",
+          "name": "SPI0"
+        },
+        {
+          "base_address": 1074003968,
+          "ip_name": "spi",
+          "ip_version": "rp2040-spi-v1",
+          "name": "SPI1"
+        },
+        {
+          "base_address": 402653184,
+          "ip_name": "ssi",
+          "ip_version": null,
+          "name": "SSI"
+        },
+        {
+          "base_address": 1073758208,
+          "ip_name": "syscfg",
+          "ip_version": null,
+          "name": "SYSCFG"
+        },
+        {
+          "base_address": 1073741824,
+          "ip_name": "sysinfo",
+          "ip_version": null,
+          "name": "SYSINFO"
+        },
+        {
+          "base_address": 1074184192,
+          "ip_name": "tbman",
+          "ip_version": null,
+          "name": "TBMAN"
+        },
+        {
+          "base_address": 1074085888,
+          "ip_name": "timer",
+          "ip_version": "rp2040-timer-v1",
+          "name": "TIMER"
+        },
+        {
+          "base_address": 1073954816,
+          "ip_name": "uart",
+          "ip_version": "rp2040-uart-v1",
+          "name": "UART0"
+        },
+        {
+          "base_address": 1073971200,
+          "ip_name": "uart",
+          "ip_version": "rp2040-uart-v1",
+          "name": "UART1"
+        },
+        {
+          "base_address": 1343291392,
+          "ip_name": "usb",
+          "ip_version": null,
+          "name": "USB"
+        },
+        {
+          "base_address": 1343225856,
+          "ip_name": "usb_dpram",
+          "ip_version": null,
+          "name": "USB_DPRAM"
+        },
+        {
+          "base_address": 1074151424,
+          "ip_name": "vreg_and_chip_reset",
+          "ip_version": null,
+          "name": "VREG_AND_CHIP_RESET"
+        },
+        {
+          "base_address": 1074102272,
+          "ip_name": "watchdog",
+          "ip_version": "rp2040-watchdog-v1",
+          "name": "WATCHDOG"
+        },
+        {
+          "base_address": 335544320,
+          "ip_name": "xip_ctrl",
+          "ip_version": null,
+          "name": "XIP_CTRL"
+        },
+        {
+          "base_address": 1073889280,
+          "ip_name": "xosc",
+          "ip_version": null,
+          "name": "XOSC"
+        }
+      ]
+    },
+    {
+      "device": "rp2040",
+      "peripherals": [
+        {
+          "base_address": 1074053120,
+          "ip_name": "adc",
+          "ip_version": "rp2040-adc-v1",
+          "name": "ADC"
+        },
+        {
+          "base_address": 1073938432,
+          "ip_name": "busctrl",
+          "ip_version": null,
+          "name": "BUSCTRL"
+        },
+        {
+          "base_address": 1073774592,
+          "ip_name": "clocks",
+          "ip_version": null,
+          "name": "CLOCKS"
+        },
+        {
+          "base_address": 1342177280,
+          "ip_name": "dma",
+          "ip_version": "rp2040-dma-v1",
+          "name": "DMA"
+        },
+        {
+          "base_address": 1074020352,
+          "ip_name": "i2c0",
+          "ip_version": "rp2040-i2c-v1",
+          "name": "I2C0"
+        },
+        {
+          "base_address": 1074036736,
+          "ip_name": "i2c1",
+          "ip_version": "rp2040-i2c-v1",
+          "name": "I2C1"
+        },
+        {
+          "base_address": 1073823744,
+          "ip_name": "io_bank0",
+          "ip_version": null,
+          "name": "IO_BANK0"
+        },
+        {
+          "base_address": 1073840128,
+          "ip_name": "io_qspi",
+          "ip_version": null,
+          "name": "IO_QSPI"
+        },
+        {
+          "base_address": 1073856512,
+          "ip_name": "pads_bank0",
+          "ip_version": null,
+          "name": "PADS_BANK0"
+        },
+        {
+          "base_address": 1073872896,
+          "ip_name": "pads_qspi",
+          "ip_version": null,
+          "name": "PADS_QSPI"
+        },
+        {
+          "base_address": 1344274432,
+          "ip_name": "pio",
+          "ip_version": "rp2040-pio-v1",
+          "name": "PIO0"
+        },
+        {
+          "base_address": 1345323008,
+          "ip_name": "pio",
+          "ip_version": "rp2040-pio-v1",
+          "name": "PIO1"
+        },
+        {
+          "base_address": 1073905664,
+          "ip_name": "pll_sys",
+          "ip_version": null,
+          "name": "PLL_SYS"
+        },
+        {
+          "base_address": 1073922048,
+          "ip_name": "pll_usb",
+          "ip_version": null,
+          "name": "PLL_USB"
+        },
+        {
+          "base_address": 3758096384,
+          "ip_name": "ppb",
+          "ip_version": null,
+          "name": "PPB"
+        },
+        {
+          "base_address": 1073807360,
+          "ip_name": "psm",
+          "ip_version": null,
+          "name": "PSM"
+        },
+        {
+          "base_address": 1074069504,
+          "ip_name": "pwm",
+          "ip_version": "rp2040-pwm-v1",
+          "name": "PWM"
+        },
+        {
+          "base_address": 1073790976,
+          "ip_name": "resets",
+          "ip_version": null,
+          "name": "RESETS"
+        },
+        {
+          "base_address": 1074135040,
+          "ip_name": "rosc",
+          "ip_version": null,
+          "name": "ROSC"
+        },
+        {
+          "base_address": 1074118656,
+          "ip_name": "rtc",
+          "ip_version": "rp2040-rtc-v1",
+          "name": "RTC"
+        },
+        {
+          "base_address": 3489660928,
+          "ip_name": "sio",
+          "ip_version": "rp2040-sio-v1",
+          "name": "SIO"
+        },
+        {
+          "base_address": 0,
+          "ip_name": "spare_irq",
+          "ip_version": null,
+          "name": "SPARE_IRQ"
+        },
+        {
+          "base_address": 1073987584,
+          "ip_name": "spi",
+          "ip_version": "rp2040-spi-v1",
+          "name": "SPI0"
+        },
+        {
+          "base_address": 1074003968,
+          "ip_name": "spi",
+          "ip_version": "rp2040-spi-v1",
+          "name": "SPI1"
+        },
+        {
+          "base_address": 402653184,
+          "ip_name": "ssi",
+          "ip_version": null,
+          "name": "SSI"
+        },
+        {
+          "base_address": 1073758208,
+          "ip_name": "syscfg",
+          "ip_version": null,
+          "name": "SYSCFG"
+        },
+        {
+          "base_address": 1073741824,
+          "ip_name": "sysinfo",
+          "ip_version": null,
+          "name": "SYSINFO"
+        },
+        {
+          "base_address": 1074184192,
+          "ip_name": "tbman",
+          "ip_version": null,
+          "name": "TBMAN"
+        },
+        {
+          "base_address": 1074085888,
+          "ip_name": "timer",
+          "ip_version": "rp2040-timer-v1",
+          "name": "TIMER"
+        },
+        {
+          "base_address": 1073954816,
+          "ip_name": "uart",
+          "ip_version": "rp2040-uart-v1",
+          "name": "UART0"
+        },
+        {
+          "base_address": 1073971200,
+          "ip_name": "uart",
+          "ip_version": "rp2040-uart-v1",
+          "name": "UART1"
+        },
+        {
+          "base_address": 1343291392,
+          "ip_name": "usb",
+          "ip_version": null,
+          "name": "USB"
+        },
+        {
+          "base_address": 1343225856,
+          "ip_name": "usb_dpram",
+          "ip_version": null,
+          "name": "USB_DPRAM"
+        },
+        {
+          "base_address": 1074151424,
+          "ip_name": "vreg_and_chip_reset",
+          "ip_version": null,
+          "name": "VREG_AND_CHIP_RESET"
+        },
+        {
+          "base_address": 1074102272,
+          "ip_name": "watchdog",
+          "ip_version": "rp2040-watchdog-v1",
+          "name": "WATCHDOG"
+        },
+        {
+          "base_address": 335544320,
+          "ip_name": "xip_ctrl",
+          "ip_version": null,
+          "name": "XIP_CTRL"
+        },
+        {
+          "base_address": 1073889280,
+          "ip_name": "xosc",
+          "ip_version": null,
+          "name": "XOSC"
+        }
+      ]
+    }
+  ],
+  "family": "rp2040",
+  "ip_blocks": [
+    {
+      "backend_schema_id": "alloy.adc.raspberrypi-rp2040-adc-v1",
+      "capability_ids": [
+        "capability:adc:rp2040-adc-v1:ch0",
+        "capability:adc:rp2040-adc-v1:ch1",
+        "capability:adc:rp2040-adc-v1:ch2"
+      ],
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "adc:rp2040-adc-v1",
+      "signal_roles": [
+        "ch0",
+        "ch1",
+        "ch2"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.dma.raspberrypi-rp2040-dma-v1",
+      "capability_ids": [],
+      "ip_name": "dma",
+      "ip_version": "rp2040-dma-v1",
+      "peripheral_class": "dma",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "dma:rp2040-dma-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.i2c0.raspberrypi-rp2040-i2c-v1",
+      "capability_ids": [
+        "capability:i2c0:rp2040-i2c-v1:scl",
+        "capability:i2c0:rp2040-i2c-v1:sda"
+      ],
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "i2c0:rp2040-i2c-v1",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.i2c1.raspberrypi-rp2040-i2c-v1",
+      "capability_ids": [
+        "capability:i2c1:rp2040-i2c-v1:scl",
+        "capability:i2c1:rp2040-i2c-v1:sda"
+      ],
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "i2c1:rp2040-i2c-v1",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.pio.raspberrypi-rp2040-pio-v1",
+      "capability_ids": [],
+      "ip_name": "pio",
+      "ip_version": "rp2040-pio-v1",
+      "peripheral_class": "pio",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "pio:rp2040-pio-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.pwm.raspberrypi-rp2040-pwm-v1",
+      "capability_ids": [],
+      "ip_name": "pwm",
+      "ip_version": "rp2040-pwm-v1",
+      "peripheral_class": "pwm",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "pwm:rp2040-pwm-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.rtc.raspberrypi-rp2040-rtc-v1",
+      "capability_ids": [],
+      "ip_name": "rtc",
+      "ip_version": "rp2040-rtc-v1",
+      "peripheral_class": "rtc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "rtc:rp2040-rtc-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.sio.raspberrypi-rp2040-sio-v1",
+      "capability_ids": [],
+      "ip_name": "sio",
+      "ip_version": "rp2040-sio-v1",
+      "peripheral_class": "sio",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "sio:rp2040-sio-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.spi.raspberrypi-rp2040-spi-v1",
+      "capability_ids": [
+        "capability:spi:rp2040-spi-v1:csn",
+        "capability:spi:rp2040-spi-v1:rx",
+        "capability:spi:rp2040-spi-v1:sck",
+        "capability:spi:rp2040-spi-v1:tx"
+      ],
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "spi:rp2040-spi-v1",
+      "signal_roles": [
+        "csn",
+        "rx",
+        "sck",
+        "tx"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.timer.raspberrypi-rp2040-timer-v1",
+      "capability_ids": [],
+      "ip_name": "timer",
+      "ip_version": "rp2040-timer-v1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "timer:rp2040-timer-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.uart.raspberrypi-rp2040-uart-v1",
+      "capability_ids": [
+        "capability:uart:rp2040-uart-v1:cts",
+        "capability:uart:rp2040-uart-v1:rts",
+        "capability:uart:rp2040-uart-v1:rx",
+        "capability:uart:rp2040-uart-v1:tx"
+      ],
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "uart:rp2040-uart-v1",
+      "signal_roles": [
+        "cts",
+        "rts",
+        "rx",
+        "tx"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.watchdog.raspberrypi-rp2040-watchdog-v1",
+      "capability_ids": [],
+      "ip_name": "watchdog",
+      "ip_version": "rp2040-watchdog-v1",
+      "peripheral_class": "watchdog",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "register_profile": "watchdog:rp2040-watchdog-v1",
+      "signal_roles": []
+    }
+  ],
+  "schema_version": "1.1.0",
+  "vendor": "raspberrypi"
+}

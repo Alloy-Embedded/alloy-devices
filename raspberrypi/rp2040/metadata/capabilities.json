@@ -1,0 +1,1204 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "capability-instance:adc:pico:ch0",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch0"
+    },
+    {
+      "capability_id": "capability-instance:adc:pico:ch1",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:adc:pico:ch2",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:adc:qfn56:ch0",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch0"
+    },
+    {
+      "capability_id": "capability-instance:adc:qfn56:ch1",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability-instance:adc:qfn56:ch2",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability-instance:adc:qfn56:ch3",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "ADC",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability-instance:i2c0:pico:scl",
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "I2C0",
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c0:pico:sda",
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "I2C0",
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c0:qfn56:scl",
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "I2C0",
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c0:qfn56:sda",
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "I2C0",
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:pico:scl",
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:pico:sda",
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:qfn56:scl",
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:qfn56:sda",
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:spi0:pico:csn",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "csn"
+    },
+    {
+      "capability_id": "capability-instance:spi0:pico:rx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:spi0:pico:sck",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi0:pico:tx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:spi0:qfn56:csn",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "csn"
+    },
+    {
+      "capability_id": "capability-instance:spi0:qfn56:rx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:spi0:qfn56:sck",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi0:qfn56:tx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI0",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:spi1:pico:csn",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "csn"
+    },
+    {
+      "capability_id": "capability-instance:spi1:pico:rx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:spi1:pico:sck",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi1:pico:tx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:spi1:qfn56:csn",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "csn"
+    },
+    {
+      "capability_id": "capability-instance:spi1:qfn56:rx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:spi1:qfn56:sck",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability-instance:spi1:qfn56:tx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "SPI1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:uart0:pico:cts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:uart0:pico:rts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:uart0:pico:rx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:uart0:pico:tx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:uart0:qfn56:cts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:uart0:qfn56:rts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:uart0:qfn56:rx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:uart0:qfn56:tx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART0",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:uart1:pico:cts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:uart1:pico:rts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:uart1:pico:rx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:uart1:pico:tx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "pico",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability-instance:uart1:qfn56:cts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability-instance:uart1:qfn56:rts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability-instance:uart1:qfn56:rx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability-instance:uart1:qfn56:tx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "available-signal",
+      "package": "qfn56",
+      "peripheral": "UART1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "instance-overlay",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability:adc:rp2040-adc-v1:ch0",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "ch0"
+    },
+    {
+      "capability_id": "capability:adc:rp2040-adc-v1:ch1",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "ch1"
+    },
+    {
+      "capability_id": "capability:adc:rp2040-adc-v1:ch2",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "ch2"
+    },
+    {
+      "capability_id": "capability:adc:rp2040-adc-v1:ch3",
+      "ip_name": "adc",
+      "ip_version": "rp2040-adc-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-rp2040-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "ch3"
+    },
+    {
+      "capability_id": "capability:i2c0:rp2040-i2c-v1:scl",
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability:i2c0:rp2040-i2c-v1:sda",
+      "ip_name": "i2c0",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c0",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability:i2c1:rp2040-i2c-v1:scl",
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability:i2c1:rp2040-i2c-v1:sda",
+      "ip_name": "i2c1",
+      "ip_version": "rp2040-i2c-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "i2c1",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability:spi:rp2040-spi-v1:csn",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "csn"
+    },
+    {
+      "capability_id": "capability:spi:rp2040-spi-v1:rx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability:spi:rp2040-spi-v1:sck",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "sck"
+    },
+    {
+      "capability_id": "capability:spi:rp2040-spi-v1:tx",
+      "ip_name": "spi",
+      "ip_version": "rp2040-spi-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "tx"
+    },
+    {
+      "capability_id": "capability:uart:rp2040-uart-v1:cts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "cts"
+    },
+    {
+      "capability_id": "capability:uart:rp2040-uart-v1:rts",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "rts"
+    },
+    {
+      "capability_id": "capability:uart:rp2040-uart-v1:rx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "rx"
+    },
+    {
+      "capability_id": "capability:uart:rp2040-uart-v1:tx",
+      "ip_name": "uart",
+      "ip_version": "rp2040-uart-v1",
+      "name": "signal-role",
+      "package": null,
+      "peripheral": null,
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "raspberrypi-rp2040-family-bootstrap-v1",
+          "raspberrypi-pico-bootstrap"
+        ],
+        "source_id": "pico-sdk",
+        "source_path": "rp2040.svd"
+      },
+      "scope": "ip-block",
+      "value": "tx"
+    }
+  ],
+  "family": "rp2040",
+  "schema_version": "1.1.0",
+  "vendor": "raspberrypi"
+}
