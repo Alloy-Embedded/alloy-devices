@@ -40,7 +40,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:14dd694a674e60de223b96b7117caf8d1f1645bead355d0c566ca5e042ec779e",
+          "revision": "content-sha256:8a414dbd4f0d5e499fbe6c22a88a37d0d073418d713d015378b1c162f677e49f",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -53,7 +53,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:89d686333ec6beddb88ad6258e9568c2b2ed4c41bbe356949437b216b3d74f70",
+          "revision": "content-sha256:7a65b6f6337681887cf2846953d77b9834ff924389620167564bf847833aee78",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -66,7 +66,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:14dd694a674e60de223b96b7117caf8d1f1645bead355d0c566ca5e042ec779e",
+          "revision": "content-sha256:8a414dbd4f0d5e499fbe6c22a88a37d0d073418d713d015378b1c162f677e49f",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -79,7 +79,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:89d686333ec6beddb88ad6258e9568c2b2ed4c41bbe356949437b216b3d74f70",
+          "revision": "content-sha256:7a65b6f6337681887cf2846953d77b9834ff924389620167564bf847833aee78",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -187,12 +187,12 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 102,
+  "published_artifact_count": 104,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3740,
-      "content_sha256": "f32c950fb0e6da3f3ab15a754559ce2b420a07438e0de89c956364966deb0370",
+      "content_sha256": "87a54eab9c1fbff0ac3d434f9a2066d35959b5b8f0f5b0e70a08e8ea689e64ca",
       "path": "nxp/imxrt1060/artifact-manifest.json"
     },
     {
@@ -326,6 +326,12 @@
       "content_bytes": 5057,
       "content_sha256": "16533a59ef4ac2826def6a08762b0ede7b50432acaf18842079fe86f85dbeddd",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 413,
+      "content_sha256": "b36131675372ef91d5e7a52903ca50de85e322a27dd4e689f5ccd4f19a2913d0",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -560,6 +566,12 @@
       "content_bytes": 5057,
       "content_sha256": "7d0aff3508c0574df4b313638ced355e6e51d9b336075e714a7ec7c4bbdb1b03",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 413,
+      "content_sha256": "2f36e7cec23f1f6953413b8cdbc8f8d3c3f91b23820380a82ff5842e0ccf07ea",
+      "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -807,7 +819,7 @@
     "family": "imxrt1060",
     "vendor": "nxp"
   },
-  "target_artifact_revision": "d24de99273e80ac802f62d219439de1162941a528e8bf2ee91edce8b4d8157d5",
+  "target_artifact_revision": "81cae083a2c0a749973f33687498caf141febb5f0caf449fee3c662e347b1dae",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
