@@ -213,7 +213,7 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 102,
+  "published_artifact_count": 104,
   "published_artifacts": [
     {
       "artifact_kind": "canonical-metadata",
@@ -352,6 +352,12 @@
       "content_bytes": 5055,
       "content_sha256": "c7e67d7e615e92692d93ff84c545698817abf98daebbee1c820da67162892e24",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 411,
+      "content_sha256": "39b852d0bf619f2174516d5a8ab7ab5592455f114aaa32dcc4399c66a750f5bb",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -586,6 +592,12 @@
       "content_bytes": 5055,
       "content_sha256": "6b81dacc452d6cad7472dd75dd77215fb43518d3e0b0f8e4f5515799f840ada1",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 411,
+      "content_sha256": "6055e3f6f7662abf97bc5abae605e9c4f02caa7dd35c537d51db9abdf7b0034d",
+      "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
@@ -833,7 +845,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "eb6494641e8304492b48c780113d3387bd2edce066c86f57dd0eec6b110373b8",
+  "target_artifact_revision": "904a3c73f0b772fa785406474ee7e1b6e6689503277e2a5dca68f1dda04ab169",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
