@@ -350,8 +350,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8021,
-      "content_sha256": "8abceb8e5af75c7def4f55677bd0ab8db9b993ab11fac0ddece3b4539f622469",
+      "content_bytes": 8229,
+      "content_sha256": "b8c977a5d10c1e69405519fc1df15f8f4052529dbe02a3d8146eea55aa39d928",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/peripheral_instances.hpp"
     },
     {
@@ -510,7 +510,7 @@
     "family": "esp32s3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "2c53e590e218f0b4132337cd03913878536ceade122c0e0583e4d7ddee04de35",
+  "target_artifact_revision": "d760e99bee24adbde83ba00c562d52c3ac9f770af2250e2447d7724af9c6c282",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
