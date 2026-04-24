@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 172 rule(s).",
+      "message": "gate-c passed with 174 rule(s).",
       "passed": true,
       "rule_ids": [
         "pico-package-pin-count-covers-known-pins",
@@ -99,6 +99,7 @@
         "pico-startup-descriptors-include-runtime-baseline",
         "pico-startup-descriptors-emit-without-handwritten-tables",
         "pico-clock-bindings-reference-known-descriptors",
+        "pico-clock-reset-bindings-not-diagnostic-only",
         "pico-clock-node-parents-known",
         "pico-clock-graph-reaches-root",
         "pico-clock-selectors-structured",
@@ -184,6 +185,7 @@
         "rp2040-startup-descriptors-include-runtime-baseline",
         "rp2040-startup-descriptors-emit-without-handwritten-tables",
         "rp2040-clock-bindings-reference-known-descriptors",
+        "rp2040-clock-reset-bindings-not-diagnostic-only",
         "rp2040-clock-node-parents-known",
         "rp2040-clock-graph-reaches-root",
         "rp2040-clock-selectors-structured",
@@ -743,6 +745,13 @@
       "message": "pico clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "pico-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "pico clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "pico-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {
@@ -1338,6 +1347,13 @@
       "message": "rp2040 clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "rp2040-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "rp2040 clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "rp2040-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {

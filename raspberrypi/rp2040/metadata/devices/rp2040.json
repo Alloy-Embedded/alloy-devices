@@ -138016,7 +138016,7 @@
       "value_ref_kind": "selector"
     }
   ],
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "signal_endpoints": [
     {
       "direction": null,

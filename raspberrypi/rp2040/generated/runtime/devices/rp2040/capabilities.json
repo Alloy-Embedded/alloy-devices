@@ -403,6 +403,6 @@
   ],
   "device": "rp2040",
   "family": "rp2040",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "vendor": "raspberrypi"
 }

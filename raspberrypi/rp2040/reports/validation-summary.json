@@ -46,7 +46,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 172 rule(s).",
+      "message": "gate-c passed with 174 rule(s).",
       "passed": true,
       "rule_ids": [
         "pico-package-pin-count-covers-known-pins",
@@ -113,6 +113,7 @@
         "pico-startup-descriptors-include-runtime-baseline",
         "pico-startup-descriptors-emit-without-handwritten-tables",
         "pico-clock-bindings-reference-known-descriptors",
+        "pico-clock-reset-bindings-not-diagnostic-only",
         "pico-clock-node-parents-known",
         "pico-clock-graph-reaches-root",
         "pico-clock-selectors-structured",
@@ -198,6 +199,7 @@
         "rp2040-startup-descriptors-include-runtime-baseline",
         "rp2040-startup-descriptors-emit-without-handwritten-tables",
         "rp2040-clock-bindings-reference-known-descriptors",
+        "rp2040-clock-reset-bindings-not-diagnostic-only",
         "rp2040-clock-node-parents-known",
         "rp2040-clock-graph-reaches-root",
         "rp2040-clock-selectors-structured",
@@ -226,7 +228,7 @@
   ],
   "is_passing": true,
   "report_id": "bootstrap-validation-v1",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "system_descriptor_domains": [
     {
       "domain_id": "interrupt",

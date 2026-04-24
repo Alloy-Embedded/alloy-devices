@@ -6,9 +6,9 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "036b8c89dfb1465049ac03385a4076c1a939cad826120eb31a0035de993a6552",
+    "canonical_ir_sha256": "9d962f93d9562f5f7487fd39f45681ce6819c01b3a1e76b7080c907a288cb1d2",
     "generator_version": "0.1.0",
-    "ir_schema_version": "1.1.0",
+    "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
     "patch_manifest": {
       "applied_patches": [
@@ -70,7 +70,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "e6e5d5b57808620c88c186c17b4e83c7e77d3994922c3782db2c64c204320163"
+    "validation_report_sha256": "9ad4cde98f12679937eff6d95ce793cf1d8eafda8a628a423918537a4a8ac74e"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/pico",
@@ -166,7 +166,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 2459,
-      "content_sha256": "565b12df7ced9c12049caf2bc4f81d4437d2e2344daf7a3bb5a71cb350b53a35",
+      "content_sha256": "2187fae3d1bde2936243a0e25ff385b6792280846fef0c11854b05cc61fa5059",
       "path": "raspberrypi/rp2040/artifact-manifest.json"
     },
     {
@@ -214,7 +214,7 @@
     {
       "artifact_kind": "generated-runtime-metadata",
       "content_bytes": 10584,
-      "content_sha256": "450ee031c5c3c7d284de3ad00c89a28875c0b681cf9e9c5f70fec77e6a5cfa18",
+      "content_sha256": "ba995c963ba5c80101fe3608556a79250504ad73b8740b32b753e8dff75ef6d8",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.json"
     },
     {
@@ -454,7 +454,7 @@
     {
       "artifact_kind": "generated-runtime-metadata",
       "content_bytes": 11036,
-      "content_sha256": "d7593d59fb8180a8e9dbffa6b2d445ff12a91b68d3c0fe42bdad55531e3e183b",
+      "content_sha256": "036bcfda40ac7cfbf345c91595883a66d0ef4265cb695c3c5be4bb2944ce478b",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.json"
     },
     {
@@ -694,61 +694,61 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 33694,
-      "content_sha256": "7bcfb9a4e64ac997eb730199e863b17648003ba58376bcacd9a864db8ce6a4cc",
+      "content_sha256": "308aaef7f0b3d95ac9e8f79776843fa9e89743dadbb37c153b2cb94292531c7c",
       "path": "raspberrypi/rp2040/metadata/capabilities.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 538844,
-      "content_sha256": "1981620d0261037b5edd827f8421ea694dd37991b75d2761e76444ec0ca0dba0",
+      "content_sha256": "ab6b4fb4b93d52a62f32f3452f7957f464e6a699d95d7a74cb2de5644d176308",
       "path": "raspberrypi/rp2040/metadata/connectors.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3943983,
-      "content_sha256": "aba3e854c4844a415d770f99268cf2feda7e35f2a459738f00232cbaa9ded975",
+      "content_sha256": "a1bb512a1500053484c6e2f754afc747be163e71fcc2a17d01f070c2dba43e16",
       "path": "raspberrypi/rp2040/metadata/devices/pico.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3984068,
-      "content_sha256": "6f83a7ee685a040a26c50d4d75b936670657770bbbedb15630c3505b8a445331",
+      "content_sha256": "5c9d6456471131996c36d6de077fb12a0af4700445f5d2dee0ce941444bd75f2",
       "path": "raspberrypi/rp2040/metadata/devices/rp2040.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 75923,
-      "content_sha256": "38c9079432a90b57acc9de1dd9eeb648d0079320e1c26d29c961520eca2d7f1f",
+      "content_sha256": "fab7fc00b1615214078e841a0735bb02068528bce36e858761cfdfc24fdef05c",
       "path": "raspberrypi/rp2040/metadata/family-connectivity.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 672,
-      "content_sha256": "d1c99d48a4b0bd48fe87cc1e08775af8e9b4d839856d61b57a7a57225038b627",
+      "content_sha256": "56e73f97bceed6615f8f78e13425b6216aef2b725f06320e389defea88afe26d",
       "path": "raspberrypi/rp2040/metadata/family-index.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 18403,
-      "content_sha256": "df66129c5c8b6b2b0a069c3c9eb9013332571d348a0b7a05b21d6b81b83731ab",
+      "content_sha256": "9aa3b8fa4236c97b551e2ffd6b1887f816926b6d07757bbcff44bdf8ebc61a54",
       "path": "raspberrypi/rp2040/metadata/ip-blocks.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 38863,
-      "content_sha256": "19cf42945e68d067ad809eefaea084525b868172931d6fd72edb8d06e5602812",
+      "content_sha256": "1ea0e048509255ad2b1c6e7e4a2c1fe3af40511b04d1275cb6d8c93dc414f0f9",
       "path": "raspberrypi/rp2040/metadata/packages.json"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 184891,
-      "content_sha256": "2fb02d45add366797c1fb7be9984cb3f87b5fc04adc911da8bfb7cd1132c41ec",
+      "content_sha256": "08e144fe84f9168c9d68f976c12086262c41c43b30292f9deef41d5747da1805",
       "path": "raspberrypi/rp2040/metadata/system-descriptors.json"
     },
     {
       "artifact_kind": "coverage-report",
       "content_bytes": 2364,
-      "content_sha256": "44285a504c79d16275d84301de01605ef6ca9b71c04a39e55e5ed83bb21cfd7b",
+      "content_sha256": "fe613fb7895b950794234c586d4b58d69370a3408211388fbae306d4ec0e2cbe",
       "path": "raspberrypi/rp2040/reports/coverage.json"
     },
     {
@@ -766,25 +766,25 @@
     {
       "artifact_kind": "runtime-report",
       "content_bytes": 226983,
-      "content_sha256": "9454f2f257476daad7ab45cce9c93af42f0bb074d010065b3e674b454808a1a9",
+      "content_sha256": "2aeb33648eed145547ab413ad71b38b17544784b100688c0e285085375a39751",
       "path": "raspberrypi/rp2040/reports/runtime-explainability.json"
     },
     {
       "artifact_kind": "runtime-report",
       "content_bytes": 415438,
-      "content_sha256": "5ac41dd0870ff41b02bf4343b303f3e74fb127a81f09635de198592c53d29c10",
+      "content_sha256": "71b81b31f2a67f14e44b175229984ac8ccaeb7144fdc7edea25e7aa9fe21533b",
       "path": "raspberrypi/rp2040/reports/runtime-provenance.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 58955,
-      "content_sha256": "e6e5d5b57808620c88c186c17b4e83c7e77d3994922c3782db2c64c204320163",
+      "content_bytes": 59685,
+      "content_sha256": "9ad4cde98f12679937eff6d95ce793cf1d8eafda8a628a423918537a4a8ac74e",
       "path": "raspberrypi/rp2040/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 16479,
-      "content_sha256": "acc36b4bd1c5c434811b88742777b79b63b892af82c4047990c0cc847905deb7",
+      "content_bytes": 16595,
+      "content_sha256": "47f02b74a1e736b2bc1ef0a10f62bd75bd380e6592e1687ece3000617d747fd7",
       "path": "raspberrypi/rp2040/reports/validation-summary.json"
     }
   ],
@@ -793,7 +793,7 @@
     "family": "rp2040",
     "vendor": "raspberrypi"
   },
-  "target_artifact_revision": "498ddedacfa6d91b2fd2fdd775550faf24f23010eaee5d78285ea6573696184f",
+  "target_artifact_revision": "c91aceb9109da914ee34d047fd4e180552350b88e6d8a4c42d401ed8e42f9eab",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -829,7 +829,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 172 rule(s).",
+        "message": "gate-c passed with 174 rule(s).",
         "passed": true,
         "rule_ids": [
           "pico-package-pin-count-covers-known-pins",
@@ -896,6 +896,7 @@
           "pico-startup-descriptors-include-runtime-baseline",
           "pico-startup-descriptors-emit-without-handwritten-tables",
           "pico-clock-bindings-reference-known-descriptors",
+          "pico-clock-reset-bindings-not-diagnostic-only",
           "pico-clock-node-parents-known",
           "pico-clock-graph-reaches-root",
           "pico-clock-selectors-structured",
@@ -981,6 +982,7 @@
           "rp2040-startup-descriptors-include-runtime-baseline",
           "rp2040-startup-descriptors-emit-without-handwritten-tables",
           "rp2040-clock-bindings-reference-known-descriptors",
+          "rp2040-clock-reset-bindings-not-diagnostic-only",
           "rp2040-clock-node-parents-known",
           "rp2040-clock-graph-reaches-root",
           "rp2040-clock-selectors-structured",
