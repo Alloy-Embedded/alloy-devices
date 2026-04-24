@@ -392,8 +392,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 27625,
-      "content_sha256": "d0b15d555b1d61f777a62c70c74803f9ed5ae6756d8e610d86b36f0b96f0840e",
+      "content_bytes": 28342,
+      "content_sha256": "436b6abced46f562eda64b11378ef76a84900a3647be2c0e423eb00affbade01",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/i2c.hpp"
     },
     {
@@ -632,8 +632,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 27625,
-      "content_sha256": "c855643e0d182fd3b961bb57a978f7231444c7bf629ba15d8722cbf4022fb49b",
+      "content_bytes": 28342,
+      "content_sha256": "4e68d20442fe2f2ef8553f6a95a91fbfad6dd4c0a0ed830a4e93b82022a13535",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/driver_semantics/i2c.hpp"
     },
     {
@@ -888,7 +888,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "beb686f40f2418102ceec12222b605beccec4237ef562e5ee90204e34200dc6c",
+  "target_artifact_revision": "733fda418540ab64d2312b0075aebfa4722c950936d54654b3c4b90486a17ea5",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

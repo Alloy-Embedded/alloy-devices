@@ -105,8 +105,8 @@ struct I2cSemanticTraits<PeripheralId::TWIHS0> {
   static constexpr RuntimeRegisterRef kThrRegister = RuntimeRegisterRef{RegisterId::register_twihs0_thr, 0x40018000u, 52u, true};
   static constexpr RuntimeFieldRef kPeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAckField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kStartField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kStopField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStartField = RuntimeFieldRef{FieldId::field_twihs0_cr_start, RuntimeRegisterRef{RegisterId::register_twihs0_cr, 0x40018000u, 0u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kStopField = RuntimeFieldRef{FieldId::field_twihs0_cr_stop, RuntimeRegisterRef{RegisterId::register_twihs0_cr, 0x40018000u, 0u, true}, 1u, 1u, true};
   static constexpr RuntimeFieldRef kFreqField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kCcrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kFsField = kInvalidFieldRef;
@@ -178,8 +178,8 @@ struct I2cSemanticTraits<PeripheralId::TWIHS1> {
   static constexpr RuntimeRegisterRef kThrRegister = RuntimeRegisterRef{RegisterId::register_twihs1_thr, 0x4001C000u, 52u, true};
   static constexpr RuntimeFieldRef kPeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAckField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kStartField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kStopField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStartField = RuntimeFieldRef{FieldId::field_twihs1_cr_start, RuntimeRegisterRef{RegisterId::register_twihs1_cr, 0x4001C000u, 0u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kStopField = RuntimeFieldRef{FieldId::field_twihs1_cr_stop, RuntimeRegisterRef{RegisterId::register_twihs1_cr, 0x4001C000u, 0u, true}, 1u, 1u, true};
   static constexpr RuntimeFieldRef kFreqField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kCcrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kFsField = kInvalidFieldRef;
@@ -251,8 +251,8 @@ struct I2cSemanticTraits<PeripheralId::TWIHS2> {
   static constexpr RuntimeRegisterRef kThrRegister = RuntimeRegisterRef{RegisterId::register_twihs2_thr, 0x40060000u, 52u, true};
   static constexpr RuntimeFieldRef kPeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAckField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kStartField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kStopField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kStartField = RuntimeFieldRef{FieldId::field_twihs2_cr_start, RuntimeRegisterRef{RegisterId::register_twihs2_cr, 0x40060000u, 0u, true}, 0u, 1u, true};
+  static constexpr RuntimeFieldRef kStopField = RuntimeFieldRef{FieldId::field_twihs2_cr_stop, RuntimeRegisterRef{RegisterId::register_twihs2_cr, 0x40060000u, 0u, true}, 1u, 1u, true};
   static constexpr RuntimeFieldRef kFreqField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kCcrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kFsField = kInvalidFieldRef;
