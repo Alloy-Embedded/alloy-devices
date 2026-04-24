@@ -1,0 +1,237 @@
+{
+  "device_count": 1,
+  "devices": [
+    {
+      "device": "esp32c3",
+      "package": "qfn32",
+      "publishable": true
+    }
+  ],
+  "draft_system_descriptor_domains": [],
+  "family": "esp32c3",
+  "gates": [
+    {
+      "blocking": false,
+      "gate_id": "gate-a",
+      "message": "gate-a passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "source-records-cover-targets",
+        "source-records-provide-required-upstreams",
+        "source-records-have-revisions",
+        "source-records-have-local-paths",
+        "patch-target-count-match",
+        "patch-ids-unique"
+      ]
+    },
+    {
+      "blocking": false,
+      "gate_id": "gate-b",
+      "message": "gate-b passed with 3 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-schema-version-present",
+        "esp32c3-identity-fields-present",
+        "esp32c3-required-sections-present"
+      ]
+    },
+    {
+      "blocking": true,
+      "gate_id": "gate-c",
+      "message": "gate-c passed with 88 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-package-pin-count-covers-known-pins",
+        "esp32c3-pin-port-has-gpio-peripheral",
+        "esp32c3-pin-signals-present",
+        "esp32c3-pin-signals-reference-known-peripherals",
+        "esp32c3-alternate-functions-explicit",
+        "esp32c3-memory-sizes-positive",
+        "esp32c3-peripheral-bases-unique",
+        "esp32c3-interrupts-present",
+        "esp32c3-interrupts-reference-known-peripherals",
+        "esp32c3-referenced-peripherals-have-rcc-enable",
+        "esp32c3-dma-controllers-known",
+        "esp32c3-dma-request-peripherals-known",
+        "esp32c3-dma-routes-unique",
+        "esp32c3-package-pads-present",
+        "esp32c3-package-pad-ids-unique",
+        "esp32c3-package-pads-reference-known-packages",
+        "esp32c3-package-variants-have-pad-coverage",
+        "esp32c3-package-pad-positions-unique",
+        "esp32c3-package-pad-bonding-state-consistent",
+        "esp32c3-package-pads-reference-known-pins",
+        "esp32c3-bonded-pins-have-package-pad",
+        "esp32c3-signal-endpoints-present",
+        "esp32c3-connection-candidates-present",
+        "esp32c3-connection-candidates-reference-known-pins",
+        "esp32c3-connection-candidates-reference-known-peripherals",
+        "esp32c3-connection-candidates-reference-known-groups",
+        "esp32c3-connection-candidates-reference-known-requirements",
+        "esp32c3-connection-candidates-carry-package-requirement",
+        "esp32c3-connection-candidates-carry-source-requirement",
+        "esp32c3-connection-candidates-reference-known-operations",
+        "esp32c3-connection-candidates-reference-known-capabilities",
+        "esp32c3-capability-descriptors-carry-context",
+        "esp32c3-candidate-capabilities-resolve-from-descriptors",
+        "esp32c3-connection-groups-reference-known-candidates",
+        "esp32c3-connection-groups-match-selected-package",
+        "esp32c3-connection-groups-have-satisfiable-signals",
+        "esp32c3-connection-groups-reference-known-packages",
+        "esp32c3-multi-signal-connection-groups-present",
+        "esp32c3-ip-blocks-cover-versioned-instances",
+        "esp32c3-peripherals-carry-backend-schema",
+        "esp32c3-ip-blocks-carry-backend-schema",
+        "esp32c3-runtime-peripherals-have-register-descriptors",
+        "esp32c3-runtime-peripherals-have-register-field-descriptors",
+        "esp32c3-route-requirements-typed",
+        "esp32c3-route-operations-typed",
+        "esp32c3-register-target-operations-resolved",
+        "esp32c3-interrupts-carry-aliases",
+        "esp32c3-interrupt-aliases-unique",
+        "esp32c3-interrupt-shared-groups-consistent",
+        "esp32c3-interrupt-bindings-reference-known-peripherals",
+        "esp32c3-interrupt-bindings-reference-known-interrupts",
+        "esp32c3-interrupt-bindings-reference-known-vector-slots",
+        "esp32c3-runtime-interrupt-bindings-present",
+        "esp32c3-vector-slots-reference-known-interrupts",
+        "esp32c3-vector-slots-unique",
+        "esp32c3-interrupts-have-vector-slot",
+        "esp32c3-vector-slots-include-system-baseline",
+        "esp32c3-memory-regions-carry-startup-roles",
+        "esp32c3-startup-descriptors-present",
+        "esp32c3-startup-descriptors-reference-known-memories",
+        "esp32c3-startup-descriptors-cover-memory-roles",
+        "esp32c3-startup-descriptors-include-runtime-baseline",
+        "esp32c3-startup-descriptors-emit-without-handwritten-tables",
+        "esp32c3-clock-bindings-reference-known-descriptors",
+        "esp32c3-clock-reset-bindings-not-diagnostic-only",
+        "esp32c3-clock-node-parents-known",
+        "esp32c3-clock-graph-reaches-root",
+        "esp32c3-clock-selectors-structured",
+        "esp32c3-clock-gates-structured",
+        "esp32c3-resets-structured",
+        "esp32c3-clock-gates-reference-known-nodes",
+        "esp32c3-clock-bound-peripherals-covered",
+        "esp32c3-dma-controller-descriptors-complete",
+        "esp32c3-dma-controller-request-counts-match",
+        "esp32c3-dma-routes-cover-requests",
+        "esp32c3-dma-routes-reference-known-controllers",
+        "esp32c3-dma-routes-reference-known-peripherals",
+        "esp32c3-dma-routes-reference-known-conflicts",
+        "esp32c3-dma-bindings-reference-known-peripherals",
+        "esp32c3-dma-bindings-reference-known-controllers",
+        "esp32c3-dma-bindings-reference-known-routes",
+        "esp32c3-dma-bindings-reference-known-conflicts",
+        "esp32c3-dma-bindings-cover-routes",
+        "esp32c3-dma-conflict-groups-reference-known-routes",
+        "esp32c3-dma-conflict-groups-nontrivial",
+        "esp32c3-dma-route-conflict-annotations-consistent",
+        "espressif-esp32c3-family-devices-expose-multi-signal-groups",
+        "espressif-esp32c3-family-reuses-ip-version-descriptors"
+      ]
+    }
+  ],
+  "is_passing": true,
+  "report_id": "bootstrap-validation-v1",
+  "schema_version": "1.2.0",
+  "system_descriptor_domains": [
+    {
+      "domain_id": "interrupt",
+      "draft": false,
+      "message": "interrupt domain is publishable with 10 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-interrupts-reference-known-peripherals",
+        "esp32c3-interrupt-aliases-unique",
+        "esp32c3-interrupt-shared-groups-consistent",
+        "esp32c3-interrupt-bindings-reference-known-peripherals",
+        "esp32c3-interrupt-bindings-reference-known-interrupts",
+        "esp32c3-interrupt-bindings-reference-known-vector-slots",
+        "esp32c3-runtime-interrupt-bindings-present",
+        "esp32c3-vector-slots-reference-known-interrupts",
+        "esp32c3-vector-slots-unique",
+        "esp32c3-interrupts-have-vector-slot"
+      ]
+    },
+    {
+      "domain_id": "memory",
+      "draft": false,
+      "message": "memory domain is publishable with 2 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-memory-sizes-positive",
+        "esp32c3-memory-regions-carry-startup-roles"
+      ]
+    },
+    {
+      "domain_id": "startup",
+      "draft": false,
+      "message": "startup domain is publishable with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-vector-slots-include-system-baseline",
+        "esp32c3-startup-descriptors-present",
+        "esp32c3-startup-descriptors-reference-known-memories",
+        "esp32c3-startup-descriptors-cover-memory-roles",
+        "esp32c3-startup-descriptors-include-runtime-baseline",
+        "esp32c3-startup-descriptors-emit-without-handwritten-tables"
+      ]
+    },
+    {
+      "domain_id": "clock-reset",
+      "draft": false,
+      "message": "clock-reset domain is publishable with 7 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-referenced-peripherals-have-rcc-enable",
+        "esp32c3-clock-bindings-reference-known-descriptors",
+        "esp32c3-clock-node-parents-known",
+        "esp32c3-clock-graph-reaches-root",
+        "esp32c3-clock-selectors-structured",
+        "esp32c3-clock-gates-reference-known-nodes",
+        "esp32c3-clock-bound-peripherals-covered"
+      ]
+    },
+    {
+      "domain_id": "dma",
+      "draft": false,
+      "message": "dma domain is publishable with 16 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-dma-controllers-known",
+        "esp32c3-dma-request-peripherals-known",
+        "esp32c3-dma-routes-unique",
+        "esp32c3-dma-controller-descriptors-complete",
+        "esp32c3-dma-routes-cover-requests",
+        "esp32c3-dma-routes-reference-known-controllers",
+        "esp32c3-dma-routes-reference-known-peripherals",
+        "esp32c3-dma-routes-reference-known-conflicts",
+        "esp32c3-dma-bindings-reference-known-peripherals",
+        "esp32c3-dma-bindings-reference-known-controllers",
+        "esp32c3-dma-bindings-reference-known-routes",
+        "esp32c3-dma-bindings-reference-known-conflicts",
+        "esp32c3-dma-bindings-cover-routes",
+        "esp32c3-dma-conflict-groups-reference-known-routes",
+        "esp32c3-dma-conflict-groups-nontrivial",
+        "esp32c3-dma-route-conflict-annotations-consistent"
+      ]
+    },
+    {
+      "domain_id": "package",
+      "draft": false,
+      "message": "package domain is publishable with 7 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32c3-package-pads-present",
+        "esp32c3-package-pad-ids-unique",
+        "esp32c3-package-pads-reference-known-packages",
+        "esp32c3-package-variants-have-pad-coverage",
+        "esp32c3-package-pad-positions-unique",
+        "esp32c3-package-pads-reference-known-pins",
+        "esp32c3-bonded-pins-have-package-pad"
+      ]
+    }
+  ],
+  "vendor": "espressif"
+}
