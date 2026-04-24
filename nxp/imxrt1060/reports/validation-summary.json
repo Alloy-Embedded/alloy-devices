@@ -46,7 +46,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 172 rule(s).",
+      "message": "gate-c passed with 174 rule(s).",
       "passed": true,
       "rule_ids": [
         "mimxrt1062-package-pin-count-covers-known-pins",
@@ -113,6 +113,7 @@
         "mimxrt1062-startup-descriptors-include-runtime-baseline",
         "mimxrt1062-startup-descriptors-emit-without-handwritten-tables",
         "mimxrt1062-clock-bindings-reference-known-descriptors",
+        "mimxrt1062-clock-reset-bindings-not-diagnostic-only",
         "mimxrt1062-clock-node-parents-known",
         "mimxrt1062-clock-graph-reaches-root",
         "mimxrt1062-clock-selectors-structured",
@@ -198,6 +199,7 @@
         "mimxrt1064-startup-descriptors-include-runtime-baseline",
         "mimxrt1064-startup-descriptors-emit-without-handwritten-tables",
         "mimxrt1064-clock-bindings-reference-known-descriptors",
+        "mimxrt1064-clock-reset-bindings-not-diagnostic-only",
         "mimxrt1064-clock-node-parents-known",
         "mimxrt1064-clock-graph-reaches-root",
         "mimxrt1064-clock-selectors-structured",
@@ -226,7 +228,7 @@
   ],
   "is_passing": true,
   "report_id": "bootstrap-validation-v1",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "system_descriptor_domains": [
     {
       "domain_id": "interrupt",
