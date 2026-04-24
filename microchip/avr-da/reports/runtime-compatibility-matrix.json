@@ -1,0 +1,83 @@
+{
+  "devices": [
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 2,
+          "peripheral_class": "i2c",
+          "peripheral_count": 1,
+          "peripherals": [
+            "TWI0"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 5,
+          "dma_signals": [],
+          "instance_capability_count": 4,
+          "peripheral_class": "spi",
+          "peripheral_count": 1,
+          "peripherals": [
+            "SPI0"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "timer",
+          "peripheral_count": 1,
+          "peripherals": [
+            "TCA0"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 4,
+          "peripheral_class": "uart",
+          "peripheral_count": 2,
+          "peripherals": [
+            "USART0",
+            "USART1"
+          ],
+          "present": true
+        }
+      ],
+      "device": "avr128da32",
+      "package": "tqfp32"
+    }
+  ],
+  "driver_classes": [
+    "i2c",
+    "spi",
+    "timer",
+    "uart"
+  ],
+  "family": "avr-da",
+  "family_dir": "microchip/avr-da",
+  "report_id": "runtime-compatibility-matrix-v1",
+  "vendor": "microchip"
+}

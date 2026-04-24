@@ -1,0 +1,15 @@
+{
+  "device_count": 1,
+  "devices": [
+    {
+      "core": "avr8",
+      "device": "avr128da32",
+      "metadata_path": "microchip/avr-da/metadata/devices/avr128da32.json",
+      "package": "tqfp32",
+      "summary": "Microchip AVR128DA32 \u2014 8-bit AVR DA with 128 KB flash, 16 KB SRAM, 512 B EEPROM (TQFP-32)."
+    }
+  ],
+  "family": "avr-da",
+  "schema_version": "1.2.0",
+  "vendor": "microchip"
+}

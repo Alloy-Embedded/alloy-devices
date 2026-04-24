@@ -1,0 +1,203 @@
+{
+  "device_usage": [
+    {
+      "device": "avr128da32",
+      "peripherals": [
+        {
+          "base_address": 96,
+          "ip_name": "clkctrl",
+          "ip_version": "avr-da-clkctrl-v1",
+          "name": "CLKCTRL"
+        },
+        {
+          "base_address": 1024,
+          "ip_name": "porta",
+          "ip_version": "avr-da-port-v1",
+          "name": "PORTA"
+        },
+        {
+          "base_address": 1088,
+          "ip_name": "portc",
+          "ip_version": "avr-da-port-v1",
+          "name": "PORTC"
+        },
+        {
+          "base_address": 2368,
+          "ip_name": "spi",
+          "ip_version": "avr-da-spi-v1",
+          "name": "SPI0"
+        },
+        {
+          "base_address": 2560,
+          "ip_name": "tca",
+          "ip_version": "avr-da-tca-v1",
+          "name": "TCA0"
+        },
+        {
+          "base_address": 2304,
+          "ip_name": "twi",
+          "ip_version": "avr-da-twi-v1",
+          "name": "TWI0"
+        },
+        {
+          "base_address": 2048,
+          "ip_name": "usart",
+          "ip_version": "avr-da-usart-v1",
+          "name": "USART0"
+        },
+        {
+          "base_address": 2080,
+          "ip_name": "usart",
+          "ip_version": "avr-da-usart-v1",
+          "name": "USART1"
+        }
+      ]
+    }
+  ],
+  "family": "avr-da",
+  "ip_blocks": [
+    {
+      "backend_schema_id": "alloy.clkctrl.microchip-avr-da-clkctrl-v1",
+      "capability_ids": [],
+      "ip_name": "clkctrl",
+      "ip_version": "avr-da-clkctrl-v1",
+      "peripheral_class": "clkctrl",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "clkctrl:avr-da-clkctrl-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.porta.microchip-avr-da-port-v1",
+      "capability_ids": [],
+      "ip_name": "porta",
+      "ip_version": "avr-da-port-v1",
+      "peripheral_class": "porta",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "porta:avr-da-port-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.portc.microchip-avr-da-port-v1",
+      "capability_ids": [],
+      "ip_name": "portc",
+      "ip_version": "avr-da-port-v1",
+      "peripheral_class": "portc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "portc:avr-da-port-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.spi.microchip-avr-da-spi-v1",
+      "capability_ids": [
+        "capability:spi:avr-da-spi-v1:cs",
+        "capability:spi:avr-da-spi-v1:miso",
+        "capability:spi:avr-da-spi-v1:mosi",
+        "capability:spi:avr-da-spi-v1:sck"
+      ],
+      "ip_name": "spi",
+      "ip_version": "avr-da-spi-v1",
+      "peripheral_class": "spi",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "spi:avr-da-spi-v1",
+      "signal_roles": [
+        "cs",
+        "miso",
+        "mosi",
+        "sck"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.timer.microchip-avr-da-tca-v1",
+      "capability_ids": [],
+      "ip_name": "tca",
+      "ip_version": "avr-da-tca-v1",
+      "peripheral_class": "timer",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "tca:avr-da-tca-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.i2c.microchip-avr-da-twi-v1",
+      "capability_ids": [
+        "capability:twi:avr-da-twi-v1:scl",
+        "capability:twi:avr-da-twi-v1:sda"
+      ],
+      "ip_name": "twi",
+      "ip_version": "avr-da-twi-v1",
+      "peripheral_class": "i2c",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "twi:avr-da-twi-v1",
+      "signal_roles": [
+        "scl",
+        "sda"
+      ]
+    },
+    {
+      "backend_schema_id": "alloy.uart.microchip-avr-da-usart-v1",
+      "capability_ids": [
+        "capability:usart:avr-da-usart-v1:rx",
+        "capability:usart:avr-da-usart-v1:tx"
+      ],
+      "ip_name": "usart",
+      "ip_version": "avr-da-usart-v1",
+      "peripheral_class": "uart",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "usart:avr-da-usart-v1",
+      "signal_roles": [
+        "rx",
+        "tx"
+      ]
+    }
+  ],
+  "schema_version": "1.2.0",
+  "vendor": "microchip"
+}

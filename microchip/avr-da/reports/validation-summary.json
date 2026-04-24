@@ -1,0 +1,237 @@
+{
+  "device_count": 1,
+  "devices": [
+    {
+      "device": "avr128da32",
+      "package": "tqfp32",
+      "publishable": true
+    }
+  ],
+  "draft_system_descriptor_domains": [],
+  "family": "avr-da",
+  "gates": [
+    {
+      "blocking": false,
+      "gate_id": "gate-a",
+      "message": "gate-a passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "source-records-cover-targets",
+        "source-records-provide-required-upstreams",
+        "source-records-have-revisions",
+        "source-records-have-local-paths",
+        "patch-target-count-match",
+        "patch-ids-unique"
+      ]
+    },
+    {
+      "blocking": false,
+      "gate_id": "gate-b",
+      "message": "gate-b passed with 3 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-schema-version-present",
+        "avr128da32-identity-fields-present",
+        "avr128da32-required-sections-present"
+      ]
+    },
+    {
+      "blocking": true,
+      "gate_id": "gate-c",
+      "message": "gate-c passed with 88 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-package-pin-count-covers-known-pins",
+        "avr128da32-pin-port-has-gpio-peripheral",
+        "avr128da32-pin-signals-present",
+        "avr128da32-pin-signals-reference-known-peripherals",
+        "avr128da32-alternate-functions-explicit",
+        "avr128da32-memory-sizes-positive",
+        "avr128da32-peripheral-bases-unique",
+        "avr128da32-interrupts-present",
+        "avr128da32-interrupts-reference-known-peripherals",
+        "avr128da32-referenced-peripherals-have-rcc-enable",
+        "avr128da32-dma-controllers-known",
+        "avr128da32-dma-request-peripherals-known",
+        "avr128da32-dma-routes-unique",
+        "avr128da32-package-pads-present",
+        "avr128da32-package-pad-ids-unique",
+        "avr128da32-package-pads-reference-known-packages",
+        "avr128da32-package-variants-have-pad-coverage",
+        "avr128da32-package-pad-positions-unique",
+        "avr128da32-package-pad-bonding-state-consistent",
+        "avr128da32-package-pads-reference-known-pins",
+        "avr128da32-bonded-pins-have-package-pad",
+        "avr128da32-signal-endpoints-present",
+        "avr128da32-connection-candidates-present",
+        "avr128da32-connection-candidates-reference-known-pins",
+        "avr128da32-connection-candidates-reference-known-peripherals",
+        "avr128da32-connection-candidates-reference-known-groups",
+        "avr128da32-connection-candidates-reference-known-requirements",
+        "avr128da32-connection-candidates-carry-package-requirement",
+        "avr128da32-connection-candidates-carry-source-requirement",
+        "avr128da32-connection-candidates-reference-known-operations",
+        "avr128da32-connection-candidates-reference-known-capabilities",
+        "avr128da32-capability-descriptors-carry-context",
+        "avr128da32-candidate-capabilities-resolve-from-descriptors",
+        "avr128da32-connection-groups-reference-known-candidates",
+        "avr128da32-connection-groups-match-selected-package",
+        "avr128da32-connection-groups-have-satisfiable-signals",
+        "avr128da32-connection-groups-reference-known-packages",
+        "avr128da32-multi-signal-connection-groups-present",
+        "avr128da32-ip-blocks-cover-versioned-instances",
+        "avr128da32-peripherals-carry-backend-schema",
+        "avr128da32-ip-blocks-carry-backend-schema",
+        "avr128da32-runtime-peripherals-have-register-descriptors",
+        "avr128da32-runtime-peripherals-have-register-field-descriptors",
+        "avr128da32-route-requirements-typed",
+        "avr128da32-route-operations-typed",
+        "avr128da32-register-target-operations-resolved",
+        "avr128da32-interrupts-carry-aliases",
+        "avr128da32-interrupt-aliases-unique",
+        "avr128da32-interrupt-shared-groups-consistent",
+        "avr128da32-interrupt-bindings-reference-known-peripherals",
+        "avr128da32-interrupt-bindings-reference-known-interrupts",
+        "avr128da32-interrupt-bindings-reference-known-vector-slots",
+        "avr128da32-runtime-interrupt-bindings-present",
+        "avr128da32-vector-slots-reference-known-interrupts",
+        "avr128da32-vector-slots-unique",
+        "avr128da32-interrupts-have-vector-slot",
+        "avr128da32-vector-slots-include-system-baseline",
+        "avr128da32-memory-regions-carry-startup-roles",
+        "avr128da32-startup-descriptors-present",
+        "avr128da32-startup-descriptors-reference-known-memories",
+        "avr128da32-startup-descriptors-cover-memory-roles",
+        "avr128da32-startup-descriptors-include-runtime-baseline",
+        "avr128da32-startup-descriptors-emit-without-handwritten-tables",
+        "avr128da32-clock-bindings-reference-known-descriptors",
+        "avr128da32-clock-reset-bindings-not-diagnostic-only",
+        "avr128da32-clock-node-parents-known",
+        "avr128da32-clock-graph-reaches-root",
+        "avr128da32-clock-selectors-structured",
+        "avr128da32-clock-gates-structured",
+        "avr128da32-resets-structured",
+        "avr128da32-clock-gates-reference-known-nodes",
+        "avr128da32-clock-bound-peripherals-covered",
+        "avr128da32-dma-controller-descriptors-complete",
+        "avr128da32-dma-controller-request-counts-match",
+        "avr128da32-dma-routes-cover-requests",
+        "avr128da32-dma-routes-reference-known-controllers",
+        "avr128da32-dma-routes-reference-known-peripherals",
+        "avr128da32-dma-routes-reference-known-conflicts",
+        "avr128da32-dma-bindings-reference-known-peripherals",
+        "avr128da32-dma-bindings-reference-known-controllers",
+        "avr128da32-dma-bindings-reference-known-routes",
+        "avr128da32-dma-bindings-reference-known-conflicts",
+        "avr128da32-dma-bindings-cover-routes",
+        "avr128da32-dma-conflict-groups-reference-known-routes",
+        "avr128da32-dma-conflict-groups-nontrivial",
+        "avr128da32-dma-route-conflict-annotations-consistent",
+        "microchip-avr-da-family-devices-expose-multi-signal-groups",
+        "microchip-avr-da-family-reuses-ip-version-descriptors"
+      ]
+    }
+  ],
+  "is_passing": true,
+  "report_id": "bootstrap-validation-v1",
+  "schema_version": "1.2.0",
+  "system_descriptor_domains": [
+    {
+      "domain_id": "interrupt",
+      "draft": false,
+      "message": "interrupt domain is publishable with 10 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-interrupts-reference-known-peripherals",
+        "avr128da32-interrupt-aliases-unique",
+        "avr128da32-interrupt-shared-groups-consistent",
+        "avr128da32-interrupt-bindings-reference-known-peripherals",
+        "avr128da32-interrupt-bindings-reference-known-interrupts",
+        "avr128da32-interrupt-bindings-reference-known-vector-slots",
+        "avr128da32-runtime-interrupt-bindings-present",
+        "avr128da32-vector-slots-reference-known-interrupts",
+        "avr128da32-vector-slots-unique",
+        "avr128da32-interrupts-have-vector-slot"
+      ]
+    },
+    {
+      "domain_id": "memory",
+      "draft": false,
+      "message": "memory domain is publishable with 2 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-memory-sizes-positive",
+        "avr128da32-memory-regions-carry-startup-roles"
+      ]
+    },
+    {
+      "domain_id": "startup",
+      "draft": false,
+      "message": "startup domain is publishable with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-vector-slots-include-system-baseline",
+        "avr128da32-startup-descriptors-present",
+        "avr128da32-startup-descriptors-reference-known-memories",
+        "avr128da32-startup-descriptors-cover-memory-roles",
+        "avr128da32-startup-descriptors-include-runtime-baseline",
+        "avr128da32-startup-descriptors-emit-without-handwritten-tables"
+      ]
+    },
+    {
+      "domain_id": "clock-reset",
+      "draft": false,
+      "message": "clock-reset domain is publishable with 7 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-referenced-peripherals-have-rcc-enable",
+        "avr128da32-clock-bindings-reference-known-descriptors",
+        "avr128da32-clock-node-parents-known",
+        "avr128da32-clock-graph-reaches-root",
+        "avr128da32-clock-selectors-structured",
+        "avr128da32-clock-gates-reference-known-nodes",
+        "avr128da32-clock-bound-peripherals-covered"
+      ]
+    },
+    {
+      "domain_id": "dma",
+      "draft": false,
+      "message": "dma domain is publishable with 16 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-dma-controllers-known",
+        "avr128da32-dma-request-peripherals-known",
+        "avr128da32-dma-routes-unique",
+        "avr128da32-dma-controller-descriptors-complete",
+        "avr128da32-dma-routes-cover-requests",
+        "avr128da32-dma-routes-reference-known-controllers",
+        "avr128da32-dma-routes-reference-known-peripherals",
+        "avr128da32-dma-routes-reference-known-conflicts",
+        "avr128da32-dma-bindings-reference-known-peripherals",
+        "avr128da32-dma-bindings-reference-known-controllers",
+        "avr128da32-dma-bindings-reference-known-routes",
+        "avr128da32-dma-bindings-reference-known-conflicts",
+        "avr128da32-dma-bindings-cover-routes",
+        "avr128da32-dma-conflict-groups-reference-known-routes",
+        "avr128da32-dma-conflict-groups-nontrivial",
+        "avr128da32-dma-route-conflict-annotations-consistent"
+      ]
+    },
+    {
+      "domain_id": "package",
+      "draft": false,
+      "message": "package domain is publishable with 7 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "avr128da32-package-pads-present",
+        "avr128da32-package-pad-ids-unique",
+        "avr128da32-package-pads-reference-known-packages",
+        "avr128da32-package-variants-have-pad-coverage",
+        "avr128da32-package-pad-positions-unique",
+        "avr128da32-package-pads-reference-known-pins",
+        "avr128da32-bonded-pins-have-package-pad"
+      ]
+    }
+  ],
+  "vendor": "microchip"
+}

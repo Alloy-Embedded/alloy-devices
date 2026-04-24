@@ -1,0 +1,771 @@
+{
+  "artifact_manifest": {
+    "build_metadata": {
+      "artifact_layout_version": "alloy-devices-v1",
+      "cpp_contract_version": "alloy-cpp-bootstrap-v1",
+      "pipeline_name": "alloy-codegen",
+      "target_repository": "alloy-devices"
+    },
+    "canonical_ir_sha256": "ffb17a926917f7e7caa2d454b533d39dbcfadb92bc35c83b8e8a1340f23c9672",
+    "generator_version": "0.1.0",
+    "ir_schema_version": "1.2.0",
+    "manifest_kind": "artifact-manifest-v1",
+    "patch_manifest": {
+      "applied_patches": [
+        {
+          "description": "Bootstrap overlay patch for avr128da32 using family catalog microchip-avr-da-family-bootstrap-v1.",
+          "patch_id": "microchip-avr128da32-bootstrap"
+        }
+      ],
+      "bootstrap_family": "avr-da",
+      "manifest_kind": "patch-manifest-v1",
+      "targets": [
+        "avr128da32"
+      ]
+    },
+    "scope": {
+      "device": null,
+      "family": "avr-da",
+      "vendor": "microchip"
+    },
+    "source_manifest": {
+      "bootstrap_family": "avr-da",
+      "manifest_kind": "source-manifest-v1",
+      "sources": [
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/Microchip.AVR-Dx_DFP.2.4.286.atpack",
+          "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
+          "revision": "content-sha256:9d81b26ee9db63004f996aa279bb08425b098d28ce785b0bbf75478c0766e67e",
+          "scope": {
+            "device": null,
+            "family": "avr-da",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-pack",
+          "target_device": "avr128da32",
+          "upstream_path": "Microchip.AVR-Dx_DFP.2.4.286.atpack"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/avr-da-9d81b26ee9db6300",
+          "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
+          "revision": "content-sha256:9fb29afd2530e4ac854e6b1e21605bd613f9603e3331ee85d721223733118d37",
+          "scope": {
+            "device": null,
+            "family": "avr-da",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "avr128da32",
+          "upstream_path": "."
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/avr-da-9d81b26ee9db6300/Microchip.AVR-Dx_DFP.pdsc",
+          "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
+          "revision": "content-sha256:9fb29afd2530e4ac854e6b1e21605bd613f9603e3331ee85d721223733118d37",
+          "scope": {
+            "device": null,
+            "family": "avr-da",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "avr128da32",
+          "upstream_path": "Microchip.AVR-Dx_DFP.pdsc"
+        },
+        {
+          "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/avr-da-9d81b26ee9db6300/atdf/AVR128DA32.atdf",
+          "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
+          "revision": "content-sha256:9fb29afd2530e4ac854e6b1e21605bd613f9603e3331ee85d721223733118d37",
+          "scope": {
+            "device": null,
+            "family": "avr-da",
+            "vendor": "microchip"
+          },
+          "source_id": "microchip-dfp-extract",
+          "target_device": "avr128da32",
+          "upstream_path": "atdf/AVR128DA32.atdf"
+        }
+      ],
+      "targets": [
+        "avr128da32"
+      ]
+    },
+    "validation_report_id": "bootstrap-validation-v1",
+    "validation_report_sha256": "ff6da06e3e6e63ad42133a908b63c4d5038b766fa9e602e84455d2b55311d193"
+  },
+  "consumer_verification": {
+    "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32",
+    "command": [
+      "/usr/bin/c++",
+      "-std=c++23",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "-DALLOY_CODEGEN_HOST_SMOKE=1",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/alloy/src",
+      "-I/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_TYPES_HEADER=\"microchip/avr-da/generated/runtime/types.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_PERIPHERALS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/peripheral_instances.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_PINS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/pins.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_REGISTERS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/registers.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_REGISTER_FIELDS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/register_fields.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CLOCK_BINDINGS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/clock_bindings.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_DMA_BINDINGS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/dma_bindings.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_ROUTES_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/routes.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CONNECTORS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/connectors.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_GPIO_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/gpio.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_UART_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/uart.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_I2C_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/i2c.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_SPI_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/spi.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_DMA_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/dma.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_ADC_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/adc.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_DAC_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/dac.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CAN_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/can.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_ETH_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/eth.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_USB_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/usb.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_QSPI_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/qspi.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_SDMMC_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/sdmmc.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_RTC_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/rtc.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_WATCHDOG_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/watchdog.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_TIMER_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/timer.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_PWM_SEMANTICS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/pwm.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_SYSTICK_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/systick.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_SYSTEM_CLOCK_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/system_clock.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CLOCK_PROFILES_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/clock_profiles.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CLOCK_CONFIG_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/clock_config.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_LOW_POWER_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/low_power.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_STARTUP_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_INTERRUPTS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_INTERRUPT_STUBS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/interrupt_stubs.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_RESETS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/resets.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_ENABLE_DOMAINS_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/enable_domains.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CLOCK_GRAPH_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/clock_graph.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_CAPABILITIES_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_SYSTEM_SEQUENCES_HEADER=\"microchip/avr-da/generated/runtime/devices/avr128da32/system_sequences.hpp\"",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_NAMESPACE=microchip::avr_da::generated::runtime",
+      "-DALLOY_CODEGEN_SMOKE_RUNTIME_DEVICE_NAMESPACE=microchip::avr_da::generated::runtime::devices::avr128da32",
+      "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_runtime_lite_contract_smoke.cpp",
+      "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/microchip/avr-da/generated/devices/avr128da32/startup.cpp",
+      "-o",
+      "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32/smoke-consumer"
+    ],
+    "compiler": "/usr/bin/c++",
+    "consumer_id": "alloy-published-runtime-lite-smoke",
+    "executable_path": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32/smoke-consumer",
+    "linker_script_verification": {
+      "attempted": false,
+      "command": [],
+      "linker_script": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/microchip/avr-da/generated/devices/avr128da32/device.ld",
+      "map_file": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32/device-ld-smoke.map",
+      "object_file": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32/device-ld-smoke.o",
+      "output_file": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32/device-ld-smoke.elf",
+      "skipped_reason": "Linker script declares MEMORY regions with ORIGIN below 0x10000; host ld cannot fit the ELF PHDR in the lowest LOAD segment for Harvard / 8-bit targets.  Vendor toolchain validation (e.g. avr-gcc) covers these devices.",
+      "source_file": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/avr128da32/device-ld-smoke.cpp",
+      "stderr": "",
+      "stdout": "",
+      "succeeded": true
+    },
+    "source_file": "/home/runner/work/alloy-codegen/alloy-codegen/tests/codegen/published_runtime_lite_contract_smoke.cpp",
+    "startup_source": "/home/runner/work/alloy-codegen/alloy-codegen/.alloy-devices.staging/microchip/avr-da/generated/devices/avr128da32/startup.cpp",
+    "stderr": "",
+    "stdout": "",
+    "succeeded": true
+  },
+  "publication_mode": "published",
+  "published_artifact_count": 60,
+  "published_artifacts": [
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 3622,
+      "content_sha256": "f997bcad23ebd3ec23299830dd236dca33556c9399a1854dfc25ebd2e39d3ef4",
+      "path": "microchip/avr-da/artifact-manifest.json"
+    },
+    {
+      "artifact_kind": "generated-linker-script",
+      "content_bytes": 1897,
+      "content_sha256": "74f8ceb30d70231d2833e217fcf5d59ff3efe674b22a56bbe1d75d78aa2f923d",
+      "path": "microchip/avr-da/generated/devices/avr128da32/device.ld"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3134,
+      "content_sha256": "e47063dca7e70f5f9243308b5b7aea0269959deb4b48a6e980d7605691b4e1ea",
+      "path": "microchip/avr-da/generated/devices/avr128da32/startup.cpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 56,
+      "content_sha256": "17b9e85b91954a32535509326789af743b7b30b82e5a8c848a09d798d593b570",
+      "path": "microchip/avr-da/generated/devices/avr128da32/startup_vectors.cpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 21842,
+      "content_sha256": "670ed0084e707da5e8dbc94e6cfce9d44fa55820f86fabae6231739b1d413aa8",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp"
+    },
+    {
+      "artifact_kind": "generated-runtime-metadata",
+      "content_bytes": 4921,
+      "content_sha256": "2c713db480dfd35162ba35b47119ebc6c2961652ba4e6f4b16f86ca0150a9ec0",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.json"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3027,
+      "content_sha256": "e68e3d9006433e490996671089e12d02590581d2926647bc6b9f2935a0e544c4",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/clock_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 888,
+      "content_sha256": "0d32051ee9e01ae261e91b4bdb078aa51185bc82a5f58c47fa5977c1c57e37b2",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/clock_config.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 476,
+      "content_sha256": "160896029f7ba23fdf545ce7b00ae4f6550dafe30772d0efcac4c67d066fadce",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/clock_graph.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1073,
+      "content_sha256": "6341e3d95128829801587f1c772d0a0d96723932eeca16b4ca4b5ed22b6567fd",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/clock_profiles.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 17868,
+      "content_sha256": "ef9a943c932b219def167b71d5f3daf982259de1be76f591920f85ba88867090",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/connectors.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1949,
+      "content_sha256": "cb0d3aaf70324805704cedf6bd99c1fb6a74abc78b51c9c3cb7b3e63f68d5346",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/dma_bindings.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2787,
+      "content_sha256": "2e2e5b222f09ba59aca3486f614d6c5b78c3417c2815cdc6b63278d59484d558",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/adc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 4909,
+      "content_sha256": "0423d0ec262b2b0cc54a2390ba69dc6c81454b0ecc0574d300020a01796b2a9a",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/can.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1105,
+      "content_sha256": "44fba35ebbe11fa0bc09cc763a7296676084f7cf28f40d68b0459dd76556e8e4",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/common.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2516,
+      "content_sha256": "1d8dd97491f18197f32b2faeee5b27d27becd787eb3b3f00faf824d217a9da8b",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/dac.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1359,
+      "content_sha256": "0c9efb186d0e6e88dffc0bdaab3836e11bfecb5386442f37091831cfdd5681b3",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/dma.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2897,
+      "content_sha256": "6b2a507e0eef3ba317f7ea6627762b310026e545291ed5365c208b391ea15f94",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/eth.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2073,
+      "content_sha256": "65ce06909f13fd1896e17e066956340e96802a7a4f3d814ad10050894497c626",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/gpio.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 9844,
+      "content_sha256": "ff023963b2288aa5214eaeb2293d9f74c6afb5ad687b973668c1f4efde9a6838",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/i2c.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 416,
+      "content_sha256": "a8fa670029a2e8aac30f6458887b9f94c184ce768390d4b3cc172f475abbd9e4",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/pio.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2995,
+      "content_sha256": "10b09a65c153bd923bdddd33b7573c226260b1e74bdcb02e21b0e41790b9b324",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/pwm.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3825,
+      "content_sha256": "20b39f9b079b328fc191b4731ca876dcce1b55a1b768309dbc9f0052afae867a",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/qspi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3608,
+      "content_sha256": "f50e59bb0d7256b68381f92d7fab868e45573fcae374f87f714eb75ad41310c3",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/rtc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 4140,
+      "content_sha256": "ef284f9ecfba0735c51f9a8b11c1d7a564e65bc5014cd759724376ea3a803e46",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/sdmmc.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 6528,
+      "content_sha256": "b81730e7169caeb4b4c88b5489523b9526bdba8380825d45f2592e2b00a9577c",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/spi.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 9029,
+      "content_sha256": "1cd1b8b307d09a4ceb31f34f527a21122165e63536ff55a30b8704b468f54cd1",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/timer.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 14339,
+      "content_sha256": "18fe750b250824f301595b316663a8ac0abf44bef5b050d6eac72401b3be2e12",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/uart.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2813,
+      "content_sha256": "af40c0821e911259022bcc4b68ed46f2dfdbfadd691e7e0d6ba9aad965b66c69",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/usb.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2339,
+      "content_sha256": "ad98ad8a80553191a6b0215b0d518b09489d370c1b849d83ddacf8f7120259d7",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/watchdog.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1295,
+      "content_sha256": "bb4df52011a5bce1741cdac69c056426b0b4819fa6af59f5fcf4d5c7c2dd81c3",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/enable_domains.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 11218,
+      "content_sha256": "3c1001f7435acf08ef9dc0ce21291afb69c4c7a1ac2684ceccd2cbb078146d0d",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupt_stubs.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1640,
+      "content_sha256": "23813d8dcd4607a815d25f6bb93bce35dbc9b86f09f3925df7a3046e4c35a92c",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 1511,
+      "content_sha256": "27ce05b434769b0cbc2218badc27418d6ccd4d01cbeea26dbf88ddd28e76a076",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/low_power.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 4188,
+      "content_sha256": "a368815a3958400eedae72ebcc9ab45435e00b53f151851151cf4f2a22aff9aa",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/peripheral_instances.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2481,
+      "content_sha256": "00f5097dd376bebec2721ed9955e90faafd145d9ec0fd604d634deca6d2530bb",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/pins.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 79804,
+      "content_sha256": "b25d99cefa59ad43fadaeaab9b144bad126a0b41485995e8a76a26e2b8fc97fc",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/register_fields.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 30835,
+      "content_sha256": "5c7e47ca32e4fb3afaf53ee506324db77e11cf69397f05fc8f3ac562b3561cab",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/registers.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 567,
+      "content_sha256": "a4f5324737e35c8c7614504230c99b869ead42219bb73fc82391e41b5ab155f9",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/resets.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 11311,
+      "content_sha256": "eaf017ec799f3a80f8f67d11dbaf450efe303ede24476e807ef385570a235954",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/routes.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 6948,
+      "content_sha256": "215136a7a158e664ba2d7e77b07c087097ddbd24e44494a9e5ba6c01e43b12c8",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 6967,
+      "content_sha256": "557b51b4c92dcc3c8301a7f9064da68dcdf5af3e938d64a9423c387c31bde4e1",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/system_clock.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 3128,
+      "content_sha256": "94db39da9acd237228d0530844c4aee26e073fe6f2e08736a674a2bff8acfab1",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/system_sequences.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 5789,
+      "content_sha256": "f10a14140e503c3dee2e2e2c6e65ff2e5ee77e7b8803b5b0e029bd938ad32a7b",
+      "path": "microchip/avr-da/generated/runtime/devices/avr128da32/systick.hpp"
+    },
+    {
+      "artifact_kind": "generated-cpp",
+      "content_bytes": 2070,
+      "content_sha256": "c8af84eddd455ffd9aa4dd175f29f132d2c0d65bccab5c58c7a6748d4517cf5c",
+      "path": "microchip/avr-da/generated/runtime/types.hpp"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 10125,
+      "content_sha256": "6ef9a192af8a6dd11f5a21a6a8c88cd9a9be3eec1324f13d4386cb3893c8355b",
+      "path": "microchip/avr-da/metadata/capabilities.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 37806,
+      "content_sha256": "82b3ae9ca2df77f196273aa1647cabb8dfab303c96380714ad34325f0af923b6",
+      "path": "microchip/avr-da/metadata/connectors.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 293699,
+      "content_sha256": "d5737674514d2fb597b24f583b174c65654964f925e9ad38175888c4e90e8ef2",
+      "path": "microchip/avr-da/metadata/devices/avr128da32.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 21837,
+      "content_sha256": "cc4a6e1699b2fe8b303dc97bd2366b4ced7b228e0284d794ecaedd647a2dc3ae",
+      "path": "microchip/avr-da/metadata/family-connectivity.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 402,
+      "content_sha256": "98492788eb0c38a8e6159f2f5fbd5a953185885daf98ffc52a72ab24e7383be6",
+      "path": "microchip/avr-da/metadata/family-index.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 5629,
+      "content_sha256": "ac4a4e19425045cd052e1849b713efabf2c633efd264fdb25f54ddd84dd5c9e4",
+      "path": "microchip/avr-da/metadata/ip-blocks.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 6539,
+      "content_sha256": "fc9c38a75a12146db6425a9ae202c29f10f89c1491fda5f23f23cbf635fe67ac",
+      "path": "microchip/avr-da/metadata/packages.json"
+    },
+    {
+      "artifact_kind": "canonical-metadata",
+      "content_bytes": 35828,
+      "content_sha256": "eb1700a0c0401c3286c82ce25abc77c674b47b50ffcf72596b3fa84700c5ca25",
+      "path": "microchip/avr-da/metadata/system-descriptors.json"
+    },
+    {
+      "artifact_kind": "coverage-report",
+      "content_bytes": 1289,
+      "content_sha256": "ccbfed4353ddb6d792b78d5ecc2cf6e3973d1095d717630fe0ae3c332b9637e6",
+      "path": "microchip/avr-da/reports/coverage.json"
+    },
+    {
+      "artifact_kind": "runtime-report",
+      "content_bytes": 3056,
+      "content_sha256": "fa99bf724a66b3e8bb19e3e575ce837fb97377014b780fc4c61aaffc04c02002",
+      "path": "microchip/avr-da/reports/runtime-capability-summary.json"
+    },
+    {
+      "artifact_kind": "runtime-report",
+      "content_bytes": 1980,
+      "content_sha256": "4393a5bf5d3cbe1df801e4f2bb2e528ae40321a6054f4d67b93751b63ef5d96c",
+      "path": "microchip/avr-da/reports/runtime-compatibility-matrix.json"
+    },
+    {
+      "artifact_kind": "runtime-report",
+      "content_bytes": 33663,
+      "content_sha256": "2a91f53899b976548d72607d0303c6e92e00d13bc6c31c2c48b8874266711e18",
+      "path": "microchip/avr-da/reports/runtime-explainability.json"
+    },
+    {
+      "artifact_kind": "runtime-report",
+      "content_bytes": 85620,
+      "content_sha256": "822f72cc06b3513e2926e0765d211cc7ac9ec7be7dda99c63520af2c26d05b39",
+      "path": "microchip/avr-da/reports/runtime-provenance.json"
+    },
+    {
+      "artifact_kind": "validation-report",
+      "content_bytes": 33465,
+      "content_sha256": "ff6da06e3e6e63ad42133a908b63c4d5038b766fa9e602e84455d2b55311d193",
+      "path": "microchip/avr-da/reports/validation-report.json"
+    },
+    {
+      "artifact_kind": "validation-report",
+      "content_bytes": 10099,
+      "content_sha256": "9f04524f38bc75d40c118a196db06e4e97a645e519bf03af52bce0e0d94f6b88",
+      "path": "microchip/avr-da/reports/validation-summary.json"
+    }
+  ],
+  "scope": {
+    "device": null,
+    "family": "avr-da",
+    "vendor": "microchip"
+  },
+  "target_artifact_revision": "3626f80de4e0a7395f885740b8a91a14ad5bbedf1d019288c6b49e73910f4e1a",
+  "target_repository": "alloy-devices",
+  "validation": {
+    "draft_system_descriptor_domains": [],
+    "gates": [
+      {
+        "blocking": false,
+        "gate_id": "gate-a",
+        "message": "gate-a passed with 6 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "source-records-cover-targets",
+          "source-records-provide-required-upstreams",
+          "source-records-have-revisions",
+          "source-records-have-local-paths",
+          "patch-target-count-match",
+          "patch-ids-unique"
+        ]
+      },
+      {
+        "blocking": false,
+        "gate_id": "gate-b",
+        "message": "gate-b passed with 3 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-schema-version-present",
+          "avr128da32-identity-fields-present",
+          "avr128da32-required-sections-present"
+        ]
+      },
+      {
+        "blocking": true,
+        "gate_id": "gate-c",
+        "message": "gate-c passed with 88 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-package-pin-count-covers-known-pins",
+          "avr128da32-pin-port-has-gpio-peripheral",
+          "avr128da32-pin-signals-present",
+          "avr128da32-pin-signals-reference-known-peripherals",
+          "avr128da32-alternate-functions-explicit",
+          "avr128da32-memory-sizes-positive",
+          "avr128da32-peripheral-bases-unique",
+          "avr128da32-interrupts-present",
+          "avr128da32-interrupts-reference-known-peripherals",
+          "avr128da32-referenced-peripherals-have-rcc-enable",
+          "avr128da32-dma-controllers-known",
+          "avr128da32-dma-request-peripherals-known",
+          "avr128da32-dma-routes-unique",
+          "avr128da32-package-pads-present",
+          "avr128da32-package-pad-ids-unique",
+          "avr128da32-package-pads-reference-known-packages",
+          "avr128da32-package-variants-have-pad-coverage",
+          "avr128da32-package-pad-positions-unique",
+          "avr128da32-package-pad-bonding-state-consistent",
+          "avr128da32-package-pads-reference-known-pins",
+          "avr128da32-bonded-pins-have-package-pad",
+          "avr128da32-signal-endpoints-present",
+          "avr128da32-connection-candidates-present",
+          "avr128da32-connection-candidates-reference-known-pins",
+          "avr128da32-connection-candidates-reference-known-peripherals",
+          "avr128da32-connection-candidates-reference-known-groups",
+          "avr128da32-connection-candidates-reference-known-requirements",
+          "avr128da32-connection-candidates-carry-package-requirement",
+          "avr128da32-connection-candidates-carry-source-requirement",
+          "avr128da32-connection-candidates-reference-known-operations",
+          "avr128da32-connection-candidates-reference-known-capabilities",
+          "avr128da32-capability-descriptors-carry-context",
+          "avr128da32-candidate-capabilities-resolve-from-descriptors",
+          "avr128da32-connection-groups-reference-known-candidates",
+          "avr128da32-connection-groups-match-selected-package",
+          "avr128da32-connection-groups-have-satisfiable-signals",
+          "avr128da32-connection-groups-reference-known-packages",
+          "avr128da32-multi-signal-connection-groups-present",
+          "avr128da32-ip-blocks-cover-versioned-instances",
+          "avr128da32-peripherals-carry-backend-schema",
+          "avr128da32-ip-blocks-carry-backend-schema",
+          "avr128da32-runtime-peripherals-have-register-descriptors",
+          "avr128da32-runtime-peripherals-have-register-field-descriptors",
+          "avr128da32-route-requirements-typed",
+          "avr128da32-route-operations-typed",
+          "avr128da32-register-target-operations-resolved",
+          "avr128da32-interrupts-carry-aliases",
+          "avr128da32-interrupt-aliases-unique",
+          "avr128da32-interrupt-shared-groups-consistent",
+          "avr128da32-interrupt-bindings-reference-known-peripherals",
+          "avr128da32-interrupt-bindings-reference-known-interrupts",
+          "avr128da32-interrupt-bindings-reference-known-vector-slots",
+          "avr128da32-runtime-interrupt-bindings-present",
+          "avr128da32-vector-slots-reference-known-interrupts",
+          "avr128da32-vector-slots-unique",
+          "avr128da32-interrupts-have-vector-slot",
+          "avr128da32-vector-slots-include-system-baseline",
+          "avr128da32-memory-regions-carry-startup-roles",
+          "avr128da32-startup-descriptors-present",
+          "avr128da32-startup-descriptors-reference-known-memories",
+          "avr128da32-startup-descriptors-cover-memory-roles",
+          "avr128da32-startup-descriptors-include-runtime-baseline",
+          "avr128da32-startup-descriptors-emit-without-handwritten-tables",
+          "avr128da32-clock-bindings-reference-known-descriptors",
+          "avr128da32-clock-reset-bindings-not-diagnostic-only",
+          "avr128da32-clock-node-parents-known",
+          "avr128da32-clock-graph-reaches-root",
+          "avr128da32-clock-selectors-structured",
+          "avr128da32-clock-gates-structured",
+          "avr128da32-resets-structured",
+          "avr128da32-clock-gates-reference-known-nodes",
+          "avr128da32-clock-bound-peripherals-covered",
+          "avr128da32-dma-controller-descriptors-complete",
+          "avr128da32-dma-controller-request-counts-match",
+          "avr128da32-dma-routes-cover-requests",
+          "avr128da32-dma-routes-reference-known-controllers",
+          "avr128da32-dma-routes-reference-known-peripherals",
+          "avr128da32-dma-routes-reference-known-conflicts",
+          "avr128da32-dma-bindings-reference-known-peripherals",
+          "avr128da32-dma-bindings-reference-known-controllers",
+          "avr128da32-dma-bindings-reference-known-routes",
+          "avr128da32-dma-bindings-reference-known-conflicts",
+          "avr128da32-dma-bindings-cover-routes",
+          "avr128da32-dma-conflict-groups-reference-known-routes",
+          "avr128da32-dma-conflict-groups-nontrivial",
+          "avr128da32-dma-route-conflict-annotations-consistent",
+          "microchip-avr-da-family-devices-expose-multi-signal-groups",
+          "microchip-avr-da-family-reuses-ip-version-descriptors"
+        ]
+      }
+    ],
+    "is_passing": true,
+    "report_id": "bootstrap-validation-v1",
+    "system_descriptor_domains": [
+      {
+        "domain_id": "interrupt",
+        "draft": false,
+        "message": "interrupt domain is publishable with 10 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-interrupts-reference-known-peripherals",
+          "avr128da32-interrupt-aliases-unique",
+          "avr128da32-interrupt-shared-groups-consistent",
+          "avr128da32-interrupt-bindings-reference-known-peripherals",
+          "avr128da32-interrupt-bindings-reference-known-interrupts",
+          "avr128da32-interrupt-bindings-reference-known-vector-slots",
+          "avr128da32-runtime-interrupt-bindings-present",
+          "avr128da32-vector-slots-reference-known-interrupts",
+          "avr128da32-vector-slots-unique",
+          "avr128da32-interrupts-have-vector-slot"
+        ]
+      },
+      {
+        "domain_id": "memory",
+        "draft": false,
+        "message": "memory domain is publishable with 2 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-memory-sizes-positive",
+          "avr128da32-memory-regions-carry-startup-roles"
+        ]
+      },
+      {
+        "domain_id": "startup",
+        "draft": false,
+        "message": "startup domain is publishable with 6 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-vector-slots-include-system-baseline",
+          "avr128da32-startup-descriptors-present",
+          "avr128da32-startup-descriptors-reference-known-memories",
+          "avr128da32-startup-descriptors-cover-memory-roles",
+          "avr128da32-startup-descriptors-include-runtime-baseline",
+          "avr128da32-startup-descriptors-emit-without-handwritten-tables"
+        ]
+      },
+      {
+        "domain_id": "clock-reset",
+        "draft": false,
+        "message": "clock-reset domain is publishable with 7 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-referenced-peripherals-have-rcc-enable",
+          "avr128da32-clock-bindings-reference-known-descriptors",
+          "avr128da32-clock-node-parents-known",
+          "avr128da32-clock-graph-reaches-root",
+          "avr128da32-clock-selectors-structured",
+          "avr128da32-clock-gates-reference-known-nodes",
+          "avr128da32-clock-bound-peripherals-covered"
+        ]
+      },
+      {
+        "domain_id": "dma",
+        "draft": false,
+        "message": "dma domain is publishable with 16 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-dma-controllers-known",
+          "avr128da32-dma-request-peripherals-known",
+          "avr128da32-dma-routes-unique",
+          "avr128da32-dma-controller-descriptors-complete",
+          "avr128da32-dma-routes-cover-requests",
+          "avr128da32-dma-routes-reference-known-controllers",
+          "avr128da32-dma-routes-reference-known-peripherals",
+          "avr128da32-dma-routes-reference-known-conflicts",
+          "avr128da32-dma-bindings-reference-known-peripherals",
+          "avr128da32-dma-bindings-reference-known-controllers",
+          "avr128da32-dma-bindings-reference-known-routes",
+          "avr128da32-dma-bindings-reference-known-conflicts",
+          "avr128da32-dma-bindings-cover-routes",
+          "avr128da32-dma-conflict-groups-reference-known-routes",
+          "avr128da32-dma-conflict-groups-nontrivial",
+          "avr128da32-dma-route-conflict-annotations-consistent"
+        ]
+      },
+      {
+        "domain_id": "package",
+        "draft": false,
+        "message": "package domain is publishable with 7 rule(s).",
+        "passed": true,
+        "rule_ids": [
+          "avr128da32-package-pads-present",
+          "avr128da32-package-pad-ids-unique",
+          "avr128da32-package-pads-reference-known-packages",
+          "avr128da32-package-variants-have-pad-coverage",
+          "avr128da32-package-pad-positions-unique",
+          "avr128da32-package-pads-reference-known-pins",
+          "avr128da32-bonded-pins-have-package-pad"
+        ]
+      }
+    ]
+  }
+}
