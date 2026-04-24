@@ -1,0 +1,1672 @@
+{
+  "draft_system_descriptor_domains": [],
+  "gates": [
+    {
+      "blocking": false,
+      "gate_id": "gate-a",
+      "message": "gate-a passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "source-records-cover-targets",
+        "source-records-provide-required-upstreams",
+        "source-records-have-revisions",
+        "source-records-have-local-paths",
+        "patch-target-count-match",
+        "patch-ids-unique"
+      ]
+    },
+    {
+      "blocking": false,
+      "gate_id": "gate-b",
+      "message": "gate-b passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-schema-version-present",
+        "atsame70n21b-identity-fields-present",
+        "atsame70n21b-required-sections-present",
+        "atsame70q21b-schema-version-present",
+        "atsame70q21b-identity-fields-present",
+        "atsame70q21b-required-sections-present"
+      ]
+    },
+    {
+      "blocking": true,
+      "gate_id": "gate-c",
+      "message": "gate-c passed with 174 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-package-pin-count-covers-known-pins",
+        "atsame70n21b-pin-port-has-gpio-peripheral",
+        "atsame70n21b-pin-signals-present",
+        "atsame70n21b-pin-signals-reference-known-peripherals",
+        "atsame70n21b-alternate-functions-explicit",
+        "atsame70n21b-memory-sizes-positive",
+        "atsame70n21b-peripheral-bases-unique",
+        "atsame70n21b-interrupts-present",
+        "atsame70n21b-interrupts-reference-known-peripherals",
+        "atsame70n21b-referenced-peripherals-have-rcc-enable",
+        "atsame70n21b-dma-controllers-known",
+        "atsame70n21b-dma-request-peripherals-known",
+        "atsame70n21b-dma-routes-unique",
+        "atsame70n21b-package-pads-present",
+        "atsame70n21b-package-pad-ids-unique",
+        "atsame70n21b-package-pads-reference-known-packages",
+        "atsame70n21b-package-variants-have-pad-coverage",
+        "atsame70n21b-package-pad-positions-unique",
+        "atsame70n21b-package-pad-bonding-state-consistent",
+        "atsame70n21b-package-pads-reference-known-pins",
+        "atsame70n21b-bonded-pins-have-package-pad",
+        "atsame70n21b-signal-endpoints-present",
+        "atsame70n21b-connection-candidates-present",
+        "atsame70n21b-connection-candidates-reference-known-pins",
+        "atsame70n21b-connection-candidates-reference-known-peripherals",
+        "atsame70n21b-connection-candidates-reference-known-groups",
+        "atsame70n21b-connection-candidates-reference-known-requirements",
+        "atsame70n21b-connection-candidates-carry-package-requirement",
+        "atsame70n21b-connection-candidates-carry-source-requirement",
+        "atsame70n21b-connection-candidates-reference-known-operations",
+        "atsame70n21b-connection-candidates-reference-known-capabilities",
+        "atsame70n21b-capability-descriptors-carry-context",
+        "atsame70n21b-candidate-capabilities-resolve-from-descriptors",
+        "atsame70n21b-connection-groups-reference-known-candidates",
+        "atsame70n21b-connection-groups-match-selected-package",
+        "atsame70n21b-connection-groups-have-satisfiable-signals",
+        "atsame70n21b-connection-groups-reference-known-packages",
+        "atsame70n21b-multi-signal-connection-groups-present",
+        "atsame70n21b-ip-blocks-cover-versioned-instances",
+        "atsame70n21b-peripherals-carry-backend-schema",
+        "atsame70n21b-ip-blocks-carry-backend-schema",
+        "atsame70n21b-runtime-peripherals-have-register-descriptors",
+        "atsame70n21b-runtime-peripherals-have-register-field-descriptors",
+        "atsame70n21b-route-requirements-typed",
+        "atsame70n21b-route-operations-typed",
+        "atsame70n21b-register-target-operations-resolved",
+        "atsame70n21b-interrupts-carry-aliases",
+        "atsame70n21b-interrupt-aliases-unique",
+        "atsame70n21b-interrupt-shared-groups-consistent",
+        "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70n21b-runtime-interrupt-bindings-present",
+        "atsame70n21b-vector-slots-reference-known-interrupts",
+        "atsame70n21b-vector-slots-unique",
+        "atsame70n21b-interrupts-have-vector-slot",
+        "atsame70n21b-vector-slots-include-system-baseline",
+        "atsame70n21b-memory-regions-carry-startup-roles",
+        "atsame70n21b-startup-descriptors-present",
+        "atsame70n21b-startup-descriptors-reference-known-memories",
+        "atsame70n21b-startup-descriptors-cover-memory-roles",
+        "atsame70n21b-startup-descriptors-include-runtime-baseline",
+        "atsame70n21b-startup-descriptors-emit-without-handwritten-tables",
+        "atsame70n21b-clock-bindings-reference-known-descriptors",
+        "atsame70n21b-clock-reset-bindings-not-diagnostic-only",
+        "atsame70n21b-clock-node-parents-known",
+        "atsame70n21b-clock-graph-reaches-root",
+        "atsame70n21b-clock-selectors-structured",
+        "atsame70n21b-clock-gates-structured",
+        "atsame70n21b-resets-structured",
+        "atsame70n21b-clock-gates-reference-known-nodes",
+        "atsame70n21b-clock-bound-peripherals-covered",
+        "atsame70n21b-dma-controller-descriptors-complete",
+        "atsame70n21b-dma-controller-request-counts-match",
+        "atsame70n21b-dma-routes-cover-requests",
+        "atsame70n21b-dma-routes-reference-known-controllers",
+        "atsame70n21b-dma-routes-reference-known-peripherals",
+        "atsame70n21b-dma-routes-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-reference-known-peripherals",
+        "atsame70n21b-dma-bindings-reference-known-controllers",
+        "atsame70n21b-dma-bindings-reference-known-routes",
+        "atsame70n21b-dma-bindings-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-cover-routes",
+        "atsame70n21b-dma-conflict-groups-reference-known-routes",
+        "atsame70n21b-dma-conflict-groups-nontrivial",
+        "atsame70n21b-dma-route-conflict-annotations-consistent",
+        "atsame70q21b-package-pin-count-covers-known-pins",
+        "atsame70q21b-pin-port-has-gpio-peripheral",
+        "atsame70q21b-pin-signals-present",
+        "atsame70q21b-pin-signals-reference-known-peripherals",
+        "atsame70q21b-alternate-functions-explicit",
+        "atsame70q21b-memory-sizes-positive",
+        "atsame70q21b-peripheral-bases-unique",
+        "atsame70q21b-interrupts-present",
+        "atsame70q21b-interrupts-reference-known-peripherals",
+        "atsame70q21b-referenced-peripherals-have-rcc-enable",
+        "atsame70q21b-dma-controllers-known",
+        "atsame70q21b-dma-request-peripherals-known",
+        "atsame70q21b-dma-routes-unique",
+        "atsame70q21b-package-pads-present",
+        "atsame70q21b-package-pad-ids-unique",
+        "atsame70q21b-package-pads-reference-known-packages",
+        "atsame70q21b-package-variants-have-pad-coverage",
+        "atsame70q21b-package-pad-positions-unique",
+        "atsame70q21b-package-pad-bonding-state-consistent",
+        "atsame70q21b-package-pads-reference-known-pins",
+        "atsame70q21b-bonded-pins-have-package-pad",
+        "atsame70q21b-signal-endpoints-present",
+        "atsame70q21b-connection-candidates-present",
+        "atsame70q21b-connection-candidates-reference-known-pins",
+        "atsame70q21b-connection-candidates-reference-known-peripherals",
+        "atsame70q21b-connection-candidates-reference-known-groups",
+        "atsame70q21b-connection-candidates-reference-known-requirements",
+        "atsame70q21b-connection-candidates-carry-package-requirement",
+        "atsame70q21b-connection-candidates-carry-source-requirement",
+        "atsame70q21b-connection-candidates-reference-known-operations",
+        "atsame70q21b-connection-candidates-reference-known-capabilities",
+        "atsame70q21b-capability-descriptors-carry-context",
+        "atsame70q21b-candidate-capabilities-resolve-from-descriptors",
+        "atsame70q21b-connection-groups-reference-known-candidates",
+        "atsame70q21b-connection-groups-match-selected-package",
+        "atsame70q21b-connection-groups-have-satisfiable-signals",
+        "atsame70q21b-connection-groups-reference-known-packages",
+        "atsame70q21b-multi-signal-connection-groups-present",
+        "atsame70q21b-ip-blocks-cover-versioned-instances",
+        "atsame70q21b-peripherals-carry-backend-schema",
+        "atsame70q21b-ip-blocks-carry-backend-schema",
+        "atsame70q21b-runtime-peripherals-have-register-descriptors",
+        "atsame70q21b-runtime-peripherals-have-register-field-descriptors",
+        "atsame70q21b-route-requirements-typed",
+        "atsame70q21b-route-operations-typed",
+        "atsame70q21b-register-target-operations-resolved",
+        "atsame70q21b-interrupts-carry-aliases",
+        "atsame70q21b-interrupt-aliases-unique",
+        "atsame70q21b-interrupt-shared-groups-consistent",
+        "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70q21b-runtime-interrupt-bindings-present",
+        "atsame70q21b-vector-slots-reference-known-interrupts",
+        "atsame70q21b-vector-slots-unique",
+        "atsame70q21b-interrupts-have-vector-slot",
+        "atsame70q21b-vector-slots-include-system-baseline",
+        "atsame70q21b-memory-regions-carry-startup-roles",
+        "atsame70q21b-startup-descriptors-present",
+        "atsame70q21b-startup-descriptors-reference-known-memories",
+        "atsame70q21b-startup-descriptors-cover-memory-roles",
+        "atsame70q21b-startup-descriptors-include-runtime-baseline",
+        "atsame70q21b-startup-descriptors-emit-without-handwritten-tables",
+        "atsame70q21b-clock-bindings-reference-known-descriptors",
+        "atsame70q21b-clock-reset-bindings-not-diagnostic-only",
+        "atsame70q21b-clock-node-parents-known",
+        "atsame70q21b-clock-graph-reaches-root",
+        "atsame70q21b-clock-selectors-structured",
+        "atsame70q21b-clock-gates-structured",
+        "atsame70q21b-resets-structured",
+        "atsame70q21b-clock-gates-reference-known-nodes",
+        "atsame70q21b-clock-bound-peripherals-covered",
+        "atsame70q21b-dma-controller-descriptors-complete",
+        "atsame70q21b-dma-controller-request-counts-match",
+        "atsame70q21b-dma-routes-cover-requests",
+        "atsame70q21b-dma-routes-reference-known-controllers",
+        "atsame70q21b-dma-routes-reference-known-peripherals",
+        "atsame70q21b-dma-routes-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-reference-known-peripherals",
+        "atsame70q21b-dma-bindings-reference-known-controllers",
+        "atsame70q21b-dma-bindings-reference-known-routes",
+        "atsame70q21b-dma-bindings-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-cover-routes",
+        "atsame70q21b-dma-conflict-groups-reference-known-routes",
+        "atsame70q21b-dma-conflict-groups-nontrivial",
+        "atsame70q21b-dma-route-conflict-annotations-consistent",
+        "microchip-same70-family-devices-expose-multi-signal-groups",
+        "microchip-same70-family-reuses-ip-version-descriptors"
+      ]
+    }
+  ],
+  "is_passing": true,
+  "report_id": "bootstrap-validation-v1",
+  "results": [
+    {
+      "category": "schema",
+      "message": "Source records cover every requested bootstrap target.",
+      "passed": true,
+      "rule_id": "source-records-cover-targets",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Every target carries records drawn from the declared family source bundle.",
+      "passed": true,
+      "rule_id": "source-records-provide-required-upstreams",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "All source records carry a concrete upstream revision.",
+      "passed": true,
+      "rule_id": "source-records-have-revisions",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "All source records expose a resolved local path.",
+      "passed": true,
+      "rule_id": "source-records-have-local-paths",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Found 2 patch record(s) for 2 target(s).",
+      "passed": true,
+      "rule_id": "patch-target-count-match",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Patch identifiers are unique within the requested scope.",
+      "passed": true,
+      "rule_id": "patch-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "atsame70n21b declares an IR schema version.",
+      "passed": true,
+      "rule_id": "atsame70n21b-schema-version-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "atsame70n21b exposes the required canonical identity fields.",
+      "passed": true,
+      "rule_id": "atsame70n21b-identity-fields-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "atsame70n21b contains non-empty required canonical sections.",
+      "passed": true,
+      "rule_id": "atsame70n21b-required-sections-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "atsame70q21b declares an IR schema version.",
+      "passed": true,
+      "rule_id": "atsame70q21b-schema-version-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "atsame70q21b exposes the required canonical identity fields.",
+      "passed": true,
+      "rule_id": "atsame70q21b-identity-fields-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "atsame70q21b contains non-empty required canonical sections.",
+      "passed": true,
+      "rule_id": "atsame70q21b-required-sections-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b package pin count 100 covers 72 known pin definition(s).",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pin-count-covers-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b pin ports map to discovered GPIO peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-pin-port-has-gpio-peripheral",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b curated pins expose explicit signal metadata.",
+      "passed": true,
+      "rule_id": "atsame70n21b-pin-signals-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b pin signals only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-pin-signals-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b non-GPIO alternate functions carry explicit AF numbers.",
+      "passed": true,
+      "rule_id": "atsame70n21b-alternate-functions-explicit",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b memory regions use positive non-placeholder sizes.",
+      "passed": true,
+      "rule_id": "atsame70n21b-memory-sizes-positive",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b peripheral base addresses are unique.",
+      "passed": true,
+      "rule_id": "atsame70n21b-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes interrupt metadata from the raw source.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupts-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt entries only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupts-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b referenced peripherals expose RCC enable ownership.",
+      "passed": true,
+      "rule_id": "atsame70n21b-referenced-peripherals-have-rcc-enable",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA requests reference known controller peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-controllers-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA requests reference known target peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-request-peripherals-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA controller/request-line pairs are unique.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-routes-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes package pad descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pads-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b package pad identifiers are unique.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pad-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b package pads reference declared packages.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pads-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b every declared package exposes package pads.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-variants-have-pad-coverage",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b package pad positions are unique per package.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pad-positions-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b package pad bonding state matches bonded-pin coverage.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pad-bonding-state-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b package pads reference declared bonded pins.",
+      "passed": true,
+      "rule_id": "atsame70n21b-package-pads-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b every declared GPIO pin is covered by a package pad.",
+      "passed": true,
+      "rule_id": "atsame70n21b-bonded-pins-have-package-pad",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes canonical signal endpoints.",
+      "passed": true,
+      "rule_id": "atsame70n21b-signal-endpoints-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes route-driven connection candidates.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b connection candidates reference known pins.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b connection candidates reference known peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b connection candidates reference known route groups.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-reference-known-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route candidates only reference declared requirements.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-reference-known-requirements",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route candidates carry an explicit package requirement.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-carry-package-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route candidates with selectors carry an explicit source-selection requirement.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-carry-source-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route candidates only reference declared operations.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-reference-known-operations",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route candidates only reference declared capabilities.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-candidates-reference-known-capabilities",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b capability descriptors carry explicit ip-block or instance-overlay context.",
+      "passed": true,
+      "rule_id": "atsame70n21b-capability-descriptors-carry-context",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b candidate capabilities resolve through ip-block and instance-overlay descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-candidate-capabilities-resolve-from-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route groups only reference declared candidates.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-groups-reference-known-candidates",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route groups only admit candidates valid for the selected package and bonded pinout.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-groups-match-selected-package",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route groups declare satisfiable signal bundles.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-groups-have-satisfiable-signals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route groups only reference declared packages.",
+      "passed": true,
+      "rule_id": "atsame70n21b-connection-groups-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes at least one multi-signal connection group.",
+      "passed": true,
+      "rule_id": "atsame70n21b-multi-signal-connection-groups-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b IP block descriptors cover versioned instances.",
+      "passed": true,
+      "rule_id": "atsame70n21b-ip-blocks-cover-versioned-instances",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripheral instances carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70n21b-peripherals-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned IP blocks carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70n21b-ip-blocks-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripheral instances expose normalized register descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-runtime-peripherals-have-register-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripheral instances expose normalized register field descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-runtime-peripherals-have-register-field-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route requirements expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70n21b-route-requirements-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route operations expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70n21b-route-operations-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b route operations with register-like targets resolve a normalized register offset.",
+      "passed": true,
+      "rule_id": "atsame70n21b-register-target-operations-resolved",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupts carry explicit alias descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupts-carry-aliases",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt aliases are unique per interrupt.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-aliases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt shared groups describe a real multi-interrupt owner.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt bindings reference known peripheral instances.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt bindings reference declared interrupts.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b interrupt bindings reference matching vector slots.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b runtime-owned peripherals with interrupts expose typed interrupt bindings.",
+      "passed": true,
+      "rule_id": "atsame70n21b-runtime-interrupt-bindings-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b vector slots only reference declared interrupts.",
+      "passed": true,
+      "rule_id": "atsame70n21b-vector-slots-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b vector slot numbers are unique.",
+      "passed": true,
+      "rule_id": "atsame70n21b-vector-slots-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b every interrupt owns an external vector slot.",
+      "passed": true,
+      "rule_id": "atsame70n21b-interrupts-have-vector-slot",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b vector slots include the system baseline slots.",
+      "passed": true,
+      "rule_id": "atsame70n21b-vector-slots-include-system-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes startup-relevant memory classifications for at least one memory region.",
+      "passed": true,
+      "rule_id": "atsame70n21b-memory-regions-carry-startup-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b exposes startup descriptors separately from logic.",
+      "passed": true,
+      "rule_id": "atsame70n21b-startup-descriptors-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b startup descriptors only reference declared memories.",
+      "passed": true,
+      "rule_id": "atsame70n21b-startup-descriptors-reference-known-memories",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b startup descriptors cover every startup-classified memory region.",
+      "passed": true,
+      "rule_id": "atsame70n21b-startup-descriptors-cover-memory-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b startup descriptors include vector-table and initial-stack-pointer facts.",
+      "passed": true,
+      "rule_id": "atsame70n21b-startup-descriptors-include-runtime-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b startup vectors and startup descriptors are sufficient to emit startup artifacts without handwritten device tables.",
+      "passed": true,
+      "rule_id": "atsame70n21b-startup-descriptors-emit-without-handwritten-tables",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock bindings reference known gate/reset/selector descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-reset-bindings-not-diagnostic-only",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock nodes only reference known parents.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-node-parents-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock graph remains root-reachable and acyclic.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-graph-reaches-root",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock selectors expose at least one parent option when present.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-selectors-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock gates expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-gates-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b resets expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70n21b-resets-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock gates reference known clock nodes.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-gates-reference-known-nodes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b peripherals with enable/reset ownership have clock bindings.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-bound-peripherals-covered",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA controllers expose non-empty channel and request counts.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-controller-descriptors-complete",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA controller request counts match the normalized DMA route set.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-controller-request-counts-match",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA routes cover the normalized DMA request set.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-routes-cover-requests",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA routes reference known controller descriptors.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-routes-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA routes reference known target peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-routes-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA routes reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference known peripherals.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference known controllers.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference known DMA routes.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA bindings cover the typed DMA route set.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-bindings-cover-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA conflict groups reference known DMA routes.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-conflict-groups-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA conflict groups only exist for true multi-route conflicts.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-conflict-groups-nontrivial",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b DMA route conflict annotations match the declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70n21b-dma-route-conflict-annotations-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b package pin count 144 covers 114 known pin definition(s).",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pin-count-covers-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b pin ports map to discovered GPIO peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-pin-port-has-gpio-peripheral",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b curated pins expose explicit signal metadata.",
+      "passed": true,
+      "rule_id": "atsame70q21b-pin-signals-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b pin signals only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-pin-signals-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b non-GPIO alternate functions carry explicit AF numbers.",
+      "passed": true,
+      "rule_id": "atsame70q21b-alternate-functions-explicit",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b memory regions use positive non-placeholder sizes.",
+      "passed": true,
+      "rule_id": "atsame70q21b-memory-sizes-positive",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b peripheral base addresses are unique.",
+      "passed": true,
+      "rule_id": "atsame70q21b-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes interrupt metadata from the raw source.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupts-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt entries only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupts-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b referenced peripherals expose RCC enable ownership.",
+      "passed": true,
+      "rule_id": "atsame70q21b-referenced-peripherals-have-rcc-enable",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA requests reference known controller peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-controllers-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA requests reference known target peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-request-peripherals-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA controller/request-line pairs are unique.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-routes-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes package pad descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pads-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b package pad identifiers are unique.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pad-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b package pads reference declared packages.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pads-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b every declared package exposes package pads.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-variants-have-pad-coverage",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b package pad positions are unique per package.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pad-positions-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b package pad bonding state matches bonded-pin coverage.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pad-bonding-state-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b package pads reference declared bonded pins.",
+      "passed": true,
+      "rule_id": "atsame70q21b-package-pads-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b every declared GPIO pin is covered by a package pad.",
+      "passed": true,
+      "rule_id": "atsame70q21b-bonded-pins-have-package-pad",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes canonical signal endpoints.",
+      "passed": true,
+      "rule_id": "atsame70q21b-signal-endpoints-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes route-driven connection candidates.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b connection candidates reference known pins.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b connection candidates reference known peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b connection candidates reference known route groups.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-reference-known-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route candidates only reference declared requirements.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-reference-known-requirements",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route candidates carry an explicit package requirement.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-carry-package-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route candidates with selectors carry an explicit source-selection requirement.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-carry-source-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route candidates only reference declared operations.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-reference-known-operations",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route candidates only reference declared capabilities.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-candidates-reference-known-capabilities",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b capability descriptors carry explicit ip-block or instance-overlay context.",
+      "passed": true,
+      "rule_id": "atsame70q21b-capability-descriptors-carry-context",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b candidate capabilities resolve through ip-block and instance-overlay descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-candidate-capabilities-resolve-from-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route groups only reference declared candidates.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-groups-reference-known-candidates",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route groups only admit candidates valid for the selected package and bonded pinout.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-groups-match-selected-package",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route groups declare satisfiable signal bundles.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-groups-have-satisfiable-signals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route groups only reference declared packages.",
+      "passed": true,
+      "rule_id": "atsame70q21b-connection-groups-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes at least one multi-signal connection group.",
+      "passed": true,
+      "rule_id": "atsame70q21b-multi-signal-connection-groups-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b IP block descriptors cover versioned instances.",
+      "passed": true,
+      "rule_id": "atsame70q21b-ip-blocks-cover-versioned-instances",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripheral instances carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70q21b-peripherals-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned IP blocks carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "atsame70q21b-ip-blocks-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripheral instances expose normalized register descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-runtime-peripherals-have-register-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripheral instances expose normalized register field descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-runtime-peripherals-have-register-field-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route requirements expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70q21b-route-requirements-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route operations expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "atsame70q21b-route-operations-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b route operations with register-like targets resolve a normalized register offset.",
+      "passed": true,
+      "rule_id": "atsame70q21b-register-target-operations-resolved",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupts carry explicit alias descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupts-carry-aliases",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt aliases are unique per interrupt.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-aliases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt shared groups describe a real multi-interrupt owner.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt bindings reference known peripheral instances.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt bindings reference declared interrupts.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b interrupt bindings reference matching vector slots.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b runtime-owned peripherals with interrupts expose typed interrupt bindings.",
+      "passed": true,
+      "rule_id": "atsame70q21b-runtime-interrupt-bindings-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b vector slots only reference declared interrupts.",
+      "passed": true,
+      "rule_id": "atsame70q21b-vector-slots-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b vector slot numbers are unique.",
+      "passed": true,
+      "rule_id": "atsame70q21b-vector-slots-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b every interrupt owns an external vector slot.",
+      "passed": true,
+      "rule_id": "atsame70q21b-interrupts-have-vector-slot",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b vector slots include the system baseline slots.",
+      "passed": true,
+      "rule_id": "atsame70q21b-vector-slots-include-system-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes startup-relevant memory classifications for at least one memory region.",
+      "passed": true,
+      "rule_id": "atsame70q21b-memory-regions-carry-startup-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b exposes startup descriptors separately from logic.",
+      "passed": true,
+      "rule_id": "atsame70q21b-startup-descriptors-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b startup descriptors only reference declared memories.",
+      "passed": true,
+      "rule_id": "atsame70q21b-startup-descriptors-reference-known-memories",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b startup descriptors cover every startup-classified memory region.",
+      "passed": true,
+      "rule_id": "atsame70q21b-startup-descriptors-cover-memory-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b startup descriptors include vector-table and initial-stack-pointer facts.",
+      "passed": true,
+      "rule_id": "atsame70q21b-startup-descriptors-include-runtime-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b startup vectors and startup descriptors are sufficient to emit startup artifacts without handwritten device tables.",
+      "passed": true,
+      "rule_id": "atsame70q21b-startup-descriptors-emit-without-handwritten-tables",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock bindings reference known gate/reset/selector descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-reset-bindings-not-diagnostic-only",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock nodes only reference known parents.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-node-parents-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock graph remains root-reachable and acyclic.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-graph-reaches-root",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock selectors expose at least one parent option when present.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-selectors-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock gates expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-gates-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b resets expose typed register references.",
+      "passed": true,
+      "rule_id": "atsame70q21b-resets-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock gates reference known clock nodes.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-gates-reference-known-nodes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b peripherals with enable/reset ownership have clock bindings.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-bound-peripherals-covered",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA controllers expose non-empty channel and request counts.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-controller-descriptors-complete",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA controller request counts match the normalized DMA route set.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-controller-request-counts-match",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA routes cover the normalized DMA request set.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-routes-cover-requests",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA routes reference known controller descriptors.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-routes-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA routes reference known target peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-routes-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA routes reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference known peripherals.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference known controllers.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference known DMA routes.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA bindings cover the typed DMA route set.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-bindings-cover-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA conflict groups reference known DMA routes.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-conflict-groups-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA conflict groups only exist for true multi-route conflicts.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-conflict-groups-nontrivial",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b DMA route conflict annotations match the declared conflict groups.",
+      "passed": true,
+      "rule_id": "atsame70q21b-dma-route-conflict-annotations-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "microchip-same70 family scope exposes at least one multi-signal connection group for every normalized device.",
+      "passed": true,
+      "rule_id": "microchip-same70-family-devices-expose-multi-signal-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "microchip-same70 family scope reuses at least one ip-version descriptor across multiple devices when versioned IP data exist.",
+      "passed": true,
+      "rule_id": "microchip-same70-family-reuses-ip-version-descriptors",
+      "severity": "error"
+    }
+  ],
+  "scope": {
+    "device": null,
+    "family": "same70",
+    "vendor": "microchip"
+  },
+  "system_descriptor_domains": [
+    {
+      "domain_id": "interrupt",
+      "draft": false,
+      "message": "interrupt domain is publishable with 20 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-interrupts-reference-known-peripherals",
+        "atsame70n21b-interrupt-aliases-unique",
+        "atsame70n21b-interrupt-shared-groups-consistent",
+        "atsame70n21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70n21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70n21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70n21b-runtime-interrupt-bindings-present",
+        "atsame70n21b-vector-slots-reference-known-interrupts",
+        "atsame70n21b-vector-slots-unique",
+        "atsame70n21b-interrupts-have-vector-slot",
+        "atsame70q21b-interrupts-reference-known-peripherals",
+        "atsame70q21b-interrupt-aliases-unique",
+        "atsame70q21b-interrupt-shared-groups-consistent",
+        "atsame70q21b-interrupt-bindings-reference-known-peripherals",
+        "atsame70q21b-interrupt-bindings-reference-known-interrupts",
+        "atsame70q21b-interrupt-bindings-reference-known-vector-slots",
+        "atsame70q21b-runtime-interrupt-bindings-present",
+        "atsame70q21b-vector-slots-reference-known-interrupts",
+        "atsame70q21b-vector-slots-unique",
+        "atsame70q21b-interrupts-have-vector-slot"
+      ]
+    },
+    {
+      "domain_id": "memory",
+      "draft": false,
+      "message": "memory domain is publishable with 4 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-memory-sizes-positive",
+        "atsame70n21b-memory-regions-carry-startup-roles",
+        "atsame70q21b-memory-sizes-positive",
+        "atsame70q21b-memory-regions-carry-startup-roles"
+      ]
+    },
+    {
+      "domain_id": "startup",
+      "draft": false,
+      "message": "startup domain is publishable with 12 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-vector-slots-include-system-baseline",
+        "atsame70n21b-startup-descriptors-present",
+        "atsame70n21b-startup-descriptors-reference-known-memories",
+        "atsame70n21b-startup-descriptors-cover-memory-roles",
+        "atsame70n21b-startup-descriptors-include-runtime-baseline",
+        "atsame70n21b-startup-descriptors-emit-without-handwritten-tables",
+        "atsame70q21b-vector-slots-include-system-baseline",
+        "atsame70q21b-startup-descriptors-present",
+        "atsame70q21b-startup-descriptors-reference-known-memories",
+        "atsame70q21b-startup-descriptors-cover-memory-roles",
+        "atsame70q21b-startup-descriptors-include-runtime-baseline",
+        "atsame70q21b-startup-descriptors-emit-without-handwritten-tables"
+      ]
+    },
+    {
+      "domain_id": "clock-reset",
+      "draft": false,
+      "message": "clock-reset domain is publishable with 14 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-referenced-peripherals-have-rcc-enable",
+        "atsame70n21b-clock-bindings-reference-known-descriptors",
+        "atsame70n21b-clock-node-parents-known",
+        "atsame70n21b-clock-graph-reaches-root",
+        "atsame70n21b-clock-selectors-structured",
+        "atsame70n21b-clock-gates-reference-known-nodes",
+        "atsame70n21b-clock-bound-peripherals-covered",
+        "atsame70q21b-referenced-peripherals-have-rcc-enable",
+        "atsame70q21b-clock-bindings-reference-known-descriptors",
+        "atsame70q21b-clock-node-parents-known",
+        "atsame70q21b-clock-graph-reaches-root",
+        "atsame70q21b-clock-selectors-structured",
+        "atsame70q21b-clock-gates-reference-known-nodes",
+        "atsame70q21b-clock-bound-peripherals-covered"
+      ]
+    },
+    {
+      "domain_id": "dma",
+      "draft": false,
+      "message": "dma domain is publishable with 32 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-dma-controllers-known",
+        "atsame70n21b-dma-request-peripherals-known",
+        "atsame70n21b-dma-routes-unique",
+        "atsame70n21b-dma-controller-descriptors-complete",
+        "atsame70n21b-dma-routes-cover-requests",
+        "atsame70n21b-dma-routes-reference-known-controllers",
+        "atsame70n21b-dma-routes-reference-known-peripherals",
+        "atsame70n21b-dma-routes-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-reference-known-peripherals",
+        "atsame70n21b-dma-bindings-reference-known-controllers",
+        "atsame70n21b-dma-bindings-reference-known-routes",
+        "atsame70n21b-dma-bindings-reference-known-conflicts",
+        "atsame70n21b-dma-bindings-cover-routes",
+        "atsame70n21b-dma-conflict-groups-reference-known-routes",
+        "atsame70n21b-dma-conflict-groups-nontrivial",
+        "atsame70n21b-dma-route-conflict-annotations-consistent",
+        "atsame70q21b-dma-controllers-known",
+        "atsame70q21b-dma-request-peripherals-known",
+        "atsame70q21b-dma-routes-unique",
+        "atsame70q21b-dma-controller-descriptors-complete",
+        "atsame70q21b-dma-routes-cover-requests",
+        "atsame70q21b-dma-routes-reference-known-controllers",
+        "atsame70q21b-dma-routes-reference-known-peripherals",
+        "atsame70q21b-dma-routes-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-reference-known-peripherals",
+        "atsame70q21b-dma-bindings-reference-known-controllers",
+        "atsame70q21b-dma-bindings-reference-known-routes",
+        "atsame70q21b-dma-bindings-reference-known-conflicts",
+        "atsame70q21b-dma-bindings-cover-routes",
+        "atsame70q21b-dma-conflict-groups-reference-known-routes",
+        "atsame70q21b-dma-conflict-groups-nontrivial",
+        "atsame70q21b-dma-route-conflict-annotations-consistent"
+      ]
+    },
+    {
+      "domain_id": "package",
+      "draft": false,
+      "message": "package domain is publishable with 14 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "atsame70n21b-package-pads-present",
+        "atsame70n21b-package-pad-ids-unique",
+        "atsame70n21b-package-pads-reference-known-packages",
+        "atsame70n21b-package-variants-have-pad-coverage",
+        "atsame70n21b-package-pad-positions-unique",
+        "atsame70n21b-package-pads-reference-known-pins",
+        "atsame70n21b-bonded-pins-have-package-pad",
+        "atsame70q21b-package-pads-present",
+        "atsame70q21b-package-pad-ids-unique",
+        "atsame70q21b-package-pads-reference-known-packages",
+        "atsame70q21b-package-variants-have-pad-coverage",
+        "atsame70q21b-package-pad-positions-unique",
+        "atsame70q21b-package-pads-reference-known-pins",
+        "atsame70q21b-bonded-pins-have-package-pad"
+      ]
+    }
+  ]
+}

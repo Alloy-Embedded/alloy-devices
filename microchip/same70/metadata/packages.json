@@ -1,0 +1,5531 @@
+{
+  "family": "same70",
+  "packages": [
+    {
+      "devices": [
+        "atsame70n21b"
+      ],
+      "name": "lqfp100",
+      "pads": [
+        {
+          "pad_id": "1",
+          "pad_kind": "io",
+          "physical_index": 1,
+          "position_label": "1"
+        },
+        {
+          "pad_id": "2",
+          "pad_kind": "io",
+          "physical_index": 2,
+          "position_label": "2"
+        },
+        {
+          "pad_id": "3",
+          "pad_kind": "ground",
+          "physical_index": 3,
+          "position_label": "3"
+        },
+        {
+          "pad_id": "4",
+          "pad_kind": "power",
+          "physical_index": 4,
+          "position_label": "4"
+        },
+        {
+          "pad_id": "5",
+          "pad_kind": "power",
+          "physical_index": 5,
+          "position_label": "5"
+        },
+        {
+          "pad_id": "6",
+          "pad_kind": "power",
+          "physical_index": 6,
+          "position_label": "6"
+        },
+        {
+          "pad_id": "7",
+          "pad_kind": "ground",
+          "physical_index": 7,
+          "position_label": "7"
+        },
+        {
+          "pad_id": "8",
+          "pad_kind": "ground",
+          "physical_index": 8,
+          "position_label": "8"
+        },
+        {
+          "pad_id": "9",
+          "pad_kind": "power",
+          "physical_index": 9,
+          "position_label": "9"
+        },
+        {
+          "pad_id": "10",
+          "pad_kind": "ground",
+          "physical_index": 10,
+          "position_label": "10"
+        },
+        {
+          "pad_id": "11",
+          "pad_kind": "io",
+          "physical_index": 11,
+          "position_label": "11"
+        },
+        {
+          "pad_id": "12",
+          "pad_kind": "io",
+          "physical_index": 12,
+          "position_label": "12"
+        },
+        {
+          "pad_id": "13",
+          "pad_kind": "io",
+          "physical_index": 13,
+          "position_label": "13"
+        },
+        {
+          "pad_id": "14",
+          "pad_kind": "io",
+          "physical_index": 14,
+          "position_label": "14"
+        },
+        {
+          "pad_id": "15",
+          "pad_kind": "io",
+          "physical_index": 15,
+          "position_label": "15"
+        },
+        {
+          "pad_id": "16",
+          "pad_kind": "io",
+          "physical_index": 16,
+          "position_label": "16"
+        },
+        {
+          "pad_id": "17",
+          "pad_kind": "io",
+          "physical_index": 17,
+          "position_label": "17"
+        },
+        {
+          "pad_id": "18",
+          "pad_kind": "power",
+          "physical_index": 18,
+          "position_label": "18"
+        },
+        {
+          "pad_id": "19",
+          "pad_kind": "power",
+          "physical_index": 19,
+          "position_label": "19"
+        },
+        {
+          "pad_id": "20",
+          "pad_kind": "io",
+          "physical_index": 20,
+          "position_label": "20"
+        },
+        {
+          "pad_id": "21",
+          "pad_kind": "io",
+          "physical_index": 21,
+          "position_label": "21"
+        },
+        {
+          "pad_id": "22",
+          "pad_kind": "power",
+          "physical_index": 22,
+          "position_label": "22"
+        },
+        {
+          "pad_id": "23",
+          "pad_kind": "io",
+          "physical_index": 23,
+          "position_label": "23"
+        },
+        {
+          "pad_id": "24",
+          "pad_kind": "io",
+          "physical_index": 24,
+          "position_label": "24"
+        },
+        {
+          "pad_id": "25",
+          "pad_kind": "io",
+          "physical_index": 25,
+          "position_label": "25"
+        },
+        {
+          "pad_id": "26",
+          "pad_kind": "io",
+          "physical_index": 26,
+          "position_label": "26"
+        },
+        {
+          "pad_id": "27",
+          "pad_kind": "io",
+          "physical_index": 27,
+          "position_label": "27"
+        },
+        {
+          "pad_id": "28",
+          "pad_kind": "power",
+          "physical_index": 28,
+          "position_label": "28"
+        },
+        {
+          "pad_id": "29",
+          "pad_kind": "ground",
+          "physical_index": 29,
+          "position_label": "29"
+        },
+        {
+          "pad_id": "30",
+          "pad_kind": "io",
+          "physical_index": 30,
+          "position_label": "30"
+        },
+        {
+          "pad_id": "31",
+          "pad_kind": "io",
+          "physical_index": 31,
+          "position_label": "31"
+        },
+        {
+          "pad_id": "32",
+          "pad_kind": "io",
+          "physical_index": 32,
+          "position_label": "32"
+        },
+        {
+          "pad_id": "33",
+          "pad_kind": "io",
+          "physical_index": 33,
+          "position_label": "33"
+        },
+        {
+          "pad_id": "34",
+          "pad_kind": "io",
+          "physical_index": 34,
+          "position_label": "34"
+        },
+        {
+          "pad_id": "35",
+          "pad_kind": "io",
+          "physical_index": 35,
+          "position_label": "35"
+        },
+        {
+          "pad_id": "36",
+          "pad_kind": "io",
+          "physical_index": 36,
+          "position_label": "36"
+        },
+        {
+          "pad_id": "37",
+          "pad_kind": "io",
+          "physical_index": 37,
+          "position_label": "37"
+        },
+        {
+          "pad_id": "38",
+          "pad_kind": "io",
+          "physical_index": 38,
+          "position_label": "38"
+        },
+        {
+          "pad_id": "39",
+          "pad_kind": "power",
+          "physical_index": 39,
+          "position_label": "39"
+        },
+        {
+          "pad_id": "40",
+          "pad_kind": "io",
+          "physical_index": 40,
+          "position_label": "40"
+        },
+        {
+          "pad_id": "41",
+          "pad_kind": "io",
+          "physical_index": 41,
+          "position_label": "41"
+        },
+        {
+          "pad_id": "42",
+          "pad_kind": "io",
+          "physical_index": 42,
+          "position_label": "42"
+        },
+        {
+          "pad_id": "43",
+          "pad_kind": "io",
+          "physical_index": 43,
+          "position_label": "43"
+        },
+        {
+          "pad_id": "44",
+          "pad_kind": "io",
+          "physical_index": 44,
+          "position_label": "44"
+        },
+        {
+          "pad_id": "45",
+          "pad_kind": "io",
+          "physical_index": 45,
+          "position_label": "45"
+        },
+        {
+          "pad_id": "46",
+          "pad_kind": "io",
+          "physical_index": 46,
+          "position_label": "46"
+        },
+        {
+          "pad_id": "47",
+          "pad_kind": "io",
+          "physical_index": 47,
+          "position_label": "47"
+        },
+        {
+          "pad_id": "48",
+          "pad_kind": "io",
+          "physical_index": 48,
+          "position_label": "48"
+        },
+        {
+          "pad_id": "49",
+          "pad_kind": "io",
+          "physical_index": 49,
+          "position_label": "49"
+        },
+        {
+          "pad_id": "50",
+          "pad_kind": "io",
+          "physical_index": 50,
+          "position_label": "50"
+        },
+        {
+          "pad_id": "51",
+          "pad_kind": "io",
+          "physical_index": 51,
+          "position_label": "51"
+        },
+        {
+          "pad_id": "52",
+          "pad_kind": "io",
+          "physical_index": 52,
+          "position_label": "52"
+        },
+        {
+          "pad_id": "53",
+          "pad_kind": "io",
+          "physical_index": 53,
+          "position_label": "53"
+        },
+        {
+          "pad_id": "54",
+          "pad_kind": "io",
+          "physical_index": 54,
+          "position_label": "54"
+        },
+        {
+          "pad_id": "55",
+          "pad_kind": "io",
+          "physical_index": 55,
+          "position_label": "55"
+        },
+        {
+          "pad_id": "56",
+          "pad_kind": "io",
+          "physical_index": 56,
+          "position_label": "56"
+        },
+        {
+          "pad_id": "57",
+          "pad_kind": "io",
+          "physical_index": 57,
+          "position_label": "57"
+        },
+        {
+          "pad_id": "58",
+          "pad_kind": "reset",
+          "physical_index": 58,
+          "position_label": "58"
+        },
+        {
+          "pad_id": "59",
+          "pad_kind": "io",
+          "physical_index": 59,
+          "position_label": "59"
+        },
+        {
+          "pad_id": "60",
+          "pad_kind": "signal",
+          "physical_index": 60,
+          "position_label": "60"
+        },
+        {
+          "pad_id": "61",
+          "pad_kind": "io",
+          "physical_index": 61,
+          "position_label": "61"
+        },
+        {
+          "pad_id": "62",
+          "pad_kind": "io",
+          "physical_index": 62,
+          "position_label": "62"
+        },
+        {
+          "pad_id": "63",
+          "pad_kind": "io",
+          "physical_index": 63,
+          "position_label": "63"
+        },
+        {
+          "pad_id": "64",
+          "pad_kind": "io",
+          "physical_index": 64,
+          "position_label": "64"
+        },
+        {
+          "pad_id": "65",
+          "pad_kind": "io",
+          "physical_index": 65,
+          "position_label": "65"
+        },
+        {
+          "pad_id": "66",
+          "pad_kind": "io",
+          "physical_index": 66,
+          "position_label": "66"
+        },
+        {
+          "pad_id": "67",
+          "pad_kind": "ground",
+          "physical_index": 67,
+          "position_label": "67"
+        },
+        {
+          "pad_id": "68",
+          "pad_kind": "power",
+          "physical_index": 68,
+          "position_label": "68"
+        },
+        {
+          "pad_id": "69",
+          "pad_kind": "io",
+          "physical_index": 69,
+          "position_label": "69"
+        },
+        {
+          "pad_id": "70",
+          "pad_kind": "io",
+          "physical_index": 70,
+          "position_label": "70"
+        },
+        {
+          "pad_id": "71",
+          "pad_kind": "io",
+          "physical_index": 71,
+          "position_label": "71"
+        },
+        {
+          "pad_id": "72",
+          "pad_kind": "io",
+          "physical_index": 72,
+          "position_label": "72"
+        },
+        {
+          "pad_id": "73",
+          "pad_kind": "debug",
+          "physical_index": 73,
+          "position_label": "73"
+        },
+        {
+          "pad_id": "74",
+          "pad_kind": "io",
+          "physical_index": 74,
+          "position_label": "74"
+        },
+        {
+          "pad_id": "75",
+          "pad_kind": "io",
+          "physical_index": 75,
+          "position_label": "75"
+        },
+        {
+          "pad_id": "76",
+          "pad_kind": "power",
+          "physical_index": 76,
+          "position_label": "76"
+        },
+        {
+          "pad_id": "77",
+          "pad_kind": "io",
+          "physical_index": 77,
+          "position_label": "77"
+        },
+        {
+          "pad_id": "78",
+          "pad_kind": "io",
+          "physical_index": 78,
+          "position_label": "78"
+        },
+        {
+          "pad_id": "79",
+          "pad_kind": "io",
+          "physical_index": 79,
+          "position_label": "79"
+        },
+        {
+          "pad_id": "80",
+          "pad_kind": "io",
+          "physical_index": 80,
+          "position_label": "80"
+        },
+        {
+          "pad_id": "81",
+          "pad_kind": "power",
+          "physical_index": 81,
+          "position_label": "81"
+        },
+        {
+          "pad_id": "82",
+          "pad_kind": "io",
+          "physical_index": 82,
+          "position_label": "82"
+        },
+        {
+          "pad_id": "83",
+          "pad_kind": "io",
+          "physical_index": 83,
+          "position_label": "83"
+        },
+        {
+          "pad_id": "84",
+          "pad_kind": "io",
+          "physical_index": 84,
+          "position_label": "84"
+        },
+        {
+          "pad_id": "85",
+          "pad_kind": "io",
+          "physical_index": 85,
+          "position_label": "85"
+        },
+        {
+          "pad_id": "86",
+          "pad_kind": "power",
+          "physical_index": 86,
+          "position_label": "86"
+        },
+        {
+          "pad_id": "87",
+          "pad_kind": "io",
+          "physical_index": 87,
+          "position_label": "87"
+        },
+        {
+          "pad_id": "88",
+          "pad_kind": "io",
+          "physical_index": 88,
+          "position_label": "88"
+        },
+        {
+          "pad_id": "89",
+          "pad_kind": "io",
+          "physical_index": 89,
+          "position_label": "89"
+        },
+        {
+          "pad_id": "90",
+          "pad_kind": "power",
+          "physical_index": 90,
+          "position_label": "90"
+        },
+        {
+          "pad_id": "91",
+          "pad_kind": "io",
+          "physical_index": 91,
+          "position_label": "91"
+        },
+        {
+          "pad_id": "92",
+          "pad_kind": "io",
+          "physical_index": 92,
+          "position_label": "92"
+        },
+        {
+          "pad_id": "93",
+          "pad_kind": "power",
+          "physical_index": 93,
+          "position_label": "93"
+        },
+        {
+          "pad_id": "94",
+          "pad_kind": "signal",
+          "physical_index": 94,
+          "position_label": "94"
+        },
+        {
+          "pad_id": "95",
+          "pad_kind": "signal",
+          "physical_index": 95,
+          "position_label": "95"
+        },
+        {
+          "pad_id": "96",
+          "pad_kind": "power",
+          "physical_index": 96,
+          "position_label": "96"
+        },
+        {
+          "pad_id": "97",
+          "pad_kind": "power",
+          "physical_index": 97,
+          "position_label": "97"
+        },
+        {
+          "pad_id": "98",
+          "pad_kind": "io",
+          "physical_index": 98,
+          "position_label": "98"
+        },
+        {
+          "pad_id": "99",
+          "pad_kind": "io",
+          "physical_index": 99,
+          "position_label": "99"
+        },
+        {
+          "pad_id": "100",
+          "pad_kind": "io",
+          "physical_index": 100,
+          "position_label": "100"
+        }
+      ],
+      "pin_count": 100,
+      "pinouts": [
+        {
+          "device": "atsame70n21b",
+          "package": "lqfp100",
+          "pin_constraints": [
+            {
+              "constraint_id": "constraint:PA0:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA0",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP0"
+            },
+            {
+              "constraint_id": "constraint:PA11:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA11",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP7"
+            },
+            {
+              "constraint_id": "constraint:PA14:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA14",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP8"
+            },
+            {
+              "constraint_id": "constraint:PA19:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA19",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP9"
+            },
+            {
+              "constraint_id": "constraint:PA1:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA1",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP1"
+            },
+            {
+              "constraint_id": "constraint:PA20:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA20",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP10"
+            },
+            {
+              "constraint_id": "constraint:PA2:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA2",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP2"
+            },
+            {
+              "constraint_id": "constraint:PA30:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA30",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP11"
+            },
+            {
+              "constraint_id": "constraint:PA4:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA4",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP3"
+            },
+            {
+              "constraint_id": "constraint:PA5:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA5",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP4"
+            },
+            {
+              "constraint_id": "constraint:PA9:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA9",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP6"
+            },
+            {
+              "constraint_id": "constraint:PB3:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PB3",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP12"
+            },
+            {
+              "constraint_id": "constraint:PB5:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PB5",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP13"
+            },
+            {
+              "constraint_id": "constraint:PD28:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PD28",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70n21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+              },
+              "value": "WKUP5"
+            }
+          ],
+          "pin_index": [
+            {
+              "constraint_ids": [
+                "constraint:PA0:wakeup-capable"
+              ],
+              "pad_ids": [
+                "72"
+              ],
+              "pin": "PA0"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA1:wakeup-capable"
+              ],
+              "pad_ids": [
+                "70"
+              ],
+              "pin": "PA1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "46"
+              ],
+              "pin": "PA10"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA11:wakeup-capable"
+              ],
+              "pad_ids": [
+                "44"
+              ],
+              "pin": "PA11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "48"
+              ],
+              "pin": "PA12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "27"
+              ],
+              "pin": "PA13"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA14:wakeup-capable"
+              ],
+              "pad_ids": [
+                "34"
+              ],
+              "pin": "PA14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "33"
+              ],
+              "pin": "PA15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "30"
+              ],
+              "pin": "PA16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "16"
+              ],
+              "pin": "PA17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "15"
+              ],
+              "pin": "PA18"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA19:wakeup-capable"
+              ],
+              "pad_ids": [
+                "14"
+              ],
+              "pin": "PA19"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA2:wakeup-capable"
+              ],
+              "pad_ids": [
+                "66"
+              ],
+              "pin": "PA2"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA20:wakeup-capable"
+              ],
+              "pad_ids": [
+                "13"
+              ],
+              "pin": "PA20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "21"
+              ],
+              "pin": "PA21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "26"
+              ],
+              "pin": "PA22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "31"
+              ],
+              "pin": "PA23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "38"
+              ],
+              "pin": "PA24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "40"
+              ],
+              "pin": "PA25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "42"
+              ],
+              "pin": "PA26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "50"
+              ],
+              "pin": "PA27"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "79"
+              ],
+              "pin": "PA28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "64"
+              ],
+              "pin": "PA3"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA30:wakeup-capable"
+              ],
+              "pad_ids": [
+                "82"
+              ],
+              "pin": "PA30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "83"
+              ],
+              "pin": "PA31"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA4:wakeup-capable"
+              ],
+              "pad_ids": [
+                "55"
+              ],
+              "pin": "PA4"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA5:wakeup-capable"
+              ],
+              "pad_ids": [
+                "52"
+              ],
+              "pin": "PA5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "24"
+              ],
+              "pin": "PA7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "25"
+              ],
+              "pin": "PA8"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA9:wakeup-capable"
+              ],
+              "pad_ids": [
+                "54"
+              ],
+              "pin": "PA9"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "12"
+              ],
+              "pin": "PB0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "11"
+              ],
+              "pin": "PB1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "61"
+              ],
+              "pin": "PB12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "100"
+              ],
+              "pin": "PB13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "17"
+              ],
+              "pin": "PB2"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PB3:wakeup-capable"
+              ],
+              "pad_ids": [
+                "20"
+              ],
+              "pin": "PB3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "74"
+              ],
+              "pin": "PB4"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PB5:wakeup-capable"
+              ],
+              "pad_ids": [
+                "77"
+              ],
+              "pin": "PB5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "57"
+              ],
+              "pin": "PB6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "63"
+              ],
+              "pin": "PB7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "98"
+              ],
+              "pin": "PB8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "99"
+              ],
+              "pin": "PB9"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "1"
+              ],
+              "pin": "PD0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "92"
+              ],
+              "pin": "PD1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "71"
+              ],
+              "pin": "PD10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "69"
+              ],
+              "pin": "PD11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "65"
+              ],
+              "pin": "PD12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "62"
+              ],
+              "pin": "PD13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "59"
+              ],
+              "pin": "PD14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "75"
+              ],
+              "pin": "PD15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "56"
+              ],
+              "pin": "PD16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "53"
+              ],
+              "pin": "PD17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "49"
+              ],
+              "pin": "PD18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "47"
+              ],
+              "pin": "PD19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "91"
+              ],
+              "pin": "PD2"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "45"
+              ],
+              "pin": "PD20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "43"
+              ],
+              "pin": "PD21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "41"
+              ],
+              "pin": "PD22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "37"
+              ],
+              "pin": "PD24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "35"
+              ],
+              "pin": "PD25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "36"
+              ],
+              "pin": "PD26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "32"
+              ],
+              "pin": "PD27"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PD28:wakeup-capable"
+              ],
+              "pad_ids": [
+                "51"
+              ],
+              "pin": "PD28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "89"
+              ],
+              "pin": "PD3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "23"
+              ],
+              "pin": "PD30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "2"
+              ],
+              "pin": "PD31"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "88"
+              ],
+              "pin": "PD4"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "87"
+              ],
+              "pin": "PD5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "85"
+              ],
+              "pin": "PD6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "84"
+              ],
+              "pin": "PD7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "80"
+              ],
+              "pin": "PD8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "78"
+              ],
+              "pin": "PD9"
+            }
+          ],
+          "pinout": [
+            {
+              "bonded_pin": "PD0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "1",
+              "pad_kind": "io",
+              "physical_index": 1,
+              "position_label": "1"
+            },
+            {
+              "bonded_pin": "PD31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "2",
+              "pad_kind": "io",
+              "physical_index": 2,
+              "position_label": "2"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "3",
+              "pad_kind": "ground",
+              "physical_index": 3,
+              "position_label": "3"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "4",
+              "pad_kind": "power",
+              "physical_index": 4,
+              "position_label": "4"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "5",
+              "pad_kind": "power",
+              "physical_index": 5,
+              "position_label": "5"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "6",
+              "pad_kind": "power",
+              "physical_index": 6,
+              "position_label": "6"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "7",
+              "pad_kind": "ground",
+              "physical_index": 7,
+              "position_label": "7"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "8",
+              "pad_kind": "ground",
+              "physical_index": 8,
+              "position_label": "8"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "9",
+              "pad_kind": "power",
+              "physical_index": 9,
+              "position_label": "9"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "10",
+              "pad_kind": "ground",
+              "physical_index": 10,
+              "position_label": "10"
+            },
+            {
+              "bonded_pin": "PB1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "11",
+              "pad_kind": "io",
+              "physical_index": 11,
+              "position_label": "11"
+            },
+            {
+              "bonded_pin": "PB0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "12",
+              "pad_kind": "io",
+              "physical_index": 12,
+              "position_label": "12"
+            },
+            {
+              "bonded_pin": "PA20",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA20:wakeup-capable"
+              ],
+              "pad_id": "13",
+              "pad_kind": "io",
+              "physical_index": 13,
+              "position_label": "13"
+            },
+            {
+              "bonded_pin": "PA19",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA19:wakeup-capable"
+              ],
+              "pad_id": "14",
+              "pad_kind": "io",
+              "physical_index": 14,
+              "position_label": "14"
+            },
+            {
+              "bonded_pin": "PA18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "15",
+              "pad_kind": "io",
+              "physical_index": 15,
+              "position_label": "15"
+            },
+            {
+              "bonded_pin": "PA17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "16",
+              "pad_kind": "io",
+              "physical_index": 16,
+              "position_label": "16"
+            },
+            {
+              "bonded_pin": "PB2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "17",
+              "pad_kind": "io",
+              "physical_index": 17,
+              "position_label": "17"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "18",
+              "pad_kind": "power",
+              "physical_index": 18,
+              "position_label": "18"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "19",
+              "pad_kind": "power",
+              "physical_index": 19,
+              "position_label": "19"
+            },
+            {
+              "bonded_pin": "PB3",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PB3:wakeup-capable"
+              ],
+              "pad_id": "20",
+              "pad_kind": "io",
+              "physical_index": 20,
+              "position_label": "20"
+            },
+            {
+              "bonded_pin": "PA21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "21",
+              "pad_kind": "io",
+              "physical_index": 21,
+              "position_label": "21"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "22",
+              "pad_kind": "power",
+              "physical_index": 22,
+              "position_label": "22"
+            },
+            {
+              "bonded_pin": "PD30",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "23",
+              "pad_kind": "io",
+              "physical_index": 23,
+              "position_label": "23"
+            },
+            {
+              "bonded_pin": "PA7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "24",
+              "pad_kind": "io",
+              "physical_index": 24,
+              "position_label": "24"
+            },
+            {
+              "bonded_pin": "PA8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "25",
+              "pad_kind": "io",
+              "physical_index": 25,
+              "position_label": "25"
+            },
+            {
+              "bonded_pin": "PA22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "26",
+              "pad_kind": "io",
+              "physical_index": 26,
+              "position_label": "26"
+            },
+            {
+              "bonded_pin": "PA13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "27",
+              "pad_kind": "io",
+              "physical_index": 27,
+              "position_label": "27"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "28",
+              "pad_kind": "power",
+              "physical_index": 28,
+              "position_label": "28"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "29",
+              "pad_kind": "ground",
+              "physical_index": 29,
+              "position_label": "29"
+            },
+            {
+              "bonded_pin": "PA16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "30",
+              "pad_kind": "io",
+              "physical_index": 30,
+              "position_label": "30"
+            },
+            {
+              "bonded_pin": "PA23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "31",
+              "pad_kind": "io",
+              "physical_index": 31,
+              "position_label": "31"
+            },
+            {
+              "bonded_pin": "PD27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "32",
+              "pad_kind": "io",
+              "physical_index": 32,
+              "position_label": "32"
+            },
+            {
+              "bonded_pin": "PA15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "33",
+              "pad_kind": "io",
+              "physical_index": 33,
+              "position_label": "33"
+            },
+            {
+              "bonded_pin": "PA14",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA14:wakeup-capable"
+              ],
+              "pad_id": "34",
+              "pad_kind": "io",
+              "physical_index": 34,
+              "position_label": "34"
+            },
+            {
+              "bonded_pin": "PD25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "35",
+              "pad_kind": "io",
+              "physical_index": 35,
+              "position_label": "35"
+            },
+            {
+              "bonded_pin": "PD26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "36",
+              "pad_kind": "io",
+              "physical_index": 36,
+              "position_label": "36"
+            },
+            {
+              "bonded_pin": "PD24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "37",
+              "pad_kind": "io",
+              "physical_index": 37,
+              "position_label": "37"
+            },
+            {
+              "bonded_pin": "PA24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "38",
+              "pad_kind": "io",
+              "physical_index": 38,
+              "position_label": "38"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "39",
+              "pad_kind": "power",
+              "physical_index": 39,
+              "position_label": "39"
+            },
+            {
+              "bonded_pin": "PA25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "40",
+              "pad_kind": "io",
+              "physical_index": 40,
+              "position_label": "40"
+            },
+            {
+              "bonded_pin": "PD22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "41",
+              "pad_kind": "io",
+              "physical_index": 41,
+              "position_label": "41"
+            },
+            {
+              "bonded_pin": "PA26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "42",
+              "pad_kind": "io",
+              "physical_index": 42,
+              "position_label": "42"
+            },
+            {
+              "bonded_pin": "PD21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "43",
+              "pad_kind": "io",
+              "physical_index": 43,
+              "position_label": "43"
+            },
+            {
+              "bonded_pin": "PA11",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA11:wakeup-capable"
+              ],
+              "pad_id": "44",
+              "pad_kind": "io",
+              "physical_index": 44,
+              "position_label": "44"
+            },
+            {
+              "bonded_pin": "PD20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "45",
+              "pad_kind": "io",
+              "physical_index": 45,
+              "position_label": "45"
+            },
+            {
+              "bonded_pin": "PA10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "46",
+              "pad_kind": "io",
+              "physical_index": 46,
+              "position_label": "46"
+            },
+            {
+              "bonded_pin": "PD19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "47",
+              "pad_kind": "io",
+              "physical_index": 47,
+              "position_label": "47"
+            },
+            {
+              "bonded_pin": "PA12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "48",
+              "pad_kind": "io",
+              "physical_index": 48,
+              "position_label": "48"
+            },
+            {
+              "bonded_pin": "PD18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "49",
+              "pad_kind": "io",
+              "physical_index": 49,
+              "position_label": "49"
+            },
+            {
+              "bonded_pin": "PA27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "50",
+              "pad_kind": "io",
+              "physical_index": 50,
+              "position_label": "50"
+            },
+            {
+              "bonded_pin": "PD28",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PD28:wakeup-capable"
+              ],
+              "pad_id": "51",
+              "pad_kind": "io",
+              "physical_index": 51,
+              "position_label": "51"
+            },
+            {
+              "bonded_pin": "PA5",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA5:wakeup-capable"
+              ],
+              "pad_id": "52",
+              "pad_kind": "io",
+              "physical_index": 52,
+              "position_label": "52"
+            },
+            {
+              "bonded_pin": "PD17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "53",
+              "pad_kind": "io",
+              "physical_index": 53,
+              "position_label": "53"
+            },
+            {
+              "bonded_pin": "PA9",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA9:wakeup-capable"
+              ],
+              "pad_id": "54",
+              "pad_kind": "io",
+              "physical_index": 54,
+              "position_label": "54"
+            },
+            {
+              "bonded_pin": "PA4",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA4:wakeup-capable"
+              ],
+              "pad_id": "55",
+              "pad_kind": "io",
+              "physical_index": 55,
+              "position_label": "55"
+            },
+            {
+              "bonded_pin": "PD16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "56",
+              "pad_kind": "io",
+              "physical_index": 56,
+              "position_label": "56"
+            },
+            {
+              "bonded_pin": "PB6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "57",
+              "pad_kind": "io",
+              "physical_index": 57,
+              "position_label": "57"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "58",
+              "pad_kind": "reset",
+              "physical_index": 58,
+              "position_label": "58"
+            },
+            {
+              "bonded_pin": "PD14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "59",
+              "pad_kind": "io",
+              "physical_index": 59,
+              "position_label": "59"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "60",
+              "pad_kind": "signal",
+              "physical_index": 60,
+              "position_label": "60"
+            },
+            {
+              "bonded_pin": "PB12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "61",
+              "pad_kind": "io",
+              "physical_index": 61,
+              "position_label": "61"
+            },
+            {
+              "bonded_pin": "PD13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "62",
+              "pad_kind": "io",
+              "physical_index": 62,
+              "position_label": "62"
+            },
+            {
+              "bonded_pin": "PB7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "63",
+              "pad_kind": "io",
+              "physical_index": 63,
+              "position_label": "63"
+            },
+            {
+              "bonded_pin": "PA3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "64",
+              "pad_kind": "io",
+              "physical_index": 64,
+              "position_label": "64"
+            },
+            {
+              "bonded_pin": "PD12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "65",
+              "pad_kind": "io",
+              "physical_index": 65,
+              "position_label": "65"
+            },
+            {
+              "bonded_pin": "PA2",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA2:wakeup-capable"
+              ],
+              "pad_id": "66",
+              "pad_kind": "io",
+              "physical_index": 66,
+              "position_label": "66"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "67",
+              "pad_kind": "ground",
+              "physical_index": 67,
+              "position_label": "67"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "68",
+              "pad_kind": "power",
+              "physical_index": 68,
+              "position_label": "68"
+            },
+            {
+              "bonded_pin": "PD11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "69",
+              "pad_kind": "io",
+              "physical_index": 69,
+              "position_label": "69"
+            },
+            {
+              "bonded_pin": "PA1",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA1:wakeup-capable"
+              ],
+              "pad_id": "70",
+              "pad_kind": "io",
+              "physical_index": 70,
+              "position_label": "70"
+            },
+            {
+              "bonded_pin": "PD10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "71",
+              "pad_kind": "io",
+              "physical_index": 71,
+              "position_label": "71"
+            },
+            {
+              "bonded_pin": "PA0",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA0:wakeup-capable"
+              ],
+              "pad_id": "72",
+              "pad_kind": "io",
+              "physical_index": 72,
+              "position_label": "72"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "73",
+              "pad_kind": "debug",
+              "physical_index": 73,
+              "position_label": "73"
+            },
+            {
+              "bonded_pin": "PB4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "74",
+              "pad_kind": "io",
+              "physical_index": 74,
+              "position_label": "74"
+            },
+            {
+              "bonded_pin": "PD15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "75",
+              "pad_kind": "io",
+              "physical_index": 75,
+              "position_label": "75"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "76",
+              "pad_kind": "power",
+              "physical_index": 76,
+              "position_label": "76"
+            },
+            {
+              "bonded_pin": "PB5",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PB5:wakeup-capable"
+              ],
+              "pad_id": "77",
+              "pad_kind": "io",
+              "physical_index": 77,
+              "position_label": "77"
+            },
+            {
+              "bonded_pin": "PD9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "78",
+              "pad_kind": "io",
+              "physical_index": 78,
+              "position_label": "78"
+            },
+            {
+              "bonded_pin": "PA28",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "79",
+              "pad_kind": "io",
+              "physical_index": 79,
+              "position_label": "79"
+            },
+            {
+              "bonded_pin": "PD8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "80",
+              "pad_kind": "io",
+              "physical_index": 80,
+              "position_label": "80"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "81",
+              "pad_kind": "power",
+              "physical_index": 81,
+              "position_label": "81"
+            },
+            {
+              "bonded_pin": "PA30",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA30:wakeup-capable"
+              ],
+              "pad_id": "82",
+              "pad_kind": "io",
+              "physical_index": 82,
+              "position_label": "82"
+            },
+            {
+              "bonded_pin": "PA31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "83",
+              "pad_kind": "io",
+              "physical_index": 83,
+              "position_label": "83"
+            },
+            {
+              "bonded_pin": "PD7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "84",
+              "pad_kind": "io",
+              "physical_index": 84,
+              "position_label": "84"
+            },
+            {
+              "bonded_pin": "PD6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "85",
+              "pad_kind": "io",
+              "physical_index": 85,
+              "position_label": "85"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "86",
+              "pad_kind": "power",
+              "physical_index": 86,
+              "position_label": "86"
+            },
+            {
+              "bonded_pin": "PD5",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "87",
+              "pad_kind": "io",
+              "physical_index": 87,
+              "position_label": "87"
+            },
+            {
+              "bonded_pin": "PD4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "88",
+              "pad_kind": "io",
+              "physical_index": 88,
+              "position_label": "88"
+            },
+            {
+              "bonded_pin": "PD3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "89",
+              "pad_kind": "io",
+              "physical_index": 89,
+              "position_label": "89"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "90",
+              "pad_kind": "power",
+              "physical_index": 90,
+              "position_label": "90"
+            },
+            {
+              "bonded_pin": "PD2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "91",
+              "pad_kind": "io",
+              "physical_index": 91,
+              "position_label": "91"
+            },
+            {
+              "bonded_pin": "PD1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "92",
+              "pad_kind": "io",
+              "physical_index": 92,
+              "position_label": "92"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "93",
+              "pad_kind": "power",
+              "physical_index": 93,
+              "position_label": "93"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "94",
+              "pad_kind": "signal",
+              "physical_index": 94,
+              "position_label": "94"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "95",
+              "pad_kind": "signal",
+              "physical_index": 95,
+              "position_label": "95"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "96",
+              "pad_kind": "power",
+              "physical_index": 96,
+              "position_label": "96"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "97",
+              "pad_kind": "power",
+              "physical_index": 97,
+              "position_label": "97"
+            },
+            {
+              "bonded_pin": "PB8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "98",
+              "pad_kind": "io",
+              "physical_index": 98,
+              "position_label": "98"
+            },
+            {
+              "bonded_pin": "PB9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "99",
+              "pad_kind": "io",
+              "physical_index": 99,
+              "position_label": "99"
+            },
+            {
+              "bonded_pin": "PB13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "100",
+              "pad_kind": "io",
+              "physical_index": 100,
+              "position_label": "100"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70n21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/atdf/ATSAME70N21B.atdf"
+      }
+    },
+    {
+      "devices": [
+        "atsame70q21b"
+      ],
+      "name": "lqfp144",
+      "pads": [
+        {
+          "pad_id": "1",
+          "pad_kind": "io",
+          "physical_index": 1,
+          "position_label": "1"
+        },
+        {
+          "pad_id": "2",
+          "pad_kind": "io",
+          "physical_index": 2,
+          "position_label": "2"
+        },
+        {
+          "pad_id": "3",
+          "pad_kind": "power",
+          "physical_index": 3,
+          "position_label": "3"
+        },
+        {
+          "pad_id": "4",
+          "pad_kind": "io",
+          "physical_index": 4,
+          "position_label": "4"
+        },
+        {
+          "pad_id": "5",
+          "pad_kind": "power",
+          "physical_index": 5,
+          "position_label": "5"
+        },
+        {
+          "pad_id": "6",
+          "pad_kind": "io",
+          "physical_index": 6,
+          "position_label": "6"
+        },
+        {
+          "pad_id": "7",
+          "pad_kind": "io",
+          "physical_index": 7,
+          "position_label": "7"
+        },
+        {
+          "pad_id": "8",
+          "pad_kind": "power",
+          "physical_index": 8,
+          "position_label": "8"
+        },
+        {
+          "pad_id": "9",
+          "pad_kind": "power",
+          "physical_index": 9,
+          "position_label": "9"
+        },
+        {
+          "pad_id": "10",
+          "pad_kind": "io",
+          "physical_index": 10,
+          "position_label": "10"
+        },
+        {
+          "pad_id": "11",
+          "pad_kind": "io",
+          "physical_index": 11,
+          "position_label": "11"
+        },
+        {
+          "pad_id": "12",
+          "pad_kind": "io",
+          "physical_index": 12,
+          "position_label": "12"
+        },
+        {
+          "pad_id": "13",
+          "pad_kind": "io",
+          "physical_index": 13,
+          "position_label": "13"
+        },
+        {
+          "pad_id": "14",
+          "pad_kind": "io",
+          "physical_index": 14,
+          "position_label": "14"
+        },
+        {
+          "pad_id": "15",
+          "pad_kind": "io",
+          "physical_index": 15,
+          "position_label": "15"
+        },
+        {
+          "pad_id": "16",
+          "pad_kind": "io",
+          "physical_index": 16,
+          "position_label": "16"
+        },
+        {
+          "pad_id": "17",
+          "pad_kind": "io",
+          "physical_index": 17,
+          "position_label": "17"
+        },
+        {
+          "pad_id": "18",
+          "pad_kind": "io",
+          "physical_index": 18,
+          "position_label": "18"
+        },
+        {
+          "pad_id": "19",
+          "pad_kind": "io",
+          "physical_index": 19,
+          "position_label": "19"
+        },
+        {
+          "pad_id": "20",
+          "pad_kind": "io",
+          "physical_index": 20,
+          "position_label": "20"
+        },
+        {
+          "pad_id": "21",
+          "pad_kind": "io",
+          "physical_index": 21,
+          "position_label": "21"
+        },
+        {
+          "pad_id": "22",
+          "pad_kind": "io",
+          "physical_index": 22,
+          "position_label": "22"
+        },
+        {
+          "pad_id": "23",
+          "pad_kind": "io",
+          "physical_index": 23,
+          "position_label": "23"
+        },
+        {
+          "pad_id": "24",
+          "pad_kind": "io",
+          "physical_index": 24,
+          "position_label": "24"
+        },
+        {
+          "pad_id": "25",
+          "pad_kind": "io",
+          "physical_index": 25,
+          "position_label": "25"
+        },
+        {
+          "pad_id": "26",
+          "pad_kind": "io",
+          "physical_index": 26,
+          "position_label": "26"
+        },
+        {
+          "pad_id": "27",
+          "pad_kind": "io",
+          "physical_index": 27,
+          "position_label": "27"
+        },
+        {
+          "pad_id": "28",
+          "pad_kind": "io",
+          "physical_index": 28,
+          "position_label": "28"
+        },
+        {
+          "pad_id": "29",
+          "pad_kind": "power",
+          "physical_index": 29,
+          "position_label": "29"
+        },
+        {
+          "pad_id": "30",
+          "pad_kind": "power",
+          "physical_index": 30,
+          "position_label": "30"
+        },
+        {
+          "pad_id": "31",
+          "pad_kind": "io",
+          "physical_index": 31,
+          "position_label": "31"
+        },
+        {
+          "pad_id": "32",
+          "pad_kind": "io",
+          "physical_index": 32,
+          "position_label": "32"
+        },
+        {
+          "pad_id": "33",
+          "pad_kind": "power",
+          "physical_index": 33,
+          "position_label": "33"
+        },
+        {
+          "pad_id": "34",
+          "pad_kind": "io",
+          "physical_index": 34,
+          "position_label": "34"
+        },
+        {
+          "pad_id": "35",
+          "pad_kind": "io",
+          "physical_index": 35,
+          "position_label": "35"
+        },
+        {
+          "pad_id": "36",
+          "pad_kind": "io",
+          "physical_index": 36,
+          "position_label": "36"
+        },
+        {
+          "pad_id": "37",
+          "pad_kind": "io",
+          "physical_index": 37,
+          "position_label": "37"
+        },
+        {
+          "pad_id": "38",
+          "pad_kind": "io",
+          "physical_index": 38,
+          "position_label": "38"
+        },
+        {
+          "pad_id": "39",
+          "pad_kind": "io",
+          "physical_index": 39,
+          "position_label": "39"
+        },
+        {
+          "pad_id": "40",
+          "pad_kind": "io",
+          "physical_index": 40,
+          "position_label": "40"
+        },
+        {
+          "pad_id": "41",
+          "pad_kind": "io",
+          "physical_index": 41,
+          "position_label": "41"
+        },
+        {
+          "pad_id": "42",
+          "pad_kind": "io",
+          "physical_index": 42,
+          "position_label": "42"
+        },
+        {
+          "pad_id": "43",
+          "pad_kind": "power",
+          "physical_index": 43,
+          "position_label": "43"
+        },
+        {
+          "pad_id": "44",
+          "pad_kind": "ground",
+          "physical_index": 44,
+          "position_label": "44"
+        },
+        {
+          "pad_id": "45",
+          "pad_kind": "io",
+          "physical_index": 45,
+          "position_label": "45"
+        },
+        {
+          "pad_id": "46",
+          "pad_kind": "io",
+          "physical_index": 46,
+          "position_label": "46"
+        },
+        {
+          "pad_id": "47",
+          "pad_kind": "io",
+          "physical_index": 47,
+          "position_label": "47"
+        },
+        {
+          "pad_id": "48",
+          "pad_kind": "io",
+          "physical_index": 48,
+          "position_label": "48"
+        },
+        {
+          "pad_id": "49",
+          "pad_kind": "io",
+          "physical_index": 49,
+          "position_label": "49"
+        },
+        {
+          "pad_id": "50",
+          "pad_kind": "power",
+          "physical_index": 50,
+          "position_label": "50"
+        },
+        {
+          "pad_id": "51",
+          "pad_kind": "io",
+          "physical_index": 51,
+          "position_label": "51"
+        },
+        {
+          "pad_id": "52",
+          "pad_kind": "io",
+          "physical_index": 52,
+          "position_label": "52"
+        },
+        {
+          "pad_id": "53",
+          "pad_kind": "io",
+          "physical_index": 53,
+          "position_label": "53"
+        },
+        {
+          "pad_id": "54",
+          "pad_kind": "io",
+          "physical_index": 54,
+          "position_label": "54"
+        },
+        {
+          "pad_id": "55",
+          "pad_kind": "io",
+          "physical_index": 55,
+          "position_label": "55"
+        },
+        {
+          "pad_id": "56",
+          "pad_kind": "io",
+          "physical_index": 56,
+          "position_label": "56"
+        },
+        {
+          "pad_id": "57",
+          "pad_kind": "io",
+          "physical_index": 57,
+          "position_label": "57"
+        },
+        {
+          "pad_id": "58",
+          "pad_kind": "io",
+          "physical_index": 58,
+          "position_label": "58"
+        },
+        {
+          "pad_id": "59",
+          "pad_kind": "io",
+          "physical_index": 59,
+          "position_label": "59"
+        },
+        {
+          "pad_id": "60",
+          "pad_kind": "io",
+          "physical_index": 60,
+          "position_label": "60"
+        },
+        {
+          "pad_id": "61",
+          "pad_kind": "ground",
+          "physical_index": 61,
+          "position_label": "61"
+        },
+        {
+          "pad_id": "62",
+          "pad_kind": "io",
+          "physical_index": 62,
+          "position_label": "62"
+        },
+        {
+          "pad_id": "63",
+          "pad_kind": "io",
+          "physical_index": 63,
+          "position_label": "63"
+        },
+        {
+          "pad_id": "64",
+          "pad_kind": "io",
+          "physical_index": 64,
+          "position_label": "64"
+        },
+        {
+          "pad_id": "65",
+          "pad_kind": "io",
+          "physical_index": 65,
+          "position_label": "65"
+        },
+        {
+          "pad_id": "66",
+          "pad_kind": "io",
+          "physical_index": 66,
+          "position_label": "66"
+        },
+        {
+          "pad_id": "67",
+          "pad_kind": "io",
+          "physical_index": 67,
+          "position_label": "67"
+        },
+        {
+          "pad_id": "68",
+          "pad_kind": "io",
+          "physical_index": 68,
+          "position_label": "68"
+        },
+        {
+          "pad_id": "69",
+          "pad_kind": "io",
+          "physical_index": 69,
+          "position_label": "69"
+        },
+        {
+          "pad_id": "70",
+          "pad_kind": "io",
+          "physical_index": 70,
+          "position_label": "70"
+        },
+        {
+          "pad_id": "71",
+          "pad_kind": "io",
+          "physical_index": 71,
+          "position_label": "71"
+        },
+        {
+          "pad_id": "72",
+          "pad_kind": "power",
+          "physical_index": 72,
+          "position_label": "72"
+        },
+        {
+          "pad_id": "73",
+          "pad_kind": "io",
+          "physical_index": 73,
+          "position_label": "73"
+        },
+        {
+          "pad_id": "74",
+          "pad_kind": "io",
+          "physical_index": 74,
+          "position_label": "74"
+        },
+        {
+          "pad_id": "75",
+          "pad_kind": "io",
+          "physical_index": 75,
+          "position_label": "75"
+        },
+        {
+          "pad_id": "76",
+          "pad_kind": "io",
+          "physical_index": 76,
+          "position_label": "76"
+        },
+        {
+          "pad_id": "77",
+          "pad_kind": "io",
+          "physical_index": 77,
+          "position_label": "77"
+        },
+        {
+          "pad_id": "78",
+          "pad_kind": "io",
+          "physical_index": 78,
+          "position_label": "78"
+        },
+        {
+          "pad_id": "79",
+          "pad_kind": "io",
+          "physical_index": 79,
+          "position_label": "79"
+        },
+        {
+          "pad_id": "80",
+          "pad_kind": "power",
+          "physical_index": 80,
+          "position_label": "80"
+        },
+        {
+          "pad_id": "81",
+          "pad_kind": "power",
+          "physical_index": 81,
+          "position_label": "81"
+        },
+        {
+          "pad_id": "82",
+          "pad_kind": "io",
+          "physical_index": 82,
+          "position_label": "82"
+        },
+        {
+          "pad_id": "83",
+          "pad_kind": "reset",
+          "physical_index": 83,
+          "position_label": "83"
+        },
+        {
+          "pad_id": "84",
+          "pad_kind": "io",
+          "physical_index": 84,
+          "position_label": "84"
+        },
+        {
+          "pad_id": "85",
+          "pad_kind": "signal",
+          "physical_index": 85,
+          "position_label": "85"
+        },
+        {
+          "pad_id": "86",
+          "pad_kind": "io",
+          "physical_index": 86,
+          "position_label": "86"
+        },
+        {
+          "pad_id": "87",
+          "pad_kind": "io",
+          "physical_index": 87,
+          "position_label": "87"
+        },
+        {
+          "pad_id": "88",
+          "pad_kind": "io",
+          "physical_index": 88,
+          "position_label": "88"
+        },
+        {
+          "pad_id": "89",
+          "pad_kind": "io",
+          "physical_index": 89,
+          "position_label": "89"
+        },
+        {
+          "pad_id": "90",
+          "pad_kind": "io",
+          "physical_index": 90,
+          "position_label": "90"
+        },
+        {
+          "pad_id": "91",
+          "pad_kind": "io",
+          "physical_index": 91,
+          "position_label": "91"
+        },
+        {
+          "pad_id": "92",
+          "pad_kind": "io",
+          "physical_index": 92,
+          "position_label": "92"
+        },
+        {
+          "pad_id": "93",
+          "pad_kind": "io",
+          "physical_index": 93,
+          "position_label": "93"
+        },
+        {
+          "pad_id": "94",
+          "pad_kind": "io",
+          "physical_index": 94,
+          "position_label": "94"
+        },
+        {
+          "pad_id": "95",
+          "pad_kind": "ground",
+          "physical_index": 95,
+          "position_label": "95"
+        },
+        {
+          "pad_id": "96",
+          "pad_kind": "power",
+          "physical_index": 96,
+          "position_label": "96"
+        },
+        {
+          "pad_id": "97",
+          "pad_kind": "io",
+          "physical_index": 97,
+          "position_label": "97"
+        },
+        {
+          "pad_id": "98",
+          "pad_kind": "io",
+          "physical_index": 98,
+          "position_label": "98"
+        },
+        {
+          "pad_id": "99",
+          "pad_kind": "io",
+          "physical_index": 99,
+          "position_label": "99"
+        },
+        {
+          "pad_id": "100",
+          "pad_kind": "io",
+          "physical_index": 100,
+          "position_label": "100"
+        },
+        {
+          "pad_id": "101",
+          "pad_kind": "io",
+          "physical_index": 101,
+          "position_label": "101"
+        },
+        {
+          "pad_id": "102",
+          "pad_kind": "io",
+          "physical_index": 102,
+          "position_label": "102"
+        },
+        {
+          "pad_id": "103",
+          "pad_kind": "io",
+          "physical_index": 103,
+          "position_label": "103"
+        },
+        {
+          "pad_id": "104",
+          "pad_kind": "debug",
+          "physical_index": 104,
+          "position_label": "104"
+        },
+        {
+          "pad_id": "105",
+          "pad_kind": "io",
+          "physical_index": 105,
+          "position_label": "105"
+        },
+        {
+          "pad_id": "106",
+          "pad_kind": "io",
+          "physical_index": 106,
+          "position_label": "106"
+        },
+        {
+          "pad_id": "107",
+          "pad_kind": "power",
+          "physical_index": 107,
+          "position_label": "107"
+        },
+        {
+          "pad_id": "108",
+          "pad_kind": "io",
+          "physical_index": 108,
+          "position_label": "108"
+        },
+        {
+          "pad_id": "109",
+          "pad_kind": "io",
+          "physical_index": 109,
+          "position_label": "109"
+        },
+        {
+          "pad_id": "110",
+          "pad_kind": "io",
+          "physical_index": 110,
+          "position_label": "110"
+        },
+        {
+          "pad_id": "111",
+          "pad_kind": "io",
+          "physical_index": 111,
+          "position_label": "111"
+        },
+        {
+          "pad_id": "112",
+          "pad_kind": "io",
+          "physical_index": 112,
+          "position_label": "112"
+        },
+        {
+          "pad_id": "113",
+          "pad_kind": "io",
+          "physical_index": 113,
+          "position_label": "113"
+        },
+        {
+          "pad_id": "114",
+          "pad_kind": "io",
+          "physical_index": 114,
+          "position_label": "114"
+        },
+        {
+          "pad_id": "115",
+          "pad_kind": "ground",
+          "physical_index": 115,
+          "position_label": "115"
+        },
+        {
+          "pad_id": "116",
+          "pad_kind": "io",
+          "physical_index": 116,
+          "position_label": "116"
+        },
+        {
+          "pad_id": "117",
+          "pad_kind": "io",
+          "physical_index": 117,
+          "position_label": "117"
+        },
+        {
+          "pad_id": "118",
+          "pad_kind": "io",
+          "physical_index": 118,
+          "position_label": "118"
+        },
+        {
+          "pad_id": "119",
+          "pad_kind": "io",
+          "physical_index": 119,
+          "position_label": "119"
+        },
+        {
+          "pad_id": "120",
+          "pad_kind": "io",
+          "physical_index": 120,
+          "position_label": "120"
+        },
+        {
+          "pad_id": "121",
+          "pad_kind": "io",
+          "physical_index": 121,
+          "position_label": "121"
+        },
+        {
+          "pad_id": "122",
+          "pad_kind": "io",
+          "physical_index": 122,
+          "position_label": "122"
+        },
+        {
+          "pad_id": "123",
+          "pad_kind": "power",
+          "physical_index": 123,
+          "position_label": "123"
+        },
+        {
+          "pad_id": "124",
+          "pad_kind": "io",
+          "physical_index": 124,
+          "position_label": "124"
+        },
+        {
+          "pad_id": "125",
+          "pad_kind": "io",
+          "physical_index": 125,
+          "position_label": "125"
+        },
+        {
+          "pad_id": "126",
+          "pad_kind": "io",
+          "physical_index": 126,
+          "position_label": "126"
+        },
+        {
+          "pad_id": "127",
+          "pad_kind": "io",
+          "physical_index": 127,
+          "position_label": "127"
+        },
+        {
+          "pad_id": "128",
+          "pad_kind": "io",
+          "physical_index": 128,
+          "position_label": "128"
+        },
+        {
+          "pad_id": "129",
+          "pad_kind": "io",
+          "physical_index": 129,
+          "position_label": "129"
+        },
+        {
+          "pad_id": "130",
+          "pad_kind": "io",
+          "physical_index": 130,
+          "position_label": "130"
+        },
+        {
+          "pad_id": "131",
+          "pad_kind": "io",
+          "physical_index": 131,
+          "position_label": "131"
+        },
+        {
+          "pad_id": "132",
+          "pad_kind": "io",
+          "physical_index": 132,
+          "position_label": "132"
+        },
+        {
+          "pad_id": "133",
+          "pad_kind": "io",
+          "physical_index": 133,
+          "position_label": "133"
+        },
+        {
+          "pad_id": "134",
+          "pad_kind": "power",
+          "physical_index": 134,
+          "position_label": "134"
+        },
+        {
+          "pad_id": "135",
+          "pad_kind": "ground",
+          "physical_index": 135,
+          "position_label": "135"
+        },
+        {
+          "pad_id": "136",
+          "pad_kind": "signal",
+          "physical_index": 136,
+          "position_label": "136"
+        },
+        {
+          "pad_id": "137",
+          "pad_kind": "signal",
+          "physical_index": 137,
+          "position_label": "137"
+        },
+        {
+          "pad_id": "138",
+          "pad_kind": "ground",
+          "physical_index": 138,
+          "position_label": "138"
+        },
+        {
+          "pad_id": "139",
+          "pad_kind": "power",
+          "physical_index": 139,
+          "position_label": "139"
+        },
+        {
+          "pad_id": "140",
+          "pad_kind": "power",
+          "physical_index": 140,
+          "position_label": "140"
+        },
+        {
+          "pad_id": "141",
+          "pad_kind": "io",
+          "physical_index": 141,
+          "position_label": "141"
+        },
+        {
+          "pad_id": "142",
+          "pad_kind": "io",
+          "physical_index": 142,
+          "position_label": "142"
+        },
+        {
+          "pad_id": "143",
+          "pad_kind": "power",
+          "physical_index": 143,
+          "position_label": "143"
+        },
+        {
+          "pad_id": "144",
+          "pad_kind": "io",
+          "physical_index": 144,
+          "position_label": "144"
+        }
+      ],
+      "pin_count": 144,
+      "pinouts": [
+        {
+          "device": "atsame70q21b",
+          "package": "lqfp144",
+          "pin_constraints": [
+            {
+              "constraint_id": "constraint:PA0:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA0",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP0"
+            },
+            {
+              "constraint_id": "constraint:PA11:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA11",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP7"
+            },
+            {
+              "constraint_id": "constraint:PA14:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA14",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP8"
+            },
+            {
+              "constraint_id": "constraint:PA19:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA19",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP9"
+            },
+            {
+              "constraint_id": "constraint:PA1:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA1",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP1"
+            },
+            {
+              "constraint_id": "constraint:PA20:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA20",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP10"
+            },
+            {
+              "constraint_id": "constraint:PA2:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA2",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP2"
+            },
+            {
+              "constraint_id": "constraint:PA30:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA30",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP11"
+            },
+            {
+              "constraint_id": "constraint:PA4:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA4",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP3"
+            },
+            {
+              "constraint_id": "constraint:PA5:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA5",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP4"
+            },
+            {
+              "constraint_id": "constraint:PA9:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PA9",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP6"
+            },
+            {
+              "constraint_id": "constraint:PB3:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PB3",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP12"
+            },
+            {
+              "constraint_id": "constraint:PB5:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PB5",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP13"
+            },
+            {
+              "constraint_id": "constraint:PD28:wakeup-capable",
+              "kind": "wakeup-capable",
+              "pin": "PD28",
+              "provenance": {
+                "patch_ids": [
+                  "microchip-same70-family-bootstrap-v1",
+                  "microchip-same70-atsame70q21b-bootstrap"
+                ],
+                "source_id": "microchip-dfp-extract",
+                "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+              },
+              "value": "WKUP5"
+            }
+          ],
+          "pin_index": [
+            {
+              "constraint_ids": [
+                "constraint:PA0:wakeup-capable"
+              ],
+              "pad_ids": [
+                "102"
+              ],
+              "pin": "PA0"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA1:wakeup-capable"
+              ],
+              "pad_ids": [
+                "99"
+              ],
+              "pin": "PA1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "66"
+              ],
+              "pin": "PA10"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA11:wakeup-capable"
+              ],
+              "pad_ids": [
+                "64"
+              ],
+              "pin": "PA11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "68"
+              ],
+              "pin": "PA12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "42"
+              ],
+              "pin": "PA13"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA14:wakeup-capable"
+              ],
+              "pad_ids": [
+                "51"
+              ],
+              "pin": "PA14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "49"
+              ],
+              "pin": "PA15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "45"
+              ],
+              "pin": "PA16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "25"
+              ],
+              "pin": "PA17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "24"
+              ],
+              "pin": "PA18"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA19:wakeup-capable"
+              ],
+              "pad_ids": [
+                "23"
+              ],
+              "pin": "PA19"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA2:wakeup-capable"
+              ],
+              "pad_ids": [
+                "93"
+              ],
+              "pin": "PA2"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA20:wakeup-capable"
+              ],
+              "pad_ids": [
+                "22"
+              ],
+              "pin": "PA20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "32"
+              ],
+              "pin": "PA21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "37"
+              ],
+              "pin": "PA22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "46"
+              ],
+              "pin": "PA23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "56"
+              ],
+              "pin": "PA24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "59"
+              ],
+              "pin": "PA25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "62"
+              ],
+              "pin": "PA26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "70"
+              ],
+              "pin": "PA27"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "112"
+              ],
+              "pin": "PA28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "129"
+              ],
+              "pin": "PA29"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "91"
+              ],
+              "pin": "PA3"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA30:wakeup-capable"
+              ],
+              "pad_ids": [
+                "116"
+              ],
+              "pin": "PA30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "118"
+              ],
+              "pin": "PA31"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA4:wakeup-capable"
+              ],
+              "pad_ids": [
+                "77"
+              ],
+              "pin": "PA4"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA5:wakeup-capable"
+              ],
+              "pad_ids": [
+                "73"
+              ],
+              "pin": "PA5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "114"
+              ],
+              "pin": "PA6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "35"
+              ],
+              "pin": "PA7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "36"
+              ],
+              "pin": "PA8"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PA9:wakeup-capable"
+              ],
+              "pad_ids": [
+                "75"
+              ],
+              "pin": "PA9"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "21"
+              ],
+              "pin": "PB0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "20"
+              ],
+              "pin": "PB1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "87"
+              ],
+              "pin": "PB12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "144"
+              ],
+              "pin": "PB13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "26"
+              ],
+              "pin": "PB2"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PB3:wakeup-capable"
+              ],
+              "pad_ids": [
+                "31"
+              ],
+              "pin": "PB3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "105"
+              ],
+              "pin": "PB4"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PB5:wakeup-capable"
+              ],
+              "pad_ids": [
+                "109"
+              ],
+              "pin": "PB5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "79"
+              ],
+              "pin": "PB6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "89"
+              ],
+              "pin": "PB7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "141"
+              ],
+              "pin": "PB8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "142"
+              ],
+              "pin": "PB9"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "11"
+              ],
+              "pin": "PC0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "38"
+              ],
+              "pin": "PC1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "90"
+              ],
+              "pin": "PC10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "94"
+              ],
+              "pin": "PC11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "17"
+              ],
+              "pin": "PC12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "19"
+              ],
+              "pin": "PC13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "97"
+              ],
+              "pin": "PC14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "18"
+              ],
+              "pin": "PC15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "100"
+              ],
+              "pin": "PC16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "103"
+              ],
+              "pin": "PC17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "111"
+              ],
+              "pin": "PC18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "117"
+              ],
+              "pin": "PC19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "39"
+              ],
+              "pin": "PC2"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "120"
+              ],
+              "pin": "PC20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "122"
+              ],
+              "pin": "PC21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "124"
+              ],
+              "pin": "PC22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "127"
+              ],
+              "pin": "PC23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "130"
+              ],
+              "pin": "PC24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "133"
+              ],
+              "pin": "PC25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "13"
+              ],
+              "pin": "PC26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "12"
+              ],
+              "pin": "PC27"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "76"
+              ],
+              "pin": "PC28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "16"
+              ],
+              "pin": "PC29"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "40"
+              ],
+              "pin": "PC3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "15"
+              ],
+              "pin": "PC30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "14"
+              ],
+              "pin": "PC31"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "41"
+              ],
+              "pin": "PC4"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "58"
+              ],
+              "pin": "PC5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "54"
+              ],
+              "pin": "PC6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "48"
+              ],
+              "pin": "PC7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "82"
+              ],
+              "pin": "PC8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "86"
+              ],
+              "pin": "PC9"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "1"
+              ],
+              "pin": "PD0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "132"
+              ],
+              "pin": "PD1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "101"
+              ],
+              "pin": "PD10"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "98"
+              ],
+              "pin": "PD11"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "92"
+              ],
+              "pin": "PD12"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "88"
+              ],
+              "pin": "PD13"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "84"
+              ],
+              "pin": "PD14"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "106"
+              ],
+              "pin": "PD15"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "78"
+              ],
+              "pin": "PD16"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "74"
+              ],
+              "pin": "PD17"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "69"
+              ],
+              "pin": "PD18"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "67"
+              ],
+              "pin": "PD19"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "131"
+              ],
+              "pin": "PD2"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "65"
+              ],
+              "pin": "PD20"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "63"
+              ],
+              "pin": "PD21"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "60"
+              ],
+              "pin": "PD22"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "57"
+              ],
+              "pin": "PD23"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "55"
+              ],
+              "pin": "PD24"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "52"
+              ],
+              "pin": "PD25"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "53"
+              ],
+              "pin": "PD26"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "47"
+              ],
+              "pin": "PD27"
+            },
+            {
+              "constraint_ids": [
+                "constraint:PD28:wakeup-capable"
+              ],
+              "pad_ids": [
+                "71"
+              ],
+              "pin": "PD28"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "108"
+              ],
+              "pin": "PD29"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "128"
+              ],
+              "pin": "PD3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "34"
+              ],
+              "pin": "PD30"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "2"
+              ],
+              "pin": "PD31"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "126"
+              ],
+              "pin": "PD4"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "125"
+              ],
+              "pin": "PD5"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "121"
+              ],
+              "pin": "PD6"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "119"
+              ],
+              "pin": "PD7"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "113"
+              ],
+              "pin": "PD8"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "110"
+              ],
+              "pin": "PD9"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "4"
+              ],
+              "pin": "PE0"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "6"
+              ],
+              "pin": "PE1"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "7"
+              ],
+              "pin": "PE2"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "10"
+              ],
+              "pin": "PE3"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "27"
+              ],
+              "pin": "PE4"
+            },
+            {
+              "constraint_ids": [],
+              "pad_ids": [
+                "28"
+              ],
+              "pin": "PE5"
+            }
+          ],
+          "pinout": [
+            {
+              "bonded_pin": "PD0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "1",
+              "pad_kind": "io",
+              "physical_index": 1,
+              "position_label": "1"
+            },
+            {
+              "bonded_pin": "PD31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "2",
+              "pad_kind": "io",
+              "physical_index": 2,
+              "position_label": "2"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "3",
+              "pad_kind": "power",
+              "physical_index": 3,
+              "position_label": "3"
+            },
+            {
+              "bonded_pin": "PE0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "4",
+              "pad_kind": "io",
+              "physical_index": 4,
+              "position_label": "4"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "5",
+              "pad_kind": "power",
+              "physical_index": 5,
+              "position_label": "5"
+            },
+            {
+              "bonded_pin": "PE1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "6",
+              "pad_kind": "io",
+              "physical_index": 6,
+              "position_label": "6"
+            },
+            {
+              "bonded_pin": "PE2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "7",
+              "pad_kind": "io",
+              "physical_index": 7,
+              "position_label": "7"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "8",
+              "pad_kind": "power",
+              "physical_index": 8,
+              "position_label": "8"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "9",
+              "pad_kind": "power",
+              "physical_index": 9,
+              "position_label": "9"
+            },
+            {
+              "bonded_pin": "PE3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "10",
+              "pad_kind": "io",
+              "physical_index": 10,
+              "position_label": "10"
+            },
+            {
+              "bonded_pin": "PC0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "11",
+              "pad_kind": "io",
+              "physical_index": 11,
+              "position_label": "11"
+            },
+            {
+              "bonded_pin": "PC27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "12",
+              "pad_kind": "io",
+              "physical_index": 12,
+              "position_label": "12"
+            },
+            {
+              "bonded_pin": "PC26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "13",
+              "pad_kind": "io",
+              "physical_index": 13,
+              "position_label": "13"
+            },
+            {
+              "bonded_pin": "PC31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "14",
+              "pad_kind": "io",
+              "physical_index": 14,
+              "position_label": "14"
+            },
+            {
+              "bonded_pin": "PC30",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "15",
+              "pad_kind": "io",
+              "physical_index": 15,
+              "position_label": "15"
+            },
+            {
+              "bonded_pin": "PC29",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "16",
+              "pad_kind": "io",
+              "physical_index": 16,
+              "position_label": "16"
+            },
+            {
+              "bonded_pin": "PC12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "17",
+              "pad_kind": "io",
+              "physical_index": 17,
+              "position_label": "17"
+            },
+            {
+              "bonded_pin": "PC15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "18",
+              "pad_kind": "io",
+              "physical_index": 18,
+              "position_label": "18"
+            },
+            {
+              "bonded_pin": "PC13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "19",
+              "pad_kind": "io",
+              "physical_index": 19,
+              "position_label": "19"
+            },
+            {
+              "bonded_pin": "PB1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "20",
+              "pad_kind": "io",
+              "physical_index": 20,
+              "position_label": "20"
+            },
+            {
+              "bonded_pin": "PB0",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "21",
+              "pad_kind": "io",
+              "physical_index": 21,
+              "position_label": "21"
+            },
+            {
+              "bonded_pin": "PA20",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA20:wakeup-capable"
+              ],
+              "pad_id": "22",
+              "pad_kind": "io",
+              "physical_index": 22,
+              "position_label": "22"
+            },
+            {
+              "bonded_pin": "PA19",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA19:wakeup-capable"
+              ],
+              "pad_id": "23",
+              "pad_kind": "io",
+              "physical_index": 23,
+              "position_label": "23"
+            },
+            {
+              "bonded_pin": "PA18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "24",
+              "pad_kind": "io",
+              "physical_index": 24,
+              "position_label": "24"
+            },
+            {
+              "bonded_pin": "PA17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "25",
+              "pad_kind": "io",
+              "physical_index": 25,
+              "position_label": "25"
+            },
+            {
+              "bonded_pin": "PB2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "26",
+              "pad_kind": "io",
+              "physical_index": 26,
+              "position_label": "26"
+            },
+            {
+              "bonded_pin": "PE4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "27",
+              "pad_kind": "io",
+              "physical_index": 27,
+              "position_label": "27"
+            },
+            {
+              "bonded_pin": "PE5",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "28",
+              "pad_kind": "io",
+              "physical_index": 28,
+              "position_label": "28"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "29",
+              "pad_kind": "power",
+              "physical_index": 29,
+              "position_label": "29"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "30",
+              "pad_kind": "power",
+              "physical_index": 30,
+              "position_label": "30"
+            },
+            {
+              "bonded_pin": "PB3",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PB3:wakeup-capable"
+              ],
+              "pad_id": "31",
+              "pad_kind": "io",
+              "physical_index": 31,
+              "position_label": "31"
+            },
+            {
+              "bonded_pin": "PA21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "32",
+              "pad_kind": "io",
+              "physical_index": 32,
+              "position_label": "32"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "33",
+              "pad_kind": "power",
+              "physical_index": 33,
+              "position_label": "33"
+            },
+            {
+              "bonded_pin": "PD30",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "34",
+              "pad_kind": "io",
+              "physical_index": 34,
+              "position_label": "34"
+            },
+            {
+              "bonded_pin": "PA7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "35",
+              "pad_kind": "io",
+              "physical_index": 35,
+              "position_label": "35"
+            },
+            {
+              "bonded_pin": "PA8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "36",
+              "pad_kind": "io",
+              "physical_index": 36,
+              "position_label": "36"
+            },
+            {
+              "bonded_pin": "PA22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "37",
+              "pad_kind": "io",
+              "physical_index": 37,
+              "position_label": "37"
+            },
+            {
+              "bonded_pin": "PC1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "38",
+              "pad_kind": "io",
+              "physical_index": 38,
+              "position_label": "38"
+            },
+            {
+              "bonded_pin": "PC2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "39",
+              "pad_kind": "io",
+              "physical_index": 39,
+              "position_label": "39"
+            },
+            {
+              "bonded_pin": "PC3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "40",
+              "pad_kind": "io",
+              "physical_index": 40,
+              "position_label": "40"
+            },
+            {
+              "bonded_pin": "PC4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "41",
+              "pad_kind": "io",
+              "physical_index": 41,
+              "position_label": "41"
+            },
+            {
+              "bonded_pin": "PA13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "42",
+              "pad_kind": "io",
+              "physical_index": 42,
+              "position_label": "42"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "43",
+              "pad_kind": "power",
+              "physical_index": 43,
+              "position_label": "43"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "44",
+              "pad_kind": "ground",
+              "physical_index": 44,
+              "position_label": "44"
+            },
+            {
+              "bonded_pin": "PA16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "45",
+              "pad_kind": "io",
+              "physical_index": 45,
+              "position_label": "45"
+            },
+            {
+              "bonded_pin": "PA23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "46",
+              "pad_kind": "io",
+              "physical_index": 46,
+              "position_label": "46"
+            },
+            {
+              "bonded_pin": "PD27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "47",
+              "pad_kind": "io",
+              "physical_index": 47,
+              "position_label": "47"
+            },
+            {
+              "bonded_pin": "PC7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "48",
+              "pad_kind": "io",
+              "physical_index": 48,
+              "position_label": "48"
+            },
+            {
+              "bonded_pin": "PA15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "49",
+              "pad_kind": "io",
+              "physical_index": 49,
+              "position_label": "49"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "50",
+              "pad_kind": "power",
+              "physical_index": 50,
+              "position_label": "50"
+            },
+            {
+              "bonded_pin": "PA14",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA14:wakeup-capable"
+              ],
+              "pad_id": "51",
+              "pad_kind": "io",
+              "physical_index": 51,
+              "position_label": "51"
+            },
+            {
+              "bonded_pin": "PD25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "52",
+              "pad_kind": "io",
+              "physical_index": 52,
+              "position_label": "52"
+            },
+            {
+              "bonded_pin": "PD26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "53",
+              "pad_kind": "io",
+              "physical_index": 53,
+              "position_label": "53"
+            },
+            {
+              "bonded_pin": "PC6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "54",
+              "pad_kind": "io",
+              "physical_index": 54,
+              "position_label": "54"
+            },
+            {
+              "bonded_pin": "PD24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "55",
+              "pad_kind": "io",
+              "physical_index": 55,
+              "position_label": "55"
+            },
+            {
+              "bonded_pin": "PA24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "56",
+              "pad_kind": "io",
+              "physical_index": 56,
+              "position_label": "56"
+            },
+            {
+              "bonded_pin": "PD23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "57",
+              "pad_kind": "io",
+              "physical_index": 57,
+              "position_label": "57"
+            },
+            {
+              "bonded_pin": "PC5",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "58",
+              "pad_kind": "io",
+              "physical_index": 58,
+              "position_label": "58"
+            },
+            {
+              "bonded_pin": "PA25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "59",
+              "pad_kind": "io",
+              "physical_index": 59,
+              "position_label": "59"
+            },
+            {
+              "bonded_pin": "PD22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "60",
+              "pad_kind": "io",
+              "physical_index": 60,
+              "position_label": "60"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "61",
+              "pad_kind": "ground",
+              "physical_index": 61,
+              "position_label": "61"
+            },
+            {
+              "bonded_pin": "PA26",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "62",
+              "pad_kind": "io",
+              "physical_index": 62,
+              "position_label": "62"
+            },
+            {
+              "bonded_pin": "PD21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "63",
+              "pad_kind": "io",
+              "physical_index": 63,
+              "position_label": "63"
+            },
+            {
+              "bonded_pin": "PA11",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA11:wakeup-capable"
+              ],
+              "pad_id": "64",
+              "pad_kind": "io",
+              "physical_index": 64,
+              "position_label": "64"
+            },
+            {
+              "bonded_pin": "PD20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "65",
+              "pad_kind": "io",
+              "physical_index": 65,
+              "position_label": "65"
+            },
+            {
+              "bonded_pin": "PA10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "66",
+              "pad_kind": "io",
+              "physical_index": 66,
+              "position_label": "66"
+            },
+            {
+              "bonded_pin": "PD19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "67",
+              "pad_kind": "io",
+              "physical_index": 67,
+              "position_label": "67"
+            },
+            {
+              "bonded_pin": "PA12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "68",
+              "pad_kind": "io",
+              "physical_index": 68,
+              "position_label": "68"
+            },
+            {
+              "bonded_pin": "PD18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "69",
+              "pad_kind": "io",
+              "physical_index": 69,
+              "position_label": "69"
+            },
+            {
+              "bonded_pin": "PA27",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "70",
+              "pad_kind": "io",
+              "physical_index": 70,
+              "position_label": "70"
+            },
+            {
+              "bonded_pin": "PD28",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PD28:wakeup-capable"
+              ],
+              "pad_id": "71",
+              "pad_kind": "io",
+              "physical_index": 71,
+              "position_label": "71"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "72",
+              "pad_kind": "power",
+              "physical_index": 72,
+              "position_label": "72"
+            },
+            {
+              "bonded_pin": "PA5",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA5:wakeup-capable"
+              ],
+              "pad_id": "73",
+              "pad_kind": "io",
+              "physical_index": 73,
+              "position_label": "73"
+            },
+            {
+              "bonded_pin": "PD17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "74",
+              "pad_kind": "io",
+              "physical_index": 74,
+              "position_label": "74"
+            },
+            {
+              "bonded_pin": "PA9",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA9:wakeup-capable"
+              ],
+              "pad_id": "75",
+              "pad_kind": "io",
+              "physical_index": 75,
+              "position_label": "75"
+            },
+            {
+              "bonded_pin": "PC28",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "76",
+              "pad_kind": "io",
+              "physical_index": 76,
+              "position_label": "76"
+            },
+            {
+              "bonded_pin": "PA4",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA4:wakeup-capable"
+              ],
+              "pad_id": "77",
+              "pad_kind": "io",
+              "physical_index": 77,
+              "position_label": "77"
+            },
+            {
+              "bonded_pin": "PD16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "78",
+              "pad_kind": "io",
+              "physical_index": 78,
+              "position_label": "78"
+            },
+            {
+              "bonded_pin": "PB6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "79",
+              "pad_kind": "io",
+              "physical_index": 79,
+              "position_label": "79"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "80",
+              "pad_kind": "power",
+              "physical_index": 80,
+              "position_label": "80"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "81",
+              "pad_kind": "power",
+              "physical_index": 81,
+              "position_label": "81"
+            },
+            {
+              "bonded_pin": "PC8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "82",
+              "pad_kind": "io",
+              "physical_index": 82,
+              "position_label": "82"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "83",
+              "pad_kind": "reset",
+              "physical_index": 83,
+              "position_label": "83"
+            },
+            {
+              "bonded_pin": "PD14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "84",
+              "pad_kind": "io",
+              "physical_index": 84,
+              "position_label": "84"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "85",
+              "pad_kind": "signal",
+              "physical_index": 85,
+              "position_label": "85"
+            },
+            {
+              "bonded_pin": "PC9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "86",
+              "pad_kind": "io",
+              "physical_index": 86,
+              "position_label": "86"
+            },
+            {
+              "bonded_pin": "PB12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "87",
+              "pad_kind": "io",
+              "physical_index": 87,
+              "position_label": "87"
+            },
+            {
+              "bonded_pin": "PD13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "88",
+              "pad_kind": "io",
+              "physical_index": 88,
+              "position_label": "88"
+            },
+            {
+              "bonded_pin": "PB7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "89",
+              "pad_kind": "io",
+              "physical_index": 89,
+              "position_label": "89"
+            },
+            {
+              "bonded_pin": "PC10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "90",
+              "pad_kind": "io",
+              "physical_index": 90,
+              "position_label": "90"
+            },
+            {
+              "bonded_pin": "PA3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "91",
+              "pad_kind": "io",
+              "physical_index": 91,
+              "position_label": "91"
+            },
+            {
+              "bonded_pin": "PD12",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "92",
+              "pad_kind": "io",
+              "physical_index": 92,
+              "position_label": "92"
+            },
+            {
+              "bonded_pin": "PA2",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA2:wakeup-capable"
+              ],
+              "pad_id": "93",
+              "pad_kind": "io",
+              "physical_index": 93,
+              "position_label": "93"
+            },
+            {
+              "bonded_pin": "PC11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "94",
+              "pad_kind": "io",
+              "physical_index": 94,
+              "position_label": "94"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "95",
+              "pad_kind": "ground",
+              "physical_index": 95,
+              "position_label": "95"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "96",
+              "pad_kind": "power",
+              "physical_index": 96,
+              "position_label": "96"
+            },
+            {
+              "bonded_pin": "PC14",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "97",
+              "pad_kind": "io",
+              "physical_index": 97,
+              "position_label": "97"
+            },
+            {
+              "bonded_pin": "PD11",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "98",
+              "pad_kind": "io",
+              "physical_index": 98,
+              "position_label": "98"
+            },
+            {
+              "bonded_pin": "PA1",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA1:wakeup-capable"
+              ],
+              "pad_id": "99",
+              "pad_kind": "io",
+              "physical_index": 99,
+              "position_label": "99"
+            },
+            {
+              "bonded_pin": "PC16",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "100",
+              "pad_kind": "io",
+              "physical_index": 100,
+              "position_label": "100"
+            },
+            {
+              "bonded_pin": "PD10",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "101",
+              "pad_kind": "io",
+              "physical_index": 101,
+              "position_label": "101"
+            },
+            {
+              "bonded_pin": "PA0",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA0:wakeup-capable"
+              ],
+              "pad_id": "102",
+              "pad_kind": "io",
+              "physical_index": 102,
+              "position_label": "102"
+            },
+            {
+              "bonded_pin": "PC17",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "103",
+              "pad_kind": "io",
+              "physical_index": 103,
+              "position_label": "103"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "104",
+              "pad_kind": "debug",
+              "physical_index": 104,
+              "position_label": "104"
+            },
+            {
+              "bonded_pin": "PB4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "105",
+              "pad_kind": "io",
+              "physical_index": 105,
+              "position_label": "105"
+            },
+            {
+              "bonded_pin": "PD15",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "106",
+              "pad_kind": "io",
+              "physical_index": 106,
+              "position_label": "106"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "107",
+              "pad_kind": "power",
+              "physical_index": 107,
+              "position_label": "107"
+            },
+            {
+              "bonded_pin": "PD29",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "108",
+              "pad_kind": "io",
+              "physical_index": 108,
+              "position_label": "108"
+            },
+            {
+              "bonded_pin": "PB5",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PB5:wakeup-capable"
+              ],
+              "pad_id": "109",
+              "pad_kind": "io",
+              "physical_index": 109,
+              "position_label": "109"
+            },
+            {
+              "bonded_pin": "PD9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "110",
+              "pad_kind": "io",
+              "physical_index": 110,
+              "position_label": "110"
+            },
+            {
+              "bonded_pin": "PC18",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "111",
+              "pad_kind": "io",
+              "physical_index": 111,
+              "position_label": "111"
+            },
+            {
+              "bonded_pin": "PA28",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "112",
+              "pad_kind": "io",
+              "physical_index": 112,
+              "position_label": "112"
+            },
+            {
+              "bonded_pin": "PD8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "113",
+              "pad_kind": "io",
+              "physical_index": 113,
+              "position_label": "113"
+            },
+            {
+              "bonded_pin": "PA6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "114",
+              "pad_kind": "io",
+              "physical_index": 114,
+              "position_label": "114"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "115",
+              "pad_kind": "ground",
+              "physical_index": 115,
+              "position_label": "115"
+            },
+            {
+              "bonded_pin": "PA30",
+              "bonding_state": "bonded",
+              "constraint_ids": [
+                "constraint:PA30:wakeup-capable"
+              ],
+              "pad_id": "116",
+              "pad_kind": "io",
+              "physical_index": 116,
+              "position_label": "116"
+            },
+            {
+              "bonded_pin": "PC19",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "117",
+              "pad_kind": "io",
+              "physical_index": 117,
+              "position_label": "117"
+            },
+            {
+              "bonded_pin": "PA31",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "118",
+              "pad_kind": "io",
+              "physical_index": 118,
+              "position_label": "118"
+            },
+            {
+              "bonded_pin": "PD7",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "119",
+              "pad_kind": "io",
+              "physical_index": 119,
+              "position_label": "119"
+            },
+            {
+              "bonded_pin": "PC20",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "120",
+              "pad_kind": "io",
+              "physical_index": 120,
+              "position_label": "120"
+            },
+            {
+              "bonded_pin": "PD6",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "121",
+              "pad_kind": "io",
+              "physical_index": 121,
+              "position_label": "121"
+            },
+            {
+              "bonded_pin": "PC21",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "122",
+              "pad_kind": "io",
+              "physical_index": 122,
+              "position_label": "122"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "123",
+              "pad_kind": "power",
+              "physical_index": 123,
+              "position_label": "123"
+            },
+            {
+              "bonded_pin": "PC22",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "124",
+              "pad_kind": "io",
+              "physical_index": 124,
+              "position_label": "124"
+            },
+            {
+              "bonded_pin": "PD5",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "125",
+              "pad_kind": "io",
+              "physical_index": 125,
+              "position_label": "125"
+            },
+            {
+              "bonded_pin": "PD4",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "126",
+              "pad_kind": "io",
+              "physical_index": 126,
+              "position_label": "126"
+            },
+            {
+              "bonded_pin": "PC23",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "127",
+              "pad_kind": "io",
+              "physical_index": 127,
+              "position_label": "127"
+            },
+            {
+              "bonded_pin": "PD3",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "128",
+              "pad_kind": "io",
+              "physical_index": 128,
+              "position_label": "128"
+            },
+            {
+              "bonded_pin": "PA29",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "129",
+              "pad_kind": "io",
+              "physical_index": 129,
+              "position_label": "129"
+            },
+            {
+              "bonded_pin": "PC24",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "130",
+              "pad_kind": "io",
+              "physical_index": 130,
+              "position_label": "130"
+            },
+            {
+              "bonded_pin": "PD2",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "131",
+              "pad_kind": "io",
+              "physical_index": 131,
+              "position_label": "131"
+            },
+            {
+              "bonded_pin": "PD1",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "132",
+              "pad_kind": "io",
+              "physical_index": 132,
+              "position_label": "132"
+            },
+            {
+              "bonded_pin": "PC25",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "133",
+              "pad_kind": "io",
+              "physical_index": 133,
+              "position_label": "133"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "134",
+              "pad_kind": "power",
+              "physical_index": 134,
+              "position_label": "134"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "135",
+              "pad_kind": "ground",
+              "physical_index": 135,
+              "position_label": "135"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "136",
+              "pad_kind": "signal",
+              "physical_index": 136,
+              "position_label": "136"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "137",
+              "pad_kind": "signal",
+              "physical_index": 137,
+              "position_label": "137"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "138",
+              "pad_kind": "ground",
+              "physical_index": 138,
+              "position_label": "138"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "139",
+              "pad_kind": "power",
+              "physical_index": 139,
+              "position_label": "139"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "140",
+              "pad_kind": "power",
+              "physical_index": 140,
+              "position_label": "140"
+            },
+            {
+              "bonded_pin": "PB8",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "141",
+              "pad_kind": "io",
+              "physical_index": 141,
+              "position_label": "141"
+            },
+            {
+              "bonded_pin": "PB9",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "142",
+              "pad_kind": "io",
+              "physical_index": 142,
+              "position_label": "142"
+            },
+            {
+              "bonded_pin": null,
+              "bonding_state": "dedicated",
+              "constraint_ids": [],
+              "pad_id": "143",
+              "pad_kind": "power",
+              "physical_index": 143,
+              "position_label": "143"
+            },
+            {
+              "bonded_pin": "PB13",
+              "bonding_state": "bonded",
+              "constraint_ids": [],
+              "pad_id": "144",
+              "pad_kind": "io",
+              "physical_index": 144,
+              "position_label": "144"
+            }
+          ]
+        }
+      ],
+      "provenance": {
+        "patch_ids": [
+          "microchip-same70-family-bootstrap-v1",
+          "microchip-same70-atsame70q21b-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
+      }
+    }
+  ],
+  "schema_version": "1.2.0",
+  "vendor": "microchip"
+}
