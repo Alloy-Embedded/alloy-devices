@@ -579,6 +579,6 @@
   ],
   "device": "stm32f401re",
   "family": "stm32f4",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "vendor": "st"
 }

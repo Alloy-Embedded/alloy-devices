@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 172 rule(s).",
+      "message": "gate-c passed with 174 rule(s).",
       "passed": true,
       "rule_ids": [
         "stm32f401re-package-pin-count-covers-known-pins",
@@ -99,6 +99,7 @@
         "stm32f401re-startup-descriptors-include-runtime-baseline",
         "stm32f401re-startup-descriptors-emit-without-handwritten-tables",
         "stm32f401re-clock-bindings-reference-known-descriptors",
+        "stm32f401re-clock-reset-bindings-not-diagnostic-only",
         "stm32f401re-clock-node-parents-known",
         "stm32f401re-clock-graph-reaches-root",
         "stm32f401re-clock-selectors-structured",
@@ -184,6 +185,7 @@
         "stm32f405rg-startup-descriptors-include-runtime-baseline",
         "stm32f405rg-startup-descriptors-emit-without-handwritten-tables",
         "stm32f405rg-clock-bindings-reference-known-descriptors",
+        "stm32f405rg-clock-reset-bindings-not-diagnostic-only",
         "stm32f405rg-clock-node-parents-known",
         "stm32f405rg-clock-graph-reaches-root",
         "stm32f405rg-clock-selectors-structured",
@@ -743,6 +745,13 @@
       "message": "stm32f401re clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "stm32f401re-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "stm32f401re-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {
@@ -1338,6 +1347,13 @@
       "message": "stm32f405rg clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "stm32f405rg-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "stm32f405rg-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {

@@ -603,6 +603,6 @@
   ],
   "device": "stm32f405rg",
   "family": "stm32f4",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "vendor": "st"
 }

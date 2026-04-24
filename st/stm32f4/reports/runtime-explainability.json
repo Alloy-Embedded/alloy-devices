@@ -7746,6 +7746,6 @@
   ],
   "family": "stm32f4",
   "report_id": "runtime-explainability-v1",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "vendor": "st"
 }
