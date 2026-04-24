@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 172 rule(s).",
+      "message": "gate-c passed with 174 rule(s).",
       "passed": true,
       "rule_ids": [
         "atsame70n21b-package-pin-count-covers-known-pins",
@@ -99,6 +99,7 @@
         "atsame70n21b-startup-descriptors-include-runtime-baseline",
         "atsame70n21b-startup-descriptors-emit-without-handwritten-tables",
         "atsame70n21b-clock-bindings-reference-known-descriptors",
+        "atsame70n21b-clock-reset-bindings-not-diagnostic-only",
         "atsame70n21b-clock-node-parents-known",
         "atsame70n21b-clock-graph-reaches-root",
         "atsame70n21b-clock-selectors-structured",
@@ -184,6 +185,7 @@
         "atsame70q21b-startup-descriptors-include-runtime-baseline",
         "atsame70q21b-startup-descriptors-emit-without-handwritten-tables",
         "atsame70q21b-clock-bindings-reference-known-descriptors",
+        "atsame70q21b-clock-reset-bindings-not-diagnostic-only",
         "atsame70q21b-clock-node-parents-known",
         "atsame70q21b-clock-graph-reaches-root",
         "atsame70q21b-clock-selectors-structured",
@@ -743,6 +745,13 @@
       "message": "atsame70n21b clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "atsame70n21b-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "atsame70n21b-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {
@@ -1338,6 +1347,13 @@
       "message": "atsame70q21b clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "atsame70q21b-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "atsame70q21b-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {

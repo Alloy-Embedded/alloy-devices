@@ -2555,6 +2555,6 @@
   ],
   "device": "atsame70n21b",
   "family": "same70",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "vendor": "microchip"
 }

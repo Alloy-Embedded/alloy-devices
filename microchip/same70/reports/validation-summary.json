@@ -46,7 +46,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 172 rule(s).",
+      "message": "gate-c passed with 174 rule(s).",
       "passed": true,
       "rule_ids": [
         "atsame70n21b-package-pin-count-covers-known-pins",
@@ -113,6 +113,7 @@
         "atsame70n21b-startup-descriptors-include-runtime-baseline",
         "atsame70n21b-startup-descriptors-emit-without-handwritten-tables",
         "atsame70n21b-clock-bindings-reference-known-descriptors",
+        "atsame70n21b-clock-reset-bindings-not-diagnostic-only",
         "atsame70n21b-clock-node-parents-known",
         "atsame70n21b-clock-graph-reaches-root",
         "atsame70n21b-clock-selectors-structured",
@@ -198,6 +199,7 @@
         "atsame70q21b-startup-descriptors-include-runtime-baseline",
         "atsame70q21b-startup-descriptors-emit-without-handwritten-tables",
         "atsame70q21b-clock-bindings-reference-known-descriptors",
+        "atsame70q21b-clock-reset-bindings-not-diagnostic-only",
         "atsame70q21b-clock-node-parents-known",
         "atsame70q21b-clock-graph-reaches-root",
         "atsame70q21b-clock-selectors-structured",
@@ -226,7 +228,7 @@
   ],
   "is_passing": true,
   "report_id": "bootstrap-validation-v1",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "system_descriptor_domains": [
     {
       "domain_id": "interrupt",
