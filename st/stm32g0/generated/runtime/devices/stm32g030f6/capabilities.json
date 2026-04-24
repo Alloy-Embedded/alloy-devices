@@ -459,6 +459,6 @@
   ],
   "device": "stm32g030f6",
   "family": "stm32g0",
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "vendor": "st"
 }

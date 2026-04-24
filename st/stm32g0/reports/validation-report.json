@@ -35,7 +35,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 257 rule(s).",
+      "message": "gate-c passed with 260 rule(s).",
       "passed": true,
       "rule_ids": [
         "stm32g030f6-package-pin-count-covers-known-pins",
@@ -102,6 +102,7 @@
         "stm32g030f6-startup-descriptors-include-runtime-baseline",
         "stm32g030f6-startup-descriptors-emit-without-handwritten-tables",
         "stm32g030f6-clock-bindings-reference-known-descriptors",
+        "stm32g030f6-clock-reset-bindings-not-diagnostic-only",
         "stm32g030f6-clock-node-parents-known",
         "stm32g030f6-clock-graph-reaches-root",
         "stm32g030f6-clock-selectors-structured",
@@ -187,6 +188,7 @@
         "stm32g071rb-startup-descriptors-include-runtime-baseline",
         "stm32g071rb-startup-descriptors-emit-without-handwritten-tables",
         "stm32g071rb-clock-bindings-reference-known-descriptors",
+        "stm32g071rb-clock-reset-bindings-not-diagnostic-only",
         "stm32g071rb-clock-node-parents-known",
         "stm32g071rb-clock-graph-reaches-root",
         "stm32g071rb-clock-selectors-structured",
@@ -272,6 +274,7 @@
         "stm32g0b1re-startup-descriptors-include-runtime-baseline",
         "stm32g0b1re-startup-descriptors-emit-without-handwritten-tables",
         "stm32g0b1re-clock-bindings-reference-known-descriptors",
+        "stm32g0b1re-clock-reset-bindings-not-diagnostic-only",
         "stm32g0b1re-clock-node-parents-known",
         "stm32g0b1re-clock-graph-reaches-root",
         "stm32g0b1re-clock-selectors-structured",
@@ -852,6 +855,13 @@
       "message": "stm32g030f6 clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "stm32g030f6-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32g030f6 clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "stm32g030f6-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {
@@ -1451,6 +1461,13 @@
     },
     {
       "category": "semantic",
+      "message": "stm32g071rb clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "stm32g071rb-clock-reset-bindings-not-diagnostic-only",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
       "message": "stm32g071rb clock nodes only reference known parents.",
       "passed": true,
       "rule_id": "stm32g071rb-clock-node-parents-known",
@@ -2042,6 +2059,13 @@
       "message": "stm32g0b1re clock bindings reference known gate/reset/selector descriptors.",
       "passed": true,
       "rule_id": "stm32g0b1re-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32g0b1re clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "stm32g0b1re-clock-reset-bindings-not-diagnostic-only",
       "severity": "error"
     },
     {
