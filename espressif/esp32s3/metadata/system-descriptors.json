@@ -1,0 +1,3591 @@
+{
+  "devices": [
+    {
+      "clock_gates": [
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN0.I2C_EXT0_CLK_EN",
+          "gate_id": "gate:i2c0",
+          "parent_node": "clock-node:system-perip-clk-en0",
+          "peripheral": "I2C0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en0:i2c-ext0-clk-en",
+          "register_id": "register:system:perip-clk-en0",
+          "register_name": "PERIP_CLK_EN0",
+          "register_offset": 24,
+          "register_peripheral": "SYSTEM"
+        },
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN0.I2C_EXT1_CLK_EN",
+          "gate_id": "gate:i2c1",
+          "parent_node": "clock-node:system-perip-clk-en0",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en0:i2c-ext1-clk-en",
+          "register_id": "register:system:perip-clk-en0",
+          "register_name": "PERIP_CLK_EN0",
+          "register_offset": 24,
+          "register_peripheral": "SYSTEM"
+        },
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN0.SPI2_CLK_EN",
+          "gate_id": "gate:spi2",
+          "parent_node": "clock-node:system-perip-clk-en0",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en0:spi2-clk-en",
+          "register_id": "register:system:perip-clk-en0",
+          "register_name": "PERIP_CLK_EN0",
+          "register_offset": 24,
+          "register_peripheral": "SYSTEM"
+        },
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN0.SPI3_CLK_EN",
+          "gate_id": "gate:spi3",
+          "parent_node": "clock-node:system-perip-clk-en0",
+          "peripheral": "SPI3",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en0:spi3-clk-en",
+          "register_id": "register:system:perip-clk-en0",
+          "register_name": "PERIP_CLK_EN0",
+          "register_offset": 24,
+          "register_peripheral": "SYSTEM"
+        },
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN0.UART_CLK_EN",
+          "gate_id": "gate:uart0",
+          "parent_node": "clock-node:system-perip-clk-en0",
+          "peripheral": "UART0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en0:uart-clk-en",
+          "register_id": "register:system:perip-clk-en0",
+          "register_name": "PERIP_CLK_EN0",
+          "register_offset": 24,
+          "register_peripheral": "SYSTEM"
+        },
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN0.UART1_CLK_EN",
+          "gate_id": "gate:uart1",
+          "parent_node": "clock-node:system-perip-clk-en0",
+          "peripheral": "UART1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en0:uart1-clk-en",
+          "register_id": "register:system:perip-clk-en0",
+          "register_name": "PERIP_CLK_EN0",
+          "register_offset": 24,
+          "register_peripheral": "SYSTEM"
+        },
+        {
+          "enable_signal": "SYSTEM_PERIP_CLK_EN1.UART2_CLK_EN",
+          "gate_id": "gate:uart2",
+          "parent_node": "clock-node:system-perip-clk-en1",
+          "peripheral": "UART2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "register_field_id": "field:system:perip-clk-en1:uart2-clk-en",
+          "register_id": "register:system:perip-clk-en1",
+          "register_name": "PERIP_CLK_EN1",
+          "register_offset": 28,
+          "register_peripheral": "SYSTEM"
+        }
+      ],
+      "clock_nodes": [
+        {
+          "kind": "gate-domain",
+          "node_id": "clock-node:system-perip-clk-en0",
+          "parent": "clock-root",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "selector": null
+        },
+        {
+          "kind": "gate-domain",
+          "node_id": "clock-node:system-perip-clk-en1",
+          "parent": "clock-root",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "selector": null
+        },
+        {
+          "kind": "root",
+          "node_id": "clock-root",
+          "parent": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "selector": null
+        }
+      ],
+      "clock_selectors": [],
+      "device": "esp32s3",
+      "dma_conflict_groups": [],
+      "dma_controllers": [
+        {
+          "channel_count": 5,
+          "controller": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "request_count": 5,
+          "version": "esp32s3-gdma-v1"
+        }
+      ],
+      "dma_routes": [
+        {
+          "conflict_group": null,
+          "controller": "DMA",
+          "peripheral": "APB_SARADC",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "request_line": "ADC",
+          "request_value": 13,
+          "route_id": "dma-route:dma:adc:apb-saradc:data",
+          "signal": "DATA"
+        },
+        {
+          "conflict_group": null,
+          "controller": "DMA",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "request_line": "SPI2_RX",
+          "request_value": 2,
+          "route_id": "dma-route:dma:spi2-rx:spi2:rx",
+          "signal": "RX"
+        },
+        {
+          "conflict_group": null,
+          "controller": "DMA",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "request_line": "SPI2_TX",
+          "request_value": 3,
+          "route_id": "dma-route:dma:spi2-tx:spi2:tx",
+          "signal": "TX"
+        },
+        {
+          "conflict_group": null,
+          "controller": "DMA",
+          "peripheral": "UART0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "request_line": "UART0_RX",
+          "request_value": 0,
+          "route_id": "dma-route:dma:uart0-rx:uart0:rx",
+          "signal": "RX"
+        },
+        {
+          "conflict_group": null,
+          "controller": "DMA",
+          "peripheral": "UART0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "request_line": "UART0_TX",
+          "request_value": 1,
+          "route_id": "dma-route:dma:uart0-tx:uart0:tx",
+          "signal": "TX"
+        }
+      ],
+      "interrupts": [
+        {
+          "alias_names": [
+            "APB_SARADC",
+            "APB_ADC_IRQHandler"
+          ],
+          "line": 65,
+          "name": "APB_ADC",
+          "peripheral": "APB_SARADC",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "ASSIST_DEBUG_IRQHandler"
+          ],
+          "line": 83,
+          "name": "ASSIST_DEBUG",
+          "peripheral": "ASSIST_DEBUG",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "DMA_IN_CH0_IRQHandler"
+          ],
+          "line": 66,
+          "name": "DMA_IN_CH0",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_IN_CH1_IRQHandler"
+          ],
+          "line": 67,
+          "name": "DMA_IN_CH1",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_IN_CH2_IRQHandler"
+          ],
+          "line": 68,
+          "name": "DMA_IN_CH2",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_IN_CH3_IRQHandler"
+          ],
+          "line": 69,
+          "name": "DMA_IN_CH3",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_IN_CH4_IRQHandler"
+          ],
+          "line": 70,
+          "name": "DMA_IN_CH4",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_OUT_CH0_IRQHandler"
+          ],
+          "line": 71,
+          "name": "DMA_OUT_CH0",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_OUT_CH1_IRQHandler"
+          ],
+          "line": 72,
+          "name": "DMA_OUT_CH1",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_OUT_CH2_IRQHandler"
+          ],
+          "line": 73,
+          "name": "DMA_OUT_CH2",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_OUT_CH3_IRQHandler"
+          ],
+          "line": 74,
+          "name": "DMA_OUT_CH3",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_OUT_CH4_IRQHandler"
+          ],
+          "line": 75,
+          "name": "DMA_OUT_CH4",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_APBPERI_PMS_IRQHandler"
+          ],
+          "line": 84,
+          "name": "DMA_APBPERI_PMS",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA",
+            "BACKUP_PMS_VIOLATE_IRQHandler"
+          ],
+          "line": 93,
+          "name": "BACKUP_PMS_VIOLATE",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "DMA_EXTMEM_REJECT_IRQHandler"
+          ],
+          "line": 98,
+          "name": "DMA_EXTMEM_REJECT",
+          "peripheral": "DMA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:dma"
+        },
+        {
+          "alias_names": [
+            "EFUSE_IRQHandler"
+          ],
+          "line": 36,
+          "name": "EFUSE",
+          "peripheral": "EFUSE",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "GPIO_IRQHandler"
+          ],
+          "line": 16,
+          "name": "GPIO",
+          "peripheral": "GPIO",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:gpio"
+        },
+        {
+          "alias_names": [
+            "GPIO_NMI_IRQHandler"
+          ],
+          "line": 17,
+          "name": "GPIO_NMI",
+          "peripheral": "GPIO",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:gpio"
+        },
+        {
+          "alias_names": [
+            "GPIO_INTR_2_IRQHandler"
+          ],
+          "line": 18,
+          "name": "GPIO_INTR_2",
+          "peripheral": "GPIO",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:gpio"
+        },
+        {
+          "alias_names": [
+            "GPIO_NMI_2_IRQHandler"
+          ],
+          "line": 19,
+          "name": "GPIO_NMI_2",
+          "peripheral": "GPIO",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:gpio"
+        },
+        {
+          "alias_names": [
+            "I2C0",
+            "I2C_MASTER_IRQHandler"
+          ],
+          "line": 11,
+          "name": "I2C_MASTER",
+          "peripheral": "I2C0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:i2c0"
+        },
+        {
+          "alias_names": [
+            "I2C0",
+            "I2C_EXT0_IRQHandler"
+          ],
+          "line": 42,
+          "name": "I2C_EXT0",
+          "peripheral": "I2C0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:i2c0"
+        },
+        {
+          "alias_names": [
+            "I2C1",
+            "I2C_EXT1_IRQHandler"
+          ],
+          "line": 43,
+          "name": "I2C_EXT1",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "I2S0_IRQHandler"
+          ],
+          "line": 25,
+          "name": "I2S0",
+          "peripheral": "I2S0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "I2S1_IRQHandler"
+          ],
+          "line": 26,
+          "name": "I2S1",
+          "peripheral": "I2S1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "WIFI_MAC_IRQHandler"
+          ],
+          "line": 0,
+          "name": "WIFI_MAC",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "WIFI_NMI_IRQHandler"
+          ],
+          "line": 1,
+          "name": "WIFI_NMI",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "WIFI_PWR_IRQHandler"
+          ],
+          "line": 2,
+          "name": "WIFI_PWR",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "WIFI_BB_IRQHandler"
+          ],
+          "line": 3,
+          "name": "WIFI_BB",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "BT_MAC_IRQHandler"
+          ],
+          "line": 4,
+          "name": "BT_MAC",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "BT_BB_IRQHandler"
+          ],
+          "line": 5,
+          "name": "BT_BB",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "BT_BB_NMI_IRQHandler"
+          ],
+          "line": 6,
+          "name": "BT_BB_NMI",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "RWBT_IRQHandler"
+          ],
+          "line": 7,
+          "name": "RWBT",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "RWBLE_IRQHandler"
+          ],
+          "line": 8,
+          "name": "RWBLE",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "RWBT_NMI_IRQHandler"
+          ],
+          "line": 9,
+          "name": "RWBT_NMI",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "RWBLE_NMI_IRQHandler"
+          ],
+          "line": 10,
+          "name": "RWBLE_NMI",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "SLC0_IRQHandler"
+          ],
+          "line": 12,
+          "name": "SLC0",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "SLC1_IRQHandler"
+          ],
+          "line": 13,
+          "name": "SLC1",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "SDIO_HOST_IRQHandler"
+          ],
+          "line": 30,
+          "name": "SDIO_HOST",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "WDT_IRQHandler"
+          ],
+          "line": 47,
+          "name": "WDT",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "CACHE_IA_IRQHandler"
+          ],
+          "line": 56,
+          "name": "CACHE_IA",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "DCACHE_PRELOAD0_IRQHandler"
+          ],
+          "line": 61,
+          "name": "DCACHE_PRELOAD0",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "ICACHE_PRELOAD0_IRQHandler"
+          ],
+          "line": 62,
+          "name": "ICACHE_PRELOAD0",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "DCACHE_SYNC0_IRQHandler"
+          ],
+          "line": 63,
+          "name": "DCACHE_SYNC0",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "ICACHE_SYNC0_IRQHandler"
+          ],
+          "line": 64,
+          "name": "ICACHE_SYNC0",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "FROM_CPU_INTR0_IRQHandler"
+          ],
+          "line": 79,
+          "name": "FROM_CPU_INTR0",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "FROM_CPU_INTR1_IRQHandler"
+          ],
+          "line": 80,
+          "name": "FROM_CPU_INTR1",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "FROM_CPU_INTR2_IRQHandler"
+          ],
+          "line": 81,
+          "name": "FROM_CPU_INTR2",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "FROM_CPU_INTR3_IRQHandler"
+          ],
+          "line": 82,
+          "name": "FROM_CPU_INTR3",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "CORE0_IRAM0_PMS_IRQHandler"
+          ],
+          "line": 85,
+          "name": "CORE0_IRAM0_PMS",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "CORE0_DRAM0_PMS_IRQHandler"
+          ],
+          "line": 86,
+          "name": "CORE0_DRAM0_PMS",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "CORE0_PIF_PMS_IRQHandler"
+          ],
+          "line": 87,
+          "name": "CORE0_PIF_PMS",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "CORE0_PIF_PMS_SIZE_IRQHandler"
+          ],
+          "line": 88,
+          "name": "CORE0_PIF_PMS_SIZE",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "INTERRUPT_CORE0",
+            "CACHE_CORE0_ACS_IRQHandler"
+          ],
+          "line": 94,
+          "name": "CACHE_CORE0_ACS",
+          "peripheral": "INTERRUPT_CORE0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:interrupt-core0"
+        },
+        {
+          "alias_names": [
+            "LCD_CAM_IRQHandler"
+          ],
+          "line": 24,
+          "name": "LCD_CAM",
+          "peripheral": "LCD_CAM",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "LEDC_IRQHandler"
+          ],
+          "line": 35,
+          "name": "LEDC",
+          "peripheral": "LEDC",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:ledc"
+        },
+        {
+          "alias_names": [
+            "LEDC",
+            "TIMER1_IRQHandler"
+          ],
+          "line": 48,
+          "name": "TIMER1",
+          "peripheral": "LEDC",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:ledc"
+        },
+        {
+          "alias_names": [
+            "LEDC",
+            "TIMER2_IRQHandler"
+          ],
+          "line": 49,
+          "name": "TIMER2",
+          "peripheral": "LEDC",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:ledc"
+        },
+        {
+          "alias_names": [
+            "PCNT_IRQHandler"
+          ],
+          "line": 41,
+          "name": "PCNT",
+          "peripheral": "PCNT",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "PERI_BACKUP_IRQHandler"
+          ],
+          "line": 97,
+          "name": "PERI_BACKUP",
+          "peripheral": "PERI_BACKUP",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "MCPWM0_IRQHandler"
+          ],
+          "line": 31,
+          "name": "MCPWM0",
+          "peripheral": "MCPWM0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "MCPWM1_IRQHandler"
+          ],
+          "line": 32,
+          "name": "MCPWM1",
+          "peripheral": "MCPWM1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "RMT_IRQHandler"
+          ],
+          "line": 40,
+          "name": "RMT",
+          "peripheral": "RMT",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "RSA_IRQHandler"
+          ],
+          "line": 76,
+          "name": "RSA",
+          "peripheral": "RSA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "RTC_CNTL",
+            "RTC_CORE_IRQHandler"
+          ],
+          "line": 39,
+          "name": "RTC_CORE",
+          "peripheral": "RTC_CNTL",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "SHA_IRQHandler"
+          ],
+          "line": 77,
+          "name": "SHA",
+          "peripheral": "SHA",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "SPI0",
+            "SPI_MEM_REJECT_CACHE_IRQHandler"
+          ],
+          "line": 60,
+          "name": "SPI_MEM_REJECT_CACHE",
+          "peripheral": "SPI0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "SPI1_IRQHandler"
+          ],
+          "line": 20,
+          "name": "SPI1",
+          "peripheral": "SPI1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "SPI2_IRQHandler"
+          ],
+          "line": 21,
+          "name": "SPI2",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:spi2"
+        },
+        {
+          "alias_names": [
+            "SPI2_DMA_IRQHandler"
+          ],
+          "line": 44,
+          "name": "SPI2_DMA",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:spi2"
+        },
+        {
+          "alias_names": [
+            "SPI3_IRQHandler"
+          ],
+          "line": 22,
+          "name": "SPI3",
+          "peripheral": "SPI3",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:spi3"
+        },
+        {
+          "alias_names": [
+            "SPI3_DMA_IRQHandler"
+          ],
+          "line": 45,
+          "name": "SPI3_DMA",
+          "peripheral": "SPI3",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:spi3"
+        },
+        {
+          "alias_names": [
+            "SYSTIMER_TARGET0_IRQHandler"
+          ],
+          "line": 57,
+          "name": "SYSTIMER_TARGET0",
+          "peripheral": "SYSTIMER",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:systimer"
+        },
+        {
+          "alias_names": [
+            "SYSTIMER_TARGET1_IRQHandler"
+          ],
+          "line": 58,
+          "name": "SYSTIMER_TARGET1",
+          "peripheral": "SYSTIMER",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:systimer"
+        },
+        {
+          "alias_names": [
+            "SYSTIMER_TARGET2_IRQHandler"
+          ],
+          "line": 59,
+          "name": "SYSTIMER_TARGET2",
+          "peripheral": "SYSTIMER",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:systimer"
+        },
+        {
+          "alias_names": [
+            "TIMG0",
+            "TG0_T0_LEVEL_IRQHandler"
+          ],
+          "line": 50,
+          "name": "TG0_T0_LEVEL",
+          "peripheral": "TIMG0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:timg0"
+        },
+        {
+          "alias_names": [
+            "TIMG0",
+            "TG0_T1_LEVEL_IRQHandler"
+          ],
+          "line": 51,
+          "name": "TG0_T1_LEVEL",
+          "peripheral": "TIMG0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:timg0"
+        },
+        {
+          "alias_names": [
+            "TIMG0",
+            "TG0_WDT_LEVEL_IRQHandler"
+          ],
+          "line": 52,
+          "name": "TG0_WDT_LEVEL",
+          "peripheral": "TIMG0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:timg0"
+        },
+        {
+          "alias_names": [
+            "TIMG1",
+            "TG1_T0_LEVEL_IRQHandler"
+          ],
+          "line": 53,
+          "name": "TG1_T0_LEVEL",
+          "peripheral": "TIMG1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:timg1"
+        },
+        {
+          "alias_names": [
+            "TIMG1",
+            "TG1_T1_LEVEL_IRQHandler"
+          ],
+          "line": 54,
+          "name": "TG1_T1_LEVEL",
+          "peripheral": "TIMG1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:timg1"
+        },
+        {
+          "alias_names": [
+            "TIMG1",
+            "TG1_WDT_LEVEL_IRQHandler"
+          ],
+          "line": 55,
+          "name": "TG1_WDT_LEVEL",
+          "peripheral": "TIMG1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": "interrupt-group:timg1"
+        },
+        {
+          "alias_names": [
+            "TWAI0_IRQHandler"
+          ],
+          "line": 37,
+          "name": "TWAI0",
+          "peripheral": "TWAI0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "UART0_IRQHandler"
+          ],
+          "line": 27,
+          "name": "UART0",
+          "peripheral": "UART0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "UART1_IRQHandler"
+          ],
+          "line": 28,
+          "name": "UART1",
+          "peripheral": "UART1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "UART2_IRQHandler"
+          ],
+          "line": 29,
+          "name": "UART2",
+          "peripheral": "UART2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "UHCI0_IRQHandler"
+          ],
+          "line": 14,
+          "name": "UHCI0",
+          "peripheral": "UHCI0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "UHCI1_IRQHandler"
+          ],
+          "line": 15,
+          "name": "UHCI1",
+          "peripheral": "UHCI1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "USB0",
+            "USB_IRQHandler"
+          ],
+          "line": 38,
+          "name": "USB",
+          "peripheral": "USB0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        },
+        {
+          "alias_names": [
+            "USB_DEVICE_IRQHandler"
+          ],
+          "line": 96,
+          "name": "USB_DEVICE",
+          "peripheral": "USB_DEVICE",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "shared_group": null
+        }
+      ],
+      "memories": [
+        {
+          "access": "rwx",
+          "base_address": 1070235648,
+          "kind": "sram",
+          "name": "DRAM",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "size_bytes": 524288,
+          "startup_roles": [
+            "volatile-target",
+            "copy-target",
+            "zero-target",
+            "stack-target"
+          ]
+        },
+        {
+          "access": "rx",
+          "base_address": 1073741824,
+          "kind": "rom",
+          "name": "ROM",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "size_bytes": 393216,
+          "startup_roles": [
+            "nonvolatile",
+            "copy-source",
+            "vector-source"
+          ]
+        },
+        {
+          "access": "rwx",
+          "base_address": 1077936128,
+          "kind": "sram",
+          "name": "IRAM",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "size_bytes": 524288,
+          "startup_roles": [
+            "volatile-target",
+            "copy-target",
+            "zero-target",
+            "stack-target"
+          ]
+        }
+      ],
+      "package": "qfn56",
+      "package_pads": [
+        {
+          "bonded_pin": "GPIO8",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO8",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO8",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO9",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO9",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO9",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO11",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO11",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO11",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO12",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO12",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO12",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO13",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO13",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO13",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO14",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO14",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO14",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO17",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO17",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO17",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO18",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO18",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO18",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO43",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO43",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO43",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        },
+        {
+          "bonded_pin": "GPIO44",
+          "bonding_state": "bonded",
+          "package": "qfn56",
+          "pad_id": "GPIO44",
+          "pad_kind": "io",
+          "physical_index": null,
+          "position_label": "GPIO44",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        }
+      ],
+      "packages": [
+        {
+          "name": "qfn56",
+          "pin_count": 56,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          }
+        }
+      ],
+      "peripheral_clock_bindings": [
+        {
+          "clock_gate_id": "gate:i2c0",
+          "peripheral": "I2C0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        },
+        {
+          "clock_gate_id": "gate:i2c1",
+          "peripheral": "I2C1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        },
+        {
+          "clock_gate_id": "gate:spi2",
+          "peripheral": "SPI2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        },
+        {
+          "clock_gate_id": "gate:spi3",
+          "peripheral": "SPI3",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        },
+        {
+          "clock_gate_id": "gate:uart0",
+          "peripheral": "UART0",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        },
+        {
+          "clock_gate_id": "gate:uart1",
+          "peripheral": "UART1",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        },
+        {
+          "clock_gate_id": "gate:uart2",
+          "peripheral": "UART2",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "reset_id": null,
+          "selector_id": null
+        }
+      ],
+      "pin_constraints": [],
+      "resets": [],
+      "startup_descriptors": [
+        {
+          "descriptor_id": "startup:vectors",
+          "kind": "vector-table",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "source_region": null,
+          "symbol": "_vectors",
+          "target_region": null
+        },
+        {
+          "descriptor_id": "startup:stack-top",
+          "kind": "initial-stack-pointer",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "source_region": null,
+          "symbol": "__stack_top",
+          "target_region": null
+        },
+        {
+          "descriptor_id": "startup:copy-target:dram",
+          "kind": "copy-target-region",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "source_region": null,
+          "symbol": null,
+          "target_region": "DRAM"
+        },
+        {
+          "descriptor_id": "startup:zero-target:dram",
+          "kind": "zero-target-region",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "source_region": null,
+          "symbol": null,
+          "target_region": "DRAM"
+        },
+        {
+          "descriptor_id": "startup:vector-source:rom",
+          "kind": "vector-source-region",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "source_region": "ROM",
+          "symbol": null,
+          "target_region": null
+        },
+        {
+          "descriptor_id": "startup:copy-source:rom",
+          "kind": "copy-source-region",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "source_region": "ROM",
+          "symbol": null,
+          "target_region": null
+        },
+        {
+          "descriptor_id": "startup:copy-target:iram",
+          "kind": "copy-target-region",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "source_region": null,
+          "symbol": null,
+          "target_region": "IRAM"
+        },
+        {
+          "descriptor_id": "startup:zero-target:iram",
+          "kind": "zero-target-region",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/espressif/esp32s3/devices/esp32s3.json"
+          },
+          "source_region": null,
+          "symbol": null,
+          "target_region": "IRAM"
+        }
+      ],
+      "vector_slots": [
+        {
+          "interrupt": null,
+          "kind": "reset-handler",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 0,
+          "symbol_name": "Reset_Handler"
+        },
+        {
+          "interrupt": "WIFI_MAC",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 16,
+          "symbol_name": "WIFI_MAC_IRQHandler"
+        },
+        {
+          "interrupt": "WIFI_NMI",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 17,
+          "symbol_name": "WIFI_NMI_IRQHandler"
+        },
+        {
+          "interrupt": "WIFI_PWR",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 18,
+          "symbol_name": "WIFI_PWR_IRQHandler"
+        },
+        {
+          "interrupt": "WIFI_BB",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 19,
+          "symbol_name": "WIFI_BB_IRQHandler"
+        },
+        {
+          "interrupt": "BT_MAC",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 20,
+          "symbol_name": "BT_MAC_IRQHandler"
+        },
+        {
+          "interrupt": "BT_BB",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 21,
+          "symbol_name": "BT_BB_IRQHandler"
+        },
+        {
+          "interrupt": "BT_BB_NMI",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 22,
+          "symbol_name": "BT_BB_NMI_IRQHandler"
+        },
+        {
+          "interrupt": "RWBT",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 23,
+          "symbol_name": "RWBT_IRQHandler"
+        },
+        {
+          "interrupt": "RWBLE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 24,
+          "symbol_name": "RWBLE_IRQHandler"
+        },
+        {
+          "interrupt": "RWBT_NMI",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 25,
+          "symbol_name": "RWBT_NMI_IRQHandler"
+        },
+        {
+          "interrupt": "RWBLE_NMI",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 26,
+          "symbol_name": "RWBLE_NMI_IRQHandler"
+        },
+        {
+          "interrupt": "I2C_MASTER",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 27,
+          "symbol_name": "I2C_MASTER_IRQHandler"
+        },
+        {
+          "interrupt": "SLC0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 28,
+          "symbol_name": "SLC0_IRQHandler"
+        },
+        {
+          "interrupt": "SLC1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 29,
+          "symbol_name": "SLC1_IRQHandler"
+        },
+        {
+          "interrupt": "UHCI0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 30,
+          "symbol_name": "UHCI0_IRQHandler"
+        },
+        {
+          "interrupt": "UHCI1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 31,
+          "symbol_name": "UHCI1_IRQHandler"
+        },
+        {
+          "interrupt": "GPIO",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 32,
+          "symbol_name": "GPIO_IRQHandler"
+        },
+        {
+          "interrupt": "GPIO_NMI",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 33,
+          "symbol_name": "GPIO_NMI_IRQHandler"
+        },
+        {
+          "interrupt": "GPIO_INTR_2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 34,
+          "symbol_name": "GPIO_INTR_2_IRQHandler"
+        },
+        {
+          "interrupt": "GPIO_NMI_2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 35,
+          "symbol_name": "GPIO_NMI_2_IRQHandler"
+        },
+        {
+          "interrupt": "SPI1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 36,
+          "symbol_name": "SPI1_IRQHandler"
+        },
+        {
+          "interrupt": "SPI2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 37,
+          "symbol_name": "SPI2_IRQHandler"
+        },
+        {
+          "interrupt": "SPI3",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 38,
+          "symbol_name": "SPI3_IRQHandler"
+        },
+        {
+          "interrupt": "LCD_CAM",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 40,
+          "symbol_name": "LCD_CAM_IRQHandler"
+        },
+        {
+          "interrupt": "I2S0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 41,
+          "symbol_name": "I2S0_IRQHandler"
+        },
+        {
+          "interrupt": "I2S1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 42,
+          "symbol_name": "I2S1_IRQHandler"
+        },
+        {
+          "interrupt": "UART0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 43,
+          "symbol_name": "UART0_IRQHandler"
+        },
+        {
+          "interrupt": "UART1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 44,
+          "symbol_name": "UART1_IRQHandler"
+        },
+        {
+          "interrupt": "UART2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 45,
+          "symbol_name": "UART2_IRQHandler"
+        },
+        {
+          "interrupt": "SDIO_HOST",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 46,
+          "symbol_name": "SDIO_HOST_IRQHandler"
+        },
+        {
+          "interrupt": "MCPWM0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 47,
+          "symbol_name": "MCPWM0_IRQHandler"
+        },
+        {
+          "interrupt": "MCPWM1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 48,
+          "symbol_name": "MCPWM1_IRQHandler"
+        },
+        {
+          "interrupt": "LEDC",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 51,
+          "symbol_name": "LEDC_IRQHandler"
+        },
+        {
+          "interrupt": "EFUSE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 52,
+          "symbol_name": "EFUSE_IRQHandler"
+        },
+        {
+          "interrupt": "TWAI0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 53,
+          "symbol_name": "TWAI0_IRQHandler"
+        },
+        {
+          "interrupt": "USB",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 54,
+          "symbol_name": "USB_IRQHandler"
+        },
+        {
+          "interrupt": "RTC_CORE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 55,
+          "symbol_name": "RTC_CORE_IRQHandler"
+        },
+        {
+          "interrupt": "RMT",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 56,
+          "symbol_name": "RMT_IRQHandler"
+        },
+        {
+          "interrupt": "PCNT",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 57,
+          "symbol_name": "PCNT_IRQHandler"
+        },
+        {
+          "interrupt": "I2C_EXT0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 58,
+          "symbol_name": "I2C_EXT0_IRQHandler"
+        },
+        {
+          "interrupt": "I2C_EXT1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 59,
+          "symbol_name": "I2C_EXT1_IRQHandler"
+        },
+        {
+          "interrupt": "SPI2_DMA",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 60,
+          "symbol_name": "SPI2_DMA_IRQHandler"
+        },
+        {
+          "interrupt": "SPI3_DMA",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 61,
+          "symbol_name": "SPI3_DMA_IRQHandler"
+        },
+        {
+          "interrupt": "WDT",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 63,
+          "symbol_name": "WDT_IRQHandler"
+        },
+        {
+          "interrupt": "TIMER1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 64,
+          "symbol_name": "TIMER1_IRQHandler"
+        },
+        {
+          "interrupt": "TIMER2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 65,
+          "symbol_name": "TIMER2_IRQHandler"
+        },
+        {
+          "interrupt": "TG0_T0_LEVEL",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 66,
+          "symbol_name": "TG0_T0_LEVEL_IRQHandler"
+        },
+        {
+          "interrupt": "TG0_T1_LEVEL",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 67,
+          "symbol_name": "TG0_T1_LEVEL_IRQHandler"
+        },
+        {
+          "interrupt": "TG0_WDT_LEVEL",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 68,
+          "symbol_name": "TG0_WDT_LEVEL_IRQHandler"
+        },
+        {
+          "interrupt": "TG1_T0_LEVEL",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 69,
+          "symbol_name": "TG1_T0_LEVEL_IRQHandler"
+        },
+        {
+          "interrupt": "TG1_T1_LEVEL",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 70,
+          "symbol_name": "TG1_T1_LEVEL_IRQHandler"
+        },
+        {
+          "interrupt": "TG1_WDT_LEVEL",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 71,
+          "symbol_name": "TG1_WDT_LEVEL_IRQHandler"
+        },
+        {
+          "interrupt": "CACHE_IA",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 72,
+          "symbol_name": "CACHE_IA_IRQHandler"
+        },
+        {
+          "interrupt": "SYSTIMER_TARGET0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 73,
+          "symbol_name": "SYSTIMER_TARGET0_IRQHandler"
+        },
+        {
+          "interrupt": "SYSTIMER_TARGET1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 74,
+          "symbol_name": "SYSTIMER_TARGET1_IRQHandler"
+        },
+        {
+          "interrupt": "SYSTIMER_TARGET2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 75,
+          "symbol_name": "SYSTIMER_TARGET2_IRQHandler"
+        },
+        {
+          "interrupt": "SPI_MEM_REJECT_CACHE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 76,
+          "symbol_name": "SPI_MEM_REJECT_CACHE_IRQHandler"
+        },
+        {
+          "interrupt": "DCACHE_PRELOAD0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 77,
+          "symbol_name": "DCACHE_PRELOAD0_IRQHandler"
+        },
+        {
+          "interrupt": "ICACHE_PRELOAD0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 78,
+          "symbol_name": "ICACHE_PRELOAD0_IRQHandler"
+        },
+        {
+          "interrupt": "DCACHE_SYNC0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 79,
+          "symbol_name": "DCACHE_SYNC0_IRQHandler"
+        },
+        {
+          "interrupt": "ICACHE_SYNC0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 80,
+          "symbol_name": "ICACHE_SYNC0_IRQHandler"
+        },
+        {
+          "interrupt": "APB_ADC",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 81,
+          "symbol_name": "APB_ADC_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_IN_CH0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 82,
+          "symbol_name": "DMA_IN_CH0_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_IN_CH1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 83,
+          "symbol_name": "DMA_IN_CH1_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_IN_CH2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 84,
+          "symbol_name": "DMA_IN_CH2_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_IN_CH3",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 85,
+          "symbol_name": "DMA_IN_CH3_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_IN_CH4",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 86,
+          "symbol_name": "DMA_IN_CH4_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_OUT_CH0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 87,
+          "symbol_name": "DMA_OUT_CH0_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_OUT_CH1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 88,
+          "symbol_name": "DMA_OUT_CH1_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_OUT_CH2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 89,
+          "symbol_name": "DMA_OUT_CH2_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_OUT_CH3",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 90,
+          "symbol_name": "DMA_OUT_CH3_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_OUT_CH4",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 91,
+          "symbol_name": "DMA_OUT_CH4_IRQHandler"
+        },
+        {
+          "interrupt": "RSA",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 92,
+          "symbol_name": "RSA_IRQHandler"
+        },
+        {
+          "interrupt": "SHA",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 93,
+          "symbol_name": "SHA_IRQHandler"
+        },
+        {
+          "interrupt": "FROM_CPU_INTR0",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 95,
+          "symbol_name": "FROM_CPU_INTR0_IRQHandler"
+        },
+        {
+          "interrupt": "FROM_CPU_INTR1",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 96,
+          "symbol_name": "FROM_CPU_INTR1_IRQHandler"
+        },
+        {
+          "interrupt": "FROM_CPU_INTR2",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 97,
+          "symbol_name": "FROM_CPU_INTR2_IRQHandler"
+        },
+        {
+          "interrupt": "FROM_CPU_INTR3",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 98,
+          "symbol_name": "FROM_CPU_INTR3_IRQHandler"
+        },
+        {
+          "interrupt": "ASSIST_DEBUG",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 99,
+          "symbol_name": "ASSIST_DEBUG_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_APBPERI_PMS",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 100,
+          "symbol_name": "DMA_APBPERI_PMS_IRQHandler"
+        },
+        {
+          "interrupt": "CORE0_IRAM0_PMS",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 101,
+          "symbol_name": "CORE0_IRAM0_PMS_IRQHandler"
+        },
+        {
+          "interrupt": "CORE0_DRAM0_PMS",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 102,
+          "symbol_name": "CORE0_DRAM0_PMS_IRQHandler"
+        },
+        {
+          "interrupt": "CORE0_PIF_PMS",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 103,
+          "symbol_name": "CORE0_PIF_PMS_IRQHandler"
+        },
+        {
+          "interrupt": "CORE0_PIF_PMS_SIZE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 104,
+          "symbol_name": "CORE0_PIF_PMS_SIZE_IRQHandler"
+        },
+        {
+          "interrupt": "BACKUP_PMS_VIOLATE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 109,
+          "symbol_name": "BACKUP_PMS_VIOLATE_IRQHandler"
+        },
+        {
+          "interrupt": "CACHE_CORE0_ACS",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 110,
+          "symbol_name": "CACHE_CORE0_ACS_IRQHandler"
+        },
+        {
+          "interrupt": "USB_DEVICE",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 112,
+          "symbol_name": "USB_DEVICE_IRQHandler"
+        },
+        {
+          "interrupt": "PERI_BACKUP",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 113,
+          "symbol_name": "PERI_BACKUP_IRQHandler"
+        },
+        {
+          "interrupt": "DMA_EXTMEM_REJECT",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-family-bootstrap-v1",
+              "espressif-esp32s3-bootstrap"
+            ],
+            "source_id": "espressif-svd",
+            "source_path": "esp32s3.svd"
+          },
+          "slot": 114,
+          "symbol_name": "DMA_EXTMEM_REJECT_IRQHandler"
+        }
+      ]
+    }
+  ],
+  "family": "esp32s3",
+  "schema_version": "1.2.0",
+  "vendor": "espressif"
+}
