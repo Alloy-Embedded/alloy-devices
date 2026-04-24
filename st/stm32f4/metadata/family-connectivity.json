@@ -350,10 +350,10 @@
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f405rg-bootstrap"
+          "st-stm32f4-stm32f401re-bootstrap"
         ],
-        "source_id": "cmsis-svd-data",
-        "source_path": "STM32F405.svd"
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
       },
       "shared_group": "interrupt-group:dma1"
     },
@@ -367,10 +367,10 @@
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f405rg-bootstrap"
+          "st-stm32f4-stm32f401re-bootstrap"
         ],
-        "source_id": "cmsis-svd-data",
-        "source_path": "STM32F405.svd"
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
       },
       "shared_group": "interrupt-group:dma1"
     },

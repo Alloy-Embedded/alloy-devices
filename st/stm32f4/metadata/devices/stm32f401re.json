@@ -4805,6 +4805,46 @@
     },
     {
       "alias_names": [
+        "DMA1_Stream5_IRQHandler"
+      ],
+      "binding_id": "interrupt-binding:dma1:dma1-stream5",
+      "interrupt": "DMA1_Stream5",
+      "line": 16,
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "shared_group": "interrupt-group:dma1",
+      "symbol_name": "DMA1_Stream5_IRQHandler",
+      "vector_slot": 32
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream6_IRQHandler"
+      ],
+      "binding_id": "interrupt-binding:dma1:dma1-stream6",
+      "interrupt": "DMA1_Stream6",
+      "line": 17,
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "shared_group": "interrupt-group:dma1",
+      "symbol_name": "DMA1_Stream6_IRQHandler",
+      "vector_slot": 33
+    },
+    {
+      "alias_names": [
         "DMA1",
         "RTC_Alarm_IRQHandler"
       ],
@@ -6051,6 +6091,40 @@
         "source_path": "STM32F401.svd"
       },
       "shared_group": null
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream5_IRQHandler"
+      ],
+      "line": 16,
+      "name": "DMA1_Stream5",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "shared_group": "interrupt-group:dma1"
+    },
+    {
+      "alias_names": [
+        "DMA1_Stream6_IRQHandler"
+      ],
+      "line": 17,
+      "name": "DMA1_Stream6",
+      "peripheral": "DMA1",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "shared_group": "interrupt-group:dma1"
     }
   ],
   "ip_blocks": [
@@ -108534,6 +108608,34 @@
       },
       "slot": 26,
       "symbol_name": "EXTI4_IRQHandler"
+    },
+    {
+      "interrupt": "DMA1_Stream5",
+      "kind": "external-interrupt",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "slot": 32,
+      "symbol_name": "DMA1_Stream5_IRQHandler"
+    },
+    {
+      "interrupt": "DMA1_Stream6",
+      "kind": "external-interrupt",
+      "provenance": {
+        "patch_ids": [
+          "st-stm32f4-family-bootstrap-v1",
+          "st-stm32f4-stm32f401re-bootstrap"
+        ],
+        "source_id": "bootstrap-patch",
+        "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+      },
+      "slot": 33,
+      "symbol_name": "DMA1_Stream6_IRQHandler"
     },
     {
       "interrupt": "ADC",

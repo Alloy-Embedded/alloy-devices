@@ -61,6 +61,16 @@ void BusFault_Handler() {
     Default_Handler();
 }
 
+void DMA1_Stream5_IRQHandler() __attribute__((weak));
+void DMA1_Stream5_IRQHandler() {
+    Default_Handler();
+}
+
+void DMA1_Stream6_IRQHandler() __attribute__((weak));
+void DMA1_Stream6_IRQHandler() {
+    Default_Handler();
+}
+
 void DebugMon_Handler() __attribute__((weak));
 void DebugMon_Handler() {
     Default_Handler();
@@ -360,8 +370,8 @@ void (*const _vectors[])() = {
     nullptr,
     nullptr,
     nullptr,
-    nullptr,
-    nullptr,
+    DMA1_Stream5_IRQHandler,
+    DMA1_Stream6_IRQHandler,
     ADC_IRQHandler,
     nullptr,
     nullptr,

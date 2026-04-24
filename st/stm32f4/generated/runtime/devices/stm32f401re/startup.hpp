@@ -20,6 +20,8 @@ enum class StartupSymbolId : std::uint16_t {
   none,
   ADC_IRQHandler,
   BusFault_Handler,
+  DMA1_Stream5_IRQHandler,
+  DMA1_Stream6_IRQHandler,
   DebugMon_Handler,
   EXTI0_IRQHandler,
   EXTI15_10_IRQHandler,
@@ -86,6 +88,8 @@ enum class InterruptBindingId : std::uint16_t {
   interrupt_binding_adc1_adc,
   interrupt_binding_adc_common_fpu,
   interrupt_binding_dma1_rtc_wkup,
+  interrupt_binding_dma1_dma1_stream5,
+  interrupt_binding_dma1_dma1_stream6,
   interrupt_binding_dma1_rtc_alarm,
   interrupt_binding_dma2_rcc,
   interrupt_binding_exti_tamp_stamp,
@@ -125,7 +129,7 @@ struct VectorSlotDescriptor {
   InterruptBindingId interrupt_binding_id;
   VectorKindId kind_id;
 };
-inline constexpr std::array<VectorSlotDescriptor, 50> kVectorSlots = {{
+inline constexpr std::array<VectorSlotDescriptor, 52> kVectorSlots = {{
   {0, StartupSymbolId::__stack_top, InterruptBindingId::none, VectorKindId::vector_kind_initial_stack_pointer},
   {1, StartupSymbolId::Reset_Handler, InterruptBindingId::none, VectorKindId::vector_kind_reset_handler},
   {2, StartupSymbolId::NMI_Handler, InterruptBindingId::none, VectorKindId::vector_kind_system_exception},
@@ -152,6 +156,8 @@ inline constexpr std::array<VectorSlotDescriptor, 50> kVectorSlots = {{
   {24, StartupSymbolId::EXTI2_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti2, VectorKindId::vector_kind_external_interrupt},
   {25, StartupSymbolId::EXTI3_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti3, VectorKindId::vector_kind_external_interrupt},
   {26, StartupSymbolId::EXTI4_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti4, VectorKindId::vector_kind_external_interrupt},
+  {32, StartupSymbolId::DMA1_Stream5_IRQHandler, InterruptBindingId::interrupt_binding_dma1_dma1_stream5, VectorKindId::vector_kind_external_interrupt},
+  {33, StartupSymbolId::DMA1_Stream6_IRQHandler, InterruptBindingId::interrupt_binding_dma1_dma1_stream6, VectorKindId::vector_kind_external_interrupt},
   {34, StartupSymbolId::ADC_IRQHandler, InterruptBindingId::interrupt_binding_adc1_adc, VectorKindId::vector_kind_external_interrupt},
   {39, StartupSymbolId::EXTI9_5_IRQHandler, InterruptBindingId::interrupt_binding_exti_exti9_5, VectorKindId::vector_kind_external_interrupt},
   {40, StartupSymbolId::TIM1_BRK_TIM9_IRQHandler, InterruptBindingId::interrupt_binding_gpiod_tim1_brk_tim9, VectorKindId::vector_kind_external_interrupt},

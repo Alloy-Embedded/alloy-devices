@@ -17,6 +17,8 @@ void EXTI1_IRQHandler() __attribute__((weak));
 void EXTI2_IRQHandler() __attribute__((weak));
 void EXTI3_IRQHandler() __attribute__((weak));
 void EXTI4_IRQHandler() __attribute__((weak));
+void DMA1_Stream5_IRQHandler() __attribute__((weak));
+void DMA1_Stream6_IRQHandler() __attribute__((weak));
 void ADC_IRQHandler() __attribute__((weak));
 void EXTI9_5_IRQHandler() __attribute__((weak));
 void TIM1_BRK_TIM9_IRQHandler() __attribute__((weak));
@@ -55,7 +57,7 @@ struct InterruptStubDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptStubDescriptor, 34> kInterruptStubs = {{
+inline constexpr std::array<InterruptStubDescriptor, 36> kInterruptStubs = {{
   {InterruptId::PVD, StartupSymbolId::PVD_IRQHandler, 1u, 17u},
   {InterruptId::TAMP_STAMP, StartupSymbolId::TAMP_STAMP_IRQHandler, 2u, 18u},
   {InterruptId::RTC_WKUP, StartupSymbolId::RTC_WKUP_IRQHandler, 3u, 19u},
@@ -66,6 +68,8 @@ inline constexpr std::array<InterruptStubDescriptor, 34> kInterruptStubs = {{
   {InterruptId::EXTI2, StartupSymbolId::EXTI2_IRQHandler, 8u, 24u},
   {InterruptId::EXTI3, StartupSymbolId::EXTI3_IRQHandler, 9u, 25u},
   {InterruptId::EXTI4, StartupSymbolId::EXTI4_IRQHandler, 10u, 26u},
+  {InterruptId::DMA1_Stream5, StartupSymbolId::DMA1_Stream5_IRQHandler, 16u, 32u},
+  {InterruptId::DMA1_Stream6, StartupSymbolId::DMA1_Stream6_IRQHandler, 17u, 33u},
   {InterruptId::ADC, StartupSymbolId::ADC_IRQHandler, 18u, 34u},
   {InterruptId::EXTI9_5, StartupSymbolId::EXTI9_5_IRQHandler, 23u, 39u},
   {InterruptId::TIM1_BRK_TIM9, StartupSymbolId::TIM1_BRK_TIM9_IRQHandler, 24u, 40u},
@@ -178,6 +182,22 @@ struct InterruptStubTraits<InterruptId::EXTI4> {
   static constexpr StartupSymbolId kSymbolId = StartupSymbolId::EXTI4_IRQHandler;
   static constexpr std::uint16_t kLine = 10u;
   static constexpr std::uint16_t kVectorSlot = 26u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::DMA1_Stream5> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::DMA1_Stream5_IRQHandler;
+  static constexpr std::uint16_t kLine = 16u;
+  static constexpr std::uint16_t kVectorSlot = 32u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::DMA1_Stream6> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::DMA1_Stream6_IRQHandler;
+  static constexpr std::uint16_t kLine = 17u;
+  static constexpr std::uint16_t kVectorSlot = 33u;
 };
 
 template<>

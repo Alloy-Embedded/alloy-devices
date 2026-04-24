@@ -13,6 +13,8 @@ namespace stm32f401re {
 enum class InterruptId : std::uint16_t {
   none,
   ADC,
+  DMA1_Stream5,
+  DMA1_Stream6,
   EXTI0,
   EXTI1,
   EXTI15_10,
@@ -54,9 +56,11 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 19> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 21> kInterruptDescriptors = {{
   {InterruptId::ADC, PeripheralId::ADC1, 18u, 34u},
   {InterruptId::RTC_WKUP, PeripheralId::DMA1, 3u, 19u},
+  {InterruptId::DMA1_Stream5, PeripheralId::DMA1, 16u, 32u},
+  {InterruptId::DMA1_Stream6, PeripheralId::DMA1, 17u, 33u},
   {InterruptId::RTC_Alarm, PeripheralId::DMA1, 41u, 57u},
   {InterruptId::RCC, PeripheralId::DMA2, 5u, 21u},
   {InterruptId::TIM2, PeripheralId::GPIOA, 28u, 44u},

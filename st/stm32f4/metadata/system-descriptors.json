@@ -1064,6 +1064,40 @@
             "source_path": "STM32F401.svd"
           },
           "shared_group": null
+        },
+        {
+          "alias_names": [
+            "DMA1_Stream5_IRQHandler"
+          ],
+          "line": 16,
+          "name": "DMA1_Stream5",
+          "peripheral": "DMA1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+          },
+          "shared_group": "interrupt-group:dma1"
+        },
+        {
+          "alias_names": [
+            "DMA1_Stream6_IRQHandler"
+          ],
+          "line": 17,
+          "name": "DMA1_Stream6",
+          "peripheral": "DMA1",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+          },
+          "shared_group": "interrupt-group:dma1"
         }
       ],
       "memories": [
@@ -3269,6 +3303,34 @@
           },
           "slot": 26,
           "symbol_name": "EXTI4_IRQHandler"
+        },
+        {
+          "interrupt": "DMA1_Stream5",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+          },
+          "slot": 32,
+          "symbol_name": "DMA1_Stream5_IRQHandler"
+        },
+        {
+          "interrupt": "DMA1_Stream6",
+          "kind": "external-interrupt",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_id": "bootstrap-patch",
+            "source_path": "patches/st/stm32f4/devices/stm32f401re.json"
+          },
+          "slot": 33,
+          "symbol_name": "DMA1_Stream6_IRQHandler"
         },
         {
           "interrupt": "ADC",

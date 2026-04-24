@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "stm32f401re",
-      "fact_count": 287,
+      "fact_count": 291,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/startup.hpp",
@@ -676,6 +676,58 @@
             ],
             "source_paths": [
               "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "DMA1_Stream5",
+            "kind": "external-interrupt",
+            "slot": 32,
+            "symbol_name": "DMA1_Stream5_IRQHandler"
+          },
+          "fact_id": "vector-slot:32",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/st/stm32f4/devices/stm32f401re.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "DMA1_Stream6",
+            "kind": "external-interrupt",
+            "slot": 33,
+            "symbol_name": "DMA1_Stream6_IRQHandler"
+          },
+          "fact_id": "vector-slot:33",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/st/stm32f4/devices/stm32f401re.json"
             ]
           },
           "supporting_fact_ids": []
@@ -1489,6 +1541,60 @@
             ],
             "source_paths": [
               "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:dma1:dma1-stream5",
+            "interrupt": "DMA1_Stream5",
+            "line": 16,
+            "peripheral": "DMA1",
+            "vector_slot": 32
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:dma1:dma1-stream5",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/st/stm32f4/devices/stm32f401re.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:dma1:dma1-stream6",
+            "interrupt": "DMA1_Stream6",
+            "line": 17,
+            "peripheral": "DMA1",
+            "vector_slot": 33
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:dma1:dma1-stream6",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/st/stm32f4/devices/stm32f401re.json"
             ]
           },
           "supporting_fact_ids": []
