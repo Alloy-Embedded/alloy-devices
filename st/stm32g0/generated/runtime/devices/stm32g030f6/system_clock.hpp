@@ -69,6 +69,7 @@ struct SystemClockProfileTraits {
   static constexpr std::uint32_t kPllP = 0u;
   static constexpr std::uint32_t kPllQ = 0u;
   static constexpr std::uint32_t kPllR = 0u;
+  static constexpr std::uint32_t kPllSource = 0u;
   static constexpr std::uint32_t kFlashLatency = 0u;
 };
 
@@ -95,6 +96,7 @@ struct SystemClockProfileTraits<SystemClockProfileId::default_pll_64mhz> {
   static constexpr std::uint32_t kPllP = 0u;
   static constexpr std::uint32_t kPllQ = 0u;
   static constexpr std::uint32_t kPllR = 0u;
+  static constexpr std::uint32_t kPllSource = 2u;
   static constexpr std::uint32_t kFlashLatency = 2u;
 };
 
@@ -121,6 +123,7 @@ struct SystemClockProfileTraits<SystemClockProfileId::safe_hsi16> {
   static constexpr std::uint32_t kPllP = 0u;
   static constexpr std::uint32_t kPllQ = 0u;
   static constexpr std::uint32_t kPllR = 0u;
+  static constexpr std::uint32_t kPllSource = 0u;
   static constexpr std::uint32_t kFlashLatency = 0u;
 };
 
@@ -192,7 +195,7 @@ inline bool apply_system_clock_profile() {
       return false;
     }
     write_field(kFlashLatencyField, SystemClockProfileTraits<Id>::kFlashLatency);
-    write_field(kPllsrcField, 0x2u);
+    write_field(kPllsrcField, SystemClockProfileTraits<Id>::kPllSource);
     write_field(kPllmField, SystemClockProfileTraits<Id>::kPllM);
     write_field(kPllnField, SystemClockProfileTraits<Id>::kPllN);
     write_field(kPllrField, SystemClockProfileTraits<Id>::kPllR);
