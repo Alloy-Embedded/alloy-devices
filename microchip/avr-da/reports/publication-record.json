@@ -380,8 +380,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4188,
-      "content_sha256": "a368815a3958400eedae72ebcc9ab45435e00b53f151851151cf4f2a22aff9aa",
+      "content_bytes": 4396,
+      "content_sha256": "7eb59417a2da83ef140cf9f522c442bc5c6387a04b18802afb8303f859d5818b",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/peripheral_instances.hpp"
     },
     {
@@ -540,7 +540,7 @@
     "family": "avr-da",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "3626f80de4e0a7395f885740b8a91a14ad5bbedf1d019288c6b49e73910f4e1a",
+  "target_artifact_revision": "b97a847e53421e4536bc6fcdafc0d6510bde2cedc2634aada58e7e8c6ebca1fc",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
