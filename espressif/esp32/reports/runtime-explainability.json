@@ -1,0 +1,974 @@
+{
+  "devices": [
+    {
+      "capability_coverage": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "GPIO",
+          "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI0",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI1",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI2",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI3",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "UART0",
+          "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART1",
+          "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART2",
+          "peripheral_class": "uart"
+        }
+      ],
+      "capability_decision_count": 7,
+      "capability_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "runtime-support:gpio",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "runtime-support:spi",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "spi",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "capability:uart:esp32-uart-v1:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "uart",
+          "scope": "ip_block",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "capability:uart:esp32-uart-v1:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "uart",
+          "scope": "ip_block",
+          "value": "tx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "runtime-support:uart",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "uart",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "capability-instance:uart0:qfn48:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "UART0",
+          "peripheral_class": "uart",
+          "scope": "instance_overlay",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "capability-instance:uart0:qfn48:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "UART0",
+          "peripheral_class": "uart",
+          "scope": "instance_overlay",
+          "value": "tx"
+        }
+      ],
+      "device": "esp32",
+      "dma_binding_decision_count": 0,
+      "dma_binding_decisions": [],
+      "heuristic_fact_count": 12,
+      "heuristic_facts": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:spi",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:uart",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:0",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:1",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:2",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:3",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:4",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:5",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:6",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:7",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:8",
+          "fact_kind": "system_sequence_step"
+        }
+      ],
+      "package": "qfn48",
+      "partial_runtime_peripherals": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "GPIO",
+          "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI0",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI1",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI2",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI3",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART1",
+          "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART2",
+          "peripheral_class": "uart"
+        }
+      ],
+      "route_decision_count": 2,
+      "route_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/routes.hpp",
+          "capability_ids": [
+            "capability:uart:esp32-uart-v1:tx",
+            "capability-instance:uart0:qfn48:tx"
+          ],
+          "decision_id": "candidate:gpio1:uart0:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:uart0",
+            "operation:route:gpio1:uart0:tx"
+          ],
+          "peripheral": "UART0",
+          "pin": "GPIO1",
+          "requirement_ids": [
+            "requirement:package:qfn48",
+            "requirement:bonded-pin:qfn48:gpio1",
+            "requirement:clock-enable:uart0",
+            "requirement:source-select:gpio1:uart0:tx"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:14",
+          "signal": "tx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/routes.hpp",
+          "capability_ids": [
+            "capability:uart:esp32-uart-v1:rx",
+            "capability-instance:uart0:qfn48:rx"
+          ],
+          "decision_id": "candidate:gpio3:uart0:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:uart0",
+            "operation:route:gpio3:uart0:rx"
+          ],
+          "peripheral": "UART0",
+          "pin": "GPIO3",
+          "requirement_ids": [
+            "requirement:package:qfn48",
+            "requirement:bonded-pin:qfn48:gpio3",
+            "requirement:clock-enable:uart0",
+            "requirement:source-select:gpio3:uart0:rx"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:14",
+          "signal": "rx"
+        }
+      ],
+      "route_group_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/routes.hpp",
+          "candidate_ids": [
+            "candidate:gpio1:uart0:tx",
+            "candidate:gpio3:uart0:rx"
+          ],
+          "conflict_group": "conflict:uart0:qfn48:tx-rx",
+          "decision_id": "group:uart0:qfn48:tx-rx",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "qfn48",
+          "peripheral": "UART0",
+          "signals": [
+            "tx",
+            "rx"
+          ]
+        }
+      ],
+      "system_sequence_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:0",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 0,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:copy-source:rom",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:1",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 1,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:copy-target:dram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:2",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 2,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:copy-target:iram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:3",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 3,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:stack-top",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:4",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 4,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:vector-source:rom",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:5",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 5,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:vectors",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:6",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 6,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:zero-target:dram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:7",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 7,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:zero-target:iram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/system_sequences.hpp",
+          "decision_id": "default_bringup:8",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "system-clock-profile",
+          "ordinal": 8,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": null,
+          "system_clock_profile_id": "default-pll-240mhz"
+        }
+      ],
+      "unsupported_runtime_peripherals": []
+    },
+    {
+      "capability_coverage": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "GPIO",
+          "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI0",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI1",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI2",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI3",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "UART0",
+          "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART1",
+          "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART2",
+          "peripheral_class": "uart"
+        }
+      ],
+      "capability_decision_count": 7,
+      "capability_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "runtime-support:gpio",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "runtime-support:spi",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "spi",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "capability:uart:esp32-uart-v1:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "uart",
+          "scope": "ip_block",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "capability:uart:esp32-uart-v1:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "uart",
+          "scope": "ip_block",
+          "value": "tx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "runtime-support:uart",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "uart",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "capability-instance:uart0:wroom-32:rx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "UART0",
+          "peripheral_class": "uart",
+          "scope": "instance_overlay",
+          "value": "rx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "capability-instance:uart0:wroom-32:tx",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "UART0",
+          "peripheral_class": "uart",
+          "scope": "instance_overlay",
+          "value": "tx"
+        }
+      ],
+      "device": "esp32-wroom32",
+      "dma_binding_decision_count": 0,
+      "dma_binding_decisions": [],
+      "heuristic_fact_count": 12,
+      "heuristic_facts": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:spi",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:uart",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:0",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:1",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:2",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:3",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:4",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:5",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:6",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:7",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:8",
+          "fact_kind": "system_sequence_step"
+        }
+      ],
+      "package": "wroom-32",
+      "partial_runtime_peripherals": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "GPIO",
+          "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI0",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI1",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI2",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SPI3",
+          "peripheral_class": "spi"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART1",
+          "peripheral_class": "uart"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "UART2",
+          "peripheral_class": "uart"
+        }
+      ],
+      "route_decision_count": 2,
+      "route_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/routes.hpp",
+          "capability_ids": [
+            "capability:uart:esp32-uart-v1:tx",
+            "capability-instance:uart0:wroom-32:tx"
+          ],
+          "decision_id": "candidate:gpio1:uart0:tx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:uart0",
+            "operation:route:gpio1:uart0:tx"
+          ],
+          "peripheral": "UART0",
+          "pin": "GPIO1",
+          "requirement_ids": [
+            "requirement:package:wroom-32",
+            "requirement:bonded-pin:wroom-32:gpio1",
+            "requirement:clock-enable:uart0",
+            "requirement:source-select:gpio1:uart0:tx"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:14",
+          "signal": "tx"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/routes.hpp",
+          "capability_ids": [
+            "capability:uart:esp32-uart-v1:rx",
+            "capability-instance:uart0:wroom-32:rx"
+          ],
+          "decision_id": "candidate:gpio3:uart0:rx",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:uart0",
+            "operation:route:gpio3:uart0:rx"
+          ],
+          "peripheral": "UART0",
+          "pin": "GPIO3",
+          "requirement_ids": [
+            "requirement:package:wroom-32",
+            "requirement:bonded-pin:wroom-32:gpio3",
+            "requirement:clock-enable:uart0",
+            "requirement:source-select:gpio3:uart0:rx"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:14",
+          "signal": "rx"
+        }
+      ],
+      "route_group_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/routes.hpp",
+          "candidate_ids": [
+            "candidate:gpio1:uart0:tx",
+            "candidate:gpio3:uart0:rx"
+          ],
+          "conflict_group": "conflict:uart0:wroom-32:tx-rx",
+          "decision_id": "group:uart0:wroom-32:tx-rx",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "wroom-32",
+          "peripheral": "UART0",
+          "signals": [
+            "tx",
+            "rx"
+          ]
+        }
+      ],
+      "system_sequence_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:0",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 0,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:copy-source:rom",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:1",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 1,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:copy-target:dram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:2",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 2,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:copy-target:iram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:3",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 3,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:stack-top",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:4",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 4,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:vector-source:rom",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:5",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 5,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:vectors",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:6",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 6,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:zero-target:dram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:7",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "startup-descriptor",
+          "ordinal": 7,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": "startup:zero-target:iram",
+          "system_clock_profile_id": null
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/system_sequences.hpp",
+          "decision_id": "default_bringup:8",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "system-clock-profile",
+          "ordinal": 8,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": null,
+          "system_clock_profile_id": "default-pll-240mhz"
+        }
+      ],
+      "unsupported_runtime_peripherals": []
+    }
+  ],
+  "family": "esp32",
+  "report_id": "runtime-explainability-v1",
+  "schema_version": "1.2.0",
+  "vendor": "espressif"
+}

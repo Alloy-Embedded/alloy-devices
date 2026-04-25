@@ -1,0 +1,1672 @@
+{
+  "draft_system_descriptor_domains": [],
+  "gates": [
+    {
+      "blocking": false,
+      "gate_id": "gate-a",
+      "message": "gate-a passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "source-records-cover-targets",
+        "source-records-provide-required-upstreams",
+        "source-records-have-revisions",
+        "source-records-have-local-paths",
+        "patch-target-count-match",
+        "patch-ids-unique"
+      ]
+    },
+    {
+      "blocking": false,
+      "gate_id": "gate-b",
+      "message": "gate-b passed with 6 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-schema-version-present",
+        "esp32-identity-fields-present",
+        "esp32-required-sections-present",
+        "esp32-wroom32-schema-version-present",
+        "esp32-wroom32-identity-fields-present",
+        "esp32-wroom32-required-sections-present"
+      ]
+    },
+    {
+      "blocking": true,
+      "gate_id": "gate-c",
+      "message": "gate-c passed with 174 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-package-pin-count-covers-known-pins",
+        "esp32-pin-port-has-gpio-peripheral",
+        "esp32-pin-signals-present",
+        "esp32-pin-signals-reference-known-peripherals",
+        "esp32-alternate-functions-explicit",
+        "esp32-memory-sizes-positive",
+        "esp32-peripheral-bases-unique",
+        "esp32-interrupts-present",
+        "esp32-interrupts-reference-known-peripherals",
+        "esp32-referenced-peripherals-have-rcc-enable",
+        "esp32-dma-controllers-known",
+        "esp32-dma-request-peripherals-known",
+        "esp32-dma-routes-unique",
+        "esp32-package-pads-present",
+        "esp32-package-pad-ids-unique",
+        "esp32-package-pads-reference-known-packages",
+        "esp32-package-variants-have-pad-coverage",
+        "esp32-package-pad-positions-unique",
+        "esp32-package-pad-bonding-state-consistent",
+        "esp32-package-pads-reference-known-pins",
+        "esp32-bonded-pins-have-package-pad",
+        "esp32-signal-endpoints-present",
+        "esp32-connection-candidates-present",
+        "esp32-connection-candidates-reference-known-pins",
+        "esp32-connection-candidates-reference-known-peripherals",
+        "esp32-connection-candidates-reference-known-groups",
+        "esp32-connection-candidates-reference-known-requirements",
+        "esp32-connection-candidates-carry-package-requirement",
+        "esp32-connection-candidates-carry-source-requirement",
+        "esp32-connection-candidates-reference-known-operations",
+        "esp32-connection-candidates-reference-known-capabilities",
+        "esp32-capability-descriptors-carry-context",
+        "esp32-candidate-capabilities-resolve-from-descriptors",
+        "esp32-connection-groups-reference-known-candidates",
+        "esp32-connection-groups-match-selected-package",
+        "esp32-connection-groups-have-satisfiable-signals",
+        "esp32-connection-groups-reference-known-packages",
+        "esp32-multi-signal-connection-groups-present",
+        "esp32-ip-blocks-cover-versioned-instances",
+        "esp32-peripherals-carry-backend-schema",
+        "esp32-ip-blocks-carry-backend-schema",
+        "esp32-runtime-peripherals-have-register-descriptors",
+        "esp32-runtime-peripherals-have-register-field-descriptors",
+        "esp32-route-requirements-typed",
+        "esp32-route-operations-typed",
+        "esp32-register-target-operations-resolved",
+        "esp32-interrupts-carry-aliases",
+        "esp32-interrupt-aliases-unique",
+        "esp32-interrupt-shared-groups-consistent",
+        "esp32-interrupt-bindings-reference-known-peripherals",
+        "esp32-interrupt-bindings-reference-known-interrupts",
+        "esp32-interrupt-bindings-reference-known-vector-slots",
+        "esp32-runtime-interrupt-bindings-present",
+        "esp32-vector-slots-reference-known-interrupts",
+        "esp32-vector-slots-unique",
+        "esp32-interrupts-have-vector-slot",
+        "esp32-vector-slots-include-system-baseline",
+        "esp32-memory-regions-carry-startup-roles",
+        "esp32-startup-descriptors-present",
+        "esp32-startup-descriptors-reference-known-memories",
+        "esp32-startup-descriptors-cover-memory-roles",
+        "esp32-startup-descriptors-include-runtime-baseline",
+        "esp32-startup-descriptors-emit-without-handwritten-tables",
+        "esp32-clock-bindings-reference-known-descriptors",
+        "esp32-clock-reset-bindings-not-diagnostic-only",
+        "esp32-clock-node-parents-known",
+        "esp32-clock-graph-reaches-root",
+        "esp32-clock-selectors-structured",
+        "esp32-clock-gates-structured",
+        "esp32-resets-structured",
+        "esp32-clock-gates-reference-known-nodes",
+        "esp32-clock-bound-peripherals-covered",
+        "esp32-dma-controller-descriptors-complete",
+        "esp32-dma-controller-request-counts-match",
+        "esp32-dma-routes-cover-requests",
+        "esp32-dma-routes-reference-known-controllers",
+        "esp32-dma-routes-reference-known-peripherals",
+        "esp32-dma-routes-reference-known-conflicts",
+        "esp32-dma-bindings-reference-known-peripherals",
+        "esp32-dma-bindings-reference-known-controllers",
+        "esp32-dma-bindings-reference-known-routes",
+        "esp32-dma-bindings-reference-known-conflicts",
+        "esp32-dma-bindings-cover-routes",
+        "esp32-dma-conflict-groups-reference-known-routes",
+        "esp32-dma-conflict-groups-nontrivial",
+        "esp32-dma-route-conflict-annotations-consistent",
+        "esp32-wroom32-package-pin-count-covers-known-pins",
+        "esp32-wroom32-pin-port-has-gpio-peripheral",
+        "esp32-wroom32-pin-signals-present",
+        "esp32-wroom32-pin-signals-reference-known-peripherals",
+        "esp32-wroom32-alternate-functions-explicit",
+        "esp32-wroom32-memory-sizes-positive",
+        "esp32-wroom32-peripheral-bases-unique",
+        "esp32-wroom32-interrupts-present",
+        "esp32-wroom32-interrupts-reference-known-peripherals",
+        "esp32-wroom32-referenced-peripherals-have-rcc-enable",
+        "esp32-wroom32-dma-controllers-known",
+        "esp32-wroom32-dma-request-peripherals-known",
+        "esp32-wroom32-dma-routes-unique",
+        "esp32-wroom32-package-pads-present",
+        "esp32-wroom32-package-pad-ids-unique",
+        "esp32-wroom32-package-pads-reference-known-packages",
+        "esp32-wroom32-package-variants-have-pad-coverage",
+        "esp32-wroom32-package-pad-positions-unique",
+        "esp32-wroom32-package-pad-bonding-state-consistent",
+        "esp32-wroom32-package-pads-reference-known-pins",
+        "esp32-wroom32-bonded-pins-have-package-pad",
+        "esp32-wroom32-signal-endpoints-present",
+        "esp32-wroom32-connection-candidates-present",
+        "esp32-wroom32-connection-candidates-reference-known-pins",
+        "esp32-wroom32-connection-candidates-reference-known-peripherals",
+        "esp32-wroom32-connection-candidates-reference-known-groups",
+        "esp32-wroom32-connection-candidates-reference-known-requirements",
+        "esp32-wroom32-connection-candidates-carry-package-requirement",
+        "esp32-wroom32-connection-candidates-carry-source-requirement",
+        "esp32-wroom32-connection-candidates-reference-known-operations",
+        "esp32-wroom32-connection-candidates-reference-known-capabilities",
+        "esp32-wroom32-capability-descriptors-carry-context",
+        "esp32-wroom32-candidate-capabilities-resolve-from-descriptors",
+        "esp32-wroom32-connection-groups-reference-known-candidates",
+        "esp32-wroom32-connection-groups-match-selected-package",
+        "esp32-wroom32-connection-groups-have-satisfiable-signals",
+        "esp32-wroom32-connection-groups-reference-known-packages",
+        "esp32-wroom32-multi-signal-connection-groups-present",
+        "esp32-wroom32-ip-blocks-cover-versioned-instances",
+        "esp32-wroom32-peripherals-carry-backend-schema",
+        "esp32-wroom32-ip-blocks-carry-backend-schema",
+        "esp32-wroom32-runtime-peripherals-have-register-descriptors",
+        "esp32-wroom32-runtime-peripherals-have-register-field-descriptors",
+        "esp32-wroom32-route-requirements-typed",
+        "esp32-wroom32-route-operations-typed",
+        "esp32-wroom32-register-target-operations-resolved",
+        "esp32-wroom32-interrupts-carry-aliases",
+        "esp32-wroom32-interrupt-aliases-unique",
+        "esp32-wroom32-interrupt-shared-groups-consistent",
+        "esp32-wroom32-interrupt-bindings-reference-known-peripherals",
+        "esp32-wroom32-interrupt-bindings-reference-known-interrupts",
+        "esp32-wroom32-interrupt-bindings-reference-known-vector-slots",
+        "esp32-wroom32-runtime-interrupt-bindings-present",
+        "esp32-wroom32-vector-slots-reference-known-interrupts",
+        "esp32-wroom32-vector-slots-unique",
+        "esp32-wroom32-interrupts-have-vector-slot",
+        "esp32-wroom32-vector-slots-include-system-baseline",
+        "esp32-wroom32-memory-regions-carry-startup-roles",
+        "esp32-wroom32-startup-descriptors-present",
+        "esp32-wroom32-startup-descriptors-reference-known-memories",
+        "esp32-wroom32-startup-descriptors-cover-memory-roles",
+        "esp32-wroom32-startup-descriptors-include-runtime-baseline",
+        "esp32-wroom32-startup-descriptors-emit-without-handwritten-tables",
+        "esp32-wroom32-clock-bindings-reference-known-descriptors",
+        "esp32-wroom32-clock-reset-bindings-not-diagnostic-only",
+        "esp32-wroom32-clock-node-parents-known",
+        "esp32-wroom32-clock-graph-reaches-root",
+        "esp32-wroom32-clock-selectors-structured",
+        "esp32-wroom32-clock-gates-structured",
+        "esp32-wroom32-resets-structured",
+        "esp32-wroom32-clock-gates-reference-known-nodes",
+        "esp32-wroom32-clock-bound-peripherals-covered",
+        "esp32-wroom32-dma-controller-descriptors-complete",
+        "esp32-wroom32-dma-controller-request-counts-match",
+        "esp32-wroom32-dma-routes-cover-requests",
+        "esp32-wroom32-dma-routes-reference-known-controllers",
+        "esp32-wroom32-dma-routes-reference-known-peripherals",
+        "esp32-wroom32-dma-routes-reference-known-conflicts",
+        "esp32-wroom32-dma-bindings-reference-known-peripherals",
+        "esp32-wroom32-dma-bindings-reference-known-controllers",
+        "esp32-wroom32-dma-bindings-reference-known-routes",
+        "esp32-wroom32-dma-bindings-reference-known-conflicts",
+        "esp32-wroom32-dma-bindings-cover-routes",
+        "esp32-wroom32-dma-conflict-groups-reference-known-routes",
+        "esp32-wroom32-dma-conflict-groups-nontrivial",
+        "esp32-wroom32-dma-route-conflict-annotations-consistent",
+        "espressif-esp32-family-devices-expose-multi-signal-groups",
+        "espressif-esp32-family-reuses-ip-version-descriptors"
+      ]
+    }
+  ],
+  "is_passing": true,
+  "report_id": "bootstrap-validation-v1",
+  "results": [
+    {
+      "category": "schema",
+      "message": "Source records cover every requested bootstrap target.",
+      "passed": true,
+      "rule_id": "source-records-cover-targets",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Every target carries records drawn from the declared family source bundle.",
+      "passed": true,
+      "rule_id": "source-records-provide-required-upstreams",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "All source records carry a concrete upstream revision.",
+      "passed": true,
+      "rule_id": "source-records-have-revisions",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "All source records expose a resolved local path.",
+      "passed": true,
+      "rule_id": "source-records-have-local-paths",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Found 2 patch record(s) for 2 target(s).",
+      "passed": true,
+      "rule_id": "patch-target-count-match",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "Patch identifiers are unique within the requested scope.",
+      "passed": true,
+      "rule_id": "patch-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "esp32 declares an IR schema version.",
+      "passed": true,
+      "rule_id": "esp32-schema-version-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "esp32 exposes the required canonical identity fields.",
+      "passed": true,
+      "rule_id": "esp32-identity-fields-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "esp32 contains non-empty required canonical sections.",
+      "passed": true,
+      "rule_id": "esp32-required-sections-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "esp32-wroom32 declares an IR schema version.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-schema-version-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "esp32-wroom32 exposes the required canonical identity fields.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-identity-fields-present",
+      "severity": "error"
+    },
+    {
+      "category": "schema",
+      "message": "esp32-wroom32 contains non-empty required canonical sections.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-required-sections-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 package pin count 48 covers 2 known pin definition(s).",
+      "passed": true,
+      "rule_id": "esp32-package-pin-count-covers-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 pin ports map to discovered GPIO peripherals.",
+      "passed": true,
+      "rule_id": "esp32-pin-port-has-gpio-peripheral",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 curated pins expose explicit signal metadata.",
+      "passed": true,
+      "rule_id": "esp32-pin-signals-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 pin signals only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "esp32-pin-signals-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 non-GPIO alternate functions carry explicit AF numbers.",
+      "passed": true,
+      "rule_id": "esp32-alternate-functions-explicit",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 memory regions use positive non-placeholder sizes.",
+      "passed": true,
+      "rule_id": "esp32-memory-sizes-positive",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 peripheral base addresses are unique.",
+      "passed": true,
+      "rule_id": "esp32-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes interrupt metadata from the raw source.",
+      "passed": true,
+      "rule_id": "esp32-interrupts-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupt entries only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "esp32-interrupts-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 referenced peripherals expose RCC enable ownership.",
+      "passed": true,
+      "rule_id": "esp32-referenced-peripherals-have-rcc-enable",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA requests reference known controller peripherals.",
+      "passed": true,
+      "rule_id": "esp32-dma-controllers-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA requests reference known target peripherals.",
+      "passed": true,
+      "rule_id": "esp32-dma-request-peripherals-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA controller/request-line pairs are unique.",
+      "passed": true,
+      "rule_id": "esp32-dma-routes-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes package pad descriptors.",
+      "passed": true,
+      "rule_id": "esp32-package-pads-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 package pad identifiers are unique.",
+      "passed": true,
+      "rule_id": "esp32-package-pad-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 package pads reference declared packages.",
+      "passed": true,
+      "rule_id": "esp32-package-pads-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 every declared package exposes package pads.",
+      "passed": true,
+      "rule_id": "esp32-package-variants-have-pad-coverage",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 package pad positions are unique per package.",
+      "passed": true,
+      "rule_id": "esp32-package-pad-positions-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 package pad bonding state matches bonded-pin coverage.",
+      "passed": true,
+      "rule_id": "esp32-package-pad-bonding-state-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 package pads reference declared bonded pins.",
+      "passed": true,
+      "rule_id": "esp32-package-pads-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 every declared GPIO pin is covered by a package pad.",
+      "passed": true,
+      "rule_id": "esp32-bonded-pins-have-package-pad",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes canonical signal endpoints.",
+      "passed": true,
+      "rule_id": "esp32-signal-endpoints-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes route-driven connection candidates.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 connection candidates reference known pins.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 connection candidates reference known peripherals.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 connection candidates reference known route groups.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-reference-known-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route candidates only reference declared requirements.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-reference-known-requirements",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route candidates carry an explicit package requirement.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-carry-package-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route candidates with selectors carry an explicit source-selection requirement.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-carry-source-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route candidates only reference declared operations.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-reference-known-operations",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route candidates only reference declared capabilities.",
+      "passed": true,
+      "rule_id": "esp32-connection-candidates-reference-known-capabilities",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 capability descriptors carry explicit ip-block or instance-overlay context.",
+      "passed": true,
+      "rule_id": "esp32-capability-descriptors-carry-context",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 candidate capabilities resolve through ip-block and instance-overlay descriptors.",
+      "passed": true,
+      "rule_id": "esp32-candidate-capabilities-resolve-from-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route groups only reference declared candidates.",
+      "passed": true,
+      "rule_id": "esp32-connection-groups-reference-known-candidates",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route groups only admit candidates valid for the selected package and bonded pinout.",
+      "passed": true,
+      "rule_id": "esp32-connection-groups-match-selected-package",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route groups declare satisfiable signal bundles.",
+      "passed": true,
+      "rule_id": "esp32-connection-groups-have-satisfiable-signals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route groups only reference declared packages.",
+      "passed": true,
+      "rule_id": "esp32-connection-groups-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes at least one multi-signal connection group.",
+      "passed": true,
+      "rule_id": "esp32-multi-signal-connection-groups-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 IP block descriptors cover versioned instances.",
+      "passed": true,
+      "rule_id": "esp32-ip-blocks-cover-versioned-instances",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 runtime-owned peripheral instances carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "esp32-peripherals-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 runtime-owned IP blocks carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "esp32-ip-blocks-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 runtime-owned peripheral instances expose normalized register descriptors.",
+      "passed": true,
+      "rule_id": "esp32-runtime-peripherals-have-register-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 runtime-owned peripheral instances expose normalized register field descriptors.",
+      "passed": true,
+      "rule_id": "esp32-runtime-peripherals-have-register-field-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route requirements expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "esp32-route-requirements-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route operations expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "esp32-route-operations-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 route operations with register-like targets resolve a normalized register offset.",
+      "passed": true,
+      "rule_id": "esp32-register-target-operations-resolved",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupts carry explicit alias descriptors.",
+      "passed": true,
+      "rule_id": "esp32-interrupts-carry-aliases",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupt aliases are unique per interrupt.",
+      "passed": true,
+      "rule_id": "esp32-interrupt-aliases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupt shared groups describe a real multi-interrupt owner.",
+      "passed": true,
+      "rule_id": "esp32-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupt bindings reference known peripheral instances.",
+      "passed": true,
+      "rule_id": "esp32-interrupt-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupt bindings reference declared interrupts.",
+      "passed": true,
+      "rule_id": "esp32-interrupt-bindings-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 interrupt bindings reference matching vector slots.",
+      "passed": true,
+      "rule_id": "esp32-interrupt-bindings-reference-known-vector-slots",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 runtime-owned peripherals with interrupts expose typed interrupt bindings.",
+      "passed": true,
+      "rule_id": "esp32-runtime-interrupt-bindings-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 vector slots only reference declared interrupts.",
+      "passed": true,
+      "rule_id": "esp32-vector-slots-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 vector slot numbers are unique.",
+      "passed": true,
+      "rule_id": "esp32-vector-slots-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 every interrupt owns an external vector slot.",
+      "passed": true,
+      "rule_id": "esp32-interrupts-have-vector-slot",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 vector slots include the system baseline slots.",
+      "passed": true,
+      "rule_id": "esp32-vector-slots-include-system-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes startup-relevant memory classifications for at least one memory region.",
+      "passed": true,
+      "rule_id": "esp32-memory-regions-carry-startup-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 exposes startup descriptors separately from logic.",
+      "passed": true,
+      "rule_id": "esp32-startup-descriptors-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 startup descriptors only reference declared memories.",
+      "passed": true,
+      "rule_id": "esp32-startup-descriptors-reference-known-memories",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 startup descriptors cover every startup-classified memory region.",
+      "passed": true,
+      "rule_id": "esp32-startup-descriptors-cover-memory-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 startup descriptors include vector-table and initial-stack-pointer facts.",
+      "passed": true,
+      "rule_id": "esp32-startup-descriptors-include-runtime-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 startup vectors and startup descriptors are sufficient to emit startup artifacts without handwritten device tables.",
+      "passed": true,
+      "rule_id": "esp32-startup-descriptors-emit-without-handwritten-tables",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock bindings reference known gate/reset/selector descriptors.",
+      "passed": true,
+      "rule_id": "esp32-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "esp32-clock-reset-bindings-not-diagnostic-only",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock nodes only reference known parents.",
+      "passed": true,
+      "rule_id": "esp32-clock-node-parents-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock graph remains root-reachable and acyclic.",
+      "passed": true,
+      "rule_id": "esp32-clock-graph-reaches-root",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock selectors expose at least one parent option when present.",
+      "passed": true,
+      "rule_id": "esp32-clock-selectors-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock gates expose typed register references.",
+      "passed": true,
+      "rule_id": "esp32-clock-gates-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 resets expose typed register references.",
+      "passed": true,
+      "rule_id": "esp32-resets-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 clock gates reference known clock nodes.",
+      "passed": true,
+      "rule_id": "esp32-clock-gates-reference-known-nodes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 peripherals with enable/reset ownership have clock bindings.",
+      "passed": true,
+      "rule_id": "esp32-clock-bound-peripherals-covered",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA controllers expose non-empty channel and request counts.",
+      "passed": true,
+      "rule_id": "esp32-dma-controller-descriptors-complete",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA controller request counts match the normalized DMA route set.",
+      "passed": true,
+      "rule_id": "esp32-dma-controller-request-counts-match",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA routes cover the normalized DMA request set.",
+      "passed": true,
+      "rule_id": "esp32-dma-routes-cover-requests",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA routes reference known controller descriptors.",
+      "passed": true,
+      "rule_id": "esp32-dma-routes-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA routes reference known target peripherals.",
+      "passed": true,
+      "rule_id": "esp32-dma-routes-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA routes reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "esp32-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA bindings reference known peripherals.",
+      "passed": true,
+      "rule_id": "esp32-dma-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA bindings reference known controllers.",
+      "passed": true,
+      "rule_id": "esp32-dma-bindings-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA bindings reference known DMA routes.",
+      "passed": true,
+      "rule_id": "esp32-dma-bindings-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA bindings reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "esp32-dma-bindings-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA bindings cover the typed DMA route set.",
+      "passed": true,
+      "rule_id": "esp32-dma-bindings-cover-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA conflict groups reference known DMA routes.",
+      "passed": true,
+      "rule_id": "esp32-dma-conflict-groups-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA conflict groups only exist for true multi-route conflicts.",
+      "passed": true,
+      "rule_id": "esp32-dma-conflict-groups-nontrivial",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 DMA route conflict annotations match the declared conflict groups.",
+      "passed": true,
+      "rule_id": "esp32-dma-route-conflict-annotations-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 package pin count 38 covers 2 known pin definition(s).",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pin-count-covers-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 pin ports map to discovered GPIO peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-pin-port-has-gpio-peripheral",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 curated pins expose explicit signal metadata.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-pin-signals-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 pin signals only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-pin-signals-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 non-GPIO alternate functions carry explicit AF numbers.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-alternate-functions-explicit",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 memory regions use positive non-placeholder sizes.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-memory-sizes-positive",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 peripheral base addresses are unique.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes interrupt metadata from the raw source.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupts-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupt entries only reference discovered peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupts-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 referenced peripherals expose RCC enable ownership.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-referenced-peripherals-have-rcc-enable",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA requests reference known controller peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-controllers-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA requests reference known target peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-request-peripherals-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA controller/request-line pairs are unique.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-routes-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes package pad descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pads-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 package pad identifiers are unique.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pad-ids-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 package pads reference declared packages.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pads-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 every declared package exposes package pads.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-variants-have-pad-coverage",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 package pad positions are unique per package.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pad-positions-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 package pad bonding state matches bonded-pin coverage.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pad-bonding-state-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 package pads reference declared bonded pins.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-package-pads-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 every declared GPIO pin is covered by a package pad.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-bonded-pins-have-package-pad",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes canonical signal endpoints.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-signal-endpoints-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes route-driven connection candidates.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 connection candidates reference known pins.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-reference-known-pins",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 connection candidates reference known peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 connection candidates reference known route groups.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-reference-known-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route candidates only reference declared requirements.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-reference-known-requirements",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route candidates carry an explicit package requirement.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-carry-package-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route candidates with selectors carry an explicit source-selection requirement.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-carry-source-requirement",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route candidates only reference declared operations.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-reference-known-operations",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route candidates only reference declared capabilities.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-candidates-reference-known-capabilities",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 capability descriptors carry explicit ip-block or instance-overlay context.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-capability-descriptors-carry-context",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 candidate capabilities resolve through ip-block and instance-overlay descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-candidate-capabilities-resolve-from-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route groups only reference declared candidates.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-groups-reference-known-candidates",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route groups only admit candidates valid for the selected package and bonded pinout.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-groups-match-selected-package",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route groups declare satisfiable signal bundles.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-groups-have-satisfiable-signals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route groups only reference declared packages.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-connection-groups-reference-known-packages",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes at least one multi-signal connection group.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-multi-signal-connection-groups-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 IP block descriptors cover versioned instances.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-ip-blocks-cover-versioned-instances",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 runtime-owned peripheral instances carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-peripherals-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 runtime-owned IP blocks carry a backend schema identifier.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-ip-blocks-carry-backend-schema",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 runtime-owned peripheral instances expose normalized register descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-runtime-peripherals-have-register-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 runtime-owned peripheral instances expose normalized register field descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-runtime-peripherals-have-register-field-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route requirements expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-route-requirements-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route operations expose typed runtime fields.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-route-operations-typed",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 route operations with register-like targets resolve a normalized register offset.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-register-target-operations-resolved",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupts carry explicit alias descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupts-carry-aliases",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupt aliases are unique per interrupt.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupt-aliases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupt shared groups describe a real multi-interrupt owner.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupt-shared-groups-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupt bindings reference known peripheral instances.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupt-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupt bindings reference declared interrupts.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupt-bindings-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 interrupt bindings reference matching vector slots.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupt-bindings-reference-known-vector-slots",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 runtime-owned peripherals with interrupts expose typed interrupt bindings.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-runtime-interrupt-bindings-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 vector slots only reference declared interrupts.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-vector-slots-reference-known-interrupts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 vector slot numbers are unique.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-vector-slots-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 every interrupt owns an external vector slot.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-interrupts-have-vector-slot",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 vector slots include the system baseline slots.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-vector-slots-include-system-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes startup-relevant memory classifications for at least one memory region.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-memory-regions-carry-startup-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 exposes startup descriptors separately from logic.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-startup-descriptors-present",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 startup descriptors only reference declared memories.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-startup-descriptors-reference-known-memories",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 startup descriptors cover every startup-classified memory region.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-startup-descriptors-cover-memory-roles",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 startup descriptors include vector-table and initial-stack-pointer facts.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-startup-descriptors-include-runtime-baseline",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 startup vectors and startup descriptors are sufficient to emit startup artifacts without handwritten device tables.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-startup-descriptors-emit-without-handwritten-tables",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock bindings reference known gate/reset/selector descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-bindings-reference-known-descriptors",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock/reset bindings expose typed gate/reset ids whenever diagnostic rcc_enable_signal / rcc_reset_signal strings are set.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-reset-bindings-not-diagnostic-only",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock nodes only reference known parents.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-node-parents-known",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock graph remains root-reachable and acyclic.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-graph-reaches-root",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock selectors expose at least one parent option when present.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-selectors-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock gates expose typed register references.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-gates-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 resets expose typed register references.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-resets-structured",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 clock gates reference known clock nodes.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-gates-reference-known-nodes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 peripherals with enable/reset ownership have clock bindings.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-clock-bound-peripherals-covered",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA controllers expose non-empty channel and request counts.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-controller-descriptors-complete",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA controller request counts match the normalized DMA route set.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-controller-request-counts-match",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA routes cover the normalized DMA request set.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-routes-cover-requests",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA routes reference known controller descriptors.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-routes-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA routes reference known target peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-routes-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA routes reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-routes-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA bindings reference known peripherals.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-bindings-reference-known-peripherals",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA bindings reference known controllers.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-bindings-reference-known-controllers",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA bindings reference known DMA routes.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-bindings-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA bindings reference declared conflict groups.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-bindings-reference-known-conflicts",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA bindings cover the typed DMA route set.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-bindings-cover-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA conflict groups reference known DMA routes.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-conflict-groups-reference-known-routes",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA conflict groups only exist for true multi-route conflicts.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-conflict-groups-nontrivial",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 DMA route conflict annotations match the declared conflict groups.",
+      "passed": true,
+      "rule_id": "esp32-wroom32-dma-route-conflict-annotations-consistent",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "espressif-esp32 family scope exposes at least one multi-signal connection group for every normalized device.",
+      "passed": true,
+      "rule_id": "espressif-esp32-family-devices-expose-multi-signal-groups",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "espressif-esp32 family scope reuses at least one ip-version descriptor across multiple devices when versioned IP data exist.",
+      "passed": true,
+      "rule_id": "espressif-esp32-family-reuses-ip-version-descriptors",
+      "severity": "error"
+    }
+  ],
+  "scope": {
+    "device": null,
+    "family": "esp32",
+    "vendor": "espressif"
+  },
+  "system_descriptor_domains": [
+    {
+      "domain_id": "interrupt",
+      "draft": false,
+      "message": "interrupt domain is publishable with 20 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-interrupts-reference-known-peripherals",
+        "esp32-interrupt-aliases-unique",
+        "esp32-interrupt-shared-groups-consistent",
+        "esp32-interrupt-bindings-reference-known-peripherals",
+        "esp32-interrupt-bindings-reference-known-interrupts",
+        "esp32-interrupt-bindings-reference-known-vector-slots",
+        "esp32-runtime-interrupt-bindings-present",
+        "esp32-vector-slots-reference-known-interrupts",
+        "esp32-vector-slots-unique",
+        "esp32-interrupts-have-vector-slot",
+        "esp32-wroom32-interrupts-reference-known-peripherals",
+        "esp32-wroom32-interrupt-aliases-unique",
+        "esp32-wroom32-interrupt-shared-groups-consistent",
+        "esp32-wroom32-interrupt-bindings-reference-known-peripherals",
+        "esp32-wroom32-interrupt-bindings-reference-known-interrupts",
+        "esp32-wroom32-interrupt-bindings-reference-known-vector-slots",
+        "esp32-wroom32-runtime-interrupt-bindings-present",
+        "esp32-wroom32-vector-slots-reference-known-interrupts",
+        "esp32-wroom32-vector-slots-unique",
+        "esp32-wroom32-interrupts-have-vector-slot"
+      ]
+    },
+    {
+      "domain_id": "memory",
+      "draft": false,
+      "message": "memory domain is publishable with 4 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-memory-sizes-positive",
+        "esp32-memory-regions-carry-startup-roles",
+        "esp32-wroom32-memory-sizes-positive",
+        "esp32-wroom32-memory-regions-carry-startup-roles"
+      ]
+    },
+    {
+      "domain_id": "startup",
+      "draft": false,
+      "message": "startup domain is publishable with 12 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-vector-slots-include-system-baseline",
+        "esp32-startup-descriptors-present",
+        "esp32-startup-descriptors-reference-known-memories",
+        "esp32-startup-descriptors-cover-memory-roles",
+        "esp32-startup-descriptors-include-runtime-baseline",
+        "esp32-startup-descriptors-emit-without-handwritten-tables",
+        "esp32-wroom32-vector-slots-include-system-baseline",
+        "esp32-wroom32-startup-descriptors-present",
+        "esp32-wroom32-startup-descriptors-reference-known-memories",
+        "esp32-wroom32-startup-descriptors-cover-memory-roles",
+        "esp32-wroom32-startup-descriptors-include-runtime-baseline",
+        "esp32-wroom32-startup-descriptors-emit-without-handwritten-tables"
+      ]
+    },
+    {
+      "domain_id": "clock-reset",
+      "draft": false,
+      "message": "clock-reset domain is publishable with 14 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-referenced-peripherals-have-rcc-enable",
+        "esp32-clock-bindings-reference-known-descriptors",
+        "esp32-clock-node-parents-known",
+        "esp32-clock-graph-reaches-root",
+        "esp32-clock-selectors-structured",
+        "esp32-clock-gates-reference-known-nodes",
+        "esp32-clock-bound-peripherals-covered",
+        "esp32-wroom32-referenced-peripherals-have-rcc-enable",
+        "esp32-wroom32-clock-bindings-reference-known-descriptors",
+        "esp32-wroom32-clock-node-parents-known",
+        "esp32-wroom32-clock-graph-reaches-root",
+        "esp32-wroom32-clock-selectors-structured",
+        "esp32-wroom32-clock-gates-reference-known-nodes",
+        "esp32-wroom32-clock-bound-peripherals-covered"
+      ]
+    },
+    {
+      "domain_id": "dma",
+      "draft": false,
+      "message": "dma domain is publishable with 32 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-dma-controllers-known",
+        "esp32-dma-request-peripherals-known",
+        "esp32-dma-routes-unique",
+        "esp32-dma-controller-descriptors-complete",
+        "esp32-dma-routes-cover-requests",
+        "esp32-dma-routes-reference-known-controllers",
+        "esp32-dma-routes-reference-known-peripherals",
+        "esp32-dma-routes-reference-known-conflicts",
+        "esp32-dma-bindings-reference-known-peripherals",
+        "esp32-dma-bindings-reference-known-controllers",
+        "esp32-dma-bindings-reference-known-routes",
+        "esp32-dma-bindings-reference-known-conflicts",
+        "esp32-dma-bindings-cover-routes",
+        "esp32-dma-conflict-groups-reference-known-routes",
+        "esp32-dma-conflict-groups-nontrivial",
+        "esp32-dma-route-conflict-annotations-consistent",
+        "esp32-wroom32-dma-controllers-known",
+        "esp32-wroom32-dma-request-peripherals-known",
+        "esp32-wroom32-dma-routes-unique",
+        "esp32-wroom32-dma-controller-descriptors-complete",
+        "esp32-wroom32-dma-routes-cover-requests",
+        "esp32-wroom32-dma-routes-reference-known-controllers",
+        "esp32-wroom32-dma-routes-reference-known-peripherals",
+        "esp32-wroom32-dma-routes-reference-known-conflicts",
+        "esp32-wroom32-dma-bindings-reference-known-peripherals",
+        "esp32-wroom32-dma-bindings-reference-known-controllers",
+        "esp32-wroom32-dma-bindings-reference-known-routes",
+        "esp32-wroom32-dma-bindings-reference-known-conflicts",
+        "esp32-wroom32-dma-bindings-cover-routes",
+        "esp32-wroom32-dma-conflict-groups-reference-known-routes",
+        "esp32-wroom32-dma-conflict-groups-nontrivial",
+        "esp32-wroom32-dma-route-conflict-annotations-consistent"
+      ]
+    },
+    {
+      "domain_id": "package",
+      "draft": false,
+      "message": "package domain is publishable with 14 rule(s).",
+      "passed": true,
+      "rule_ids": [
+        "esp32-package-pads-present",
+        "esp32-package-pad-ids-unique",
+        "esp32-package-pads-reference-known-packages",
+        "esp32-package-variants-have-pad-coverage",
+        "esp32-package-pad-positions-unique",
+        "esp32-package-pads-reference-known-pins",
+        "esp32-bonded-pins-have-package-pad",
+        "esp32-wroom32-package-pads-present",
+        "esp32-wroom32-package-pad-ids-unique",
+        "esp32-wroom32-package-pads-reference-known-packages",
+        "esp32-wroom32-package-variants-have-pad-coverage",
+        "esp32-wroom32-package-pad-positions-unique",
+        "esp32-wroom32-package-pads-reference-known-pins",
+        "esp32-wroom32-bonded-pins-have-package-pad"
+      ]
+    }
+  ]
+}

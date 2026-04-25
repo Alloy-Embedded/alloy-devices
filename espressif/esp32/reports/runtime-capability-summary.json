@@ -1,0 +1,161 @@
+{
+  "classes": [
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "esp32",
+        "esp32-wroom32"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "gpio",
+      "total_peripheral_count": 2
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "esp32",
+        "esp32-wroom32"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "spi",
+      "total_peripheral_count": 8
+    },
+    {
+      "capability_names": [
+        "available-signal",
+        "runtime-supported",
+        "signal-role"
+      ],
+      "device_count": 2,
+      "devices": [
+        "esp32",
+        "esp32-wroom32"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "uart",
+      "total_peripheral_count": 6
+    }
+  ],
+  "devices": [
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "gpio",
+          "peripheral_count": 1,
+          "peripherals": [
+            "GPIO"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "spi",
+          "peripheral_count": 4,
+          "peripherals": [
+            "SPI0",
+            "SPI1",
+            "SPI2",
+            "SPI3"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 2,
+          "peripheral_class": "uart",
+          "peripheral_count": 3,
+          "peripherals": [
+            "UART0",
+            "UART1",
+            "UART2"
+          ],
+          "present": true
+        }
+      ],
+      "device": "esp32",
+      "package": "qfn48"
+    },
+    {
+      "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "gpio",
+          "peripheral_count": 1,
+          "peripherals": [
+            "GPIO"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "spi",
+          "peripheral_count": 4,
+          "peripherals": [
+            "SPI0",
+            "SPI1",
+            "SPI2",
+            "SPI3"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 2,
+          "peripheral_class": "uart",
+          "peripheral_count": 3,
+          "peripherals": [
+            "UART0",
+            "UART1",
+            "UART2"
+          ],
+          "present": true
+        }
+      ],
+      "device": "esp32-wroom32",
+      "package": "wroom-32"
+    }
+  ],
+  "family": "esp32",
+  "family_dir": "espressif/esp32",
+  "report_id": "runtime-capability-summary-v1",
+  "vendor": "espressif"
+}
