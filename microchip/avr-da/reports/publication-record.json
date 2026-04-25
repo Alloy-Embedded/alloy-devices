@@ -212,8 +212,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3027,
-      "content_sha256": "e68e3d9006433e490996671089e12d02590581d2926647bc6b9f2935a0e544c4",
+      "content_bytes": 3365,
+      "content_sha256": "942e3a92569f2127fc68d732245dd6cd9460e5d1bd2ec6991ff6ef191f8c4181",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/clock_bindings.hpp"
     },
     {
@@ -410,8 +410,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 11311,
-      "content_sha256": "eaf017ec799f3a80f8f67d11dbaf450efe303ede24476e807ef385570a235954",
+      "content_bytes": 11490,
+      "content_sha256": "615c42669c932c4e303d1c026c5f175191699e947a60ab20d0824b9a71713993",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/routes.hpp"
     },
     {
@@ -540,7 +540,7 @@
     "family": "avr-da",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "b97a847e53421e4536bc6fcdafc0d6510bde2cedc2634aada58e7e8c6ebca1fc",
+  "target_artifact_revision": "63c85e93503be4fabd9963a99621e926dd882e389a70c399c77c65a844bd2c05",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

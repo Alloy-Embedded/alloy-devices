@@ -90,6 +90,19 @@ inline constexpr std::array<PeripheralId, 5> kClockBoundPeripherals = {{
   PeripheralId::USART0,
   PeripheralId::USART1,
 }};
+
+template <auto> inline constexpr bool kClockBindingDependentFalse = false;
+
+template <PeripheralId Id>
+inline auto clock_enable() noexcept -> void {
+  static_assert(kClockBindingDependentFalse<Id>, "");
+}
+
+template <PeripheralId Id>
+inline auto clock_disable() noexcept -> void {
+  static_assert(kClockBindingDependentFalse<Id>, "");
+}
+
 }
 }
 }

@@ -170,6 +170,11 @@ inline constexpr std::array<RouteDescriptor, 10> kRuntimeRoutes = {{
   {RouteId::candidate_pc1_usart1_rx, PinId::PC1, PeripheralId::USART1, SignalId::signal_rx, RouteKindId::route_kind_peripheral_mux},
 }};
 
+template<PinId Pin, PeripheralId Peripheral, SignalId Signal>
+inline auto apply_route() noexcept -> void {
+  static_assert(RouteTraits<Pin, Peripheral, Signal>::kPresent, "");
+}
+
 enum class ConnectionGroupId : std::uint16_t {
   none,
   group_spi0_tqfp32_sck_mosi_miso,
