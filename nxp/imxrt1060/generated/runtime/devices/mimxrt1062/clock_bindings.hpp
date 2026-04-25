@@ -565,6 +565,206 @@ inline constexpr std::array<PeripheralId, 43> kClockBoundPeripherals = {{
   PeripheralId::WDOG1,
   PeripheralId::WDOG2,
 }};
+
+template <auto> inline constexpr bool kClockBindingDependentFalse = false;
+
+template <PeripheralId Id>
+inline auto clock_enable() noexcept -> void {
+  static_assert(kClockBindingDependentFalse<Id>, "");
+}
+
+template <PeripheralId Id>
+inline auto clock_disable() noexcept -> void {
+  static_assert(kClockBindingDependentFalse<Id>, "");
+}
+
+template <>
+inline auto clock_enable<PeripheralId::GPIO1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 26);
+}
+template <>
+inline auto clock_disable<PeripheralId::GPIO1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 26);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::GPIO2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
+  *reg = *reg | (1u << 30);
+}
+template <>
+inline auto clock_disable<PeripheralId::GPIO2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
+  *reg = *reg & ~(1u << 30);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::GPIO3>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC070u);
+  *reg = *reg | (1u << 26);
+}
+template <>
+inline auto clock_disable<PeripheralId::GPIO3>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC070u);
+  *reg = *reg & ~(1u << 26);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::GPIO4>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
+  *reg = *reg | (1u << 26);
+}
+template <>
+inline auto clock_disable<PeripheralId::GPIO4>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
+  *reg = *reg & ~(1u << 26);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::GPIO5>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 30);
+}
+template <>
+inline auto clock_disable<PeripheralId::GPIO5>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 30);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPSPI1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 0);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPSPI1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 0);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPSPI2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 2);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPSPI2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 2);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPSPI3>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 4);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPSPI3>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 4);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPSPI4>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 6);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPSPI4>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 6);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
+  *reg = *reg | (1u << 24);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
+  *reg = *reg & ~(1u << 24);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
+  *reg = *reg | (1u << 28);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
+  *reg = *reg & ~(1u << 28);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART3>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
+  *reg = *reg | (1u << 12);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART3>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
+  *reg = *reg & ~(1u << 12);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART4>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg | (1u << 24);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART4>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
+  *reg = *reg & ~(1u << 24);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART5>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
+  *reg = *reg | (1u << 2);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART5>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
+  *reg = *reg & ~(1u << 2);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART6>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
+  *reg = *reg | (1u << 6);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART6>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
+  *reg = *reg & ~(1u << 6);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART7>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
+  *reg = *reg | (1u << 26);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART7>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
+  *reg = *reg & ~(1u << 26);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::LPUART8>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC080u);
+  *reg = *reg | (1u << 14);
+}
+template <>
+inline auto clock_disable<PeripheralId::LPUART8>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC080u);
+  *reg = *reg & ~(1u << 14);
+}
+
 }
 }
 }

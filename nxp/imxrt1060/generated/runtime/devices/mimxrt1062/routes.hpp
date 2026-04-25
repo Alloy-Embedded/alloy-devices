@@ -2936,6 +2936,11 @@ inline constexpr std::array<RouteDescriptor, 222> kRuntimeRoutes = {{
   {RouteId::candidate_gpio_sd_b1_11_lpuart2_tx, PinId::GPIO_SD_B1_11, PeripheralId::LPUART2, SignalId::signal_tx, RouteKindId::route_kind_iomuxc_mux},
 }};
 
+template<PinId Pin, PeripheralId Peripheral, SignalId Signal>
+inline auto apply_route() noexcept -> void {
+  static_assert(RouteTraits<Pin, Peripheral, Signal>::kPresent, "");
+}
+
 enum class ConnectionGroupId : std::uint16_t {
   none,
   group_gpio1_bga196_all_signals,
