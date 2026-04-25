@@ -532,8 +532,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 53567,
-      "content_sha256": "1d41474f906d78422524cf590518364ae49fb94170e4cb304a70b150a98dcf90",
+      "content_bytes": 76516,
+      "content_sha256": "49c85d4402183f84e7b48fe84f9c804e322951f10afa87d5c0807f2a8f3b1c1c",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/routes.hpp"
     },
     {
@@ -772,8 +772,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 274706,
-      "content_sha256": "e810edb3748a1dc104207bbebde79c144d30913d8bc18b5c92517bae4b496188",
+      "content_bytes": 400693,
+      "content_sha256": "7cedfee03e5dc41224a100831a2c75b6184ea784ac166271f347b2aadfc39708",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp"
     },
     {
@@ -1012,8 +1012,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 385770,
-      "content_sha256": "2760283efcef555d2825f898ca1b78de51419521dcda7ab0ea1b8f71f17570ca",
+      "content_bytes": 561585,
+      "content_sha256": "888ad125af144b8ee417c954d989d180bc1e3e8c19ee3a36dcab0712f5dac91c",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp"
     },
     {
@@ -1154,7 +1154,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "763a1843110347808ca2b42aaaefa1eddf87ecfb7a471870789f8924dce3c2dd",
+  "target_artifact_revision": "e54dbcae8557f765a0f8e2d48a73dd67b79672477bec3dfae88b4d2a83718445",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

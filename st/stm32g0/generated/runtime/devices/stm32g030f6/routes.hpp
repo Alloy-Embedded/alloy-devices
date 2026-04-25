@@ -545,6 +545,356 @@ inline auto apply_route() noexcept -> void {
   static_assert(RouteTraits<Pin, Peripheral, Signal>::kPresent, "");
 }
 
+template<>
+inline auto apply_route<PinId::PA0, PeripheralId::SPI2, SignalId::signal_sck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 0)) | (std::uint32_t{0x2} << 0);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 0)) | (std::uint32_t{0x0} << 0);
+}
+
+template<>
+inline auto apply_route<PinId::PA0, PeripheralId::USART2, SignalId::signal_cts>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 0)) | (std::uint32_t{0x2} << 0);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 0)) | (std::uint32_t{0x1} << 0);
+}
+
+template<>
+inline auto apply_route<PinId::PA0, PeripheralId::USART2, SignalId::signal_nss>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 0)) | (std::uint32_t{0x2} << 0);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 0)) | (std::uint32_t{0x1} << 0);
+}
+
+template<>
+inline auto apply_route<PinId::PA1, PeripheralId::SPI1, SignalId::signal_sck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 2)) | (std::uint32_t{0x2} << 2);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 4)) | (std::uint32_t{0x0} << 4);
+}
+
+template<>
+inline auto apply_route<PinId::PA1, PeripheralId::USART2, SignalId::signal_ck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 2)) | (std::uint32_t{0x2} << 2);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 4)) | (std::uint32_t{0x1} << 4);
+}
+
+template<>
+inline auto apply_route<PinId::PA1, PeripheralId::USART2, SignalId::signal_de>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 2)) | (std::uint32_t{0x2} << 2);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 4)) | (std::uint32_t{0x1} << 4);
+}
+
+template<>
+inline auto apply_route<PinId::PA1, PeripheralId::USART2, SignalId::signal_rts>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 2)) | (std::uint32_t{0x2} << 2);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 4)) | (std::uint32_t{0x1} << 4);
+}
+
+template<>
+inline auto apply_route<PinId::PA2, PeripheralId::SPI1, SignalId::signal_mosi>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 4)) | (std::uint32_t{0x2} << 4);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 8)) | (std::uint32_t{0x0} << 8);
+}
+
+template<>
+inline auto apply_route<PinId::PA2, PeripheralId::USART2, SignalId::signal_tx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 4)) | (std::uint32_t{0x2} << 4);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 8)) | (std::uint32_t{0x1} << 8);
+}
+
+template<>
+inline auto apply_route<PinId::PA3, PeripheralId::SPI2, SignalId::signal_miso>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x0} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PA3, PeripheralId::USART2, SignalId::signal_rx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x1} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PA4, PeripheralId::SPI1, SignalId::signal_nss>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 8)) | (std::uint32_t{0x2} << 8);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 16)) | (std::uint32_t{0x0} << 16);
+}
+
+template<>
+inline auto apply_route<PinId::PA4, PeripheralId::SPI2, SignalId::signal_mosi>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 8)) | (std::uint32_t{0x2} << 8);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 16)) | (std::uint32_t{0x1} << 16);
+}
+
+template<>
+inline auto apply_route<PinId::PA4, PeripheralId::TIM14, SignalId::signal_ch1>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 15);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 15);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 8)) | (std::uint32_t{0x2} << 8);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 16)) | (std::uint32_t{0x4} << 16);
+}
+
+template<>
+inline auto apply_route<PinId::PA5, PeripheralId::SPI1, SignalId::signal_sck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 10)) | (std::uint32_t{0x2} << 10);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 20)) | (std::uint32_t{0x0} << 20);
+}
+
+template<>
+inline auto apply_route<PinId::PA6, PeripheralId::SPI1, SignalId::signal_miso>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 12)) | (std::uint32_t{0x2} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 24)) | (std::uint32_t{0x0} << 24);
+}
+
+template<>
+inline auto apply_route<PinId::PA6, PeripheralId::TIM16, SignalId::signal_ch1>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 17);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 12)) | (std::uint32_t{0x2} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 24)) | (std::uint32_t{0x5} << 24);
+}
+
+template<>
+inline auto apply_route<PinId::PA6, PeripheralId::TIM1, SignalId::signal_bk>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 12)) | (std::uint32_t{0x2} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 24)) | (std::uint32_t{0x2} << 24);
+}
+
+template<>
+inline auto apply_route<PinId::PA6, PeripheralId::TIM3, SignalId::signal_ch1>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 1);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 1);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 12)) | (std::uint32_t{0x2} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 24)) | (std::uint32_t{0x1} << 24);
+}
+
+template<>
+inline auto apply_route<PinId::PA7, PeripheralId::SPI1, SignalId::signal_mosi>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x0} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PA7, PeripheralId::TIM14, SignalId::signal_ch1>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 15);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 15);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x4} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PA7, PeripheralId::TIM17, SignalId::signal_ch1>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 18);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 18);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x5} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PA7, PeripheralId::TIM1, SignalId::signal_ch1n>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x2} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PA7, PeripheralId::TIM3, SignalId::signal_ch2>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 1);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 1);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000000u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000000u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000020u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000020u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x1} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PB0, PeripheralId::SPI1, SignalId::signal_nss>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 0)) | (std::uint32_t{0x2} << 0);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 0)) | (std::uint32_t{0x0} << 0);
+}
+
+template<>
+inline auto apply_route<PinId::PB0, PeripheralId::TIM1, SignalId::signal_ch2n>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 0)) | (std::uint32_t{0x2} << 0);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 0)) | (std::uint32_t{0x2} << 0);
+}
+
+template<>
+inline auto apply_route<PinId::PB0, PeripheralId::TIM3, SignalId::signal_ch3>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 1);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 1);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 0)) | (std::uint32_t{0x2} << 0);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 0)) | (std::uint32_t{0x1} << 0);
+}
+
+template<>
+inline auto apply_route<PinId::PB3, PeripheralId::SPI1, SignalId::signal_sck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x0} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PB3, PeripheralId::TIM1, SignalId::signal_ch2>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 11);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x1} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PB3, PeripheralId::USART1, SignalId::signal_ck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x4} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PB3, PeripheralId::USART1, SignalId::signal_de>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x4} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PB3, PeripheralId::USART1, SignalId::signal_rts>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 6)) | (std::uint32_t{0x2} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 12)) | (std::uint32_t{0x4} << 12);
+}
+
+template<>
+inline auto apply_route<PinId::PB7, PeripheralId::SPI2, SignalId::signal_mosi>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x4002102Cu) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x1} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PB7, PeripheralId::TIM17, SignalId::signal_ch1n>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 18);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 18);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x2} << 28);
+}
+
+template<>
+inline auto apply_route<PinId::PB7, PeripheralId::USART1, SignalId::signal_rx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021040u) |=(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x40021030u) &= ~(std::uint32_t{1} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000400u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000400u) & ~(std::uint32_t{0x3} << 14)) | (std::uint32_t{0x2} << 14);
+  *reinterpret_cast<volatile std::uint32_t*>(0x50000420u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x50000420u) & ~(std::uint32_t{0xF} << 28)) | (std::uint32_t{0x0} << 28);
+}
+
 enum class ConnectionGroupId : std::uint16_t {
   none,
   group_spi1_tssop20_sck_mosi_miso,
