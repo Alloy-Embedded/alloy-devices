@@ -314,8 +314,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 21215,
-      "content_sha256": "09225256a5a28419c04a64afa3c075b23a41537fef9e2980e671c12e1576d5ae",
+      "content_bytes": 31069,
+      "content_sha256": "2a08aee1408e4a0485c1ecdfc3905d82a99bd544820288b559eef4db4cd2fb8b",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/clock_bindings.hpp"
     },
     {
@@ -512,8 +512,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 219969,
-      "content_sha256": "a17152d7eceba2f3a06917f9297b7771947866811dd760ef0cdb7fe81de3dc65",
+      "content_bytes": 300755,
+      "content_sha256": "9ce5657b533dad90d850fd3f5467ce409f2f4cb97983158e7bae14e5cac0641b",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/routes.hpp"
     },
     {
@@ -554,8 +554,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 22969,
-      "content_sha256": "2b9649792c25f9d92610628982b40daff994b2e3e1f0438bd7c1ae836ee7e407",
+      "content_bytes": 33745,
+      "content_sha256": "e63cc172666ca28d06fa0672e18ca81d3fafdd18c4ed917447edbf999754e1b6",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/clock_bindings.hpp"
     },
     {
@@ -752,8 +752,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 290038,
-      "content_sha256": "249d8aa212e9d1ebffc2990c8d42c50b12ca56233416aff4e66db70959784694",
+      "content_bytes": 396427,
+      "content_sha256": "423f13cb1b7d347ddc1365103fc33d5b37cc6a076aff2796796fd3fd5a56f184",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/routes.hpp"
     },
     {
@@ -888,7 +888,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "e9eff7ffec33409d9fd9e8ffba9bbd5c8d8e193db9c946dc100fc613f7272cca",
+  "target_artifact_revision": "0b330736bbb4a9758fa9d638d074b59a58514eba28477d8c9eba3b3003ef8699",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
