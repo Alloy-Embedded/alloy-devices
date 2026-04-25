@@ -182,8 +182,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4857,
-      "content_sha256": "1aebca23a64c6935b26272ddd2f8fcad354e6de716f1dc8dbc28ca76afe96ea2",
+      "content_bytes": 5195,
+      "content_sha256": "9d9ce0f6883ad7f78ec447704ebb0575071d0039382f2dcaaa427f0da9acb3cd",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/clock_bindings.hpp"
     },
     {
@@ -380,8 +380,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 11762,
-      "content_sha256": "a5856757f3ff7735abf3d893a2d124fd35913fd3abd790aed27d047b90e12397",
+      "content_bytes": 11941,
+      "content_sha256": "748c4577137e750cbf5d5b977dcbe86c7d137aeb491a85a9459b186790740fe6",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp"
     },
     {
@@ -510,7 +510,7 @@
     "family": "esp32c3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "19c1c7600f7f9d6188e418d04644f0b4cd80a25b2283b95e4d1988f854752872",
+  "target_artifact_revision": "538cb91caeb6e45b6f739263235a839b4b1b71e08d859ce43e6dd7689795cd5b",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
