@@ -176,8 +176,8 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3369,
-      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "content_bytes": 3692,
+      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
       "path": "README.md"
     },
     {
@@ -546,7 +546,7 @@
     "family": "avr-da",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "447b0560eacf1c11d95405ee844239653231426770811f2d3869231f993ccc68",
+  "target_artifact_revision": "f4a0a2f5217820b7461d87ceb2681fb9062692969d69f1b234ac7d7ee5e17866",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
