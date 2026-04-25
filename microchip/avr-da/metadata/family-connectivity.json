@@ -502,6 +502,24 @@
       "rcc_reset_signal": null
     },
     {
+      "backend_schema_id": "alloy.portmux.microchip-avr-da-portmux-v1",
+      "base_address": 1504,
+      "instance": 0,
+      "ip_name": "portmux",
+      "ip_version": "avr-da-portmux-v1",
+      "name": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
       "backend_schema_id": "alloy.spi.microchip-avr-da-spi-v1",
       "base_address": 2368,
       "instance": 0,

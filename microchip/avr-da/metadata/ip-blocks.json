@@ -22,6 +22,12 @@
           "name": "PORTC"
         },
         {
+          "base_address": 1504,
+          "ip_name": "portmux",
+          "ip_version": "avr-da-portmux-v1",
+          "name": "PORTMUX"
+        },
+        {
           "base_address": 2368,
           "ip_name": "spi",
           "ip_version": "avr-da-spi-v1",
@@ -105,6 +111,23 @@
         "source_path": "atdf/AVR128DA32.atdf"
       },
       "register_profile": "portc:avr-da-port-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.portmux.microchip-avr-da-portmux-v1",
+      "capability_ids": [],
+      "ip_name": "portmux",
+      "ip_version": "avr-da-portmux-v1",
+      "peripheral_class": "portmux",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "portmux:avr-da-portmux-v1",
       "signal_roles": []
     },
     {

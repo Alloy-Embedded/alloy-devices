@@ -103,6 +103,31 @@ inline auto clock_disable() noexcept -> void {
   static_assert(kClockBindingDependentFalse<Id>, "");
 }
 
+template <>
+inline auto clock_enable<PeripheralId::SPI0>() noexcept -> void {}
+template <>
+inline auto clock_disable<PeripheralId::SPI0>() noexcept -> void {}
+
+template <>
+inline auto clock_enable<PeripheralId::TCA0>() noexcept -> void {}
+template <>
+inline auto clock_disable<PeripheralId::TCA0>() noexcept -> void {}
+
+template <>
+inline auto clock_enable<PeripheralId::TWI0>() noexcept -> void {}
+template <>
+inline auto clock_disable<PeripheralId::TWI0>() noexcept -> void {}
+
+template <>
+inline auto clock_enable<PeripheralId::USART0>() noexcept -> void {}
+template <>
+inline auto clock_disable<PeripheralId::USART0>() noexcept -> void {}
+
+template <>
+inline auto clock_enable<PeripheralId::USART1>() noexcept -> void {}
+template <>
+inline auto clock_disable<PeripheralId::USART1>() noexcept -> void {}
+
 }
 }
 }

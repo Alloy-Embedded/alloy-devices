@@ -1522,6 +1522,23 @@
       "signal_roles": []
     },
     {
+      "backend_schema_id": "alloy.portmux.microchip-avr-da-portmux-v1",
+      "capability_ids": [],
+      "ip_name": "portmux",
+      "ip_version": "avr-da-portmux-v1",
+      "peripheral_class": "portmux",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "portmux:avr-da-portmux-v1",
+      "signal_roles": []
+    },
+    {
       "backend_schema_id": "alloy.spi.microchip-avr-da-spi-v1",
       "capability_ids": [
         "capability:spi:avr-da-spi-v1:cs",
@@ -1993,6 +2010,24 @@
       "ip_name": "clkctrl",
       "ip_version": "avr-da-clkctrl-v1",
       "name": "CLKCTRL",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "backend_schema_id": "alloy.portmux.microchip-avr-da-portmux-v1",
+      "base_address": 1504,
+      "instance": 0,
+      "ip_name": "portmux",
+      "ip_version": "avr-da-portmux-v1",
+      "name": "PORTMUX",
       "provenance": {
         "patch_ids": [
           "microchip-avr-da-family-bootstrap-v1",
@@ -3889,6 +3924,438 @@
       },
       "register_id": "register:portc:pin7ctrl",
       "register_name": "PIN7CTRL"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:portmux:evsysroutea:evouta",
+      "name": "EVOUTA",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:evsysroutea",
+      "register_name": "EVSYSROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 1,
+      "field_id": "field:portmux:evsysroutea:evoutc",
+      "name": "EVOUTC",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:evsysroutea",
+      "register_name": "EVSYSROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 3,
+      "bit_width": 1,
+      "field_id": "field:portmux:evsysroutea:evoutd",
+      "name": "EVOUTD",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:evsysroutea",
+      "register_name": "EVSYSROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 5,
+      "bit_width": 1,
+      "field_id": "field:portmux:evsysroutea:evoutf",
+      "name": "EVOUTF",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:evsysroutea",
+      "register_name": "EVSYSROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:portmux:cclroutea:lut0",
+      "name": "LUT0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:cclroutea",
+      "register_name": "CCLROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 1,
+      "bit_width": 1,
+      "field_id": "field:portmux:cclroutea:lut1",
+      "name": "LUT1",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:cclroutea",
+      "register_name": "CCLROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 1,
+      "field_id": "field:portmux:cclroutea:lut2",
+      "name": "LUT2",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:cclroutea",
+      "register_name": "CCLROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 3,
+      "bit_width": 1,
+      "field_id": "field:portmux:cclroutea:lut3",
+      "name": "LUT3",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:cclroutea",
+      "register_name": "CCLROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 2,
+      "field_id": "field:portmux:usartroutea:usart0",
+      "name": "USART0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:usartroutea",
+      "register_name": "USARTROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 2,
+      "field_id": "field:portmux:usartroutea:usart1",
+      "name": "USART1",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:usartroutea",
+      "register_name": "USARTROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 4,
+      "bit_width": 2,
+      "field_id": "field:portmux:usartroutea:usart2",
+      "name": "USART2",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:usartroutea",
+      "register_name": "USARTROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 2,
+      "field_id": "field:portmux:spiroutea:spi0",
+      "name": "SPI0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:spiroutea",
+      "register_name": "SPIROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 2,
+      "field_id": "field:portmux:spiroutea:spi1",
+      "name": "SPI1",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:spiroutea",
+      "register_name": "SPIROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 2,
+      "field_id": "field:portmux:twiroutea:twi0",
+      "name": "TWI0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:twiroutea",
+      "register_name": "TWIROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 2,
+      "field_id": "field:portmux:twiroutea:twi1",
+      "name": "TWI1",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:twiroutea",
+      "register_name": "TWIROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 3,
+      "field_id": "field:portmux:tcaroutea:tca0",
+      "name": "TCA0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcaroutea",
+      "register_name": "TCAROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:portmux:tcbroutea:tcb0",
+      "name": "TCB0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcbroutea",
+      "register_name": "TCBROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 1,
+      "bit_width": 1,
+      "field_id": "field:portmux:tcbroutea:tcb1",
+      "name": "TCB1",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcbroutea",
+      "register_name": "TCBROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 1,
+      "field_id": "field:portmux:tcbroutea:tcb2",
+      "name": "TCB2",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcbroutea",
+      "register_name": "TCBROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 3,
+      "field_id": "field:portmux:tcdroutea:tcd0",
+      "name": "TCD0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcdroutea",
+      "register_name": "TCDROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:portmux:acroutea:ac0",
+      "name": "AC0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:acroutea",
+      "register_name": "ACROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 1,
+      "bit_width": 1,
+      "field_id": "field:portmux:acroutea:ac1",
+      "name": "AC1",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:acroutea",
+      "register_name": "ACROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 2,
+      "bit_width": 1,
+      "field_id": "field:portmux:acroutea:ac2",
+      "name": "AC2",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:acroutea",
+      "register_name": "ACROUTEA"
+    },
+    {
+      "access": "rw",
+      "bit_offset": 0,
+      "bit_width": 1,
+      "field_id": "field:portmux:zcdroutea:zcd0",
+      "name": "ZCD0",
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:zcdroutea",
+      "register_name": "ZCDROUTEA"
     },
     {
       "access": "rw",
@@ -8028,6 +8495,166 @@
         "source_path": "atdf/AVR128DA32.atdf"
       },
       "register_id": "register:portc:pin7ctrl",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "EVSYSROUTEA",
+      "offset_bytes": 0,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:evsysroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "CCLROUTEA",
+      "offset_bytes": 1,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:cclroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "USARTROUTEA",
+      "offset_bytes": 2,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:usartroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "SPIROUTEA",
+      "offset_bytes": 4,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:spiroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "TWIROUTEA",
+      "offset_bytes": 5,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:twiroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "TCAROUTEA",
+      "offset_bytes": 6,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcaroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "TCBROUTEA",
+      "offset_bytes": 7,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcbroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "TCDROUTEA",
+      "offset_bytes": 8,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:tcdroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "ACROUTEA",
+      "offset_bytes": 9,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:acroutea",
+      "size_bits": 8
+    },
+    {
+      "access": "rw",
+      "name": "ZCDROUTEA",
+      "offset_bytes": 10,
+      "peripheral": "PORTMUX",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_id": "register:portmux:zcdroutea",
       "size_bits": 8
     },
     {
