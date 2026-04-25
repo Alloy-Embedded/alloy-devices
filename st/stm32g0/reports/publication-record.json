@@ -258,8 +258,14 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 148,
+  "published_artifact_count": 149,
   "published_artifacts": [
+    {
+      "artifact_kind": "documentation",
+      "content_bytes": 3369,
+      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "path": "README.md"
+    },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 6625,
@@ -1154,7 +1160,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "e54dbcae8557f765a0f8e2d48a73dd67b79672477bec3dfae88b4d2a83718445",
+  "target_artifact_revision": "350e19aa94d46bf56e4f232afc50a9a4c4148f76ec2e25b6810971fa867ec647",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
