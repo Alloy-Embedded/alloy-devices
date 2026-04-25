@@ -146,8 +146,8 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3369,
-      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "content_bytes": 3692,
+      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
       "path": "README.md"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32c3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "073b6f5f70fc379f0cfe273dc9d38b9ad3948fe9549f2c62cc6a5052ca8feb05",
+  "target_artifact_revision": "549e97cabc2ea1d397646955b34bbd8255b84c490a8d61f3eac59c5c4621ea28",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
