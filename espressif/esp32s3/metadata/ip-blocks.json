@@ -102,8 +102,14 @@
         {
           "base_address": 1611407360,
           "ip_name": "interrupt_core0",
-          "ip_version": null,
+          "ip_version": "esp32s3-interrupt-matrix-v1",
           "name": "INTERRUPT_CORE0"
+        },
+        {
+          "base_address": 1611407360,
+          "ip_name": "interrupt_core1",
+          "ip_version": "esp32s3-interrupt-matrix-v1",
+          "name": "INTERRUPT_CORE1"
         },
         {
           "base_address": 1610649600,
@@ -415,6 +421,40 @@
         "source_path": "esp32s3.svd"
       },
       "register_profile": "i2c1:esp32s3-i2c-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.interrupt_core0.espressif-esp32s3-interrupt-matrix-v1",
+      "capability_ids": [],
+      "ip_name": "interrupt_core0",
+      "ip_version": "esp32s3-interrupt-matrix-v1",
+      "peripheral_class": "interrupt_core0",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "register_profile": "interrupt_core0:esp32s3-interrupt-matrix-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.interrupt_core1.espressif-esp32s3-interrupt-matrix-v1",
+      "capability_ids": [],
+      "ip_name": "interrupt_core1",
+      "ip_version": "esp32s3-interrupt-matrix-v1",
+      "peripheral_class": "interrupt_core1",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "register_profile": "interrupt_core1:esp32s3-interrupt-matrix-v1",
       "signal_roles": []
     },
     {

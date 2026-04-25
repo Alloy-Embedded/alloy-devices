@@ -91,8 +91,13 @@ void CORE0_IRAM0_PMS_IRQHandler() __attribute__((weak));
 void CORE0_DRAM0_PMS_IRQHandler() __attribute__((weak));
 void CORE0_PIF_PMS_IRQHandler() __attribute__((weak));
 void CORE0_PIF_PMS_SIZE_IRQHandler() __attribute__((weak));
+void CORE1_IRAM0_PMS_IRQHandler() __attribute__((weak));
+void CORE1_DRAM0_PMS_IRQHandler() __attribute__((weak));
+void CORE1_PIF_PMS_IRQHandler() __attribute__((weak));
+void CORE1_PIF_PMS_SIZE_IRQHandler() __attribute__((weak));
 void BACKUP_PMS_VIOLATE_IRQHandler() __attribute__((weak));
 void CACHE_CORE0_ACS_IRQHandler() __attribute__((weak));
+void CACHE_CORE1_ACS_IRQHandler() __attribute__((weak));
 void USB_DEVICE_IRQHandler() __attribute__((weak));
 void PERI_BACKUP_IRQHandler() __attribute__((weak));
 void DMA_EXTMEM_REJECT_IRQHandler() __attribute__((weak));
@@ -110,7 +115,7 @@ struct InterruptStubDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptStubDescriptor, 89> kInterruptStubs = {{
+inline constexpr std::array<InterruptStubDescriptor, 94> kInterruptStubs = {{
   {InterruptId::WIFI_MAC, StartupSymbolId::WIFI_MAC_IRQHandler, 0u, 16u},
   {InterruptId::WIFI_NMI, StartupSymbolId::WIFI_NMI_IRQHandler, 1u, 17u},
   {InterruptId::WIFI_PWR, StartupSymbolId::WIFI_PWR_IRQHandler, 2u, 18u},
@@ -195,8 +200,13 @@ inline constexpr std::array<InterruptStubDescriptor, 89> kInterruptStubs = {{
   {InterruptId::CORE0_DRAM0_PMS, StartupSymbolId::CORE0_DRAM0_PMS_IRQHandler, 86u, 102u},
   {InterruptId::CORE0_PIF_PMS, StartupSymbolId::CORE0_PIF_PMS_IRQHandler, 87u, 103u},
   {InterruptId::CORE0_PIF_PMS_SIZE, StartupSymbolId::CORE0_PIF_PMS_SIZE_IRQHandler, 88u, 104u},
+  {InterruptId::CORE1_IRAM0_PMS, StartupSymbolId::CORE1_IRAM0_PMS_IRQHandler, 89u, 105u},
+  {InterruptId::CORE1_DRAM0_PMS, StartupSymbolId::CORE1_DRAM0_PMS_IRQHandler, 90u, 106u},
+  {InterruptId::CORE1_PIF_PMS, StartupSymbolId::CORE1_PIF_PMS_IRQHandler, 91u, 107u},
+  {InterruptId::CORE1_PIF_PMS_SIZE, StartupSymbolId::CORE1_PIF_PMS_SIZE_IRQHandler, 92u, 108u},
   {InterruptId::BACKUP_PMS_VIOLATE, StartupSymbolId::BACKUP_PMS_VIOLATE_IRQHandler, 93u, 109u},
   {InterruptId::CACHE_CORE0_ACS, StartupSymbolId::CACHE_CORE0_ACS_IRQHandler, 94u, 110u},
+  {InterruptId::CACHE_CORE1_ACS, StartupSymbolId::CACHE_CORE1_ACS_IRQHandler, 95u, 111u},
   {InterruptId::USB_DEVICE, StartupSymbolId::USB_DEVICE_IRQHandler, 96u, 112u},
   {InterruptId::PERI_BACKUP, StartupSymbolId::PERI_BACKUP_IRQHandler, 97u, 113u},
   {InterruptId::DMA_EXTMEM_REJECT, StartupSymbolId::DMA_EXTMEM_REJECT_IRQHandler, 98u, 114u},
@@ -883,6 +893,38 @@ struct InterruptStubTraits<InterruptId::CORE0_PIF_PMS_SIZE> {
 };
 
 template<>
+struct InterruptStubTraits<InterruptId::CORE1_IRAM0_PMS> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::CORE1_IRAM0_PMS_IRQHandler;
+  static constexpr std::uint16_t kLine = 89u;
+  static constexpr std::uint16_t kVectorSlot = 105u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::CORE1_DRAM0_PMS> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::CORE1_DRAM0_PMS_IRQHandler;
+  static constexpr std::uint16_t kLine = 90u;
+  static constexpr std::uint16_t kVectorSlot = 106u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::CORE1_PIF_PMS> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::CORE1_PIF_PMS_IRQHandler;
+  static constexpr std::uint16_t kLine = 91u;
+  static constexpr std::uint16_t kVectorSlot = 107u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::CORE1_PIF_PMS_SIZE> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::CORE1_PIF_PMS_SIZE_IRQHandler;
+  static constexpr std::uint16_t kLine = 92u;
+  static constexpr std::uint16_t kVectorSlot = 108u;
+};
+
+template<>
 struct InterruptStubTraits<InterruptId::BACKUP_PMS_VIOLATE> {
   static constexpr bool kPresent = true;
   static constexpr StartupSymbolId kSymbolId = StartupSymbolId::BACKUP_PMS_VIOLATE_IRQHandler;
@@ -896,6 +938,14 @@ struct InterruptStubTraits<InterruptId::CACHE_CORE0_ACS> {
   static constexpr StartupSymbolId kSymbolId = StartupSymbolId::CACHE_CORE0_ACS_IRQHandler;
   static constexpr std::uint16_t kLine = 94u;
   static constexpr std::uint16_t kVectorSlot = 110u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::CACHE_CORE1_ACS> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::CACHE_CORE1_ACS_IRQHandler;
+  static constexpr std::uint16_t kLine = 95u;
+  static constexpr std::uint16_t kVectorSlot = 111u;
 };
 
 template<>

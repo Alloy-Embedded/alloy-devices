@@ -205,6 +205,24 @@
     },
     {
       "alias_names": [
+        "INTERRUPT_CORE1",
+        "CACHE_CORE1_ACS_IRQHandler"
+      ],
+      "line": 95,
+      "name": "CACHE_CORE1_ACS",
+      "peripheral": "INTERRUPT_CORE1",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "shared_group": "interrupt-group:interrupt-core1"
+    },
+    {
+      "alias_names": [
         "INTERRUPT_CORE0",
         "CACHE_IA_IRQHandler"
       ],
@@ -292,6 +310,78 @@
         "source_path": "esp32s3.svd"
       },
       "shared_group": "interrupt-group:interrupt-core0"
+    },
+    {
+      "alias_names": [
+        "INTERRUPT_CORE1",
+        "CORE1_DRAM0_PMS_IRQHandler"
+      ],
+      "line": 90,
+      "name": "CORE1_DRAM0_PMS",
+      "peripheral": "INTERRUPT_CORE1",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "shared_group": "interrupt-group:interrupt-core1"
+    },
+    {
+      "alias_names": [
+        "INTERRUPT_CORE1",
+        "CORE1_IRAM0_PMS_IRQHandler"
+      ],
+      "line": 89,
+      "name": "CORE1_IRAM0_PMS",
+      "peripheral": "INTERRUPT_CORE1",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "shared_group": "interrupt-group:interrupt-core1"
+    },
+    {
+      "alias_names": [
+        "INTERRUPT_CORE1",
+        "CORE1_PIF_PMS_IRQHandler"
+      ],
+      "line": 91,
+      "name": "CORE1_PIF_PMS",
+      "peripheral": "INTERRUPT_CORE1",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "shared_group": "interrupt-group:interrupt-core1"
+    },
+    {
+      "alias_names": [
+        "INTERRUPT_CORE1",
+        "CORE1_PIF_PMS_SIZE_IRQHandler"
+      ],
+      "line": 92,
+      "name": "CORE1_PIF_PMS_SIZE",
+      "peripheral": "INTERRUPT_CORE1",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "shared_group": "interrupt-group:interrupt-core1"
     },
     {
       "alias_names": [
@@ -1941,12 +2031,30 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.interrupt_core0.espressif-interrupt-core0",
+      "backend_schema_id": "alloy.interrupt_core0.espressif-esp32s3-interrupt-matrix-v1",
       "base_address": 1611407360,
       "instance": 0,
       "ip_name": "interrupt_core0",
-      "ip_version": null,
+      "ip_version": "esp32s3-interrupt-matrix-v1",
       "name": "INTERRUPT_CORE0",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32s3-family-bootstrap-v1",
+          "espressif-esp32s3-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32s3.svd"
+      },
+      "rcc_enable_signal": null,
+      "rcc_reset_signal": null
+    },
+    {
+      "backend_schema_id": "alloy.interrupt_core1.espressif-esp32s3-interrupt-matrix-v1",
+      "base_address": 1611407360,
+      "instance": 0,
+      "ip_name": "interrupt_core1",
+      "ip_version": "esp32s3-interrupt-matrix-v1",
+      "name": "INTERRUPT_CORE1",
       "provenance": {
         "patch_ids": [
           "espressif-esp32s3-family-bootstrap-v1",

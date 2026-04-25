@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "esp32s3",
-      "fact_count": 191,
+      "fact_count": 196,
       "facts": [
         {
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
@@ -2218,6 +2218,110 @@
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "interrupt": "CORE1_IRAM0_PMS",
+            "kind": "external-interrupt",
+            "slot": 105,
+            "symbol_name": "CORE1_IRAM0_PMS_IRQHandler"
+          },
+          "fact_id": "vector-slot:105",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-bootstrap",
+              "espressif-esp32s3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32s3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "CORE1_DRAM0_PMS",
+            "kind": "external-interrupt",
+            "slot": 106,
+            "symbol_name": "CORE1_DRAM0_PMS_IRQHandler"
+          },
+          "fact_id": "vector-slot:106",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-bootstrap",
+              "espressif-esp32s3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32s3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "CORE1_PIF_PMS",
+            "kind": "external-interrupt",
+            "slot": 107,
+            "symbol_name": "CORE1_PIF_PMS_IRQHandler"
+          },
+          "fact_id": "vector-slot:107",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-bootstrap",
+              "espressif-esp32s3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32s3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "CORE1_PIF_PMS_SIZE",
+            "kind": "external-interrupt",
+            "slot": 108,
+            "symbol_name": "CORE1_PIF_PMS_SIZE_IRQHandler"
+          },
+          "fact_id": "vector-slot:108",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-bootstrap",
+              "espressif-esp32s3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32s3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "interrupt": "BACKUP_PMS_VIOLATE",
             "kind": "external-interrupt",
             "slot": 109,
@@ -2250,6 +2354,32 @@
             "symbol_name": "CACHE_CORE0_ACS_IRQHandler"
           },
           "fact_id": "vector-slot:110",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32s3-bootstrap",
+              "espressif-esp32s3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32s3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "CACHE_CORE1_ACS",
+            "kind": "external-interrupt",
+            "slot": 111,
+            "symbol_name": "CACHE_CORE1_ACS_IRQHandler"
+          },
+          "fact_id": "vector-slot:111",
           "fact_kind": "vector_slot",
           "inference_rule": null,
           "provenance": {

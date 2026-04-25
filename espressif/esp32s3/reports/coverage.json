@@ -12,13 +12,13 @@
         "dma_conflict_groups": 0,
         "dma_controllers": 1,
         "dma_routes": 5,
-        "interrupts": 89,
-        "ip_blocks": 8,
+        "interrupts": 94,
+        "ip_blocks": 10,
         "memories": 3,
         "package_pads": 10,
         "packages": 1,
         "peripheral_clock_bindings": 7,
-        "peripherals": 53,
+        "peripherals": 54,
         "pin_constraints": 0,
         "pins": 10,
         "resets": 0,
@@ -26,7 +26,7 @@
         "route_requirements": 28,
         "signal_endpoints": 8,
         "startup_descriptors": 8,
-        "vector_slots": 90
+        "vector_slots": 95
       },
       "device": "esp32s3",
       "domains": {
