@@ -159,6 +159,70 @@ inline auto apply_route() noexcept -> void {
   static_assert(RouteTraits<Pin, Peripheral, Signal>::kPresent, "");
 }
 
+template<>
+inline auto apply_route<PinId::GPIO11, PeripheralId::SPI2, SignalId::signal_mosi>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C0018u) |=(std::uint32_t{1} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60009030u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x60009030u) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60004580u) = std::uint32_t{0x3Fu};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO12, PeripheralId::SPI2, SignalId::signal_sck>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C0018u) |=(std::uint32_t{1} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60009034u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x60009034u) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60004584u) = std::uint32_t{0x3Fu};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO13, PeripheralId::SPI2, SignalId::signal_miso>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C0018u) |=(std::uint32_t{1} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60009038u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x60009038u) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60004588u) = std::uint32_t{0x40u};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO14, PeripheralId::SPI2, SignalId::signal_cs>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C0018u) |=(std::uint32_t{1} << 6);
+  *reinterpret_cast<volatile std::uint32_t*>(0x6000903Cu) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x6000903Cu) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x6000458Cu) = std::uint32_t{0x44u};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO17, PeripheralId::UART2, SignalId::signal_tx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C001Cu) |=(std::uint32_t{1} << 9);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60009048u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x60009048u) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60004598u) = std::uint32_t{0x11u};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO18, PeripheralId::UART2, SignalId::signal_rx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C001Cu) |=(std::uint32_t{1} << 9);
+  *reinterpret_cast<volatile std::uint32_t*>(0x6000904Cu) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x6000904Cu) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x6000459Cu) = std::uint32_t{0xDu};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO43, PeripheralId::UART0, SignalId::signal_tx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C0018u) |=(std::uint32_t{1} << 2);
+  *reinterpret_cast<volatile std::uint32_t*>(0x600090B0u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x600090B0u) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60004600u) = std::uint32_t{0x6u};
+}
+
+template<>
+inline auto apply_route<PinId::GPIO44, PeripheralId::UART0, SignalId::signal_rx>() noexcept -> void {
+  *reinterpret_cast<volatile std::uint32_t*>(0x600C0018u) |=(std::uint32_t{1} << 2);
+  *reinterpret_cast<volatile std::uint32_t*>(0x600090B4u) = 
+      (*reinterpret_cast<volatile std::uint32_t*>(0x600090B4u) & ~(std::uint32_t{0x7} << 12)) | (std::uint32_t{0x1} << 12);
+  *reinterpret_cast<volatile std::uint32_t*>(0x60004604u) = std::uint32_t{0x6u};
+}
+
 enum class ConnectionGroupId : std::uint16_t {
   none,
   group_spi2_qfn56_sck_mosi_miso,

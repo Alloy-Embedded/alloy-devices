@@ -380,8 +380,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 12008,
-      "content_sha256": "ca456b1a4751bce31f391d4a6d7b93932513e71b21df4141b96971f5ec44b650",
+      "content_bytes": 15750,
+      "content_sha256": "d0362ed151eeb08f2ac01c5bdd7d3c1cfe9ab6b0cb5023ac97b839533abb0d74",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/routes.hpp"
     },
     {
@@ -510,7 +510,7 @@
     "family": "esp32s3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "29411d4ca6a98182e2a010dbdc0411b2a4428dabb49400626024e6675fc99646",
+  "target_artifact_revision": "57ee1e13c57277eeff3a87bc31f1ca293742f69f2d24efface15dec14e8eb0d1",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
