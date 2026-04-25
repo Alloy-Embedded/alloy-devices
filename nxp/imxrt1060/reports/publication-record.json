@@ -40,7 +40,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:aabd170227d287d1a8dcaef8005405d9743781c616c32b1f238dec87a6f6e618",
+          "revision": "content-sha256:3241b0a2a5d89b7a43cd03d12adb575318837e055859292b5a14b9aeee3a981a",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -53,7 +53,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:0c4c7ba86c59e3cb755b54d3c7dcae8d6550288ed9360cb1bc72bab1f04456f1",
+          "revision": "content-sha256:70a1f676e1320e5a6b38f4d5e99c3de0849c371f507cfa670043f880ed15d4ca",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -66,7 +66,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:aabd170227d287d1a8dcaef8005405d9743781c616c32b1f238dec87a6f6e618",
+          "revision": "content-sha256:3241b0a2a5d89b7a43cd03d12adb575318837e055859292b5a14b9aeee3a981a",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -79,7 +79,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:0c4c7ba86c59e3cb755b54d3c7dcae8d6550288ed9360cb1bc72bab1f04456f1",
+          "revision": "content-sha256:70a1f676e1320e5a6b38f4d5e99c3de0849c371f507cfa670043f880ed15d4ca",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -191,14 +191,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3369,
-      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "content_bytes": 3692,
+      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3740,
-      "content_sha256": "debca8fc45c0d51e3e1c315259febdb77f1d1973e29f60c7305d375d09d3c8ed",
+      "content_sha256": "7ade0dcfc52f2550335f662aa3b64d6fed308916bf21d08144416094d3e432c1",
       "path": "nxp/imxrt1060/artifact-manifest.json"
     },
     {
@@ -825,7 +825,7 @@
     "family": "imxrt1060",
     "vendor": "nxp"
   },
-  "target_artifact_revision": "fc342d200ded70718141bdb4dc84a9aaf3e2dd8933a8d9defea49c9fe3dd6fa4",
+  "target_artifact_revision": "b17080531c6f14d6505eb3d36a8c70d224a78ae395c341986733374ff20d5bd5",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
