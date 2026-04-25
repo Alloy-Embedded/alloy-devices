@@ -165,8 +165,8 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3369,
-      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "content_bytes": 3692,
+      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
       "path": "README.md"
     },
     {
@@ -799,7 +799,7 @@
     "family": "rp2040",
     "vendor": "raspberrypi"
   },
-  "target_artifact_revision": "6bd9a188d0192b2232c798e53706acd7f2df4e0fe01607f2bf3dc82dc29cf2b3",
+  "target_artifact_revision": "476d01d9f0d1a83a03ccae479fd7a46537662ac745a096487b4cfa5f8b06a47a",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
