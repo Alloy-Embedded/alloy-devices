@@ -213,8 +213,14 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 104,
+  "published_artifact_count": 105,
   "published_artifacts": [
+    {
+      "artifact_kind": "documentation",
+      "content_bytes": 3369,
+      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "path": "README.md"
+    },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 4727,
@@ -845,7 +851,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "25de80b3927469e56dc343f092e0099201ab08bf9a56fa5ddd56e414f6f3aa22",
+  "target_artifact_revision": "27fc478ce2e83a8c9e01197369054ebab67129143c76aa443a2bfe7857b14199",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
