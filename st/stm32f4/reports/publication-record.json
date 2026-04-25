@@ -271,8 +271,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 21613,
-      "content_sha256": "eb650075ba294abe7ae1aefe491f89065af7a396bd8c114d1598385c83bc8822",
+      "content_bytes": 27691,
+      "content_sha256": "558d4560b10f2d4f7e193b2ed134048272f18b456838607a0cda49d01b5a808f",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/clock_bindings.hpp"
     },
     {
@@ -469,8 +469,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 98411,
-      "content_sha256": "f870cfe4913d0743b3e355386b068e8413573443aff3df63a0a59d307297628e",
+      "content_bytes": 98590,
+      "content_sha256": "7b54c8a20f00013f1e6c2720fd185beccdf001384b34f18ab6266b68d4722b97",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp"
     },
     {
@@ -511,8 +511,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 31209,
-      "content_sha256": "568fc4d08802af7cdbc00ba89ff9bb6f09888bbc6955ae46aa8645c3f12efe8a",
+      "content_bytes": 37287,
+      "content_sha256": "02028ad1680876d2489f0519f0e4e305b2dfeb3640b827ae10cd8d4054ca5e06",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/clock_bindings.hpp"
     },
     {
@@ -709,8 +709,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 99789,
-      "content_sha256": "511c91e3c6ac4520c94dd3f5c7cb73c693612b13d0c8e69ba3ffa6662973c20c",
+      "content_bytes": 99968,
+      "content_sha256": "e561cfc8f414ab7ee9fccb99972579ac70ad34b304308b7661fe324c56a6d72c",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp"
     },
     {
@@ -845,7 +845,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "e45ed6e1565100b42fda87222a4bc274976eb82e561aadae90ae711664eba0f5",
+  "target_artifact_revision": "fb102eb6f3ac58d527f877e536f125de2367e7f787cfc335b418d5bd9c1e10f4",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
