@@ -256,8 +256,14 @@
     "succeeded": true
   },
   "publication_mode": "published",
-  "published_artifact_count": 104,
+  "published_artifact_count": 105,
   "published_artifacts": [
+    {
+      "artifact_kind": "documentation",
+      "content_bytes": 3369,
+      "content_sha256": "084cc14a2e311df45d51f020863f5276ee19128021dc10588dcba04de10477cf",
+      "path": "README.md"
+    },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 7649,
@@ -888,7 +894,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "0b330736bbb4a9758fa9d638d074b59a58514eba28477d8c9eba3b3003ef8699",
+  "target_artifact_revision": "709b3816bc0c2ccdcdb7bb11a9ffcedf22e77e434c4cc63c282b095933ab6f70",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
