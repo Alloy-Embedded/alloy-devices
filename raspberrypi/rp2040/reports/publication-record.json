@@ -219,8 +219,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 9590,
-      "content_sha256": "d53462f3215c4d83569727249249db423037b575588239daeb81ab2203289dd4",
+      "content_bytes": 9928,
+      "content_sha256": "ad04743b80541fcd9a9b4a0d5843dc328090731e77ae01fcb0ebf7fdadc7e42a",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/clock_bindings.hpp"
     },
     {
@@ -417,8 +417,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 74026,
-      "content_sha256": "71703bd7330e09f013ff45280f20fe65c298c48b8ac8ebfbdd521bcadf9d7f4c",
+      "content_bytes": 74205,
+      "content_sha256": "567b152dbfc2a7de794ee7d7c18e1af4d2d2dbab799cb19f66596553bddd01e9",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp"
     },
     {
@@ -459,8 +459,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 9592,
-      "content_sha256": "b5b6d49ef71b18c168f83a8e189ef43755d959c19700a74e3ceba43340fbd39e",
+      "content_bytes": 9930,
+      "content_sha256": "370f5427d7091e0338d2f17547394be9ddf57f841e3f9ba0b1bb5fa77a27024f",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/clock_bindings.hpp"
     },
     {
@@ -657,8 +657,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 80646,
-      "content_sha256": "5b5145fc256f67c508bf2b0cc9d81703d160eaa6d93b27c375b9e85000c2b785",
+      "content_bytes": 80825,
+      "content_sha256": "93e74a2a04eb96b583de4582c67a33da646c49d8273fd3e20ffc21aa952c7ad9",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp"
     },
     {
@@ -793,7 +793,7 @@
     "family": "rp2040",
     "vendor": "raspberrypi"
   },
-  "target_artifact_revision": "339e3dd47c105dcc415a7ee0eafd0f9744e4a0a405213f1fe53c2ecb68bea47f",
+  "target_artifact_revision": "c6fde1266111d476b74d82c98480a13f3d3001c6693bd8947fdc17130fe4dc97",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

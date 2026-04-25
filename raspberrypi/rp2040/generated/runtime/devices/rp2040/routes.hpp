@@ -830,6 +830,11 @@ inline constexpr std::array<RouteDescriptor, 56> kRuntimeRoutes = {{
   {RouteId::candidate_gp9_uart1_rx, PinId::GP9, PeripheralId::UART1, SignalId::signal_rx, RouteKindId::route_kind_mux},
 }};
 
+template<PinId Pin, PeripheralId Peripheral, SignalId Signal>
+inline auto apply_route() noexcept -> void {
+  static_assert(RouteTraits<Pin, Peripheral, Signal>::kPresent, "");
+}
+
 enum class ConnectionGroupId : std::uint16_t {
   none,
   group_adc_qfn56_all_signals,
