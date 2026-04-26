@@ -43,6 +43,17 @@
     },
     {
       "capability_names": [
+        "core-count",
+        "multicore-topology"
+      ],
+      "device_count": 0,
+      "devices": [],
+      "dma_signals": [],
+      "peripheral_class": "device",
+      "total_peripheral_count": 0
+    },
+    {
+      "capability_names": [
         "runtime-supported"
       ],
       "device_count": 3,
@@ -193,6 +204,19 @@
             "ADC1"
           ],
           "present": true
+        },
+        {
+          "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
         },
         {
           "capability_names": [
@@ -361,6 +385,19 @@
             "DAC"
           ],
           "present": true
+        },
+        {
+          "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
         },
         {
           "capability_names": [
@@ -552,6 +589,19 @@
             "DAC"
           ],
           "present": true
+        },
+        {
+          "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
         },
         {
           "capability_names": [

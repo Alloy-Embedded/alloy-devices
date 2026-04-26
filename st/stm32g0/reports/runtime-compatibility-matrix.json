@@ -38,6 +38,19 @@
         },
         {
           "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
+        },
+        {
+          "capability_names": [
             "runtime-supported"
           ],
           "class_capability_count": 1,
@@ -223,6 +236,19 @@
             "DAC"
           ],
           "present": true
+        },
+        {
+          "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
         },
         {
           "capability_names": [
@@ -427,6 +453,19 @@
         },
         {
           "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
+        },
+        {
+          "capability_names": [
             "runtime-supported"
           ],
           "class_capability_count": 1,
@@ -596,6 +635,7 @@
     "adc",
     "can",
     "dac",
+    "device",
     "dma",
     "dma-router",
     "gpio",
