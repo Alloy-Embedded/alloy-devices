@@ -54,6 +54,11 @@ struct TimerSemanticTraits {
   static constexpr RuntimeFieldRef kEncoderSpeedEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
+  static constexpr std::uint32_t kUpdateIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kCaptureIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kBreakIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kTriggerIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -98,6 +103,11 @@ struct TimerSemanticTraits<PeripheralId::TC0> {
   static constexpr RuntimeFieldRef kEncoderSpeedEnableField = RuntimeFieldRef{FieldId::field_tc0_bmr_speeden, RuntimeRegisterRef{RegisterId::register_tc0_bmr, 0x4000C000u, 196u, true}, 10u, 1u, true};
   static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = RuntimeFieldRef{FieldId::field_tc0_bmr_edgpha, RuntimeRegisterRef{RegisterId::register_tc0_bmr, 0x4000C000u, 196u, true}, 12u, 1u, true};
   static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tc0_qisr_dir, RuntimeRegisterRef{RegisterId::register_tc0_qisr, 0x4000C000u, 212u, true}, 8u, 1u, true};
+  static constexpr std::uint32_t kUpdateIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kCaptureIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kBreakIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kTriggerIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -142,6 +152,11 @@ struct TimerSemanticTraits<PeripheralId::TC1> {
   static constexpr RuntimeFieldRef kEncoderSpeedEnableField = RuntimeFieldRef{FieldId::field_tc1_bmr_speeden, RuntimeRegisterRef{RegisterId::register_tc1_bmr, 0x40010000u, 196u, true}, 10u, 1u, true};
   static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = RuntimeFieldRef{FieldId::field_tc1_bmr_edgpha, RuntimeRegisterRef{RegisterId::register_tc1_bmr, 0x40010000u, 196u, true}, 12u, 1u, true};
   static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tc1_qisr_dir, RuntimeRegisterRef{RegisterId::register_tc1_qisr, 0x40010000u, 212u, true}, 8u, 1u, true};
+  static constexpr std::uint32_t kUpdateIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kCaptureIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kBreakIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kTriggerIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -186,6 +201,11 @@ struct TimerSemanticTraits<PeripheralId::TC2> {
   static constexpr RuntimeFieldRef kEncoderSpeedEnableField = RuntimeFieldRef{FieldId::field_tc2_bmr_speeden, RuntimeRegisterRef{RegisterId::register_tc2_bmr, 0x40014000u, 196u, true}, 10u, 1u, true};
   static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = RuntimeFieldRef{FieldId::field_tc2_bmr_edgpha, RuntimeRegisterRef{RegisterId::register_tc2_bmr, 0x40014000u, 196u, true}, 12u, 1u, true};
   static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tc2_qisr_dir, RuntimeRegisterRef{RegisterId::register_tc2_qisr, 0x40014000u, 212u, true}, 8u, 1u, true};
+  static constexpr std::uint32_t kUpdateIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kCaptureIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kBreakIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kTriggerIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -230,6 +250,11 @@ struct TimerSemanticTraits<PeripheralId::TC3> {
   static constexpr RuntimeFieldRef kEncoderSpeedEnableField = RuntimeFieldRef{FieldId::field_tc3_bmr_speeden, RuntimeRegisterRef{RegisterId::register_tc3_bmr, 0x40054000u, 196u, true}, 10u, 1u, true};
   static constexpr RuntimeFieldRef kEncoderPhaseEdgeField = RuntimeFieldRef{FieldId::field_tc3_bmr_edgpha, RuntimeRegisterRef{RegisterId::register_tc3_bmr, 0x40054000u, 196u, true}, 12u, 1u, true};
   static constexpr RuntimeFieldRef kDirectionField = RuntimeFieldRef{FieldId::field_tc3_qisr_dir, RuntimeRegisterRef{RegisterId::register_tc3_qisr, 0x40054000u, 212u, true}, 8u, 1u, true};
+  static constexpr std::uint32_t kUpdateIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kCaptureIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kBreakIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::uint32_t kTriggerIrqNumber = 0xFFFFFFFFu;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<PeripheralId Id, std::size_t ChannelIndex>

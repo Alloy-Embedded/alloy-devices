@@ -60,6 +60,7 @@ struct QspiSemanticTraits {
   static constexpr RuntimeFieldRef kContinuousReadModeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kDummyCyclesField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kScramblingEnableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -110,6 +111,7 @@ struct QspiSemanticTraits<PeripheralId::QSPI> {
   static constexpr RuntimeFieldRef kContinuousReadModeField = RuntimeFieldRef{FieldId::field_qspi_ifr_crm, RuntimeRegisterRef{RegisterId::register_qspi_ifr, 0x4007C000u, 56u, true}, 14u, 1u, true};
   static constexpr RuntimeFieldRef kDummyCyclesField = RuntimeFieldRef{FieldId::field_qspi_ifr_nbdum, RuntimeRegisterRef{RegisterId::register_qspi_ifr, 0x4007C000u, 56u, true}, 16u, 5u, true};
   static constexpr RuntimeFieldRef kScramblingEnableField = RuntimeFieldRef{FieldId::field_qspi_smr_scren, RuntimeRegisterRef{RegisterId::register_qspi_smr, 0x4007C000u, 64u, true}, 0u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 1> kQspiSemanticPeripherals = {{

@@ -83,6 +83,7 @@ struct I2cSemanticTraits {
   static constexpr RuntimeFieldRef kTxrdyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kNackField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kArblstField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -156,6 +157,7 @@ struct I2cSemanticTraits<PeripheralId::TWIHS0> {
   static constexpr RuntimeFieldRef kTxrdyField = RuntimeFieldRef{FieldId::field_twihs0_sr_txrdy, RuntimeRegisterRef{RegisterId::register_twihs0_sr, 0x40018000u, 32u, true}, 2u, 1u, true};
   static constexpr RuntimeFieldRef kNackField = RuntimeFieldRef{FieldId::field_twihs0_sr_nack, RuntimeRegisterRef{RegisterId::register_twihs0_sr, 0x40018000u, 32u, true}, 8u, 1u, true};
   static constexpr RuntimeFieldRef kArblstField = RuntimeFieldRef{FieldId::field_twihs0_sr_arblst, RuntimeRegisterRef{RegisterId::register_twihs0_sr, 0x40018000u, 32u, true}, 9u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -229,6 +231,7 @@ struct I2cSemanticTraits<PeripheralId::TWIHS1> {
   static constexpr RuntimeFieldRef kTxrdyField = RuntimeFieldRef{FieldId::field_twihs1_sr_txrdy, RuntimeRegisterRef{RegisterId::register_twihs1_sr, 0x4001C000u, 32u, true}, 2u, 1u, true};
   static constexpr RuntimeFieldRef kNackField = RuntimeFieldRef{FieldId::field_twihs1_sr_nack, RuntimeRegisterRef{RegisterId::register_twihs1_sr, 0x4001C000u, 32u, true}, 8u, 1u, true};
   static constexpr RuntimeFieldRef kArblstField = RuntimeFieldRef{FieldId::field_twihs1_sr_arblst, RuntimeRegisterRef{RegisterId::register_twihs1_sr, 0x4001C000u, 32u, true}, 9u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -302,6 +305,7 @@ struct I2cSemanticTraits<PeripheralId::TWIHS2> {
   static constexpr RuntimeFieldRef kTxrdyField = RuntimeFieldRef{FieldId::field_twihs2_sr_txrdy, RuntimeRegisterRef{RegisterId::register_twihs2_sr, 0x40060000u, 32u, true}, 2u, 1u, true};
   static constexpr RuntimeFieldRef kNackField = RuntimeFieldRef{FieldId::field_twihs2_sr_nack, RuntimeRegisterRef{RegisterId::register_twihs2_sr, 0x40060000u, 32u, true}, 8u, 1u, true};
   static constexpr RuntimeFieldRef kArblstField = RuntimeFieldRef{FieldId::field_twihs2_sr_arblst, RuntimeRegisterRef{RegisterId::register_twihs2_sr, 0x40060000u, 32u, true}, 9u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 3> kI2cSemanticPeripherals = {{

@@ -57,6 +57,7 @@ struct UsbSemanticTraits {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -104,6 +105,7 @@ struct UsbSemanticTraits<PeripheralId::USBHS> {
   static constexpr RuntimeFieldRef kAddressEnableField = RuntimeFieldRef{FieldId::field_usbhs_devctrl_adden, RuntimeRegisterRef{RegisterId::register_usbhs_devctrl, 0x40038000u, 0u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::field_usbhs_devctrl_uadd, RuntimeRegisterRef{RegisterId::register_usbhs_devctrl, 0x40038000u, 0u, true}, 0u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = RuntimeFieldRef{FieldId::field_usbhs_sr_clkusable, RuntimeRegisterRef{RegisterId::register_usbhs_sr, 0x40038000u, 2052u, true}, 14u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 1> kUsbSemanticPeripherals = {{

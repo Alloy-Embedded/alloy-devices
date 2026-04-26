@@ -70,6 +70,7 @@ struct CanSemanticTraits {
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = kInvalidFieldRef;
   static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = kInvalidIndexedFieldRef;
   static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = kInvalidIndexedFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -130,6 +131,7 @@ struct CanSemanticTraits<PeripheralId::MCAN0> {
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = RuntimeFieldRef{FieldId::field_mcan0_txfqs_tffl, RuntimeRegisterRef{RegisterId::register_mcan0_txfqs, 0x40030000u, 196u, true}, 0u, 6u, true};
   static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x40030000u, 208u, 0u, 0u, 1u, 1u, true};
   static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x40030000u, 204u, 0u, 0u, 1u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -190,6 +192,7 @@ struct CanSemanticTraits<PeripheralId::MCAN1> {
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = RuntimeFieldRef{FieldId::field_mcan1_txfqs_tffl, RuntimeRegisterRef{RegisterId::register_mcan1_txfqs, 0x40034000u, 196u, true}, 0u, 6u, true};
   static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x40034000u, 208u, 0u, 0u, 1u, 1u, true};
   static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x40034000u, 204u, 0u, 0u, 1u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 2> kCanSemanticPeripherals = {{

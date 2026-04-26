@@ -83,6 +83,7 @@ struct SpiSemanticTraits {
   static constexpr RuntimeFieldRef kTdField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -156,6 +157,7 @@ struct SpiSemanticTraits<PeripheralId::SPI0> {
   static constexpr RuntimeFieldRef kTdField = RuntimeFieldRef{FieldId::field_spi0_tdr_td, RuntimeRegisterRef{RegisterId::register_spi0_tdr, 0x40008000u, 12u, true}, 0u, 16u, true};
   static constexpr RuntimeFieldRef kTdrPcsField = RuntimeFieldRef{FieldId::field_spi0_tdr_pcs, RuntimeRegisterRef{RegisterId::register_spi0_tdr, 0x40008000u, 12u, true}, 16u, 4u, true};
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::field_spi0_rdr_rd, RuntimeRegisterRef{RegisterId::register_spi0_rdr, 0x40008000u, 8u, true}, 0u, 16u, true};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{21u}};
 };
 
 template<>
@@ -229,6 +231,7 @@ struct SpiSemanticTraits<PeripheralId::SPI1> {
   static constexpr RuntimeFieldRef kTdField = RuntimeFieldRef{FieldId::field_spi1_tdr_td, RuntimeRegisterRef{RegisterId::register_spi1_tdr, 0x40058000u, 12u, true}, 0u, 16u, true};
   static constexpr RuntimeFieldRef kTdrPcsField = RuntimeFieldRef{FieldId::field_spi1_tdr_pcs, RuntimeRegisterRef{RegisterId::register_spi1_tdr, 0x40058000u, 12u, true}, 16u, 4u, true};
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::field_spi1_rdr_rd, RuntimeRegisterRef{RegisterId::register_spi1_rdr, 0x40058000u, 8u, true}, 0u, 16u, true};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{42u}};
 };
 
 inline constexpr std::array<PeripheralId, 2> kSpiSemanticPeripherals = {{

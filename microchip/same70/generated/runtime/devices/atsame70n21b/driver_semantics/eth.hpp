@@ -48,6 +48,7 @@ struct EthSemanticTraits {
   static constexpr RuntimeFieldRef kTxCompleteInterruptField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -86,6 +87,7 @@ struct EthSemanticTraits<PeripheralId::GMAC> {
   static constexpr RuntimeFieldRef kTxCompleteInterruptField = RuntimeFieldRef{FieldId::field_gmac_isr_tcomp, RuntimeRegisterRef{RegisterId::register_gmac_isr, 0x40050000u, 36u, true}, 7u, 1u, true};
   static constexpr RuntimeFieldRef kRxCompleteInterruptEnableField = RuntimeFieldRef{FieldId::field_gmac_ier_rcomp, RuntimeRegisterRef{RegisterId::register_gmac_ier, 0x40050000u, 40u, true}, 1u, 1u, true};
   static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = RuntimeFieldRef{FieldId::field_gmac_ier_tcomp, RuntimeRegisterRef{RegisterId::register_gmac_ier, 0x40050000u, 40u, true}, 7u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 1> kEthSemanticPeripherals = {{
