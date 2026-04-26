@@ -17,6 +17,24 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "SENS",
           "peripheral_class": "adc"
         },
@@ -84,7 +102,7 @@
           "peripheral_class": "uart"
         }
       ],
-      "capability_decision_count": 11,
+      "capability_decision_count": 12,
       "capability_decisions": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
@@ -138,6 +156,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -211,7 +240,7 @@
       "device": "esp32",
       "dma_binding_decision_count": 0,
       "dma_binding_decisions": [],
-      "heuristic_fact_count": 17,
+      "heuristic_fact_count": 18,
       "heuristic_facts": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
@@ -241,6 +270,12 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -326,6 +361,24 @@
           "instance_capability_count": 0,
           "peripheral": "GPIO",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
         },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
@@ -604,6 +657,24 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "SENS",
           "peripheral_class": "adc"
         },
@@ -671,7 +742,7 @@
           "peripheral_class": "uart"
         }
       ],
-      "capability_decision_count": 11,
+      "capability_decision_count": 12,
       "capability_decisions": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
@@ -725,6 +796,17 @@
           "name": "runtime-supported",
           "peripheral": null,
           "peripheral_class": "gpio",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
           "scope": "runtime_contract",
           "value": "true"
         },
@@ -798,7 +880,7 @@
       "device": "esp32-wroom32",
       "dma_binding_decision_count": 0,
       "dma_binding_decisions": [],
-      "heuristic_fact_count": 17,
+      "heuristic_fact_count": 18,
       "heuristic_facts": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
@@ -828,6 +910,12 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -913,6 +1001,24 @@
           "instance_capability_count": 0,
           "peripheral": "GPIO",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
         },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",

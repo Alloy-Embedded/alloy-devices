@@ -51,6 +51,21 @@
           "class_capability_count": 1,
           "dma_signals": [],
           "instance_capability_count": 0,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
           "peripheral_class": "spi",
           "peripheral_count": 4,
           "peripherals": [
@@ -134,6 +149,21 @@
           "class_capability_count": 1,
           "dma_signals": [],
           "instance_capability_count": 0,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
           "peripheral_class": "spi",
           "peripheral_count": 4,
           "peripherals": [
@@ -171,6 +201,7 @@
     "adc",
     "device",
     "gpio",
+    "i2c",
     "spi",
     "uart"
   ],

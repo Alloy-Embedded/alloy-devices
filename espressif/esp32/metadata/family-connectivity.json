@@ -1448,10 +1448,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2c0.espressif-esp32-i2c-v1",
+      "backend_schema_id": "alloy.i2c.espressif-esp32-i2c-v1",
       "base_address": 1073033216,
       "instance": 0,
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "esp32-i2c-v1",
       "name": "I2C0",
       "provenance": {
@@ -1466,10 +1466,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2c1.espressif-i2c1",
+      "backend_schema_id": "alloy.i2c.espressif-i2c",
       "base_address": 1073115136,
-      "instance": 0,
-      "ip_name": "i2c1",
+      "instance": 1,
+      "ip_name": "i2c",
       "ip_version": null,
       "name": "I2C1",
       "provenance": {
@@ -1484,10 +1484,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2s0.espressif-i2s0",
+      "backend_schema_id": "alloy.i2s.espressif-i2s",
       "base_address": 1073016832,
       "instance": 0,
-      "ip_name": "i2s0",
+      "ip_name": "i2s",
       "ip_version": null,
       "name": "I2S0",
       "provenance": {
@@ -1502,10 +1502,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2s1.espressif-i2s1",
+      "backend_schema_id": "alloy.i2s.espressif-i2s",
       "base_address": 1073139712,
-      "instance": 0,
-      "ip_name": "i2s1",
+      "instance": 1,
+      "ip_name": "i2s",
       "ip_version": null,
       "name": "I2S1",
       "provenance": {

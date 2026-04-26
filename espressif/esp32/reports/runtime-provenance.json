@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "esp32",
-      "fact_count": 120,
+      "fact_count": 125,
       "facts": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/startup.hpp",
@@ -2046,6 +2046,60 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c0:i2c-ext0",
+            "interrupt": "I2C_EXT0",
+            "line": 49,
+            "peripheral": "I2C0",
+            "vector_slot": 65
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c0:i2c-ext0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-bootstrap",
+              "espressif-esp32-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c-ext1",
+            "interrupt": "I2C_EXT1",
+            "line": 50,
+            "peripheral": "I2C1",
+            "vector_slot": 66
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c-ext1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-bootstrap",
+              "espressif-esp32-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:spi0:spi0",
             "interrupt": "SPI0",
             "line": 28,
@@ -2368,6 +2422,33 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:i2c0",
+            "parent_clock_node": "clock-node:dport-perip-clk-en",
+            "peripheral": "I2C0",
+            "register_field_id": "field:dport:perip-clk-en:i2c0-ext0-clk-en",
+            "register_id": "register:dport:perip-clk-en"
+          },
+          "fact_id": "enable-domain:gate:i2c0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-bootstrap",
+              "espressif-esp32-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:spi0",
             "parent_clock_node": "clock-node:dport-perip-clk-en",
             "peripheral": "SPI0",
@@ -2403,6 +2484,32 @@
           },
           "fact_id": "enable-domain:gate:uart0",
           "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-bootstrap",
+              "espressif-esp32-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c0",
+            "peripheral": "I2C0",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C0",
+          "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
             "patch_ids": [
@@ -2752,6 +2859,37 @@
           },
           "supporting_fact_ids": [
             "runtime-peripheral:GPIO"
+          ]
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-bootstrap",
+              "espressif-esp32-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C0",
+            "runtime-peripheral:I2C1"
           ]
         },
         {
@@ -3236,7 +3374,7 @@
     },
     {
       "device": "esp32-wroom32",
-      "fact_count": 120,
+      "fact_count": 125,
       "facts": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/startup.hpp",
@@ -5280,6 +5418,60 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c0:i2c-ext0",
+            "interrupt": "I2C_EXT0",
+            "line": 49,
+            "peripheral": "I2C0",
+            "vector_slot": 65
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c0:i2c-ext0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-family-bootstrap-v1",
+              "espressif-esp32-wroom32-bootstrap"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c-ext1",
+            "interrupt": "I2C_EXT1",
+            "line": 50,
+            "peripheral": "I2C1",
+            "vector_slot": 66
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c-ext1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-family-bootstrap-v1",
+              "espressif-esp32-wroom32-bootstrap"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:spi0:spi0",
             "interrupt": "SPI0",
             "line": 28,
@@ -5602,6 +5794,33 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:i2c0",
+            "parent_clock_node": "clock-node:dport-perip-clk-en",
+            "peripheral": "I2C0",
+            "register_field_id": "field:dport:perip-clk-en:i2c0-ext0-clk-en",
+            "register_id": "register:dport:perip-clk-en"
+          },
+          "fact_id": "enable-domain:gate:i2c0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-family-bootstrap-v1",
+              "espressif-esp32-wroom32-bootstrap"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:spi0",
             "parent_clock_node": "clock-node:dport-perip-clk-en",
             "peripheral": "SPI0",
@@ -5637,6 +5856,32 @@
           },
           "fact_id": "enable-domain:gate:uart0",
           "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-family-bootstrap-v1",
+              "espressif-esp32-wroom32-bootstrap"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c0",
+            "peripheral": "I2C0",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C0",
+          "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
             "patch_ids": [
@@ -5986,6 +6231,37 @@
           },
           "supporting_fact_ids": [
             "runtime-peripheral:GPIO"
+          ]
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-family-bootstrap-v1",
+              "espressif-esp32-wroom32-bootstrap"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C0",
+            "runtime-peripheral:I2C1"
           ]
         },
         {

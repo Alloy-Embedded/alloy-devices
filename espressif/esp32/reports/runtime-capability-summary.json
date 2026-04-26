@@ -48,6 +48,19 @@
         "esp32-wroom32"
       ],
       "dma_signals": [],
+      "peripheral_class": "i2c",
+      "total_peripheral_count": 4
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "esp32",
+        "esp32-wroom32"
+      ],
+      "dma_signals": [],
       "peripheral_class": "spi",
       "total_peripheral_count": 8
     },
@@ -109,6 +122,21 @@
           "peripheral_count": 1,
           "peripherals": [
             "GPIO"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
           ],
           "present": true
         },
@@ -192,6 +220,21 @@
           "peripheral_count": 1,
           "peripherals": [
             "GPIO"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
           ],
           "present": true
         },
