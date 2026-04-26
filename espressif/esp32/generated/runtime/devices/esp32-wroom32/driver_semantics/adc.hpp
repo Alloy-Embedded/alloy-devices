@@ -152,6 +152,32 @@ struct AdcPeripheralTraits {
   static constexpr std::array<std::uint8_t, 0> kChannelPins = {};
 };
 
+
+// add-adc-channel-typed-enum: typed per-peripheral channel enum.
+// Each specialization scopes the channel set so
+// AdcChannel<ADC1> and AdcChannel<ADC2> are distinct types and
+// the type system rejects cross-peripheral channel mixing.
+template<PeripheralId Id>
+struct AdcChannelOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct AdcChannelOf<PeripheralId::SENS> {
+  enum class type : std::uint8_t {
+    CH0 = 0u,
+    CH1 = 1u,
+    CH2 = 2u,
+    CH3 = 3u,
+    CH4 = 4u,
+    CH5 = 5u,
+    CH6 = 6u,
+    CH7 = 7u,
+  };
+};
+
+template<PeripheralId Id>
+using AdcChannel = typename AdcChannelOf<Id>::type;
 }
 }
 }

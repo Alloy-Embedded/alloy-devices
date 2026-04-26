@@ -22,6 +22,7 @@ struct GpioSemanticTraits {
   static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputTypeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kPullField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kSpeedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kInputField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputValueField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputSetField = kInvalidFieldRef;
@@ -55,6 +56,7 @@ struct GpioSemanticTraits<PinId::GPIO1> {
   static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputTypeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kPullField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kSpeedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kInputField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputValueField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputSetField = kInvalidFieldRef;
@@ -88,6 +90,7 @@ struct GpioSemanticTraits<PinId::GPIO3> {
   static constexpr RuntimeFieldRef kDirectionField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputTypeField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kPullField = kInvalidFieldRef;
+  static constexpr RuntimeFieldRef kSpeedField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kInputField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputValueField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kOutputSetField = kInvalidFieldRef;
