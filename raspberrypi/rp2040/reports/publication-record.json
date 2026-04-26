@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "c2a3a9fe2700271ad18b42069e918b78d038f2448e8c29182b10f76330c186a2",
+    "canonical_ir_sha256": "42e8aea6efb2d3ad8205db3e3980338d2bd4d0fe0b1683eaed4c29580a4507e3",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -172,7 +172,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 2459,
-      "content_sha256": "c6d0dbc7319e994d03a95de719db07741d5486aa8a8196d125a07fb002bde286",
+      "content_sha256": "3f6fa764d9a650b0a95de9043e3edfcf4a74f00bafba1a2a396897973b550bf9",
       "path": "raspberrypi/rp2040/artifact-manifest.json"
     },
     {
@@ -261,8 +261,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10546,
-      "content_sha256": "4b9415639172a08f18cc9ba31875717d316ae29a76fca5ee20bd2645d07e8871",
+      "content_bytes": 11341,
+      "content_sha256": "e8b12a1cc54d5a1f03d543005d3b3433a9303d737383359347fef341348d58ec",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/adc.hpp"
     },
     {
@@ -273,38 +273,38 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4412,
-      "content_sha256": "b20c43e592ee76e9a632048a132fabde98a7167eb298bd5c7a59242d58a00058",
+      "content_bytes": 5736,
+      "content_sha256": "802f51716923569948b903ebc0dfbe05f06cffb25554d2aca3d1ea878c11fccb",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/common.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2578,
-      "content_sha256": "98e9e392262220a48ff9a726189a3a053257ceba0341b816f34be7edb6b97125",
+      "content_bytes": 2645,
+      "content_sha256": "b95b8cca4b7be76109530d84abf9bd0f1325b3199eee88816e452b43b5bd6114",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/dac.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 12392,
-      "content_sha256": "8251b591757c999b3315510b9bde951bfbb0824cd6017048450aff474919569d",
+      "content_bytes": 12534,
+      "content_sha256": "d7ed0252127a8d1bb06e8c97556b0fa164a6938fadfe46dffe6b776c8c853eaf",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/dma.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2982,
-      "content_sha256": "4c50f8288f454f68c462d214ced4ef57257b73af0f486c8e5da14a2199358968",
+      "content_bytes": 3049,
+      "content_sha256": "a6ac21fa2b3495689a3a4a3823052e85f4fd9106d05a64605798a81127428a08",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/eth.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 57872,
-      "content_sha256": "268daabf71fa33f35bab4ad34e90273d5fb0e137cb5640af94dc9576da72f7c5",
+      "content_bytes": 59748,
+      "content_sha256": "1f0c61e52e66d373df9f3045887cd6e2fe040b8b80315b12fa84a5730ee1ba3a",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/gpio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8100,
-      "content_sha256": "d17726bebd49c762c32666a2442a6258d2039bbffb60a8f081ce96772e579aa8",
+      "content_bytes": 8466,
+      "content_sha256": "2c97fecb39c45ffda4c100c5b71c2b257c905813c6a849395bb9c1833e332099",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/i2c.hpp"
     },
     {
@@ -321,8 +321,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3910,
-      "content_sha256": "9aee0e6ab09cda784db300d6b2bbc11118c7e334ff252f2e71f9aa2a1985cad3",
+      "content_bytes": 4209,
+      "content_sha256": "7306a93dfd8d8231046845bfd429a26663c1a3fdf96bacc270ee039f4748644b",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/qspi.hpp"
     },
     {
@@ -333,26 +333,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4225,
-      "content_sha256": "b66075f833aedba0646952afbd52c9374938dddbc2fffa55b2d0dac73bd9e516",
+      "content_bytes": 4524,
+      "content_sha256": "589de520631aa3a5ef40ce5daa7cfbb6e554fd981bca9fe7727688f9f54ff9e0",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/sdmmc.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 16054,
-      "content_sha256": "160eea69241e30c51af742858f869fde37a08a24875183783c76e420e79943d1",
+      "content_bytes": 17946,
+      "content_sha256": "6113f73d0f89120ec7f0145146c3028e83109ba0c8fc0d582011bd6aac2dbd60",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/spi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10481,
-      "content_sha256": "4df60208c480ac27dcdc5dd04663a74c0c06408bfe88389250fbe0cafeebcfdb",
+      "content_bytes": 11435,
+      "content_sha256": "c3fbb8cdde76516e8ec4167c4943b3948e5bc7313a4e7482de7a63715438a3db",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/timer.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 20365,
-      "content_sha256": "c5d43ef0e372acdd4af70f6b6cdcc36085141a355381328ddb2089de75b03b53",
+      "content_bytes": 22263,
+      "content_sha256": "f76be6979866b4a7ef45177ca1f35d693ee7df53712a9d673fb25e6c5850d579",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/uart.hpp"
     },
     {
@@ -501,8 +501,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10548,
-      "content_sha256": "66d9473812619552c7622c33511e23e716fcb09c332a98a08e5f4e0aaacf3191",
+      "content_bytes": 11343,
+      "content_sha256": "d60877c37906e828734bd03d0137a70fecf7f6a0a0e6551b7fadf6463aeef297",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/adc.hpp"
     },
     {
@@ -513,38 +513,38 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4414,
-      "content_sha256": "74126b4b50f23a7eb8d99e3c9dfb2e7eca91e5f88ee442f57ab980104a5e83e9",
+      "content_bytes": 5738,
+      "content_sha256": "f01ceda56110068e0b15b7a70c0d8e4ed891271710ee738660fac4912dccb969",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/common.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2580,
-      "content_sha256": "b4d9c96d56d7f839cd1dcf9f4c9a6c23f3498a5ab57ff7bed4dbcc90789b29df",
+      "content_bytes": 2647,
+      "content_sha256": "809b3052e9346d9153baaaf2da2e4f491303f28831c7b7deafd9b78637363e3b",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/dac.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 12394,
-      "content_sha256": "a4d9a7576a69d8999f9eb7b8f1e02d01a417794e37a59c585dcd9062c22efab9",
+      "content_bytes": 12536,
+      "content_sha256": "9211b85b16bd2e49b75d213d62cf051d3bfe3c78c8ae3574253e92f439e22cc6",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/dma.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2984,
-      "content_sha256": "67ec625fda3adca287ea6615291e46a0717260833db92bfc37e4699a8b21057b",
+      "content_bytes": 3051,
+      "content_sha256": "28e3d31e3bc0ce4427edb7eebc58cd3572815d93d756116d60277b2849b954d4",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/eth.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 64039,
-      "content_sha256": "c25ad4c90746ba01e05e3946fc58c3bdac509706cb8f12558d3de2ff53fd7ff7",
+      "content_bytes": 66116,
+      "content_sha256": "4ed6e4c8d15fdfbf2ab1a0ecf10b9a51bd13417828c71bd17a5100f925090707",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/gpio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8128,
-      "content_sha256": "5d0d414a20eec02f3c2581f5ad316caf050613c1c048c642762b952b1beff0d3",
+      "content_bytes": 8494,
+      "content_sha256": "d9f46489fff50d2dc1ca67e8d52352730302fafe4e9f3bf9dd938e6878fd2986",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/i2c.hpp"
     },
     {
@@ -561,8 +561,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3912,
-      "content_sha256": "4319d3fd36689eb7fa5b5e64d0c91164f4f4ef6374a22ab5b05ab4fab02510fa",
+      "content_bytes": 4211,
+      "content_sha256": "3f86632103d2d350eace990a8c45fd480f4db1b43cfd8c7b5ed24819da333bf5",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/qspi.hpp"
     },
     {
@@ -573,26 +573,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4227,
-      "content_sha256": "00ff8c61c402c47b12fed557c7fcb6b325e9e8b962141355d663009d1875862f",
+      "content_bytes": 4526,
+      "content_sha256": "98a0ed657c436e6b7e79a9849141b56bb7bc2197dd5166822339aaa780bdba14",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/sdmmc.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 16066,
-      "content_sha256": "0beeeebf78a32f53ed794015ef5de892cca7126d4b036af15624f0fecfcfcb71",
+      "content_bytes": 17958,
+      "content_sha256": "d33bca6c920faeba62747656ceb64a31f64b75c66804a9b97b8a0f1bfd46d135",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/spi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10483,
-      "content_sha256": "23b761a73b25abba7fdb9970883982ae3b4194ab566b1cfdbae5f9c3d31dae7f",
+      "content_bytes": 11437,
+      "content_sha256": "762a5ef9e6649735f4675a60162389cd3b73c6251a4da0ee3c5f9ed05ed72f47",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/timer.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 20377,
-      "content_sha256": "b819794296a3cda0452edfaffa7d7ae87ad4be2c7c021711cc12b50054bd6d36",
+      "content_bytes": 22275,
+      "content_sha256": "f7066b322af46afd8405fee50638a2957e35c28c9a11a0dd77d43157e465739b",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/uart.hpp"
     },
     {
@@ -711,14 +711,14 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3977831,
-      "content_sha256": "52e3b69dd1b0955353968155978a463ed8ad02fb6a58c5e0b51076679c6c6e17",
+      "content_bytes": 3978215,
+      "content_sha256": "7ff226f1491c29992c873c4ab7f85ed76ced7a7cbbc959ac74282b2020e2ccba",
       "path": "raspberrypi/rp2040/metadata/devices/pico.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 4019893,
-      "content_sha256": "350ae7867553a40eaa7fb8cea1e9974cb1e6cb620872f2cf507e5a807cf2b797",
+      "content_bytes": 4020277,
+      "content_sha256": "debd9b65b75f7c8688b938023a9a5a3296591fd2d77184aec6b1db8d2e43ce9a",
       "path": "raspberrypi/rp2040/metadata/devices/rp2040.json"
     },
     {
@@ -799,7 +799,7 @@
     "family": "rp2040",
     "vendor": "raspberrypi"
   },
-  "target_artifact_revision": "497b1203a4f3fd401bf364a64f12bf69b503cb460f6430137f71ddea4d521fe0",
+  "target_artifact_revision": "8139b0a5bfa04f33175978b6131081672d722c331ab9f8116fc562273a74dcc0",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

@@ -121,8 +121,10 @@ struct AdcSemanticTraits<PeripheralId::ADC> {
   static constexpr std::uint32_t kSupportedOversamplingCount = 0u;
   static constexpr std::array<AdcOversamplingOption, 0> kSupportedOversamplings = {};
   static constexpr std::uint32_t kAdcMaxClockHz = 48000000u;
-  static constexpr std::uint32_t kDmaBindingCount = 0u;
-  static constexpr std::array<AdcDmaBinding, 0> kDmaBindings = {};
+  static constexpr std::uint32_t kDmaBindingCount = 1u;
+  static constexpr std::array<AdcDmaBinding, 1> kDmaBindings = {{
+    AdcDmaBinding{PeripheralId::DMA, DmaControllerId::DMA, DmaBindingId::dma_binding_adc_fifo_dma_adc, 36u, RuntimeRegisterRef{RegisterId::register_adc_result, 0x4004C000u, 4u, true}, 16u, true},
+  }};
   static constexpr std::uint32_t kExternalTriggerCount = 0u;
   static constexpr std::array<AdcExternalTrigger, 0> kExternalTriggers = {};
   static constexpr std::uint32_t kSupportedDmaModeCount = 0u;
@@ -164,6 +166,30 @@ struct AdcPeripheralTraits<RuntimeAdcId::ADC> {
   static constexpr std::array<std::uint8_t, 5> kChannelPins = {{26u, 27u, 28u, 29u, 255u}};
 };
 
+
+// add-adc-channel-typed-enum: typed per-peripheral channel enum.
+// Each specialization scopes the channel set so
+// AdcChannel<ADC1> and AdcChannel<ADC2> are distinct types and
+// the type system rejects cross-peripheral channel mixing.
+template<PeripheralId Id>
+struct AdcChannelOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct AdcChannelOf<PeripheralId::ADC> {
+  enum class type : std::uint8_t {
+    CH0 = 0u,
+    CH1 = 1u,
+    CH2 = 2u,
+    CH3 = 3u,
+    CH4 = 4u,
+    TempSensor = 4u,
+  };
+};
+
+template<PeripheralId Id>
+using AdcChannel = typename AdcChannelOf<Id>::type;
 }
 }
 }

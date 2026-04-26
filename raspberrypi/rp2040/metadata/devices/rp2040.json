@@ -7789,6 +7789,24 @@
       "selector_id": null
     }
   ],
+  "peripheral_max_clock_hz": [
+    {
+      "max_clock_hz": 125000000,
+      "peripheral": "UART0"
+    },
+    {
+      "max_clock_hz": 125000000,
+      "peripheral": "UART1"
+    },
+    {
+      "max_clock_hz": 125000000,
+      "peripheral": "SPI0"
+    },
+    {
+      "max_clock_hz": 125000000,
+      "peripheral": "SPI1"
+    }
+  ],
   "peripherals": [
     {
       "backend_schema_id": "alloy.resets.raspberrypi-resets",
@@ -139060,6 +139078,10 @@
       "base_address": 1342177280,
       "channel_count": 12,
       "controller_id": "DMA",
+      "irq_numbers": [
+        11,
+        12
+      ],
       "max_transfer_count": 4294967295,
       "supports_byte_swap": true,
       "supports_chaining": true
