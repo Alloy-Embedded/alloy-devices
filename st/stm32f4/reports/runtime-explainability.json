@@ -85,6 +85,33 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 3,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 3,
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C3",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -291,7 +318,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 74,
+      "capability_decision_count": 84,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -347,6 +374,116 @@
           "peripheral_class": "gpio",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability:i2c:i2c1-v1-5-cube:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability:i2c:i2c1-v1-5-cube:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability:i2c:i2c1-v1-5-cube:smba",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "smba"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:lqfp64:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:lqfp64:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:lqfp64:smba",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "smba"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability-instance:i2c2:lqfp64:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability-instance:i2c2:lqfp64:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "decision_id": "capability-instance:i2c2:lqfp64:smba",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "smba"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -1136,7 +1273,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 20,
+      "heuristic_fact_count": 21,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
@@ -1166,6 +1303,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -1344,6 +1487,15 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C3",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -1469,7 +1621,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "route_decision_count": 67,
+      "route_decision_count": 75,
       "route_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
@@ -2419,6 +2571,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:scl",
+            "capability-instance:i2c2:lqfp64:scl"
+          ],
+          "decision_id": "candidate:pb10:i2c2:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c2",
+            "operation:reset-release:i2c2",
+            "operation:route:pb10:i2c2:scl"
+          ],
+          "peripheral": "I2C2",
+          "pin": "PB10",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb10",
+            "requirement:clock-enable:i2c2",
+            "requirement:reset-release:i2c2",
+            "requirement:source-select:pb10:i2c2:scl"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v2-2-cube:sck",
             "capability-instance:spi2:lqfp64:sck"
           ],
@@ -2469,6 +2648,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:1",
           "signal": "ch3"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:smba",
+            "capability-instance:i2c2:lqfp64:smba"
+          ],
+          "decision_id": "candidate:pb12:i2c2:smba",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c2",
+            "operation:reset-release:i2c2",
+            "operation:route:pb12:i2c2:smba"
+          ],
+          "peripheral": "I2C2",
+          "pin": "PB12",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb12",
+            "requirement:clock-enable:i2c2",
+            "requirement:reset-release:i2c2",
+            "requirement:source-select:pb12:i2c2:smba"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "smba"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
@@ -2743,6 +2949,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:sda",
+            "capability-instance:i2c2:lqfp64:sda"
+          ],
+          "decision_id": "candidate:pb3:i2c2:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c2",
+            "operation:reset-release:i2c2",
+            "operation:route:pb3:i2c2:sda"
+          ],
+          "peripheral": "I2C2",
+          "pin": "PB3",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb3",
+            "requirement:clock-enable:i2c2",
+            "requirement:reset-release:i2c2",
+            "requirement:source-select:pb3:i2c2:sda"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:9",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v2-2-cube:sck",
             "capability-instance:spi1:lqfp64:sck"
           ],
@@ -2851,6 +3084,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:smba",
+            "capability-instance:i2c1:lqfp64:smba"
+          ],
+          "decision_id": "candidate:pb5:i2c1:smba",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb5:i2c1:smba"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB5",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb5",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb5:i2c1:smba"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "smba"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v2-2-cube:mosi",
             "capability-instance:spi1:lqfp64:mosi"
           ],
@@ -2901,6 +3161,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:2",
           "signal": "ch2"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:scl",
+            "capability-instance:i2c1:lqfp64:scl"
+          ],
+          "decision_id": "candidate:pb6:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb6:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB6",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb6",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb6:i2c1:scl"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "scl"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
@@ -2959,6 +3246,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:sda",
+            "capability-instance:i2c1:lqfp64:sda"
+          ],
+          "decision_id": "candidate:pb7:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb7:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB7",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb7",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb7:i2c1:sda"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
             "capability:tim:gptimer2-v2-x-cube:ch2",
             "capability-instance:tim4:lqfp64:ch2"
           ],
@@ -3013,6 +3327,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:scl",
+            "capability-instance:i2c1:lqfp64:scl"
+          ],
+          "decision_id": "candidate:pb8:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb8:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB8",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb8",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb8:i2c1:scl"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
             "capability:tim:gptimer2-v2-x-cube:ch3",
             "capability-instance:tim4:lqfp64:ch3"
           ],
@@ -3036,6 +3377,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:2",
           "signal": "ch3"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:sda",
+            "capability-instance:i2c1:lqfp64:sda"
+          ],
+          "decision_id": "candidate:pb9:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb9:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB9",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb9",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb9:i2c1:sda"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "sda"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
@@ -3282,6 +3650,42 @@
         }
       ],
       "route_group_decisions": [
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "candidate_ids": [
+            "candidate:pb6:i2c1:scl",
+            "candidate:pb7:i2c1:sda",
+            "candidate:pb8:i2c1:scl",
+            "candidate:pb9:i2c1:sda"
+          ],
+          "conflict_group": "conflict:i2c1:lqfp64:scl-sda",
+          "decision_id": "group:i2c1:lqfp64:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp64",
+          "peripheral": "I2C1",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
+          "candidate_ids": [
+            "candidate:pb10:i2c2:scl",
+            "candidate:pb3:i2c2:sda"
+          ],
+          "conflict_group": "conflict:i2c2:lqfp64:scl-sda",
+          "decision_id": "group:i2c2:lqfp64:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp64",
+          "peripheral": "I2C2",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp",
           "candidate_ids": [
@@ -3807,6 +4211,33 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 3,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 3,
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C3",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -4157,7 +4588,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 77,
+      "capability_decision_count": 87,
       "capability_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -4246,6 +4677,116 @@
           "peripheral_class": "gpio",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability:i2c:i2c1-v1-5-cube:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability:i2c:i2c1-v1-5-cube:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability:i2c:i2c1-v1-5-cube:smba",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "smba"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:lqfp64:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:lqfp64:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:lqfp64:smba",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "smba"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability-instance:i2c2:lqfp64:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability-instance:i2c2:lqfp64:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "decision_id": "capability-instance:i2c2:lqfp64:smba",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C2",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "smba"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -5035,7 +5576,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 23,
+      "heuristic_fact_count": 24,
       "heuristic_facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
@@ -5083,6 +5624,12 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -5378,6 +5925,15 @@
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "class_capability_count": 4,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "I2C3",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -5647,7 +6203,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "route_decision_count": 68,
+      "route_decision_count": 76,
       "route_decisions": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
@@ -6597,6 +7153,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:scl",
+            "capability-instance:i2c2:lqfp64:scl"
+          ],
+          "decision_id": "candidate:pb10:i2c2:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c2",
+            "operation:reset-release:i2c2",
+            "operation:route:pb10:i2c2:scl"
+          ],
+          "peripheral": "I2C2",
+          "pin": "PB10",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb10",
+            "requirement:clock-enable:i2c2",
+            "requirement:reset-release:i2c2",
+            "requirement:source-select:pb10:i2c2:scl"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v2-2-cube:sck",
             "capability-instance:spi2:lqfp64:sck"
           ],
@@ -6651,6 +7234,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:sda",
+            "capability-instance:i2c2:lqfp64:sda"
+          ],
+          "decision_id": "candidate:pb11:i2c2:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c2",
+            "operation:reset-release:i2c2",
+            "operation:route:pb11:i2c2:sda"
+          ],
+          "peripheral": "I2C2",
+          "pin": "PB11",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb11",
+            "requirement:clock-enable:i2c2",
+            "requirement:reset-release:i2c2",
+            "requirement:source-select:pb11:i2c2:sda"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
             "capability:tim:gptimer2-v2-x-cube:ch4",
             "capability-instance:tim2:lqfp64:ch4"
           ],
@@ -6674,6 +7284,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:1",
           "signal": "ch4"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:smba",
+            "capability-instance:i2c2:lqfp64:smba"
+          ],
+          "decision_id": "candidate:pb12:i2c2:smba",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c2",
+            "operation:reset-release:i2c2",
+            "operation:route:pb12:i2c2:smba"
+          ],
+          "peripheral": "I2C2",
+          "pin": "PB12",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb12",
+            "requirement:clock-enable:i2c2",
+            "requirement:reset-release:i2c2",
+            "requirement:source-select:pb12:i2c2:smba"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "smba"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
@@ -7056,6 +7693,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:smba",
+            "capability-instance:i2c1:lqfp64:smba"
+          ],
+          "decision_id": "candidate:pb5:i2c1:smba",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb5:i2c1:smba"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB5",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb5",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb5:i2c1:smba"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "smba"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
             "capability:spi:spi2s1-v2-2-cube:mosi",
             "capability-instance:spi1:lqfp64:mosi"
           ],
@@ -7106,6 +7770,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:2",
           "signal": "ch2"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:scl",
+            "capability-instance:i2c1:lqfp64:scl"
+          ],
+          "decision_id": "candidate:pb6:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb6:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB6",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb6",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb6:i2c1:scl"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "scl"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
@@ -7164,6 +7855,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:sda",
+            "capability-instance:i2c1:lqfp64:sda"
+          ],
+          "decision_id": "candidate:pb7:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb7:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB7",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb7",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb7:i2c1:sda"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
             "capability:tim:gptimer2-v2-x-cube:ch2",
             "capability-instance:tim4:lqfp64:ch2"
           ],
@@ -7218,6 +7936,33 @@
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
           "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:scl",
+            "capability-instance:i2c1:lqfp64:scl"
+          ],
+          "decision_id": "candidate:pb8:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb8:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB8",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb8",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb8:i2c1:scl"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
             "capability:tim:gptimer2-v2-x-cube:ch3",
             "capability-instance:tim4:lqfp64:ch3"
           ],
@@ -7241,6 +7986,33 @@
           "route_kind": "alternate-function",
           "route_selector": "selector:2",
           "signal": "ch3"
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:i2c1-v1-5-cube:sda",
+            "capability-instance:i2c1:lqfp64:sda"
+          ],
+          "decision_id": "candidate:pb9:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:pb9:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "PB9",
+          "requirement_ids": [
+            "requirement:package:lqfp64",
+            "requirement:bonded-pin:lqfp64:pb9",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:pb9:i2c1:sda"
+          ],
+          "route_kind": "alternate-function",
+          "route_selector": "selector:4",
+          "signal": "sda"
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
@@ -7487,6 +8259,42 @@
         }
       ],
       "route_group_decisions": [
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "candidate_ids": [
+            "candidate:pb6:i2c1:scl",
+            "candidate:pb7:i2c1:sda",
+            "candidate:pb8:i2c1:scl",
+            "candidate:pb9:i2c1:sda"
+          ],
+          "conflict_group": "conflict:i2c1:lqfp64:scl-sda",
+          "decision_id": "group:i2c1:lqfp64:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp64",
+          "peripheral": "I2C1",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
+          "candidate_ids": [
+            "candidate:pb10:i2c2:scl",
+            "candidate:pb11:i2c2:sda"
+          ],
+          "conflict_group": "conflict:i2c2:lqfp64:scl-sda",
+          "decision_id": "group:i2c2:lqfp64:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "lqfp64",
+          "peripheral": "I2C2",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp",
           "candidate_ids": [

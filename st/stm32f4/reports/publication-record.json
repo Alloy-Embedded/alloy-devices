@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "fcae45db8086b88ea31aed07c634e8eb125d45ef3ddb48bccc139bc7ff666628",
+    "canonical_ir_sha256": "b4fa7da7f1813539537eccea9041bc2cb15f2ee26483e2271f9cceb44f591455",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -224,7 +224,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 4727,
-      "content_sha256": "521ad52eefd2a641360ca4ee28c28dd6c885fb503d6bbbe89b0382b127bdab32",
+      "content_sha256": "6b258c571c77ebfc5d968ad37f4154ce0de10c3033a3bca7a506c08a2dc11753",
       "path": "st/stm32f4/artifact-manifest.json"
     },
     {
@@ -265,20 +265,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 72885,
-      "content_sha256": "7b7b8bf823a5091af94f93f32bc2b11d133085a71ff51287b8ed6a7316dedd4b",
+      "content_bytes": 82132,
+      "content_sha256": "9cae557d41436c41828f61bd4a7cf30426a51f5f440c82f28bb9f7b79f08bd0d",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp"
     },
     {
       "artifact_kind": "generated-runtime-metadata",
-      "content_bytes": 16568,
-      "content_sha256": "3ef8bdf0ace172b4f7339d2f91524ce330a5fd84bd150721d2c62b54e5590baf",
+      "content_bytes": 18767,
+      "content_sha256": "5c6dcdef04e518a1c87f47f06bbc115301babaca92e9c523be350db86887a942",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 27691,
-      "content_sha256": "558d4560b10f2d4f7e193b2ed134048272f18b456838607a0cda49d01b5a808f",
+      "content_bytes": 30593,
+      "content_sha256": "88211b1782264394a04d5f58e0edb67a531e7a11c86abee36fc5831d035f641a",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/clock_bindings.hpp"
     },
     {
@@ -301,8 +301,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 91945,
-      "content_sha256": "31e63fca592313345b20624dd896ca0e819d5c8e22e823fe9fa426c0693bfe06",
+      "content_bytes": 103387,
+      "content_sha256": "58a5f85288b0a2bc3d2d1d5978aabb56b38c94d9e531c9a5adba00ee8a239a0c",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/connectors.hpp"
     },
     {
@@ -325,8 +325,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5735,
-      "content_sha256": "6eee13e03f06c338e7305b6ad0377ceda594ada2ebe320812f4524519ad6e35c",
+      "content_bytes": 6150,
+      "content_sha256": "2069ac28454c8d77d5650253219fe9d23e9098fb84aa631d743a589bb909cf7c",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/common.hpp"
     },
     {
@@ -337,8 +337,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4182,
-      "content_sha256": "336d5fad6a4edbef7b3bd25f90f7919cf08a726e5d9f49a701c5bc6b990ec8c7",
+      "content_bytes": 6626,
+      "content_sha256": "2d59b619540a2f86152c3921c41ce1d2a3016ddefbbbf54e7ede0e5878f4a512",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/dma.hpp"
     },
     {
@@ -355,8 +355,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 9012,
-      "content_sha256": "39818c773fa1f76c94144c7bad3b768eb274462c7084e844add722152e72c73e",
+      "content_bytes": 34463,
+      "content_sha256": "3036231e06d9f60cb79aaccfadb208b6c4df7d757bfd96421924abcab0b1248b",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/i2c.hpp"
     },
     {
@@ -367,8 +367,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 125673,
-      "content_sha256": "85ad1d560bd05bbb6ba908e868ac6d606219c912da4308b690a8648c9e8a6790",
+      "content_bytes": 131573,
+      "content_sha256": "b9e79ca21ba0e3092543b613011bb8fe52a8ca2fb2765618604e6eca86f1adf1",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/pwm.hpp"
     },
     {
@@ -421,8 +421,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 15192,
-      "content_sha256": "3b62ed1c50ff977e0d1adf952f4744a144b87a73da826a9101859f4fa8bdd706",
+      "content_bytes": 16918,
+      "content_sha256": "e047d58e7cd5d112deed692de3c0b2b9738298cf0338217955b0c44652de39b9",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/enable_domains.hpp"
     },
     {
@@ -433,8 +433,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2082,
-      "content_sha256": "9d488f56e53488bc0c6a1e659173fcaf25c04ecc711c6c351b146e1f6b0169c1",
+      "content_bytes": 2135,
+      "content_sha256": "94dd8ce2ad22d765beda11480e013594c4d32de57603ba06fb3ca4afd5535e37",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/interrupts.hpp"
     },
     {
@@ -445,8 +445,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 21802,
-      "content_sha256": "7e2a6f3135af501f43577a95e2b7ea06d493a6401b985f0261f8e4af363c4098",
+      "content_bytes": 23732,
+      "content_sha256": "a818f413b5e3a8bf879eaffb47ef7b7c1a5555fc55f93fb64d4263fcacb0313f",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/peripheral_instances.hpp"
     },
     {
@@ -457,26 +457,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1517006,
-      "content_sha256": "a135841b4a3bf315de02eb38965e4daa912e4c04a11e14c99dc970ec061633bb",
+      "content_bytes": 1586948,
+      "content_sha256": "f0ac6887fb650fc80057e2ac54e00e22267fbcaadcf4f7785d4ff14304f53b3b",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 256856,
-      "content_sha256": "cf5b4c3c0dff1f95720177bbcabdcd9ba4209552c8cdb364bc6dd5c698d4516b",
+      "content_bytes": 269345,
+      "content_sha256": "d687b42fd2738e3868cd9d294cb55d44d96adc3376bfb60018f42584e16f862f",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/registers.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3009,
-      "content_sha256": "75229cc76d38609993231753903b72ddf9d1ed395f749969249db9af9792fe53",
+      "content_bytes": 3311,
+      "content_sha256": "4600f4b487653ac6a34da80a96187f11c7822b2eae852f88185687384ac3cd64",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/resets.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 142470,
-      "content_sha256": "59d8aa35feffbdf6b215ae7f5afd627ab964b1f7d5b4dd60847d0ae56d2bee27",
+      "content_bytes": 159441,
+      "content_sha256": "bcf8eca54fd56782183b95222ced905e0c09d07afcd5431875b2e74980be1195",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/routes.hpp"
     },
     {
@@ -505,20 +505,20 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 81502,
-      "content_sha256": "3d75b22114b86139fffde6e4578c0712a0db39906c0083e33513b748b6daec2e",
+      "content_bytes": 90749,
+      "content_sha256": "cf7beb168b7721ca87b5d0eea7a6c54934006fd9317189733bf93923b101ff6f",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp"
     },
     {
       "artifact_kind": "generated-runtime-metadata",
-      "content_bytes": 17198,
-      "content_sha256": "e2875db26d11c3f3bbd22307d662032c71bbe9112d800b4daeb3aaa587f04c27",
+      "content_bytes": 19397,
+      "content_sha256": "1905279b2c8db01b01afe9ef6b8f8e00b67747f81bf8fb5dacdb95f726525a11",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.json"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 37287,
-      "content_sha256": "02028ad1680876d2489f0519f0e4e305b2dfeb3640b827ae10cd8d4054ca5e06",
+      "content_bytes": 40189,
+      "content_sha256": "273b29bd9b4cbf965227149b259efbd94b4f73f730c73f20fc4ea8e4fc124cda",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/clock_bindings.hpp"
     },
     {
@@ -541,8 +541,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 92752,
-      "content_sha256": "c21a3ea4d9068098f9047dd78f0bfdb97fc6c1b0d6d110e00d89183e019c34e7",
+      "content_bytes": 104204,
+      "content_sha256": "77b1463eef254a7f00d7b5ea6c99aa608b9d85fed063ee777852f2402e78d9ab",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/connectors.hpp"
     },
     {
@@ -565,8 +565,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5735,
-      "content_sha256": "ed68c4dffdad40d2a3071f0372163549e323d5bda44fca5f29d3c38c59280295",
+      "content_bytes": 6150,
+      "content_sha256": "5302634b892b4828b35b165627bdf4c88b2e533db31b3169b600c142aa10b779",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/common.hpp"
     },
     {
@@ -577,8 +577,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4182,
-      "content_sha256": "5c05f4a254a591d02b6fd7be7899ea5bc86f19d063ce5625698e358c8e90d704",
+      "content_bytes": 6696,
+      "content_sha256": "c236b2440e8cdc82489592ce8b3edd57b4d0ddbb929174c26d8be6673dcbabbd",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/dma.hpp"
     },
     {
@@ -595,8 +595,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 9013,
-      "content_sha256": "c9978ac226b907734b3e54f3498b4bab80059674b3e6ae2973a61324e569dfc4",
+      "content_bytes": 34656,
+      "content_sha256": "2f91a00ff19779bdf0f96fbef1f5b489fa878953bbf2f9e4dee8b635d2849d55",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/i2c.hpp"
     },
     {
@@ -607,8 +607,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 185566,
-      "content_sha256": "a9174430cc5bed9bf133cd12a4e2482ee56f3316805f202bf903db0d309d4579",
+      "content_bytes": 194416,
+      "content_sha256": "b70e91975ce5bf70af049aa862ca68451c25ac761244396f76876a387bb05df0",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/pwm.hpp"
     },
     {
@@ -661,8 +661,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 15192,
-      "content_sha256": "51fe26f36b148cbe8aa37f824ffabfec381a0a7e00568bc248946c943879abc2",
+      "content_bytes": 16918,
+      "content_sha256": "dfb55683224bfde87c5d360fdd6d892db027ef6cd56af5f5c97cfea5d5bb8b21",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/enable_domains.hpp"
     },
     {
@@ -673,8 +673,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4992,
-      "content_sha256": "846626f48ab392357d1d6a43df1bf20b379b622509a537e5a6fe332b588e8222",
+      "content_bytes": 5328,
+      "content_sha256": "8678f7240f12eea5cb206625787ec13d08dff1ff3668ffdb51d1240d1622f792",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/interrupts.hpp"
     },
     {
@@ -685,8 +685,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 39927,
-      "content_sha256": "d69f1309fbcdacb39fbc58ac4f6d7d580307266d453fb56f1ac5e7cf352c1a47",
+      "content_bytes": 41857,
+      "content_sha256": "20f1ede11539a2bf8b085059ca6f853f4a15179a36ff052f87521022bc93f7c4",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/peripheral_instances.hpp"
     },
     {
@@ -697,26 +697,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4521223,
-      "content_sha256": "406bb67a619e1f1a321f123474cb24c4931bf8f891ac1e427891dccd5b17b2b9",
+      "content_bytes": 4591165,
+      "content_sha256": "7682987a16ace9cbe8e2bb33a72c7f6ac204c72f84282d0c45530e49b4432ff3",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 544014,
-      "content_sha256": "b3e5bbabfdc8fe109f66fbf619a32f61d1033c5ebce0810bc44aac5a40a9529c",
+      "content_bytes": 556503,
+      "content_sha256": "11e2692504d0143892edc49c808788a3930e5c95140f1356ebd277cbf6a71581",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/registers.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3009,
-      "content_sha256": "65542f5caa8ecc0f51c5ee9b93f155010d2df4d7f60363eaa394cd5853bbb080",
+      "content_bytes": 3311,
+      "content_sha256": "c7da0ca49d669598f195500975a503eb92c15ca53304e8d8b1ecf83bc48cae49",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/resets.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 144504,
-      "content_sha256": "081cfaffc1e54e5e54e9dc2a9d31d43206bb92b18c26a59726024b502b1e2a7b",
+      "content_bytes": 161485,
+      "content_sha256": "3c053bab912734c934cdc7eff1fce1d662dd494fda7799eb68f5b661c9f2c25a",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/routes.hpp"
     },
     {
@@ -745,38 +745,38 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5975,
-      "content_sha256": "6a1af4fdfbc00046205213662d26916364b5c4356b75daa39818af2522402802",
+      "content_bytes": 5867,
+      "content_sha256": "ef6c7c4b9360c132e11e740deb8f5faa5dd015c335cb30e71c7240d56e378db2",
       "path": "st/stm32f4/generated/runtime/types.hpp"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 40887,
-      "content_sha256": "60c70005a7b872cb6265589dd9ab549c850e5934da85da24ab5278f4e1a0263f",
+      "content_bytes": 39238,
+      "content_sha256": "8942b3d1bee07e9035dead06d721d4f42e8ec0de9779c38bbd831e71ee79479c",
       "path": "st/stm32f4/metadata/capabilities.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 591524,
-      "content_sha256": "736e0e85d50650953c1fc3754d638cdf0715a9894241aacf6d5acc0aa82c2bfa",
+      "content_bytes": 589920,
+      "content_sha256": "f81793899a423c4d4ce951e8845e52125dcb70b22c6272c326d95f1f35c410d3",
       "path": "st/stm32f4/metadata/connectors.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3051731,
-      "content_sha256": "4e4cabab03a3309532989620432e044d61d928057b2b98a120addd2372e4f313",
+      "content_bytes": 3049647,
+      "content_sha256": "a020dab4d06bef9e11331677b1975b0ea4727f989a1e6bc9b5a74984cd563fb2",
       "path": "st/stm32f4/metadata/devices/stm32f401re.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 7352117,
-      "content_sha256": "2aaeb1a329d326b7d8acd18f46a63c0a8fa4688734cee0c08c6e5a8c66ee77af",
+      "content_bytes": 7351757,
+      "content_sha256": "744299733aaf0ea278f910f33477410a99ae131da8d24afc6b22b704147b528f",
       "path": "st/stm32f4/metadata/devices/stm32f405rg.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 159373,
-      "content_sha256": "180c83c2995fa6a478efb4e725e1051ed4c72bbfbdcd2293c836a37f163dd96b",
+      "content_bytes": 159367,
+      "content_sha256": "7bf4b0c30be6cdd642868bae4ddbaa5bf50854c6a8b196b99179f11287f81e1d",
       "path": "st/stm32f4/metadata/family-connectivity.json"
     },
     {
@@ -787,8 +787,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 33303,
-      "content_sha256": "f15343f73daded1688fe1e63156d577ba1cfcb87f26d8c7cd001c7ea341f971e",
+      "content_bytes": 32087,
+      "content_sha256": "b97721f89c0f2a26799072b05dae0e592b4e764de93c21eb5c28cfb439b34961",
       "path": "st/stm32f4/metadata/ip-blocks.json"
     },
     {
@@ -806,31 +806,31 @@
     {
       "artifact_kind": "coverage-report",
       "content_bytes": 2376,
-      "content_sha256": "873275118f8b217dcee4db83d8ec0e3c912bdda203ca2807fbc526b0f9a2d4d2",
+      "content_sha256": "1bbc1ed62b85612ee9ba2506c02d364e78020300bd26df475367b7c011142d3c",
       "path": "st/stm32f4/reports/coverage.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 14479,
-      "content_sha256": "95153d2dc6013893814e43f0f978984fff60c0f0dbd3abab9f3fdfe4f179ea6a",
+      "content_bytes": 15722,
+      "content_sha256": "b0e4b70ab75db1ac33e297516be6d30480ce8434cb0e1056fc1e9598d54beabd",
       "path": "st/stm32f4/reports/runtime-capability-summary.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 11893,
-      "content_sha256": "568e7673b020bc47e3ede1ff70721b2c34a0ef2b9d7ccb43e2046c676af3df0c",
+      "content_bytes": 12828,
+      "content_sha256": "e47fa9cd913857205df4c0aebdd6e337b713ec02fa8adac1da3892487b33d650",
       "path": "st/stm32f4/reports/runtime-compatibility-matrix.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 332804,
-      "content_sha256": "1edc73edf6142e05b2cb2c983ade3b5ea045060232af1a4568ee94fdef215292",
+      "content_bytes": 366748,
+      "content_sha256": "beba8ea3775a928e8a3af904d8ce3216559bf599854df0974c79a7bd02d88698",
       "path": "st/stm32f4/reports/runtime-explainability.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 617266,
-      "content_sha256": "806dd54e56e2e948fb95eb1a748f1a284aa588615d6b2ec16342eba0b9d7182b",
+      "content_bytes": 672194,
+      "content_sha256": "2f5f0f9685b5aef0daa9049cb19c47df17556dff925370ae2554f1a94b35d797",
       "path": "st/stm32f4/reports/runtime-provenance.json"
     },
     {
@@ -851,7 +851,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "8c99214f18bda851dd6945e04b047f322e4e17562d2a29e3b9be71a5f58a738b",
+  "target_artifact_revision": "0711c6bcbacd8d0e931bb0f747d9a1767fc7f020e53e903c12db257e90b71586",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

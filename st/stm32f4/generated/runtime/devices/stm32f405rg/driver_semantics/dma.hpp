@@ -74,6 +74,8 @@ inline constexpr std::array<PeripheralId, 2> kDmaSemanticPeripherals = {{
 // complete-rp2040-semantics Phase D: per-controller DMA HW facts.
 enum class RuntimeDmaCtrlId : std::uint8_t {
   None = 0,
+  DMA1 = 1,
+  DMA2 = 2,
 };
 
 template<RuntimeDmaCtrlId Id>
@@ -85,6 +87,52 @@ struct DmaControllerHwTraits {
   static constexpr bool kSupportsChaining = false;
   static constexpr bool kSupportsByteSwap = false;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr std::uint8_t kPriorityLevelCount = 0u;
+  static constexpr std::array<std::uint8_t, 0> kSupportedBurstSizes = {};
+  static constexpr std::array<std::uint8_t, 0> kSupportedDataWidths = {};
+  static constexpr bool kSupportsCircular = false;
+  static constexpr bool kSupportsDoubleBuffer = false;
+  static constexpr bool kSupportsMemToMem = false;
+  static constexpr bool kSupportsDescriptorChaining = false;
+  static constexpr bool kSupportsScatterGather = false;
+};
+
+template<>
+struct DmaControllerHwTraits<RuntimeDmaCtrlId::DMA1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40026000u;
+  static constexpr std::uint8_t kChannelCount = 8u;
+  static constexpr std::uint32_t kMaxTransferCount = 0x0000ffffu;
+  static constexpr bool kSupportsChaining = false;
+  static constexpr bool kSupportsByteSwap = false;
+  static constexpr std::array<std::uint32_t, 8> kIrqNumbers = {{11u, 12u, 13u, 14u, 15u, 16u, 17u, 47u}};
+  static constexpr std::uint8_t kPriorityLevelCount = 4u;
+  static constexpr std::array<std::uint8_t, 4> kSupportedBurstSizes = {{1u, 4u, 8u, 16u}};
+  static constexpr std::array<std::uint8_t, 3> kSupportedDataWidths = {{8u, 16u, 32u}};
+  static constexpr bool kSupportsCircular = true;
+  static constexpr bool kSupportsDoubleBuffer = true;
+  static constexpr bool kSupportsMemToMem = true;
+  static constexpr bool kSupportsDescriptorChaining = false;
+  static constexpr bool kSupportsScatterGather = true;
+};
+
+template<>
+struct DmaControllerHwTraits<RuntimeDmaCtrlId::DMA2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40026400u;
+  static constexpr std::uint8_t kChannelCount = 8u;
+  static constexpr std::uint32_t kMaxTransferCount = 0x0000ffffu;
+  static constexpr bool kSupportsChaining = false;
+  static constexpr bool kSupportsByteSwap = false;
+  static constexpr std::array<std::uint32_t, 8> kIrqNumbers = {{56u, 57u, 58u, 59u, 60u, 68u, 69u, 70u}};
+  static constexpr std::uint8_t kPriorityLevelCount = 4u;
+  static constexpr std::array<std::uint8_t, 4> kSupportedBurstSizes = {{1u, 4u, 8u, 16u}};
+  static constexpr std::array<std::uint8_t, 3> kSupportedDataWidths = {{8u, 16u, 32u}};
+  static constexpr bool kSupportsCircular = true;
+  static constexpr bool kSupportsDoubleBuffer = true;
+  static constexpr bool kSupportsMemToMem = true;
+  static constexpr bool kSupportsDescriptorChaining = false;
+  static constexpr bool kSupportsScatterGather = true;
 };
 
 }

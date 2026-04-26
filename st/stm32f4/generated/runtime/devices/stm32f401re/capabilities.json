@@ -41,6 +41,86 @@
       "value": "true"
     },
     {
+      "capability_id": "capability:i2c:i2c1-v1-5-cube:scl",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "ip_block",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability:i2c:i2c1-v1-5-cube:sda",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "ip_block",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability:i2c:i2c1-v1-5-cube:smba",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "ip_block",
+      "value": "smba"
+    },
+    {
+      "capability_id": "runtime-support:i2c",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:lqfp64:scl",
+      "name": "available-signal",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:lqfp64:sda",
+      "name": "available-signal",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c1:lqfp64:smba",
+      "name": "available-signal",
+      "peripheral": "I2C1",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "smba"
+    },
+    {
+      "capability_id": "capability-instance:i2c2:lqfp64:scl",
+      "name": "available-signal",
+      "peripheral": "I2C2",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c2:lqfp64:sda",
+      "name": "available-signal",
+      "peripheral": "I2C2",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "sda"
+    },
+    {
+      "capability_id": "capability-instance:i2c2:lqfp64:smba",
+      "name": "available-signal",
+      "peripheral": "I2C2",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "smba"
+    },
+    {
       "capability_id": "runtime-support:rtc",
       "name": "runtime-supported",
       "peripheral": null,

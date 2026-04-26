@@ -101,19 +101,19 @@
         },
         {
           "base_address": 1073763328,
-          "ip_name": "i2c1",
+          "ip_name": "i2c",
           "ip_version": "i2c1_v1_5_Cube",
           "name": "I2C1"
         },
         {
           "base_address": 1073764352,
-          "ip_name": "i2c2",
+          "ip_name": "i2c",
           "ip_version": "i2c1_v1_5_Cube",
           "name": "I2C2"
         },
         {
           "base_address": 1073765376,
-          "ip_name": "i2c3",
+          "ip_name": "i2c",
           "ip_version": "i2c1_v1_5_Cube",
           "name": "I2C3"
         },
@@ -538,19 +538,19 @@
         },
         {
           "base_address": 1073763328,
-          "ip_name": "i2c1",
+          "ip_name": "i2c",
           "ip_version": "i2c1_v1_5_Cube",
           "name": "I2C1"
         },
         {
           "base_address": 1073764352,
-          "ip_name": "i2c2",
+          "ip_name": "i2c",
           "ip_version": "i2c1_v1_5_Cube",
           "name": "I2C2"
         },
         {
           "base_address": 1073765376,
-          "ip_name": "i2c3",
+          "ip_name": "i2c",
           "ip_version": "i2c1_v1_5_Cube",
           "name": "I2C3"
         },
@@ -952,15 +952,15 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.i2c1.st-i2c1-v1-5-cube",
+      "backend_schema_id": "alloy.i2c.st-i2c1-v1-5-cube",
       "capability_ids": [
-        "capability:i2c1:i2c1-v1-5-cube:scl",
-        "capability:i2c1:i2c1-v1-5-cube:sda",
-        "capability:i2c1:i2c1-v1-5-cube:smba"
+        "capability:i2c:i2c1-v1-5-cube:scl",
+        "capability:i2c:i2c1-v1-5-cube:sda",
+        "capability:i2c:i2c1-v1-5-cube:smba"
       ],
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c1_v1_5_Cube",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
@@ -969,54 +969,12 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32F401.svd"
       },
-      "register_profile": "i2c1:i2c1_v1_5_Cube",
+      "register_profile": "i2c:i2c1_v1_5_Cube",
       "signal_roles": [
         "scl",
         "sda",
         "smba"
       ]
-    },
-    {
-      "backend_schema_id": "alloy.i2c2.st-i2c1-v1-5-cube",
-      "capability_ids": [
-        "capability:i2c2:i2c1-v1-5-cube:scl",
-        "capability:i2c2:i2c1-v1-5-cube:sda",
-        "capability:i2c2:i2c1-v1-5-cube:smba"
-      ],
-      "ip_name": "i2c2",
-      "ip_version": "i2c1_v1_5_Cube",
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f401re-bootstrap"
-        ],
-        "source_id": "cmsis-svd-data",
-        "source_path": "STM32F401.svd"
-      },
-      "register_profile": "i2c2:i2c1_v1_5_Cube",
-      "signal_roles": [
-        "scl",
-        "sda",
-        "smba"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.i2c3.st-i2c1-v1-5-cube",
-      "capability_ids": [],
-      "ip_name": "i2c3",
-      "ip_version": "i2c1_v1_5_Cube",
-      "peripheral_class": "i2c3",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f401re-bootstrap"
-        ],
-        "source_id": "cmsis-svd-data",
-        "source_path": "STM32F401.svd"
-      },
-      "register_profile": "i2c3:i2c1_v1_5_Cube",
-      "signal_roles": []
     },
     {
       "backend_schema_id": "alloy.watchdog.st-iwdg1-v1-1",

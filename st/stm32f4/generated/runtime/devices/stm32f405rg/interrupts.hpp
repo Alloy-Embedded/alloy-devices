@@ -103,7 +103,7 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 59> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 65> kInterruptDescriptors = {{
   {InterruptId::ADC, PeripheralId::ADC1, 18u, 34u},
   {InterruptId::CAN1_TX, PeripheralId::CAN1, 19u, 35u},
   {InterruptId::CAN1_RX0, PeripheralId::CAN1, 20u, 36u},
@@ -132,6 +132,12 @@ inline constexpr std::array<InterruptDescriptor, 59> kInterruptDescriptors = {{
   {InterruptId::DMA2_Stream7, PeripheralId::DMA2, 70u, 86u},
   {InterruptId::ETH, PeripheralId::Ethernet_MAC, 61u, 77u},
   {InterruptId::ETH_WKUP, PeripheralId::Ethernet_MAC, 62u, 78u},
+  {InterruptId::I2C1_EV, PeripheralId::I2C1, 31u, 47u},
+  {InterruptId::I2C1_ER, PeripheralId::I2C1, 32u, 48u},
+  {InterruptId::I2C2_EV, PeripheralId::I2C2, 33u, 49u},
+  {InterruptId::I2C2_ER, PeripheralId::I2C2, 34u, 50u},
+  {InterruptId::I2C3_EV, PeripheralId::I2C3, 72u, 88u},
+  {InterruptId::I2C3_ER, PeripheralId::I2C3, 73u, 89u},
   {InterruptId::OTG_FS_WKUP, PeripheralId::OTG_FS_GLOBAL, 42u, 58u},
   {InterruptId::OTG_FS, PeripheralId::OTG_FS_GLOBAL, 67u, 83u},
   {InterruptId::OTG_HS_EP1_OUT, PeripheralId::OTG_HS_GLOBAL, 74u, 90u},

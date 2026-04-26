@@ -95,6 +95,24 @@
         },
         {
           "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 4,
+          "dma_signals": [],
+          "instance_capability_count": 6,
+          "peripheral_class": "i2c",
+          "peripheral_count": 3,
+          "peripherals": [
+            "I2C1",
+            "I2C2",
+            "I2C3"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
             "runtime-supported"
           ],
           "class_capability_count": 1,
@@ -325,6 +343,24 @@
         },
         {
           "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 4,
+          "dma_signals": [],
+          "instance_capability_count": 6,
+          "peripheral_class": "i2c",
+          "peripheral_count": 3,
+          "peripherals": [
+            "I2C1",
+            "I2C2",
+            "I2C3"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
             "runtime-supported"
           ],
           "class_capability_count": 1,
@@ -463,6 +499,7 @@
     "dma",
     "eth",
     "gpio",
+    "i2c",
     "rtc",
     "spi",
     "timer",

@@ -1160,7 +1160,7 @@
         {
           "candidate_id": "candidate:pb10:i2c2:scl",
           "capability_ids": [
-            "capability:i2c2:i2c1-v1-5-cube:scl",
+            "capability:i2c:i2c1-v1-5-cube:scl",
             "capability-instance:i2c2:lqfp64:scl"
           ],
           "operation_ids": [
@@ -1185,7 +1185,7 @@
             "requirement:reset-release:i2c2",
             "requirement:source-select:pb10:i2c2:scl"
           ],
-          "route_group_id": "group:i2c2:lqfp64:all-signals",
+          "route_group_id": "group:i2c2:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "scl"
@@ -1259,7 +1259,7 @@
         {
           "candidate_id": "candidate:pb12:i2c2:smba",
           "capability_ids": [
-            "capability:i2c2:i2c1-v1-5-cube:smba",
+            "capability:i2c:i2c1-v1-5-cube:smba",
             "capability-instance:i2c2:lqfp64:smba"
           ],
           "operation_ids": [
@@ -1284,7 +1284,7 @@
             "requirement:reset-release:i2c2",
             "requirement:source-select:pb12:i2c2:smba"
           ],
-          "route_group_id": "group:i2c2:lqfp64:all-signals",
+          "route_group_id": null,
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "smba"
@@ -1622,7 +1622,7 @@
         {
           "candidate_id": "candidate:pb3:i2c2:sda",
           "capability_ids": [
-            "capability:i2c2:i2c1-v1-5-cube:sda",
+            "capability:i2c:i2c1-v1-5-cube:sda",
             "capability-instance:i2c2:lqfp64:sda"
           ],
           "operation_ids": [
@@ -1647,7 +1647,7 @@
             "requirement:reset-release:i2c2",
             "requirement:source-select:pb3:i2c2:sda"
           ],
-          "route_group_id": "group:i2c2:lqfp64:all-signals",
+          "route_group_id": "group:i2c2:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:9",
           "signal": "sda"
@@ -1787,7 +1787,7 @@
         {
           "candidate_id": "candidate:pb5:i2c1:smba",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:smba",
+            "capability:i2c:i2c1-v1-5-cube:smba",
             "capability-instance:i2c1:lqfp64:smba"
           ],
           "operation_ids": [
@@ -1812,7 +1812,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb5:i2c1:smba"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": null,
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "smba"
@@ -1886,7 +1886,7 @@
         {
           "candidate_id": "candidate:pb6:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:scl",
+            "capability:i2c:i2c1-v1-5-cube:scl",
             "capability-instance:i2c1:lqfp64:scl"
           ],
           "operation_ids": [
@@ -1911,7 +1911,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb6:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "scl"
@@ -1985,7 +1985,7 @@
         {
           "candidate_id": "candidate:pb7:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:sda",
+            "capability:i2c:i2c1-v1-5-cube:sda",
             "capability-instance:i2c1:lqfp64:sda"
           ],
           "operation_ids": [
@@ -2010,7 +2010,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb7:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "sda"
@@ -2084,7 +2084,7 @@
         {
           "candidate_id": "candidate:pb8:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:scl",
+            "capability:i2c:i2c1-v1-5-cube:scl",
             "capability-instance:i2c1:lqfp64:scl"
           ],
           "operation_ids": [
@@ -2109,7 +2109,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb8:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "scl"
@@ -2150,7 +2150,7 @@
         {
           "candidate_id": "candidate:pb9:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:sda",
+            "capability:i2c:i2c1-v1-5-cube:sda",
             "capability-instance:i2c1:lqfp64:sda"
           ],
           "operation_ids": [
@@ -2175,7 +2175,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb9:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "sda"
@@ -2481,14 +2481,13 @@
       "connection_groups": [
         {
           "candidate_ids": [
-            "candidate:pb5:i2c1:smba",
             "candidate:pb6:i2c1:scl",
             "candidate:pb7:i2c1:sda",
             "candidate:pb8:i2c1:scl",
             "candidate:pb9:i2c1:sda"
           ],
-          "conflict_group": "conflict:i2c1:lqfp64:all-signals",
-          "group_id": "group:i2c1:lqfp64:all-signals",
+          "conflict_group": "conflict:i2c1:lqfp64:scl-sda",
+          "group_id": "group:i2c1:lqfp64:scl-sda",
           "package": "lqfp64",
           "peripheral": "I2C1",
           "provenance": {
@@ -2501,18 +2500,16 @@
           },
           "signals": [
             "scl",
-            "sda",
-            "smba"
+            "sda"
           ]
         },
         {
           "candidate_ids": [
             "candidate:pb10:i2c2:scl",
-            "candidate:pb12:i2c2:smba",
             "candidate:pb3:i2c2:sda"
           ],
-          "conflict_group": "conflict:i2c2:lqfp64:all-signals",
-          "group_id": "group:i2c2:lqfp64:all-signals",
+          "conflict_group": "conflict:i2c2:lqfp64:scl-sda",
+          "group_id": "group:i2c2:lqfp64:scl-sda",
           "package": "lqfp64",
           "peripheral": "I2C2",
           "provenance": {
@@ -2525,8 +2522,7 @@
           },
           "signals": [
             "scl",
-            "sda",
-            "smba"
+            "sda"
           ]
         },
         {
@@ -9495,7 +9491,7 @@
         {
           "candidate_id": "candidate:pb10:i2c2:scl",
           "capability_ids": [
-            "capability:i2c2:i2c1-v1-5-cube:scl",
+            "capability:i2c:i2c1-v1-5-cube:scl",
             "capability-instance:i2c2:lqfp64:scl"
           ],
           "operation_ids": [
@@ -9520,7 +9516,7 @@
             "requirement:reset-release:i2c2",
             "requirement:source-select:pb10:i2c2:scl"
           ],
-          "route_group_id": "group:i2c2:lqfp64:all-signals",
+          "route_group_id": "group:i2c2:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "scl"
@@ -9594,7 +9590,7 @@
         {
           "candidate_id": "candidate:pb11:i2c2:sda",
           "capability_ids": [
-            "capability:i2c2:i2c1-v1-5-cube:sda",
+            "capability:i2c:i2c1-v1-5-cube:sda",
             "capability-instance:i2c2:lqfp64:sda"
           ],
           "operation_ids": [
@@ -9619,7 +9615,7 @@
             "requirement:reset-release:i2c2",
             "requirement:source-select:pb11:i2c2:sda"
           ],
-          "route_group_id": "group:i2c2:lqfp64:all-signals",
+          "route_group_id": "group:i2c2:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "sda"
@@ -9660,7 +9656,7 @@
         {
           "candidate_id": "candidate:pb12:i2c2:smba",
           "capability_ids": [
-            "capability:i2c2:i2c1-v1-5-cube:smba",
+            "capability:i2c:i2c1-v1-5-cube:smba",
             "capability-instance:i2c2:lqfp64:smba"
           ],
           "operation_ids": [
@@ -9685,7 +9681,7 @@
             "requirement:reset-release:i2c2",
             "requirement:source-select:pb12:i2c2:smba"
           ],
-          "route_group_id": "group:i2c2:lqfp64:all-signals",
+          "route_group_id": null,
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "smba"
@@ -10155,7 +10151,7 @@
         {
           "candidate_id": "candidate:pb5:i2c1:smba",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:smba",
+            "capability:i2c:i2c1-v1-5-cube:smba",
             "capability-instance:i2c1:lqfp64:smba"
           ],
           "operation_ids": [
@@ -10180,7 +10176,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb5:i2c1:smba"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": null,
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "smba"
@@ -10254,7 +10250,7 @@
         {
           "candidate_id": "candidate:pb6:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:scl",
+            "capability:i2c:i2c1-v1-5-cube:scl",
             "capability-instance:i2c1:lqfp64:scl"
           ],
           "operation_ids": [
@@ -10279,7 +10275,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb6:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "scl"
@@ -10353,7 +10349,7 @@
         {
           "candidate_id": "candidate:pb7:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:sda",
+            "capability:i2c:i2c1-v1-5-cube:sda",
             "capability-instance:i2c1:lqfp64:sda"
           ],
           "operation_ids": [
@@ -10378,7 +10374,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb7:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "sda"
@@ -10452,7 +10448,7 @@
         {
           "candidate_id": "candidate:pb8:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:scl",
+            "capability:i2c:i2c1-v1-5-cube:scl",
             "capability-instance:i2c1:lqfp64:scl"
           ],
           "operation_ids": [
@@ -10477,7 +10473,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb8:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "scl"
@@ -10518,7 +10514,7 @@
         {
           "candidate_id": "candidate:pb9:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:i2c1-v1-5-cube:sda",
+            "capability:i2c:i2c1-v1-5-cube:sda",
             "capability-instance:i2c1:lqfp64:sda"
           ],
           "operation_ids": [
@@ -10543,7 +10539,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:pb9:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:lqfp64:all-signals",
+          "route_group_id": "group:i2c1:lqfp64:scl-sda",
           "route_kind": "alternate-function",
           "route_selector": "selector:4",
           "signal": "sda"
@@ -10849,14 +10845,13 @@
       "connection_groups": [
         {
           "candidate_ids": [
-            "candidate:pb5:i2c1:smba",
             "candidate:pb6:i2c1:scl",
             "candidate:pb7:i2c1:sda",
             "candidate:pb8:i2c1:scl",
             "candidate:pb9:i2c1:sda"
           ],
-          "conflict_group": "conflict:i2c1:lqfp64:all-signals",
-          "group_id": "group:i2c1:lqfp64:all-signals",
+          "conflict_group": "conflict:i2c1:lqfp64:scl-sda",
+          "group_id": "group:i2c1:lqfp64:scl-sda",
           "package": "lqfp64",
           "peripheral": "I2C1",
           "provenance": {
@@ -10869,18 +10864,16 @@
           },
           "signals": [
             "scl",
-            "sda",
-            "smba"
+            "sda"
           ]
         },
         {
           "candidate_ids": [
             "candidate:pb10:i2c2:scl",
-            "candidate:pb11:i2c2:sda",
-            "candidate:pb12:i2c2:smba"
+            "candidate:pb11:i2c2:sda"
           ],
-          "conflict_group": "conflict:i2c2:lqfp64:all-signals",
-          "group_id": "group:i2c2:lqfp64:all-signals",
+          "conflict_group": "conflict:i2c2:lqfp64:scl-sda",
+          "group_id": "group:i2c2:lqfp64:scl-sda",
           "package": "lqfp64",
           "peripheral": "I2C2",
           "provenance": {
@@ -10893,8 +10886,7 @@
           },
           "signals": [
             "scl",
-            "sda",
-            "smba"
+            "sda"
           ]
         },
         {
@@ -16996,8 +16988,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2c1:scl",
-      "peripheral_class": "i2c1",
+      "endpoint_id": "endpoint:i2c:scl",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
@@ -17010,8 +17002,8 @@
     },
     {
       "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c1:sda",
-      "peripheral_class": "i2c1",
+      "endpoint_id": "endpoint:i2c:sda",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
@@ -17024,50 +17016,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2c1:smba",
-      "peripheral_class": "i2c1",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f401re-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32F401R(B-C)Tx.xml"
-      },
-      "signal": "SMBA"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:i2c2:scl",
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f401re-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32F401R(B-C)Tx.xml"
-      },
-      "signal": "SCL"
-    },
-    {
-      "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c2:sda",
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32f4-family-bootstrap-v1",
-          "st-stm32f4-stm32f401re-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32F401R(B-C)Tx.xml"
-      },
-      "signal": "SDA"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:i2c2:smba",
-      "peripheral_class": "i2c2",
+      "endpoint_id": "endpoint:i2c:smba",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32f4-family-bootstrap-v1",
