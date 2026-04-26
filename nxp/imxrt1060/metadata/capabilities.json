@@ -2662,12 +2662,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c1:bga196:hreq",
-      "ip_name": "lpi2c1",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C1",
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2681,12 +2681,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c1:bga196:scl",
-      "ip_name": "lpi2c1",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C1",
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2700,12 +2700,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c1:bga196:scls",
-      "ip_name": "lpi2c1",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C1",
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2719,12 +2719,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c1:bga196:sda",
-      "ip_name": "lpi2c1",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C1",
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2738,12 +2738,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c1:bga196:sdas",
-      "ip_name": "lpi2c1",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C1",
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2757,12 +2757,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c2:bga196:scl",
-      "ip_name": "lpi2c2",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C2",
-      "peripheral_class": "lpi2c2",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2776,12 +2776,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c2:bga196:sda",
-      "ip_name": "lpi2c2",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C2",
-      "peripheral_class": "lpi2c2",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2795,12 +2795,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c3:bga196:scl",
-      "ip_name": "lpi2c3",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C3",
-      "peripheral_class": "lpi2c3",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2814,12 +2814,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c3:bga196:sda",
-      "ip_name": "lpi2c3",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C3",
-      "peripheral_class": "lpi2c3",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2833,12 +2833,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c4:bga196:scl",
-      "ip_name": "lpi2c4",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C4",
-      "peripheral_class": "lpi2c4",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -2852,12 +2852,12 @@
     },
     {
       "capability_id": "capability-instance:lpi2c4:bga196:sda",
-      "ip_name": "lpi2c4",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "available-signal",
       "package": "bga196",
       "peripheral": "LPI2C4",
-      "peripheral_class": "lpi2c4",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -4713,13 +4713,13 @@
       "value": "io31"
     },
     {
-      "capability_id": "capability:lpi2c1:lpi2c-v1:hreq",
-      "ip_name": "lpi2c1",
+      "capability_id": "capability:lpi2c:lpi2c-v1:hreq",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -4732,13 +4732,13 @@
       "value": "hreq"
     },
     {
-      "capability_id": "capability:lpi2c1:lpi2c-v1:scl",
-      "ip_name": "lpi2c1",
+      "capability_id": "capability:lpi2c:lpi2c-v1:scl",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -4751,13 +4751,13 @@
       "value": "scl"
     },
     {
-      "capability_id": "capability:lpi2c1:lpi2c-v1:scls",
-      "ip_name": "lpi2c1",
+      "capability_id": "capability:lpi2c:lpi2c-v1:scls",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -4770,13 +4770,13 @@
       "value": "scls"
     },
     {
-      "capability_id": "capability:lpi2c1:lpi2c-v1:sda",
-      "ip_name": "lpi2c1",
+      "capability_id": "capability:lpi2c:lpi2c-v1:sda",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -4789,13 +4789,13 @@
       "value": "sda"
     },
     {
-      "capability_id": "capability:lpi2c1:lpi2c-v1:sdas",
-      "ip_name": "lpi2c1",
+      "capability_id": "capability:lpi2c:lpi2c-v1:sdas",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -4806,120 +4806,6 @@
       },
       "scope": "ip-block",
       "value": "sdas"
-    },
-    {
-      "capability_id": "capability:lpi2c2:lpi2c-v1:scl",
-      "ip_name": "lpi2c2",
-      "ip_version": "lpi2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "lpi2c2",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:lpi2c2:lpi2c-v1:sda",
-      "ip_name": "lpi2c2",
-      "ip_version": "lpi2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "lpi2c2",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "scope": "ip-block",
-      "value": "sda"
-    },
-    {
-      "capability_id": "capability:lpi2c3:lpi2c-v1:scl",
-      "ip_name": "lpi2c3",
-      "ip_version": "lpi2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "lpi2c3",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:lpi2c3:lpi2c-v1:sda",
-      "ip_name": "lpi2c3",
-      "ip_version": "lpi2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "lpi2c3",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "scope": "ip-block",
-      "value": "sda"
-    },
-    {
-      "capability_id": "capability:lpi2c4:lpi2c-v1:scl",
-      "ip_name": "lpi2c4",
-      "ip_version": "lpi2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "lpi2c4",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:lpi2c4:lpi2c-v1:sda",
-      "ip_name": "lpi2c4",
-      "ip_version": "lpi2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "lpi2c4",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "scope": "ip-block",
-      "value": "sda"
     },
     {
       "capability_id": "capability:lpspi:lpspi-v1:cs",

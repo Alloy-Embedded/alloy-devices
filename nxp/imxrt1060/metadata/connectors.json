@@ -36,7 +36,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-00:lpi2c1:scls",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:scls",
+            "capability:lpi2c:lpi2c-v1:scls",
             "capability-instance:lpi2c1:bga196:scls"
           ],
           "operation_ids": [
@@ -129,7 +129,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-01:lpi2c1:sdas",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:sdas",
+            "capability:lpi2c:lpi2c-v1:sdas",
             "capability-instance:lpi2c1:bga196:sdas"
           ],
           "operation_ids": [
@@ -222,7 +222,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-02:lpi2c1:hreq",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:hreq",
+            "capability:lpi2c:lpi2c-v1:hreq",
             "capability-instance:lpi2c1:bga196:hreq"
           ],
           "operation_ids": [
@@ -780,7 +780,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-12:lpi2c4:scl",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c4:bga196:scl"
           ],
           "operation_ids": [
@@ -873,7 +873,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-13:lpi2c4:sda",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c4:bga196:sda"
           ],
           "operation_ids": [
@@ -1090,7 +1090,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-00:lpi2c1:scl",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c1:bga196:scl"
           ],
           "operation_ids": [
@@ -1183,7 +1183,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-01:lpi2c1:sda",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c1:bga196:sda"
           ],
           "operation_ids": [
@@ -1524,7 +1524,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-06:lpi2c3:sda",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c3:bga196:sda"
           ],
           "operation_ids": [
@@ -1617,7 +1617,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-07:lpi2c3:scl",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c3:bga196:scl"
           ],
           "operation_ids": [
@@ -2392,7 +2392,7 @@
         {
           "candidate_id": "candidate:gpio-b0-04:lpi2c2:scl",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c2:bga196:scl"
           ],
           "operation_ids": [
@@ -2454,7 +2454,7 @@
         {
           "candidate_id": "candidate:gpio-b0-05:lpi2c2:sda",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c2:bga196:sda"
           ],
           "operation_ids": [
@@ -4283,7 +4283,7 @@
         {
           "candidate_id": "candidate:gpio-emc-11:lpi2c4:sda",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c4:bga196:sda"
           ],
           "operation_ids": [
@@ -4376,7 +4376,7 @@
         {
           "candidate_id": "candidate:gpio-emc-12:lpi2c4:scl",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c4:bga196:scl"
           ],
           "operation_ids": [
@@ -5089,7 +5089,7 @@
         {
           "candidate_id": "candidate:gpio-emc-21:lpi2c3:sda",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c3:bga196:sda"
           ],
           "operation_ids": [
@@ -5182,7 +5182,7 @@
         {
           "candidate_id": "candidate:gpio-emc-22:lpi2c3:scl",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c3:bga196:scl"
           ],
           "operation_ids": [
@@ -6639,7 +6639,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b0-00:lpi2c3:scl",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c3:bga196:scl"
           ],
           "operation_ids": [
@@ -6732,7 +6732,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b0-01:lpi2c3:sda",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c3:bga196:sda"
           ],
           "operation_ids": [
@@ -7321,7 +7321,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-04:lpi2c1:scl",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c1:bga196:scl"
           ],
           "operation_ids": [
@@ -7383,7 +7383,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-05:lpi2c1:sda",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c1:bga196:sda"
           ],
           "operation_ids": [
@@ -7817,7 +7817,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-10:lpi2c2:sda",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c2:bga196:sda"
           ],
           "operation_ids": [
@@ -7941,7 +7941,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-11:lpi2c2:scl",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c2:bga196:scl"
           ],
           "operation_ids": [
@@ -23743,7 +23743,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-00:lpi2c1:scls",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:scls",
+            "capability:lpi2c:lpi2c-v1:scls",
             "capability-instance:lpi2c1:bga196:scls"
           ],
           "operation_ids": [
@@ -23836,7 +23836,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-01:lpi2c1:sdas",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:sdas",
+            "capability:lpi2c:lpi2c-v1:sdas",
             "capability-instance:lpi2c1:bga196:sdas"
           ],
           "operation_ids": [
@@ -23929,7 +23929,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-02:lpi2c1:hreq",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:hreq",
+            "capability:lpi2c:lpi2c-v1:hreq",
             "capability-instance:lpi2c1:bga196:hreq"
           ],
           "operation_ids": [
@@ -24487,7 +24487,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-12:lpi2c4:scl",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c4:bga196:scl"
           ],
           "operation_ids": [
@@ -24580,7 +24580,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b0-13:lpi2c4:sda",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c4:bga196:sda"
           ],
           "operation_ids": [
@@ -24797,7 +24797,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-00:lpi2c1:scl",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c1:bga196:scl"
           ],
           "operation_ids": [
@@ -24890,7 +24890,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-01:lpi2c1:sda",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c1:bga196:sda"
           ],
           "operation_ids": [
@@ -25231,7 +25231,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-06:lpi2c3:sda",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c3:bga196:sda"
           ],
           "operation_ids": [
@@ -25324,7 +25324,7 @@
         {
           "candidate_id": "candidate:gpio-ad-b1-07:lpi2c3:scl",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c3:bga196:scl"
           ],
           "operation_ids": [
@@ -26099,7 +26099,7 @@
         {
           "candidate_id": "candidate:gpio-b0-04:lpi2c2:scl",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c2:bga196:scl"
           ],
           "operation_ids": [
@@ -26161,7 +26161,7 @@
         {
           "candidate_id": "candidate:gpio-b0-05:lpi2c2:sda",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c2:bga196:sda"
           ],
           "operation_ids": [
@@ -27897,7 +27897,7 @@
         {
           "candidate_id": "candidate:gpio-emc-11:lpi2c4:sda",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c4:bga196:sda"
           ],
           "operation_ids": [
@@ -27959,7 +27959,7 @@
         {
           "candidate_id": "candidate:gpio-emc-12:lpi2c4:scl",
           "capability_ids": [
-            "capability:lpi2c4:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c4:bga196:scl"
           ],
           "operation_ids": [
@@ -28548,7 +28548,7 @@
         {
           "candidate_id": "candidate:gpio-emc-21:lpi2c3:sda",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c3:bga196:sda"
           ],
           "operation_ids": [
@@ -28610,7 +28610,7 @@
         {
           "candidate_id": "candidate:gpio-emc-22:lpi2c3:scl",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c3:bga196:scl"
           ],
           "operation_ids": [
@@ -29850,7 +29850,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b0-00:lpi2c3:scl",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c3:bga196:scl"
           ],
           "operation_ids": [
@@ -29943,7 +29943,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b0-01:lpi2c3:sda",
           "capability_ids": [
-            "capability:lpi2c3:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c3:bga196:sda"
           ],
           "operation_ids": [
@@ -30532,7 +30532,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-04:lpi2c1:scl",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c1:bga196:scl"
           ],
           "operation_ids": [
@@ -30594,7 +30594,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-05:lpi2c1:sda",
           "capability_ids": [
-            "capability:lpi2c1:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c1:bga196:sda"
           ],
           "operation_ids": [
@@ -31028,7 +31028,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-10:lpi2c2:sda",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:sda",
+            "capability:lpi2c:lpi2c-v1:sda",
             "capability-instance:lpi2c2:bga196:sda"
           ],
           "operation_ids": [
@@ -31152,7 +31152,7 @@
         {
           "candidate_id": "candidate:gpio-sd-b1-11:lpi2c2:scl",
           "capability_ids": [
-            "capability:lpi2c2:lpi2c-v1:scl",
+            "capability:lpi2c:lpi2c-v1:scl",
             "capability-instance:lpi2c2:bga196:scl"
           ],
           "operation_ids": [
@@ -46842,8 +46842,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:lpi2c1:hreq",
-      "peripheral_class": "lpi2c1",
+      "endpoint_id": "endpoint:lpi2c:hreq",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -46856,8 +46856,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:lpi2c1:scl",
-      "peripheral_class": "lpi2c1",
+      "endpoint_id": "endpoint:lpi2c:scl",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -46870,8 +46870,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:lpi2c1:scls",
-      "peripheral_class": "lpi2c1",
+      "endpoint_id": "endpoint:lpi2c:scls",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -46884,8 +46884,8 @@
     },
     {
       "direction": "bidirectional",
-      "endpoint_id": "endpoint:lpi2c1:sda",
-      "peripheral_class": "lpi2c1",
+      "endpoint_id": "endpoint:lpi2c:sda",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -46898,8 +46898,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:lpi2c1:sdas",
-      "peripheral_class": "lpi2c1",
+      "endpoint_id": "endpoint:lpi2c:sdas",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -46909,90 +46909,6 @@
         "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
       },
       "signal": "SDAS"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:lpi2c2:scl",
-      "peripheral_class": "lpi2c2",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "signal": "SCL"
-    },
-    {
-      "direction": "bidirectional",
-      "endpoint_id": "endpoint:lpi2c2:sda",
-      "peripheral_class": "lpi2c2",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "signal": "SDA"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:lpi2c3:scl",
-      "peripheral_class": "lpi2c3",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "signal": "SCL"
-    },
-    {
-      "direction": "bidirectional",
-      "endpoint_id": "endpoint:lpi2c3:sda",
-      "peripheral_class": "lpi2c3",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "signal": "SDA"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:lpi2c4:scl",
-      "peripheral_class": "lpi2c4",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "signal": "SCL"
-    },
-    {
-      "direction": "bidirectional",
-      "endpoint_id": "endpoint:lpi2c4:sda",
-      "peripheral_class": "lpi2c4",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-sdk",
-        "source_path": "devices/MIMXRT1062/drivers/fsl_iomuxc.h"
-      },
-      "signal": "SDA"
     },
     {
       "direction": null,

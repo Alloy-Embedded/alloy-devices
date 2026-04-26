@@ -347,25 +347,25 @@
         },
         {
           "base_address": 1077870592,
-          "ip_name": "lpi2c1",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C1"
         },
         {
           "base_address": 1077886976,
-          "ip_name": "lpi2c2",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C2"
         },
         {
           "base_address": 1077903360,
-          "ip_name": "lpi2c3",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C3"
         },
         {
           "base_address": 1077919744,
-          "ip_name": "lpi2c4",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C4"
         },
@@ -1018,25 +1018,25 @@
         },
         {
           "base_address": 1077870592,
-          "ip_name": "lpi2c1",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C1"
         },
         {
           "base_address": 1077886976,
-          "ip_name": "lpi2c2",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C2"
         },
         {
           "base_address": 1077903360,
-          "ip_name": "lpi2c3",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C3"
         },
         {
           "base_address": 1077919744,
-          "ip_name": "lpi2c4",
+          "ip_name": "lpi2c",
           "ip_version": "lpi2c-v1",
           "name": "LPI2C4"
         },
@@ -1474,17 +1474,17 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.lpi2c1.nxp-lpi2c-v1",
+      "backend_schema_id": "alloy.lpi2c.nxp-lpi2c-v1",
       "capability_ids": [
-        "capability:lpi2c1:lpi2c-v1:hreq",
-        "capability:lpi2c1:lpi2c-v1:scl",
-        "capability:lpi2c1:lpi2c-v1:scls",
-        "capability:lpi2c1:lpi2c-v1:sda",
-        "capability:lpi2c1:lpi2c-v1:sdas"
+        "capability:lpi2c:lpi2c-v1:hreq",
+        "capability:lpi2c:lpi2c-v1:scl",
+        "capability:lpi2c:lpi2c-v1:scls",
+        "capability:lpi2c:lpi2c-v1:sda",
+        "capability:lpi2c:lpi2c-v1:sdas"
       ],
-      "ip_name": "lpi2c1",
+      "ip_name": "lpi2c",
       "ip_version": "lpi2c-v1",
-      "peripheral_class": "lpi2c1",
+      "peripheral_class": "lpi2c",
       "provenance": {
         "patch_ids": [
           "nxp-imxrt1060-family-bootstrap-v1",
@@ -1493,82 +1493,13 @@
         "source_id": "nxp-mcux-soc-svd",
         "source_path": "MIMXRT1062/MIMXRT1062.xml"
       },
-      "register_profile": "lpi2c1:lpi2c-v1",
+      "register_profile": "lpi2c:lpi2c-v1",
       "signal_roles": [
         "hreq",
         "scl",
         "scls",
         "sda",
         "sdas"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.lpi2c2.nxp-lpi2c-v1",
-      "capability_ids": [
-        "capability:lpi2c2:lpi2c-v1:scl",
-        "capability:lpi2c2:lpi2c-v1:sda"
-      ],
-      "ip_name": "lpi2c2",
-      "ip_version": "lpi2c-v1",
-      "peripheral_class": "lpi2c2",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-soc-svd",
-        "source_path": "MIMXRT1062/MIMXRT1062.xml"
-      },
-      "register_profile": "lpi2c2:lpi2c-v1",
-      "signal_roles": [
-        "scl",
-        "sda"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.lpi2c3.nxp-lpi2c-v1",
-      "capability_ids": [
-        "capability:lpi2c3:lpi2c-v1:scl",
-        "capability:lpi2c3:lpi2c-v1:sda"
-      ],
-      "ip_name": "lpi2c3",
-      "ip_version": "lpi2c-v1",
-      "peripheral_class": "lpi2c3",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-soc-svd",
-        "source_path": "MIMXRT1062/MIMXRT1062.xml"
-      },
-      "register_profile": "lpi2c3:lpi2c-v1",
-      "signal_roles": [
-        "scl",
-        "sda"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.lpi2c4.nxp-lpi2c-v1",
-      "capability_ids": [
-        "capability:lpi2c4:lpi2c-v1:scl",
-        "capability:lpi2c4:lpi2c-v1:sda"
-      ],
-      "ip_name": "lpi2c4",
-      "ip_version": "lpi2c-v1",
-      "peripheral_class": "lpi2c4",
-      "provenance": {
-        "patch_ids": [
-          "nxp-imxrt1060-family-bootstrap-v1",
-          "nxp-imxrt1060-mimxrt1062-bootstrap"
-        ],
-        "source_id": "nxp-mcux-soc-svd",
-        "source_path": "MIMXRT1062/MIMXRT1062.xml"
-      },
-      "register_profile": "lpi2c4:lpi2c-v1",
-      "signal_roles": [
-        "scl",
-        "sda"
       ]
     },
     {
