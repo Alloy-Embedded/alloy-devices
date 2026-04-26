@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "b8d2e85bd9849295cae77645be106fd09f380d6c4499e42c14a182c5805d0714",
+    "canonical_ir_sha256": "de78534cf349e68e284513617a45f20b1d30f9656a9db5433898c25027ea698b",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -172,7 +172,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 2459,
-      "content_sha256": "6d4b353d6269045715591365beb85a935727cf58b92a409e07c3df866d9e0b94",
+      "content_sha256": "fbb73488b146f8afd8615501ef64f4db307532475dff660a341b022b797efba9",
       "path": "raspberrypi/rp2040/artifact-manifest.json"
     },
     {
@@ -303,8 +303,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5079,
-      "content_sha256": "b28d16cbf83b81032cc47e2ada313dee8d9973519b0c5a7b7e992615ec7d35c2",
+      "content_bytes": 8034,
+      "content_sha256": "d88d6642017a30f880b34ee41bc9ff2732b00bc47ed6f500040c3690de372ad5",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/i2c.hpp"
     },
     {
@@ -339,8 +339,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 13682,
-      "content_sha256": "5d5be76a2de644573a05d477f1907f17ba972dd63cf2c9e298844f686f4340dd",
+      "content_bytes": 15662,
+      "content_sha256": "b12ac638155d3b7b53a580edca146285d39dc31b30a72587c996eeed229b0c04",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/spi.hpp"
     },
     {
@@ -351,8 +351,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 17259,
-      "content_sha256": "6c5d2376cc3d077952631a971eb88fd78d2b5af71900e7f93f909f2fb08305a2",
+      "content_bytes": 20019,
+      "content_sha256": "6cf814bd1de1ec833aed5f1dc995877f6c6a19830606b073127ced59f577d977",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/uart.hpp"
     },
     {
@@ -543,8 +543,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5081,
-      "content_sha256": "8f6cb09b36467b7a4c6a4b4240ca838021d714b1f3e837e728bf9cc858ca6642",
+      "content_bytes": 8062,
+      "content_sha256": "8a882a8b51dccccd60db5985b41c96df1fba9f08a786e842f4ec1903f30d6f69",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/i2c.hpp"
     },
     {
@@ -579,8 +579,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 13694,
-      "content_sha256": "d93d9c05a474c24e1cf4b033faa410becfd3fc413431d87825cc2d9a81b97c1f",
+      "content_bytes": 15674,
+      "content_sha256": "8aca7d8b67da84412fbfc21cfb1d5c6692a17aa6dc531c634fba2f4e686569d5",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/spi.hpp"
     },
     {
@@ -591,8 +591,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 17271,
-      "content_sha256": "80d43589cd639034933e16de43cba4feb9f0614c2abe603e1bc321d15a79ea14",
+      "content_bytes": 20031,
+      "content_sha256": "35e951c8b3fe8fe4e80d15943aa5f36236668cb147d443fa1b8be7cba76484f7",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/uart.hpp"
     },
     {
@@ -711,14 +711,14 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3968405,
-      "content_sha256": "187375b1889345881ecd7fedfa54aff8ca4f0720d649c02144bdf3e947164897",
+      "content_bytes": 3969734,
+      "content_sha256": "44c7615aee1e68e024cc9b5eb20e7035b1a8996edc8d63882099f98fe215f908",
       "path": "raspberrypi/rp2040/metadata/devices/pico.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 4010435,
-      "content_sha256": "5e1e03aff9557d4efdc6921293e2b2002387df28954399d724b563bceac9860f",
+      "content_bytes": 4011796,
+      "content_sha256": "4a399cc2d72a85601e52250932c7a910279d4482560872b973c9433b6cc7c350",
       "path": "raspberrypi/rp2040/metadata/devices/rp2040.json"
     },
     {
@@ -799,7 +799,7 @@
     "family": "rp2040",
     "vendor": "raspberrypi"
   },
-  "target_artifact_revision": "1e69496aa60e268ac531f5dab01a0a178e6ee6f56f4b83c24b353b1c86b2c848",
+  "target_artifact_revision": "84854c888eb5b0c361196b0205e71bae842b97c2803daa27ed2fd9964ff5106f",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
