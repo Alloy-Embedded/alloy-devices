@@ -3,6 +3,7 @@
 #include <array>
 #include <cstdint>
 #include "common.hpp"
+#include "../pins.hpp"
 
 namespace microchip {
 namespace same70 {
@@ -19,6 +20,17 @@ struct UsbSemanticTraits {
   static constexpr bool kSupportsHostMode = false;
   static constexpr bool kHasDedicatedEndpointConfig = false;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kStatusRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = kInvalidRegisterRef;
@@ -55,6 +67,17 @@ struct UsbSemanticTraits<PeripheralId::USBHS> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = true;
+  static constexpr bool kHardwarePresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x40038000u;
+  static constexpr std::uint16_t kEndpointCount = 7u;
+  static constexpr bool kSupportsHighSpeed = true;
+  static constexpr bool kSupportsDma = true;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 7u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::register_usbhs_ctrl, 0x40038000u, 2048u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::register_usbhs_sr, 0x40038000u, 2052u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = kInvalidRegisterRef;

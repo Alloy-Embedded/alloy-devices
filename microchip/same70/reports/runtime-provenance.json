@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "atsame70n21b",
-      "fact_count": 807,
+      "fact_count": 809,
       "facts": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/startup.hpp",
@@ -14399,6 +14399,62 @@
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70n21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70N21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70n21b/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:dma",
             "name": "runtime-supported",
             "peripheral": null,
@@ -22744,7 +22800,7 @@
     },
     {
       "device": "atsame70q21b",
-      "fact_count": 963,
+      "fact_count": 965,
       "facts": [
         {
           "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/startup.hpp",
@@ -39963,6 +40019,62 @@
             ],
             "source_paths": [
               "same70b/atdf/ATSAME70Q21B.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/same70/generated/runtime/devices/atsame70q21b/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "microchip-same70-atsame70q21b-bootstrap",
+              "microchip-same70-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "same70b/svd/ATSAME70Q21B.svd"
             ]
           },
           "supporting_fact_ids": []

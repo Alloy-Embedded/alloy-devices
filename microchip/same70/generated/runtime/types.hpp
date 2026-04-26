@@ -70,6 +70,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_chipid,
   class_coredebug,
   class_dac,
+  class_device,
   class_dma,
   class_dwt,
   class_efc,
