@@ -83,6 +83,7 @@ struct SpiSemanticTraits {
   static constexpr RuntimeFieldRef kTdField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -156,6 +157,7 @@ struct SpiSemanticTraits<PeripheralId::SPI2> {
   static constexpr RuntimeFieldRef kTdField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{19u}};
 };
 
 inline constexpr std::array<PeripheralId, 1> kSpiSemanticPeripherals = {{
