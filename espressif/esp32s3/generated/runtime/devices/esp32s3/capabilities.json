@@ -17,6 +17,30 @@
       "value": "DATA"
     },
     {
+      "capability_id": "device:core-count",
+      "name": "core-count",
+      "peripheral": null,
+      "peripheral_class": "device",
+      "scope": "device",
+      "value": "2"
+    },
+    {
+      "capability_id": "device:multicore-topology",
+      "name": "multicore-topology",
+      "peripheral": null,
+      "peripheral_class": "device",
+      "scope": "device",
+      "value": "xtensa-dual-core"
+    },
+    {
+      "capability_id": "device:secondary-core-release-register",
+      "name": "secondary-core-release-register",
+      "peripheral": null,
+      "peripheral_class": "device",
+      "scope": "device",
+      "value": "[register:system:core-1-control-0,register:system:core-1-control-1]"
+    },
+    {
       "capability_id": "runtime-support:dma",
       "name": "runtime-supported",
       "peripheral": null,

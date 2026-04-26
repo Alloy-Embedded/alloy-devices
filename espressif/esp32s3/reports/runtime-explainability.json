@@ -111,7 +111,7 @@
           "peripheral_class": "usb"
         }
       ],
-      "capability_decision_count": 25,
+      "capability_decision_count": 28,
       "capability_decisions": [
         {
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
@@ -134,6 +134,39 @@
           "peripheral_class": "adc",
           "scope": "dma_binding",
           "value": "DATA"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "decision_id": "device:core-count",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "core-count",
+          "peripheral": null,
+          "peripheral_class": "device",
+          "scope": "device",
+          "value": "2"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "decision_id": "device:multicore-topology",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "multicore-topology",
+          "peripheral": null,
+          "peripheral_class": "device",
+          "scope": "device",
+          "value": "xtensa-dual-core"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "decision_id": "device:secondary-core-release-register",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "secondary-core-release-register",
+          "peripheral": null,
+          "peripheral_class": "device",
+          "scope": "device",
+          "value": "[register:system:core-1-control-0,register:system:core-1-control-1]"
         },
         {
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
@@ -453,7 +486,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 20,
+      "heuristic_fact_count": 24,
       "heuristic_facts": [
         {
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
@@ -465,6 +498,24 @@
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
           "explanation": "Capability is synthesized from a published DMA binding for the signal.",
           "fact_id": "runtime-dma:APB_SARADC:DMA:ADC:DATA",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "device:core-count",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "device:multicore-topology",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "device:secondary-core-release-register",
           "fact_kind": "capability"
         },
         {
@@ -573,6 +624,12 @@
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/system_sequences.hpp",
           "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
           "fact_id": "default_bringup:8",
+          "fact_kind": "system_sequence_step"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/system_sequences.hpp",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "fact_id": "default_bringup:9",
           "fact_kind": "system_sequence_step"
         }
       ],
@@ -1017,6 +1074,18 @@
           "sequence_id": "default_bringup",
           "startup_descriptor_id": null,
           "system_clock_profile_id": "default-pll-240mhz"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/system_sequences.hpp",
+          "decision_id": "default_bringup:9",
+          "decision_kind": "inferred_system_sequence",
+          "explanation": "Bring-up step is synthesized from typed startup, startup-control, and default clock facts.",
+          "kind": "secondary-core-release",
+          "ordinal": 9,
+          "peripheral": null,
+          "sequence_id": "default_bringup",
+          "startup_descriptor_id": null,
+          "system_clock_profile_id": null
         }
       ],
       "unsupported_runtime_peripherals": []

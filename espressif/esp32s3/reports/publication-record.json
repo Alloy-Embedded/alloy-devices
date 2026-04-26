@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "e14e79c22013a8eaf3a62ea6fd07b020ec6e5d258989739d05898d1867bac9ce",
+    "canonical_ir_sha256": "d29bc47acbb5336fed047a78c09cddd01bcbfc07b9a114e9a09699fec9c559c4",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -153,7 +153,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "fe680bb487748b62827c13e6d198bb2765a8b270cc57e5340a504c8a8b280437",
+      "content_sha256": "dd959691eb476826a9383f450664ce475a04bfc064a04b73c69acf13dedcbf06",
       "path": "espressif/esp32s3/artifact-manifest.json"
     },
     {
@@ -165,7 +165,7 @@
     {
       "artifact_kind": "generated-cpp",
       "content_bytes": 19270,
-      "content_sha256": "fd97fbbdc71f4bda9e2c42cddc531d1fdac233014b4f82db1ddf6a3b39c3c428",
+      "content_sha256": "082465f7b4503a6426714bbadc497b8d5e23128b2ca5e3164d23300c3418d043",
       "path": "espressif/esp32s3/generated/devices/esp32s3/startup.cpp"
     },
     {
@@ -176,14 +176,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 26160,
-      "content_sha256": "63e377e0cad34dee9b6089876a879ac5c42dfd16e17968267c0015024f8f4d3d",
+      "content_bytes": 28702,
+      "content_sha256": "ae2a3ef144730ed8b433155b766296c8fb19f952f6589ffb6511cc67b3734bc7",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp"
     },
     {
       "artifact_kind": "generated-runtime-metadata",
-      "content_bytes": 5580,
-      "content_sha256": "6e5f2264b307e9575ce3973ef7fc4b6b60a9d1a2ef2aa42aff37dc66d0ff03db",
+      "content_bytes": 6292,
+      "content_sha256": "22e45644a8d2d69cc09bd1330318f3b7d75979aeab8f566698d20d5638aa3108",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.json"
     },
     {
@@ -224,14 +224,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 12730,
-      "content_sha256": "4674f69fbbfb064518f8a9979e281020da4c16dc0009b287d77df9ee0559367f",
+      "content_bytes": 13340,
+      "content_sha256": "0e844fda0df8c9009f857bdd2758fbe54dff4e84f02dd5c39c91da7794db83df",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/adc.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4907,
-      "content_sha256": "b7c62b99a8c8bda072aaed8d72e36d90b4bb2bbfcfb5b13e92e312f885124a05",
+      "content_bytes": 4930,
+      "content_sha256": "c8cf3143db910334d8e1b985d106af5ca682d93a6c687046741aba5a9dcc7bd2",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/can.hpp"
     },
     {
@@ -248,86 +248,86 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 7008,
-      "content_sha256": "7ef72d3b41bacb9454d5b385244af78ac9ed7eebecaed2cd512b95063bdc1a0d",
+      "content_bytes": 7507,
+      "content_sha256": "8a87f32c6c3190349656c19926a2da29e086ccbbbdb44fa224f719fe26b26374",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/dma.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2895,
-      "content_sha256": "b0d7af336efb03b015eb200fd58355424890e86f970c4ccbd80c1541fb3d1b2d",
+      "content_bytes": 2918,
+      "content_sha256": "00b1739f34b45c93fc0f83789d9165f55ec5319027741bddd6ae97f9e987d32f",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/eth.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2071,
-      "content_sha256": "81cf18e900b68a21fa63253301348c25fad7e7621cac55edb88c72e465707acf",
+      "content_bytes": 22905,
+      "content_sha256": "d7549fc42042014e0b6a7ddf7dd53d980df3d7709604dd8e9cee92d038eca6f4",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/gpio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5058,
-      "content_sha256": "a50ca92777a3a79cbfc34eca29fa756fcb70317205055bcae9e0ef5677abd555",
+      "content_bytes": 5081,
+      "content_sha256": "f68d2183e687ea11fe662bfce920bf8ae4a5b90dc1a1730423137e64ef507443",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/i2c.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 414,
-      "content_sha256": "477df56a67cfed4de7b636c29d0a218549e808f252c6f898c1ea7ba24caf9c83",
+      "content_bytes": 1112,
+      "content_sha256": "8a6ad153948726e75d9406c228cd3a82d7326d08b9ec96389990e2edfe03d09b",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/pio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2993,
-      "content_sha256": "0f39dacd0831aa5147f2b400a65ae2d5523b0f599fbae58b509b8dc9c999a1c6",
+      "content_bytes": 3423,
+      "content_sha256": "cf9d9f042b7070ec9789726285eae5f96eedeff911a94bead04de2a1a38d6cff",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/pwm.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3823,
-      "content_sha256": "e3be5b9c716570a41cbef9af98bd235d4bdd241e089ec09804e02a76fda9a639",
+      "content_bytes": 3846,
+      "content_sha256": "b02a08036bc6d2c4d033149f359c898bc2188a916880a2d98f0b2b77b673cfdb",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/qspi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3606,
-      "content_sha256": "679cbd4164e52f4c8f43b4988d9cc6ed9af1c22d66590864273673b3a53d9134",
+      "content_bytes": 3629,
+      "content_sha256": "8cb87815c4409fb5bc4b2975b3cf6c95e4c0c89def50f3837fa241258a8d03de",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/rtc.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4138,
-      "content_sha256": "12a10d354efbde29050bfb8dd008a7e00ee08fd73b6e2b46838bf3ac42c0439b",
+      "content_bytes": 4161,
+      "content_sha256": "fcf1372c884316fbfd538844312ef53ac1efaa0ffc1eb18f0080d11d42c04733",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/sdmmc.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 6527,
-      "content_sha256": "fd8fa87afaa0b801ed13b60d3111a22b89b12d6894ea616a9c0cdf2efb786696",
+      "content_bytes": 12428,
+      "content_sha256": "f80b39c26d907c3e70c4a55f628a1745d3493141f893541013572f77869fe8f0",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/spi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4669,
-      "content_sha256": "4002284e83989f59f82da6cbe13c05f8adc5383fecfa1699ce0f5d79e4ae8422",
+      "content_bytes": 5119,
+      "content_sha256": "9e3bf2577e024bf543fdc83aa32b4af565bc25821dcf2201efb66a92be334552",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/timer.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 14335,
-      "content_sha256": "51999a38ad56020b6a5677588d5c075b33c40d879801ebe06b944499772d07d2",
+      "content_bytes": 21032,
+      "content_sha256": "08e0a7c868e91f14a84b160ec923839b2b6cf1a58f4c1d0caad6d1d03f6f1aac",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/uart.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2811,
-      "content_sha256": "061ed11de8ef9caeff8c91e4a2fcbd415c9beb4f2c83305eb54cf601d697ca73",
+      "content_bytes": 3397,
+      "content_sha256": "a847f13b33f16bf4cde628564368f4862843e42bbf9d35df84040cba9010bc86",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/usb.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2337,
-      "content_sha256": "d6f791c4c72ad539ce9790b1e6064d201c2e34869817d4145ce7824d9a12c56d",
+      "content_bytes": 2360,
+      "content_sha256": "30c9534a4aba558c57d7d58b6ea65124ad187156552b3c06f7a14a2da2c3e1f2",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/watchdog.hpp"
     },
     {
@@ -374,8 +374,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 247137,
-      "content_sha256": "f0ef22f888f8bf349b2c95e2cf04660094739d3f4c47323296e4b3e3f4245c29",
+      "content_bytes": 286794,
+      "content_sha256": "2cf2dfa32928109fc6f7cd71c9a2e2bd33a297c7720d80d3f16aa2ea0f4b556e",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/registers.hpp"
     },
     {
@@ -404,8 +404,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3456,
-      "content_sha256": "e38f2ae617b8eb4588de33cee576e02170fb6f5ca6636bdf6b71fae87454929f",
+      "content_bytes": 4804,
+      "content_sha256": "e0dee8e0a63439d0f63f9590e638e60b0968b052f34c55b1cc73c170165cf81a",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/system_sequences.hpp"
     },
     {
@@ -416,8 +416,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4429,
-      "content_sha256": "cedddcf04572da5f5d7ceb77e9c96ff363817d8c22122c592d46617a45a12d0f",
+      "content_bytes": 4445,
+      "content_sha256": "cb10a04c02cdfdeb08ff5b0f0e521d4b9b2811021583681cde0bc70512ac3a28",
       "path": "espressif/esp32s3/generated/runtime/types.hpp"
     },
     {
@@ -434,8 +434,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 5943212,
-      "content_sha256": "9408d007c2b9d7d36d29957b55d5bb29f98d77c1be387b57b3bd6b515189a700",
+      "content_bytes": 5952646,
+      "content_sha256": "f6a08f9637c654c5284d6bfb7ceb3bd656479ffd40de118a1b1af45edb5fdeba",
       "path": "espressif/esp32s3/metadata/devices/esp32s3.json"
     },
     {
@@ -476,26 +476,26 @@
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 4664,
-      "content_sha256": "c6498ee3913da12389c69284844dce3a8d4fdb6c9528c71f9b47edd673f6e1d3",
+      "content_bytes": 5360,
+      "content_sha256": "d2d5303647659813f547640c211d513a5a79506fdb74cc8885fa2aa78460aa11",
       "path": "espressif/esp32s3/reports/runtime-capability-summary.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 3002,
-      "content_sha256": "7c1c8eaf48629aafb224c9b3e4601def6c18672f772b09dfb48f5dcd18261415",
+      "content_bytes": 3427,
+      "content_sha256": "c27d99a2cf7bac61e6977ce5870dfaea789469b1db96932ced52de2a9c65658c",
       "path": "espressif/esp32s3/reports/runtime-compatibility-matrix.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 45648,
-      "content_sha256": "c28317c3fe3fcb303701222f30ea72c81f34211ebded4b3efae87faf366a0bd5",
+      "content_bytes": 49113,
+      "content_sha256": "8276e41940ccae6f9737c2500e68d7b975766b450212957829bb6d061b84e9f3",
       "path": "espressif/esp32s3/reports/runtime-explainability.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 173261,
-      "content_sha256": "b46f6a1901b88467d3f859dd61b088e0786bcfe0396be759d482bbfd2ec74e56",
+      "content_bytes": 177259,
+      "content_sha256": "8a57361775c70dbeccd4439d5d0ede5d9ecb4e5a042e701875f14cda4937f7a4",
       "path": "espressif/esp32s3/reports/runtime-provenance.json"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32s3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "3ddb1d6154d4c2d17af65296b5ad0bafc26ba52624da8db479593d8e84dbdec3",
+  "target_artifact_revision": "6ce61c6eb0b279d6cfeadc84f16536d7369a714d3306726a97d6e8b246e68943",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
