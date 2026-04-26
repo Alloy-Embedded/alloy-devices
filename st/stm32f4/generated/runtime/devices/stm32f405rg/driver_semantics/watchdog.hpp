@@ -42,6 +42,7 @@ struct WatchdogSemanticTraits {
   static constexpr RuntimeFieldRef kStatusTimeoutField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kStatusErrorField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRequiredConfigField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -74,6 +75,7 @@ struct WatchdogSemanticTraits<PeripheralId::IWDG> {
   static constexpr RuntimeFieldRef kStatusTimeoutField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kStatusErrorField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRequiredConfigField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -106,6 +108,7 @@ struct WatchdogSemanticTraits<PeripheralId::WWDG> {
   static constexpr RuntimeFieldRef kStatusTimeoutField = RuntimeFieldRef{FieldId::field_wwdg_sr_ewif, RuntimeRegisterRef{RegisterId::register_wwdg_sr, 0x40002C00u, 8u, true}, 0u, 1u, true};
   static constexpr RuntimeFieldRef kStatusErrorField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRequiredConfigField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 2> kWatchdogSemanticPeripherals = {{

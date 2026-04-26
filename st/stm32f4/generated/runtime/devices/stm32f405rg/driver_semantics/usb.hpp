@@ -57,6 +57,7 @@ struct UsbSemanticTraits {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -104,6 +105,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_DEVICE> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000800u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -151,6 +153,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_GLOBAL> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000000u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -198,6 +201,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_HOST> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000400u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -245,6 +249,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_PWRCLK> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -292,6 +297,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_DEVICE> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40040800u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -339,6 +345,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_GLOBAL> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40040000u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -386,6 +393,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_HOST> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40040400u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -433,6 +441,7 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_PWRCLK> {
   static constexpr RuntimeFieldRef kAddressEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kAddressField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::none, 0x40040E00u, 2048u, true}, 4u, 7u, true};
   static constexpr RuntimeFieldRef kClockUsableField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 8> kUsbSemanticPeripherals = {{
