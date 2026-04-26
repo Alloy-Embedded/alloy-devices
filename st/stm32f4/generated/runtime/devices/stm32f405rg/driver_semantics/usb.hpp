@@ -3,6 +3,7 @@
 #include <array>
 #include <cstdint>
 #include "common.hpp"
+#include "../pins.hpp"
 
 namespace st {
 namespace stm32f4 {
@@ -19,6 +20,17 @@ struct UsbSemanticTraits {
   static constexpr bool kSupportsHostMode = false;
   static constexpr bool kHasDedicatedEndpointConfig = false;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kStatusRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = kInvalidRegisterRef;
@@ -55,6 +67,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_DEVICE> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000800u, 20u, true};
@@ -91,6 +114,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_GLOBAL> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000000u, 20u, true};
@@ -127,6 +161,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_HOST> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000400u, 20u, true};
@@ -163,6 +208,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_FS_PWRCLK> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x50000E00u, 20u, true};
@@ -199,6 +255,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_DEVICE> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40040800u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040800u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040800u, 20u, true};
@@ -235,6 +302,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_GLOBAL> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40040000u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040000u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040000u, 20u, true};
@@ -271,6 +349,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_HOST> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40040400u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040400u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040400u, 20u, true};
@@ -307,6 +396,17 @@ struct UsbSemanticTraits<PeripheralId::OTG_HS_PWRCLK> {
   static constexpr bool kSupportsHostMode = true;
   static constexpr bool kHasDedicatedEndpointConfig = true;
   static constexpr bool kHasClockFreeze = false;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
+  static constexpr std::uint16_t kEndpointCount = 0u;
+  static constexpr bool kSupportsHighSpeed = false;
+  static constexpr bool kSupportsDma = false;
+  static constexpr bool kCrystalless = false;
+  static constexpr std::uintptr_t kDpramBaseAddress = 0u;
+  static constexpr std::uint32_t kDpramSizeBytes = 0u;
+  static constexpr std::uint8_t kDmaChannelCount = 0u;
+  static constexpr PinId kDmPin = PinId::none;
+  static constexpr PinId kDpPin = PinId::none;
   static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40040E00u, 12u, true};
   static constexpr RuntimeRegisterRef kStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040E00u, 20u, true};
   static constexpr RuntimeRegisterRef kInterruptStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40040E00u, 20u, true};

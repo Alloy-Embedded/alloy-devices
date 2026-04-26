@@ -1146,6 +1146,12 @@ enum class RegisterId : std::uint16_t {
   register_wwdg_sr,
 };
 
+enum class RegisterRole : std::uint16_t {
+  none,
+  general,
+  secondary_core_release,
+};
+
 template<RegisterId Id>
 struct RegisterTraits {
   static constexpr bool kPresent = false;
@@ -1153,6 +1159,7 @@ struct RegisterTraits {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = -1;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1162,6 +1169,7 @@ struct RegisterTraits<RegisterId::register_adc1_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1171,6 +1179,7 @@ struct RegisterTraits<RegisterId::register_adc1_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1180,6 +1189,7 @@ struct RegisterTraits<RegisterId::register_adc1_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1189,6 +1199,7 @@ struct RegisterTraits<RegisterId::register_adc1_smpr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1198,6 +1209,7 @@ struct RegisterTraits<RegisterId::register_adc1_smpr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1207,6 +1219,7 @@ struct RegisterTraits<RegisterId::register_adc1_jofr1> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1216,6 +1229,7 @@ struct RegisterTraits<RegisterId::register_adc1_jofr2> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1225,6 +1239,7 @@ struct RegisterTraits<RegisterId::register_adc1_jofr3> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1234,6 +1249,7 @@ struct RegisterTraits<RegisterId::register_adc1_jofr4> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1243,6 +1259,7 @@ struct RegisterTraits<RegisterId::register_adc1_htr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1252,6 +1269,7 @@ struct RegisterTraits<RegisterId::register_adc1_ltr> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1261,6 +1279,7 @@ struct RegisterTraits<RegisterId::register_adc1_sqr1> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1270,6 +1289,7 @@ struct RegisterTraits<RegisterId::register_adc1_sqr2> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1279,6 +1299,7 @@ struct RegisterTraits<RegisterId::register_adc1_sqr3> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1288,6 +1309,7 @@ struct RegisterTraits<RegisterId::register_adc1_jsqr> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1297,6 +1319,7 @@ struct RegisterTraits<RegisterId::register_adc1_jdr1> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1306,6 +1329,7 @@ struct RegisterTraits<RegisterId::register_adc1_jdr2> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1315,6 +1339,7 @@ struct RegisterTraits<RegisterId::register_adc1_jdr3> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1324,6 +1349,7 @@ struct RegisterTraits<RegisterId::register_adc1_jdr4> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1333,6 +1359,7 @@ struct RegisterTraits<RegisterId::register_adc1_dr> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1342,6 +1369,7 @@ struct RegisterTraits<RegisterId::register_adc2_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1351,6 +1379,7 @@ struct RegisterTraits<RegisterId::register_adc2_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1360,6 +1389,7 @@ struct RegisterTraits<RegisterId::register_adc2_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1369,6 +1399,7 @@ struct RegisterTraits<RegisterId::register_adc2_smpr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1378,6 +1409,7 @@ struct RegisterTraits<RegisterId::register_adc2_smpr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1387,6 +1419,7 @@ struct RegisterTraits<RegisterId::register_adc2_jofr1> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1396,6 +1429,7 @@ struct RegisterTraits<RegisterId::register_adc2_jofr2> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1405,6 +1439,7 @@ struct RegisterTraits<RegisterId::register_adc2_jofr3> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1414,6 +1449,7 @@ struct RegisterTraits<RegisterId::register_adc2_jofr4> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1423,6 +1459,7 @@ struct RegisterTraits<RegisterId::register_adc2_htr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1432,6 +1469,7 @@ struct RegisterTraits<RegisterId::register_adc2_ltr> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1441,6 +1479,7 @@ struct RegisterTraits<RegisterId::register_adc2_sqr1> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1450,6 +1489,7 @@ struct RegisterTraits<RegisterId::register_adc2_sqr2> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1459,6 +1499,7 @@ struct RegisterTraits<RegisterId::register_adc2_sqr3> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1468,6 +1509,7 @@ struct RegisterTraits<RegisterId::register_adc2_jsqr> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1477,6 +1519,7 @@ struct RegisterTraits<RegisterId::register_adc2_jdr1> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1486,6 +1529,7 @@ struct RegisterTraits<RegisterId::register_adc2_jdr2> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1495,6 +1539,7 @@ struct RegisterTraits<RegisterId::register_adc2_jdr3> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1504,6 +1549,7 @@ struct RegisterTraits<RegisterId::register_adc2_jdr4> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1513,6 +1559,7 @@ struct RegisterTraits<RegisterId::register_adc2_dr> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1522,6 +1569,7 @@ struct RegisterTraits<RegisterId::register_adc3_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1531,6 +1579,7 @@ struct RegisterTraits<RegisterId::register_adc3_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1540,6 +1589,7 @@ struct RegisterTraits<RegisterId::register_adc3_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1549,6 +1599,7 @@ struct RegisterTraits<RegisterId::register_adc3_smpr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1558,6 +1609,7 @@ struct RegisterTraits<RegisterId::register_adc3_smpr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1567,6 +1619,7 @@ struct RegisterTraits<RegisterId::register_adc3_jofr1> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1576,6 +1629,7 @@ struct RegisterTraits<RegisterId::register_adc3_jofr2> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1585,6 +1639,7 @@ struct RegisterTraits<RegisterId::register_adc3_jofr3> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1594,6 +1649,7 @@ struct RegisterTraits<RegisterId::register_adc3_jofr4> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1603,6 +1659,7 @@ struct RegisterTraits<RegisterId::register_adc3_htr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1612,6 +1669,7 @@ struct RegisterTraits<RegisterId::register_adc3_ltr> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1621,6 +1679,7 @@ struct RegisterTraits<RegisterId::register_adc3_sqr1> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1630,6 +1689,7 @@ struct RegisterTraits<RegisterId::register_adc3_sqr2> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1639,6 +1699,7 @@ struct RegisterTraits<RegisterId::register_adc3_sqr3> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1648,6 +1709,7 @@ struct RegisterTraits<RegisterId::register_adc3_jsqr> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1657,6 +1719,7 @@ struct RegisterTraits<RegisterId::register_adc3_jdr1> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1666,6 +1729,7 @@ struct RegisterTraits<RegisterId::register_adc3_jdr2> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1675,6 +1739,7 @@ struct RegisterTraits<RegisterId::register_adc3_jdr3> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1684,6 +1749,7 @@ struct RegisterTraits<RegisterId::register_adc3_jdr4> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1693,6 +1759,7 @@ struct RegisterTraits<RegisterId::register_adc3_dr> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1702,6 +1769,7 @@ struct RegisterTraits<RegisterId::register_can1_mcr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1711,6 +1779,7 @@ struct RegisterTraits<RegisterId::register_can1_msr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1720,6 +1789,7 @@ struct RegisterTraits<RegisterId::register_can1_tsr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1729,6 +1799,7 @@ struct RegisterTraits<RegisterId::register_can1_rf0r> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1738,6 +1809,7 @@ struct RegisterTraits<RegisterId::register_can1_rf1r> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1747,6 +1819,7 @@ struct RegisterTraits<RegisterId::register_can1_ier> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1756,6 +1829,7 @@ struct RegisterTraits<RegisterId::register_can1_esr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1765,6 +1839,7 @@ struct RegisterTraits<RegisterId::register_can1_btr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1774,6 +1849,7 @@ struct RegisterTraits<RegisterId::register_can1_ti0r> {
   static constexpr std::uint32_t kOffsetBytes = 384u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1783,6 +1859,7 @@ struct RegisterTraits<RegisterId::register_can1_tdt0r> {
   static constexpr std::uint32_t kOffsetBytes = 388u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1792,6 +1869,7 @@ struct RegisterTraits<RegisterId::register_can1_tdl0r> {
   static constexpr std::uint32_t kOffsetBytes = 392u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1801,6 +1879,7 @@ struct RegisterTraits<RegisterId::register_can1_tdh0r> {
   static constexpr std::uint32_t kOffsetBytes = 396u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1810,6 +1889,7 @@ struct RegisterTraits<RegisterId::register_can1_ti1r> {
   static constexpr std::uint32_t kOffsetBytes = 400u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1819,6 +1899,7 @@ struct RegisterTraits<RegisterId::register_can1_tdt1r> {
   static constexpr std::uint32_t kOffsetBytes = 404u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1828,6 +1909,7 @@ struct RegisterTraits<RegisterId::register_can1_tdl1r> {
   static constexpr std::uint32_t kOffsetBytes = 408u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1837,6 +1919,7 @@ struct RegisterTraits<RegisterId::register_can1_tdh1r> {
   static constexpr std::uint32_t kOffsetBytes = 412u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1846,6 +1929,7 @@ struct RegisterTraits<RegisterId::register_can1_ti2r> {
   static constexpr std::uint32_t kOffsetBytes = 416u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1855,6 +1939,7 @@ struct RegisterTraits<RegisterId::register_can1_tdt2r> {
   static constexpr std::uint32_t kOffsetBytes = 420u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1864,6 +1949,7 @@ struct RegisterTraits<RegisterId::register_can1_tdl2r> {
   static constexpr std::uint32_t kOffsetBytes = 424u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1873,6 +1959,7 @@ struct RegisterTraits<RegisterId::register_can1_tdh2r> {
   static constexpr std::uint32_t kOffsetBytes = 428u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1882,6 +1969,7 @@ struct RegisterTraits<RegisterId::register_can1_ri0r> {
   static constexpr std::uint32_t kOffsetBytes = 432u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1891,6 +1979,7 @@ struct RegisterTraits<RegisterId::register_can1_rdt0r> {
   static constexpr std::uint32_t kOffsetBytes = 436u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1900,6 +1989,7 @@ struct RegisterTraits<RegisterId::register_can1_rdl0r> {
   static constexpr std::uint32_t kOffsetBytes = 440u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1909,6 +1999,7 @@ struct RegisterTraits<RegisterId::register_can1_rdh0r> {
   static constexpr std::uint32_t kOffsetBytes = 444u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1918,6 +2009,7 @@ struct RegisterTraits<RegisterId::register_can1_ri1r> {
   static constexpr std::uint32_t kOffsetBytes = 448u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1927,6 +2019,7 @@ struct RegisterTraits<RegisterId::register_can1_rdt1r> {
   static constexpr std::uint32_t kOffsetBytes = 452u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1936,6 +2029,7 @@ struct RegisterTraits<RegisterId::register_can1_rdl1r> {
   static constexpr std::uint32_t kOffsetBytes = 456u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1945,6 +2039,7 @@ struct RegisterTraits<RegisterId::register_can1_rdh1r> {
   static constexpr std::uint32_t kOffsetBytes = 460u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1954,6 +2049,7 @@ struct RegisterTraits<RegisterId::register_can1_fmr> {
   static constexpr std::uint32_t kOffsetBytes = 512u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1963,6 +2059,7 @@ struct RegisterTraits<RegisterId::register_can1_fm1r> {
   static constexpr std::uint32_t kOffsetBytes = 516u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1972,6 +2069,7 @@ struct RegisterTraits<RegisterId::register_can1_fs1r> {
   static constexpr std::uint32_t kOffsetBytes = 524u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1981,6 +2079,7 @@ struct RegisterTraits<RegisterId::register_can1_ffa1r> {
   static constexpr std::uint32_t kOffsetBytes = 532u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1990,6 +2089,7 @@ struct RegisterTraits<RegisterId::register_can1_fa1r> {
   static constexpr std::uint32_t kOffsetBytes = 540u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -1999,6 +2099,7 @@ struct RegisterTraits<RegisterId::register_can1_f0r1> {
   static constexpr std::uint32_t kOffsetBytes = 576u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2008,6 +2109,7 @@ struct RegisterTraits<RegisterId::register_can1_f0r2> {
   static constexpr std::uint32_t kOffsetBytes = 580u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2017,6 +2119,7 @@ struct RegisterTraits<RegisterId::register_can1_f1r1> {
   static constexpr std::uint32_t kOffsetBytes = 584u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2026,6 +2129,7 @@ struct RegisterTraits<RegisterId::register_can1_f1r2> {
   static constexpr std::uint32_t kOffsetBytes = 588u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2035,6 +2139,7 @@ struct RegisterTraits<RegisterId::register_can1_f2r1> {
   static constexpr std::uint32_t kOffsetBytes = 592u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2044,6 +2149,7 @@ struct RegisterTraits<RegisterId::register_can1_f2r2> {
   static constexpr std::uint32_t kOffsetBytes = 596u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2053,6 +2159,7 @@ struct RegisterTraits<RegisterId::register_can1_f3r1> {
   static constexpr std::uint32_t kOffsetBytes = 600u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2062,6 +2169,7 @@ struct RegisterTraits<RegisterId::register_can1_f3r2> {
   static constexpr std::uint32_t kOffsetBytes = 604u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2071,6 +2179,7 @@ struct RegisterTraits<RegisterId::register_can1_f4r1> {
   static constexpr std::uint32_t kOffsetBytes = 608u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2080,6 +2189,7 @@ struct RegisterTraits<RegisterId::register_can1_f4r2> {
   static constexpr std::uint32_t kOffsetBytes = 612u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2089,6 +2199,7 @@ struct RegisterTraits<RegisterId::register_can1_f5r1> {
   static constexpr std::uint32_t kOffsetBytes = 616u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2098,6 +2209,7 @@ struct RegisterTraits<RegisterId::register_can1_f5r2> {
   static constexpr std::uint32_t kOffsetBytes = 620u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2107,6 +2219,7 @@ struct RegisterTraits<RegisterId::register_can1_f6r1> {
   static constexpr std::uint32_t kOffsetBytes = 624u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2116,6 +2229,7 @@ struct RegisterTraits<RegisterId::register_can1_f6r2> {
   static constexpr std::uint32_t kOffsetBytes = 628u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2125,6 +2239,7 @@ struct RegisterTraits<RegisterId::register_can1_f7r1> {
   static constexpr std::uint32_t kOffsetBytes = 632u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2134,6 +2249,7 @@ struct RegisterTraits<RegisterId::register_can1_f7r2> {
   static constexpr std::uint32_t kOffsetBytes = 636u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2143,6 +2259,7 @@ struct RegisterTraits<RegisterId::register_can1_f8r1> {
   static constexpr std::uint32_t kOffsetBytes = 640u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2152,6 +2269,7 @@ struct RegisterTraits<RegisterId::register_can1_f8r2> {
   static constexpr std::uint32_t kOffsetBytes = 644u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2161,6 +2279,7 @@ struct RegisterTraits<RegisterId::register_can1_f9r1> {
   static constexpr std::uint32_t kOffsetBytes = 648u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2170,6 +2289,7 @@ struct RegisterTraits<RegisterId::register_can1_f9r2> {
   static constexpr std::uint32_t kOffsetBytes = 652u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2179,6 +2299,7 @@ struct RegisterTraits<RegisterId::register_can1_f10r1> {
   static constexpr std::uint32_t kOffsetBytes = 656u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2188,6 +2309,7 @@ struct RegisterTraits<RegisterId::register_can1_f10r2> {
   static constexpr std::uint32_t kOffsetBytes = 660u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2197,6 +2319,7 @@ struct RegisterTraits<RegisterId::register_can1_f11r1> {
   static constexpr std::uint32_t kOffsetBytes = 664u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2206,6 +2329,7 @@ struct RegisterTraits<RegisterId::register_can1_f11r2> {
   static constexpr std::uint32_t kOffsetBytes = 668u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2215,6 +2339,7 @@ struct RegisterTraits<RegisterId::register_can1_f12r1> {
   static constexpr std::uint32_t kOffsetBytes = 672u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2224,6 +2349,7 @@ struct RegisterTraits<RegisterId::register_can1_f12r2> {
   static constexpr std::uint32_t kOffsetBytes = 676u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2233,6 +2359,7 @@ struct RegisterTraits<RegisterId::register_can1_f13r1> {
   static constexpr std::uint32_t kOffsetBytes = 680u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2242,6 +2369,7 @@ struct RegisterTraits<RegisterId::register_can1_f13r2> {
   static constexpr std::uint32_t kOffsetBytes = 684u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2251,6 +2379,7 @@ struct RegisterTraits<RegisterId::register_can1_f14r1> {
   static constexpr std::uint32_t kOffsetBytes = 688u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2260,6 +2389,7 @@ struct RegisterTraits<RegisterId::register_can1_f14r2> {
   static constexpr std::uint32_t kOffsetBytes = 692u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2269,6 +2399,7 @@ struct RegisterTraits<RegisterId::register_can1_f15r1> {
   static constexpr std::uint32_t kOffsetBytes = 696u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2278,6 +2409,7 @@ struct RegisterTraits<RegisterId::register_can1_f15r2> {
   static constexpr std::uint32_t kOffsetBytes = 700u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2287,6 +2419,7 @@ struct RegisterTraits<RegisterId::register_can1_f16r1> {
   static constexpr std::uint32_t kOffsetBytes = 704u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2296,6 +2429,7 @@ struct RegisterTraits<RegisterId::register_can1_f16r2> {
   static constexpr std::uint32_t kOffsetBytes = 708u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2305,6 +2439,7 @@ struct RegisterTraits<RegisterId::register_can1_f17r1> {
   static constexpr std::uint32_t kOffsetBytes = 712u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2314,6 +2449,7 @@ struct RegisterTraits<RegisterId::register_can1_f17r2> {
   static constexpr std::uint32_t kOffsetBytes = 716u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2323,6 +2459,7 @@ struct RegisterTraits<RegisterId::register_can1_f18r1> {
   static constexpr std::uint32_t kOffsetBytes = 720u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2332,6 +2469,7 @@ struct RegisterTraits<RegisterId::register_can1_f18r2> {
   static constexpr std::uint32_t kOffsetBytes = 724u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2341,6 +2479,7 @@ struct RegisterTraits<RegisterId::register_can1_f19r1> {
   static constexpr std::uint32_t kOffsetBytes = 728u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2350,6 +2489,7 @@ struct RegisterTraits<RegisterId::register_can1_f19r2> {
   static constexpr std::uint32_t kOffsetBytes = 732u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2359,6 +2499,7 @@ struct RegisterTraits<RegisterId::register_can1_f20r1> {
   static constexpr std::uint32_t kOffsetBytes = 736u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2368,6 +2509,7 @@ struct RegisterTraits<RegisterId::register_can1_f20r2> {
   static constexpr std::uint32_t kOffsetBytes = 740u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2377,6 +2519,7 @@ struct RegisterTraits<RegisterId::register_can1_f21r1> {
   static constexpr std::uint32_t kOffsetBytes = 744u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2386,6 +2529,7 @@ struct RegisterTraits<RegisterId::register_can1_f21r2> {
   static constexpr std::uint32_t kOffsetBytes = 748u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2395,6 +2539,7 @@ struct RegisterTraits<RegisterId::register_can1_f22r1> {
   static constexpr std::uint32_t kOffsetBytes = 752u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2404,6 +2549,7 @@ struct RegisterTraits<RegisterId::register_can1_f22r2> {
   static constexpr std::uint32_t kOffsetBytes = 756u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2413,6 +2559,7 @@ struct RegisterTraits<RegisterId::register_can1_f23r1> {
   static constexpr std::uint32_t kOffsetBytes = 760u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2422,6 +2569,7 @@ struct RegisterTraits<RegisterId::register_can1_f23r2> {
   static constexpr std::uint32_t kOffsetBytes = 764u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2431,6 +2579,7 @@ struct RegisterTraits<RegisterId::register_can1_f24r1> {
   static constexpr std::uint32_t kOffsetBytes = 768u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2440,6 +2589,7 @@ struct RegisterTraits<RegisterId::register_can1_f24r2> {
   static constexpr std::uint32_t kOffsetBytes = 772u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2449,6 +2599,7 @@ struct RegisterTraits<RegisterId::register_can1_f25r1> {
   static constexpr std::uint32_t kOffsetBytes = 776u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2458,6 +2609,7 @@ struct RegisterTraits<RegisterId::register_can1_f25r2> {
   static constexpr std::uint32_t kOffsetBytes = 780u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2467,6 +2619,7 @@ struct RegisterTraits<RegisterId::register_can1_f26r1> {
   static constexpr std::uint32_t kOffsetBytes = 784u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2476,6 +2629,7 @@ struct RegisterTraits<RegisterId::register_can1_f26r2> {
   static constexpr std::uint32_t kOffsetBytes = 788u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2485,6 +2639,7 @@ struct RegisterTraits<RegisterId::register_can1_f27r1> {
   static constexpr std::uint32_t kOffsetBytes = 792u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2494,6 +2649,7 @@ struct RegisterTraits<RegisterId::register_can1_f27r2> {
   static constexpr std::uint32_t kOffsetBytes = 796u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2503,6 +2659,7 @@ struct RegisterTraits<RegisterId::register_can2_mcr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2512,6 +2669,7 @@ struct RegisterTraits<RegisterId::register_can2_msr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2521,6 +2679,7 @@ struct RegisterTraits<RegisterId::register_can2_tsr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2530,6 +2689,7 @@ struct RegisterTraits<RegisterId::register_can2_rf0r> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2539,6 +2699,7 @@ struct RegisterTraits<RegisterId::register_can2_rf1r> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2548,6 +2709,7 @@ struct RegisterTraits<RegisterId::register_can2_ier> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2557,6 +2719,7 @@ struct RegisterTraits<RegisterId::register_can2_esr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2566,6 +2729,7 @@ struct RegisterTraits<RegisterId::register_can2_btr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2575,6 +2739,7 @@ struct RegisterTraits<RegisterId::register_can2_ti0r> {
   static constexpr std::uint32_t kOffsetBytes = 384u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2584,6 +2749,7 @@ struct RegisterTraits<RegisterId::register_can2_tdt0r> {
   static constexpr std::uint32_t kOffsetBytes = 388u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2593,6 +2759,7 @@ struct RegisterTraits<RegisterId::register_can2_tdl0r> {
   static constexpr std::uint32_t kOffsetBytes = 392u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2602,6 +2769,7 @@ struct RegisterTraits<RegisterId::register_can2_tdh0r> {
   static constexpr std::uint32_t kOffsetBytes = 396u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2611,6 +2779,7 @@ struct RegisterTraits<RegisterId::register_can2_ti1r> {
   static constexpr std::uint32_t kOffsetBytes = 400u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2620,6 +2789,7 @@ struct RegisterTraits<RegisterId::register_can2_tdt1r> {
   static constexpr std::uint32_t kOffsetBytes = 404u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2629,6 +2799,7 @@ struct RegisterTraits<RegisterId::register_can2_tdl1r> {
   static constexpr std::uint32_t kOffsetBytes = 408u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2638,6 +2809,7 @@ struct RegisterTraits<RegisterId::register_can2_tdh1r> {
   static constexpr std::uint32_t kOffsetBytes = 412u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2647,6 +2819,7 @@ struct RegisterTraits<RegisterId::register_can2_ti2r> {
   static constexpr std::uint32_t kOffsetBytes = 416u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2656,6 +2829,7 @@ struct RegisterTraits<RegisterId::register_can2_tdt2r> {
   static constexpr std::uint32_t kOffsetBytes = 420u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2665,6 +2839,7 @@ struct RegisterTraits<RegisterId::register_can2_tdl2r> {
   static constexpr std::uint32_t kOffsetBytes = 424u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2674,6 +2849,7 @@ struct RegisterTraits<RegisterId::register_can2_tdh2r> {
   static constexpr std::uint32_t kOffsetBytes = 428u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2683,6 +2859,7 @@ struct RegisterTraits<RegisterId::register_can2_ri0r> {
   static constexpr std::uint32_t kOffsetBytes = 432u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2692,6 +2869,7 @@ struct RegisterTraits<RegisterId::register_can2_rdt0r> {
   static constexpr std::uint32_t kOffsetBytes = 436u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2701,6 +2879,7 @@ struct RegisterTraits<RegisterId::register_can2_rdl0r> {
   static constexpr std::uint32_t kOffsetBytes = 440u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2710,6 +2889,7 @@ struct RegisterTraits<RegisterId::register_can2_rdh0r> {
   static constexpr std::uint32_t kOffsetBytes = 444u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2719,6 +2899,7 @@ struct RegisterTraits<RegisterId::register_can2_ri1r> {
   static constexpr std::uint32_t kOffsetBytes = 448u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2728,6 +2909,7 @@ struct RegisterTraits<RegisterId::register_can2_rdt1r> {
   static constexpr std::uint32_t kOffsetBytes = 452u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2737,6 +2919,7 @@ struct RegisterTraits<RegisterId::register_can2_rdl1r> {
   static constexpr std::uint32_t kOffsetBytes = 456u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2746,6 +2929,7 @@ struct RegisterTraits<RegisterId::register_can2_rdh1r> {
   static constexpr std::uint32_t kOffsetBytes = 460u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2755,6 +2939,7 @@ struct RegisterTraits<RegisterId::register_can2_fmr> {
   static constexpr std::uint32_t kOffsetBytes = 512u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2764,6 +2949,7 @@ struct RegisterTraits<RegisterId::register_can2_fm1r> {
   static constexpr std::uint32_t kOffsetBytes = 516u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2773,6 +2959,7 @@ struct RegisterTraits<RegisterId::register_can2_fs1r> {
   static constexpr std::uint32_t kOffsetBytes = 524u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2782,6 +2969,7 @@ struct RegisterTraits<RegisterId::register_can2_ffa1r> {
   static constexpr std::uint32_t kOffsetBytes = 532u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2791,6 +2979,7 @@ struct RegisterTraits<RegisterId::register_can2_fa1r> {
   static constexpr std::uint32_t kOffsetBytes = 540u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2800,6 +2989,7 @@ struct RegisterTraits<RegisterId::register_can2_f0r1> {
   static constexpr std::uint32_t kOffsetBytes = 576u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2809,6 +2999,7 @@ struct RegisterTraits<RegisterId::register_can2_f0r2> {
   static constexpr std::uint32_t kOffsetBytes = 580u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2818,6 +3009,7 @@ struct RegisterTraits<RegisterId::register_can2_f1r1> {
   static constexpr std::uint32_t kOffsetBytes = 584u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2827,6 +3019,7 @@ struct RegisterTraits<RegisterId::register_can2_f1r2> {
   static constexpr std::uint32_t kOffsetBytes = 588u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2836,6 +3029,7 @@ struct RegisterTraits<RegisterId::register_can2_f2r1> {
   static constexpr std::uint32_t kOffsetBytes = 592u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2845,6 +3039,7 @@ struct RegisterTraits<RegisterId::register_can2_f2r2> {
   static constexpr std::uint32_t kOffsetBytes = 596u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2854,6 +3049,7 @@ struct RegisterTraits<RegisterId::register_can2_f3r1> {
   static constexpr std::uint32_t kOffsetBytes = 600u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2863,6 +3059,7 @@ struct RegisterTraits<RegisterId::register_can2_f3r2> {
   static constexpr std::uint32_t kOffsetBytes = 604u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2872,6 +3069,7 @@ struct RegisterTraits<RegisterId::register_can2_f4r1> {
   static constexpr std::uint32_t kOffsetBytes = 608u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2881,6 +3079,7 @@ struct RegisterTraits<RegisterId::register_can2_f4r2> {
   static constexpr std::uint32_t kOffsetBytes = 612u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2890,6 +3089,7 @@ struct RegisterTraits<RegisterId::register_can2_f5r1> {
   static constexpr std::uint32_t kOffsetBytes = 616u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2899,6 +3099,7 @@ struct RegisterTraits<RegisterId::register_can2_f5r2> {
   static constexpr std::uint32_t kOffsetBytes = 620u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2908,6 +3109,7 @@ struct RegisterTraits<RegisterId::register_can2_f6r1> {
   static constexpr std::uint32_t kOffsetBytes = 624u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2917,6 +3119,7 @@ struct RegisterTraits<RegisterId::register_can2_f6r2> {
   static constexpr std::uint32_t kOffsetBytes = 628u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2926,6 +3129,7 @@ struct RegisterTraits<RegisterId::register_can2_f7r1> {
   static constexpr std::uint32_t kOffsetBytes = 632u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2935,6 +3139,7 @@ struct RegisterTraits<RegisterId::register_can2_f7r2> {
   static constexpr std::uint32_t kOffsetBytes = 636u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2944,6 +3149,7 @@ struct RegisterTraits<RegisterId::register_can2_f8r1> {
   static constexpr std::uint32_t kOffsetBytes = 640u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2953,6 +3159,7 @@ struct RegisterTraits<RegisterId::register_can2_f8r2> {
   static constexpr std::uint32_t kOffsetBytes = 644u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2962,6 +3169,7 @@ struct RegisterTraits<RegisterId::register_can2_f9r1> {
   static constexpr std::uint32_t kOffsetBytes = 648u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2971,6 +3179,7 @@ struct RegisterTraits<RegisterId::register_can2_f9r2> {
   static constexpr std::uint32_t kOffsetBytes = 652u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2980,6 +3189,7 @@ struct RegisterTraits<RegisterId::register_can2_f10r1> {
   static constexpr std::uint32_t kOffsetBytes = 656u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2989,6 +3199,7 @@ struct RegisterTraits<RegisterId::register_can2_f10r2> {
   static constexpr std::uint32_t kOffsetBytes = 660u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -2998,6 +3209,7 @@ struct RegisterTraits<RegisterId::register_can2_f11r1> {
   static constexpr std::uint32_t kOffsetBytes = 664u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3007,6 +3219,7 @@ struct RegisterTraits<RegisterId::register_can2_f11r2> {
   static constexpr std::uint32_t kOffsetBytes = 668u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3016,6 +3229,7 @@ struct RegisterTraits<RegisterId::register_can2_f12r1> {
   static constexpr std::uint32_t kOffsetBytes = 672u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3025,6 +3239,7 @@ struct RegisterTraits<RegisterId::register_can2_f12r2> {
   static constexpr std::uint32_t kOffsetBytes = 676u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3034,6 +3249,7 @@ struct RegisterTraits<RegisterId::register_can2_f13r1> {
   static constexpr std::uint32_t kOffsetBytes = 680u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3043,6 +3259,7 @@ struct RegisterTraits<RegisterId::register_can2_f13r2> {
   static constexpr std::uint32_t kOffsetBytes = 684u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3052,6 +3269,7 @@ struct RegisterTraits<RegisterId::register_can2_f14r1> {
   static constexpr std::uint32_t kOffsetBytes = 688u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3061,6 +3279,7 @@ struct RegisterTraits<RegisterId::register_can2_f14r2> {
   static constexpr std::uint32_t kOffsetBytes = 692u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3070,6 +3289,7 @@ struct RegisterTraits<RegisterId::register_can2_f15r1> {
   static constexpr std::uint32_t kOffsetBytes = 696u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3079,6 +3299,7 @@ struct RegisterTraits<RegisterId::register_can2_f15r2> {
   static constexpr std::uint32_t kOffsetBytes = 700u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3088,6 +3309,7 @@ struct RegisterTraits<RegisterId::register_can2_f16r1> {
   static constexpr std::uint32_t kOffsetBytes = 704u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3097,6 +3319,7 @@ struct RegisterTraits<RegisterId::register_can2_f16r2> {
   static constexpr std::uint32_t kOffsetBytes = 708u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3106,6 +3329,7 @@ struct RegisterTraits<RegisterId::register_can2_f17r1> {
   static constexpr std::uint32_t kOffsetBytes = 712u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3115,6 +3339,7 @@ struct RegisterTraits<RegisterId::register_can2_f17r2> {
   static constexpr std::uint32_t kOffsetBytes = 716u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3124,6 +3349,7 @@ struct RegisterTraits<RegisterId::register_can2_f18r1> {
   static constexpr std::uint32_t kOffsetBytes = 720u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3133,6 +3359,7 @@ struct RegisterTraits<RegisterId::register_can2_f18r2> {
   static constexpr std::uint32_t kOffsetBytes = 724u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3142,6 +3369,7 @@ struct RegisterTraits<RegisterId::register_can2_f19r1> {
   static constexpr std::uint32_t kOffsetBytes = 728u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3151,6 +3379,7 @@ struct RegisterTraits<RegisterId::register_can2_f19r2> {
   static constexpr std::uint32_t kOffsetBytes = 732u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3160,6 +3389,7 @@ struct RegisterTraits<RegisterId::register_can2_f20r1> {
   static constexpr std::uint32_t kOffsetBytes = 736u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3169,6 +3399,7 @@ struct RegisterTraits<RegisterId::register_can2_f20r2> {
   static constexpr std::uint32_t kOffsetBytes = 740u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3178,6 +3409,7 @@ struct RegisterTraits<RegisterId::register_can2_f21r1> {
   static constexpr std::uint32_t kOffsetBytes = 744u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3187,6 +3419,7 @@ struct RegisterTraits<RegisterId::register_can2_f21r2> {
   static constexpr std::uint32_t kOffsetBytes = 748u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3196,6 +3429,7 @@ struct RegisterTraits<RegisterId::register_can2_f22r1> {
   static constexpr std::uint32_t kOffsetBytes = 752u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3205,6 +3439,7 @@ struct RegisterTraits<RegisterId::register_can2_f22r2> {
   static constexpr std::uint32_t kOffsetBytes = 756u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3214,6 +3449,7 @@ struct RegisterTraits<RegisterId::register_can2_f23r1> {
   static constexpr std::uint32_t kOffsetBytes = 760u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3223,6 +3459,7 @@ struct RegisterTraits<RegisterId::register_can2_f23r2> {
   static constexpr std::uint32_t kOffsetBytes = 764u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3232,6 +3469,7 @@ struct RegisterTraits<RegisterId::register_can2_f24r1> {
   static constexpr std::uint32_t kOffsetBytes = 768u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3241,6 +3479,7 @@ struct RegisterTraits<RegisterId::register_can2_f24r2> {
   static constexpr std::uint32_t kOffsetBytes = 772u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3250,6 +3489,7 @@ struct RegisterTraits<RegisterId::register_can2_f25r1> {
   static constexpr std::uint32_t kOffsetBytes = 776u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3259,6 +3499,7 @@ struct RegisterTraits<RegisterId::register_can2_f25r2> {
   static constexpr std::uint32_t kOffsetBytes = 780u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3268,6 +3509,7 @@ struct RegisterTraits<RegisterId::register_can2_f26r1> {
   static constexpr std::uint32_t kOffsetBytes = 784u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3277,6 +3519,7 @@ struct RegisterTraits<RegisterId::register_can2_f26r2> {
   static constexpr std::uint32_t kOffsetBytes = 788u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3286,6 +3529,7 @@ struct RegisterTraits<RegisterId::register_can2_f27r1> {
   static constexpr std::uint32_t kOffsetBytes = 792u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3295,6 +3539,7 @@ struct RegisterTraits<RegisterId::register_can2_f27r2> {
   static constexpr std::uint32_t kOffsetBytes = 796u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3304,6 +3549,7 @@ struct RegisterTraits<RegisterId::register_dac_cr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3313,6 +3559,7 @@ struct RegisterTraits<RegisterId::register_dac_swtrigr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3322,6 +3569,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr12r1> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3331,6 +3579,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr12l1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3340,6 +3589,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr8r1> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3349,6 +3599,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr12r2> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3358,6 +3609,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr12l2> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3367,6 +3619,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr8r2> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3376,6 +3629,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr12rd> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3385,6 +3639,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr12ld> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3394,6 +3649,7 @@ struct RegisterTraits<RegisterId::register_dac_dhr8rd> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3403,6 +3659,7 @@ struct RegisterTraits<RegisterId::register_dac_dor1> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3412,6 +3669,7 @@ struct RegisterTraits<RegisterId::register_dac_dor2> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3421,6 +3679,7 @@ struct RegisterTraits<RegisterId::register_dac_sr> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3430,6 +3689,7 @@ struct RegisterTraits<RegisterId::register_dma1_lisr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3439,6 +3699,7 @@ struct RegisterTraits<RegisterId::register_dma1_hisr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3448,6 +3709,7 @@ struct RegisterTraits<RegisterId::register_dma1_lifcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3457,6 +3719,7 @@ struct RegisterTraits<RegisterId::register_dma1_hifcr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3466,6 +3729,7 @@ struct RegisterTraits<RegisterId::register_dma1_s0cr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3475,6 +3739,7 @@ struct RegisterTraits<RegisterId::register_dma1_s0ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3484,6 +3749,7 @@ struct RegisterTraits<RegisterId::register_dma1_s0par> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3493,6 +3759,7 @@ struct RegisterTraits<RegisterId::register_dma1_s0m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3502,6 +3769,7 @@ struct RegisterTraits<RegisterId::register_dma1_s0m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3511,6 +3779,7 @@ struct RegisterTraits<RegisterId::register_dma1_s0fcr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3520,6 +3789,7 @@ struct RegisterTraits<RegisterId::register_dma1_s1cr> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3529,6 +3799,7 @@ struct RegisterTraits<RegisterId::register_dma1_s1ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3538,6 +3809,7 @@ struct RegisterTraits<RegisterId::register_dma1_s1par> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3547,6 +3819,7 @@ struct RegisterTraits<RegisterId::register_dma1_s1m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3556,6 +3829,7 @@ struct RegisterTraits<RegisterId::register_dma1_s1m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3565,6 +3839,7 @@ struct RegisterTraits<RegisterId::register_dma1_s1fcr> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3574,6 +3849,7 @@ struct RegisterTraits<RegisterId::register_dma1_s2cr> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3583,6 +3859,7 @@ struct RegisterTraits<RegisterId::register_dma1_s2ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3592,6 +3869,7 @@ struct RegisterTraits<RegisterId::register_dma1_s2par> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3601,6 +3879,7 @@ struct RegisterTraits<RegisterId::register_dma1_s2m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3610,6 +3889,7 @@ struct RegisterTraits<RegisterId::register_dma1_s2m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3619,6 +3899,7 @@ struct RegisterTraits<RegisterId::register_dma1_s2fcr> {
   static constexpr std::uint32_t kOffsetBytes = 84u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3628,6 +3909,7 @@ struct RegisterTraits<RegisterId::register_dma1_s3cr> {
   static constexpr std::uint32_t kOffsetBytes = 88u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3637,6 +3919,7 @@ struct RegisterTraits<RegisterId::register_dma1_s3ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 92u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3646,6 +3929,7 @@ struct RegisterTraits<RegisterId::register_dma1_s3par> {
   static constexpr std::uint32_t kOffsetBytes = 96u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3655,6 +3939,7 @@ struct RegisterTraits<RegisterId::register_dma1_s3m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 100u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3664,6 +3949,7 @@ struct RegisterTraits<RegisterId::register_dma1_s3m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 104u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3673,6 +3959,7 @@ struct RegisterTraits<RegisterId::register_dma1_s3fcr> {
   static constexpr std::uint32_t kOffsetBytes = 108u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3682,6 +3969,7 @@ struct RegisterTraits<RegisterId::register_dma1_s4cr> {
   static constexpr std::uint32_t kOffsetBytes = 112u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3691,6 +3979,7 @@ struct RegisterTraits<RegisterId::register_dma1_s4ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 116u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3700,6 +3989,7 @@ struct RegisterTraits<RegisterId::register_dma1_s4par> {
   static constexpr std::uint32_t kOffsetBytes = 120u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3709,6 +3999,7 @@ struct RegisterTraits<RegisterId::register_dma1_s4m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 124u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3718,6 +4009,7 @@ struct RegisterTraits<RegisterId::register_dma1_s4m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 128u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3727,6 +4019,7 @@ struct RegisterTraits<RegisterId::register_dma1_s4fcr> {
   static constexpr std::uint32_t kOffsetBytes = 132u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3736,6 +4029,7 @@ struct RegisterTraits<RegisterId::register_dma1_s5cr> {
   static constexpr std::uint32_t kOffsetBytes = 136u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3745,6 +4039,7 @@ struct RegisterTraits<RegisterId::register_dma1_s5ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 140u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3754,6 +4049,7 @@ struct RegisterTraits<RegisterId::register_dma1_s5par> {
   static constexpr std::uint32_t kOffsetBytes = 144u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3763,6 +4059,7 @@ struct RegisterTraits<RegisterId::register_dma1_s5m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 148u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3772,6 +4069,7 @@ struct RegisterTraits<RegisterId::register_dma1_s5m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 152u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3781,6 +4079,7 @@ struct RegisterTraits<RegisterId::register_dma1_s5fcr> {
   static constexpr std::uint32_t kOffsetBytes = 156u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3790,6 +4089,7 @@ struct RegisterTraits<RegisterId::register_dma1_s6cr> {
   static constexpr std::uint32_t kOffsetBytes = 160u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3799,6 +4099,7 @@ struct RegisterTraits<RegisterId::register_dma1_s6ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 164u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3808,6 +4109,7 @@ struct RegisterTraits<RegisterId::register_dma1_s6par> {
   static constexpr std::uint32_t kOffsetBytes = 168u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3817,6 +4119,7 @@ struct RegisterTraits<RegisterId::register_dma1_s6m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 172u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3826,6 +4129,7 @@ struct RegisterTraits<RegisterId::register_dma1_s6m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 176u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3835,6 +4139,7 @@ struct RegisterTraits<RegisterId::register_dma1_s6fcr> {
   static constexpr std::uint32_t kOffsetBytes = 180u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3844,6 +4149,7 @@ struct RegisterTraits<RegisterId::register_dma1_s7cr> {
   static constexpr std::uint32_t kOffsetBytes = 184u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3853,6 +4159,7 @@ struct RegisterTraits<RegisterId::register_dma1_s7ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 188u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3862,6 +4169,7 @@ struct RegisterTraits<RegisterId::register_dma1_s7par> {
   static constexpr std::uint32_t kOffsetBytes = 192u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3871,6 +4179,7 @@ struct RegisterTraits<RegisterId::register_dma1_s7m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 196u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3880,6 +4189,7 @@ struct RegisterTraits<RegisterId::register_dma1_s7m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 200u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3889,6 +4199,7 @@ struct RegisterTraits<RegisterId::register_dma1_s7fcr> {
   static constexpr std::uint32_t kOffsetBytes = 204u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3898,6 +4209,7 @@ struct RegisterTraits<RegisterId::register_dma2_lisr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3907,6 +4219,7 @@ struct RegisterTraits<RegisterId::register_dma2_hisr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3916,6 +4229,7 @@ struct RegisterTraits<RegisterId::register_dma2_lifcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3925,6 +4239,7 @@ struct RegisterTraits<RegisterId::register_dma2_hifcr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3934,6 +4249,7 @@ struct RegisterTraits<RegisterId::register_dma2_s0cr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3943,6 +4259,7 @@ struct RegisterTraits<RegisterId::register_dma2_s0ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3952,6 +4269,7 @@ struct RegisterTraits<RegisterId::register_dma2_s0par> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3961,6 +4279,7 @@ struct RegisterTraits<RegisterId::register_dma2_s0m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3970,6 +4289,7 @@ struct RegisterTraits<RegisterId::register_dma2_s0m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3979,6 +4299,7 @@ struct RegisterTraits<RegisterId::register_dma2_s0fcr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3988,6 +4309,7 @@ struct RegisterTraits<RegisterId::register_dma2_s1cr> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -3997,6 +4319,7 @@ struct RegisterTraits<RegisterId::register_dma2_s1ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4006,6 +4329,7 @@ struct RegisterTraits<RegisterId::register_dma2_s1par> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4015,6 +4339,7 @@ struct RegisterTraits<RegisterId::register_dma2_s1m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4024,6 +4349,7 @@ struct RegisterTraits<RegisterId::register_dma2_s1m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4033,6 +4359,7 @@ struct RegisterTraits<RegisterId::register_dma2_s1fcr> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4042,6 +4369,7 @@ struct RegisterTraits<RegisterId::register_dma2_s2cr> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4051,6 +4379,7 @@ struct RegisterTraits<RegisterId::register_dma2_s2ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4060,6 +4389,7 @@ struct RegisterTraits<RegisterId::register_dma2_s2par> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4069,6 +4399,7 @@ struct RegisterTraits<RegisterId::register_dma2_s2m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4078,6 +4409,7 @@ struct RegisterTraits<RegisterId::register_dma2_s2m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4087,6 +4419,7 @@ struct RegisterTraits<RegisterId::register_dma2_s2fcr> {
   static constexpr std::uint32_t kOffsetBytes = 84u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4096,6 +4429,7 @@ struct RegisterTraits<RegisterId::register_dma2_s3cr> {
   static constexpr std::uint32_t kOffsetBytes = 88u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4105,6 +4439,7 @@ struct RegisterTraits<RegisterId::register_dma2_s3ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 92u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4114,6 +4449,7 @@ struct RegisterTraits<RegisterId::register_dma2_s3par> {
   static constexpr std::uint32_t kOffsetBytes = 96u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4123,6 +4459,7 @@ struct RegisterTraits<RegisterId::register_dma2_s3m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 100u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4132,6 +4469,7 @@ struct RegisterTraits<RegisterId::register_dma2_s3m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 104u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4141,6 +4479,7 @@ struct RegisterTraits<RegisterId::register_dma2_s3fcr> {
   static constexpr std::uint32_t kOffsetBytes = 108u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4150,6 +4489,7 @@ struct RegisterTraits<RegisterId::register_dma2_s4cr> {
   static constexpr std::uint32_t kOffsetBytes = 112u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4159,6 +4499,7 @@ struct RegisterTraits<RegisterId::register_dma2_s4ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 116u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4168,6 +4509,7 @@ struct RegisterTraits<RegisterId::register_dma2_s4par> {
   static constexpr std::uint32_t kOffsetBytes = 120u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4177,6 +4519,7 @@ struct RegisterTraits<RegisterId::register_dma2_s4m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 124u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4186,6 +4529,7 @@ struct RegisterTraits<RegisterId::register_dma2_s4m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 128u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4195,6 +4539,7 @@ struct RegisterTraits<RegisterId::register_dma2_s4fcr> {
   static constexpr std::uint32_t kOffsetBytes = 132u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4204,6 +4549,7 @@ struct RegisterTraits<RegisterId::register_dma2_s5cr> {
   static constexpr std::uint32_t kOffsetBytes = 136u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4213,6 +4559,7 @@ struct RegisterTraits<RegisterId::register_dma2_s5ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 140u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4222,6 +4569,7 @@ struct RegisterTraits<RegisterId::register_dma2_s5par> {
   static constexpr std::uint32_t kOffsetBytes = 144u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4231,6 +4579,7 @@ struct RegisterTraits<RegisterId::register_dma2_s5m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 148u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4240,6 +4589,7 @@ struct RegisterTraits<RegisterId::register_dma2_s5m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 152u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4249,6 +4599,7 @@ struct RegisterTraits<RegisterId::register_dma2_s5fcr> {
   static constexpr std::uint32_t kOffsetBytes = 156u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4258,6 +4609,7 @@ struct RegisterTraits<RegisterId::register_dma2_s6cr> {
   static constexpr std::uint32_t kOffsetBytes = 160u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4267,6 +4619,7 @@ struct RegisterTraits<RegisterId::register_dma2_s6ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 164u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4276,6 +4629,7 @@ struct RegisterTraits<RegisterId::register_dma2_s6par> {
   static constexpr std::uint32_t kOffsetBytes = 168u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4285,6 +4639,7 @@ struct RegisterTraits<RegisterId::register_dma2_s6m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 172u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4294,6 +4649,7 @@ struct RegisterTraits<RegisterId::register_dma2_s6m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 176u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4303,6 +4659,7 @@ struct RegisterTraits<RegisterId::register_dma2_s6fcr> {
   static constexpr std::uint32_t kOffsetBytes = 180u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4312,6 +4669,7 @@ struct RegisterTraits<RegisterId::register_dma2_s7cr> {
   static constexpr std::uint32_t kOffsetBytes = 184u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4321,6 +4679,7 @@ struct RegisterTraits<RegisterId::register_dma2_s7ndtr> {
   static constexpr std::uint32_t kOffsetBytes = 188u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4330,6 +4689,7 @@ struct RegisterTraits<RegisterId::register_dma2_s7par> {
   static constexpr std::uint32_t kOffsetBytes = 192u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4339,6 +4699,7 @@ struct RegisterTraits<RegisterId::register_dma2_s7m0ar> {
   static constexpr std::uint32_t kOffsetBytes = 196u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4348,6 +4709,7 @@ struct RegisterTraits<RegisterId::register_dma2_s7m1ar> {
   static constexpr std::uint32_t kOffsetBytes = 200u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4357,6 +4719,7 @@ struct RegisterTraits<RegisterId::register_dma2_s7fcr> {
   static constexpr std::uint32_t kOffsetBytes = 204u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4366,6 +4729,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmabmr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4375,6 +4739,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmatpdr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4384,6 +4749,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmarpdr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4393,6 +4759,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmardlar> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4402,6 +4769,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmatdlar> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4411,6 +4779,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmasr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4420,6 +4789,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmaomr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4429,6 +4799,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmaier> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4438,6 +4809,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmamfbocr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4447,6 +4819,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmarswtr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4456,6 +4829,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmachtdr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4465,6 +4839,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmachrdr> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4474,6 +4849,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmachtbar> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4483,6 +4859,7 @@ struct RegisterTraits<RegisterId::register_ethernet_dma_dmachrbar> {
   static constexpr std::uint32_t kOffsetBytes = 84u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4492,6 +4869,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maccr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4501,6 +4879,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macffr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4510,6 +4889,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_machthr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4519,6 +4899,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_machtlr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4528,6 +4909,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macmiiar> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4537,6 +4919,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macmiidr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4546,6 +4929,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macfcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4555,6 +4939,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macvlantr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4564,6 +4949,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macpmtcsr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4573,6 +4959,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macdbgr> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4582,6 +4969,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macsr> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4591,6 +4979,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_macimr> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4600,6 +4989,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca0hr> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4609,6 +4999,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca0lr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4618,6 +5009,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca1hr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4627,6 +5019,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca1lr> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4636,6 +5029,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca2hr> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4645,6 +5039,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca2lr> {
   static constexpr std::uint32_t kOffsetBytes = 84u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4654,6 +5049,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca3hr> {
   static constexpr std::uint32_t kOffsetBytes = 88u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4663,6 +5059,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mac_maca3lr> {
   static constexpr std::uint32_t kOffsetBytes = 92u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4672,6 +5069,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmccr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4681,6 +5079,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmcrir> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4690,6 +5089,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmctir> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4699,6 +5099,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmcrimr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4708,6 +5109,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmctimr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4717,6 +5119,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmctgfsccr> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4726,6 +5129,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmctgfmsccr> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4735,6 +5139,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmctgfcr> {
   static constexpr std::uint32_t kOffsetBytes = 104u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4744,6 +5149,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmcrfcecr> {
   static constexpr std::uint32_t kOffsetBytes = 148u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4753,6 +5159,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmcrfaecr> {
   static constexpr std::uint32_t kOffsetBytes = 152u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4762,6 +5169,7 @@ struct RegisterTraits<RegisterId::register_ethernet_mmc_mmcrgufcr> {
   static constexpr std::uint32_t kOffsetBytes = 196u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4771,6 +5179,7 @@ struct RegisterTraits<RegisterId::register_flash_acr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4780,6 +5189,7 @@ struct RegisterTraits<RegisterId::register_gpioa_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4789,6 +5199,7 @@ struct RegisterTraits<RegisterId::register_gpioa_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4798,6 +5209,7 @@ struct RegisterTraits<RegisterId::register_gpioa_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4807,6 +5219,7 @@ struct RegisterTraits<RegisterId::register_gpioa_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4816,6 +5229,7 @@ struct RegisterTraits<RegisterId::register_gpioa_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4825,6 +5239,7 @@ struct RegisterTraits<RegisterId::register_gpioa_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4834,6 +5249,7 @@ struct RegisterTraits<RegisterId::register_gpioa_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4843,6 +5259,7 @@ struct RegisterTraits<RegisterId::register_gpioa_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4852,6 +5269,7 @@ struct RegisterTraits<RegisterId::register_gpioa_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4861,6 +5279,7 @@ struct RegisterTraits<RegisterId::register_gpioa_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4870,6 +5289,7 @@ struct RegisterTraits<RegisterId::register_gpiob_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4879,6 +5299,7 @@ struct RegisterTraits<RegisterId::register_gpiob_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4888,6 +5309,7 @@ struct RegisterTraits<RegisterId::register_gpiob_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4897,6 +5319,7 @@ struct RegisterTraits<RegisterId::register_gpiob_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4906,6 +5329,7 @@ struct RegisterTraits<RegisterId::register_gpiob_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4915,6 +5339,7 @@ struct RegisterTraits<RegisterId::register_gpiob_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4924,6 +5349,7 @@ struct RegisterTraits<RegisterId::register_gpiob_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4933,6 +5359,7 @@ struct RegisterTraits<RegisterId::register_gpiob_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4942,6 +5369,7 @@ struct RegisterTraits<RegisterId::register_gpiob_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4951,6 +5379,7 @@ struct RegisterTraits<RegisterId::register_gpiob_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4960,6 +5389,7 @@ struct RegisterTraits<RegisterId::register_gpioc_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4969,6 +5399,7 @@ struct RegisterTraits<RegisterId::register_gpioc_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4978,6 +5409,7 @@ struct RegisterTraits<RegisterId::register_gpioc_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4987,6 +5419,7 @@ struct RegisterTraits<RegisterId::register_gpioc_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -4996,6 +5429,7 @@ struct RegisterTraits<RegisterId::register_gpioc_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5005,6 +5439,7 @@ struct RegisterTraits<RegisterId::register_gpioc_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5014,6 +5449,7 @@ struct RegisterTraits<RegisterId::register_gpioc_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5023,6 +5459,7 @@ struct RegisterTraits<RegisterId::register_gpioc_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5032,6 +5469,7 @@ struct RegisterTraits<RegisterId::register_gpioc_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5041,6 +5479,7 @@ struct RegisterTraits<RegisterId::register_gpioc_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5050,6 +5489,7 @@ struct RegisterTraits<RegisterId::register_gpiod_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5059,6 +5499,7 @@ struct RegisterTraits<RegisterId::register_gpiod_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5068,6 +5509,7 @@ struct RegisterTraits<RegisterId::register_gpiod_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5077,6 +5519,7 @@ struct RegisterTraits<RegisterId::register_gpiod_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5086,6 +5529,7 @@ struct RegisterTraits<RegisterId::register_gpiod_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5095,6 +5539,7 @@ struct RegisterTraits<RegisterId::register_gpiod_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5104,6 +5549,7 @@ struct RegisterTraits<RegisterId::register_gpiod_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5113,6 +5559,7 @@ struct RegisterTraits<RegisterId::register_gpiod_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5122,6 +5569,7 @@ struct RegisterTraits<RegisterId::register_gpiod_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5131,6 +5579,7 @@ struct RegisterTraits<RegisterId::register_gpiod_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5140,6 +5589,7 @@ struct RegisterTraits<RegisterId::register_gpioe_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5149,6 +5599,7 @@ struct RegisterTraits<RegisterId::register_gpioe_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5158,6 +5609,7 @@ struct RegisterTraits<RegisterId::register_gpioe_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5167,6 +5619,7 @@ struct RegisterTraits<RegisterId::register_gpioe_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5176,6 +5629,7 @@ struct RegisterTraits<RegisterId::register_gpioe_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5185,6 +5639,7 @@ struct RegisterTraits<RegisterId::register_gpioe_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5194,6 +5649,7 @@ struct RegisterTraits<RegisterId::register_gpioe_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5203,6 +5659,7 @@ struct RegisterTraits<RegisterId::register_gpioe_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5212,6 +5669,7 @@ struct RegisterTraits<RegisterId::register_gpioe_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5221,6 +5679,7 @@ struct RegisterTraits<RegisterId::register_gpioe_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5230,6 +5689,7 @@ struct RegisterTraits<RegisterId::register_gpiof_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5239,6 +5699,7 @@ struct RegisterTraits<RegisterId::register_gpiof_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5248,6 +5709,7 @@ struct RegisterTraits<RegisterId::register_gpiof_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5257,6 +5719,7 @@ struct RegisterTraits<RegisterId::register_gpiof_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5266,6 +5729,7 @@ struct RegisterTraits<RegisterId::register_gpiof_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5275,6 +5739,7 @@ struct RegisterTraits<RegisterId::register_gpiof_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5284,6 +5749,7 @@ struct RegisterTraits<RegisterId::register_gpiof_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5293,6 +5759,7 @@ struct RegisterTraits<RegisterId::register_gpiof_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5302,6 +5769,7 @@ struct RegisterTraits<RegisterId::register_gpiof_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5311,6 +5779,7 @@ struct RegisterTraits<RegisterId::register_gpiof_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5320,6 +5789,7 @@ struct RegisterTraits<RegisterId::register_gpiog_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5329,6 +5799,7 @@ struct RegisterTraits<RegisterId::register_gpiog_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5338,6 +5809,7 @@ struct RegisterTraits<RegisterId::register_gpiog_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5347,6 +5819,7 @@ struct RegisterTraits<RegisterId::register_gpiog_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5356,6 +5829,7 @@ struct RegisterTraits<RegisterId::register_gpiog_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5365,6 +5839,7 @@ struct RegisterTraits<RegisterId::register_gpiog_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5374,6 +5849,7 @@ struct RegisterTraits<RegisterId::register_gpiog_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5383,6 +5859,7 @@ struct RegisterTraits<RegisterId::register_gpiog_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5392,6 +5869,7 @@ struct RegisterTraits<RegisterId::register_gpiog_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5401,6 +5879,7 @@ struct RegisterTraits<RegisterId::register_gpiog_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5410,6 +5889,7 @@ struct RegisterTraits<RegisterId::register_gpioh_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5419,6 +5899,7 @@ struct RegisterTraits<RegisterId::register_gpioh_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5428,6 +5909,7 @@ struct RegisterTraits<RegisterId::register_gpioh_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5437,6 +5919,7 @@ struct RegisterTraits<RegisterId::register_gpioh_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5446,6 +5929,7 @@ struct RegisterTraits<RegisterId::register_gpioh_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5455,6 +5939,7 @@ struct RegisterTraits<RegisterId::register_gpioh_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5464,6 +5949,7 @@ struct RegisterTraits<RegisterId::register_gpioh_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5473,6 +5959,7 @@ struct RegisterTraits<RegisterId::register_gpioh_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5482,6 +5969,7 @@ struct RegisterTraits<RegisterId::register_gpioh_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5491,6 +5979,7 @@ struct RegisterTraits<RegisterId::register_gpioh_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5500,6 +5989,7 @@ struct RegisterTraits<RegisterId::register_gpioi_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5509,6 +5999,7 @@ struct RegisterTraits<RegisterId::register_gpioi_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5518,6 +6009,7 @@ struct RegisterTraits<RegisterId::register_gpioi_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5527,6 +6019,7 @@ struct RegisterTraits<RegisterId::register_gpioi_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5536,6 +6029,7 @@ struct RegisterTraits<RegisterId::register_gpioi_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5545,6 +6039,7 @@ struct RegisterTraits<RegisterId::register_gpioi_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5554,6 +6049,7 @@ struct RegisterTraits<RegisterId::register_gpioi_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5563,6 +6059,7 @@ struct RegisterTraits<RegisterId::register_gpioi_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5572,6 +6069,7 @@ struct RegisterTraits<RegisterId::register_gpioi_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5581,6 +6079,7 @@ struct RegisterTraits<RegisterId::register_gpioi_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5590,6 +6089,7 @@ struct RegisterTraits<RegisterId::register_gpioj_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5599,6 +6099,7 @@ struct RegisterTraits<RegisterId::register_gpioj_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5608,6 +6109,7 @@ struct RegisterTraits<RegisterId::register_gpioj_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5617,6 +6119,7 @@ struct RegisterTraits<RegisterId::register_gpioj_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5626,6 +6129,7 @@ struct RegisterTraits<RegisterId::register_gpioj_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5635,6 +6139,7 @@ struct RegisterTraits<RegisterId::register_gpioj_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5644,6 +6149,7 @@ struct RegisterTraits<RegisterId::register_gpioj_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5653,6 +6159,7 @@ struct RegisterTraits<RegisterId::register_gpioj_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5662,6 +6169,7 @@ struct RegisterTraits<RegisterId::register_gpioj_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5671,6 +6179,7 @@ struct RegisterTraits<RegisterId::register_gpioj_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5680,6 +6189,7 @@ struct RegisterTraits<RegisterId::register_gpiok_moder> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5689,6 +6199,7 @@ struct RegisterTraits<RegisterId::register_gpiok_otyper> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5698,6 +6209,7 @@ struct RegisterTraits<RegisterId::register_gpiok_ospeedr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5707,6 +6219,7 @@ struct RegisterTraits<RegisterId::register_gpiok_pupdr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5716,6 +6229,7 @@ struct RegisterTraits<RegisterId::register_gpiok_idr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5725,6 +6239,7 @@ struct RegisterTraits<RegisterId::register_gpiok_odr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5734,6 +6249,7 @@ struct RegisterTraits<RegisterId::register_gpiok_bsrr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5743,6 +6259,7 @@ struct RegisterTraits<RegisterId::register_gpiok_lckr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5752,6 +6269,7 @@ struct RegisterTraits<RegisterId::register_gpiok_afrl> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5761,6 +6279,7 @@ struct RegisterTraits<RegisterId::register_gpiok_afrh> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5770,6 +6289,7 @@ struct RegisterTraits<RegisterId::register_iwdg_kr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5779,6 +6299,7 @@ struct RegisterTraits<RegisterId::register_iwdg_pr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5788,6 +6309,7 @@ struct RegisterTraits<RegisterId::register_iwdg_rlr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5797,6 +6319,7 @@ struct RegisterTraits<RegisterId::register_iwdg_sr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5806,6 +6329,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_dcfg> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5815,6 +6339,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_dctl> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5824,6 +6349,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_dsts> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5833,6 +6359,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_diepmsk> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5842,6 +6369,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_doepmsk> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5851,6 +6379,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_daint> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5860,6 +6389,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_daintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5869,6 +6399,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dvbusdis> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5878,6 +6409,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dvbuspulse> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5887,6 +6419,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepempmsk> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5896,6 +6429,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_fs_diepctl0> {
   static constexpr std::uint32_t kOffsetBytes = 256u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5905,6 +6439,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepint0> {
   static constexpr std::uint32_t kOffsetBytes = 264u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5914,6 +6449,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz0> {
   static constexpr std::uint32_t kOffsetBytes = 272u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5923,6 +6459,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts0> {
   static constexpr std::uint32_t kOffsetBytes = 280u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5932,6 +6469,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepctl1> {
   static constexpr std::uint32_t kOffsetBytes = 288u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5941,6 +6479,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepint1> {
   static constexpr std::uint32_t kOffsetBytes = 296u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5950,6 +6489,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz1> {
   static constexpr std::uint32_t kOffsetBytes = 304u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5959,6 +6499,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts1> {
   static constexpr std::uint32_t kOffsetBytes = 312u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5968,6 +6509,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepctl2> {
   static constexpr std::uint32_t kOffsetBytes = 320u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5977,6 +6519,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepint2> {
   static constexpr std::uint32_t kOffsetBytes = 328u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5986,6 +6529,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz2> {
   static constexpr std::uint32_t kOffsetBytes = 336u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -5995,6 +6539,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts2> {
   static constexpr std::uint32_t kOffsetBytes = 344u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6004,6 +6549,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepctl3> {
   static constexpr std::uint32_t kOffsetBytes = 352u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6013,6 +6559,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_diepint3> {
   static constexpr std::uint32_t kOffsetBytes = 360u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6022,6 +6569,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dieptsiz3> {
   static constexpr std::uint32_t kOffsetBytes = 368u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6031,6 +6579,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_dtxfsts3> {
   static constexpr std::uint32_t kOffsetBytes = 376u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6040,6 +6589,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl0> {
   static constexpr std::uint32_t kOffsetBytes = 768u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6049,6 +6599,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepint0> {
   static constexpr std::uint32_t kOffsetBytes = 776u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6058,6 +6609,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz0> {
   static constexpr std::uint32_t kOffsetBytes = 784u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6067,6 +6619,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl1> {
   static constexpr std::uint32_t kOffsetBytes = 800u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6076,6 +6629,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepint1> {
   static constexpr std::uint32_t kOffsetBytes = 808u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6085,6 +6639,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz1> {
   static constexpr std::uint32_t kOffsetBytes = 816u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6094,6 +6649,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl2> {
   static constexpr std::uint32_t kOffsetBytes = 832u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6103,6 +6659,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepint2> {
   static constexpr std::uint32_t kOffsetBytes = 840u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6112,6 +6669,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz2> {
   static constexpr std::uint32_t kOffsetBytes = 848u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6121,6 +6679,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepctl3> {
   static constexpr std::uint32_t kOffsetBytes = 864u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6130,6 +6689,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doepint3> {
   static constexpr std::uint32_t kOffsetBytes = 872u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6139,6 +6699,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_device_doeptsiz3> {
   static constexpr std::uint32_t kOffsetBytes = 880u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6148,6 +6709,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gotgctl> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6157,6 +6719,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gotgint> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6166,6 +6729,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gahbcfg> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6175,6 +6739,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gusbcfg> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6184,6 +6749,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_grstctl> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6193,6 +6759,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gintsts> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6202,6 +6769,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6211,6 +6779,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_grxstsr_device> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6220,6 +6789,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_grxfsiz> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6229,6 +6799,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gnptxfsiz_device> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6238,6 +6809,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gnptxsts> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6247,6 +6819,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_gccfg> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6256,6 +6829,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_cid> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6265,6 +6839,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_hptxfsiz> {
   static constexpr std::uint32_t kOffsetBytes = 256u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6274,6 +6849,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_dieptxf1> {
   static constexpr std::uint32_t kOffsetBytes = 260u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6283,6 +6859,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_dieptxf2> {
   static constexpr std::uint32_t kOffsetBytes = 264u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6292,6 +6869,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_global_fs_dieptxf3> {
   static constexpr std::uint32_t kOffsetBytes = 268u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6301,6 +6879,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcfg> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6310,6 +6889,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_hfir> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6319,6 +6899,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hfnum> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6328,6 +6909,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hptxsts> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6337,6 +6919,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_haint> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6346,6 +6929,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_haintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6355,6 +6939,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hprt> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6364,6 +6949,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar0> {
   static constexpr std::uint32_t kOffsetBytes = 256u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6373,6 +6959,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint0> {
   static constexpr std::uint32_t kOffsetBytes = 264u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6382,6 +6969,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk0> {
   static constexpr std::uint32_t kOffsetBytes = 268u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6391,6 +6979,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz0> {
   static constexpr std::uint32_t kOffsetBytes = 272u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6400,6 +6989,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar1> {
   static constexpr std::uint32_t kOffsetBytes = 288u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6409,6 +6999,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint1> {
   static constexpr std::uint32_t kOffsetBytes = 296u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6418,6 +7009,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk1> {
   static constexpr std::uint32_t kOffsetBytes = 300u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6427,6 +7019,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz1> {
   static constexpr std::uint32_t kOffsetBytes = 304u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6436,6 +7029,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar2> {
   static constexpr std::uint32_t kOffsetBytes = 320u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6445,6 +7039,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint2> {
   static constexpr std::uint32_t kOffsetBytes = 328u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6454,6 +7049,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk2> {
   static constexpr std::uint32_t kOffsetBytes = 332u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6463,6 +7059,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz2> {
   static constexpr std::uint32_t kOffsetBytes = 336u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6472,6 +7069,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar3> {
   static constexpr std::uint32_t kOffsetBytes = 352u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6481,6 +7079,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint3> {
   static constexpr std::uint32_t kOffsetBytes = 360u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6490,6 +7089,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk3> {
   static constexpr std::uint32_t kOffsetBytes = 364u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6499,6 +7099,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz3> {
   static constexpr std::uint32_t kOffsetBytes = 368u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6508,6 +7109,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar4> {
   static constexpr std::uint32_t kOffsetBytes = 384u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6517,6 +7119,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint4> {
   static constexpr std::uint32_t kOffsetBytes = 392u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6526,6 +7129,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk4> {
   static constexpr std::uint32_t kOffsetBytes = 396u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6535,6 +7139,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz4> {
   static constexpr std::uint32_t kOffsetBytes = 400u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6544,6 +7149,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar5> {
   static constexpr std::uint32_t kOffsetBytes = 416u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6553,6 +7159,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint5> {
   static constexpr std::uint32_t kOffsetBytes = 424u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6562,6 +7169,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk5> {
   static constexpr std::uint32_t kOffsetBytes = 428u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6571,6 +7179,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz5> {
   static constexpr std::uint32_t kOffsetBytes = 432u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6580,6 +7189,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar6> {
   static constexpr std::uint32_t kOffsetBytes = 448u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6589,6 +7199,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint6> {
   static constexpr std::uint32_t kOffsetBytes = 456u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6598,6 +7209,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk6> {
   static constexpr std::uint32_t kOffsetBytes = 460u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6607,6 +7219,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz6> {
   static constexpr std::uint32_t kOffsetBytes = 464u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6616,6 +7229,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcchar7> {
   static constexpr std::uint32_t kOffsetBytes = 480u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6625,6 +7239,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcint7> {
   static constexpr std::uint32_t kOffsetBytes = 488u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6634,6 +7249,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hcintmsk7> {
   static constexpr std::uint32_t kOffsetBytes = 492u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6643,6 +7259,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_host_fs_hctsiz7> {
   static constexpr std::uint32_t kOffsetBytes = 496u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6652,6 +7269,7 @@ struct RegisterTraits<RegisterId::register_otg_fs_pwrclk_fs_pcgcctl> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6661,6 +7279,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dcfg> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6670,6 +7289,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dctl> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6679,6 +7299,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dsts> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6688,6 +7309,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepmsk> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6697,6 +7319,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepmsk> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6706,6 +7329,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_daint> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6715,6 +7339,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_daintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6724,6 +7349,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dvbusdis> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6733,6 +7359,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dvbuspulse> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6742,6 +7369,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dthrctl> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6751,6 +7379,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepempmsk> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6760,6 +7389,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_deachint> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6769,6 +7399,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_deachintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6778,6 +7409,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepeachmsk1> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6787,6 +7419,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepeachmsk1> {
   static constexpr std::uint32_t kOffsetBytes = 128u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6796,6 +7429,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl0> {
   static constexpr std::uint32_t kOffsetBytes = 256u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6805,6 +7439,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint0> {
   static constexpr std::uint32_t kOffsetBytes = 264u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6814,6 +7449,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dieptsiz0> {
   static constexpr std::uint32_t kOffsetBytes = 272u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6823,6 +7459,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepdma1> {
   static constexpr std::uint32_t kOffsetBytes = 276u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6832,6 +7469,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dtxfsts0> {
   static constexpr std::uint32_t kOffsetBytes = 280u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6841,6 +7479,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl1> {
   static constexpr std::uint32_t kOffsetBytes = 288u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6850,6 +7489,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint1> {
   static constexpr std::uint32_t kOffsetBytes = 296u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6859,6 +7499,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dieptsiz1> {
   static constexpr std::uint32_t kOffsetBytes = 304u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6868,6 +7509,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepdma2> {
   static constexpr std::uint32_t kOffsetBytes = 308u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6877,6 +7519,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dtxfsts1> {
   static constexpr std::uint32_t kOffsetBytes = 312u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6886,6 +7529,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl2> {
   static constexpr std::uint32_t kOffsetBytes = 320u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6895,6 +7539,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint2> {
   static constexpr std::uint32_t kOffsetBytes = 328u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6904,6 +7549,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dieptsiz2> {
   static constexpr std::uint32_t kOffsetBytes = 336u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6913,6 +7559,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepdma3> {
   static constexpr std::uint32_t kOffsetBytes = 340u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6922,6 +7569,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dtxfsts2> {
   static constexpr std::uint32_t kOffsetBytes = 344u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6931,6 +7579,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl3> {
   static constexpr std::uint32_t kOffsetBytes = 352u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6940,6 +7589,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint3> {
   static constexpr std::uint32_t kOffsetBytes = 360u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6949,6 +7599,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dieptsiz3> {
   static constexpr std::uint32_t kOffsetBytes = 368u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6958,6 +7609,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepdma4> {
   static constexpr std::uint32_t kOffsetBytes = 372u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6967,6 +7619,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dtxfsts3> {
   static constexpr std::uint32_t kOffsetBytes = 376u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6976,6 +7629,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl4> {
   static constexpr std::uint32_t kOffsetBytes = 384u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6985,6 +7639,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint4> {
   static constexpr std::uint32_t kOffsetBytes = 392u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -6994,6 +7649,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dieptsiz4> {
   static constexpr std::uint32_t kOffsetBytes = 400u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7003,6 +7659,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepdma5> {
   static constexpr std::uint32_t kOffsetBytes = 404u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7012,6 +7669,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dtxfsts4> {
   static constexpr std::uint32_t kOffsetBytes = 408u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7021,6 +7679,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl5> {
   static constexpr std::uint32_t kOffsetBytes = 416u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7030,6 +7689,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint5> {
   static constexpr std::uint32_t kOffsetBytes = 424u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7039,6 +7699,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dieptsiz5> {
   static constexpr std::uint32_t kOffsetBytes = 432u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7048,6 +7709,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_dtxfsts5> {
   static constexpr std::uint32_t kOffsetBytes = 440u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7057,6 +7719,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl6> {
   static constexpr std::uint32_t kOffsetBytes = 448u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7066,6 +7729,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint6> {
   static constexpr std::uint32_t kOffsetBytes = 456u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7075,6 +7739,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepctl7> {
   static constexpr std::uint32_t kOffsetBytes = 480u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7084,6 +7749,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_diepint7> {
   static constexpr std::uint32_t kOffsetBytes = 488u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7093,6 +7759,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepctl0> {
   static constexpr std::uint32_t kOffsetBytes = 768u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7102,6 +7769,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint0> {
   static constexpr std::uint32_t kOffsetBytes = 776u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7111,6 +7779,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doeptsiz0> {
   static constexpr std::uint32_t kOffsetBytes = 784u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7120,6 +7789,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepctl1> {
   static constexpr std::uint32_t kOffsetBytes = 800u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7129,6 +7799,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint1> {
   static constexpr std::uint32_t kOffsetBytes = 808u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7138,6 +7809,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doeptsiz1> {
   static constexpr std::uint32_t kOffsetBytes = 816u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7147,6 +7819,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepctl2> {
   static constexpr std::uint32_t kOffsetBytes = 832u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7156,6 +7829,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint2> {
   static constexpr std::uint32_t kOffsetBytes = 840u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7165,6 +7839,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doeptsiz2> {
   static constexpr std::uint32_t kOffsetBytes = 848u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7174,6 +7849,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepctl3> {
   static constexpr std::uint32_t kOffsetBytes = 864u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7183,6 +7859,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint3> {
   static constexpr std::uint32_t kOffsetBytes = 872u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7192,6 +7869,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doeptsiz3> {
   static constexpr std::uint32_t kOffsetBytes = 880u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7201,6 +7879,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint4> {
   static constexpr std::uint32_t kOffsetBytes = 904u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7210,6 +7889,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doeptsiz4> {
   static constexpr std::uint32_t kOffsetBytes = 912u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7219,6 +7899,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint5> {
   static constexpr std::uint32_t kOffsetBytes = 936u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7228,6 +7909,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint6> {
   static constexpr std::uint32_t kOffsetBytes = 968u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7237,6 +7919,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_device_otg_hs_doepint7> {
   static constexpr std::uint32_t kOffsetBytes = 1000u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7246,6 +7929,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gotgctl> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7255,6 +7939,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gotgint> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7264,6 +7949,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gahbcfg> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7273,6 +7959,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gusbcfg> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7282,6 +7969,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_grstctl> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7291,6 +7979,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gintsts> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7300,6 +7989,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7309,6 +7999,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_grxstsr_host> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7318,6 +8009,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_grxstsp_host> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7327,6 +8019,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_grxfsiz> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7336,6 +8029,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gnptxfsiz_host> 
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7345,6 +8039,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gnptxsts> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7354,6 +8049,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_gccfg> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7363,6 +8059,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_cid> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7372,6 +8069,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_hptxfsiz> {
   static constexpr std::uint32_t kOffsetBytes = 256u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7381,6 +8079,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf1> {
   static constexpr std::uint32_t kOffsetBytes = 260u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7390,6 +8089,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf2> {
   static constexpr std::uint32_t kOffsetBytes = 264u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7399,6 +8099,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf3> {
   static constexpr std::uint32_t kOffsetBytes = 284u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7408,6 +8109,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf4> {
   static constexpr std::uint32_t kOffsetBytes = 288u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7417,6 +8119,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf5> {
   static constexpr std::uint32_t kOffsetBytes = 292u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7426,6 +8129,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf6> {
   static constexpr std::uint32_t kOffsetBytes = 296u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7435,6 +8139,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_global_otg_hs_dieptxf7> {
   static constexpr std::uint32_t kOffsetBytes = 300u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7444,6 +8149,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcfg> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7453,6 +8159,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hfir> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7462,6 +8169,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hfnum> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7471,6 +8179,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hptxsts> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7480,6 +8189,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_haint> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7489,6 +8199,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_haintmsk> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7498,6 +8209,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hprt> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7507,6 +8219,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar0> {
   static constexpr std::uint32_t kOffsetBytes = 256u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7516,6 +8229,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt0> {
   static constexpr std::uint32_t kOffsetBytes = 260u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7525,6 +8239,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint0> {
   static constexpr std::uint32_t kOffsetBytes = 264u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7534,6 +8249,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk0> {
   static constexpr std::uint32_t kOffsetBytes = 268u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7543,6 +8259,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz0> {
   static constexpr std::uint32_t kOffsetBytes = 272u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7552,6 +8269,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma0> {
   static constexpr std::uint32_t kOffsetBytes = 276u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7561,6 +8279,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar1> {
   static constexpr std::uint32_t kOffsetBytes = 288u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7570,6 +8289,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt1> {
   static constexpr std::uint32_t kOffsetBytes = 292u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7579,6 +8299,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint1> {
   static constexpr std::uint32_t kOffsetBytes = 296u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7588,6 +8309,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk1> {
   static constexpr std::uint32_t kOffsetBytes = 300u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7597,6 +8319,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz1> {
   static constexpr std::uint32_t kOffsetBytes = 304u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7606,6 +8329,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma1> {
   static constexpr std::uint32_t kOffsetBytes = 308u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7615,6 +8339,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar2> {
   static constexpr std::uint32_t kOffsetBytes = 320u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7624,6 +8349,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt2> {
   static constexpr std::uint32_t kOffsetBytes = 324u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7633,6 +8359,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint2> {
   static constexpr std::uint32_t kOffsetBytes = 328u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7642,6 +8369,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk2> {
   static constexpr std::uint32_t kOffsetBytes = 332u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7651,6 +8379,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz2> {
   static constexpr std::uint32_t kOffsetBytes = 336u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7660,6 +8389,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma2> {
   static constexpr std::uint32_t kOffsetBytes = 340u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7669,6 +8399,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar3> {
   static constexpr std::uint32_t kOffsetBytes = 352u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7678,6 +8409,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt3> {
   static constexpr std::uint32_t kOffsetBytes = 356u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7687,6 +8419,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint3> {
   static constexpr std::uint32_t kOffsetBytes = 360u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7696,6 +8429,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk3> {
   static constexpr std::uint32_t kOffsetBytes = 364u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7705,6 +8439,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz3> {
   static constexpr std::uint32_t kOffsetBytes = 368u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7714,6 +8449,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma3> {
   static constexpr std::uint32_t kOffsetBytes = 372u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7723,6 +8459,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar4> {
   static constexpr std::uint32_t kOffsetBytes = 384u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7732,6 +8469,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt4> {
   static constexpr std::uint32_t kOffsetBytes = 388u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7741,6 +8479,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint4> {
   static constexpr std::uint32_t kOffsetBytes = 392u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7750,6 +8489,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk4> {
   static constexpr std::uint32_t kOffsetBytes = 396u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7759,6 +8499,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz4> {
   static constexpr std::uint32_t kOffsetBytes = 400u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7768,6 +8509,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma4> {
   static constexpr std::uint32_t kOffsetBytes = 404u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7777,6 +8519,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar5> {
   static constexpr std::uint32_t kOffsetBytes = 416u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7786,6 +8529,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt5> {
   static constexpr std::uint32_t kOffsetBytes = 420u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7795,6 +8539,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint5> {
   static constexpr std::uint32_t kOffsetBytes = 424u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7804,6 +8549,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk5> {
   static constexpr std::uint32_t kOffsetBytes = 428u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7813,6 +8559,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz5> {
   static constexpr std::uint32_t kOffsetBytes = 432u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7822,6 +8569,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma5> {
   static constexpr std::uint32_t kOffsetBytes = 436u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7831,6 +8579,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar6> {
   static constexpr std::uint32_t kOffsetBytes = 448u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7840,6 +8589,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt6> {
   static constexpr std::uint32_t kOffsetBytes = 452u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7849,6 +8599,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint6> {
   static constexpr std::uint32_t kOffsetBytes = 456u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7858,6 +8609,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk6> {
   static constexpr std::uint32_t kOffsetBytes = 460u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7867,6 +8619,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz6> {
   static constexpr std::uint32_t kOffsetBytes = 464u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7876,6 +8629,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma6> {
   static constexpr std::uint32_t kOffsetBytes = 468u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7885,6 +8639,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar7> {
   static constexpr std::uint32_t kOffsetBytes = 480u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7894,6 +8649,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt7> {
   static constexpr std::uint32_t kOffsetBytes = 484u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7903,6 +8659,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint7> {
   static constexpr std::uint32_t kOffsetBytes = 488u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7912,6 +8669,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk7> {
   static constexpr std::uint32_t kOffsetBytes = 492u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7921,6 +8679,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz7> {
   static constexpr std::uint32_t kOffsetBytes = 496u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7930,6 +8689,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma7> {
   static constexpr std::uint32_t kOffsetBytes = 500u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7939,6 +8699,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar8> {
   static constexpr std::uint32_t kOffsetBytes = 512u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7948,6 +8709,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt8> {
   static constexpr std::uint32_t kOffsetBytes = 516u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7957,6 +8719,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint8> {
   static constexpr std::uint32_t kOffsetBytes = 520u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7966,6 +8729,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk8> {
   static constexpr std::uint32_t kOffsetBytes = 524u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7975,6 +8739,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz8> {
   static constexpr std::uint32_t kOffsetBytes = 528u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7984,6 +8749,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma8> {
   static constexpr std::uint32_t kOffsetBytes = 532u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -7993,6 +8759,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar9> {
   static constexpr std::uint32_t kOffsetBytes = 544u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8002,6 +8769,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt9> {
   static constexpr std::uint32_t kOffsetBytes = 548u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8011,6 +8779,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint9> {
   static constexpr std::uint32_t kOffsetBytes = 552u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8020,6 +8789,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk9> {
   static constexpr std::uint32_t kOffsetBytes = 556u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8029,6 +8799,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz9> {
   static constexpr std::uint32_t kOffsetBytes = 560u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8038,6 +8809,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma9> {
   static constexpr std::uint32_t kOffsetBytes = 564u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8047,6 +8819,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar10> {
   static constexpr std::uint32_t kOffsetBytes = 576u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8056,6 +8829,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt10> {
   static constexpr std::uint32_t kOffsetBytes = 580u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8065,6 +8839,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint10> {
   static constexpr std::uint32_t kOffsetBytes = 584u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8074,6 +8849,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk10> {
   static constexpr std::uint32_t kOffsetBytes = 588u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8083,6 +8859,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz10> {
   static constexpr std::uint32_t kOffsetBytes = 592u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8092,6 +8869,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma10> {
   static constexpr std::uint32_t kOffsetBytes = 596u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8101,6 +8879,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcchar11> {
   static constexpr std::uint32_t kOffsetBytes = 608u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8110,6 +8889,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcsplt11> {
   static constexpr std::uint32_t kOffsetBytes = 612u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8119,6 +8899,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcint11> {
   static constexpr std::uint32_t kOffsetBytes = 616u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8128,6 +8909,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcintmsk11> {
   static constexpr std::uint32_t kOffsetBytes = 620u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8137,6 +8919,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hctsiz11> {
   static constexpr std::uint32_t kOffsetBytes = 624u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8146,6 +8929,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_host_otg_hs_hcdma11> {
   static constexpr std::uint32_t kOffsetBytes = 628u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8155,6 +8939,7 @@ struct RegisterTraits<RegisterId::register_otg_hs_pwrclk_otg_hs_pcgcr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8164,6 +8949,7 @@ struct RegisterTraits<RegisterId::register_rcc_cr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8173,6 +8959,7 @@ struct RegisterTraits<RegisterId::register_rcc_pllcfgr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8182,6 +8969,7 @@ struct RegisterTraits<RegisterId::register_rcc_cfgr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8191,6 +8979,7 @@ struct RegisterTraits<RegisterId::register_rcc_ahb1rstr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8200,6 +8989,7 @@ struct RegisterTraits<RegisterId::register_rcc_apb1rstr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8209,6 +8999,7 @@ struct RegisterTraits<RegisterId::register_rcc_apb2rstr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8218,6 +9009,7 @@ struct RegisterTraits<RegisterId::register_rcc_ahb1enr> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8227,6 +9019,7 @@ struct RegisterTraits<RegisterId::register_rcc_apb1enr> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8236,6 +9029,7 @@ struct RegisterTraits<RegisterId::register_rcc_apb2enr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8245,6 +9039,7 @@ struct RegisterTraits<RegisterId::register_rtc_tr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8254,6 +9049,7 @@ struct RegisterTraits<RegisterId::register_rtc_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8263,6 +9059,7 @@ struct RegisterTraits<RegisterId::register_rtc_cr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8272,6 +9069,7 @@ struct RegisterTraits<RegisterId::register_rtc_isr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8281,6 +9079,7 @@ struct RegisterTraits<RegisterId::register_rtc_prer> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8290,6 +9089,7 @@ struct RegisterTraits<RegisterId::register_rtc_wutr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8299,6 +9099,7 @@ struct RegisterTraits<RegisterId::register_rtc_calibr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8308,6 +9109,7 @@ struct RegisterTraits<RegisterId::register_rtc_alrmar> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8317,6 +9119,7 @@ struct RegisterTraits<RegisterId::register_rtc_alrmbr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8326,6 +9129,7 @@ struct RegisterTraits<RegisterId::register_rtc_wpr> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8335,6 +9139,7 @@ struct RegisterTraits<RegisterId::register_rtc_ssr> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8344,6 +9149,7 @@ struct RegisterTraits<RegisterId::register_rtc_shiftr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8353,6 +9159,7 @@ struct RegisterTraits<RegisterId::register_rtc_tstr> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8362,6 +9169,7 @@ struct RegisterTraits<RegisterId::register_rtc_tsdr> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8371,6 +9179,7 @@ struct RegisterTraits<RegisterId::register_rtc_tsssr> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8380,6 +9189,7 @@ struct RegisterTraits<RegisterId::register_rtc_calr> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8389,6 +9199,7 @@ struct RegisterTraits<RegisterId::register_rtc_tafcr> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8398,6 +9209,7 @@ struct RegisterTraits<RegisterId::register_rtc_alrmassr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8407,6 +9219,7 @@ struct RegisterTraits<RegisterId::register_rtc_alrmbssr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8416,6 +9229,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp0r> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8425,6 +9239,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp1r> {
   static constexpr std::uint32_t kOffsetBytes = 84u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8434,6 +9249,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp2r> {
   static constexpr std::uint32_t kOffsetBytes = 88u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8443,6 +9259,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp3r> {
   static constexpr std::uint32_t kOffsetBytes = 92u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8452,6 +9269,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp4r> {
   static constexpr std::uint32_t kOffsetBytes = 96u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8461,6 +9279,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp5r> {
   static constexpr std::uint32_t kOffsetBytes = 100u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8470,6 +9289,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp6r> {
   static constexpr std::uint32_t kOffsetBytes = 104u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8479,6 +9299,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp7r> {
   static constexpr std::uint32_t kOffsetBytes = 108u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8488,6 +9309,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp8r> {
   static constexpr std::uint32_t kOffsetBytes = 112u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8497,6 +9319,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp9r> {
   static constexpr std::uint32_t kOffsetBytes = 116u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8506,6 +9329,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp10r> {
   static constexpr std::uint32_t kOffsetBytes = 120u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8515,6 +9339,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp11r> {
   static constexpr std::uint32_t kOffsetBytes = 124u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8524,6 +9349,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp12r> {
   static constexpr std::uint32_t kOffsetBytes = 128u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8533,6 +9359,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp13r> {
   static constexpr std::uint32_t kOffsetBytes = 132u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8542,6 +9369,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp14r> {
   static constexpr std::uint32_t kOffsetBytes = 136u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8551,6 +9379,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp15r> {
   static constexpr std::uint32_t kOffsetBytes = 140u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8560,6 +9389,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp16r> {
   static constexpr std::uint32_t kOffsetBytes = 144u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8569,6 +9399,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp17r> {
   static constexpr std::uint32_t kOffsetBytes = 148u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8578,6 +9409,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp18r> {
   static constexpr std::uint32_t kOffsetBytes = 152u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8587,6 +9419,7 @@ struct RegisterTraits<RegisterId::register_rtc_bkp19r> {
   static constexpr std::uint32_t kOffsetBytes = 156u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8596,6 +9429,7 @@ struct RegisterTraits<RegisterId::register_spi1_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8605,6 +9439,7 @@ struct RegisterTraits<RegisterId::register_spi1_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8614,6 +9449,7 @@ struct RegisterTraits<RegisterId::register_spi1_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8623,6 +9459,7 @@ struct RegisterTraits<RegisterId::register_spi1_dr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8632,6 +9469,7 @@ struct RegisterTraits<RegisterId::register_spi1_crcpr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8641,6 +9479,7 @@ struct RegisterTraits<RegisterId::register_spi1_rxcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8650,6 +9489,7 @@ struct RegisterTraits<RegisterId::register_spi1_txcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8659,6 +9499,7 @@ struct RegisterTraits<RegisterId::register_spi1_i2scfgr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8668,6 +9509,7 @@ struct RegisterTraits<RegisterId::register_spi1_i2spr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8677,6 +9519,7 @@ struct RegisterTraits<RegisterId::register_spi2_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8686,6 +9529,7 @@ struct RegisterTraits<RegisterId::register_spi2_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8695,6 +9539,7 @@ struct RegisterTraits<RegisterId::register_spi2_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8704,6 +9549,7 @@ struct RegisterTraits<RegisterId::register_spi2_dr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8713,6 +9559,7 @@ struct RegisterTraits<RegisterId::register_spi2_crcpr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8722,6 +9569,7 @@ struct RegisterTraits<RegisterId::register_spi2_rxcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8731,6 +9579,7 @@ struct RegisterTraits<RegisterId::register_spi2_txcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8740,6 +9589,7 @@ struct RegisterTraits<RegisterId::register_spi2_i2scfgr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8749,6 +9599,7 @@ struct RegisterTraits<RegisterId::register_spi2_i2spr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8758,6 +9609,7 @@ struct RegisterTraits<RegisterId::register_spi3_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8767,6 +9619,7 @@ struct RegisterTraits<RegisterId::register_spi3_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8776,6 +9629,7 @@ struct RegisterTraits<RegisterId::register_spi3_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8785,6 +9639,7 @@ struct RegisterTraits<RegisterId::register_spi3_dr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8794,6 +9649,7 @@ struct RegisterTraits<RegisterId::register_spi3_crcpr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8803,6 +9659,7 @@ struct RegisterTraits<RegisterId::register_spi3_rxcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8812,6 +9669,7 @@ struct RegisterTraits<RegisterId::register_spi3_txcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8821,6 +9679,7 @@ struct RegisterTraits<RegisterId::register_spi3_i2scfgr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8830,6 +9689,7 @@ struct RegisterTraits<RegisterId::register_spi3_i2spr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8839,6 +9699,7 @@ struct RegisterTraits<RegisterId::register_spi4_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8848,6 +9709,7 @@ struct RegisterTraits<RegisterId::register_spi4_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8857,6 +9719,7 @@ struct RegisterTraits<RegisterId::register_spi4_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8866,6 +9729,7 @@ struct RegisterTraits<RegisterId::register_spi4_dr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8875,6 +9739,7 @@ struct RegisterTraits<RegisterId::register_spi4_crcpr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8884,6 +9749,7 @@ struct RegisterTraits<RegisterId::register_spi4_rxcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8893,6 +9759,7 @@ struct RegisterTraits<RegisterId::register_spi4_txcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8902,6 +9769,7 @@ struct RegisterTraits<RegisterId::register_spi4_i2scfgr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8911,6 +9779,7 @@ struct RegisterTraits<RegisterId::register_spi4_i2spr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8920,6 +9789,7 @@ struct RegisterTraits<RegisterId::register_spi5_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8929,6 +9799,7 @@ struct RegisterTraits<RegisterId::register_spi5_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8938,6 +9809,7 @@ struct RegisterTraits<RegisterId::register_spi5_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8947,6 +9819,7 @@ struct RegisterTraits<RegisterId::register_spi5_dr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8956,6 +9829,7 @@ struct RegisterTraits<RegisterId::register_spi5_crcpr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8965,6 +9839,7 @@ struct RegisterTraits<RegisterId::register_spi5_rxcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8974,6 +9849,7 @@ struct RegisterTraits<RegisterId::register_spi5_txcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8983,6 +9859,7 @@ struct RegisterTraits<RegisterId::register_spi5_i2scfgr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -8992,6 +9869,7 @@ struct RegisterTraits<RegisterId::register_spi5_i2spr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9001,6 +9879,7 @@ struct RegisterTraits<RegisterId::register_spi6_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9010,6 +9889,7 @@ struct RegisterTraits<RegisterId::register_spi6_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9019,6 +9899,7 @@ struct RegisterTraits<RegisterId::register_spi6_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9028,6 +9909,7 @@ struct RegisterTraits<RegisterId::register_spi6_dr> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9037,6 +9919,7 @@ struct RegisterTraits<RegisterId::register_spi6_crcpr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9046,6 +9929,7 @@ struct RegisterTraits<RegisterId::register_spi6_rxcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9055,6 +9939,7 @@ struct RegisterTraits<RegisterId::register_spi6_txcrcr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9064,6 +9949,7 @@ struct RegisterTraits<RegisterId::register_spi6_i2scfgr> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9073,6 +9959,7 @@ struct RegisterTraits<RegisterId::register_spi6_i2spr> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9082,6 +9969,7 @@ struct RegisterTraits<RegisterId::register_tim1_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9091,6 +9979,7 @@ struct RegisterTraits<RegisterId::register_tim1_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9100,6 +9989,7 @@ struct RegisterTraits<RegisterId::register_tim1_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9109,6 +9999,7 @@ struct RegisterTraits<RegisterId::register_tim1_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9118,6 +10009,7 @@ struct RegisterTraits<RegisterId::register_tim1_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9127,6 +10019,7 @@ struct RegisterTraits<RegisterId::register_tim1_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9136,6 +10029,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9145,6 +10039,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccmr2_input> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9154,6 +10049,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9163,6 +10059,7 @@ struct RegisterTraits<RegisterId::register_tim1_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9172,6 +10069,7 @@ struct RegisterTraits<RegisterId::register_tim1_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9181,6 +10079,7 @@ struct RegisterTraits<RegisterId::register_tim1_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9190,6 +10089,7 @@ struct RegisterTraits<RegisterId::register_tim1_rcr> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9199,6 +10099,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9208,6 +10109,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9217,6 +10119,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccr3> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9226,6 +10129,7 @@ struct RegisterTraits<RegisterId::register_tim1_ccr4> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9235,6 +10139,7 @@ struct RegisterTraits<RegisterId::register_tim1_bdtr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9244,6 +10149,7 @@ struct RegisterTraits<RegisterId::register_tim1_dcr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9253,6 +10159,7 @@ struct RegisterTraits<RegisterId::register_tim1_dmar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9262,6 +10169,7 @@ struct RegisterTraits<RegisterId::register_tim10_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9271,6 +10179,7 @@ struct RegisterTraits<RegisterId::register_tim10_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9280,6 +10189,7 @@ struct RegisterTraits<RegisterId::register_tim10_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9289,6 +10199,7 @@ struct RegisterTraits<RegisterId::register_tim10_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9298,6 +10209,7 @@ struct RegisterTraits<RegisterId::register_tim10_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9307,6 +10219,7 @@ struct RegisterTraits<RegisterId::register_tim10_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9316,6 +10229,7 @@ struct RegisterTraits<RegisterId::register_tim10_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9325,6 +10239,7 @@ struct RegisterTraits<RegisterId::register_tim10_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9334,6 +10249,7 @@ struct RegisterTraits<RegisterId::register_tim10_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9343,6 +10259,7 @@ struct RegisterTraits<RegisterId::register_tim10_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9352,6 +10269,7 @@ struct RegisterTraits<RegisterId::register_tim11_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9361,6 +10279,7 @@ struct RegisterTraits<RegisterId::register_tim11_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9370,6 +10289,7 @@ struct RegisterTraits<RegisterId::register_tim11_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9379,6 +10299,7 @@ struct RegisterTraits<RegisterId::register_tim11_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9388,6 +10309,7 @@ struct RegisterTraits<RegisterId::register_tim11_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9397,6 +10319,7 @@ struct RegisterTraits<RegisterId::register_tim11_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9406,6 +10329,7 @@ struct RegisterTraits<RegisterId::register_tim11_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9415,6 +10339,7 @@ struct RegisterTraits<RegisterId::register_tim11_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9424,6 +10349,7 @@ struct RegisterTraits<RegisterId::register_tim11_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9433,6 +10359,7 @@ struct RegisterTraits<RegisterId::register_tim11_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9442,6 +10369,7 @@ struct RegisterTraits<RegisterId::register_tim11_or> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9451,6 +10379,7 @@ struct RegisterTraits<RegisterId::register_tim12_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9460,6 +10389,7 @@ struct RegisterTraits<RegisterId::register_tim12_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9469,6 +10399,7 @@ struct RegisterTraits<RegisterId::register_tim12_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9478,6 +10409,7 @@ struct RegisterTraits<RegisterId::register_tim12_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9487,6 +10419,7 @@ struct RegisterTraits<RegisterId::register_tim12_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9496,6 +10429,7 @@ struct RegisterTraits<RegisterId::register_tim12_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9505,6 +10439,7 @@ struct RegisterTraits<RegisterId::register_tim12_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9514,6 +10449,7 @@ struct RegisterTraits<RegisterId::register_tim12_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9523,6 +10459,7 @@ struct RegisterTraits<RegisterId::register_tim12_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9532,6 +10469,7 @@ struct RegisterTraits<RegisterId::register_tim12_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9541,6 +10479,7 @@ struct RegisterTraits<RegisterId::register_tim12_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9550,6 +10489,7 @@ struct RegisterTraits<RegisterId::register_tim12_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9559,6 +10499,7 @@ struct RegisterTraits<RegisterId::register_tim12_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9568,6 +10509,7 @@ struct RegisterTraits<RegisterId::register_tim13_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9577,6 +10519,7 @@ struct RegisterTraits<RegisterId::register_tim13_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9586,6 +10529,7 @@ struct RegisterTraits<RegisterId::register_tim13_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9595,6 +10539,7 @@ struct RegisterTraits<RegisterId::register_tim13_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9604,6 +10549,7 @@ struct RegisterTraits<RegisterId::register_tim13_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9613,6 +10559,7 @@ struct RegisterTraits<RegisterId::register_tim13_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9622,6 +10569,7 @@ struct RegisterTraits<RegisterId::register_tim13_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9631,6 +10579,7 @@ struct RegisterTraits<RegisterId::register_tim13_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9640,6 +10589,7 @@ struct RegisterTraits<RegisterId::register_tim13_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9649,6 +10599,7 @@ struct RegisterTraits<RegisterId::register_tim13_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9658,6 +10609,7 @@ struct RegisterTraits<RegisterId::register_tim14_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9667,6 +10619,7 @@ struct RegisterTraits<RegisterId::register_tim14_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9676,6 +10629,7 @@ struct RegisterTraits<RegisterId::register_tim14_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9685,6 +10639,7 @@ struct RegisterTraits<RegisterId::register_tim14_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9694,6 +10649,7 @@ struct RegisterTraits<RegisterId::register_tim14_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9703,6 +10659,7 @@ struct RegisterTraits<RegisterId::register_tim14_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9712,6 +10669,7 @@ struct RegisterTraits<RegisterId::register_tim14_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9721,6 +10679,7 @@ struct RegisterTraits<RegisterId::register_tim14_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9730,6 +10689,7 @@ struct RegisterTraits<RegisterId::register_tim14_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9739,6 +10699,7 @@ struct RegisterTraits<RegisterId::register_tim14_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9748,6 +10709,7 @@ struct RegisterTraits<RegisterId::register_tim2_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9757,6 +10719,7 @@ struct RegisterTraits<RegisterId::register_tim2_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9766,6 +10729,7 @@ struct RegisterTraits<RegisterId::register_tim2_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9775,6 +10739,7 @@ struct RegisterTraits<RegisterId::register_tim2_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9784,6 +10749,7 @@ struct RegisterTraits<RegisterId::register_tim2_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9793,6 +10759,7 @@ struct RegisterTraits<RegisterId::register_tim2_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9802,6 +10769,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9811,6 +10779,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccmr2_input> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9820,6 +10789,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9829,6 +10799,7 @@ struct RegisterTraits<RegisterId::register_tim2_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9838,6 +10809,7 @@ struct RegisterTraits<RegisterId::register_tim2_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9847,6 +10819,7 @@ struct RegisterTraits<RegisterId::register_tim2_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9856,6 +10829,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9865,6 +10839,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9874,6 +10849,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccr3> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9883,6 +10859,7 @@ struct RegisterTraits<RegisterId::register_tim2_ccr4> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9892,6 +10869,7 @@ struct RegisterTraits<RegisterId::register_tim2_dcr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9901,6 +10879,7 @@ struct RegisterTraits<RegisterId::register_tim2_dmar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9910,6 +10889,7 @@ struct RegisterTraits<RegisterId::register_tim2_or> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9919,6 +10899,7 @@ struct RegisterTraits<RegisterId::register_tim3_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9928,6 +10909,7 @@ struct RegisterTraits<RegisterId::register_tim3_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9937,6 +10919,7 @@ struct RegisterTraits<RegisterId::register_tim3_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9946,6 +10929,7 @@ struct RegisterTraits<RegisterId::register_tim3_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9955,6 +10939,7 @@ struct RegisterTraits<RegisterId::register_tim3_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9964,6 +10949,7 @@ struct RegisterTraits<RegisterId::register_tim3_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9973,6 +10959,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9982,6 +10969,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccmr2_input> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -9991,6 +10979,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10000,6 +10989,7 @@ struct RegisterTraits<RegisterId::register_tim3_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10009,6 +10999,7 @@ struct RegisterTraits<RegisterId::register_tim3_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10018,6 +11009,7 @@ struct RegisterTraits<RegisterId::register_tim3_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10027,6 +11019,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10036,6 +11029,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10045,6 +11039,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccr3> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10054,6 +11049,7 @@ struct RegisterTraits<RegisterId::register_tim3_ccr4> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10063,6 +11059,7 @@ struct RegisterTraits<RegisterId::register_tim3_dcr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10072,6 +11069,7 @@ struct RegisterTraits<RegisterId::register_tim3_dmar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10081,6 +11079,7 @@ struct RegisterTraits<RegisterId::register_tim4_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10090,6 +11089,7 @@ struct RegisterTraits<RegisterId::register_tim4_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10099,6 +11099,7 @@ struct RegisterTraits<RegisterId::register_tim4_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10108,6 +11109,7 @@ struct RegisterTraits<RegisterId::register_tim4_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10117,6 +11119,7 @@ struct RegisterTraits<RegisterId::register_tim4_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10126,6 +11129,7 @@ struct RegisterTraits<RegisterId::register_tim4_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10135,6 +11139,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10144,6 +11149,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccmr2_input> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10153,6 +11159,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10162,6 +11169,7 @@ struct RegisterTraits<RegisterId::register_tim4_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10171,6 +11179,7 @@ struct RegisterTraits<RegisterId::register_tim4_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10180,6 +11189,7 @@ struct RegisterTraits<RegisterId::register_tim4_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10189,6 +11199,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10198,6 +11209,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10207,6 +11219,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccr3> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10216,6 +11229,7 @@ struct RegisterTraits<RegisterId::register_tim4_ccr4> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10225,6 +11239,7 @@ struct RegisterTraits<RegisterId::register_tim4_dcr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10234,6 +11249,7 @@ struct RegisterTraits<RegisterId::register_tim4_dmar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10243,6 +11259,7 @@ struct RegisterTraits<RegisterId::register_tim5_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10252,6 +11269,7 @@ struct RegisterTraits<RegisterId::register_tim5_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10261,6 +11279,7 @@ struct RegisterTraits<RegisterId::register_tim5_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10270,6 +11289,7 @@ struct RegisterTraits<RegisterId::register_tim5_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10279,6 +11299,7 @@ struct RegisterTraits<RegisterId::register_tim5_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10288,6 +11309,7 @@ struct RegisterTraits<RegisterId::register_tim5_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10297,6 +11319,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10306,6 +11329,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccmr2_input> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10315,6 +11339,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10324,6 +11349,7 @@ struct RegisterTraits<RegisterId::register_tim5_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10333,6 +11359,7 @@ struct RegisterTraits<RegisterId::register_tim5_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10342,6 +11369,7 @@ struct RegisterTraits<RegisterId::register_tim5_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10351,6 +11379,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10360,6 +11389,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10369,6 +11399,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccr3> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10378,6 +11409,7 @@ struct RegisterTraits<RegisterId::register_tim5_ccr4> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10387,6 +11419,7 @@ struct RegisterTraits<RegisterId::register_tim5_dcr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10396,6 +11429,7 @@ struct RegisterTraits<RegisterId::register_tim5_dmar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10405,6 +11439,7 @@ struct RegisterTraits<RegisterId::register_tim5_or> {
   static constexpr std::uint32_t kOffsetBytes = 80u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10414,6 +11449,7 @@ struct RegisterTraits<RegisterId::register_tim6_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10423,6 +11459,7 @@ struct RegisterTraits<RegisterId::register_tim6_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10432,6 +11469,7 @@ struct RegisterTraits<RegisterId::register_tim6_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10441,6 +11479,7 @@ struct RegisterTraits<RegisterId::register_tim6_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10450,6 +11489,7 @@ struct RegisterTraits<RegisterId::register_tim6_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10459,6 +11499,7 @@ struct RegisterTraits<RegisterId::register_tim6_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10468,6 +11509,7 @@ struct RegisterTraits<RegisterId::register_tim6_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10477,6 +11519,7 @@ struct RegisterTraits<RegisterId::register_tim6_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10486,6 +11529,7 @@ struct RegisterTraits<RegisterId::register_tim7_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10495,6 +11539,7 @@ struct RegisterTraits<RegisterId::register_tim7_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10504,6 +11549,7 @@ struct RegisterTraits<RegisterId::register_tim7_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10513,6 +11559,7 @@ struct RegisterTraits<RegisterId::register_tim7_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10522,6 +11569,7 @@ struct RegisterTraits<RegisterId::register_tim7_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10531,6 +11579,7 @@ struct RegisterTraits<RegisterId::register_tim7_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10540,6 +11589,7 @@ struct RegisterTraits<RegisterId::register_tim7_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10549,6 +11599,7 @@ struct RegisterTraits<RegisterId::register_tim7_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10558,6 +11609,7 @@ struct RegisterTraits<RegisterId::register_tim8_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10567,6 +11619,7 @@ struct RegisterTraits<RegisterId::register_tim8_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10576,6 +11629,7 @@ struct RegisterTraits<RegisterId::register_tim8_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10585,6 +11639,7 @@ struct RegisterTraits<RegisterId::register_tim8_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10594,6 +11649,7 @@ struct RegisterTraits<RegisterId::register_tim8_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10603,6 +11659,7 @@ struct RegisterTraits<RegisterId::register_tim8_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10612,6 +11669,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10621,6 +11679,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccmr2_input> {
   static constexpr std::uint32_t kOffsetBytes = 28u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10630,6 +11689,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10639,6 +11699,7 @@ struct RegisterTraits<RegisterId::register_tim8_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10648,6 +11709,7 @@ struct RegisterTraits<RegisterId::register_tim8_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10657,6 +11719,7 @@ struct RegisterTraits<RegisterId::register_tim8_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10666,6 +11729,7 @@ struct RegisterTraits<RegisterId::register_tim8_rcr> {
   static constexpr std::uint32_t kOffsetBytes = 48u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10675,6 +11739,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10684,6 +11749,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10693,6 +11759,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccr3> {
   static constexpr std::uint32_t kOffsetBytes = 60u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10702,6 +11769,7 @@ struct RegisterTraits<RegisterId::register_tim8_ccr4> {
   static constexpr std::uint32_t kOffsetBytes = 64u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10711,6 +11779,7 @@ struct RegisterTraits<RegisterId::register_tim8_bdtr> {
   static constexpr std::uint32_t kOffsetBytes = 68u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10720,6 +11789,7 @@ struct RegisterTraits<RegisterId::register_tim8_dcr> {
   static constexpr std::uint32_t kOffsetBytes = 72u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10729,6 +11799,7 @@ struct RegisterTraits<RegisterId::register_tim8_dmar> {
   static constexpr std::uint32_t kOffsetBytes = 76u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10738,6 +11809,7 @@ struct RegisterTraits<RegisterId::register_tim9_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10747,6 +11819,7 @@ struct RegisterTraits<RegisterId::register_tim9_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10756,6 +11829,7 @@ struct RegisterTraits<RegisterId::register_tim9_smcr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10765,6 +11839,7 @@ struct RegisterTraits<RegisterId::register_tim9_dier> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10774,6 +11849,7 @@ struct RegisterTraits<RegisterId::register_tim9_sr> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10783,6 +11859,7 @@ struct RegisterTraits<RegisterId::register_tim9_egr> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10792,6 +11869,7 @@ struct RegisterTraits<RegisterId::register_tim9_ccmr1_input> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10801,6 +11879,7 @@ struct RegisterTraits<RegisterId::register_tim9_ccer> {
   static constexpr std::uint32_t kOffsetBytes = 32u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10810,6 +11889,7 @@ struct RegisterTraits<RegisterId::register_tim9_cnt> {
   static constexpr std::uint32_t kOffsetBytes = 36u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10819,6 +11899,7 @@ struct RegisterTraits<RegisterId::register_tim9_psc> {
   static constexpr std::uint32_t kOffsetBytes = 40u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10828,6 +11909,7 @@ struct RegisterTraits<RegisterId::register_tim9_arr> {
   static constexpr std::uint32_t kOffsetBytes = 44u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10837,6 +11919,7 @@ struct RegisterTraits<RegisterId::register_tim9_ccr1> {
   static constexpr std::uint32_t kOffsetBytes = 52u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10846,6 +11929,7 @@ struct RegisterTraits<RegisterId::register_tim9_ccr2> {
   static constexpr std::uint32_t kOffsetBytes = 56u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10855,6 +11939,7 @@ struct RegisterTraits<RegisterId::register_uart4_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10864,6 +11949,7 @@ struct RegisterTraits<RegisterId::register_uart4_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10873,6 +11959,7 @@ struct RegisterTraits<RegisterId::register_uart4_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10882,6 +11969,7 @@ struct RegisterTraits<RegisterId::register_uart4_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10891,6 +11979,7 @@ struct RegisterTraits<RegisterId::register_uart4_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10900,6 +11989,7 @@ struct RegisterTraits<RegisterId::register_uart4_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10909,6 +11999,7 @@ struct RegisterTraits<RegisterId::register_uart5_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10918,6 +12009,7 @@ struct RegisterTraits<RegisterId::register_uart5_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10927,6 +12019,7 @@ struct RegisterTraits<RegisterId::register_uart5_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10936,6 +12029,7 @@ struct RegisterTraits<RegisterId::register_uart5_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10945,6 +12039,7 @@ struct RegisterTraits<RegisterId::register_uart5_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10954,6 +12049,7 @@ struct RegisterTraits<RegisterId::register_uart5_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10963,6 +12059,7 @@ struct RegisterTraits<RegisterId::register_uart7_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10972,6 +12069,7 @@ struct RegisterTraits<RegisterId::register_uart7_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10981,6 +12079,7 @@ struct RegisterTraits<RegisterId::register_uart7_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10990,6 +12089,7 @@ struct RegisterTraits<RegisterId::register_uart7_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -10999,6 +12099,7 @@ struct RegisterTraits<RegisterId::register_uart7_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11008,6 +12109,7 @@ struct RegisterTraits<RegisterId::register_uart7_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11017,6 +12119,7 @@ struct RegisterTraits<RegisterId::register_uart8_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11026,6 +12129,7 @@ struct RegisterTraits<RegisterId::register_uart8_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11035,6 +12139,7 @@ struct RegisterTraits<RegisterId::register_uart8_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11044,6 +12149,7 @@ struct RegisterTraits<RegisterId::register_uart8_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11053,6 +12159,7 @@ struct RegisterTraits<RegisterId::register_uart8_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11062,6 +12169,7 @@ struct RegisterTraits<RegisterId::register_uart8_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11071,6 +12179,7 @@ struct RegisterTraits<RegisterId::register_usart1_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11080,6 +12189,7 @@ struct RegisterTraits<RegisterId::register_usart1_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11089,6 +12199,7 @@ struct RegisterTraits<RegisterId::register_usart1_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11098,6 +12209,7 @@ struct RegisterTraits<RegisterId::register_usart1_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11107,6 +12219,7 @@ struct RegisterTraits<RegisterId::register_usart1_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11116,6 +12229,7 @@ struct RegisterTraits<RegisterId::register_usart1_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11125,6 +12239,7 @@ struct RegisterTraits<RegisterId::register_usart1_gtpr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11134,6 +12249,7 @@ struct RegisterTraits<RegisterId::register_usart2_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11143,6 +12259,7 @@ struct RegisterTraits<RegisterId::register_usart2_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11152,6 +12269,7 @@ struct RegisterTraits<RegisterId::register_usart2_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11161,6 +12279,7 @@ struct RegisterTraits<RegisterId::register_usart2_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11170,6 +12289,7 @@ struct RegisterTraits<RegisterId::register_usart2_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11179,6 +12299,7 @@ struct RegisterTraits<RegisterId::register_usart2_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11188,6 +12309,7 @@ struct RegisterTraits<RegisterId::register_usart2_gtpr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11197,6 +12319,7 @@ struct RegisterTraits<RegisterId::register_usart3_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11206,6 +12329,7 @@ struct RegisterTraits<RegisterId::register_usart3_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11215,6 +12339,7 @@ struct RegisterTraits<RegisterId::register_usart3_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11224,6 +12349,7 @@ struct RegisterTraits<RegisterId::register_usart3_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11233,6 +12359,7 @@ struct RegisterTraits<RegisterId::register_usart3_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11242,6 +12369,7 @@ struct RegisterTraits<RegisterId::register_usart3_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11251,6 +12379,7 @@ struct RegisterTraits<RegisterId::register_usart3_gtpr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11260,6 +12389,7 @@ struct RegisterTraits<RegisterId::register_usart6_sr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11269,6 +12399,7 @@ struct RegisterTraits<RegisterId::register_usart6_dr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11278,6 +12409,7 @@ struct RegisterTraits<RegisterId::register_usart6_brr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11287,6 +12419,7 @@ struct RegisterTraits<RegisterId::register_usart6_cr1> {
   static constexpr std::uint32_t kOffsetBytes = 12u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11296,6 +12429,7 @@ struct RegisterTraits<RegisterId::register_usart6_cr2> {
   static constexpr std::uint32_t kOffsetBytes = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11305,6 +12439,7 @@ struct RegisterTraits<RegisterId::register_usart6_cr3> {
   static constexpr std::uint32_t kOffsetBytes = 20u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11314,6 +12449,7 @@ struct RegisterTraits<RegisterId::register_usart6_gtpr> {
   static constexpr std::uint32_t kOffsetBytes = 24u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11323,6 +12459,7 @@ struct RegisterTraits<RegisterId::register_wwdg_cr> {
   static constexpr std::uint32_t kOffsetBytes = 0u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11332,6 +12469,7 @@ struct RegisterTraits<RegisterId::register_wwdg_cfr> {
   static constexpr std::uint32_t kOffsetBytes = 4u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 template<>
@@ -11341,6 +12479,7 @@ struct RegisterTraits<RegisterId::register_wwdg_sr> {
   static constexpr std::uint32_t kOffsetBytes = 8u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
   static constexpr int kSizeBits = 32;
+  static constexpr RegisterRole kRole = RegisterRole::general;
 };
 
 inline constexpr std::array<RegisterId, 1132> kRegisters = {{

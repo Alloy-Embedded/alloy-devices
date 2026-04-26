@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "stm32f401re",
-      "fact_count": 291,
+      "fact_count": 293,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/startup.hpp",
@@ -5855,6 +5855,62 @@
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f401re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F401.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f401re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:dma",
             "name": "runtime-supported",
             "peripheral": null,
@@ -8097,7 +8153,7 @@
     },
     {
       "device": "stm32f405rg",
-      "fact_count": 380,
+      "fact_count": 382,
       "facts": [
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/startup.hpp",
@@ -16285,6 +16341,62 @@
           "supporting_fact_ids": [
             "runtime-peripheral:DAC"
           ]
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32f4-family-bootstrap-v1",
+              "st-stm32f4-stm32f405rg-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32F405.svd"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "st/stm32f4/generated/runtime/devices/stm32f405rg/capabilities.hpp",
