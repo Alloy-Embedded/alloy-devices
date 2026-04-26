@@ -14,6 +14,8 @@ enum class CapabilityId : std::uint16_t {
   none,
   runtime_support_adc,
   runtime_dma_APB_SARADC_DMA_ADC_DATA,
+  device_core_count,
+  device_multicore_topology,
   runtime_support_dma,
   runtime_support_gpio,
   capability_spi_esp32c3_spi_v1_cs,
@@ -40,6 +42,7 @@ enum class CapabilityId : std::uint16_t {
 
 enum class CapabilityScopeId : std::uint16_t {
   none,
+  device,
   dma_binding,
   instance_overlay,
   ip_block,
@@ -49,13 +52,16 @@ enum class CapabilityScopeId : std::uint16_t {
 enum class CapabilityNameId : std::uint16_t {
   none,
   available_signal,
+  core_count,
   dma_compatible_signal,
+  multicore_topology,
   runtime_supported,
   signal_role,
 };
 
 enum class CapabilityValueId : std::uint16_t {
   none,
+  _1,
   DATA,
   RX,
   TX,
@@ -64,6 +70,7 @@ enum class CapabilityValueId : std::uint16_t {
   mosi,
   rx,
   sck,
+  single_core,
   true_value,
   tx,
 };
@@ -76,9 +83,11 @@ struct CapabilityDescriptor {
   CapabilityValueId value_id;
   PeripheralId peripheral_id;
 };
-inline constexpr std::array<CapabilityDescriptor, 24> kCapabilities = {{
+inline constexpr std::array<CapabilityDescriptor, 26> kCapabilities = {{
   {CapabilityId::runtime_support_adc, CapabilityScopeId::runtime_contract, PeripheralClassId::class_adc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::runtime_dma_APB_SARADC_DMA_ADC_DATA, CapabilityScopeId::dma_binding, PeripheralClassId::class_adc, CapabilityNameId::dma_compatible_signal, CapabilityValueId::DATA, PeripheralId::APB_SARADC},
+  {CapabilityId::device_core_count, CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::core_count, CapabilityValueId::_1, PeripheralId::none},
+  {CapabilityId::device_multicore_topology, CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::multicore_topology, CapabilityValueId::single_core, PeripheralId::none},
   {CapabilityId::runtime_support_dma, CapabilityScopeId::runtime_contract, PeripheralClassId::class_dma, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::runtime_support_gpio, CapabilityScopeId::runtime_contract, PeripheralClassId::class_gpio, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::capability_spi_esp32c3_spi_v1_cs, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::cs, PeripheralId::none},
@@ -131,6 +140,26 @@ struct CapabilityTraits<CapabilityId::runtime_dma_APB_SARADC_DMA_ADC_DATA> {
   static constexpr CapabilityNameId kNameId = CapabilityNameId::dma_compatible_signal;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::DATA;
   static constexpr PeripheralId kPeripheralId = PeripheralId::APB_SARADC;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::device_core_count> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::device;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_device;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::core_count;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::_1;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::device_multicore_topology> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::device;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_device;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::multicore_topology;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::single_core;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
 };
 
 template<>

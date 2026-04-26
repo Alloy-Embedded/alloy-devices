@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "esp32c3",
-      "fact_count": 145,
+      "fact_count": 147,
       "facts": [
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/startup.hpp",
@@ -3044,6 +3044,62 @@
           "supporting_fact_ids": [
             "dma-binding:dma-binding:apb-saradc:data:dma:adc"
           ]
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
