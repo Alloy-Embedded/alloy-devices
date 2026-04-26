@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 174 rule(s).",
+      "message": "gate-c passed with 176 rule(s).",
       "passed": true,
       "rule_ids": [
         "pico-package-pin-count-covers-known-pins",
@@ -42,6 +42,7 @@
         "pico-alternate-functions-explicit",
         "pico-memory-sizes-positive",
         "pico-peripheral-bases-unique",
+        "pico-adc-semantics-populated",
         "pico-interrupts-present",
         "pico-interrupts-reference-known-peripherals",
         "pico-referenced-peripherals-have-rcc-enable",
@@ -128,6 +129,7 @@
         "rp2040-alternate-functions-explicit",
         "rp2040-memory-sizes-positive",
         "rp2040-peripheral-bases-unique",
+        "rp2040-adc-semantics-populated",
         "rp2040-interrupts-present",
         "rp2040-interrupts-reference-known-peripherals",
         "rp2040-referenced-peripherals-have-rcc-enable",
@@ -346,6 +348,13 @@
       "message": "pico peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "pico-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "pico ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "pico-adc-semantics-populated",
       "severity": "error"
     },
     {
@@ -948,6 +957,13 @@
       "message": "rp2040 peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "rp2040-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "rp2040 ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "rp2040-adc-semantics-populated",
       "severity": "error"
     },
     {

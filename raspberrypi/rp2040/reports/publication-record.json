@@ -70,7 +70,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "9ad4cde98f12679937eff6d95ce793cf1d8eafda8a628a423918537a4a8ac74e"
+    "validation_report_sha256": "958398715054725cf0eb288baee85c72ee5a0b95f42093e40fbd9cdccd11925d"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/pico",
@@ -165,14 +165,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 2459,
-      "content_sha256": "2187fae3d1bde2936243a0e25ff385b6792280846fef0c11854b05cc61fa5059",
+      "content_sha256": "4b564823434b6829d505e050fb4633b48ef7b28c15574c3369265b68d3c16cb1",
       "path": "raspberrypi/rp2040/artifact-manifest.json"
     },
     {
@@ -261,8 +261,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5295,
-      "content_sha256": "ee7a5d9de8f24d13c6a11475f336c6d3d8988eb97b66f9d1ce32c11caa4e80b4",
+      "content_bytes": 9154,
+      "content_sha256": "99046799494cfcb5a9a8595c96e02058c2c332a9b539c8dcee6c51568957e481",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/adc.hpp"
     },
     {
@@ -273,8 +273,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1101,
-      "content_sha256": "64515df10b603e923ebd842e887474daa3c2f3a9d9d53ceda96bd5a4af5a0514",
+      "content_bytes": 4210,
+      "content_sha256": "def6830115c835835c6f57ed3f77d1196de1b8c87396797952a2196db61d1cfd",
       "path": "raspberrypi/rp2040/generated/runtime/devices/pico/driver_semantics/common.hpp"
     },
     {
@@ -501,8 +501,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5297,
-      "content_sha256": "721096fc7d1d5de743247311312d7dfa3871c85301004cf0db8784ea774cb6f7",
+      "content_bytes": 9156,
+      "content_sha256": "574ca52c0bcc61f2b70e82650979080f35db3f1dc4b9f8ed51c07c54d3070443",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/adc.hpp"
     },
     {
@@ -513,8 +513,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1103,
-      "content_sha256": "601f014d8c58700d32fe3574c8b1aea9b2557fe2d703047c6b1ad542fdcd5f4e",
+      "content_bytes": 4212,
+      "content_sha256": "183575d2f88c1e48ab9b611c9c380f7dc39dae0b0e02ce1f263cc9e1ef835403",
       "path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/driver_semantics/common.hpp"
     },
     {
@@ -783,14 +783,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 59685,
-      "content_sha256": "9ad4cde98f12679937eff6d95ce793cf1d8eafda8a628a423918537a4a8ac74e",
+      "content_bytes": 60275,
+      "content_sha256": "958398715054725cf0eb288baee85c72ee5a0b95f42093e40fbd9cdccd11925d",
       "path": "raspberrypi/rp2040/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 16595,
-      "content_sha256": "47f02b74a1e736b2bc1ef0a10f62bd75bd380e6592e1687ece3000617d747fd7",
+      "content_bytes": 16677,
+      "content_sha256": "398189ddd1ae90d848c26577d519f30e476cc197cf26223c82094182104f092d",
       "path": "raspberrypi/rp2040/reports/validation-summary.json"
     }
   ],
@@ -799,7 +799,7 @@
     "family": "rp2040",
     "vendor": "raspberrypi"
   },
-  "target_artifact_revision": "476d01d9f0d1a83a03ccae479fd7a46537662ac745a096487b4cfa5f8b06a47a",
+  "target_artifact_revision": "48a04ea1c68aa8bf8be1fb521110cc5c878ac527b64dd30924a87465d0bd5fd3",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -835,7 +835,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 174 rule(s).",
+        "message": "gate-c passed with 176 rule(s).",
         "passed": true,
         "rule_ids": [
           "pico-package-pin-count-covers-known-pins",
@@ -845,6 +845,7 @@
           "pico-alternate-functions-explicit",
           "pico-memory-sizes-positive",
           "pico-peripheral-bases-unique",
+          "pico-adc-semantics-populated",
           "pico-interrupts-present",
           "pico-interrupts-reference-known-peripherals",
           "pico-referenced-peripherals-have-rcc-enable",
@@ -931,6 +932,7 @@
           "rp2040-alternate-functions-explicit",
           "rp2040-memory-sizes-positive",
           "rp2040-peripheral-bases-unique",
+          "rp2040-adc-semantics-populated",
           "rp2040-interrupts-present",
           "rp2040-interrupts-reference-known-peripherals",
           "rp2040-referenced-peripherals-have-rcc-enable",
