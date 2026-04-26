@@ -9,6 +9,30 @@
       "value": "true"
     },
     {
+      "capability_id": "device:core-count",
+      "name": "core-count",
+      "peripheral": null,
+      "peripheral_class": "device",
+      "scope": "device",
+      "value": "2"
+    },
+    {
+      "capability_id": "device:multicore-topology",
+      "name": "multicore-topology",
+      "peripheral": null,
+      "peripheral_class": "device",
+      "scope": "device",
+      "value": "xtensa-dual-core"
+    },
+    {
+      "capability_id": "device:secondary-core-release-register",
+      "name": "secondary-core-release-register",
+      "peripheral": null,
+      "peripheral_class": "device",
+      "scope": "device",
+      "value": "register:dport:appcpu-ctrl-b"
+    },
+    {
       "capability_id": "runtime-support:gpio",
       "name": "runtime-supported",
       "peripheral": null,

@@ -59,6 +59,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_aes,
   class_apb_ctrl,
   class_bb,
+  class_device,
   class_dport,
   class_efuse,
   class_emac_dma,
