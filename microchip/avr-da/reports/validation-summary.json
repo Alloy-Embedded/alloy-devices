@@ -38,7 +38,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 88 rule(s).",
+      "message": "gate-c passed with 89 rule(s).",
       "passed": true,
       "rule_ids": [
         "avr128da32-package-pin-count-covers-known-pins",
@@ -48,6 +48,7 @@
         "avr128da32-alternate-functions-explicit",
         "avr128da32-memory-sizes-positive",
         "avr128da32-peripheral-bases-unique",
+        "avr128da32-adc-semantics-populated",
         "avr128da32-interrupts-present",
         "avr128da32-interrupts-reference-known-peripherals",
         "avr128da32-referenced-peripherals-have-rcc-enable",

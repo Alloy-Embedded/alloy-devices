@@ -12,6 +12,7 @@ namespace devices {
 namespace avr128da32 {
 enum class CapabilityId : std::uint16_t {
   none,
+  runtime_support_adc,
   capability_twi_avr_da_twi_v1_scl,
   capability_twi_avr_da_twi_v1_sda,
   runtime_support_i2c,
@@ -71,7 +72,8 @@ struct CapabilityDescriptor {
   CapabilityValueId value_id;
   PeripheralId peripheral_id;
 };
-inline constexpr std::array<CapabilityDescriptor, 22> kCapabilities = {{
+inline constexpr std::array<CapabilityDescriptor, 23> kCapabilities = {{
+  {CapabilityId::runtime_support_adc, CapabilityScopeId::runtime_contract, PeripheralClassId::class_adc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::capability_twi_avr_da_twi_v1_scl, CapabilityScopeId::ip_block, PeripheralClassId::class_i2c, CapabilityNameId::signal_role, CapabilityValueId::scl, PeripheralId::none},
   {CapabilityId::capability_twi_avr_da_twi_v1_sda, CapabilityScopeId::ip_block, PeripheralClassId::class_i2c, CapabilityNameId::signal_role, CapabilityValueId::sda, PeripheralId::none},
   {CapabilityId::runtime_support_i2c, CapabilityScopeId::runtime_contract, PeripheralClassId::class_i2c, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
@@ -103,6 +105,16 @@ struct CapabilityTraits {
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::none;
   static constexpr CapabilityNameId kNameId = CapabilityNameId::none;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::none;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::runtime_support_adc> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
   static constexpr PeripheralId kPeripheralId = PeripheralId::none;
 };
 
@@ -333,6 +345,14 @@ struct PeripheralClassCapabilityTraits {
 };
 
 template<>
+struct PeripheralClassCapabilityTraits<PeripheralClassId::class_adc> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
+    CapabilityId::runtime_support_adc,
+  }};
+};
+
+template<>
 struct PeripheralClassCapabilityTraits<PeripheralClassId::class_i2c> {
   static constexpr bool kPresent = true;
   inline static constexpr std::array<CapabilityId, 5> kCapabilityIds = {{
@@ -386,6 +406,13 @@ template<PeripheralId Id>
 struct PeripheralCapabilityTraits {
   static constexpr bool kPresent = false;
   inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {};
+};
+
+template<>
+struct PeripheralCapabilityTraits<PeripheralId::ADC0> {
+  static constexpr bool kPresent = false;
+  inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
+  }};
 };
 
 template<>

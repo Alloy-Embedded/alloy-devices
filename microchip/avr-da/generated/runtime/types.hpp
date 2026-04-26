@@ -8,6 +8,7 @@ namespace generated {
 namespace runtime {
 enum class BackendSchemaId : std::uint16_t {
   none,
+  schema_alloy_adc_microchip_avr_da_adc_v1,
   schema_alloy_clkctrl_microchip_avr_da_clkctrl_v1,
   schema_alloy_i2c_microchip_avr_da_twi_v1,
   schema_alloy_pinmux_avr_portmux_v1,
@@ -21,6 +22,7 @@ enum class BackendSchemaId : std::uint16_t {
 
 enum class PeripheralClassId : std::uint16_t {
   none,
+  class_adc,
   class_clkctrl,
   class_i2c,
   class_porta,

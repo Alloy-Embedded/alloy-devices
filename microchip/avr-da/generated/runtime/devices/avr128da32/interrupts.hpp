@@ -12,6 +12,8 @@ namespace devices {
 namespace avr128da32 {
 enum class InterruptId : std::uint16_t {
   none,
+  ADC0_RESRDY,
+  ADC0_WCMP,
   BOD_VLM,
   CCL,
   NMI,
@@ -45,7 +47,9 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 14> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 16> kInterruptDescriptors = {{
+  {InterruptId::ADC0_RESRDY, PeripheralId::ADC0, 24u, 40u},
+  {InterruptId::ADC0_WCMP, PeripheralId::ADC0, 25u, 41u},
   {InterruptId::SPI0_INT, PeripheralId::SPI0, 18u, 34u},
   {InterruptId::TCA0_LUNF, PeripheralId::TCA0, 7u, 23u},
   {InterruptId::TCA0_HUNF, PeripheralId::TCA0, 8u, 24u},

@@ -4,6 +4,12 @@
       "device": "avr128da32",
       "peripherals": [
         {
+          "base_address": 1536,
+          "ip_name": "adc",
+          "ip_version": "avr-da-adc-v1",
+          "name": "ADC0"
+        },
+        {
           "base_address": 96,
           "ip_name": "clkctrl",
           "ip_version": "avr-da-clkctrl-v1",
@@ -62,6 +68,23 @@
   ],
   "family": "avr-da",
   "ip_blocks": [
+    {
+      "backend_schema_id": "alloy.adc.microchip-avr-da-adc-v1",
+      "capability_ids": [],
+      "ip_name": "adc",
+      "ip_version": "avr-da-adc-v1",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "microchip-avr-da-family-bootstrap-v1",
+          "microchip-avr128da32-bootstrap"
+        ],
+        "source_id": "microchip-dfp-extract",
+        "source_path": "atdf/AVR128DA32.atdf"
+      },
+      "register_profile": "adc:avr-da-adc-v1",
+      "signal_roles": []
+    },
     {
       "backend_schema_id": "alloy.clkctrl.microchip-avr-da-clkctrl-v1",
       "capability_ids": [],

@@ -19,6 +19,8 @@ enum class StartupMemoryRegionId : std::uint16_t {
 
 enum class StartupSymbolId : std::uint16_t {
   none,
+  ADC0_RESRDY_IRQHandler,
+  ADC0_WCMP_IRQHandler,
   BOD_VLM_IRQHandler,
   CCL_IRQHandler,
   NMI_IRQHandler,
@@ -61,6 +63,8 @@ enum class StartupDescriptorId : std::uint16_t {
 
 enum class InterruptBindingId : std::uint16_t {
   none,
+  interrupt_binding_adc0_adc0_resrdy,
+  interrupt_binding_adc0_adc0_wcmp,
   interrupt_binding_spi0_spi0_int,
   interrupt_binding_tca0_tca0_lunf,
   interrupt_binding_tca0_tca0_hunf,
@@ -83,7 +87,7 @@ struct VectorSlotDescriptor {
   InterruptBindingId interrupt_binding_id;
   VectorKindId kind_id;
 };
-inline constexpr std::array<VectorSlotDescriptor, 26> kVectorSlots = {{
+inline constexpr std::array<VectorSlotDescriptor, 28> kVectorSlots = {{
   {0, StartupSymbolId::__vector_0, InterruptBindingId::none, VectorKindId::vector_kind_reset_handler},
   {17, StartupSymbolId::NMI_IRQHandler, InterruptBindingId::none, VectorKindId::vector_kind_external_interrupt},
   {18, StartupSymbolId::BOD_VLM_IRQHandler, InterruptBindingId::none, VectorKindId::vector_kind_external_interrupt},
@@ -103,6 +107,8 @@ inline constexpr std::array<VectorSlotDescriptor, 26> kVectorSlots = {{
   {36, StartupSymbolId::USART0_DRE_IRQHandler, InterruptBindingId::interrupt_binding_usart0_usart0_dre, VectorKindId::vector_kind_external_interrupt},
   {37, StartupSymbolId::USART0_TXC_IRQHandler, InterruptBindingId::interrupt_binding_usart0_usart0_txc, VectorKindId::vector_kind_external_interrupt},
   {38, StartupSymbolId::PORTD_PORT_IRQHandler, InterruptBindingId::none, VectorKindId::vector_kind_external_interrupt},
+  {40, StartupSymbolId::ADC0_RESRDY_IRQHandler, InterruptBindingId::interrupt_binding_adc0_adc0_resrdy, VectorKindId::vector_kind_external_interrupt},
+  {41, StartupSymbolId::ADC0_WCMP_IRQHandler, InterruptBindingId::interrupt_binding_adc0_adc0_wcmp, VectorKindId::vector_kind_external_interrupt},
   {43, StartupSymbolId::PTC_IRQHandler, InterruptBindingId::none, VectorKindId::vector_kind_external_interrupt},
   {45, StartupSymbolId::PORTC_PORT_IRQHandler, InterruptBindingId::none, VectorKindId::vector_kind_external_interrupt},
   {47, StartupSymbolId::USART1_RXC_IRQHandler, InterruptBindingId::interrupt_binding_usart1_usart1_rxc, VectorKindId::vector_kind_external_interrupt},

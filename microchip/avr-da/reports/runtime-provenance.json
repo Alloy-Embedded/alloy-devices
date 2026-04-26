@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "avr128da32",
-      "fact_count": 92,
+      "fact_count": 97,
       "facts": [
         {
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
@@ -502,6 +502,58 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "interrupt": "ADC0_RESRDY",
+            "kind": "external-interrupt",
+            "slot": 40,
+            "symbol_name": "ADC0_RESRDY_IRQHandler"
+          },
+          "fact_id": "vector-slot:40",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "ADC0_WCMP",
+            "kind": "external-interrupt",
+            "slot": 41,
+            "symbol_name": "ADC0_WCMP_IRQHandler"
+          },
+          "fact_id": "vector-slot:41",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "interrupt": "PTC",
             "kind": "external-interrupt",
             "slot": 43,
@@ -838,6 +890,60 @@
             ],
             "source_paths": [
               "patches/microchip/avr-da/devices/avr128da32.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:adc0:adc0-resrdy",
+            "interrupt": "ADC0_RESRDY",
+            "line": 24,
+            "peripheral": "ADC0",
+            "vector_slot": 40
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:adc0:adc0-resrdy",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:adc0:adc0-wcmp",
+            "interrupt": "ADC0_WCMP",
+            "line": 25,
+            "peripheral": "ADC0",
+            "vector_slot": 41
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:adc0:adc0-wcmp",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
             ]
           },
           "supporting_fact_ids": []
@@ -1707,6 +1813,36 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:adc",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "adc",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:adc",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:ADC0"
+          ]
         },
         {
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp",

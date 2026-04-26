@@ -2,6 +2,18 @@
   "classes": [
     {
       "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 1,
+      "devices": [
+        "avr128da32"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "adc",
+      "total_peripheral_count": 1
+    },
+    {
+      "capability_names": [
         "available-signal",
         "runtime-supported",
         "signal-role"
@@ -58,6 +70,20 @@
   "devices": [
     {
       "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "ADC0"
+          ],
+          "present": true
+        },
         {
           "capability_names": [
             "available-signal",

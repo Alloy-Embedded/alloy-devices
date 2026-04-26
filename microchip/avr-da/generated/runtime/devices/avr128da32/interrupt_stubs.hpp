@@ -25,6 +25,8 @@ void USART0_RXC_IRQHandler() __attribute__((weak));
 void USART0_DRE_IRQHandler() __attribute__((weak));
 void USART0_TXC_IRQHandler() __attribute__((weak));
 void PORTD_PORT_IRQHandler() __attribute__((weak));
+void ADC0_RESRDY_IRQHandler() __attribute__((weak));
+void ADC0_WCMP_IRQHandler() __attribute__((weak));
 void PTC_IRQHandler() __attribute__((weak));
 void PORTC_PORT_IRQHandler() __attribute__((weak));
 void USART1_RXC_IRQHandler() __attribute__((weak));
@@ -46,7 +48,7 @@ struct InterruptStubDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptStubDescriptor, 25> kInterruptStubs = {{
+inline constexpr std::array<InterruptStubDescriptor, 27> kInterruptStubs = {{
   {InterruptId::NMI, StartupSymbolId::NMI_IRQHandler, 1u, 17u},
   {InterruptId::BOD_VLM, StartupSymbolId::BOD_VLM_IRQHandler, 2u, 18u},
   {InterruptId::RTC_CNT, StartupSymbolId::RTC_CNT_IRQHandler, 3u, 19u},
@@ -65,6 +67,8 @@ inline constexpr std::array<InterruptStubDescriptor, 25> kInterruptStubs = {{
   {InterruptId::USART0_DRE, StartupSymbolId::USART0_DRE_IRQHandler, 20u, 36u},
   {InterruptId::USART0_TXC, StartupSymbolId::USART0_TXC_IRQHandler, 21u, 37u},
   {InterruptId::PORTD_PORT, StartupSymbolId::PORTD_PORT_IRQHandler, 22u, 38u},
+  {InterruptId::ADC0_RESRDY, StartupSymbolId::ADC0_RESRDY_IRQHandler, 24u, 40u},
+  {InterruptId::ADC0_WCMP, StartupSymbolId::ADC0_WCMP_IRQHandler, 25u, 41u},
   {InterruptId::PTC, StartupSymbolId::PTC_IRQHandler, 27u, 43u},
   {InterruptId::PORTC_PORT, StartupSymbolId::PORTC_PORT_IRQHandler, 29u, 45u},
   {InterruptId::USART1_RXC, StartupSymbolId::USART1_RXC_IRQHandler, 31u, 47u},
@@ -224,6 +228,22 @@ struct InterruptStubTraits<InterruptId::PORTD_PORT> {
   static constexpr StartupSymbolId kSymbolId = StartupSymbolId::PORTD_PORT_IRQHandler;
   static constexpr std::uint16_t kLine = 22u;
   static constexpr std::uint16_t kVectorSlot = 38u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::ADC0_RESRDY> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::ADC0_RESRDY_IRQHandler;
+  static constexpr std::uint16_t kLine = 24u;
+  static constexpr std::uint16_t kVectorSlot = 40u;
+};
+
+template<>
+struct InterruptStubTraits<InterruptId::ADC0_WCMP> {
+  static constexpr bool kPresent = true;
+  static constexpr StartupSymbolId kSymbolId = StartupSymbolId::ADC0_WCMP_IRQHandler;
+  static constexpr std::uint16_t kLine = 25u;
+  static constexpr std::uint16_t kVectorSlot = 41u;
 };
 
 template<>

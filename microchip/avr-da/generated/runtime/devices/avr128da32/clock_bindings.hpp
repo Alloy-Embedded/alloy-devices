@@ -44,6 +44,14 @@ struct PeripheralClockBindingTraits {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::ADC0> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::none;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::SPI0> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
@@ -83,7 +91,8 @@ struct PeripheralClockBindingTraits<PeripheralId::USART1> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 5> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 6> kClockBoundPeripherals = {{
+  PeripheralId::ADC0,
   PeripheralId::SPI0,
   PeripheralId::TCA0,
   PeripheralId::TWI0,
@@ -102,6 +111,11 @@ template <PeripheralId Id>
 inline auto clock_disable() noexcept -> void {
   static_assert(kClockBindingDependentFalse<Id>, "");
 }
+
+template <>
+inline auto clock_enable<PeripheralId::ADC0>() noexcept -> void {}
+template <>
+inline auto clock_disable<PeripheralId::ADC0>() noexcept -> void {}
 
 template <>
 inline auto clock_enable<PeripheralId::SPI0>() noexcept -> void {}
