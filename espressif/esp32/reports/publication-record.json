@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "328470ef17659080501802339bd51ddc044c50c97483e98e87d64de1f9bc9ce6",
+    "canonical_ir_sha256": "b4bfdb203757ac29af412db1d5fbd2272410fe5f0f91da75a7c5a39da63e59cb",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -165,14 +165,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3704,
-      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
+      "content_bytes": 4380,
+      "content_sha256": "8c9958facc48cc7e8e5339226cd20c02c3f8404d1791825585098b17e072ef4d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 2388,
-      "content_sha256": "c9dfd95002cdbec6756655dac27e3feaf9ad7cb1e8f91234399c824f672b1931",
+      "content_sha256": "f1c26c3a1786476ba261163ba74bbad992eac150a25457e472d6f382369fbbac",
       "path": "espressif/esp32/artifact-manifest.json"
     },
     {
@@ -261,8 +261,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8552,
-      "content_sha256": "8cd76de26664a2c459c50dea1c69f56f153b49a28ab1feaf113a27270c4e3004",
+      "content_bytes": 8722,
+      "content_sha256": "0e625c07e2e50949c2b6194dc67255d3223126e697c21e0497f3ca10aedbd50a",
       "path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/driver_semantics/adc.hpp"
     },
     {
@@ -501,8 +501,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8544,
-      "content_sha256": "116f85314c57e6909c9e3aed74f25ad1367255b39a8029fb06f0f8cc207d6c23",
+      "content_bytes": 8714,
+      "content_sha256": "cbc7ace26e2e3cdcee58cb0393489856032318cf5fac09003505eb3e403e5f53",
       "path": "espressif/esp32/generated/runtime/devices/esp32/driver_semantics/adc.hpp"
     },
     {
@@ -711,14 +711,14 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 4871403,
-      "content_sha256": "cf8f8ab6f4ff8b3a6f20704bd22a63911dfb8ad1ab538edb8cb94fa8d89a7e20",
+      "content_bytes": 4871795,
+      "content_sha256": "a14afad15bf2a281a3d2e4ed22e274dbca142fc685c47a169d49561691ac4ced",
       "path": "espressif/esp32/metadata/devices/esp32-wroom32.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 4794324,
-      "content_sha256": "35675cbe54607940704683442c378ba249345035581e2a06bf9de29fd0b70b68",
+      "content_bytes": 4794716,
+      "content_sha256": "b982c5d19ea9cdbd9b655ad909e164c0eee589ec5b2feb3b2b1599ec84ab9943",
       "path": "espressif/esp32/metadata/devices/esp32.json"
     },
     {
@@ -799,7 +799,7 @@
     "family": "esp32",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "6595c068f87d99c9b9c06eb7bafe2457d29b368c1fade41b15de75b12db0731e",
+  "target_artifact_revision": "468d889ff57e888bc6c270f45a90da5e38d61d6740d04ad8b8ce0f7d0ba899e4",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
