@@ -1,4 +1,12 @@
 {
+  "adc_max_clock_hz": 5000000,
+  "adc_resolution_options": [
+    {
+      "bits": 12,
+      "field_value": 0,
+      "peripheral": "APB_SARADC"
+    }
+  ],
   "capabilities": [
     {
       "capability_id": "capability-instance:i2c0:qfn32:scl",

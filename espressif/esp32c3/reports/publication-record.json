@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "8c309641567dc579ee1bb69953444bc55cfc1db805892b772a4115ff2040ec8c",
+    "canonical_ir_sha256": "803a18898d0cfba377a7117b1e7c215afc763f0aa2ddf673b88b9225c03fff1a",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -146,14 +146,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3704,
-      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
+      "content_bytes": 4380,
+      "content_sha256": "8c9958facc48cc7e8e5339226cd20c02c3f8404d1791825585098b17e072ef4d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "f8e3bea93911d13854463522a790595a2b9b262dad4ab177c3e804c7c85966ac",
+      "content_sha256": "ae65e020680c6691ff308f7afc0444ee6c3ba87ca774aca565598ae29526d6c6",
       "path": "espressif/esp32c3/artifact-manifest.json"
     },
     {
@@ -224,8 +224,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8808,
-      "content_sha256": "22eb4c1a293100287f1aff52338ea85976c607c8f11f6b2d6b422d5ce9705fac",
+      "content_bytes": 8859,
+      "content_sha256": "ddc7b784be31b920a5053aa1c958ed737a7451812dd3cc2d9245cb2a6c427cb4",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/adc.hpp"
     },
     {
@@ -434,8 +434,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 2797669,
-      "content_sha256": "68cb222211195c2c852150625337f8ba17c698fd4834b3f2be7329422aa6e304",
+      "content_bytes": 2797822,
+      "content_sha256": "59dbd13f3f153ed5b6135738aa6c3d156995d06a9e227e47a8899c77f0f2cabd",
       "path": "espressif/esp32c3/metadata/devices/esp32c3.json"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32c3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "c44f89c58b1ac2be2d032024c8ecce90cdcfc05fd0c0e7c4eef26cd2faf6f8bf",
+  "target_artifact_revision": "2d7b0b709fb860958bf434c768b5210995456e46a0de5e3e8e2e88467f4e089b",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
