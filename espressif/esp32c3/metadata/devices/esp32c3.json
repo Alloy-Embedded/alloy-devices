@@ -4338,6 +4338,20 @@
       "selector_id": null
     }
   ],
+  "peripheral_max_clock_hz": [
+    {
+      "max_clock_hz": 80000000,
+      "peripheral": "UART0"
+    },
+    {
+      "max_clock_hz": 80000000,
+      "peripheral": "UART1"
+    },
+    {
+      "max_clock_hz": 80000000,
+      "peripheral": "SPI2"
+    }
+  ],
   "peripherals": [
     {
       "backend_schema_id": "alloy.aes.espressif-aes",
