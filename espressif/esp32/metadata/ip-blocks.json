@@ -186,7 +186,7 @@
         {
           "base_address": 1072990208,
           "ip_name": "sens",
-          "ip_version": null,
+          "ip_version": "esp32-sens-v1",
           "name": "SENS"
         },
         {
@@ -467,7 +467,7 @@
         {
           "base_address": 1072990208,
           "ip_name": "sens",
-          "ip_version": null,
+          "ip_version": "esp32-sens-v1",
           "name": "SENS"
         },
         {
@@ -648,6 +648,23 @@
         "source_path": "esp32.svd"
       },
       "register_profile": "rmt:esp32-rmt-v1",
+      "signal_roles": []
+    },
+    {
+      "backend_schema_id": "alloy.adc.espressif-esp32-sens-v1",
+      "capability_ids": [],
+      "ip_name": "sens",
+      "ip_version": "esp32-sens-v1",
+      "peripheral_class": "adc",
+      "provenance": {
+        "patch_ids": [
+          "espressif-esp32-family-bootstrap-v1",
+          "espressif-esp32-bootstrap"
+        ],
+        "source_id": "espressif-svd",
+        "source_path": "esp32.svd"
+      },
+      "register_profile": "sens:esp32-sens-v1",
       "signal_roles": []
     },
     {

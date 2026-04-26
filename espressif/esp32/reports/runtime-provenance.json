@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "esp32",
-      "fact_count": 115,
+      "fact_count": 116,
       "facts": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/startup.hpp",
@@ -2614,6 +2614,36 @@
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "runtime-support:adc",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "adc",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:adc",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-bootstrap",
+              "espressif-esp32-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:SENS"
+          ]
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:gpio",
             "name": "runtime-supported",
             "peripheral": null,
@@ -3092,7 +3122,7 @@
     },
     {
       "device": "esp32-wroom32",
-      "fact_count": 115,
+      "fact_count": 116,
       "facts": [
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/startup.hpp",
@@ -5699,6 +5729,36 @@
             ]
           },
           "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:adc",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "adc",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:adc",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32-family-bootstrap-v1",
+              "espressif-esp32-wroom32-bootstrap"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:SENS"
+          ]
         },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",

@@ -1754,11 +1754,11 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.sens.espressif-sens",
+      "backend_schema_id": "alloy.adc.espressif-esp32-sens-v1",
       "base_address": 1072990208,
       "instance": 0,
       "ip_name": "sens",
-      "ip_version": null,
+      "ip_version": "esp32-sens-v1",
       "name": "SENS",
       "provenance": {
         "patch_ids": [

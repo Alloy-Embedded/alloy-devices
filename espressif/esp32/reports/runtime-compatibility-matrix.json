@@ -9,6 +9,20 @@
           "class_capability_count": 1,
           "dma_signals": [],
           "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "SENS"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
           "peripheral_class": "gpio",
           "peripheral_count": 1,
           "peripherals": [
@@ -64,6 +78,20 @@
           "class_capability_count": 1,
           "dma_signals": [],
           "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "SENS"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
           "peripheral_class": "gpio",
           "peripheral_count": 1,
           "peripherals": [
@@ -112,6 +140,7 @@
     }
   ],
   "driver_classes": [
+    "adc",
     "gpio",
     "spi",
     "uart"

@@ -1,6 +1,14 @@
 {
   "capabilities": [
     {
+      "capability_id": "runtime-support:adc",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "adc",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
       "capability_id": "runtime-support:gpio",
       "name": "runtime-supported",
       "peripheral": null,

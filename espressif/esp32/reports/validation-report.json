@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 174 rule(s).",
+      "message": "gate-c passed with 176 rule(s).",
       "passed": true,
       "rule_ids": [
         "esp32-package-pin-count-covers-known-pins",
@@ -42,6 +42,7 @@
         "esp32-alternate-functions-explicit",
         "esp32-memory-sizes-positive",
         "esp32-peripheral-bases-unique",
+        "esp32-adc-semantics-populated",
         "esp32-interrupts-present",
         "esp32-interrupts-reference-known-peripherals",
         "esp32-referenced-peripherals-have-rcc-enable",
@@ -128,6 +129,7 @@
         "esp32-wroom32-alternate-functions-explicit",
         "esp32-wroom32-memory-sizes-positive",
         "esp32-wroom32-peripheral-bases-unique",
+        "esp32-wroom32-adc-semantics-populated",
         "esp32-wroom32-interrupts-present",
         "esp32-wroom32-interrupts-reference-known-peripherals",
         "esp32-wroom32-referenced-peripherals-have-rcc-enable",
@@ -346,6 +348,13 @@
       "message": "esp32 peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "esp32-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32 ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "esp32-adc-semantics-populated",
       "severity": "error"
     },
     {
@@ -948,6 +957,13 @@
       "message": "esp32-wroom32 peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "esp32-wroom32-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32-wroom32 ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "esp32-wroom32-adc-semantics-populated",
       "severity": "error"
     },
     {

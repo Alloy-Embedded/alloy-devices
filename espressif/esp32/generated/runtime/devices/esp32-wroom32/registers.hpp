@@ -51,6 +51,48 @@ enum class RegisterId : std::uint16_t {
   register_gpio_cali_data,
   register_gpio_func_s_in_sel_cfg,
   register_gpio_func_s_out_sel_cfg,
+  register_sens_sar_read_ctrl,
+  register_sens_sar_read_status1,
+  register_sens_sar_meas_wait1,
+  register_sens_sar_meas_wait2,
+  register_sens_sar_meas_ctrl,
+  register_sens_sar_read_status2,
+  register_sens_ulp_cp_sleep_cyc0,
+  register_sens_ulp_cp_sleep_cyc1,
+  register_sens_ulp_cp_sleep_cyc2,
+  register_sens_ulp_cp_sleep_cyc3,
+  register_sens_ulp_cp_sleep_cyc4,
+  register_sens_sar_start_force,
+  register_sens_sar_mem_wr_ctrl,
+  register_sens_sar_atten1,
+  register_sens_sar_atten2,
+  register_sens_sar_slave_addr1,
+  register_sens_sar_slave_addr2,
+  register_sens_sar_slave_addr3,
+  register_sens_sar_slave_addr4,
+  register_sens_sar_tsens_ctrl,
+  register_sens_sar_i2c_ctrl,
+  register_sens_sar_meas_start1,
+  register_sens_sar_touch_ctrl1,
+  register_sens_sar_touch_thres1,
+  register_sens_sar_touch_thres2,
+  register_sens_sar_touch_thres3,
+  register_sens_sar_touch_thres4,
+  register_sens_sar_touch_thres5,
+  register_sens_sar_touch_out1,
+  register_sens_sar_touch_out2,
+  register_sens_sar_touch_out3,
+  register_sens_sar_touch_out4,
+  register_sens_sar_touch_out5,
+  register_sens_sar_touch_ctrl2,
+  register_sens_sar_touch_enable,
+  register_sens_sar_read_ctrl2,
+  register_sens_sar_meas_start2,
+  register_sens_sar_dac_ctrl1,
+  register_sens_sar_dac_ctrl2,
+  register_sens_sar_meas_ctrl2,
+  register_sens_sar_nouse,
+  register_sens_sardate,
   register_spi0_cmd,
   register_spi0_addr,
   register_spi0_ctrl,
@@ -771,6 +813,384 @@ struct RegisterTraits<RegisterId::register_gpio_func_s_out_sel_cfg> {
   static constexpr bool kPresent = true;
   static constexpr std::uintptr_t kBaseAddress = 0x3FF44000u;
   static constexpr std::uint32_t kOffsetBytes = 1328u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_read_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 0u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_read_status1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_meas_wait1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_meas_wait2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_meas_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_read_status2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 20u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_ulp_cp_sleep_cyc0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 24u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_ulp_cp_sleep_cyc1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_ulp_cp_sleep_cyc2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_ulp_cp_sleep_cyc3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 36u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_ulp_cp_sleep_cyc4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 40u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_start_force> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 44u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_mem_wr_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 48u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_atten1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 52u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_atten2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 56u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_slave_addr1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 60u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_slave_addr2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 64u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_slave_addr3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 68u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_slave_addr4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 72u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_tsens_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 76u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_i2c_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 80u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_meas_start1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 84u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_ctrl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 88u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_thres1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 92u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_thres2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 96u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_thres3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 100u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_thres4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 104u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_thres5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 108u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_out1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 112u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_out2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 116u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_out3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 120u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_out4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 124u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_out5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 128u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 132u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_touch_enable> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 140u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_read_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 144u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_meas_start2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 148u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_dac_ctrl1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 152u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_dac_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 156u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_meas_ctrl2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 160u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sar_nouse> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 248u;
+  static constexpr AccessKindId kAccessId = AccessKindId::none;
+  static constexpr int kSizeBits = 32;
+};
+
+template<>
+struct RegisterTraits<RegisterId::register_sens_sardate> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uintptr_t kBaseAddress = 0x3FF48800u;
+  static constexpr std::uint32_t kOffsetBytes = 252u;
   static constexpr AccessKindId kAccessId = AccessKindId::none;
   static constexpr int kSizeBits = 32;
 };
@@ -4033,7 +4453,7 @@ struct RegisterTraits<RegisterId::register_uart2_id> {
   static constexpr int kSizeBits = 32;
 };
 
-inline constexpr std::array<RegisterId, 401> kRegisters = {{
+inline constexpr std::array<RegisterId, 443> kRegisters = {{
   RegisterId::register_dport_perip_clk_en,
   RegisterId::register_gpio_bt_select,
   RegisterId::register_gpio_out,
@@ -4073,6 +4493,48 @@ inline constexpr std::array<RegisterId, 401> kRegisters = {{
   RegisterId::register_gpio_cali_data,
   RegisterId::register_gpio_func_s_in_sel_cfg,
   RegisterId::register_gpio_func_s_out_sel_cfg,
+  RegisterId::register_sens_sar_read_ctrl,
+  RegisterId::register_sens_sar_read_status1,
+  RegisterId::register_sens_sar_meas_wait1,
+  RegisterId::register_sens_sar_meas_wait2,
+  RegisterId::register_sens_sar_meas_ctrl,
+  RegisterId::register_sens_sar_read_status2,
+  RegisterId::register_sens_ulp_cp_sleep_cyc0,
+  RegisterId::register_sens_ulp_cp_sleep_cyc1,
+  RegisterId::register_sens_ulp_cp_sleep_cyc2,
+  RegisterId::register_sens_ulp_cp_sleep_cyc3,
+  RegisterId::register_sens_ulp_cp_sleep_cyc4,
+  RegisterId::register_sens_sar_start_force,
+  RegisterId::register_sens_sar_mem_wr_ctrl,
+  RegisterId::register_sens_sar_atten1,
+  RegisterId::register_sens_sar_atten2,
+  RegisterId::register_sens_sar_slave_addr1,
+  RegisterId::register_sens_sar_slave_addr2,
+  RegisterId::register_sens_sar_slave_addr3,
+  RegisterId::register_sens_sar_slave_addr4,
+  RegisterId::register_sens_sar_tsens_ctrl,
+  RegisterId::register_sens_sar_i2c_ctrl,
+  RegisterId::register_sens_sar_meas_start1,
+  RegisterId::register_sens_sar_touch_ctrl1,
+  RegisterId::register_sens_sar_touch_thres1,
+  RegisterId::register_sens_sar_touch_thres2,
+  RegisterId::register_sens_sar_touch_thres3,
+  RegisterId::register_sens_sar_touch_thres4,
+  RegisterId::register_sens_sar_touch_thres5,
+  RegisterId::register_sens_sar_touch_out1,
+  RegisterId::register_sens_sar_touch_out2,
+  RegisterId::register_sens_sar_touch_out3,
+  RegisterId::register_sens_sar_touch_out4,
+  RegisterId::register_sens_sar_touch_out5,
+  RegisterId::register_sens_sar_touch_ctrl2,
+  RegisterId::register_sens_sar_touch_enable,
+  RegisterId::register_sens_sar_read_ctrl2,
+  RegisterId::register_sens_sar_meas_start2,
+  RegisterId::register_sens_sar_dac_ctrl1,
+  RegisterId::register_sens_sar_dac_ctrl2,
+  RegisterId::register_sens_sar_meas_ctrl2,
+  RegisterId::register_sens_sar_nouse,
+  RegisterId::register_sens_sardate,
   RegisterId::register_spi0_cmd,
   RegisterId::register_spi0_addr,
   RegisterId::register_spi0_ctrl,

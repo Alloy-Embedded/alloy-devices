@@ -17,6 +17,15 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "SENS",
+          "peripheral_class": "adc"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "SPI0",
           "peripheral_class": "spi"
         },
@@ -75,8 +84,19 @@
           "peripheral_class": "uart"
         }
       ],
-      "capability_decision_count": 7,
+      "capability_decision_count": 8,
       "capability_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "decision_id": "runtime-support:adc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "adc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
           "decision_id": "runtime-support:gpio",
@@ -158,8 +178,14 @@
       "device": "esp32",
       "dma_binding_decision_count": 0,
       "dma_binding_decisions": [],
-      "heuristic_fact_count": 12,
+      "heuristic_fact_count": 13,
       "heuristic_facts": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:adc",
+          "fact_kind": "capability"
+        },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
@@ -243,6 +269,15 @@
           "instance_capability_count": 0,
           "peripheral": "GPIO",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SENS",
+          "peripheral_class": "adc"
         },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32/capabilities.hpp",
@@ -500,6 +535,15 @@
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
           "instance_capability_count": 0,
+          "peripheral": "SENS",
+          "peripheral_class": "adc"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
           "peripheral": "SPI0",
           "peripheral_class": "spi"
         },
@@ -558,8 +602,19 @@
           "peripheral_class": "uart"
         }
       ],
-      "capability_decision_count": 7,
+      "capability_decision_count": 8,
       "capability_decisions": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "decision_id": "runtime-support:adc",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "adc",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
           "decision_id": "runtime-support:gpio",
@@ -641,8 +696,14 @@
       "device": "esp32-wroom32",
       "dma_binding_decision_count": 0,
       "dma_binding_decisions": [],
-      "heuristic_fact_count": 12,
+      "heuristic_fact_count": 13,
       "heuristic_facts": [
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:adc",
+          "fact_kind": "capability"
+        },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
@@ -726,6 +787,15 @@
           "instance_capability_count": 0,
           "peripheral": "GPIO",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SENS",
+          "peripheral_class": "adc"
         },
         {
           "artifact_path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/capabilities.hpp",

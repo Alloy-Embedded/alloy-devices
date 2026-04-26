@@ -10,6 +10,19 @@
         "esp32-wroom32"
       ],
       "dma_signals": [],
+      "peripheral_class": "adc",
+      "total_peripheral_count": 2
+    },
+    {
+      "capability_names": [
+        "runtime-supported"
+      ],
+      "device_count": 2,
+      "devices": [
+        "esp32",
+        "esp32-wroom32"
+      ],
+      "dma_signals": [],
       "peripheral_class": "gpio",
       "total_peripheral_count": 2
     },
@@ -45,6 +58,20 @@
   "devices": [
     {
       "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "SENS"
+          ],
+          "present": true
+        },
         {
           "capability_names": [
             "runtime-supported"
@@ -100,6 +127,20 @@
     },
     {
       "classes": [
+        {
+          "capability_names": [
+            "runtime-supported"
+          ],
+          "class_capability_count": 1,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "adc",
+          "peripheral_count": 1,
+          "peripherals": [
+            "SENS"
+          ],
+          "present": true
+        },
         {
           "capability_names": [
             "runtime-supported"

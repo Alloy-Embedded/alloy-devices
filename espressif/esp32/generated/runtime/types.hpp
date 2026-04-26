@@ -8,6 +8,7 @@ namespace generated {
 namespace runtime {
 enum class BackendSchemaId : std::uint16_t {
   none,
+  schema_alloy_adc_espressif_esp32_sens_v1,
   schema_alloy_aes_espressif_aes,
   schema_alloy_apb_ctrl_espressif_apb_ctrl,
   schema_alloy_bb_espressif_bb,
@@ -39,7 +40,6 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_rtc_i2c_espressif_rtc_i2c,
   schema_alloy_rtc_io_espressif_rtc_io,
   schema_alloy_sdhost_espressif_sdhost,
-  schema_alloy_sens_espressif_sens,
   schema_alloy_sha_espressif_sha,
   schema_alloy_slc_espressif_slc,
   schema_alloy_slchost_espressif_slchost,
@@ -55,6 +55,7 @@ enum class BackendSchemaId : std::uint16_t {
 
 enum class PeripheralClassId : std::uint16_t {
   none,
+  class_adc,
   class_aes,
   class_apb_ctrl,
   class_bb,
@@ -84,7 +85,6 @@ enum class PeripheralClassId : std::uint16_t {
   class_rtc_i2c,
   class_rtc_io,
   class_sdhost,
-  class_sens,
   class_sha,
   class_slc,
   class_slchost,

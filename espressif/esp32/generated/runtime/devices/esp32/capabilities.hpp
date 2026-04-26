@@ -12,6 +12,7 @@ namespace devices {
 namespace esp32 {
 enum class CapabilityId : std::uint16_t {
   none,
+  runtime_support_adc,
   runtime_support_gpio,
   runtime_support_spi,
   capability_uart_esp32_uart_v1_rx,
@@ -50,7 +51,8 @@ struct CapabilityDescriptor {
   CapabilityValueId value_id;
   PeripheralId peripheral_id;
 };
-inline constexpr std::array<CapabilityDescriptor, 7> kCapabilities = {{
+inline constexpr std::array<CapabilityDescriptor, 8> kCapabilities = {{
+  {CapabilityId::runtime_support_adc, CapabilityScopeId::runtime_contract, PeripheralClassId::class_adc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::runtime_support_gpio, CapabilityScopeId::runtime_contract, PeripheralClassId::class_gpio, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::runtime_support_spi, CapabilityScopeId::runtime_contract, PeripheralClassId::class_spi, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::capability_uart_esp32_uart_v1_rx, CapabilityScopeId::ip_block, PeripheralClassId::class_uart, CapabilityNameId::signal_role, CapabilityValueId::rx, PeripheralId::none},
@@ -67,6 +69,16 @@ struct CapabilityTraits {
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::none;
   static constexpr CapabilityNameId kNameId = CapabilityNameId::none;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::none;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::runtime_support_adc> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
   static constexpr PeripheralId kPeripheralId = PeripheralId::none;
 };
 
@@ -147,6 +159,14 @@ struct PeripheralClassCapabilityTraits {
 };
 
 template<>
+struct PeripheralClassCapabilityTraits<PeripheralClassId::class_adc> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
+    CapabilityId::runtime_support_adc,
+  }};
+};
+
+template<>
 struct PeripheralClassCapabilityTraits<PeripheralClassId::class_gpio> {
   static constexpr bool kPresent = true;
   inline static constexpr std::array<CapabilityId, 1> kCapabilityIds = {{
@@ -182,6 +202,13 @@ struct PeripheralCapabilityTraits {
 
 template<>
 struct PeripheralCapabilityTraits<PeripheralId::GPIO> {
+  static constexpr bool kPresent = false;
+  inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
+  }};
+};
+
+template<>
+struct PeripheralCapabilityTraits<PeripheralId::SENS> {
   static constexpr bool kPresent = false;
   inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
   }};
