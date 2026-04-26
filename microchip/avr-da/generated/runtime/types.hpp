@@ -24,6 +24,7 @@ enum class PeripheralClassId : std::uint16_t {
   none,
   class_adc,
   class_clkctrl,
+  class_device,
   class_i2c,
   class_porta,
   class_portc,

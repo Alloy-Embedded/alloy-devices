@@ -18,6 +18,19 @@
         },
         {
           "capability_names": [
+            "core-count",
+            "multicore-topology"
+          ],
+          "class_capability_count": 0,
+          "dma_signals": [],
+          "instance_capability_count": 0,
+          "peripheral_class": "device",
+          "peripheral_count": 0,
+          "peripherals": [],
+          "present": false
+        },
+        {
+          "capability_names": [
             "available-signal",
             "runtime-supported",
             "signal-role"
@@ -86,6 +99,7 @@
   ],
   "driver_classes": [
     "adc",
+    "device",
     "i2c",
     "spi",
     "timer",

@@ -3,6 +3,7 @@
 #include <array>
 #include <cstdint>
 #include "common.hpp"
+#include "../pins.hpp"
 
 namespace microchip {
 namespace avr_da {
@@ -15,6 +16,19 @@ template<PeripheralId Id>
 struct SpiSemanticTraits {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+  static constexpr std::int16_t kMosiOutSignal = -1;
+  static constexpr std::int16_t kMisoInSignal = -1;
+  static constexpr std::int16_t kClkOutSignal = -1;
+  static constexpr std::int16_t kCsOutSignal = -1;
+  static constexpr bool kHasIomuxFastPath = false;
+  static constexpr std::int16_t kIomuxMosiPin = -1;
+  static constexpr std::int16_t kIomuxMisoPin = -1;
+  static constexpr std::int16_t kIomuxClkPin = -1;
+  static constexpr std::int16_t kIomuxCsPin = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kSrRegister = kInvalidRegisterRef;
@@ -64,6 +78,19 @@ template<>
 struct SpiSemanticTraits<PeripheralId::SPI0> {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_spi_microchip_avr_da_spi_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000940u;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+  static constexpr std::int16_t kMosiOutSignal = -1;
+  static constexpr std::int16_t kMisoInSignal = -1;
+  static constexpr std::int16_t kClkOutSignal = -1;
+  static constexpr std::int16_t kCsOutSignal = -1;
+  static constexpr bool kHasIomuxFastPath = false;
+  static constexpr std::int16_t kIomuxMosiPin = -1;
+  static constexpr std::int16_t kIomuxMisoPin = -1;
+  static constexpr std::int16_t kIomuxClkPin = -1;
+  static constexpr std::int16_t kIomuxCsPin = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kSrRegister = kInvalidRegisterRef;
@@ -110,6 +137,25 @@ struct SpiSemanticTraits<PeripheralId::SPI0> {
 };
 
 inline constexpr std::array<PeripheralId, 0> kSpiSemanticPeripherals = {};
+
+// complete-rp2040-semantics Phase B: per-controller SPI facts.
+enum class RuntimeSpiId : std::uint8_t {
+  None = 0,
+};
+
+template<RuntimeSpiId Id>
+struct SpiPeripheralTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+  static constexpr std::uint8_t kDreqTx = 0u;
+  static constexpr std::uint8_t kDreqRx = 0u;
+  static constexpr std::array<std::uint8_t, 0> kValidMosiPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidMisoPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidClkPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidCsPins = {};
+};
+
 }
 }
 }

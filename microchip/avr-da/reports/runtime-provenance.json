@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "avr128da32",
-      "fact_count": 97,
+      "fact_count": 99,
       "facts": [
         {
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
@@ -1843,6 +1843,62 @@
           "supporting_fact_ids": [
             "runtime-peripheral:ADC0"
           ]
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/capabilities.hpp",
