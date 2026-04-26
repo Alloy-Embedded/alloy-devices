@@ -1075,6 +1075,19 @@
       }
     }
   ],
+  "i2c_mode_flags": [
+    {
+      "peripheral": "TWI0",
+      "supports_10bit_addressing": false,
+      "supports_7bit_addressing": true,
+      "supports_dma": false,
+      "supports_dual_address": false,
+      "supports_general_call": true,
+      "supports_pmbus": false,
+      "supports_slave": true,
+      "supports_smbus": false
+    }
+  ],
   "i2c_peripherals": [
     {
       "base_address": 2304,
@@ -1094,6 +1107,18 @@
       "valid_sda_pins": [
         "PA2"
       ]
+    }
+  ],
+  "i2c_speed_options": [
+    {
+      "mode": "standard",
+      "peripheral": "TWI0",
+      "speed_hz": 100000
+    },
+    {
+      "mode": "fast",
+      "peripheral": "TWI0",
+      "speed_hz": 400000
     }
   ],
   "identity": {
