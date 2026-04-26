@@ -236,8 +236,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4212,
-      "content_sha256": "3e82721e29680131f69b0987cc2f75649982ab9fe57f4b4bae8ec7b12e5c8b2c",
+      "content_bytes": 4414,
+      "content_sha256": "36a30f0c00264d180fa9f5346b113a64b0cdb846370d9f496f8f9b7493c50505",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/common.hpp"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32c3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "3ab1ec5a82f9f9c73c728097b5ffea43cb8622c88868c91c909700fbf2be331f",
+  "target_artifact_revision": "c44f89c58b1ac2be2d032024c8ecce90cdcfc05fd0c0e7c4eef26cd2faf6f8bf",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
