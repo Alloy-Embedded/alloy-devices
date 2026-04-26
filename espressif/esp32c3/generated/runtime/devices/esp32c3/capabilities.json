@@ -49,6 +49,46 @@
       "value": "true"
     },
     {
+      "capability_id": "capability:i2c:esp32c3-i2c-v1:scl",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "ip_block",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability:i2c:esp32c3-i2c-v1:sda",
+      "name": "signal-role",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "ip_block",
+      "value": "sda"
+    },
+    {
+      "capability_id": "runtime-support:i2c",
+      "name": "runtime-supported",
+      "peripheral": null,
+      "peripheral_class": "i2c",
+      "scope": "runtime_contract",
+      "value": "true"
+    },
+    {
+      "capability_id": "capability-instance:i2c0:qfn32:scl",
+      "name": "available-signal",
+      "peripheral": "I2C0",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "scl"
+    },
+    {
+      "capability_id": "capability-instance:i2c0:qfn32:sda",
+      "name": "available-signal",
+      "peripheral": "I2C0",
+      "peripheral_class": "i2c",
+      "scope": "instance_overlay",
+      "value": "sda"
+    },
+    {
       "capability_id": "capability:spi:esp32c3-spi-v1:cs",
       "name": "signal-role",
       "peripheral": null,

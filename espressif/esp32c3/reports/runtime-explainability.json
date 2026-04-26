@@ -31,6 +31,15 @@
         },
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
           "class_capability_count": 5,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -75,7 +84,7 @@
           "peripheral_class": "uart"
         }
       ],
-      "capability_decision_count": 26,
+      "capability_decision_count": 31,
       "capability_decisions": [
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
@@ -142,6 +151,61 @@
           "peripheral_class": "gpio",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "decision_id": "capability:i2c:esp32c3-i2c-v1:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "decision_id": "capability:i2c:esp32c3-i2c-v1:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "decision_id": "capability-instance:i2c0:qfn32:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "decision_id": "capability-instance:i2c0:qfn32:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
         },
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
@@ -428,7 +492,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 21,
+      "heuristic_fact_count": 22,
       "heuristic_facts": [
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
@@ -464,6 +528,12 @@
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:gpio",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -596,7 +666,7 @@
           "peripheral_class": "spi"
         }
       ],
-      "route_decision_count": 8,
+      "route_decision_count": 10,
       "route_decisions": [
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
@@ -797,9 +867,76 @@
           "route_kind": "mux",
           "route_selector": "selector:64",
           "signal": "mosi"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:esp32c3-i2c-v1:sda",
+            "capability-instance:i2c0:qfn32:sda"
+          ],
+          "decision_id": "candidate:gpio8:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:route:gpio8:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GPIO8",
+          "requirement_ids": [
+            "requirement:package:qfn32",
+            "requirement:bonded-pin:qfn32:gpio8",
+            "requirement:clock-enable:i2c0",
+            "requirement:source-select:gpio8:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:15",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:esp32c3-i2c-v1:scl",
+            "capability-instance:i2c0:qfn32:scl"
+          ],
+          "decision_id": "candidate:gpio9:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:route:gpio9:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GPIO9",
+          "requirement_ids": [
+            "requirement:package:qfn32",
+            "requirement:bonded-pin:qfn32:gpio9",
+            "requirement:clock-enable:i2c0",
+            "requirement:source-select:gpio9:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:14",
+          "signal": "scl"
         }
       ],
       "route_group_decisions": [
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
+          "candidate_ids": [
+            "candidate:gpio8:i2c0:sda",
+            "candidate:gpio9:i2c0:scl"
+          ],
+          "conflict_group": "conflict:i2c0:qfn32:scl-sda",
+          "decision_id": "group:i2c0:qfn32:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "qfn32",
+          "peripheral": "I2C0",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
           "candidate_ids": [

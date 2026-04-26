@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "esp32c3",
-      "fact_count": 147,
+      "fact_count": 159,
       "facts": [
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/startup.hpp",
@@ -2051,6 +2051,60 @@
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c0:i2c-ext0",
+            "interrupt": "I2C_EXT0",
+            "line": 29,
+            "peripheral": "I2C0",
+            "vector_slot": 45
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c0:i2c-ext0",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c0:i2c-master",
+            "interrupt": "I2C_MASTER",
+            "line": 11,
+            "peripheral": "I2C0",
+            "vector_slot": 27
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c0:i2c-master",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:spi0:spi-mem-reject-cache",
             "interrupt": "SPI_MEM_REJECT_CACHE",
             "line": 40,
@@ -2316,6 +2370,33 @@
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:i2c0",
+            "parent_clock_node": "clock-node:pcr-i2c0-conf-reg",
+            "peripheral": "I2C0",
+            "register_field_id": "field:pcr:i2c0-conf-reg:i2c0-clk-en",
+            "register_id": "register:pcr:i2c0-conf-reg"
+          },
+          "fact_id": "enable-domain:gate:i2c0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:spi2",
             "parent_clock_node": "clock-node:pcr-spi2-conf-reg",
             "peripheral": "SPI2",
@@ -2378,6 +2459,32 @@
           },
           "fact_id": "enable-domain:gate:uart1",
           "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c0",
+            "peripheral": "I2C0",
+            "reset_id": null,
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C0",
+          "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
             "patch_ids": [
@@ -2839,6 +2946,94 @@
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gpio8:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GPIO8",
+            "route_kind": "mux",
+            "route_selector": "selector:15",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gpio8:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gpio9:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GPIO9",
+            "route_kind": "mux",
+            "route_selector": "selector:14",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gpio9:i2c0:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:gpio8:i2c0:sda",
+              "candidate:gpio9:i2c0:scl"
+            ],
+            "group_id": "group:i2c0:qfn32:scl-sda",
+            "peripheral": "I2C0",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c0:qfn32:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_ids": [
               "candidate:gpio2:spi2:miso",
               "candidate:gpio6:spi2:sck",
@@ -3160,6 +3355,148 @@
           "supporting_fact_ids": [
             "runtime-peripheral:GPIO"
           ]
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:esp32c3-i2c-v1:scl",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability:i2c:esp32c3-i2c-v1:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:esp32c3-i2c-v1:sda",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability:i2c:esp32c3-i2c-v1:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C0"
+          ]
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c0:qfn32:scl",
+            "name": "available-signal",
+            "peripheral": "I2C0",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c0:qfn32:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c0:qfn32:sda",
+            "name": "available-signal",
+            "peripheral": "I2C0",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c0:qfn32:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "espressif-esp32c3-bootstrap",
+              "espressif-esp32c3-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "espressif-svd"
+            ],
+            "source_paths": [
+              "esp32c3.svd"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "espressif/esp32c3/generated/runtime/devices/esp32c3/capabilities.hpp",

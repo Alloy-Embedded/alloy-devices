@@ -63,6 +63,22 @@
         {
           "capability_names": [
             "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 2,
+          "peripheral_class": "i2c",
+          "peripheral_count": 1,
+          "peripherals": [
+            "I2C0"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
             "dma-compatible-signal",
             "runtime-supported",
             "signal-role"
@@ -113,6 +129,7 @@
     "device",
     "dma",
     "gpio",
+    "i2c",
     "spi",
     "uart"
   ],

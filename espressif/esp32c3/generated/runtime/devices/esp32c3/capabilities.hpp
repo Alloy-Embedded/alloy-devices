@@ -18,6 +18,11 @@ enum class CapabilityId : std::uint16_t {
   device_multicore_topology,
   runtime_support_dma,
   runtime_support_gpio,
+  capability_i2c_esp32c3_i2c_v1_scl,
+  capability_i2c_esp32c3_i2c_v1_sda,
+  runtime_support_i2c,
+  capability_instance_i2c0_qfn32_scl,
+  capability_instance_i2c0_qfn32_sda,
   capability_spi_esp32c3_spi_v1_cs,
   capability_spi_esp32c3_spi_v1_miso,
   capability_spi_esp32c3_spi_v1_mosi,
@@ -70,6 +75,8 @@ enum class CapabilityValueId : std::uint16_t {
   mosi,
   rx,
   sck,
+  scl,
+  sda,
   single_core,
   true_value,
   tx,
@@ -83,13 +90,18 @@ struct CapabilityDescriptor {
   CapabilityValueId value_id;
   PeripheralId peripheral_id;
 };
-inline constexpr std::array<CapabilityDescriptor, 26> kCapabilities = {{
+inline constexpr std::array<CapabilityDescriptor, 31> kCapabilities = {{
   {CapabilityId::runtime_support_adc, CapabilityScopeId::runtime_contract, PeripheralClassId::class_adc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::runtime_dma_APB_SARADC_DMA_ADC_DATA, CapabilityScopeId::dma_binding, PeripheralClassId::class_adc, CapabilityNameId::dma_compatible_signal, CapabilityValueId::DATA, PeripheralId::APB_SARADC},
   {CapabilityId::device_core_count, CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::core_count, CapabilityValueId::_1, PeripheralId::none},
   {CapabilityId::device_multicore_topology, CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::multicore_topology, CapabilityValueId::single_core, PeripheralId::none},
   {CapabilityId::runtime_support_dma, CapabilityScopeId::runtime_contract, PeripheralClassId::class_dma, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
   {CapabilityId::runtime_support_gpio, CapabilityScopeId::runtime_contract, PeripheralClassId::class_gpio, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::capability_i2c_esp32c3_i2c_v1_scl, CapabilityScopeId::ip_block, PeripheralClassId::class_i2c, CapabilityNameId::signal_role, CapabilityValueId::scl, PeripheralId::none},
+  {CapabilityId::capability_i2c_esp32c3_i2c_v1_sda, CapabilityScopeId::ip_block, PeripheralClassId::class_i2c, CapabilityNameId::signal_role, CapabilityValueId::sda, PeripheralId::none},
+  {CapabilityId::runtime_support_i2c, CapabilityScopeId::runtime_contract, PeripheralClassId::class_i2c, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityId::capability_instance_i2c0_qfn32_scl, CapabilityScopeId::instance_overlay, PeripheralClassId::class_i2c, CapabilityNameId::available_signal, CapabilityValueId::scl, PeripheralId::I2C0},
+  {CapabilityId::capability_instance_i2c0_qfn32_sda, CapabilityScopeId::instance_overlay, PeripheralClassId::class_i2c, CapabilityNameId::available_signal, CapabilityValueId::sda, PeripheralId::I2C0},
   {CapabilityId::capability_spi_esp32c3_spi_v1_cs, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::cs, PeripheralId::none},
   {CapabilityId::capability_spi_esp32c3_spi_v1_miso, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::miso, PeripheralId::none},
   {CapabilityId::capability_spi_esp32c3_spi_v1_mosi, CapabilityScopeId::ip_block, PeripheralClassId::class_spi, CapabilityNameId::signal_role, CapabilityValueId::mosi, PeripheralId::none},
@@ -180,6 +192,56 @@ struct CapabilityTraits<CapabilityId::runtime_support_gpio> {
   static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
   static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
   static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_i2c_esp32c3_i2c_v1_scl> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::scl;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_i2c_esp32c3_i2c_v1_sda> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::sda;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::runtime_support_i2c> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_i2c0_qfn32_scl> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::scl;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::I2C0;
+};
+
+template<>
+struct CapabilityTraits<CapabilityId::capability_instance_i2c0_qfn32_sda> {
+  static constexpr bool kPresent = true;
+  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
+  static constexpr CapabilityValueId kValueId = CapabilityValueId::sda;
+  static constexpr PeripheralId kPeripheralId = PeripheralId::I2C0;
 };
 
 template<>
@@ -414,6 +476,18 @@ struct PeripheralClassCapabilityTraits<PeripheralClassId::class_gpio> {
 };
 
 template<>
+struct PeripheralClassCapabilityTraits<PeripheralClassId::class_i2c> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 5> kCapabilityIds = {{
+    CapabilityId::capability_i2c_esp32c3_i2c_v1_scl,
+    CapabilityId::capability_i2c_esp32c3_i2c_v1_sda,
+    CapabilityId::runtime_support_i2c,
+    CapabilityId::capability_instance_i2c0_qfn32_scl,
+    CapabilityId::capability_instance_i2c0_qfn32_sda,
+  }};
+};
+
+template<>
 struct PeripheralClassCapabilityTraits<PeripheralClassId::class_spi> {
   static constexpr bool kPresent = true;
   inline static constexpr std::array<CapabilityId, 11> kCapabilityIds = {{
@@ -472,6 +546,15 @@ template<>
 struct PeripheralCapabilityTraits<PeripheralId::GPIO> {
   static constexpr bool kPresent = false;
   inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
+  }};
+};
+
+template<>
+struct PeripheralCapabilityTraits<PeripheralId::I2C0> {
+  static constexpr bool kPresent = true;
+  inline static constexpr std::array<CapabilityId, 2> kCapabilityIds = {{
+    CapabilityId::capability_instance_i2c0_qfn32_scl,
+    CapabilityId::capability_instance_i2c0_qfn32_sda,
   }};
 };
 

@@ -77,13 +77,13 @@
         },
         {
           "base_address": 1610690560,
-          "ip_name": "i2c0",
+          "ip_name": "i2c",
           "ip_version": "esp32c3-i2c-v1",
           "name": "I2C0"
         },
         {
           "base_address": 1610797056,
-          "ip_name": "i2s0",
+          "ip_name": "i2s",
           "ip_version": null,
           "name": "I2S0"
         },
@@ -282,14 +282,14 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.i2c0.espressif-esp32c3-i2c-v1",
+      "backend_schema_id": "alloy.i2c.espressif-esp32c3-i2c-v1",
       "capability_ids": [
-        "capability:i2c0:esp32c3-i2c-v1:scl",
-        "capability:i2c0:esp32c3-i2c-v1:sda"
+        "capability:i2c:esp32c3-i2c-v1:scl",
+        "capability:i2c:esp32c3-i2c-v1:sda"
       ],
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "esp32c3-i2c-v1",
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "espressif-esp32c3-family-bootstrap-v1",
@@ -298,7 +298,7 @@
         "source_id": "espressif-svd",
         "source_path": "esp32c3.svd"
       },
-      "register_profile": "i2c0:esp32c3-i2c-v1",
+      "register_profile": "i2c:esp32c3-i2c-v1",
       "signal_roles": [
         "scl",
         "sda"
