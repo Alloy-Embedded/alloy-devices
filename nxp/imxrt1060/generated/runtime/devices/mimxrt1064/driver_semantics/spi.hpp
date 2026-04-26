@@ -83,6 +83,7 @@ struct SpiSemanticTraits {
   static constexpr RuntimeFieldRef kTdField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -156,6 +157,7 @@ struct SpiSemanticTraits<PeripheralId::LPSPI1> {
   static constexpr RuntimeFieldRef kTdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi1_tdr, 0x40394000u, 100u, true}, 0u, 32u, true};
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi1_rdr, 0x40394000u, 116u, true}, 0u, 32u, true};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{32u}};
 };
 
 template<>
@@ -229,6 +231,7 @@ struct SpiSemanticTraits<PeripheralId::LPSPI2> {
   static constexpr RuntimeFieldRef kTdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi2_tdr, 0x40398000u, 100u, true}, 0u, 32u, true};
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi2_rdr, 0x40398000u, 116u, true}, 0u, 32u, true};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{33u}};
 };
 
 template<>
@@ -302,6 +305,7 @@ struct SpiSemanticTraits<PeripheralId::LPSPI3> {
   static constexpr RuntimeFieldRef kTdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi3_tdr, 0x4039C000u, 100u, true}, 0u, 32u, true};
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi3_rdr, 0x4039C000u, 116u, true}, 0u, 32u, true};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{34u}};
 };
 
 template<>
@@ -375,6 +379,7 @@ struct SpiSemanticTraits<PeripheralId::LPSPI4> {
   static constexpr RuntimeFieldRef kTdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi4_tdr, 0x403A0000u, 100u, true}, 0u, 32u, true};
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_lpspi4_rdr, 0x403A0000u, 116u, true}, 0u, 32u, true};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{35u}};
 };
 
 inline constexpr std::array<PeripheralId, 4> kSpiSemanticPeripherals = {{
