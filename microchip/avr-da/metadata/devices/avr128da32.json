@@ -90,6 +90,24 @@
       "peripheral": "ADC0"
     }
   ],
+  "avr_da_tca_pwm_peripherals": [
+    {
+      "base_address": 2560,
+      "controller_id": "TCA0",
+      "counter_bits": 16,
+      "default_channel_pins": [
+        "PA0",
+        "PA1",
+        "PA2",
+        "PA3",
+        "PA4",
+        "PA5"
+      ],
+      "portmux_alt": false,
+      "single_mode_channels": 3,
+      "split_mode_channels": 6
+    }
+  ],
   "capabilities": [
     {
       "capability_id": "capability-instance:spi0:tqfp32:cs",
