@@ -49,6 +49,7 @@ struct EthSemanticTraits {
   static constexpr RuntimeFieldRef kRxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
 };
 
 template<>
@@ -88,6 +89,7 @@ struct EthSemanticTraits<PeripheralId::Ethernet_DMA> {
   static constexpr RuntimeFieldRef kRxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
 };
 
 template<>
@@ -127,6 +129,7 @@ struct EthSemanticTraits<PeripheralId::Ethernet_MAC> {
   static constexpr RuntimeFieldRef kRxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
 };
 
 template<>
@@ -166,6 +169,7 @@ struct EthSemanticTraits<PeripheralId::Ethernet_MMC> {
   static constexpr RuntimeFieldRef kRxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
 };
 
 inline constexpr std::array<PeripheralId, 0> kEthSemanticPeripherals = {};
