@@ -32,6 +32,16 @@ struct PwmSemanticTraits {
   static constexpr RuntimeFieldRef kLoadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClearLoadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockPrescalerField = kInvalidFieldRef;
+  static constexpr std::uint32_t kMaxPrescaler = 0u;
+  static constexpr std::uint32_t kMaxPeriod = 0u;
+  static constexpr std::array<std::uint8_t, 0> kDeadtimeOptions = {};
+  static constexpr std::array<std::uint8_t, 0> kSupportedAlignments = {};
+  static constexpr std::array<std::uint8_t, 0> kBreakInputs = {};
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBreakInput = false;
+  static constexpr bool kSupportsComplementaryOutputs = false;
+  static constexpr bool kSupportsAsymmetricPwm = false;
+  static constexpr bool kSupportsCombinedPwm = false;
 };
 
 template<>
@@ -54,6 +64,16 @@ struct PwmSemanticTraits<PeripheralId::PWM0> {
   static constexpr RuntimeFieldRef kLoadField = RuntimeFieldRef{FieldId::field_pwm0_scuc_updulock, RuntimeRegisterRef{RegisterId::register_pwm0_scuc, 0x40020000u, 40u, true}, 0u, 1u, true};
   static constexpr RuntimeFieldRef kClearLoadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockPrescalerField = RuntimeFieldRef{FieldId::field_pwm0_clk_prea, RuntimeRegisterRef{RegisterId::register_pwm0_clk, 0x40020000u, 0u, true}, 8u, 4u, true};
+  static constexpr std::uint32_t kMaxPrescaler = 0u;
+  static constexpr std::uint32_t kMaxPeriod = 0u;
+  static constexpr std::array<std::uint8_t, 0> kDeadtimeOptions = {};
+  static constexpr std::array<std::uint8_t, 0> kSupportedAlignments = {};
+  static constexpr std::array<std::uint8_t, 0> kBreakInputs = {};
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBreakInput = false;
+  static constexpr bool kSupportsComplementaryOutputs = false;
+  static constexpr bool kSupportsAsymmetricPwm = false;
+  static constexpr bool kSupportsCombinedPwm = false;
 };
 
 template<>
@@ -76,6 +96,16 @@ struct PwmSemanticTraits<PeripheralId::PWM1> {
   static constexpr RuntimeFieldRef kLoadField = RuntimeFieldRef{FieldId::field_pwm1_scuc_updulock, RuntimeRegisterRef{RegisterId::register_pwm1_scuc, 0x4005C000u, 40u, true}, 0u, 1u, true};
   static constexpr RuntimeFieldRef kClearLoadField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kClockPrescalerField = RuntimeFieldRef{FieldId::field_pwm1_clk_prea, RuntimeRegisterRef{RegisterId::register_pwm1_clk, 0x4005C000u, 0u, true}, 8u, 4u, true};
+  static constexpr std::uint32_t kMaxPrescaler = 0u;
+  static constexpr std::uint32_t kMaxPeriod = 0u;
+  static constexpr std::array<std::uint8_t, 0> kDeadtimeOptions = {};
+  static constexpr std::array<std::uint8_t, 0> kSupportedAlignments = {};
+  static constexpr std::array<std::uint8_t, 0> kBreakInputs = {};
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBreakInput = false;
+  static constexpr bool kSupportsComplementaryOutputs = false;
+  static constexpr bool kSupportsAsymmetricPwm = false;
+  static constexpr bool kSupportsCombinedPwm = false;
 };
 
 template<PeripheralId Id, std::size_t ChannelIndex>

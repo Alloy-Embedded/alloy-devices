@@ -2225,12 +2225,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp100:ck",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2244,12 +2244,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp100:di0",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2263,12 +2263,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp100:do0",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2282,12 +2282,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp100:mck",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2301,12 +2301,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp100:ws",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp100",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2320,12 +2320,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp144:ck",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2339,12 +2339,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp144:di0",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2358,12 +2358,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp144:do0",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2377,12 +2377,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp144:mck",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2396,12 +2396,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc0:lqfp144:ws",
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC0",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2415,12 +2415,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc1:lqfp144:ck",
-      "ip_name": "i2sc1",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC1",
-      "peripheral_class": "i2sc1",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2434,12 +2434,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc1:lqfp144:di0",
-      "ip_name": "i2sc1",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC1",
-      "peripheral_class": "i2sc1",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2453,12 +2453,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc1:lqfp144:do0",
-      "ip_name": "i2sc1",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC1",
-      "peripheral_class": "i2sc1",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2472,12 +2472,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc1:lqfp144:mck",
-      "ip_name": "i2sc1",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC1",
-      "peripheral_class": "i2sc1",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -2491,12 +2491,12 @@
     },
     {
       "capability_id": "capability-instance:i2sc1:lqfp144:ws",
-      "ip_name": "i2sc1",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "available-signal",
       "package": "lqfp144",
       "peripheral": "I2SC1",
-      "peripheral_class": "i2sc1",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -9330,13 +9330,13 @@
       "value": "mcda3"
     },
     {
-      "capability_id": "capability:i2sc0:i2sc-n:ck",
-      "ip_name": "i2sc0",
+      "capability_id": "capability:i2sc:i2sc-n:ck",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -9349,13 +9349,13 @@
       "value": "ck"
     },
     {
-      "capability_id": "capability:i2sc0:i2sc-n:di0",
-      "ip_name": "i2sc0",
+      "capability_id": "capability:i2sc:i2sc-n:di0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -9368,13 +9368,13 @@
       "value": "di0"
     },
     {
-      "capability_id": "capability:i2sc0:i2sc-n:do0",
-      "ip_name": "i2sc0",
+      "capability_id": "capability:i2sc:i2sc-n:do0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -9387,13 +9387,13 @@
       "value": "do0"
     },
     {
-      "capability_id": "capability:i2sc0:i2sc-n:mck",
-      "ip_name": "i2sc0",
+      "capability_id": "capability:i2sc:i2sc-n:mck",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -9406,13 +9406,13 @@
       "value": "mck"
     },
     {
-      "capability_id": "capability:i2sc0:i2sc-n:ws",
-      "ip_name": "i2sc0",
+      "capability_id": "capability:i2sc:i2sc-n:ws",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -9420,101 +9420,6 @@
         ],
         "source_id": "microchip-dfp-extract",
         "source_path": "same70b/atdf/ATSAME70N21B.atdf"
-      },
-      "scope": "ip-block",
-      "value": "ws"
-    },
-    {
-      "capability_id": "capability:i2sc1:i2sc-n:ck",
-      "ip_name": "i2sc1",
-      "ip_version": "i2sc_n",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "scope": "ip-block",
-      "value": "ck"
-    },
-    {
-      "capability_id": "capability:i2sc1:i2sc-n:di0",
-      "ip_name": "i2sc1",
-      "ip_version": "i2sc_n",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "scope": "ip-block",
-      "value": "di0"
-    },
-    {
-      "capability_id": "capability:i2sc1:i2sc-n:do0",
-      "ip_name": "i2sc1",
-      "ip_version": "i2sc_n",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "scope": "ip-block",
-      "value": "do0"
-    },
-    {
-      "capability_id": "capability:i2sc1:i2sc-n:mck",
-      "ip_name": "i2sc1",
-      "ip_version": "i2sc_n",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "scope": "ip-block",
-      "value": "mck"
-    },
-    {
-      "capability_id": "capability:i2sc1:i2sc-n:ws",
-      "ip_name": "i2sc1",
-      "ip_version": "i2sc_n",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
       },
       "scope": "ip-block",
       "value": "ws"

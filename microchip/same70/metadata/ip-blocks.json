@@ -113,7 +113,7 @@
         },
         {
           "base_address": 1074315264,
-          "ip_name": "i2sc0",
+          "ip_name": "i2sc",
           "ip_version": "i2sc_n",
           "name": "I2SC0"
         },
@@ -508,13 +508,13 @@
         },
         {
           "base_address": 1074315264,
-          "ip_name": "i2sc0",
+          "ip_name": "i2sc",
           "ip_version": "i2sc_n",
           "name": "I2SC0"
         },
         {
           "base_address": 1074331648,
-          "ip_name": "i2sc1",
+          "ip_name": "i2sc",
           "ip_version": "i2sc_n",
           "name": "I2SC1"
         },
@@ -1150,17 +1150,17 @@
       ]
     },
     {
-      "backend_schema_id": "alloy.i2sc0.microchip-i2sc-n",
+      "backend_schema_id": "alloy.i2sc.microchip-i2sc-n",
       "capability_ids": [
-        "capability:i2sc0:i2sc-n:ck",
-        "capability:i2sc0:i2sc-n:di0",
-        "capability:i2sc0:i2sc-n:do0",
-        "capability:i2sc0:i2sc-n:mck",
-        "capability:i2sc0:i2sc-n:ws"
+        "capability:i2sc:i2sc-n:ck",
+        "capability:i2sc:i2sc-n:di0",
+        "capability:i2sc:i2sc-n:do0",
+        "capability:i2sc:i2sc-n:mck",
+        "capability:i2sc:i2sc-n:ws"
       ],
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
-      "peripheral_class": "i2sc0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -1169,36 +1169,7 @@
         "source_id": "microchip-dfp-extract",
         "source_path": "same70b/svd/ATSAME70N21B.svd"
       },
-      "register_profile": "i2sc0:i2sc_n",
-      "signal_roles": [
-        "ck",
-        "di0",
-        "do0",
-        "mck",
-        "ws"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.i2sc1.microchip-i2sc-n",
-      "capability_ids": [
-        "capability:i2sc1:i2sc-n:ck",
-        "capability:i2sc1:i2sc-n:di0",
-        "capability:i2sc1:i2sc-n:do0",
-        "capability:i2sc1:i2sc-n:mck",
-        "capability:i2sc1:i2sc-n:ws"
-      ],
-      "ip_name": "i2sc1",
-      "ip_version": "i2sc_n",
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/svd/ATSAME70Q21B.svd"
-      },
-      "register_profile": "i2sc1:i2sc_n",
+      "register_profile": "i2sc:i2sc_n",
       "signal_roles": [
         "ck",
         "di0",

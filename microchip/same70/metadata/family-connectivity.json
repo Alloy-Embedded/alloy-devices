@@ -2364,10 +2364,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2sc0.microchip-i2sc-n",
+      "backend_schema_id": "alloy.i2sc.microchip-i2sc-n",
       "base_address": 1074315264,
       "instance": 0,
-      "ip_name": "i2sc0",
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "I2SC0",
       "provenance": {
@@ -2382,10 +2382,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2sc1.microchip-i2sc-n",
+      "backend_schema_id": "alloy.i2sc.microchip-i2sc-n",
       "base_address": 1074331648,
-      "instance": 0,
-      "ip_name": "i2sc1",
+      "instance": 1,
+      "ip_name": "i2sc",
       "ip_version": "i2sc_n",
       "name": "I2SC1",
       "provenance": {

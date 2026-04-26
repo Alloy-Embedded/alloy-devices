@@ -5,7 +5,7 @@
         {
           "candidate_id": "candidate:pa0:i2sc0:mck",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:mck",
+            "capability:i2sc:i2sc-n:mck",
             "capability-instance:i2sc0:lqfp100:mck"
           ],
           "operation_ids": [
@@ -825,7 +825,7 @@
         {
           "candidate_id": "candidate:pa15:i2sc0:ws",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:ws",
+            "capability:i2sc:i2sc-n:ws",
             "capability-instance:i2sc0:lqfp100:ws"
           ],
           "operation_ids": [
@@ -918,7 +918,7 @@
         {
           "candidate_id": "candidate:pa16:i2sc0:di0",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:di0",
+            "capability:i2sc:i2sc-n:di0",
             "capability-instance:i2sc0:lqfp100:di0"
           ],
           "operation_ids": [
@@ -1324,7 +1324,7 @@
         {
           "candidate_id": "candidate:pa1:i2sc0:ck",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:ck",
+            "capability:i2sc:i2sc-n:ck",
             "capability-instance:i2sc0:lqfp100:ck"
           ],
           "operation_ids": [
@@ -2575,7 +2575,7 @@
         {
           "candidate_id": "candidate:pa30:i2sc0:do0",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:do0",
+            "capability:i2sc:i2sc-n:do0",
             "capability-instance:i2sc0:lqfp100:do0"
           ],
           "operation_ids": [
@@ -23051,7 +23051,7 @@
         {
           "candidate_id": "candidate:pa0:i2sc0:mck",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:mck",
+            "capability:i2sc:i2sc-n:mck",
             "capability-instance:i2sc0:lqfp144:mck"
           ],
           "operation_ids": [
@@ -23871,7 +23871,7 @@
         {
           "candidate_id": "candidate:pa15:i2sc0:ws",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:ws",
+            "capability:i2sc:i2sc-n:ws",
             "capability-instance:i2sc0:lqfp144:ws"
           ],
           "operation_ids": [
@@ -23964,7 +23964,7 @@
         {
           "candidate_id": "candidate:pa16:i2sc0:di0",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:di0",
+            "capability:i2sc:i2sc-n:di0",
             "capability-instance:i2sc0:lqfp144:di0"
           ],
           "operation_ids": [
@@ -24306,7 +24306,7 @@
         {
           "candidate_id": "candidate:pa19:i2sc1:mck",
           "capability_ids": [
-            "capability:i2sc1:i2sc-n:mck",
+            "capability:i2sc:i2sc-n:mck",
             "capability-instance:i2sc1:lqfp144:mck"
           ],
           "operation_ids": [
@@ -24402,7 +24402,7 @@
         {
           "candidate_id": "candidate:pa1:i2sc0:ck",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:ck",
+            "capability:i2sc:i2sc-n:ck",
             "capability-instance:i2sc0:lqfp144:ck"
           ],
           "operation_ids": [
@@ -24562,7 +24562,7 @@
         {
           "candidate_id": "candidate:pa20:i2sc1:ck",
           "capability_ids": [
-            "capability:i2sc1:i2sc-n:ck",
+            "capability:i2sc:i2sc-n:ck",
             "capability-instance:i2sc1:lqfp144:ck"
           ],
           "operation_ids": [
@@ -25747,7 +25747,7 @@
         {
           "candidate_id": "candidate:pa30:i2sc0:do0",
           "capability_ids": [
-            "capability:i2sc0:i2sc-n:do0",
+            "capability:i2sc:i2sc-n:do0",
             "capability-instance:i2sc0:lqfp144:do0"
           ],
           "operation_ids": [
@@ -32476,7 +32476,7 @@
         {
           "candidate_id": "candidate:pe0:i2sc1:ws",
           "capability_ids": [
-            "capability:i2sc1:i2sc-n:ws",
+            "capability:i2sc:i2sc-n:ws",
             "capability-instance:i2sc1:lqfp144:ws"
           ],
           "operation_ids": [
@@ -32538,7 +32538,7 @@
         {
           "candidate_id": "candidate:pe1:i2sc1:do0",
           "capability_ids": [
-            "capability:i2sc1:i2sc-n:do0",
+            "capability:i2sc:i2sc-n:do0",
             "capability-instance:i2sc1:lqfp144:do0"
           ],
           "operation_ids": [
@@ -32600,7 +32600,7 @@
         {
           "candidate_id": "candidate:pe2:i2sc1:di0",
           "capability_ids": [
-            "capability:i2sc1:i2sc-n:di0",
+            "capability:i2sc:i2sc-n:di0",
             "capability-instance:i2sc1:lqfp144:di0"
           ],
           "operation_ids": [
@@ -53714,8 +53714,8 @@
     },
     {
       "direction": "output",
-      "endpoint_id": "endpoint:i2sc0:ck",
-      "peripheral_class": "i2sc0",
+      "endpoint_id": "endpoint:i2sc:ck",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -53728,8 +53728,8 @@
     },
     {
       "direction": "input",
-      "endpoint_id": "endpoint:i2sc0:di0",
-      "peripheral_class": "i2sc0",
+      "endpoint_id": "endpoint:i2sc:di0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -53742,8 +53742,8 @@
     },
     {
       "direction": "input",
-      "endpoint_id": "endpoint:i2sc0:do0",
-      "peripheral_class": "i2sc0",
+      "endpoint_id": "endpoint:i2sc:do0",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -53756,8 +53756,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2sc0:mck",
-      "peripheral_class": "i2sc0",
+      "endpoint_id": "endpoint:i2sc:mck",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -53770,8 +53770,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2sc0:ws",
-      "peripheral_class": "i2sc0",
+      "endpoint_id": "endpoint:i2sc:ws",
+      "peripheral_class": "i2sc",
       "provenance": {
         "patch_ids": [
           "microchip-same70-family-bootstrap-v1",
@@ -53779,76 +53779,6 @@
         ],
         "source_id": "microchip-dfp-extract",
         "source_path": "same70b/atdf/ATSAME70N21B.atdf"
-      },
-      "signal": "WS"
-    },
-    {
-      "direction": "output",
-      "endpoint_id": "endpoint:i2sc1:ck",
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "signal": "CK"
-    },
-    {
-      "direction": "input",
-      "endpoint_id": "endpoint:i2sc1:di0",
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "signal": "DI0"
-    },
-    {
-      "direction": "input",
-      "endpoint_id": "endpoint:i2sc1:do0",
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "signal": "DO0"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:i2sc1:mck",
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
-      },
-      "signal": "MCK"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:i2sc1:ws",
-      "peripheral_class": "i2sc1",
-      "provenance": {
-        "patch_ids": [
-          "microchip-same70-family-bootstrap-v1",
-          "microchip-same70-atsame70q21b-bootstrap"
-        ],
-        "source_id": "microchip-dfp-extract",
-        "source_path": "same70b/atdf/ATSAME70Q21B.atdf"
       },
       "signal": "WS"
     },
