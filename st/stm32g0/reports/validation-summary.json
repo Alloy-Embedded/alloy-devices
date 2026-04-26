@@ -54,7 +54,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 260 rule(s).",
+      "message": "gate-c passed with 263 rule(s).",
       "passed": true,
       "rule_ids": [
         "stm32g030f6-package-pin-count-covers-known-pins",
@@ -64,6 +64,7 @@
         "stm32g030f6-alternate-functions-explicit",
         "stm32g030f6-memory-sizes-positive",
         "stm32g030f6-peripheral-bases-unique",
+        "stm32g030f6-adc-semantics-populated",
         "stm32g030f6-interrupts-present",
         "stm32g030f6-interrupts-reference-known-peripherals",
         "stm32g030f6-referenced-peripherals-have-rcc-enable",
@@ -150,6 +151,7 @@
         "stm32g071rb-alternate-functions-explicit",
         "stm32g071rb-memory-sizes-positive",
         "stm32g071rb-peripheral-bases-unique",
+        "stm32g071rb-adc-semantics-populated",
         "stm32g071rb-interrupts-present",
         "stm32g071rb-interrupts-reference-known-peripherals",
         "stm32g071rb-referenced-peripherals-have-rcc-enable",
@@ -236,6 +238,7 @@
         "stm32g0b1re-alternate-functions-explicit",
         "stm32g0b1re-memory-sizes-positive",
         "stm32g0b1re-peripheral-bases-unique",
+        "stm32g0b1re-adc-semantics-populated",
         "stm32g0b1re-interrupts-present",
         "stm32g0b1re-interrupts-reference-known-peripherals",
         "stm32g0b1re-referenced-peripherals-have-rcc-enable",

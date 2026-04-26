@@ -167,7 +167,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "e20ff07a84a239985d773323cf6c29b8c1689d81bd334d1d086e83ff8bab45e2"
+    "validation_report_sha256": "e8c673bd0fdb7e5ed3713c9f08426790c73a603fe672e4a531b5a70e113c86e5"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/stm32g030f6",
@@ -262,14 +262,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 6625,
-      "content_sha256": "c5ac776dccb2421abf500582ca15ad2acb0325178e2c88488e43430969266b05",
+      "content_sha256": "b968922534a1f8d3d88912bac5d03e622d50a5d5fd21edfed97e317a7d880244",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
@@ -376,8 +376,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 7723,
-      "content_sha256": "1f89b83e39b1c34255905edb5a70623d0023e946eacd2e97356786eb4943eabe",
+      "content_bytes": 10245,
+      "content_sha256": "41993c9c3af5280565209c671ad57302fcaddd7bfdbc8a2bc85d8c595729a446",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/adc.hpp"
     },
     {
@@ -388,8 +388,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1100,
-      "content_sha256": "af8ef3869b4c42e83c6ec53d2a9938d3055c94200710d61712e79abe26706b55",
+      "content_bytes": 4209,
+      "content_sha256": "0cc72ceda84d11a53c0572a2e7db47ce3543f7256aa19d2b95eb1cb0b56e6fa1",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/common.hpp"
     },
     {
@@ -616,8 +616,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 7747,
-      "content_sha256": "b97757e2d9f7818bad5a78024ca96130eef82c3f83f1da3d2c8a3b5d5fa8ed2f",
+      "content_bytes": 10269,
+      "content_sha256": "1e636031d6045b1665542cc8c1324fd0931318daa7ff1b0f9244aff1b8bba52e",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/adc.hpp"
     },
     {
@@ -628,8 +628,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1100,
-      "content_sha256": "6d52e737cd4335aecdfeced81d24db352652884de542b13ec53111b5403a0e14",
+      "content_bytes": 4209,
+      "content_sha256": "b2578aa7e421a48429467fc4e77fe5196cb62b1b5a97c9f1b9841b560e921991",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/common.hpp"
     },
     {
@@ -856,8 +856,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 7723,
-      "content_sha256": "476aaf89db28d44bb09c57b3caa60637277c06fca2b9082efd00e3c61cd0037d",
+      "content_bytes": 10245,
+      "content_sha256": "bc24f3757b26c8b24ebdb26c497b397e480da4f8ca0906b0ddd3c030395a35d9",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/adc.hpp"
     },
     {
@@ -868,8 +868,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1100,
-      "content_sha256": "00fec0bb176998fe13f454de241bffe182974c77cc4dfed137d76ad8a04da798",
+      "content_bytes": 4209,
+      "content_sha256": "6bfeed9984a25cc33e9dd7165116a31f360080d744522dfb6970f3ae73d837d8",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/common.hpp"
     },
     {
@@ -1144,14 +1144,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 93076,
-      "content_sha256": "e20ff07a84a239985d773323cf6c29b8c1689d81bd334d1d086e83ff8bab45e2",
+      "content_bytes": 94015,
+      "content_sha256": "e8c673bd0fdb7e5ed3713c9f08426790c73a603fe672e4a531b5a70e113c86e5",
       "path": "st/stm32g0/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 26238,
-      "content_sha256": "4a2a09d3705fe6c4475b7c782e9ac63141b1d679426cfaa1285ec71fda3135ba",
+      "content_bytes": 26379,
+      "content_sha256": "5728f4b43f6c8adbed6eecdd69de583dd91ce535962fc840a8945d779d0e3f73",
       "path": "st/stm32g0/reports/validation-summary.json"
     }
   ],
@@ -1160,7 +1160,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "ed555d5d346ab9496e478ec1ba9ae4239848fa089c0dfd39992cb9d56299d9d2",
+  "target_artifact_revision": "5221c92ec2c7d863010cd507ddf46c05598ff00574f064df9d3231e75fffa88e",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -1199,7 +1199,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 260 rule(s).",
+        "message": "gate-c passed with 263 rule(s).",
         "passed": true,
         "rule_ids": [
           "stm32g030f6-package-pin-count-covers-known-pins",
@@ -1209,6 +1209,7 @@
           "stm32g030f6-alternate-functions-explicit",
           "stm32g030f6-memory-sizes-positive",
           "stm32g030f6-peripheral-bases-unique",
+          "stm32g030f6-adc-semantics-populated",
           "stm32g030f6-interrupts-present",
           "stm32g030f6-interrupts-reference-known-peripherals",
           "stm32g030f6-referenced-peripherals-have-rcc-enable",
@@ -1295,6 +1296,7 @@
           "stm32g071rb-alternate-functions-explicit",
           "stm32g071rb-memory-sizes-positive",
           "stm32g071rb-peripheral-bases-unique",
+          "stm32g071rb-adc-semantics-populated",
           "stm32g071rb-interrupts-present",
           "stm32g071rb-interrupts-reference-known-peripherals",
           "stm32g071rb-referenced-peripherals-have-rcc-enable",
@@ -1381,6 +1383,7 @@
           "stm32g0b1re-alternate-functions-explicit",
           "stm32g0b1re-memory-sizes-positive",
           "stm32g0b1re-peripheral-bases-unique",
+          "stm32g0b1re-adc-semantics-populated",
           "stm32g0b1re-interrupts-present",
           "stm32g0b1re-interrupts-reference-known-peripherals",
           "stm32g0b1re-referenced-peripherals-have-rcc-enable",
