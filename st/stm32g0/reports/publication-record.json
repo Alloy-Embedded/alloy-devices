@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "abdde9c3479def821a85835d5cbf185eb143f7b0bad90dce24cc94038d9e8bae",
+    "canonical_ir_sha256": "b02790debe11e35b832629463c2e6bb8b06c484b8973ed1e52b49d0f5821901b",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -269,7 +269,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 6625,
-      "content_sha256": "2442053a6a567b0eb388f4c4c8e7cdd53624c7024d18af5a9eaa4bb8772e663f",
+      "content_sha256": "7e4bfebe6629bba7399c018d8bc624e952e39f4b8e079f92e12a3caa8ab8a49f",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
@@ -694,8 +694,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 18296,
-      "content_sha256": "27b223f0bde7b2f9f81b3ffc6b86229482afe3f72de95ba8266796b0d54bbae5",
+      "content_bytes": 18392,
+      "content_sha256": "db63cc0a26e5b51a6aa5bcf56e0df840f280ad202915fa53f2afea6622f97ac4",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/spi.hpp"
     },
     {
@@ -706,8 +706,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 46095,
-      "content_sha256": "8ad432394ebb42519a353097d74cdc5ce17e6475bdf0224779d78ee8d944f970",
+      "content_bytes": 46213,
+      "content_sha256": "ea9d23b86e6cc9e5a5514f988b6329d68d46917b08b5570eacabd8a48abf2b8e",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/uart.hpp"
     },
     {
@@ -1072,8 +1072,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3489269,
-      "content_sha256": "fa31109f21d4a390a94241317a2342100eecbf1fcde70eb475ea82bff359c9c1",
+      "content_bytes": 3494261,
+      "content_sha256": "e410c02886239d94fc6a45b8850a93a6803ec6bad3084a2196f3f104a32c2372",
       "path": "st/stm32g0/metadata/devices/stm32g071rb.json"
     },
     {
@@ -1160,7 +1160,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "539fd6ad1e84954c95ced112c76774692d91333439176a4501a2a450d9eeb133",
+  "target_artifact_revision": "2208139dff734c84c5c60efc1841b266caee0c0391bc4d29919bf46646b06ecf",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
