@@ -103,6 +103,98 @@ struct PwmChannelSemanticTraits<PeripheralId::PWM, 0u> {
 };
 
 inline constexpr std::array<PeripheralId, 0> kPwmSemanticPeripherals = {};
+
+// complete-rp2040-semantics Phase D: per-slice PWM HW facts.
+template<std::uint8_t SliceIndex>
+struct PwmSliceHwTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint8_t kChannelAPin = 0u;
+  static constexpr std::uint8_t kChannelBPin = 0u;
+  static constexpr std::uint8_t kCounterBits = 0u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 0u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 0u;
+};
+
+template<>
+struct PwmSliceHwTraits<0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 0u;
+  static constexpr std::uint8_t kChannelBPin = 1u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 2u;
+  static constexpr std::uint8_t kChannelBPin = 3u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 4u;
+  static constexpr std::uint8_t kChannelBPin = 5u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 6u;
+  static constexpr std::uint8_t kChannelBPin = 7u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 8u;
+  static constexpr std::uint8_t kChannelBPin = 9u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<5> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 10u;
+  static constexpr std::uint8_t kChannelBPin = 11u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<6> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 12u;
+  static constexpr std::uint8_t kChannelBPin = 13u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
+template<>
+struct PwmSliceHwTraits<7> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint8_t kChannelAPin = 14u;
+  static constexpr std::uint8_t kChannelBPin = 15u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::uint16_t kClockDivMinQ4 = 16u;
+  static constexpr std::uint16_t kClockDivMaxQ4 = 4080u;
+};
+
 }
 }
 }

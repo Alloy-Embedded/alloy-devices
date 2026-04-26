@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "pico",
-      "fact_count": 224,
+      "fact_count": 226,
       "facts": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/startup.hpp",
@@ -4877,6 +4877,62 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
           "derivation_kind": "inferred",
           "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
             "capability_id": "runtime-support:dma",
             "name": "runtime-supported",
             "peripheral": null,
@@ -6242,7 +6298,7 @@
     },
     {
       "device": "rp2040",
-      "fact_count": 231,
+      "fact_count": 233,
       "facts": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/startup.hpp",
@@ -11301,6 +11357,62 @@
           "fact_id": "capability:capability-instance:adc:qfn56:ch3",
           "fact_kind": "capability",
           "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:core-count",
+            "name": "core-count",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "1"
+          },
+          "fact_id": "capability:device:core-count",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "device:multicore-topology",
+            "name": "multicore-topology",
+            "peripheral": null,
+            "peripheral_class": "device",
+            "scope": "device",
+            "value": "single-core"
+          },
+          "fact_id": "capability:device:multicore-topology",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-capability-from-multicore-topology",
           "provenance": {
             "patch_ids": [
               "raspberrypi-rp2040-bootstrap",

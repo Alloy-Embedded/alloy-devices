@@ -51,6 +51,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_adc,
   class_busctrl,
   class_clocks,
+  class_device,
   class_dma,
   class_i2c0,
   class_i2c1,

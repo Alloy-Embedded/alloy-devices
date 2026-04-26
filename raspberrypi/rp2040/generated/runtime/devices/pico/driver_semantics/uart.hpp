@@ -3,6 +3,7 @@
 #include <array>
 #include <cstdint>
 #include "common.hpp"
+#include "../pins.hpp"
 
 namespace raspberrypi {
 namespace rp2040 {
@@ -15,6 +16,12 @@ template<PeripheralId Id>
 struct UartSemanticTraits {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -86,6 +93,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::UART0> {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_raspberrypi_rp2040_uart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40034000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -157,6 +170,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::UART1> {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_raspberrypi_rp2040_uart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40038000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -225,6 +244,53 @@ struct UartSemanticTraits<PeripheralId::UART1> {
 };
 
 inline constexpr std::array<PeripheralId, 0> kUartSemanticPeripherals = {};
+
+// complete-rp2040-semantics Phase B: per-controller UART facts.
+enum class RuntimeUartId : std::uint8_t {
+  None = 0,
+  UART0 = 1,
+  UART1 = 2,
+};
+
+template<RuntimeUartId Id>
+struct UartPeripheralTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::uint8_t kFifoDepth = 0u;
+  static constexpr std::uint8_t kDreqTx = 0u;
+  static constexpr std::uint8_t kDreqRx = 0u;
+  static constexpr std::array<std::uint8_t, 0> kValidTxPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidRxPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidCtsPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidRtsPins = {};
+};
+
+template<>
+struct UartPeripheralTraits<RuntimeUartId::UART0> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40034000u;
+  static constexpr std::uint8_t kFifoDepth = 32u;
+  static constexpr std::uint8_t kDreqTx = 20u;
+  static constexpr std::uint8_t kDreqRx = 21u;
+  static constexpr std::array<std::uint8_t, 3> kValidTxPins = {{0u, 12u, 16u}};
+  static constexpr std::array<std::uint8_t, 3> kValidRxPins = {{1u, 13u, 17u}};
+  static constexpr std::array<std::uint8_t, 3> kValidCtsPins = {{2u, 14u, 18u}};
+  static constexpr std::array<std::uint8_t, 3> kValidRtsPins = {{3u, 15u, 19u}};
+};
+
+template<>
+struct UartPeripheralTraits<RuntimeUartId::UART1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40038000u;
+  static constexpr std::uint8_t kFifoDepth = 32u;
+  static constexpr std::uint8_t kDreqTx = 22u;
+  static constexpr std::uint8_t kDreqRx = 23u;
+  static constexpr std::array<std::uint8_t, 4> kValidTxPins = {{4u, 8u, 20u, 25u}};
+  static constexpr std::array<std::uint8_t, 3> kValidRxPins = {{5u, 9u, 21u}};
+  static constexpr std::array<std::uint8_t, 3> kValidCtsPins = {{6u, 10u, 22u}};
+  static constexpr std::array<std::uint8_t, 2> kValidRtsPins = {{7u, 11u}};
+};
+
 }
 }
 }

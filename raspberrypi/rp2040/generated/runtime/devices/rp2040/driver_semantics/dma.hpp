@@ -203,6 +203,33 @@ inline constexpr std::array<PeripheralId, 9> kDmaSemanticPeripherals = {{
   PeripheralId::UART1,
   PeripheralId::UART1,
 }};
+
+// complete-rp2040-semantics Phase D: per-controller DMA HW facts.
+enum class RuntimeDmaCtrlId : std::uint8_t {
+  None = 0,
+  DMA = 1,
+};
+
+template<RuntimeDmaCtrlId Id>
+struct DmaControllerHwTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::uint8_t kChannelCount = 0u;
+  static constexpr std::uint32_t kMaxTransferCount = 0u;
+  static constexpr bool kSupportsChaining = false;
+  static constexpr bool kSupportsByteSwap = false;
+};
+
+template<>
+struct DmaControllerHwTraits<RuntimeDmaCtrlId::DMA> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x50000000u;
+  static constexpr std::uint8_t kChannelCount = 12u;
+  static constexpr std::uint32_t kMaxTransferCount = 0xffffffffu;
+  static constexpr bool kSupportsChaining = true;
+  static constexpr bool kSupportsByteSwap = true;
+};
+
 }
 }
 }
