@@ -86,6 +86,72 @@ struct I2cSemanticTraits {
 };
 
 inline constexpr std::array<PeripheralId, 0> kI2cSemanticPeripherals = {};
+
+// fill-i2c-semantic-gaps: per-controller I2C / TWI HW facts.
+enum class RuntimeI2cClockSource : std::uint8_t {
+  None = 0,
+  Pclk = 1,
+  Hsi16 = 2,
+  Sysclk = 3,
+};
+
+enum class RuntimeI2cCtrlId : std::uint8_t {
+  None = 0,
+  I2C1 = 1,
+  I2C2 = 2,
+};
+
+template<RuntimeI2cCtrlId Id>
+struct I2cPeripheralTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr RuntimeI2cClockSource kClockSource = RuntimeI2cClockSource::None;
+  static constexpr std::uint8_t kDreqTx = 0u;
+  static constexpr std::uint8_t kDreqRx = 0u;
+  static constexpr std::array<PinId, 0> kValidSdaPins = {};
+  static constexpr std::array<PinId, 0> kValidSclPins = {};
+  static constexpr std::uint16_t kInSdaSignal = 0xFFFFu;
+  static constexpr std::uint16_t kInSclSignal = 0xFFFFu;
+  static constexpr std::uint16_t kOutSdaSignal = 0xFFFFu;
+  static constexpr std::uint16_t kOutSclSignal = 0xFFFFu;
+  static constexpr bool kSupportsFastModePlus = false;
+  static constexpr bool kPortmuxAlt = false;
+};
+
+template<>
+struct I2cPeripheralTraits<RuntimeI2cCtrlId::I2C1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40005400u;
+  static constexpr RuntimeI2cClockSource kClockSource = RuntimeI2cClockSource::Pclk;
+  static constexpr std::uint8_t kDreqTx = 0u;
+  static constexpr std::uint8_t kDreqRx = 0u;
+  static constexpr std::array<PinId, 1> kValidSdaPins = {PinId::PB7};
+  static constexpr std::array<PinId, 0> kValidSclPins = {};
+  static constexpr std::uint16_t kInSdaSignal = 0xFFFFu;
+  static constexpr std::uint16_t kInSclSignal = 0xFFFFu;
+  static constexpr std::uint16_t kOutSdaSignal = 0xFFFFu;
+  static constexpr std::uint16_t kOutSclSignal = 0xFFFFu;
+  static constexpr bool kSupportsFastModePlus = true;
+  static constexpr bool kPortmuxAlt = false;
+};
+
+template<>
+struct I2cPeripheralTraits<RuntimeI2cCtrlId::I2C2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40005800u;
+  static constexpr RuntimeI2cClockSource kClockSource = RuntimeI2cClockSource::Pclk;
+  static constexpr std::uint8_t kDreqTx = 0u;
+  static constexpr std::uint8_t kDreqRx = 0u;
+  static constexpr std::array<PinId, 0> kValidSdaPins = {};
+  static constexpr std::array<PinId, 0> kValidSclPins = {};
+  static constexpr std::uint16_t kInSdaSignal = 0xFFFFu;
+  static constexpr std::uint16_t kInSclSignal = 0xFFFFu;
+  static constexpr std::uint16_t kOutSdaSignal = 0xFFFFu;
+  static constexpr std::uint16_t kOutSclSignal = 0xFFFFu;
+  static constexpr bool kSupportsFastModePlus = true;
+  static constexpr bool kPortmuxAlt = false;
+};
+
 }
 }
 }

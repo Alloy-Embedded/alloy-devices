@@ -3694,6 +3694,40 @@
       }
     }
   ],
+  "i2c_peripherals": [
+    {
+      "base_address": 1073763328,
+      "clock_source": "pclk",
+      "dreq_rx": null,
+      "dreq_tx": null,
+      "gpio_matrix_in_scl_signal": null,
+      "gpio_matrix_in_sda_signal": null,
+      "gpio_matrix_out_scl_signal": null,
+      "gpio_matrix_out_sda_signal": null,
+      "peripheral_id": "I2C1",
+      "portmux_alt": null,
+      "supports_fast_mode_plus": true,
+      "valid_scl_pins": [],
+      "valid_sda_pins": [
+        "PB7"
+      ]
+    },
+    {
+      "base_address": 1073764352,
+      "clock_source": "pclk",
+      "dreq_rx": null,
+      "dreq_tx": null,
+      "gpio_matrix_in_scl_signal": null,
+      "gpio_matrix_in_sda_signal": null,
+      "gpio_matrix_out_scl_signal": null,
+      "gpio_matrix_out_sda_signal": null,
+      "peripheral_id": "I2C2",
+      "portmux_alt": null,
+      "supports_fast_mode_plus": true,
+      "valid_scl_pins": [],
+      "valid_sda_pins": []
+    }
+  ],
   "identity": {
     "core": "cortex-m0plus",
     "device": "stm32g030f6",

@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "3c8152c388123221211afa96a97c24909e24cc57d1f6b75717a8981701560a39",
+    "canonical_ir_sha256": "abdde9c3479def821a85835d5cbf185eb143f7b0bad90dce24cc94038d9e8bae",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -269,7 +269,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 6625,
-      "content_sha256": "5c9a24c50cdf3c4f7b97133188070f335cf72fdc37368a4026c104267a9949d7",
+      "content_sha256": "2442053a6a567b0eb388f4c4c8e7cdd53624c7024d18af5a9eaa4bb8772e663f",
       "path": "st/stm32g0/artifact-manifest.json"
     },
     {
@@ -418,8 +418,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5078,
-      "content_sha256": "df024fb1a88ff3a5ac6af99667710413fd1a11033cf9b06caa20dbe549810e3d",
+      "content_bytes": 7717,
+      "content_sha256": "2b1f66afd525cac2fc1cc5fa5e4d5bf7363ed382cb8e01d9ad93acfcc0807add",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/i2c.hpp"
     },
     {
@@ -454,8 +454,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 16316,
-      "content_sha256": "a4258109186c7fe66a270ef45a8e350701e6f8baed0b3de9131251daef29cda9",
+      "content_bytes": 18296,
+      "content_sha256": "d6fa56a35b9f9273893d9abfdb0f4b8a114dff046f71493198187cf1b6696ae3",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/spi.hpp"
     },
     {
@@ -466,8 +466,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 19793,
-      "content_sha256": "076357c66ae9c1463d5c8a14b18d235a911fca65c5425654f5dcbbc59bb30c07",
+      "content_bytes": 22553,
+      "content_sha256": "37f8491264544e244a1497a294509e7facae800dc55b6a61b081987e669cae03",
       "path": "st/stm32g0/generated/runtime/devices/stm32g030f6/driver_semantics/uart.hpp"
     },
     {
@@ -658,8 +658,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5078,
-      "content_sha256": "de4a4f51dd2e3356e00869d8663de10a9d119851a79f7d01ba3d6d061ec04249",
+      "content_bytes": 7824,
+      "content_sha256": "cd97153e3d33010e1d409bf06cff7bf8d383d92685ad7a8140f1358b90e06724",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/i2c.hpp"
     },
     {
@@ -694,8 +694,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 16316,
-      "content_sha256": "d21075a4d4a3a5ec8b7c970dfd63ad67c34eee9fb09521b7e56eb3aa3d5c58c2",
+      "content_bytes": 18296,
+      "content_sha256": "27b223f0bde7b2f9f81b3ffc6b86229482afe3f72de95ba8266796b0d54bbae5",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/spi.hpp"
     },
     {
@@ -706,8 +706,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 40563,
-      "content_sha256": "2f620e1c6e3869adb226f53026a47104fad82c7eb6521728714c9b08afe56f77",
+      "content_bytes": 46095,
+      "content_sha256": "8ad432394ebb42519a353097d74cdc5ce17e6475bdf0224779d78ee8d944f970",
       "path": "st/stm32g0/generated/runtime/devices/stm32g071rb/driver_semantics/uart.hpp"
     },
     {
@@ -898,8 +898,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5078,
-      "content_sha256": "4b5dd727a4d198415ecc18ba2f2a35856863d55a3afdd89bec3dc771a83846ae",
+      "content_bytes": 8773,
+      "content_sha256": "5a040fa3c802b2b0ed3b8d9cd1fb2118aa831c40127d6dae5af220d3a5b08177",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/i2c.hpp"
     },
     {
@@ -934,8 +934,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 20722,
-      "content_sha256": "44200cc15cdbeafee1dfdb9478b266924362b4526967bad3b71032ab9ab9d051",
+      "content_bytes": 23364,
+      "content_sha256": "3e9791371071e18b5fa9ca0d45b30398799e651a4d66481d40fec3c9717fe55b",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/spi.hpp"
     },
     {
@@ -946,8 +946,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 58289,
-      "content_sha256": "a426e9cefc2658cf85d3b5c787eb8e7e4f707930503d0d5781c0369d7bcb0f61",
+      "content_bytes": 66593,
+      "content_sha256": "a4b5ae84d2266f37d8a5f0886a4358834aaa6af6ef9dda2824928a091e8ec382",
       "path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/driver_semantics/uart.hpp"
     },
     {
@@ -1066,20 +1066,20 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 2111271,
-      "content_sha256": "c0ecfc516b29c4020711cef3979b8bbbee18bdae8f8a67f5d33d56c316fb731f",
+      "content_bytes": 2112201,
+      "content_sha256": "1c912e8a59188eb419985b8c97cdee30eb6080f568ee981c1ffca66cd8218a15",
       "path": "st/stm32g0/metadata/devices/stm32g030f6.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3488181,
-      "content_sha256": "efa34f80c72da95a8df0ba521121bcf7483f2f05b0e09e8fd4d6ad7b7d634c5c",
+      "content_bytes": 3489269,
+      "content_sha256": "fa31109f21d4a390a94241317a2342100eecbf1fcde70eb475ea82bff359c9c1",
       "path": "st/stm32g0/metadata/devices/stm32g071rb.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 4558954,
-      "content_sha256": "29583cf4787f4243a61ea9e7dd9e1e18744b3f07d6b1878e94dc88e5f92c3938",
+      "content_bytes": 4560676,
+      "content_sha256": "ab0e89bed14d44ade3dc86116b47020407f1f85ca3c4ee8caec1d4eb9a935f80",
       "path": "st/stm32g0/metadata/devices/stm32g0b1re.json"
     },
     {
@@ -1160,7 +1160,7 @@
     "family": "stm32g0",
     "vendor": "st"
   },
-  "target_artifact_revision": "38e53642238b6c81055b5f83639bdfade7fcb072b654f25a02ada15f50750f59",
+  "target_artifact_revision": "539fd6ad1e84954c95ced112c76774692d91333439176a4501a2a450d9eeb133",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
