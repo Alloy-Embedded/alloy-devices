@@ -37,6 +37,7 @@ struct UartSemanticTraits {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = false;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -103,6 +104,10 @@ struct UartSemanticTraits {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 template<>
@@ -130,6 +135,7 @@ struct UartSemanticTraits<PeripheralId::LPUART1> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -196,6 +202,10 @@ struct UartSemanticTraits<PeripheralId::LPUART1> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{20u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = RuntimeFieldRef{FieldId::none, RuntimeRegisterRef{RegisterId::register_ccm_cscdr1, 0x400FC000u, 36u, true}, 0u, 1u, true};
+  static constexpr std::array<KernelClockSourceOption, 2> kKernelClockSourceOptions = {{{KernelClockSource::none, 0u, true}, {KernelClockSource::none, 1u, true}}};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr5_cg12, RuntimeRegisterRef{RegisterId::register_ccm_ccgr5, 0x400FC000u, 124u, true}, 24u, 2u, true};
 };
 
 template<>
@@ -223,6 +233,7 @@ struct UartSemanticTraits<PeripheralId::LPUART2> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -289,6 +300,10 @@ struct UartSemanticTraits<PeripheralId::LPUART2> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{21u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr0_cg14, RuntimeRegisterRef{RegisterId::register_ccm_ccgr0, 0x400FC000u, 104u, true}, 28u, 2u, true};
 };
 
 template<>
@@ -316,6 +331,7 @@ struct UartSemanticTraits<PeripheralId::LPUART3> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -382,6 +398,10 @@ struct UartSemanticTraits<PeripheralId::LPUART3> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{22u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr0_cg6, RuntimeRegisterRef{RegisterId::register_ccm_ccgr0, 0x400FC000u, 104u, true}, 12u, 2u, true};
 };
 
 template<>
@@ -409,6 +429,7 @@ struct UartSemanticTraits<PeripheralId::LPUART4> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -475,6 +496,10 @@ struct UartSemanticTraits<PeripheralId::LPUART4> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{23u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr1_cg12, RuntimeRegisterRef{RegisterId::register_ccm_ccgr1, 0x400FC000u, 108u, true}, 24u, 2u, true};
 };
 
 template<>
@@ -502,6 +527,7 @@ struct UartSemanticTraits<PeripheralId::LPUART5> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -568,6 +594,10 @@ struct UartSemanticTraits<PeripheralId::LPUART5> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{24u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr3_cg1, RuntimeRegisterRef{RegisterId::register_ccm_ccgr3, 0x400FC000u, 116u, true}, 2u, 2u, true};
 };
 
 template<>
@@ -595,6 +625,7 @@ struct UartSemanticTraits<PeripheralId::LPUART6> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -661,6 +692,10 @@ struct UartSemanticTraits<PeripheralId::LPUART6> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{25u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr3_cg3, RuntimeRegisterRef{RegisterId::register_ccm_ccgr3, 0x400FC000u, 116u, true}, 6u, 2u, true};
 };
 
 template<>
@@ -688,6 +723,7 @@ struct UartSemanticTraits<PeripheralId::LPUART7> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -754,6 +790,10 @@ struct UartSemanticTraits<PeripheralId::LPUART7> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{26u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr5_cg13, RuntimeRegisterRef{RegisterId::register_ccm_ccgr5, 0x400FC000u, 124u, true}, 26u, 2u, true};
 };
 
 template<>
@@ -781,6 +821,7 @@ struct UartSemanticTraits<PeripheralId::LPUART8> {
   static constexpr bool kSupportsAutoBaud = false;
   static constexpr bool kSupportsWakeFromStop = true;
   static constexpr std::uint8_t kDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -847,6 +888,10 @@ struct UartSemanticTraits<PeripheralId::LPUART8> {
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{27u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 80000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_ccm_ccgr6_cg7, RuntimeRegisterRef{RegisterId::register_ccm_ccgr6, 0x400FC000u, 128u, true}, 14u, 2u, true};
 };
 
 inline constexpr std::array<PeripheralId, 8> kUartSemanticPeripherals = {{
