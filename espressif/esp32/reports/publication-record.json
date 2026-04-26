@@ -273,8 +273,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4216,
-      "content_sha256": "00a6cf584977541f7507c311fb84f22ca05c7507433d2f1d943462914b12d336",
+      "content_bytes": 4418,
+      "content_sha256": "bbf4d32f5f3d79fce3e2aac702c1b4f929ed15921bd4ff0a63c08755f8e3d2c8",
       "path": "espressif/esp32/generated/runtime/devices/esp32-wroom32/driver_semantics/common.hpp"
     },
     {
@@ -513,8 +513,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4208,
-      "content_sha256": "8b4435f49612586af362ce9ecbbaec0ad394af61d665d9ec9dfcc1aefbf13c6c",
+      "content_bytes": 4410,
+      "content_sha256": "f914e5d59221352059f651b2e5649088ca0e142bcd0b019839996575694ad373",
       "path": "espressif/esp32/generated/runtime/devices/esp32/driver_semantics/common.hpp"
     },
     {
@@ -799,7 +799,7 @@
     "family": "esp32",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "4f24bf3dc1a27742dfd8c528ea4ce34b7478e8c4a9bae867d0d086239f96982e",
+  "target_artifact_revision": "6595c068f87d99c9b9c06eb7bafe2457d29b368c1fade41b15de75b12db0731e",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
