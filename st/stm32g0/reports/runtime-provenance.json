@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "stm32g030f6",
-      "fact_count": 239,
+      "fact_count": 255,
       "facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/startup.hpp",
@@ -1344,6 +1344,60 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c1",
+            "interrupt": "I2C1",
+            "line": 23,
+            "peripheral": "I2C1",
+            "vector_slot": 39
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c2:i2c2",
+            "interrupt": "I2C2",
+            "line": 24,
+            "peripheral": "I2C2",
+            "vector_slot": 40
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c2:i2c2",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:rtc:rtc-stamp",
             "interrupt": "RTC_STAMP",
             "line": 2,
@@ -2111,6 +2165,58 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/resets.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "peripheral": "I2C1",
+            "register_field_id": "field:rcc:apbrstr1:i2c1rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c1"
+          },
+          "fact_id": "reset:reset:i2c1",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "I2C2",
+            "register_field_id": "field:rcc:apbrstr1:i2c2rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c2"
+          },
+          "fact_id": "reset:reset:i2c2",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "peripheral": "SPI1",
             "register_field_id": "field:rcc:apbrstr2:spi1rst",
             "register_id": "register:rcc:apbrstr2",
@@ -2567,6 +2673,60 @@
             "register_id": "register:rcc:iopenr"
           },
           "fact_id": "enable-domain:gate:gpiof",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c1",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C1",
+            "register_field_id": "field:rcc:apbenr1:i2c1en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c2",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C2",
+            "register_field_id": "field:rcc:apbenr1:i2c2en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c2",
           "fact_kind": "enable_domain",
           "inference_rule": null,
           "provenance": {
@@ -3065,6 +3225,58 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/clock_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "clock_gate_id": "gate:i2c1",
+            "peripheral": "I2C1",
+            "reset_id": "reset:i2c1",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C1",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c2",
+            "peripheral": "I2C2",
+            "reset_id": "reset:i2c2",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C2",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "clock_gate_id": "gate:spi1",
             "peripheral": "SPI1",
             "reset_id": "reset:spi1",
@@ -3445,6 +3657,34 @@
             "signal": "nss"
           },
           "fact_id": "route-candidate:candidate:pa0:usart2:nss",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa1:i2c1:smba",
+            "peripheral": "I2C1",
+            "pin": "PA1",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pa1:i2c1:smba",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -4277,6 +4517,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb7:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PB7",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb7:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb7:spi2:mosi",
             "peripheral": "SPI2",
             "pin": "PB7",
@@ -4342,6 +4610,38 @@
           },
           "fact_id": "route-candidate:candidate:pb7:usart1:rx",
           "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pa1:i2c1:smba",
+              "candidate:pb7:i2c1:sda"
+            ],
+            "group_id": "group:i2c1:tssop20:all-signals",
+            "peripheral": "I2C1",
+            "signals": [
+              "sda",
+              "smba"
+            ]
+          },
+          "fact_id": "route-group:group:i2c1:tssop20:all-signals",
+          "fact_kind": "route_group",
           "inference_rule": null,
           "provenance": {
             "patch_ids": [
@@ -4866,6 +5166,149 @@
             "runtime-peripheral:GPIOD",
             "runtime-peripheral:GPIOF"
           ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:sda",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:smba",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G030.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C1",
+            "runtime-peripheral:I2C2"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:tssop20:sda",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c1:tssop20:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:tssop20:smba",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability-instance:i2c1:tssop20:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g030f6-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G030F6Px.xml"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g030f6/capabilities.hpp",
@@ -6588,7 +7031,7 @@
     },
     {
       "device": "stm32g071rb",
-      "fact_count": 487,
+      "fact_count": 518,
       "facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/startup.hpp",
@@ -8112,6 +8555,60 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c1",
+            "interrupt": "I2C1",
+            "line": 23,
+            "peripheral": "I2C1",
+            "vector_slot": 39
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c2:i2c2",
+            "interrupt": "I2C2",
+            "line": 24,
+            "peripheral": "I2C2",
+            "vector_slot": 40
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c2:i2c2",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:rtc:rtc-stamp",
             "interrupt": "RTC_STAMP",
             "line": 2,
@@ -8987,6 +9484,58 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/resets.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "peripheral": "I2C1",
+            "register_field_id": "field:rcc:apbrstr1:i2c1rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c1"
+          },
+          "fact_id": "reset:reset:i2c1",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "I2C2",
+            "register_field_id": "field:rcc:apbrstr1:i2c2rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c2"
+          },
+          "fact_id": "reset:reset:i2c2",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "peripheral": "LPUART1",
             "register_field_id": "field:rcc:apbrstr1:lpuart1rst",
             "register_id": "register:rcc:apbrstr1",
@@ -9599,6 +10148,60 @@
             "register_id": "register:rcc:iopenr"
           },
           "fact_id": "enable-domain:gate:gpiof",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c1",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C1",
+            "register_field_id": "field:rcc:apbenr1:i2c1en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c2",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C2",
+            "register_field_id": "field:rcc:apbenr1:i2c2en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c2",
           "fact_kind": "enable_domain",
           "inference_rule": null,
           "provenance": {
@@ -10259,6 +10862,58 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/clock_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "clock_gate_id": "gate:i2c1",
+            "peripheral": "I2C1",
+            "reset_id": "reset:i2c1",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C1",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c2",
+            "peripheral": "I2C2",
+            "reset_id": "reset:i2c2",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C2",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "clock_gate_id": "gate:lpuart1",
             "peripheral": "LPUART1",
             "reset_id": "reset:lpuart1",
@@ -10899,6 +11554,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa10:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PA10",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pa10:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa10:spi2:mosi",
             "peripheral": "SPI2",
             "pin": "PA10",
@@ -11271,6 +11954,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:pa15:usart4:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa1:i2c1:smba",
+            "peripheral": "I2C1",
+            "pin": "PA1",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pa1:i2c1:smba",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -12355,6 +13066,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa9:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "PA9",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pa9:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa9:spi2:miso",
             "peripheral": "SPI2",
             "pin": "PA9",
@@ -12579,6 +13318,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb10:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PB10",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb10:i2c2:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb10:lpuart1:rx",
             "peripheral": "LPUART1",
             "pin": "PB10",
@@ -12671,6 +13438,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pb10:usart3:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb11:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PB11",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb11:i2c2:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -12943,6 +13738,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb13:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PB13",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb13:i2c2:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb13:lpuart1:cts",
             "peripheral": "LPUART1",
             "pin": "PB13",
@@ -13091,6 +13914,34 @@
             "signal": "nss"
           },
           "fact_id": "route-candidate:candidate:pb13:usart3:nss",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb14:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PB14",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb14:i2c2:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -13979,6 +14830,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb5:i2c1:smba",
+            "peripheral": "I2C1",
+            "pin": "PB5",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pb5:i2c1:smba",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb5:spi1:mosi",
             "peripheral": "SPI1",
             "pin": "PB5",
@@ -14043,6 +14922,34 @@
             "signal": "ch2"
           },
           "fact_id": "route-candidate:candidate:pb5:tim3:ch2",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb6:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "PB6",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb6:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -14155,6 +15062,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pb6:usart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb7:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PB7",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb7:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -14315,6 +15250,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb8:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "PB8",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb8:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb8:spi2:sck",
             "peripheral": "SPI2",
             "pin": "PB8",
@@ -14407,6 +15370,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pb8:usart3:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb9:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PB9",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb9:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -16108,6 +17099,76 @@
           "derivation_kind": "patched",
           "detail": {
             "candidate_ids": [
+              "candidate:pa10:i2c1:sda",
+              "candidate:pa9:i2c1:scl",
+              "candidate:pb6:i2c1:scl",
+              "candidate:pb7:i2c1:sda",
+              "candidate:pb8:i2c1:scl",
+              "candidate:pb9:i2c1:sda"
+            ],
+            "group_id": "group:i2c1:lqfp64:scl-sda",
+            "peripheral": "I2C1",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c1:lqfp64:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pb10:i2c2:scl",
+              "candidate:pb11:i2c2:sda",
+              "candidate:pb13:i2c2:scl",
+              "candidate:pb14:i2c2:sda"
+            ],
+            "group_id": "group:i2c2:lqfp64:scl-sda",
+            "peripheral": "I2C2",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c2:lqfp64:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
               "candidate:pa2:lpuart1:tx",
               "candidate:pa3:lpuart1:rx",
               "candidate:pb10:lpuart1:rx",
@@ -17123,6 +18184,261 @@
             "runtime-peripheral:GPIOD",
             "runtime-peripheral:GPIOF"
           ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:scl",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:sda",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:smba",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G071.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C1",
+            "runtime-peripheral:I2C2"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:lqfp64:scl",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c1:lqfp64:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:lqfp64:sda",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c1:lqfp64:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:lqfp64:smba",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability-instance:i2c1:lqfp64:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c2:lqfp64:scl",
+            "name": "available-signal",
+            "peripheral": "I2C2",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c2:lqfp64:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c2:lqfp64:sda",
+            "name": "available-signal",
+            "peripheral": "I2C2",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c2:lqfp64:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g071rb-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G071R(6-8-B)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g071rb/capabilities.hpp",
@@ -20279,7 +21595,7 @@
     },
     {
       "device": "stm32g0b1re",
-      "fact_count": 632,
+      "fact_count": 685,
       "facts": [
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/startup.hpp",
@@ -21804,6 +23120,60 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c1",
+            "interrupt": "I2C1",
+            "line": 23,
+            "peripheral": "I2C1",
+            "vector_slot": 39
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c1",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c2:i2c2-i2c3",
+            "interrupt": "I2C2_I2C3",
+            "line": 24,
+            "peripheral": "I2C2",
+            "vector_slot": 40
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c2:i2c2-i2c3",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:rtc:rtc-tamp",
             "interrupt": "RTC_TAMP",
             "line": 2,
@@ -22704,6 +24074,84 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/resets.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "peripheral": "I2C1",
+            "register_field_id": "field:rcc:apbrstr1:i2c1rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c1"
+          },
+          "fact_id": "reset:reset:i2c1",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "I2C2",
+            "register_field_id": "field:rcc:apbrstr1:i2c2rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c2"
+          },
+          "fact_id": "reset:reset:i2c2",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "I2C3",
+            "register_field_id": "field:rcc:apbrstr1:i2c3rst",
+            "register_id": "register:rcc:apbrstr1",
+            "reset_id": "reset:i2c3"
+          },
+          "fact_id": "reset:reset:i2c3",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "peripheral": "LPUART1",
             "register_field_id": "field:rcc:apbrstr1:lpuart1rst",
             "register_id": "register:rcc:apbrstr1",
@@ -23526,6 +24974,87 @@
             "register_id": "register:rcc:iopenr"
           },
           "fact_id": "enable-domain:gate:gpiof",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c1",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C1",
+            "register_field_id": "field:rcc:apbenr1:i2c1en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c2",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C2",
+            "register_field_id": "field:rcc:apbenr1:i2c2en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c2",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c3",
+            "parent_clock_node": "clock-node:rcc-apbenr1",
+            "peripheral": "I2C3",
+            "register_field_id": "field:rcc:apbenr1:i2c3en",
+            "register_id": "register:rcc:apbenr1"
+          },
+          "fact_id": "enable-domain:gate:i2c3",
           "fact_kind": "enable_domain",
           "inference_rule": null,
           "provenance": {
@@ -24400,6 +25929,84 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/clock_bindings.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "clock_gate_id": "gate:i2c1",
+            "peripheral": "I2C1",
+            "reset_id": "reset:i2c1",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C1",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c2",
+            "peripheral": "I2C2",
+            "reset_id": "reset:i2c2",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C2",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c3",
+            "peripheral": "I2C3",
+            "reset_id": "reset:i2c3",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C3",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "clock_gate_id": "gate:lpuart1",
             "peripheral": "LPUART1",
             "reset_id": "reset:lpuart1",
@@ -25196,6 +26803,62 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa10:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PA10",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pa10:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa10:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PA10",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pa10:i2c2:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa10:spi2:mosi",
             "peripheral": "SPI2",
             "pin": "PA10",
@@ -25344,6 +27007,34 @@
             "signal": "noe"
           },
           "fact_id": "route-candidate:candidate:pa13:usb:noe",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa15:i2c2:smba",
+            "peripheral": "I2C2",
+            "pin": "PA15",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pa15:i2c2:smba",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -25680,6 +27371,34 @@
             "signal": "noe"
           },
           "fact_id": "route-candidate:candidate:pa15:usb:noe",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa1:i2c1:smba",
+            "peripheral": "I2C1",
+            "pin": "PA1",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pa1:i2c1:smba",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -26484,6 +28203,62 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa6:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PA6",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pa6:i2c2:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa6:i2c3:sda",
+            "peripheral": "I2C3",
+            "pin": "PA6",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:9",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pa6:i2c3:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa6:lpuart1:cts",
             "peripheral": "LPUART1",
             "pin": "PA6",
@@ -26736,6 +28511,62 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa7:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PA7",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pa7:i2c2:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa7:i2c3:scl",
+            "peripheral": "I2C3",
+            "pin": "PA7",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:9",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pa7:i2c3:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa7:spi1:mosi",
             "peripheral": "SPI1",
             "pin": "PA7",
@@ -26960,6 +28791,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pa8:i2c2:smba",
+            "peripheral": "I2C2",
+            "pin": "PA8",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pa8:i2c2:smba",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pa8:spi2:nss",
             "peripheral": "SPI2",
             "pin": "PA8",
@@ -26996,6 +28855,62 @@
             "signal": "ch1"
           },
           "fact_id": "route-candidate:candidate:pa8:tim1:ch1",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa9:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "PA9",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pa9:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pa9:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PA9",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pa9:i2c2:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -27324,6 +29239,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb10:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PB10",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb10:i2c2:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb10:lpuart1:rx",
             "peripheral": "LPUART1",
             "pin": "PB10",
@@ -27416,6 +29359,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pb10:usart3:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb11:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PB11",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb11:i2c2:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -27556,6 +29527,34 @@
             "signal": "rx"
           },
           "fact_id": "route-candidate:candidate:pb12:fdcan2:rx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb12:i2c2:smba",
+            "peripheral": "I2C2",
+            "pin": "PB12",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pb12:i2c2:smba",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -27744,6 +29743,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb13:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PB13",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb13:i2c2:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb13:lpuart1:cts",
             "peripheral": "LPUART1",
             "pin": "PB13",
@@ -27892,6 +29919,34 @@
             "signal": "nss"
           },
           "fact_id": "route-candidate:candidate:pb13:usart3:nss",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb14:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PB14",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb14:i2c2:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -28724,6 +30779,62 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb3:i2c2:scl",
+            "peripheral": "I2C2",
+            "pin": "PB3",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb3:i2c2:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb3:i2c3:scl",
+            "peripheral": "I2C3",
+            "pin": "PB3",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb3:i2c3:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb3:spi1:sck",
             "peripheral": "SPI1",
             "pin": "PB3",
@@ -28928,6 +31039,62 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pb3:usart5:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb4:i2c2:sda",
+            "peripheral": "I2C2",
+            "pin": "PB4",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:8",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb4:i2c2:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb4:i2c3:sda",
+            "peripheral": "I2C3",
+            "pin": "PB4",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb4:i2c3:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -29172,6 +31339,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb5:i2c1:smba",
+            "peripheral": "I2C1",
+            "pin": "PB5",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "smba"
+          },
+          "fact_id": "route-candidate:candidate:pb5:i2c1:smba",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb5:spi1:mosi",
             "peripheral": "SPI1",
             "pin": "PB5",
@@ -29376,6 +31571,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:pb6:fdcan2:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pb6:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "PB6",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb6:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -29620,6 +31843,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb7:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PB7",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb7:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb7:lpuart2:rx",
             "peripheral": "LPUART2",
             "pin": "PB7",
@@ -29844,6 +32095,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb8:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "PB8",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pb8:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb8:spi2:sck",
             "peripheral": "SPI2",
             "pin": "PB8",
@@ -30040,6 +32319,34 @@
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:pb9:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "PB9",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pb9:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:pb9:spi2:nss",
             "peripheral": "SPI2",
             "pin": "PB9",
@@ -30160,6 +32467,34 @@
             "signal": "rx"
           },
           "fact_id": "route-candidate:candidate:pb9:usart6:rx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pc0:i2c3:scl",
+            "peripheral": "I2C3",
+            "pin": "PC0",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:pc0:i2c3:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -30580,6 +32915,34 @@
             "signal": "bk"
           },
           "fact_id": "route-candidate:candidate:pc13:tim1:bk",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:pc1:i2c3:sda",
+            "peripheral": "I2C3",
+            "pin": "PC1",
+            "route_kind": "alternate-function",
+            "route_selector": "selector:6",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:pc1:i2c3:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -32607,6 +34970,118 @@
           "derivation_kind": "patched",
           "detail": {
             "candidate_ids": [
+              "candidate:pa10:i2c1:sda",
+              "candidate:pa9:i2c1:scl",
+              "candidate:pb6:i2c1:scl",
+              "candidate:pb7:i2c1:sda",
+              "candidate:pb8:i2c1:scl",
+              "candidate:pb9:i2c1:sda"
+            ],
+            "group_id": "group:i2c1:lqfp64:scl-sda",
+            "peripheral": "I2C1",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c1:lqfp64:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pa10:i2c2:sda",
+              "candidate:pa6:i2c2:sda",
+              "candidate:pa7:i2c2:scl",
+              "candidate:pa9:i2c2:scl",
+              "candidate:pb10:i2c2:scl",
+              "candidate:pb11:i2c2:sda",
+              "candidate:pb13:i2c2:scl",
+              "candidate:pb14:i2c2:sda",
+              "candidate:pb3:i2c2:scl",
+              "candidate:pb4:i2c2:sda"
+            ],
+            "group_id": "group:i2c2:lqfp64:scl-sda",
+            "peripheral": "I2C2",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c2:lqfp64:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:pa6:i2c3:sda",
+              "candidate:pa7:i2c3:scl",
+              "candidate:pb3:i2c3:scl",
+              "candidate:pb4:i2c3:sda",
+              "candidate:pc0:i2c3:scl",
+              "candidate:pc1:i2c3:sda"
+            ],
+            "group_id": "group:i2c3:lqfp64:scl-sda",
+            "peripheral": "I2C3",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c3:lqfp64:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
               "candidate:pa2:lpuart1:tx",
               "candidate:pa3:lpuart1:rx",
               "candidate:pb10:lpuart1:rx",
@@ -34134,6 +36609,346 @@
             "runtime-peripheral:GPIOE",
             "runtime-peripheral:GPIOF"
           ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:scl",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:sda",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:i2c2-v1-1-cube:smba",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability:i2c:i2c2-v1-1-cube:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "cmsis-svd-data"
+            ],
+            "source_paths": [
+              "STM32G0B1.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C1",
+            "runtime-peripheral:I2C2",
+            "runtime-peripheral:I2C3"
+          ]
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:lqfp64:scl",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c1:lqfp64:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:lqfp64:sda",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c1:lqfp64:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:lqfp64:smba",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability-instance:i2c1:lqfp64:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c2:lqfp64:scl",
+            "name": "available-signal",
+            "peripheral": "I2C2",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c2:lqfp64:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c2:lqfp64:sda",
+            "name": "available-signal",
+            "peripheral": "I2C2",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c2:lqfp64:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c2:lqfp64:smba",
+            "name": "available-signal",
+            "peripheral": "I2C2",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "smba"
+          },
+          "fact_id": "capability:capability-instance:i2c2:lqfp64:smba",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c3:lqfp64:scl",
+            "name": "available-signal",
+            "peripheral": "I2C3",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c3:lqfp64:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c3:lqfp64:sda",
+            "name": "available-signal",
+            "peripheral": "I2C3",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c3:lqfp64:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "st-stm32g0-family-bootstrap-v1",
+              "st-stm32g0-stm32g0b1re-bootstrap"
+            ],
+            "source_ids": [
+              "stm32-open-pin-data"
+            ],
+            "source_paths": [
+              "STM32G0B1R(B-C-E)Tx.xml"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "st/stm32g0/generated/runtime/devices/stm32g0b1re/capabilities.hpp",

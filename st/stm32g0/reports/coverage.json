@@ -13,7 +13,7 @@
         "dma_controllers": 1,
         "dma_routes": 2,
         "interrupts": 25,
-        "ip_blocks": 11,
+        "ip_blocks": 10,
         "memories": 2,
         "package_pads": 20,
         "packages": 1,
@@ -45,7 +45,7 @@
     },
     {
       "counts": {
-        "capabilities": 124,
+        "capabilities": 122,
         "clock_gates": 30,
         "clock_nodes": 8,
         "clock_selectors": 2,
@@ -55,7 +55,7 @@
         "dma_controllers": 1,
         "dma_routes": 2,
         "interrupts": 32,
-        "ip_blocks": 15,
+        "ip_blocks": 14,
         "memories": 2,
         "package_pads": 64,
         "packages": 1,
@@ -66,7 +66,7 @@
         "resets": 30,
         "route_operations": 311,
         "route_requirements": 363,
-        "signal_endpoints": 48,
+        "signal_endpoints": 46,
         "startup_descriptors": 6,
         "vector_slots": 48
       },
@@ -87,7 +87,7 @@
     },
     {
       "counts": {
-        "capabilities": 164,
+        "capabilities": 159,
         "clock_gates": 39,
         "clock_nodes": 8,
         "clock_selectors": 2,
@@ -97,7 +97,7 @@
         "dma_controllers": 1,
         "dma_routes": 2,
         "interrupts": 31,
-        "ip_blocks": 17,
+        "ip_blocks": 15,
         "memories": 2,
         "package_pads": 64,
         "packages": 1,
@@ -108,7 +108,7 @@
         "resets": 39,
         "route_operations": 420,
         "route_requirements": 473,
-        "signal_endpoints": 54,
+        "signal_endpoints": 49,
         "startup_descriptors": 6,
         "vector_slots": 47
       },

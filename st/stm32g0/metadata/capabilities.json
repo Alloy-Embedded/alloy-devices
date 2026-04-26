@@ -78,12 +78,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:lqfp64:scl",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -97,12 +97,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:lqfp64:sda",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -116,12 +116,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:lqfp64:smba",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -135,12 +135,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:tssop20:sda",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "tssop20",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -154,12 +154,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:tssop20:smba",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "tssop20",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -173,12 +173,12 @@
     },
     {
       "capability_id": "capability-instance:i2c2:lqfp64:scl",
-      "ip_name": "i2c2",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C2",
-      "peripheral_class": "i2c2",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -192,12 +192,12 @@
     },
     {
       "capability_id": "capability-instance:i2c2:lqfp64:sda",
-      "ip_name": "i2c2",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C2",
-      "peripheral_class": "i2c2",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -211,12 +211,12 @@
     },
     {
       "capability_id": "capability-instance:i2c2:lqfp64:smba",
-      "ip_name": "i2c2",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C2",
-      "peripheral_class": "i2c2",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -230,12 +230,12 @@
     },
     {
       "capability_id": "capability-instance:i2c3:lqfp64:scl",
-      "ip_name": "i2c3",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C3",
-      "peripheral_class": "i2c3",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -249,12 +249,12 @@
     },
     {
       "capability_id": "capability-instance:i2c3:lqfp64:sda",
-      "ip_name": "i2c3",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C3",
-      "peripheral_class": "i2c3",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -2946,13 +2946,13 @@
       "value": "tx"
     },
     {
-      "capability_id": "capability:i2c1:i2c2-v1-1-cube:scl",
-      "ip_name": "i2c1",
+      "capability_id": "capability:i2c:i2c2-v1-1-cube:scl",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -2965,13 +2965,13 @@
       "value": "scl"
     },
     {
-      "capability_id": "capability:i2c1:i2c2-v1-1-cube:sda",
-      "ip_name": "i2c1",
+      "capability_id": "capability:i2c:i2c2-v1-1-cube:sda",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -2984,13 +2984,13 @@
       "value": "sda"
     },
     {
-      "capability_id": "capability:i2c1:i2c2-v1-1-cube:smba",
-      "ip_name": "i2c1",
+      "capability_id": "capability:i2c:i2c2-v1-1-cube:smba",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -3001,101 +3001,6 @@
       },
       "scope": "ip-block",
       "value": "smba"
-    },
-    {
-      "capability_id": "capability:i2c2:i2c2-v1-1-cube:scl",
-      "ip_name": "i2c2",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G071R(6-8-B)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:i2c2:i2c2-v1-1-cube:sda",
-      "ip_name": "i2c2",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G071R(6-8-B)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "sda"
-    },
-    {
-      "capability_id": "capability:i2c2:i2c2-v1-1-cube:smba",
-      "ip_name": "i2c2",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g0b1re-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G0B1R(B-C-E)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "smba"
-    },
-    {
-      "capability_id": "capability:i2c3:i2c2-v1-1-cube:scl",
-      "ip_name": "i2c3",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c3",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g0b1re-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G0B1R(B-C-E)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:i2c3:i2c2-v1-1-cube:sda",
-      "ip_name": "i2c3",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c3",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g0b1re-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G0B1R(B-C-E)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "sda"
     },
     {
       "capability_id": "capability:lptim:g0xx-lptimer1-v1-4-cube:etr",

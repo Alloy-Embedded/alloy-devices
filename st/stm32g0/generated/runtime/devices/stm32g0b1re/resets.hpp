@@ -21,7 +21,7 @@ struct ResetDescriptor {
   FieldId field_id;
   ActiveLevelId active_level_id;
 };
-inline constexpr std::array<ResetDescriptor, 32> kResetDescriptors = {{
+inline constexpr std::array<ResetDescriptor, 35> kResetDescriptors = {{
   {ResetId::reset_adc1, PeripheralId::ADC1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_adcrst, ActiveLevelId::active_level_high},
   {ResetId::reset_dma1, PeripheralId::DMA1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
   {ResetId::reset_dmamux1, PeripheralId::DMAMUX1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
@@ -32,6 +32,9 @@ inline constexpr std::array<ResetDescriptor, 32> kResetDescriptors = {{
   {ResetId::reset_gpioc, PeripheralId::GPIOC, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiocrst, ActiveLevelId::active_level_high},
   {ResetId::reset_gpiod, PeripheralId::GPIOD, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiodrst, ActiveLevelId::active_level_high},
   {ResetId::reset_gpiof, PeripheralId::GPIOF, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiofrst, ActiveLevelId::active_level_high},
+  {ResetId::reset_i2c1, PeripheralId::I2C1, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_i2c1rst, ActiveLevelId::active_level_high},
+  {ResetId::reset_i2c2, PeripheralId::I2C2, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_i2c2rst, ActiveLevelId::active_level_high},
+  {ResetId::reset_i2c3, PeripheralId::I2C3, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_i2c3rst, ActiveLevelId::active_level_high},
   {ResetId::reset_lpuart1, PeripheralId::LPUART1, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_lpuart1rst, ActiveLevelId::active_level_high},
   {ResetId::reset_lpuart2, PeripheralId::LPUART2, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_lpuart2rst, ActiveLevelId::active_level_high},
   {ResetId::reset_spi1, PeripheralId::SPI1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_spi1rst, ActiveLevelId::active_level_high},

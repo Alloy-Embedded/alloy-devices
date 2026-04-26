@@ -25,6 +25,9 @@ enum class PeripheralId : std::uint16_t {
   GPIOD,
   GPIOE,
   GPIOF,
+  I2C1,
+  I2C2,
+  I2C3,
   IWDG,
   LPUART1,
   LPUART2,
@@ -64,6 +67,9 @@ enum class ClockGateId : std::uint16_t {
   gate_gpioc,
   gate_gpiod,
   gate_gpiof,
+  gate_i2c1,
+  gate_i2c2,
+  gate_i2c3,
   gate_lpuart1,
   gate_lpuart2,
   gate_spi1,
@@ -100,6 +106,9 @@ enum class ResetId : std::uint16_t {
   reset_gpioc,
   reset_gpiod,
   reset_gpiof,
+  reset_i2c1,
+  reset_i2c2,
+  reset_i2c3,
   reset_lpuart1,
   reset_lpuart2,
   reset_spi1,
@@ -295,6 +304,42 @@ struct PeripheralInstanceTraits<PeripheralId::GPIOF> {
   static constexpr std::uintptr_t kBaseAddress = 0x50001400u;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpiof;
   static constexpr ResetId kResetId = ResetId::reset_gpiof;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::I2C1> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_i2c_st_i2c2_v1_1_cube;
+  static constexpr int kInstance = 1;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005400u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c1;
+  static constexpr ResetId kResetId = ResetId::reset_i2c1;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::I2C2> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_i2c_st_i2c2_v1_1_cube;
+  static constexpr int kInstance = 2;
+  static constexpr std::uintptr_t kBaseAddress = 0x40005800u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c2;
+  static constexpr ResetId kResetId = ResetId::reset_i2c2;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralInstanceTraits<PeripheralId::I2C3> {
+  static constexpr bool kPresent = true;
+  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_i2c_st_i2c2_v1_1_cube;
+  static constexpr int kInstance = 3;
+  static constexpr std::uintptr_t kBaseAddress = 0x40008800u;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c3;
+  static constexpr ResetId kResetId = ResetId::reset_i2c3;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
@@ -604,7 +649,7 @@ template <PeripheralId Id>
   return PeripheralInstanceTraits<Id>::kBaseAddress;
 }
 
-inline constexpr std::array<PeripheralId, 38> kRuntimePeripherals = {{
+inline constexpr std::array<PeripheralId, 41> kRuntimePeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DAC,
   PeripheralId::DMA1,
@@ -618,6 +663,9 @@ inline constexpr std::array<PeripheralId, 38> kRuntimePeripherals = {{
   PeripheralId::GPIOD,
   PeripheralId::GPIOE,
   PeripheralId::GPIOF,
+  PeripheralId::I2C1,
+  PeripheralId::I2C2,
+  PeripheralId::I2C3,
   PeripheralId::IWDG,
   PeripheralId::LPUART1,
   PeripheralId::LPUART2,

@@ -51,12 +51,14 @@ struct InterruptDescriptor {
   std::uint16_t line;
   std::uint16_t vector_slot;
 };
-inline constexpr std::array<InterruptDescriptor, 21> kInterruptDescriptors = {{
+inline constexpr std::array<InterruptDescriptor, 23> kInterruptDescriptors = {{
   {InterruptId::ADC_COMP, PeripheralId::ADC1, 12u, 28u},
   {InterruptId::TIM6_DAC_LPTIM1, PeripheralId::DAC, 17u, 33u},
   {InterruptId::DMA1_Channel1, PeripheralId::DMA1, 9u, 25u},
   {InterruptId::DMA1_Channel2_3, PeripheralId::DMA1, 10u, 26u},
   {InterruptId::DMA1_Channel4_5_6_7_DMAMUX_DMA2_Channel1_2_3_4_5, PeripheralId::DMA1, 11u, 27u},
+  {InterruptId::I2C1, PeripheralId::I2C1, 23u, 39u},
+  {InterruptId::I2C2_I2C3, PeripheralId::I2C2, 24u, 40u},
   {InterruptId::RTC_TAMP, PeripheralId::RTC, 2u, 18u},
   {InterruptId::SPI1, PeripheralId::SPI1, 25u, 41u},
   {InterruptId::SPI2_SPI3, PeripheralId::SPI2, 26u, 42u},

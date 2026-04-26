@@ -16,6 +16,7 @@ enum class ConnectorId : std::uint16_t {
   candidate_pa0_spi2_sck,
   candidate_pa0_usart2_cts,
   candidate_pa0_usart2_nss,
+  candidate_pa1_i2c1_smba,
   candidate_pa1_spi1_sck,
   candidate_pa1_usart2_ck,
   candidate_pa1_usart2_de,
@@ -45,6 +46,7 @@ enum class ConnectorId : std::uint16_t {
   candidate_pb3_usart1_ck,
   candidate_pb3_usart1_de,
   candidate_pb3_usart1_rts,
+  candidate_pb7_i2c1_sda,
   candidate_pb7_spi2_mosi,
   candidate_pb7_tim17_ch1n,
   candidate_pb7_usart1_rx,
@@ -106,6 +108,15 @@ struct ConnectorTraits<PinId::PA0, PeripheralId::USART2, SignalId::signal_nss> {
   static constexpr RouteId kRouteId = RouteId::candidate_pa0_usart2_nss;
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+};
+
+template<>
+struct ConnectorTraits<PinId::PA1, PeripheralId::I2C1, SignalId::signal_smba> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pa1_i2c1_smba;
+  static constexpr RouteId kRouteId = RouteId::candidate_pa1_i2c1_smba;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_i2c1_tssop20_all_signals;
 };
 
 template<>
@@ -370,6 +381,15 @@ struct ConnectorTraits<PinId::PB3, PeripheralId::USART1, SignalId::signal_rts> {
 };
 
 template<>
+struct ConnectorTraits<PinId::PB7, PeripheralId::I2C1, SignalId::signal_sda> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pb7_i2c1_sda;
+  static constexpr RouteId kRouteId = RouteId::candidate_pb7_i2c1_sda;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_i2c1_tssop20_all_signals;
+};
+
+template<>
 struct ConnectorTraits<PinId::PB7, PeripheralId::SPI2, SignalId::signal_mosi> {
   static constexpr bool kPresent = true;
   static constexpr ConnectorId kConnectorId = ConnectorId::candidate_pb7_spi2_mosi;
@@ -394,6 +414,48 @@ struct ConnectorTraits<PinId::PB7, PeripheralId::USART1, SignalId::signal_rx> {
   static constexpr RouteId kRouteId = RouteId::candidate_pb7_usart1_rx;
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_alternate_function;
   static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_usart1_tssop20_all_signals;
+};
+
+template<>
+struct ConnectorSignalTraits<PeripheralId::I2C1, SignalId::signal_sda> {
+  static constexpr bool kPresent = true;
+  static constexpr std::array<PinId, 1> kPins = {{
+    PinId::PB7,
+  }};
+  static constexpr std::array<ConnectorId, 1> kConnectors = {{
+    ConnectorId::candidate_pb7_i2c1_sda,
+  }};
+};
+
+template<PinId Pin>
+struct ConnectorTraits<Pin, PeripheralId::I2C1, SignalId::signal_sda> {
+  static constexpr bool kPresent = false;
+  static constexpr ConnectorId kConnectorId = ConnectorId::none;
+  static constexpr RouteId kRouteId = RouteId::none;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::none;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+  static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for I2C1 sda. Valid pins: PB7. Provenance: stm32-open-pin-data; patches=st-stm32g0-family-bootstrap-v1, st-stm32g0-stm32g030f6-bootstrap.");
+};
+
+template<>
+struct ConnectorSignalTraits<PeripheralId::I2C1, SignalId::signal_smba> {
+  static constexpr bool kPresent = true;
+  static constexpr std::array<PinId, 1> kPins = {{
+    PinId::PA1,
+  }};
+  static constexpr std::array<ConnectorId, 1> kConnectors = {{
+    ConnectorId::candidate_pa1_i2c1_smba,
+  }};
+};
+
+template<PinId Pin>
+struct ConnectorTraits<Pin, PeripheralId::I2C1, SignalId::signal_smba> {
+  static constexpr bool kPresent = false;
+  static constexpr ConnectorId kConnectorId = ConnectorId::none;
+  static constexpr RouteId kRouteId = RouteId::none;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::none;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+  static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for I2C1 smba. Valid pins: PA1. Provenance: stm32-open-pin-data; patches=st-stm32g0-family-bootstrap-v1, st-stm32g0-stm32g030f6-bootstrap.");
 };
 
 template<>
@@ -1017,10 +1079,11 @@ struct ConnectorTraits<Pin, PeripheralId::USART2, SignalId::signal_tx> {
   static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for USART2 tx. Valid pins: PA2. Provenance: stm32-open-pin-data; patches=st-stm32g0-family-bootstrap-v1, st-stm32g0-stm32g030f6-bootstrap.");
 };
 
-inline constexpr std::array<ConnectorDescriptor, 35> kConnectors = {{
+inline constexpr std::array<ConnectorDescriptor, 37> kConnectors = {{
   {ConnectorId::candidate_pa0_spi2_sck, PinId::PA0, PeripheralId::SPI2, SignalId::signal_sck, RouteId::candidate_pa0_spi2_sck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_spi2_tssop20_sck_mosi_miso},
   {ConnectorId::candidate_pa0_usart2_cts, PinId::PA0, PeripheralId::USART2, SignalId::signal_cts, RouteId::candidate_pa0_usart2_cts, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart2_tssop20_tx_rx_cts_rts},
   {ConnectorId::candidate_pa0_usart2_nss, PinId::PA0, PeripheralId::USART2, SignalId::signal_nss, RouteId::candidate_pa0_usart2_nss, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
+  {ConnectorId::candidate_pa1_i2c1_smba, PinId::PA1, PeripheralId::I2C1, SignalId::signal_smba, RouteId::candidate_pa1_i2c1_smba, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_i2c1_tssop20_all_signals},
   {ConnectorId::candidate_pa1_spi1_sck, PinId::PA1, PeripheralId::SPI1, SignalId::signal_sck, RouteId::candidate_pa1_spi1_sck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_spi1_tssop20_sck_mosi_miso},
   {ConnectorId::candidate_pa1_usart2_ck, PinId::PA1, PeripheralId::USART2, SignalId::signal_ck, RouteId::candidate_pa1_usart2_ck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
   {ConnectorId::candidate_pa1_usart2_de, PinId::PA1, PeripheralId::USART2, SignalId::signal_de, RouteId::candidate_pa1_usart2_de, RouteKindId::route_kind_alternate_function, ConnectionGroupId::none},
@@ -1050,6 +1113,7 @@ inline constexpr std::array<ConnectorDescriptor, 35> kConnectors = {{
   {ConnectorId::candidate_pb3_usart1_ck, PinId::PB3, PeripheralId::USART1, SignalId::signal_ck, RouteId::candidate_pb3_usart1_ck, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart1_tssop20_all_signals},
   {ConnectorId::candidate_pb3_usart1_de, PinId::PB3, PeripheralId::USART1, SignalId::signal_de, RouteId::candidate_pb3_usart1_de, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart1_tssop20_all_signals},
   {ConnectorId::candidate_pb3_usart1_rts, PinId::PB3, PeripheralId::USART1, SignalId::signal_rts, RouteId::candidate_pb3_usart1_rts, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart1_tssop20_all_signals},
+  {ConnectorId::candidate_pb7_i2c1_sda, PinId::PB7, PeripheralId::I2C1, SignalId::signal_sda, RouteId::candidate_pb7_i2c1_sda, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_i2c1_tssop20_all_signals},
   {ConnectorId::candidate_pb7_spi2_mosi, PinId::PB7, PeripheralId::SPI2, SignalId::signal_mosi, RouteId::candidate_pb7_spi2_mosi, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_spi2_tssop20_sck_mosi_miso},
   {ConnectorId::candidate_pb7_tim17_ch1n, PinId::PB7, PeripheralId::TIM17, SignalId::signal_ch1n, RouteId::candidate_pb7_tim17_ch1n, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_tim17_tssop20_all_signals},
   {ConnectorId::candidate_pb7_usart1_rx, PinId::PB7, PeripheralId::USART1, SignalId::signal_rx, RouteId::candidate_pb7_usart1_rx, RouteKindId::route_kind_alternate_function, ConnectionGroupId::group_usart1_tssop20_all_signals},

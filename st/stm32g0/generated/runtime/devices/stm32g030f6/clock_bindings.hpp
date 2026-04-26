@@ -77,6 +77,20 @@ struct ClockGateTraits<ClockGateId::gate_gpiof> {
 };
 
 template<>
+struct ClockGateTraits<ClockGateId::gate_i2c1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_i2c1en;
+};
+
+template<>
+struct ClockGateTraits<ClockGateId::gate_i2c2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_i2c2en;
+};
+
+template<>
 struct ClockGateTraits<ClockGateId::gate_spi1> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
@@ -215,6 +229,22 @@ struct ResetTraits<ResetId::reset_gpiof> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
   static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiofrst;
+  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
+};
+
+template<>
+struct ResetTraits<ResetId::reset_i2c1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_i2c1rst;
+  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
+};
+
+template<>
+struct ResetTraits<ResetId::reset_i2c2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
+  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_i2c2rst;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -385,6 +415,22 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOF> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::I2C1> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c1;
+  static constexpr ResetId kResetId = ResetId::reset_i2c1;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::I2C2> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c2;
+  static constexpr ResetId kResetId = ResetId::reset_i2c2;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::IWDG> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
@@ -488,7 +534,7 @@ struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 21> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 23> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMAMUX1,
@@ -497,6 +543,8 @@ inline constexpr std::array<PeripheralId, 21> kClockBoundPeripherals = {{
   PeripheralId::GPIOC,
   PeripheralId::GPIOD,
   PeripheralId::GPIOF,
+  PeripheralId::I2C1,
+  PeripheralId::I2C2,
   PeripheralId::IWDG,
   PeripheralId::RTC,
   PeripheralId::SPI1,
@@ -610,6 +658,28 @@ template <>
 inline auto clock_disable<PeripheralId::GPIOF>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
   *reg = *reg & ~(1u << 5);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::I2C1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
+  *reg = *reg | (1u << 21);
+}
+template <>
+inline auto clock_disable<PeripheralId::I2C1>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
+  *reg = *reg & ~(1u << 21);
+}
+
+template <>
+inline auto clock_enable<PeripheralId::I2C2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
+  *reg = *reg | (1u << 22);
+}
+template <>
+inline auto clock_disable<PeripheralId::I2C2>() noexcept -> void {
+  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
+  *reg = *reg & ~(1u << 22);
 }
 
 template <>

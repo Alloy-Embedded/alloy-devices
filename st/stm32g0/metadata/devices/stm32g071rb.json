@@ -200,12 +200,12 @@
   "capabilities": [
     {
       "capability_id": "capability-instance:i2c1:lqfp64:scl",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -219,12 +219,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:lqfp64:sda",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -238,12 +238,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:lqfp64:smba",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -257,12 +257,12 @@
     },
     {
       "capability_id": "capability-instance:i2c2:lqfp64:scl",
-      "ip_name": "i2c2",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C2",
-      "peripheral_class": "i2c2",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -276,12 +276,12 @@
     },
     {
       "capability_id": "capability-instance:i2c2:lqfp64:sda",
-      "ip_name": "i2c2",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "available-signal",
       "package": "lqfp64",
       "peripheral": "I2C2",
-      "peripheral_class": "i2c2",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -1852,13 +1852,13 @@
       "value": "tx"
     },
     {
-      "capability_id": "capability:i2c1:i2c2-v1-1-cube:scl",
-      "ip_name": "i2c1",
+      "capability_id": "capability:i2c:i2c2-v1-1-cube:scl",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -1871,13 +1871,13 @@
       "value": "scl"
     },
     {
-      "capability_id": "capability:i2c1:i2c2-v1-1-cube:sda",
-      "ip_name": "i2c1",
+      "capability_id": "capability:i2c:i2c2-v1-1-cube:sda",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -1890,13 +1890,13 @@
       "value": "sda"
     },
     {
-      "capability_id": "capability:i2c1:i2c2-v1-1-cube:smba",
-      "ip_name": "i2c1",
+      "capability_id": "capability:i2c:i2c2-v1-1-cube:smba",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -1907,44 +1907,6 @@
       },
       "scope": "ip-block",
       "value": "smba"
-    },
-    {
-      "capability_id": "capability:i2c2:i2c2-v1-1-cube:scl",
-      "ip_name": "i2c2",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G071R(6-8-B)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:i2c2:i2c2-v1-1-cube:sda",
-      "ip_name": "i2c2",
-      "ip_version": "i2c2_v1_1_Cube",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G071R(6-8-B)Tx.xml"
-      },
-      "scope": "ip-block",
-      "value": "sda"
     },
     {
       "capability_id": "capability:lptim:g0xx-lptimer1-v1-4-cube:etr",
@@ -3590,7 +3552,7 @@
     {
       "candidate_id": "candidate:pa10:i2c1:sda",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:sda",
+        "capability:i2c:i2c2-v1-1-cube:sda",
         "capability-instance:i2c1:lqfp64:sda"
       ],
       "operation_ids": [
@@ -3615,7 +3577,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pa10:i2c1:sda"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": "group:i2c1:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "sda"
@@ -4085,7 +4047,7 @@
     {
       "candidate_id": "candidate:pa1:i2c1:smba",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:smba",
+        "capability:i2c:i2c2-v1-1-cube:smba",
         "capability-instance:i2c1:lqfp64:smba"
       ],
       "operation_ids": [
@@ -4110,7 +4072,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pa1:i2c1:smba"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": null,
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "smba"
@@ -5801,7 +5763,7 @@
     {
       "candidate_id": "candidate:pa9:i2c1:scl",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:scl",
+        "capability:i2c:i2c2-v1-1-cube:scl",
         "capability-instance:i2c1:lqfp64:scl"
       ],
       "operation_ids": [
@@ -5826,7 +5788,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pa9:i2c1:scl"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": "group:i2c1:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "scl"
@@ -6197,7 +6159,7 @@
     {
       "candidate_id": "candidate:pb10:i2c2:scl",
       "capability_ids": [
-        "capability:i2c2:i2c2-v1-1-cube:scl",
+        "capability:i2c:i2c2-v1-1-cube:scl",
         "capability-instance:i2c2:lqfp64:scl"
       ],
       "operation_ids": [
@@ -6222,7 +6184,7 @@
         "requirement:reset-release:i2c2",
         "requirement:source-select:pb10:i2c2:scl"
       ],
-      "route_group_id": "group:i2c2:lqfp64:all-signals",
+      "route_group_id": "group:i2c2:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "scl"
@@ -6362,7 +6324,7 @@
     {
       "candidate_id": "candidate:pb11:i2c2:sda",
       "capability_ids": [
-        "capability:i2c2:i2c2-v1-1-cube:sda",
+        "capability:i2c:i2c2-v1-1-cube:sda",
         "capability-instance:i2c2:lqfp64:sda"
       ],
       "operation_ids": [
@@ -6387,7 +6349,7 @@
         "requirement:reset-release:i2c2",
         "requirement:source-select:pb11:i2c2:sda"
       ],
-      "route_group_id": "group:i2c2:lqfp64:all-signals",
+      "route_group_id": "group:i2c2:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "sda"
@@ -6758,7 +6720,7 @@
     {
       "candidate_id": "candidate:pb13:i2c2:scl",
       "capability_ids": [
-        "capability:i2c2:i2c2-v1-1-cube:scl",
+        "capability:i2c:i2c2-v1-1-cube:scl",
         "capability-instance:i2c2:lqfp64:scl"
       ],
       "operation_ids": [
@@ -6783,7 +6745,7 @@
         "requirement:reset-release:i2c2",
         "requirement:source-select:pb13:i2c2:scl"
       ],
-      "route_group_id": "group:i2c2:lqfp64:all-signals",
+      "route_group_id": "group:i2c2:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "scl"
@@ -6989,7 +6951,7 @@
     {
       "candidate_id": "candidate:pb14:i2c2:sda",
       "capability_ids": [
-        "capability:i2c2:i2c2-v1-1-cube:sda",
+        "capability:i2c:i2c2-v1-1-cube:sda",
         "capability-instance:i2c2:lqfp64:sda"
       ],
       "operation_ids": [
@@ -7014,7 +6976,7 @@
         "requirement:reset-release:i2c2",
         "requirement:source-select:pb14:i2c2:sda"
       ],
-      "route_group_id": "group:i2c2:lqfp64:all-signals",
+      "route_group_id": "group:i2c2:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "sda"
@@ -8177,7 +8139,7 @@
     {
       "candidate_id": "candidate:pb5:i2c1:smba",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:smba",
+        "capability:i2c:i2c2-v1-1-cube:smba",
         "capability-instance:i2c1:lqfp64:smba"
       ],
       "operation_ids": [
@@ -8202,7 +8164,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pb5:i2c1:smba"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": null,
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "smba"
@@ -8342,7 +8304,7 @@
     {
       "candidate_id": "candidate:pb6:i2c1:scl",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:scl",
+        "capability:i2c:i2c2-v1-1-cube:scl",
         "capability-instance:i2c1:lqfp64:scl"
       ],
       "operation_ids": [
@@ -8367,7 +8329,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pb6:i2c1:scl"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": "group:i2c1:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "scl"
@@ -8540,7 +8502,7 @@
     {
       "candidate_id": "candidate:pb7:i2c1:sda",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:sda",
+        "capability:i2c:i2c2-v1-1-cube:sda",
         "capability-instance:i2c1:lqfp64:sda"
       ],
       "operation_ids": [
@@ -8565,7 +8527,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pb7:i2c1:sda"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": "group:i2c1:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "sda"
@@ -8771,7 +8733,7 @@
     {
       "candidate_id": "candidate:pb8:i2c1:scl",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:scl",
+        "capability:i2c:i2c2-v1-1-cube:scl",
         "capability-instance:i2c1:lqfp64:scl"
       ],
       "operation_ids": [
@@ -8796,7 +8758,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pb8:i2c1:scl"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": "group:i2c1:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "scl"
@@ -8936,7 +8898,7 @@
     {
       "candidate_id": "candidate:pb9:i2c1:sda",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:sda",
+        "capability:i2c:i2c2-v1-1-cube:sda",
         "capability-instance:i2c1:lqfp64:sda"
       ],
       "operation_ids": [
@@ -8961,7 +8923,7 @@
         "requirement:reset-release:i2c1",
         "requirement:source-select:pb9:i2c1:sda"
       ],
-      "route_group_id": "group:i2c1:lqfp64:all-signals",
+      "route_group_id": "group:i2c1:lqfp64:scl-sda",
       "route_kind": "alternate-function",
       "route_selector": "selector:6",
       "signal": "sda"
@@ -11578,16 +11540,14 @@
     {
       "candidate_ids": [
         "candidate:pa10:i2c1:sda",
-        "candidate:pa1:i2c1:smba",
         "candidate:pa9:i2c1:scl",
-        "candidate:pb5:i2c1:smba",
         "candidate:pb6:i2c1:scl",
         "candidate:pb7:i2c1:sda",
         "candidate:pb8:i2c1:scl",
         "candidate:pb9:i2c1:sda"
       ],
-      "conflict_group": "conflict:i2c1:lqfp64:all-signals",
-      "group_id": "group:i2c1:lqfp64:all-signals",
+      "conflict_group": "conflict:i2c1:lqfp64:scl-sda",
+      "group_id": "group:i2c1:lqfp64:scl-sda",
       "package": "lqfp64",
       "peripheral": "I2C1",
       "provenance": {
@@ -11600,8 +11560,7 @@
       },
       "signals": [
         "scl",
-        "sda",
-        "smba"
+        "sda"
       ]
     },
     {
@@ -11611,8 +11570,8 @@
         "candidate:pb13:i2c2:scl",
         "candidate:pb14:i2c2:sda"
       ],
-      "conflict_group": "conflict:i2c2:lqfp64:all-signals",
-      "group_id": "group:i2c2:lqfp64:all-signals",
+      "conflict_group": "conflict:i2c2:lqfp64:scl-sda",
+      "group_id": "group:i2c2:lqfp64:scl-sda",
       "package": "lqfp64",
       "peripheral": "I2C2",
       "provenance": {
@@ -14734,6 +14693,30 @@
       }
     }
   ],
+  "i2c_mode_flags": [
+    {
+      "peripheral": "I2C1",
+      "supports_10bit_addressing": true,
+      "supports_7bit_addressing": true,
+      "supports_dma": true,
+      "supports_dual_address": true,
+      "supports_general_call": true,
+      "supports_pmbus": false,
+      "supports_slave": true,
+      "supports_smbus": true
+    },
+    {
+      "peripheral": "I2C2",
+      "supports_10bit_addressing": true,
+      "supports_7bit_addressing": true,
+      "supports_dma": true,
+      "supports_dual_address": true,
+      "supports_general_call": true,
+      "supports_pmbus": false,
+      "supports_slave": true,
+      "supports_smbus": true
+    }
+  ],
   "i2c_peripherals": [
     {
       "base_address": 1073763328,
@@ -14778,6 +14761,76 @@
         "PB11",
         "PB14"
       ]
+    }
+  ],
+  "i2c_speed_options": [
+    {
+      "mode": "standard",
+      "peripheral": "I2C1",
+      "speed_hz": 100000
+    },
+    {
+      "mode": "fast",
+      "peripheral": "I2C1",
+      "speed_hz": 400000
+    },
+    {
+      "mode": "fast_plus",
+      "peripheral": "I2C1",
+      "speed_hz": 1000000
+    },
+    {
+      "mode": "standard",
+      "peripheral": "I2C2",
+      "speed_hz": 100000
+    },
+    {
+      "mode": "fast",
+      "peripheral": "I2C2",
+      "speed_hz": 400000
+    },
+    {
+      "mode": "fast_plus",
+      "peripheral": "I2C2",
+      "speed_hz": 1000000
+    }
+  ],
+  "i2c_timing_presets": [
+    {
+      "peripheral": "I2C1",
+      "source_clock_hz": 64000000,
+      "speed_hz": 100000,
+      "timingr_value": 275807931
+    },
+    {
+      "peripheral": "I2C1",
+      "source_clock_hz": 64000000,
+      "speed_hz": 400000,
+      "timingr_value": 6300019
+    },
+    {
+      "peripheral": "I2C1",
+      "source_clock_hz": 64000000,
+      "speed_hz": 1000000,
+      "timingr_value": 3147289
+    },
+    {
+      "peripheral": "I2C2",
+      "source_clock_hz": 64000000,
+      "speed_hz": 100000,
+      "timingr_value": 275807931
+    },
+    {
+      "peripheral": "I2C2",
+      "source_clock_hz": 64000000,
+      "speed_hz": 400000,
+      "timingr_value": 6300019
+    },
+    {
+      "peripheral": "I2C2",
+      "source_clock_hz": 64000000,
+      "speed_hz": 1000000,
+      "timingr_value": 3147289
     }
   ],
   "identity": {
@@ -16043,15 +16096,15 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.i2c1.st-i2c2-v1-1-cube",
+      "backend_schema_id": "alloy.i2c.st-i2c2-v1-1-cube",
       "capability_ids": [
-        "capability:i2c1:i2c2-v1-1-cube:scl",
-        "capability:i2c1:i2c2-v1-1-cube:sda",
-        "capability:i2c1:i2c2-v1-1-cube:smba"
+        "capability:i2c:i2c2-v1-1-cube:scl",
+        "capability:i2c:i2c2-v1-1-cube:sda",
+        "capability:i2c:i2c2-v1-1-cube:smba"
       ],
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -16060,34 +16113,11 @@
         "source_id": "cmsis-svd-data",
         "source_path": "STM32G071.svd"
       },
-      "register_profile": "i2c1:i2c2_v1_1_Cube",
+      "register_profile": "i2c:i2c2_v1_1_Cube",
       "signal_roles": [
         "scl",
         "sda",
         "smba"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.i2c2.st-i2c2-v1-1-cube",
-      "capability_ids": [
-        "capability:i2c2:i2c2-v1-1-cube:scl",
-        "capability:i2c2:i2c2-v1-1-cube:sda"
-      ],
-      "ip_name": "i2c2",
-      "ip_version": "i2c2_v1_1_Cube",
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "cmsis-svd-data",
-        "source_path": "STM32G071.svd"
-      },
-      "register_profile": "i2c2:i2c2_v1_1_Cube",
-      "signal_roles": [
-        "scl",
-        "sda"
       ]
     },
     {
@@ -18596,10 +18626,10 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.i2c1.st-i2c2-v1-1-cube",
+      "backend_schema_id": "alloy.i2c.st-i2c2-v1-1-cube",
       "base_address": 1073763328,
-      "instance": 0,
-      "ip_name": "i2c1",
+      "instance": 1,
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "I2C1",
       "provenance": {
@@ -18614,10 +18644,10 @@
       "rcc_reset_signal": "RCC_APBRSTR1.I2C1RST"
     },
     {
-      "backend_schema_id": "alloy.i2c2.st-i2c2-v1-1-cube",
+      "backend_schema_id": "alloy.i2c.st-i2c2-v1-1-cube",
       "base_address": 1073764352,
-      "instance": 0,
-      "ip_name": "i2c2",
+      "instance": 2,
+      "ip_name": "i2c",
       "ip_version": "i2c2_v1_1_Cube",
       "name": "I2C2",
       "provenance": {
@@ -24004,6 +24034,85 @@
     "source_id": "stm32-open-pin-data",
     "source_path": "STM32G071R(6-8-B)Tx.xml"
   },
+  "pwm_alignment_options": [
+    {
+      "alignment": "edge",
+      "field_value": 0,
+      "peripheral": "TIM1"
+    },
+    {
+      "alignment": "center_down",
+      "field_value": 1,
+      "peripheral": "TIM1"
+    },
+    {
+      "alignment": "center_up",
+      "field_value": 2,
+      "peripheral": "TIM1"
+    },
+    {
+      "alignment": "center_up_down",
+      "field_value": 3,
+      "peripheral": "TIM1"
+    },
+    {
+      "alignment": "edge",
+      "field_value": 0,
+      "peripheral": "TIM14"
+    }
+  ],
+  "pwm_break_inputs": [
+    {
+      "enable_field_value": 1,
+      "input_id": "bkin",
+      "peripheral": "TIM1",
+      "polarity_field_value": 0
+    }
+  ],
+  "pwm_deadtime_options": [
+    {
+      "count_bits": 8,
+      "max_ns": 2550,
+      "peripheral": "TIM1",
+      "prescaler_field_value": 0
+    },
+    {
+      "count_bits": 8,
+      "max_ns": 5100,
+      "peripheral": "TIM1",
+      "prescaler_field_value": 1
+    },
+    {
+      "count_bits": 8,
+      "max_ns": 10200,
+      "peripheral": "TIM1",
+      "prescaler_field_value": 2
+    },
+    {
+      "count_bits": 8,
+      "max_ns": 20400,
+      "peripheral": "TIM1",
+      "prescaler_field_value": 3
+    }
+  ],
+  "pwm_mode_flags": [
+    {
+      "peripheral": "TIM1",
+      "supports_asymmetric_pwm": true,
+      "supports_break_input": true,
+      "supports_combined_pwm": true,
+      "supports_complementary_outputs": true,
+      "supports_deadtime": true
+    },
+    {
+      "peripheral": "TIM14",
+      "supports_asymmetric_pwm": false,
+      "supports_break_input": false,
+      "supports_combined_pwm": false,
+      "supports_complementary_outputs": false,
+      "supports_deadtime": false
+    }
+  ],
   "register_fields": [
     {
       "access": "write-only",
@@ -123440,6 +123549,34 @@
       "value_ref_kind": "selector"
     }
   ],
+  "rp2040_dma_controller_hw": [
+    {
+      "base_address": 1073872896,
+      "channel_count": 7,
+      "controller_id": "DMA1",
+      "irq_numbers": [
+        9,
+        10
+      ],
+      "max_transfer_count": 65535,
+      "priority_level_count": 4,
+      "supported_burst_sizes": [
+        1
+      ],
+      "supported_data_widths": [
+        8,
+        16,
+        32
+      ],
+      "supports_byte_swap": false,
+      "supports_chaining": false,
+      "supports_circular": true,
+      "supports_descriptor_chaining": false,
+      "supports_double_buffer": false,
+      "supports_mem_to_mem": true,
+      "supports_scatter_gather": false
+    }
+  ],
   "schema_version": "1.2.0",
   "signal_endpoints": [
     {
@@ -123668,8 +123805,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2c1:scl",
-      "peripheral_class": "i2c1",
+      "endpoint_id": "endpoint:i2c:scl",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -123682,8 +123819,8 @@
     },
     {
       "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c1:sda",
-      "peripheral_class": "i2c1",
+      "endpoint_id": "endpoint:i2c:sda",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -123696,8 +123833,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2c1:smba",
-      "peripheral_class": "i2c1",
+      "endpoint_id": "endpoint:i2c:smba",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "st-stm32g0-family-bootstrap-v1",
@@ -123707,34 +123844,6 @@
         "source_path": "STM32G071R(6-8-B)Tx.xml"
       },
       "signal": "SMBA"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:i2c2:scl",
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G071R(6-8-B)Tx.xml"
-      },
-      "signal": "SCL"
-    },
-    {
-      "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c2:sda",
-      "peripheral_class": "i2c2",
-      "provenance": {
-        "patch_ids": [
-          "st-stm32g0-family-bootstrap-v1",
-          "st-stm32g0-stm32g071rb-bootstrap"
-        ],
-        "source_id": "stm32-open-pin-data",
-        "source_path": "STM32G071R(6-8-B)Tx.xml"
-      },
-      "signal": "SDA"
     },
     {
       "direction": null,
