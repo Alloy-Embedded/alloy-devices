@@ -89,6 +89,7 @@ enum class PeripheralClassId : std::uint16_t {
   class_csu,
   class_dcdc,
   class_dcp,
+  class_device,
   class_dma,
   class_dma_router,
   class_enc,

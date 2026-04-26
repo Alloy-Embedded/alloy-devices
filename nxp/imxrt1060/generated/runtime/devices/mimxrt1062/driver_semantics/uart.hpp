@@ -3,6 +3,7 @@
 #include <array>
 #include <cstdint>
 #include "common.hpp"
+#include "../pins.hpp"
 
 namespace nxp {
 namespace imxrt1060 {
@@ -15,6 +16,12 @@ template<PeripheralId Id>
 struct UartSemanticTraits {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::none;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -86,6 +93,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART1> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40184000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -157,6 +170,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART2> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40188000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -228,6 +247,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART3> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x4018C000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -299,6 +324,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART4> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40190000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -370,6 +401,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART5> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40194000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -441,6 +478,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART6> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x40198000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -512,6 +555,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART7> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x4019C000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -583,6 +632,12 @@ template<>
 struct UartSemanticTraits<PeripheralId::LPUART8> {
   static constexpr bool kPresent = true;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_uart_nxp_lpuart_v1;
+  static constexpr bool kHardwarePresent = false;
+  static constexpr std::uintptr_t kBaseAddress = 0x401A0000u;
+  static constexpr std::uint16_t kFifoDepth = 0u;
+  static constexpr std::int16_t kTxSignalIdx = -1;
+  static constexpr std::int16_t kRxSignalIdx = -1;
+  static constexpr bool kSupportsDma = false;
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kBrrRegister = kInvalidRegisterRef;
@@ -660,6 +715,25 @@ inline constexpr std::array<PeripheralId, 8> kUartSemanticPeripherals = {{
   PeripheralId::LPUART7,
   PeripheralId::LPUART8,
 }};
+
+// complete-rp2040-semantics Phase B: per-controller UART facts.
+enum class RuntimeUartId : std::uint8_t {
+  None = 0,
+};
+
+template<RuntimeUartId Id>
+struct UartPeripheralTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::uint8_t kFifoDepth = 0u;
+  static constexpr std::uint8_t kDreqTx = 0u;
+  static constexpr std::uint8_t kDreqRx = 0u;
+  static constexpr std::array<std::uint8_t, 0> kValidTxPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidRxPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidCtsPins = {};
+  static constexpr std::array<std::uint8_t, 0> kValidRtsPins = {};
+};
+
 }
 }
 }
