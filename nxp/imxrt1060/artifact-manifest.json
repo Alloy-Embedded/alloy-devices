@@ -39,7 +39,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-        "revision": "content-sha256:3241b0a2a5d89b7a43cd03d12adb575318837e055859292b5a14b9aeee3a981a",
+        "revision": "content-sha256:0043ccdd5e384fda3fac5036aa94890a2b6dbf3d5d4eb722a28900045d4404f4",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -52,7 +52,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-        "revision": "content-sha256:70a1f676e1320e5a6b38f4d5e99c3de0849c371f507cfa670043f880ed15d4ca",
+        "revision": "content-sha256:afe41dd0bc96345874c03ff9390f1d5ddf235546f889c7def38734dfe42d783d",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -65,7 +65,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-        "revision": "content-sha256:3241b0a2a5d89b7a43cd03d12adb575318837e055859292b5a14b9aeee3a981a",
+        "revision": "content-sha256:0043ccdd5e384fda3fac5036aa94890a2b6dbf3d5d4eb722a28900045d4404f4",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -78,7 +78,7 @@
       {
         "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
         "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-        "revision": "content-sha256:70a1f676e1320e5a6b38f4d5e99c3de0849c371f507cfa670043f880ed15d4ca",
+        "revision": "content-sha256:afe41dd0bc96345874c03ff9390f1d5ddf235546f889c7def38734dfe42d783d",
         "scope": {
           "device": null,
           "family": "imxrt1060",
@@ -95,5 +95,5 @@
     ]
   },
   "validation_report_id": "bootstrap-validation-v1",
-  "validation_report_sha256": "69068f267858e471acbc439f438916943f010d151890992e9a6cb51564710540"
+  "validation_report_sha256": "e2fd477e89804ac8998f78a20bd0533b532c56cd434cfad385f94c5e3430d5b9"
 }

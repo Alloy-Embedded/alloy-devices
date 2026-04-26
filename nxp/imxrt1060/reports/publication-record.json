@@ -40,7 +40,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1062/MIMXRT1062.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:3241b0a2a5d89b7a43cd03d12adb575318837e055859292b5a14b9aeee3a981a",
+          "revision": "content-sha256:0043ccdd5e384fda3fac5036aa94890a2b6dbf3d5d4eb722a28900045d4404f4",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -53,7 +53,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1062/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:70a1f676e1320e5a6b38f4d5e99c3de0849c371f507cfa670043f880ed15d4ca",
+          "revision": "content-sha256:afe41dd0bc96345874c03ff9390f1d5ddf235546f889c7def38734dfe42d783d",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -66,7 +66,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-soc-svd/MIMXRT1064/MIMXRT1064.xml",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-soc-svd",
-          "revision": "content-sha256:3241b0a2a5d89b7a43cd03d12adb575318837e055859292b5a14b9aeee3a981a",
+          "revision": "content-sha256:0043ccdd5e384fda3fac5036aa94890a2b6dbf3d5d4eb722a28900045d4404f4",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -79,7 +79,7 @@
         {
           "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/nxp-mcux-sdk/devices/MIMXRT1064/drivers/fsl_iomuxc.h",
           "origin_url": "https://github.com/nxp-mcuxpresso/mcux-sdk",
-          "revision": "content-sha256:70a1f676e1320e5a6b38f4d5e99c3de0849c371f507cfa670043f880ed15d4ca",
+          "revision": "content-sha256:afe41dd0bc96345874c03ff9390f1d5ddf235546f889c7def38734dfe42d783d",
           "scope": {
             "device": null,
             "family": "imxrt1060",
@@ -96,7 +96,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "69068f267858e471acbc439f438916943f010d151890992e9a6cb51564710540"
+    "validation_report_sha256": "e2fd477e89804ac8998f78a20bd0533b532c56cd434cfad385f94c5e3430d5b9"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/mimxrt1062",
@@ -191,14 +191,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3740,
-      "content_sha256": "7ade0dcfc52f2550335f662aa3b64d6fed308916bf21d08144416094d3e432c1",
+      "content_sha256": "b916d4f1985d2f7b9ab2751b2515733874743b9fa7c9d4bcab38b6cf38872cb9",
       "path": "nxp/imxrt1060/artifact-manifest.json"
     },
     {
@@ -287,8 +287,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10185,
-      "content_sha256": "69b96098f08e758a052171cd9f946bcd2b58515ad4130248649d11d2462cae34",
+      "content_bytes": 13977,
+      "content_sha256": "e794f790f012d7b3a04fb739c0745b8ad347d3baf5cd767ec1de139b93ac87c0",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/adc.hpp"
     },
     {
@@ -299,8 +299,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1102,
-      "content_sha256": "42cff0bd37a91698698d0264b59e40a0abbc7952c7d6193263f61632d1872466",
+      "content_bytes": 4211,
+      "content_sha256": "f4150e0ca85e8648adb5ea5b52501b00dfa85bca2c7fd103e3167957aac1c0c3",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1062/driver_semantics/common.hpp"
     },
     {
@@ -527,8 +527,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10185,
-      "content_sha256": "0448c8194563818b1dafaa727d2454347008e5507897768aa1c8c733840274e7",
+      "content_bytes": 13977,
+      "content_sha256": "57b586670b44e53a2ead12bb4f2664a3a20f89f9f688be26d5e840a3df0d1706",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/adc.hpp"
     },
     {
@@ -539,8 +539,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1102,
-      "content_sha256": "60e19f8b7cfe033575fd53948252dcd5c958ed3a01f99fbdbfe9814a14e40bac",
+      "content_bytes": 4211,
+      "content_sha256": "c83ac229a38b09aeb54f335904de5b3fe182b886f15c419a97a68d7f17c47853",
       "path": "nxp/imxrt1060/generated/runtime/devices/mimxrt1064/driver_semantics/common.hpp"
     },
     {
@@ -809,14 +809,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 62804,
-      "content_sha256": "69068f267858e471acbc439f438916943f010d151890992e9a6cb51564710540",
+      "content_bytes": 63424,
+      "content_sha256": "e2fd477e89804ac8998f78a20bd0533b532c56cd434cfad385f94c5e3430d5b9",
       "path": "nxp/imxrt1060/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 17963,
-      "content_sha256": "bb602c2bc08fec233fbf47ea10dd5579a5aa673f083dec37172e42a921683200",
+      "content_bytes": 18055,
+      "content_sha256": "910b77b5febd326d846ef58b551ed020c6dce81668b2a312f507863c1c6457d6",
       "path": "nxp/imxrt1060/reports/validation-summary.json"
     }
   ],
@@ -825,7 +825,7 @@
     "family": "imxrt1060",
     "vendor": "nxp"
   },
-  "target_artifact_revision": "b17080531c6f14d6505eb3d36a8c70d224a78ae395c341986733374ff20d5bd5",
+  "target_artifact_revision": "f644aa5d1db2658861eb84c83a0409b38da75d55a521e1b69b3eca05098a94c8",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -861,7 +861,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 174 rule(s).",
+        "message": "gate-c passed with 176 rule(s).",
         "passed": true,
         "rule_ids": [
           "mimxrt1062-package-pin-count-covers-known-pins",
@@ -871,6 +871,7 @@
           "mimxrt1062-alternate-functions-explicit",
           "mimxrt1062-memory-sizes-positive",
           "mimxrt1062-peripheral-bases-unique",
+          "mimxrt1062-adc-semantics-populated",
           "mimxrt1062-interrupts-present",
           "mimxrt1062-interrupts-reference-known-peripherals",
           "mimxrt1062-referenced-peripherals-have-rcc-enable",
@@ -957,6 +958,7 @@
           "mimxrt1064-alternate-functions-explicit",
           "mimxrt1064-memory-sizes-positive",
           "mimxrt1064-peripheral-bases-unique",
+          "mimxrt1064-adc-semantics-populated",
           "mimxrt1064-interrupts-present",
           "mimxrt1064-interrupts-reference-known-peripherals",
           "mimxrt1064-referenced-peripherals-have-rcc-enable",
