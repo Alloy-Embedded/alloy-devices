@@ -61,6 +61,10 @@ struct QspiSemanticTraits {
   static constexpr RuntimeFieldRef kDummyCyclesField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kScramblingEnableField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 template<>
@@ -112,6 +116,10 @@ struct QspiSemanticTraits<PeripheralId::QSPI> {
   static constexpr RuntimeFieldRef kDummyCyclesField = RuntimeFieldRef{FieldId::field_qspi_ifr_nbdum, RuntimeRegisterRef{RegisterId::register_qspi_ifr, 0x4007C000u, 56u, true}, 16u, 5u, true};
   static constexpr RuntimeFieldRef kScramblingEnableField = RuntimeFieldRef{FieldId::field_qspi_smr_scren, RuntimeRegisterRef{RegisterId::register_qspi_smr, 0x4007C000u, 64u, true}, 0u, 1u, true};
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 inline constexpr std::array<PeripheralId, 1> kQspiSemanticPeripherals = {{

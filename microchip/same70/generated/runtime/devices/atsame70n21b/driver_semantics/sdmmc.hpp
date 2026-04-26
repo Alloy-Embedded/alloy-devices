@@ -67,6 +67,10 @@ struct SdmmcSemanticTraits {
   static constexpr RuntimeFieldRef kNotBusyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kDmaEnableField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 template<>
@@ -124,6 +128,10 @@ struct SdmmcSemanticTraits<PeripheralId::HSMCI> {
   static constexpr RuntimeFieldRef kNotBusyField = RuntimeFieldRef{FieldId::field_hsmci_sr_notbusy, RuntimeRegisterRef{RegisterId::register_hsmci_sr, 0x40000000u, 64u, true}, 5u, 1u, true};
   static constexpr RuntimeFieldRef kDmaEnableField = RuntimeFieldRef{FieldId::field_hsmci_dma_dmaen, RuntimeRegisterRef{RegisterId::register_hsmci_dma, 0x40000000u, 80u, true}, 8u, 1u, true};
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 inline constexpr std::array<PeripheralId, 1> kSdmmcSemanticPeripherals = {{

@@ -40,6 +40,7 @@ struct SpiSemanticTraits {
   static constexpr bool kSupportsLsbFirst = false;
   static constexpr bool kSupportsNssHwManagement = false;
   static constexpr std::uint8_t kSpiDmaBindingCount = 0u;
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kSrRegister = kInvalidRegisterRef;
@@ -84,6 +85,10 @@ struct SpiSemanticTraits {
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 template<>
@@ -113,7 +118,11 @@ struct SpiSemanticTraits<PeripheralId::SPI0> {
   static constexpr bool kSupportsBidirectional3Wire = false;
   static constexpr bool kSupportsLsbFirst = false;
   static constexpr bool kSupportsNssHwManagement = true;
-  static constexpr std::uint8_t kSpiDmaBindingCount = 0u;
+  static constexpr std::uint8_t kSpiDmaBindingCount = 2u;
+  static constexpr std::array<DmaBindingRef, 2> kDmaBindings = {{
+    DmaBindingRef{DmaControllerId::XDMAC, DmaBindingId::dma_binding_spi0_rx_xdmac_perid_2, 2u, DmaBindingDirection::Rx, 16u, true},
+    DmaBindingRef{DmaControllerId::XDMAC, DmaBindingId::dma_binding_spi0_tx_xdmac_perid_1, 1u, DmaBindingDirection::Tx, 16u, true},
+  }};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kSrRegister = RuntimeRegisterRef{RegisterId::register_spi0_sr, 0x40008000u, 16u, true};
@@ -158,6 +167,10 @@ struct SpiSemanticTraits<PeripheralId::SPI0> {
   static constexpr RuntimeFieldRef kTdrPcsField = RuntimeFieldRef{FieldId::field_spi0_tdr_pcs, RuntimeRegisterRef{RegisterId::register_spi0_tdr, 0x40008000u, 12u, true}, 16u, 4u, true};
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::field_spi0_rdr_rd, RuntimeRegisterRef{RegisterId::register_spi0_rdr, 0x40008000u, 8u, true}, 0u, 16u, true};
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{21u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 150000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_pmc_pcer0_pid21, RuntimeRegisterRef{RegisterId::register_pmc_pcer0, 0x400E0600u, 16u, true}, 21u, 1u, true};
 };
 
 template<>
@@ -187,7 +200,11 @@ struct SpiSemanticTraits<PeripheralId::SPI1> {
   static constexpr bool kSupportsBidirectional3Wire = false;
   static constexpr bool kSupportsLsbFirst = false;
   static constexpr bool kSupportsNssHwManagement = true;
-  static constexpr std::uint8_t kSpiDmaBindingCount = 0u;
+  static constexpr std::uint8_t kSpiDmaBindingCount = 2u;
+  static constexpr std::array<DmaBindingRef, 2> kDmaBindings = {{
+    DmaBindingRef{DmaControllerId::XDMAC, DmaBindingId::dma_binding_spi1_rx_xdmac_perid_4, 4u, DmaBindingDirection::Rx, 16u, true},
+    DmaBindingRef{DmaControllerId::XDMAC, DmaBindingId::dma_binding_spi1_tx_xdmac_perid_3, 3u, DmaBindingDirection::Tx, 16u, true},
+  }};
   static constexpr RuntimeRegisterRef kCr1Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kCr2Register = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kSrRegister = RuntimeRegisterRef{RegisterId::register_spi1_sr, 0x40058000u, 16u, true};
@@ -232,6 +249,10 @@ struct SpiSemanticTraits<PeripheralId::SPI1> {
   static constexpr RuntimeFieldRef kTdrPcsField = RuntimeFieldRef{FieldId::field_spi1_tdr_pcs, RuntimeRegisterRef{RegisterId::register_spi1_tdr, 0x40058000u, 12u, true}, 16u, 4u, true};
   static constexpr RuntimeFieldRef kRdField = RuntimeFieldRef{FieldId::field_spi1_rdr_rd, RuntimeRegisterRef{RegisterId::register_spi1_rdr, 0x40058000u, 8u, true}, 0u, 16u, true};
   static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{42u}};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 150000000u;
+  static constexpr RuntimeFieldRef kClockGateField = RuntimeFieldRef{FieldId::field_pmc_pcer1_pid42, RuntimeRegisterRef{RegisterId::register_pmc_pcer1, 0x400E0600u, 256u, true}, 10u, 1u, true};
 };
 
 inline constexpr std::array<PeripheralId, 2> kSpiSemanticPeripherals = {{

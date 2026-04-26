@@ -124,8 +124,10 @@ struct AdcSemanticTraits<PeripheralId::AFEC0> {
   static constexpr std::uint32_t kSupportedOversamplingCount = 0u;
   static constexpr std::array<AdcOversamplingOption, 0> kSupportedOversamplings = {};
   static constexpr std::uint32_t kAdcMaxClockHz = 40000000u;
-  static constexpr std::uint32_t kDmaBindingCount = 0u;
-  static constexpr std::array<AdcDmaBinding, 0> kDmaBindings = {};
+  static constexpr std::uint32_t kDmaBindingCount = 1u;
+  static constexpr std::array<AdcDmaBinding, 1> kDmaBindings = {{
+    AdcDmaBinding{PeripheralId::XDMAC, DmaControllerId::XDMAC, DmaBindingId::dma_binding_afec0_rx_xdmac_perid_35, 35u, RuntimeRegisterRef{RegisterId::register_afec0_lcdr, 0x4003C000u, 32u, true}, 16u, true},
+  }};
   static constexpr std::uint32_t kExternalTriggerCount = 0u;
   static constexpr std::array<AdcExternalTrigger, 0> kExternalTriggers = {};
   static constexpr std::uint32_t kSupportedDmaModeCount = 0u;
@@ -186,8 +188,10 @@ struct AdcSemanticTraits<PeripheralId::AFEC1> {
   static constexpr std::uint32_t kSupportedOversamplingCount = 0u;
   static constexpr std::array<AdcOversamplingOption, 0> kSupportedOversamplings = {};
   static constexpr std::uint32_t kAdcMaxClockHz = 40000000u;
-  static constexpr std::uint32_t kDmaBindingCount = 0u;
-  static constexpr std::array<AdcDmaBinding, 0> kDmaBindings = {};
+  static constexpr std::uint32_t kDmaBindingCount = 1u;
+  static constexpr std::array<AdcDmaBinding, 1> kDmaBindings = {{
+    AdcDmaBinding{PeripheralId::XDMAC, DmaControllerId::XDMAC, DmaBindingId::dma_binding_afec1_rx_xdmac_perid_36, 36u, RuntimeRegisterRef{RegisterId::register_afec1_lcdr, 0x40064000u, 32u, true}, 16u, true},
+  }};
   static constexpr std::uint32_t kExternalTriggerCount = 0u;
   static constexpr std::array<AdcExternalTrigger, 0> kExternalTriggers = {};
   static constexpr std::uint32_t kSupportedDmaModeCount = 0u;
@@ -217,6 +221,55 @@ struct AdcPeripheralTraits {
   static constexpr std::array<std::uint8_t, 0> kChannelPins = {};
 };
 
+
+// add-adc-channel-typed-enum: typed per-peripheral channel enum.
+// Each specialization scopes the channel set so
+// AdcChannel<ADC1> and AdcChannel<ADC2> are distinct types and
+// the type system rejects cross-peripheral channel mixing.
+template<PeripheralId Id>
+struct AdcChannelOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct AdcChannelOf<PeripheralId::AFEC0> {
+  enum class type : std::uint8_t {
+    CH0 = 0u,
+    CH1 = 1u,
+    CH2 = 2u,
+    CH3 = 3u,
+    CH4 = 4u,
+    CH5 = 5u,
+    CH6 = 6u,
+    CH7 = 7u,
+    CH8 = 8u,
+    CH9 = 9u,
+    CH10 = 10u,
+    CH11 = 11u,
+    TempSensor = 11u,
+  };
+};
+
+template<>
+struct AdcChannelOf<PeripheralId::AFEC1> {
+  enum class type : std::uint8_t {
+    CH0 = 0u,
+    CH1 = 1u,
+    CH2 = 2u,
+    CH3 = 3u,
+    CH4 = 4u,
+    CH5 = 5u,
+    CH6 = 6u,
+    CH7 = 7u,
+    CH8 = 8u,
+    CH9 = 9u,
+    CH10 = 10u,
+    CH11 = 11u,
+  };
+};
+
+template<PeripheralId Id>
+using AdcChannel = typename AdcChannelOf<Id>::type;
 }
 }
 }

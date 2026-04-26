@@ -5,7 +5,7 @@
     "pipeline_name": "alloy-codegen",
     "target_repository": "alloy-devices"
   },
-  "canonical_ir_sha256": "1c040043f71240d60a75c341d4d1a39f35e9a5ae99aec96d54ecd01ac8a909e7",
+  "canonical_ir_sha256": "1ee95c455d03f7805a316b13be8d9a0cfd90719aff459f8d83a566d489e14e68",
   "generator_version": "0.1.0",
   "ir_schema_version": "1.2.0",
   "manifest_kind": "artifact-manifest-v1",
