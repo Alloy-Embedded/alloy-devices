@@ -1,4 +1,116 @@
 {
+  "adc_calibration_context": {
+    "cal_temp_high_celsius": 110,
+    "cal_temp_low_celsius": 30,
+    "cal_voltage_mv": 3300,
+    "peripheral": "ADC1",
+    "vrefint_nominal_mv": 1210
+  },
+  "adc_calibration_data_points": [
+    {
+      "address": 536836652,
+      "kind": "ts_cal_low",
+      "peripheral": "ADC1",
+      "semantic_constant": 30,
+      "size_bits": 16
+    },
+    {
+      "address": 536836654,
+      "kind": "ts_cal_high",
+      "peripheral": "ADC1",
+      "semantic_constant": 110,
+      "size_bits": 16
+    },
+    {
+      "address": 536836650,
+      "kind": "vrefint_cal",
+      "peripheral": "ADC1",
+      "semantic_constant": 3300,
+      "size_bits": 16
+    }
+  ],
+  "adc_internal_channels": [
+    {
+      "channel_index": 16,
+      "kind": "temperature_sensor",
+      "peripheral": "ADC1"
+    },
+    {
+      "channel_index": 17,
+      "kind": "vrefint",
+      "peripheral": "ADC1"
+    },
+    {
+      "channel_index": 18,
+      "kind": "vbat",
+      "peripheral": "ADC1"
+    }
+  ],
+  "adc_max_clock_hz": 36000000,
+  "adc_resolution_options": [
+    {
+      "bits": 12,
+      "field_value": 0,
+      "peripheral": "ADC1"
+    },
+    {
+      "bits": 10,
+      "field_value": 1,
+      "peripheral": "ADC1"
+    },
+    {
+      "bits": 8,
+      "field_value": 2,
+      "peripheral": "ADC1"
+    },
+    {
+      "bits": 6,
+      "field_value": 3,
+      "peripheral": "ADC1"
+    }
+  ],
+  "adc_sample_time_options": [
+    {
+      "cycles_q8": 768,
+      "field_value": 0,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 3840,
+      "field_value": 1,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 7168,
+      "field_value": 2,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 14080,
+      "field_value": 3,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 21504,
+      "field_value": 4,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 35840,
+      "field_value": 5,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 70656,
+      "field_value": 6,
+      "peripheral": "ADC1"
+    },
+    {
+      "cycles_q8": 122880,
+      "field_value": 7,
+      "peripheral": "ADC1"
+    }
+  ],
   "capabilities": [
     {
       "capability_id": "capability-instance:i2c1:lqfp64:scl",

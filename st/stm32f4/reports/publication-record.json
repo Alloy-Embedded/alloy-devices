@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "3f3d23cfa8d0e546ea72316c101ec2c67e88a9be9b02443e5e32248287fa57ad",
+    "canonical_ir_sha256": "873d1ded13e8a78e9a90aa4fc6304b8e76cd6390a3a2c42e185527348b9d151d",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -217,14 +217,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3704,
-      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
+      "content_bytes": 4380,
+      "content_sha256": "8c9958facc48cc7e8e5339226cd20c02c3f8404d1791825585098b17e072ef4d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 4727,
-      "content_sha256": "c1496d47640174a967df8f5f5ceeeb9e767b110729d298897db7dc19edaa923d",
+      "content_sha256": "c74e9b7bc08a13c878a3d2e7638e18f458534fc138fa93fc0118cb4f3fb00f1f",
       "path": "st/stm32f4/artifact-manifest.json"
     },
     {
@@ -313,8 +313,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 9684,
-      "content_sha256": "edd1d711bcf7312d3deb5797e8201b8a7d7f3fac1324be019879ab4e25b07942",
+      "content_bytes": 10841,
+      "content_sha256": "4aa68bdefe6924f3f2b7488682b70ca70025ebd73eb0f0051d7912ce7b792edf",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/adc.hpp"
     },
     {
@@ -763,8 +763,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 3008404,
-      "content_sha256": "a37f065f41afa51ce3822520505e7534a92cfc0a7e623868f999ea5204ca0e57",
+      "content_bytes": 3010546,
+      "content_sha256": "febc71c0ca6784578fc00a49f1f3247d4b25350ac82b1492f95d88f36ab0c941",
       "path": "st/stm32f4/metadata/devices/stm32f401re.json"
     },
     {
@@ -851,7 +851,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "8f086405f194ed9bb1c1ca62175e14f94af7b633d5b0ddac151f4db7457c1eb8",
+  "target_artifact_revision": "860aba990f096463a1a79e1125d4a433465ba2d936aa06dc3b5392c69894cfe0",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
