@@ -70,6 +70,7 @@ struct CanSemanticTraits {
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = kInvalidFieldRef;
   static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = kInvalidIndexedFieldRef;
   static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = kInvalidIndexedFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -130,6 +131,7 @@ struct CanSemanticTraits<PeripheralId::FDCAN1> {
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = kInvalidFieldRef;
   static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x40006400u, 208u, 0u, 0u, 1u, 1u, true};
   static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x40006400u, 204u, 0u, 0u, 1u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -190,6 +192,7 @@ struct CanSemanticTraits<PeripheralId::FDCAN2> {
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = kInvalidFieldRef;
   static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x40006800u, 208u, 0u, 0u, 1u, 1u, true};
   static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x40006800u, 204u, 0u, 0u, 1u, 1u, true};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 2> kCanSemanticPeripherals = {{

@@ -102,6 +102,7 @@ struct UartSemanticTraits {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -194,6 +195,7 @@ struct UartSemanticTraits<PeripheralId::LPUART1> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -286,6 +288,7 @@ struct UartSemanticTraits<PeripheralId::LPUART2> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -378,6 +381,7 @@ struct UartSemanticTraits<PeripheralId::USART1> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{27u}};
 };
 
 template<>
@@ -470,6 +474,7 @@ struct UartSemanticTraits<PeripheralId::USART2> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{28u}};
 };
 
 template<>
@@ -562,6 +567,7 @@ struct UartSemanticTraits<PeripheralId::USART3> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{29u}};
 };
 
 template<>
@@ -654,6 +660,7 @@ struct UartSemanticTraits<PeripheralId::USART4> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -746,6 +753,7 @@ struct UartSemanticTraits<PeripheralId::USART5> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 template<>
@@ -838,6 +846,7 @@ struct UartSemanticTraits<PeripheralId::USART6> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
 inline constexpr std::array<PeripheralId, 8> kUartSemanticPeripherals = {{

@@ -76597,6 +76597,161 @@
       "target_region": "sram"
     }
   ],
+  "stm_timer_pwm_peripherals": [
+    {
+      "base_address": 1073818624,
+      "channel_count": 2,
+      "controller_id": "TIM1",
+      "counter_bits": 16,
+      "dma_req_lines": [],
+      "kind": "advanced",
+      "max_clock_hz": 0,
+      "supports_brake": true,
+      "supports_center_aligned": true,
+      "supports_complementary": true,
+      "supports_deadtime": true,
+      "valid_ch_pins_per_channel": [
+        [],
+        [
+          "PB3"
+        ]
+      ],
+      "valid_chn_pins_per_channel": [
+        [
+          "PA7"
+        ],
+        [
+          "PB0"
+        ],
+        []
+      ]
+    },
+    {
+      "base_address": 1073750016,
+      "channel_count": 1,
+      "controller_id": "TIM14",
+      "counter_bits": 16,
+      "dma_req_lines": [],
+      "kind": "general",
+      "max_clock_hz": 0,
+      "supports_brake": false,
+      "supports_center_aligned": true,
+      "supports_complementary": false,
+      "supports_deadtime": false,
+      "valid_ch_pins_per_channel": [
+        [
+          "PA4",
+          "PA7"
+        ]
+      ],
+      "valid_chn_pins_per_channel": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "base_address": 1073824768,
+      "channel_count": 1,
+      "controller_id": "TIM16",
+      "counter_bits": 16,
+      "dma_req_lines": [],
+      "kind": "advanced",
+      "max_clock_hz": 0,
+      "supports_brake": false,
+      "supports_center_aligned": true,
+      "supports_complementary": false,
+      "supports_deadtime": false,
+      "valid_ch_pins_per_channel": [
+        [
+          "PA6"
+        ]
+      ],
+      "valid_chn_pins_per_channel": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "base_address": 1073825792,
+      "channel_count": 1,
+      "controller_id": "TIM17",
+      "counter_bits": 16,
+      "dma_req_lines": [],
+      "kind": "advanced",
+      "max_clock_hz": 0,
+      "supports_brake": false,
+      "supports_center_aligned": true,
+      "supports_complementary": true,
+      "supports_deadtime": true,
+      "valid_ch_pins_per_channel": [
+        [
+          "PA7"
+        ]
+      ],
+      "valid_chn_pins_per_channel": [
+        [
+          "PB7"
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "base_address": 1073741824,
+      "channel_count": 4,
+      "controller_id": "TIM2",
+      "counter_bits": 32,
+      "dma_req_lines": [],
+      "kind": "general",
+      "max_clock_hz": 0,
+      "supports_brake": false,
+      "supports_center_aligned": true,
+      "supports_complementary": false,
+      "supports_deadtime": false,
+      "valid_ch_pins_per_channel": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "valid_chn_pins_per_channel": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "base_address": 1073742848,
+      "channel_count": 3,
+      "controller_id": "TIM3",
+      "counter_bits": 16,
+      "dma_req_lines": [],
+      "kind": "general",
+      "max_clock_hz": 0,
+      "supports_brake": false,
+      "supports_center_aligned": true,
+      "supports_complementary": false,
+      "supports_deadtime": false,
+      "valid_ch_pins_per_channel": [
+        [
+          "PA6"
+        ],
+        [
+          "PA7"
+        ],
+        [
+          "PB0"
+        ]
+      ],
+      "valid_chn_pins_per_channel": [
+        [],
+        [],
+        []
+      ]
+    }
+  ],
   "system_clock_profiles": [
     {
       "flash_latency": 0,

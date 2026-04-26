@@ -1221,6 +1221,292 @@ struct PwmSliceHwTraits {
   static constexpr std::uint16_t kClockDivMaxQ4 = 0u;
 };
 
+
+// extend-pwm-coverage-all-mcus Phase A: STM32 TIM PWM facts.
+enum class RuntimeStmTimerKind : std::uint8_t {
+  None = 0,
+  Advanced = 1,
+  General = 2,
+};
+
+enum class RuntimeStmTimerPwmId : std::uint8_t {
+  None = 0,
+  TIM1 = 1,
+  TIM14 = 2,
+  TIM15 = 3,
+  TIM16 = 4,
+  TIM17 = 5,
+  TIM2 = 6,
+  TIM3 = 7,
+  TIM4 = 8,
+};
+
+template<RuntimeStmTimerPwmId Id>
+struct StmTimerPwmTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::None;
+  static constexpr std::uint8_t kChannelCount = 0u;
+  static constexpr std::uint8_t kCounterBits = 0u;
+  static constexpr std::array<PinId, 0> kValidCh1Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh2Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh3Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh4Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh1NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = false;
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBrake = false;
+  static constexpr bool kSupportsCenterAligned = false;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM1> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40012c00u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::Advanced;
+  static constexpr std::uint8_t kChannelCount = 4u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 2> kValidCh1Pins = {PinId::PA8, PinId::PC8};
+  static constexpr std::array<PinId, 3> kValidCh2Pins = {PinId::PA9, PinId::PB3, PinId::PC9};
+  static constexpr std::array<PinId, 3> kValidCh3Pins = {PinId::PA10, PinId::PB6, PinId::PC10};
+  static constexpr std::array<PinId, 1> kValidCh4Pins = {PinId::PC11};
+  static constexpr std::array<PinId, 3> kValidCh1NPins = {PinId::PA7, PinId::PB13, PinId::PD2};
+  static constexpr std::array<PinId, 3> kValidCh2NPins = {PinId::PB0, PinId::PB14, PinId::PD3};
+  static constexpr std::array<PinId, 3> kValidCh3NPins = {PinId::PB1, PinId::PB15, PinId::PD4};
+  static constexpr bool kSupportsComplementary = true;
+  static constexpr bool kSupportsDeadtime = true;
+  static constexpr bool kSupportsBrake = true;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM14> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40002000u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::General;
+  static constexpr std::uint8_t kChannelCount = 1u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 4> kValidCh1Pins = {PinId::PA4, PinId::PA7, PinId::PB1, PinId::PC12};
+  static constexpr std::array<PinId, 0> kValidCh2Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh3Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh4Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh1NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = false;
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBrake = false;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM15> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40014000u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::Advanced;
+  static constexpr std::uint8_t kChannelCount = 2u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 3> kValidCh1Pins = {PinId::PA2, PinId::PB14, PinId::PC1};
+  static constexpr std::array<PinId, 3> kValidCh2Pins = {PinId::PA3, PinId::PB15, PinId::PC2};
+  static constexpr std::array<PinId, 0> kValidCh3Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh4Pins = {};
+  static constexpr std::array<PinId, 3> kValidCh1NPins = {PinId::PA1, PinId::PB13, PinId::PB15};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = true;
+  static constexpr bool kSupportsDeadtime = true;
+  static constexpr bool kSupportsBrake = true;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM16> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40014400u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::Advanced;
+  static constexpr std::uint8_t kChannelCount = 1u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 3> kValidCh1Pins = {PinId::PA6, PinId::PB8, PinId::PD0};
+  static constexpr std::array<PinId, 0> kValidCh2Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh3Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh4Pins = {};
+  static constexpr std::array<PinId, 1> kValidCh1NPins = {PinId::PB6};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = true;
+  static constexpr bool kSupportsDeadtime = true;
+  static constexpr bool kSupportsBrake = true;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM17> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40014800u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::Advanced;
+  static constexpr std::uint8_t kChannelCount = 1u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 3> kValidCh1Pins = {PinId::PA7, PinId::PB9, PinId::PD1};
+  static constexpr std::array<PinId, 0> kValidCh2Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh3Pins = {};
+  static constexpr std::array<PinId, 0> kValidCh4Pins = {};
+  static constexpr std::array<PinId, 1> kValidCh1NPins = {PinId::PB7};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = true;
+  static constexpr bool kSupportsDeadtime = true;
+  static constexpr bool kSupportsBrake = true;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM2> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40000000u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::General;
+  static constexpr std::uint8_t kChannelCount = 4u;
+  static constexpr std::uint8_t kCounterBits = 32u;
+  static constexpr std::array<PinId, 4> kValidCh1Pins = {PinId::PA0, PinId::PA15, PinId::PA5, PinId::PC4};
+  static constexpr std::array<PinId, 3> kValidCh2Pins = {PinId::PA1, PinId::PB3, PinId::PC5};
+  static constexpr std::array<PinId, 3> kValidCh3Pins = {PinId::PA2, PinId::PB10, PinId::PC6};
+  static constexpr std::array<PinId, 3> kValidCh4Pins = {PinId::PA3, PinId::PB11, PinId::PC7};
+  static constexpr std::array<PinId, 0> kValidCh1NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = false;
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBrake = false;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM3> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40000400u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::General;
+  static constexpr std::uint8_t kChannelCount = 4u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 3> kValidCh1Pins = {PinId::PA6, PinId::PB4, PinId::PC6};
+  static constexpr std::array<PinId, 3> kValidCh2Pins = {PinId::PA7, PinId::PB5, PinId::PC7};
+  static constexpr std::array<PinId, 2> kValidCh3Pins = {PinId::PB0, PinId::PC8};
+  static constexpr std::array<PinId, 2> kValidCh4Pins = {PinId::PB1, PinId::PC9};
+  static constexpr std::array<PinId, 0> kValidCh1NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = false;
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBrake = false;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+template<>
+struct StmTimerPwmTraits<RuntimeStmTimerPwmId::TIM4> {
+  static constexpr bool kPresent = true;
+  static constexpr std::uint32_t kBaseAddress = 0x40000800u;
+  static constexpr RuntimeStmTimerKind kKind = RuntimeStmTimerKind::General;
+  static constexpr std::uint8_t kChannelCount = 4u;
+  static constexpr std::uint8_t kCounterBits = 16u;
+  static constexpr std::array<PinId, 1> kValidCh1Pins = {PinId::PB6};
+  static constexpr std::array<PinId, 1> kValidCh2Pins = {PinId::PB7};
+  static constexpr std::array<PinId, 1> kValidCh3Pins = {PinId::PB8};
+  static constexpr std::array<PinId, 1> kValidCh4Pins = {PinId::PB9};
+  static constexpr std::array<PinId, 0> kValidCh1NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh2NPins = {};
+  static constexpr std::array<PinId, 0> kValidCh3NPins = {};
+  static constexpr bool kSupportsComplementary = false;
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsBrake = false;
+  static constexpr bool kSupportsCenterAligned = true;
+  static constexpr std::uint32_t kMaxClockHz = 0u;
+};
+
+
+// extend-pwm-coverage-all-mcus Phase B: Espressif MCPWM facts.
+enum class RuntimeMcpwmId : std::uint8_t {
+  None = 0,
+};
+
+template<RuntimeMcpwmId Id>
+struct McpwmTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::uint8_t kTimerCount = 0u;
+  static constexpr std::uint8_t kOutputSignalCount = 0u;
+  static constexpr std::array<std::uint16_t, 0> kGpioMatrixSignals = {};
+  static constexpr std::array<std::uint16_t, 0> kCaptureSignals = {};
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsCarrierModulation = false;
+  static constexpr bool kSupportsFaultInput = false;
+};
+
+
+// extend-pwm-coverage-all-mcus Phase C: NXP iMXRT FlexPWM facts.
+enum class RuntimeFlexPwmId : std::uint8_t {
+  None = 0,
+};
+
+template<RuntimeFlexPwmId Id>
+struct FlexPwmTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::uint8_t kSubmoduleCount = 0u;
+  static constexpr bool kPairedChannels = false;
+  static constexpr bool kSupportsComplementary = false;
+  static constexpr bool kSupportsDeadtime = false;
+  static constexpr bool kSupportsFaultInput = false;
+  static constexpr bool kSupportsForceInitialization = false;
+};
+
+
+// extend-pwm-coverage-all-mcus Phase D: Microchip AVR-DA TCA PWM facts.
+enum class RuntimeAvrDaTcaPwmId : std::uint8_t {
+  None = 0,
+};
+
+template<RuntimeAvrDaTcaPwmId Id>
+struct AvrDaTcaPwmTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr std::array<PinId, 0> kDefaultChannelPins = {};
+  static constexpr std::uint8_t kSplitModeChannels = 0u;
+  static constexpr std::uint8_t kSingleModeChannels = 0u;
+  static constexpr std::uint8_t kCounterBits = 0u;
+  static constexpr bool kPortmuxAlt = false;
+};
+
+
+// extend-pwm-coverage-all-mcus Phase D: Microchip SAM E70 PWM/TC facts.
+enum class RuntimeSame70PwmKind : std::uint8_t {
+  None = 0,
+  Pwm = 1,
+  Tc = 2,
+};
+
+enum class RuntimeSame70PwmId : std::uint8_t {
+  None = 0,
+};
+
+template<RuntimeSame70PwmId Id>
+struct Same70PwmTraits {
+  static constexpr bool kPresent = false;
+  static constexpr std::uint32_t kBaseAddress = 0u;
+  static constexpr RuntimeSame70PwmKind kKind = RuntimeSame70PwmKind::None;
+  static constexpr std::uint8_t kChannelCount = 0u;
+  static constexpr bool kSupportsDeadTime = false;
+  static constexpr bool kSupportsFaultInput = false;
+  static constexpr bool kSupportsDma = false;
+};
+
 }
 }
 }
