@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "c1a5d05d8c72208e0fca053321c82422a01d189a81ce121bc4be9163ae08bebd",
+    "canonical_ir_sha256": "e14e79c22013a8eaf3a62ea6fd07b020ec6e5d258989739d05898d1867bac9ce",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -146,14 +146,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3704,
-      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
+      "content_bytes": 4380,
+      "content_sha256": "8c9958facc48cc7e8e5339226cd20c02c3f8404d1791825585098b17e072ef4d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "7864f5d09c6ff81e0f04b9afd8b4620e98c82a10b491dca6520f88e025319ef9",
+      "content_sha256": "fe680bb487748b62827c13e6d198bb2765a8b270cc57e5340a504c8a8b280437",
       "path": "espressif/esp32s3/artifact-manifest.json"
     },
     {
@@ -224,8 +224,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 12555,
-      "content_sha256": "09d1ed031c3fcfb849ef3c91b2318965340bcf592d40c187a7f7a2c8db38fde7",
+      "content_bytes": 12730,
+      "content_sha256": "4674f69fbbfb064518f8a9979e281020da4c16dc0009b287d77df9ee0559367f",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/adc.hpp"
     },
     {
@@ -434,8 +434,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 5942829,
-      "content_sha256": "f9c8dae9972e5d835dac306ddc68e8642fcc53b7c30fbf51e1b9e0a3e371ea77",
+      "content_bytes": 5943212,
+      "content_sha256": "9408d007c2b9d7d36d29957b55d5bb29f98d77c1be387b57b3bd6b515189a700",
       "path": "espressif/esp32s3/metadata/devices/esp32s3.json"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32s3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "c265a3872ad74bd2d3342ede53ebf8ecb18ecf6528c22c5536ae7e48f0e79c8f",
+  "target_artifact_revision": "3ddb1d6154d4c2d17af65296b5ad0bafc26ba52624da8db479593d8e84dbdec3",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
