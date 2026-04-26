@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "cf91c89074614a2c721e3dbac76a60549e500fd313786d8c63d21d4ed3397064",
+    "canonical_ir_sha256": "b193396d7a80b6d0dd775dfd1b67b3f51450dec33a5deff9c66119da661e5180",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -183,7 +183,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 3622,
-      "content_sha256": "9b87efbe1491c818187acb63aeb20faeaa10d7614dbabaa44a97bae17d552b82",
+      "content_sha256": "f9e084e338791e7ee0b7e56f5e8c54c99b0cd084fbcf34b8eacfc36ea790c82a",
       "path": "microchip/avr-da/artifact-manifest.json"
     },
     {
@@ -254,8 +254,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10852,
-      "content_sha256": "0a235731a1d027fb4c01c9a2a9242a7ded09de564910999d3654891eca1ac4e8",
+      "content_bytes": 11825,
+      "content_sha256": "bc92ad6d4bc88b9e379b3955fd9f91925986d489ac8d2a2bedc26d0733bd46e9",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/adc.hpp"
     },
     {
@@ -266,38 +266,38 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4416,
-      "content_sha256": "779fb34996c884dafeaf4536e0ca735e1c35dbabc539bed95af3208802e54f23",
+      "content_bytes": 5740,
+      "content_sha256": "c7a06f9954de6a1d6e462c096b13a75d376c8230e3c9721ea77fe9615d6f1dae",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/common.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2582,
-      "content_sha256": "e9eafa66697fcdf23799e314f770d47c3acd32efa8aecc7b6b1c8d8262915622",
+      "content_bytes": 2649,
+      "content_sha256": "cd3461aca134f67ff96cf689864a42857cfa68c73ad7ee160dc2b816d5a00c04",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/dac.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1858,
-      "content_sha256": "366247df4b61633c725c3e9d012282434b50844143bc5a397a887e56d9edcc28",
+      "content_bytes": 1924,
+      "content_sha256": "808fbad09739a2edc9c24823289dcfb54cf8b6180fd5cd8b1f9f9f62364e64a6",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/dma.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 2986,
-      "content_sha256": "986f349f2063b144ac012d67a307c7bc1b8a59c5777c76628ff0e890c9cf4a19",
+      "content_bytes": 3053,
+      "content_sha256": "e3925df76366c1fef7b2a6cd616b70fe20e8b6087a5daab2c0c29e4f3ac43077",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/eth.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 22829,
-      "content_sha256": "9d3b91f2f92a1b3a7911b8840cb8cef10e277f2d3aa4f27a0259ec4cb4570c0f",
+      "content_bytes": 23566,
+      "content_sha256": "7cbd845440f9f58c56c088a46719aeab3b642fcdd1c99f61a597542720723ad6",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/gpio.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 11841,
-      "content_sha256": "6887579fc44584f9fc1db39b46f08ef1710947ac0e1c1dc77a9c218f97fa427e",
+      "content_bytes": 12506,
+      "content_sha256": "4e15308695289e47c5c7d9d8d3db959d3e352dba1a65e1479e0df017d035f84a",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/i2c.hpp"
     },
     {
@@ -314,8 +314,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 3914,
-      "content_sha256": "815c2ecf74fc98324ca2d4eac2ef31cb2ff83c1bea4804147786407f48ce422d",
+      "content_bytes": 4213,
+      "content_sha256": "619a94b394085b80b83659f30971f7c3a525b9b9f58ca6746c1510ab19aa3000",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/qspi.hpp"
     },
     {
@@ -326,26 +326,26 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4229,
-      "content_sha256": "b988c087a35a5040f4c4272bb3b304ecc471853ed94b6d33fa1f26b1a7e1fb88",
+      "content_bytes": 4528,
+      "content_sha256": "e83bcd5ff1d019884c1a0f431eb552cfdf4d5d94e7e873b3b2c76590885dd27a",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/sdmmc.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10047,
-      "content_sha256": "5081e2910638201fa982d48195f6c7834211602550bc013e5cda5db4796f09ed",
+      "content_bytes": 10786,
+      "content_sha256": "5bb3e6a25e05e803e5634bbb95cffffd6af8be758578a1c665b6de123cf1988f",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/spi.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10133,
-      "content_sha256": "5e87cab7da79bfdab2f617c32838911338beecff08590d91cbcc62304d51f8b9",
+      "content_bytes": 11087,
+      "content_sha256": "077ecaff9c1a7ace60c5459f50d1e6b92b7adf7aa18e064b2db096121c0a1ffd",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/timer.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 19059,
-      "content_sha256": "142a7993bcff741114cb092e61ba6219606b6c4dca06881463e928eabea8b365",
+      "content_bytes": 20171,
+      "content_sha256": "e7a0cbc1353a1ebae2cac4bb72bd61dad346d443c5324ea7f36aa434eeaa6257",
       "path": "microchip/avr-da/generated/runtime/devices/avr128da32/driver_semantics/uart.hpp"
     },
     {
@@ -464,8 +464,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 346540,
-      "content_sha256": "71a8652c5793eb956876748a07d6b97448f743b66419f7f240f2a10bbec2ce51",
+      "content_bytes": 346795,
+      "content_sha256": "6410dfe6ffa39c5ee11f0bb15641e8f27c2e3e850c3ff097d02b06fec563a856",
       "path": "microchip/avr-da/metadata/devices/avr128da32.json"
     },
     {
@@ -546,7 +546,7 @@
     "family": "avr-da",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "769b8d1daf7006ec9579b2f83025cd8e546c7b7bf71637b4c322aa0e2e2075bc",
+  "target_artifact_revision": "a2525282ba1399aa2e5beb284c1281bd4289664852c621d17d7415da81e6a166",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],

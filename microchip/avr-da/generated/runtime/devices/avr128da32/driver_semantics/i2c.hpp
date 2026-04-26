@@ -84,6 +84,11 @@ struct I2cSemanticTraits {
   static constexpr RuntimeFieldRef kNackField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kArblstField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr std::array<DmaBindingRef, 0> kDmaBindings = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 template<>
@@ -158,6 +163,10 @@ struct I2cSemanticTraits<PeripheralId::TWI0> {
   static constexpr RuntimeFieldRef kNackField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kArblstField = kInvalidFieldRef;
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
+  static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
+  static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
+  static constexpr std::uint32_t kKernelMaxClockHz = 0u;
+  static constexpr RuntimeFieldRef kClockGateField = kInvalidFieldRef;
 };
 
 inline constexpr std::array<PeripheralId, 0> kI2cSemanticPeripherals = {};

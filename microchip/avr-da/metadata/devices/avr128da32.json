@@ -2319,6 +2319,20 @@
       }
     }
   ],
+  "peripheral_max_clock_hz": [
+    {
+      "max_clock_hz": 24000000,
+      "peripheral": "USART0"
+    },
+    {
+      "max_clock_hz": 24000000,
+      "peripheral": "USART1"
+    },
+    {
+      "max_clock_hz": 24000000,
+      "peripheral": "SPI0"
+    }
+  ],
   "peripherals": [
     {
       "backend_schema_id": "alloy.porta.microchip-avr-da-port-v1",
