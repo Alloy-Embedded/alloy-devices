@@ -9,6 +9,7 @@
   ],
   "adc_units": [
     {
+      "base_address": 0,
       "channel_count": 6,
       "channel_pins": [
         0,
@@ -19,7 +20,10 @@
         5
       ],
       "conflicts_with_wifi": false,
+      "dreq": null,
+      "fifo_depth": 0,
       "resolution_bits": 12,
+      "supports_fifo": false,
       "unit_id": "ADC1"
     }
   ],
@@ -1015,10 +1019,12 @@
   ],
   "dma_channels": [
     {
+      "base_address": 0,
       "channel_id": "GDMA_CH0",
       "channel_index": 0,
       "is_gdma": true,
       "max_transfer_bytes": 4095,
+      "max_transfer_count": 0,
       "peripheral_requests": [
         [
           "SPI2",
@@ -1044,21 +1050,31 @@
           "ADC",
           8
         ]
-      ]
+      ],
+      "supports_byte_swap": false,
+      "supports_chaining": false
     },
     {
+      "base_address": 0,
       "channel_id": "GDMA_CH1",
       "channel_index": 1,
       "is_gdma": true,
       "max_transfer_bytes": 4095,
-      "peripheral_requests": []
+      "max_transfer_count": 0,
+      "peripheral_requests": [],
+      "supports_byte_swap": false,
+      "supports_chaining": false
     },
     {
+      "base_address": 0,
       "channel_id": "GDMA_CH2",
       "channel_index": 2,
       "is_gdma": true,
       "max_transfer_bytes": 4095,
-      "peripheral_requests": []
+      "max_transfer_count": 0,
+      "peripheral_requests": [],
+      "supports_byte_swap": false,
+      "supports_chaining": false
     }
   ],
   "dma_controllers": [
@@ -95177,11 +95193,89 @@
       "signal": "TX"
     }
   ],
+  "spi_baud_prescaler_options": [
+    {
+      "divisor": 2,
+      "field_value": 1,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 4,
+      "field_value": 2,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 8,
+      "field_value": 3,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 16,
+      "field_value": 4,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 32,
+      "field_value": 5,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 64,
+      "field_value": 6,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 128,
+      "field_value": 7,
+      "peripheral": "SPI2"
+    },
+    {
+      "divisor": 256,
+      "field_value": 8,
+      "peripheral": "SPI2"
+    }
+  ],
+  "spi_frame_size_options": [
+    {
+      "bits": 4,
+      "field_value": 3,
+      "peripheral": "SPI2"
+    },
+    {
+      "bits": 8,
+      "field_value": 7,
+      "peripheral": "SPI2"
+    },
+    {
+      "bits": 16,
+      "field_value": 15,
+      "peripheral": "SPI2"
+    },
+    {
+      "bits": 32,
+      "field_value": 31,
+      "peripheral": "SPI2"
+    }
+  ],
+  "spi_mode_flags": [
+    {
+      "peripheral": "SPI2",
+      "supports_bidirectional_3wire": true,
+      "supports_crc": false,
+      "supports_i2s_submode": false,
+      "supports_lsb_first": true,
+      "supports_motorola_frame": true,
+      "supports_nss_hw_management": true,
+      "supports_ti_frame": false
+    }
+  ],
   "spi_peripherals": [
     {
       "base_address": 1610760192,
       "clk_out_signal": null,
       "cs_out_signal": null,
+      "dreq_rx": null,
+      "dreq_tx": null,
       "has_iomux_fast_path": false,
       "iomux_clk_pin": null,
       "iomux_cs_pin": null,
@@ -95191,7 +95285,11 @@
       "miso_in_signal": null,
       "mosi_out_signal": null,
       "peripheral_id": "SPI2",
-      "supports_dma": true
+      "supports_dma": true,
+      "valid_clk_pins": [],
+      "valid_cs_pins": [],
+      "valid_miso_pins": [],
+      "valid_mosi_pins": []
     }
   ],
   "startup_descriptors": [
@@ -95358,6 +95456,8 @@
   ],
   "timer_units": [
     {
+      "alarm_count": 0,
+      "alarm_dreqs": [],
       "base_address": 1610739712,
       "bits": 54,
       "clock_sources": [
@@ -95369,6 +95469,8 @@
       "timer_idx": 0
     },
     {
+      "alarm_count": 0,
+      "alarm_dreqs": [],
       "base_address": 1610743808,
       "bits": 54,
       "clock_sources": [
@@ -95380,22 +95482,231 @@
       "timer_idx": 0
     }
   ],
+  "uart_baud_clock_sources": [
+    {
+      "field_value": 0,
+      "peripheral": "UART0",
+      "source": "apb"
+    },
+    {
+      "field_value": 1,
+      "peripheral": "UART0",
+      "source": "ref_tick"
+    },
+    {
+      "field_value": 2,
+      "peripheral": "UART0",
+      "source": "xtal"
+    },
+    {
+      "field_value": 3,
+      "peripheral": "UART0",
+      "source": "rc_fast"
+    },
+    {
+      "field_value": 0,
+      "peripheral": "UART1",
+      "source": "apb"
+    },
+    {
+      "field_value": 1,
+      "peripheral": "UART1",
+      "source": "ref_tick"
+    },
+    {
+      "field_value": 2,
+      "peripheral": "UART1",
+      "source": "xtal"
+    },
+    {
+      "field_value": 3,
+      "peripheral": "UART1",
+      "source": "rc_fast"
+    }
+  ],
+  "uart_baud_oversampling_options": [
+    {
+      "field_value": 0,
+      "peripheral": "UART0",
+      "ratio": 16
+    },
+    {
+      "field_value": 0,
+      "peripheral": "UART1",
+      "ratio": 16
+    }
+  ],
+  "uart_data_bits_options": [
+    {
+      "bits": 5,
+      "m0_value": 0,
+      "m1_value": 0,
+      "peripheral": "UART0"
+    },
+    {
+      "bits": 6,
+      "m0_value": 1,
+      "m1_value": 0,
+      "peripheral": "UART0"
+    },
+    {
+      "bits": 7,
+      "m0_value": 2,
+      "m1_value": 0,
+      "peripheral": "UART0"
+    },
+    {
+      "bits": 8,
+      "m0_value": 3,
+      "m1_value": 0,
+      "peripheral": "UART0"
+    },
+    {
+      "bits": 5,
+      "m0_value": 0,
+      "m1_value": 0,
+      "peripheral": "UART1"
+    },
+    {
+      "bits": 6,
+      "m0_value": 1,
+      "m1_value": 0,
+      "peripheral": "UART1"
+    },
+    {
+      "bits": 7,
+      "m0_value": 2,
+      "m1_value": 0,
+      "peripheral": "UART1"
+    },
+    {
+      "bits": 8,
+      "m0_value": 3,
+      "m1_value": 0,
+      "peripheral": "UART1"
+    }
+  ],
+  "uart_max_baud_hz": 5000000,
+  "uart_mode_flags": [
+    {
+      "peripheral": "UART0",
+      "supports_auto_baud": true,
+      "supports_half_duplex": true,
+      "supports_irda": true,
+      "supports_lin": false,
+      "supports_smartcard": false,
+      "supports_synchronous": false,
+      "supports_wake_from_stop": true
+    },
+    {
+      "peripheral": "UART1",
+      "supports_auto_baud": true,
+      "supports_half_duplex": true,
+      "supports_irda": true,
+      "supports_lin": false,
+      "supports_smartcard": false,
+      "supports_synchronous": false,
+      "supports_wake_from_stop": true
+    }
+  ],
+  "uart_parity_options": [
+    {
+      "parity": "none",
+      "pce_value": 0,
+      "peripheral": "UART0",
+      "ps_value": 0
+    },
+    {
+      "parity": "even",
+      "pce_value": 1,
+      "peripheral": "UART0",
+      "ps_value": 0
+    },
+    {
+      "parity": "odd",
+      "pce_value": 1,
+      "peripheral": "UART0",
+      "ps_value": 1
+    },
+    {
+      "parity": "none",
+      "pce_value": 0,
+      "peripheral": "UART1",
+      "ps_value": 0
+    },
+    {
+      "parity": "even",
+      "pce_value": 1,
+      "peripheral": "UART1",
+      "ps_value": 0
+    },
+    {
+      "parity": "odd",
+      "pce_value": 1,
+      "peripheral": "UART1",
+      "ps_value": 1
+    }
+  ],
   "uart_peripherals": [
     {
       "base_address": 1610612736,
+      "dreq_rx": null,
+      "dreq_tx": null,
       "fifo_depth": 256,
       "peripheral_id": "UART0",
       "rx_signal_idx": null,
       "supports_dma": true,
-      "tx_signal_idx": null
+      "tx_signal_idx": null,
+      "valid_cts_pins": [],
+      "valid_rts_pins": [],
+      "valid_rx_pins": [],
+      "valid_tx_pins": []
     },
     {
       "base_address": 1610678272,
+      "dreq_rx": null,
+      "dreq_tx": null,
       "fifo_depth": 256,
       "peripheral_id": "UART1",
       "rx_signal_idx": null,
       "supports_dma": true,
-      "tx_signal_idx": null
+      "tx_signal_idx": null,
+      "valid_cts_pins": [],
+      "valid_rts_pins": [],
+      "valid_rx_pins": [],
+      "valid_tx_pins": []
+    }
+  ],
+  "uart_stop_bits_options": [
+    {
+      "field_value": 1,
+      "peripheral": "UART0",
+      "stop_bits_q8": 256
+    },
+    {
+      "field_value": 2,
+      "peripheral": "UART0",
+      "stop_bits_q8": 384
+    },
+    {
+      "field_value": 3,
+      "peripheral": "UART0",
+      "stop_bits_q8": 512
+    },
+    {
+      "field_value": 1,
+      "peripheral": "UART1",
+      "stop_bits_q8": 256
+    },
+    {
+      "field_value": 2,
+      "peripheral": "UART1",
+      "stop_bits_q8": 384
+    },
+    {
+      "field_value": 3,
+      "peripheral": "UART1",
+      "stop_bits_q8": 512
     }
   ],
   "vector_slots": [
