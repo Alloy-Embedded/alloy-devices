@@ -11744,6 +11744,47 @@
       "signal": "TX"
     }
   ],
+  "spi_baud_prescaler_options": [
+    {
+      "divisor": 4,
+      "field_value": 0,
+      "peripheral": "SPI0"
+    },
+    {
+      "divisor": 16,
+      "field_value": 1,
+      "peripheral": "SPI0"
+    },
+    {
+      "divisor": 64,
+      "field_value": 2,
+      "peripheral": "SPI0"
+    },
+    {
+      "divisor": 128,
+      "field_value": 3,
+      "peripheral": "SPI0"
+    }
+  ],
+  "spi_frame_size_options": [
+    {
+      "bits": 8,
+      "field_value": 0,
+      "peripheral": "SPI0"
+    }
+  ],
+  "spi_mode_flags": [
+    {
+      "peripheral": "SPI0",
+      "supports_bidirectional_3wire": false,
+      "supports_crc": false,
+      "supports_i2s_submode": false,
+      "supports_lsb_first": true,
+      "supports_motorola_frame": true,
+      "supports_nss_hw_management": true,
+      "supports_ti_frame": false
+    }
+  ],
   "startup_descriptors": [
     {
       "descriptor_id": "startup:vectors",
@@ -11870,6 +11911,185 @@
       "source_hz": 24000000,
       "source_kind": "internal-oscillator",
       "sysclk_hz": 24000000
+    }
+  ],
+  "uart_baud_clock_sources": [
+    {
+      "field_value": 0,
+      "peripheral": "USART0",
+      "source": "clk_per"
+    },
+    {
+      "field_value": 0,
+      "peripheral": "USART1",
+      "source": "clk_per"
+    }
+  ],
+  "uart_baud_oversampling_options": [
+    {
+      "field_value": 0,
+      "peripheral": "USART0",
+      "ratio": 16
+    },
+    {
+      "field_value": 1,
+      "peripheral": "USART0",
+      "ratio": 8
+    },
+    {
+      "field_value": 0,
+      "peripheral": "USART1",
+      "ratio": 16
+    },
+    {
+      "field_value": 1,
+      "peripheral": "USART1",
+      "ratio": 8
+    }
+  ],
+  "uart_data_bits_options": [
+    {
+      "bits": 5,
+      "m0_value": 0,
+      "m1_value": 0,
+      "peripheral": "USART0"
+    },
+    {
+      "bits": 6,
+      "m0_value": 1,
+      "m1_value": 0,
+      "peripheral": "USART0"
+    },
+    {
+      "bits": 7,
+      "m0_value": 2,
+      "m1_value": 0,
+      "peripheral": "USART0"
+    },
+    {
+      "bits": 8,
+      "m0_value": 3,
+      "m1_value": 0,
+      "peripheral": "USART0"
+    },
+    {
+      "bits": 9,
+      "m0_value": 6,
+      "m1_value": 0,
+      "peripheral": "USART0"
+    },
+    {
+      "bits": 5,
+      "m0_value": 0,
+      "m1_value": 0,
+      "peripheral": "USART1"
+    },
+    {
+      "bits": 6,
+      "m0_value": 1,
+      "m1_value": 0,
+      "peripheral": "USART1"
+    },
+    {
+      "bits": 7,
+      "m0_value": 2,
+      "m1_value": 0,
+      "peripheral": "USART1"
+    },
+    {
+      "bits": 8,
+      "m0_value": 3,
+      "m1_value": 0,
+      "peripheral": "USART1"
+    },
+    {
+      "bits": 9,
+      "m0_value": 6,
+      "m1_value": 0,
+      "peripheral": "USART1"
+    }
+  ],
+  "uart_max_baud_hz": 3000000,
+  "uart_mode_flags": [
+    {
+      "peripheral": "USART0",
+      "supports_auto_baud": true,
+      "supports_half_duplex": false,
+      "supports_irda": false,
+      "supports_lin": false,
+      "supports_smartcard": false,
+      "supports_synchronous": true,
+      "supports_wake_from_stop": false
+    },
+    {
+      "peripheral": "USART1",
+      "supports_auto_baud": true,
+      "supports_half_duplex": false,
+      "supports_irda": false,
+      "supports_lin": false,
+      "supports_smartcard": false,
+      "supports_synchronous": true,
+      "supports_wake_from_stop": false
+    }
+  ],
+  "uart_parity_options": [
+    {
+      "parity": "none",
+      "pce_value": 0,
+      "peripheral": "USART0",
+      "ps_value": 0
+    },
+    {
+      "parity": "even",
+      "pce_value": 2,
+      "peripheral": "USART0",
+      "ps_value": 0
+    },
+    {
+      "parity": "odd",
+      "pce_value": 3,
+      "peripheral": "USART0",
+      "ps_value": 0
+    },
+    {
+      "parity": "none",
+      "pce_value": 0,
+      "peripheral": "USART1",
+      "ps_value": 0
+    },
+    {
+      "parity": "even",
+      "pce_value": 2,
+      "peripheral": "USART1",
+      "ps_value": 0
+    },
+    {
+      "parity": "odd",
+      "pce_value": 3,
+      "peripheral": "USART1",
+      "ps_value": 0
+    }
+  ],
+  "uart_stop_bits_options": [
+    {
+      "field_value": 0,
+      "peripheral": "USART0",
+      "stop_bits_q8": 256
+    },
+    {
+      "field_value": 1,
+      "peripheral": "USART0",
+      "stop_bits_q8": 512
+    },
+    {
+      "field_value": 0,
+      "peripheral": "USART1",
+      "stop_bits_q8": 256
+    },
+    {
+      "field_value": 1,
+      "peripheral": "USART1",
+      "stop_bits_q8": 512
     }
   ],
   "vector_slots": [
