@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 174 rule(s).",
+      "message": "gate-c passed with 176 rule(s).",
       "passed": true,
       "rule_ids": [
         "stm32f401re-package-pin-count-covers-known-pins",
@@ -42,6 +42,7 @@
         "stm32f401re-alternate-functions-explicit",
         "stm32f401re-memory-sizes-positive",
         "stm32f401re-peripheral-bases-unique",
+        "stm32f401re-adc-semantics-populated",
         "stm32f401re-interrupts-present",
         "stm32f401re-interrupts-reference-known-peripherals",
         "stm32f401re-referenced-peripherals-have-rcc-enable",
@@ -128,6 +129,7 @@
         "stm32f405rg-alternate-functions-explicit",
         "stm32f405rg-memory-sizes-positive",
         "stm32f405rg-peripheral-bases-unique",
+        "stm32f405rg-adc-semantics-populated",
         "stm32f405rg-interrupts-present",
         "stm32f405rg-interrupts-reference-known-peripherals",
         "stm32f405rg-referenced-peripherals-have-rcc-enable",
@@ -346,6 +348,13 @@
       "message": "stm32f401re peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "stm32f401re-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f401re ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "stm32f401re-adc-semantics-populated",
       "severity": "error"
     },
     {
@@ -948,6 +957,13 @@
       "message": "stm32f405rg peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "stm32f405rg-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "stm32f405rg ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "stm32f405rg-adc-semantics-populated",
       "severity": "error"
     },
     {

@@ -122,7 +122,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "fd4e97a7d4a31d669a8ed8c497c026142325d5d3562f182dd3798f3a1441a390"
+    "validation_report_sha256": "00e389cbb20ef9898346946f3adf37bcd8fce1b58d6c47b7cddc5910a5c6522c"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/stm32f401re",
@@ -217,14 +217,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 4727,
-      "content_sha256": "f84e646b693b0d1755c4658ab6426a9f01b76bec26a5aad3a10dcde9c1b58fd8",
+      "content_sha256": "a565e956ae99ee4b77a0ab81ba45511b259394b6df98f78e78c9facf8905fe9d",
       "path": "st/stm32f4/artifact-manifest.json"
     },
     {
@@ -313,8 +313,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 7162,
-      "content_sha256": "6c260e8452e502252d517cf2eef603456cce09d367591865b0d8c1713f530400",
+      "content_bytes": 9684,
+      "content_sha256": "edd1d711bcf7312d3deb5797e8201b8a7d7f3fac1324be019879ab4e25b07942",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/adc.hpp"
     },
     {
@@ -325,8 +325,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1100,
-      "content_sha256": "f0e5c6286703312bf700e44e4c6084e8cdeaad286b904ec679bb32703cdcef22",
+      "content_bytes": 4209,
+      "content_sha256": "584e0765f4d5542bfad23b6ebcef21338120fbf6bb496204e68977147f1b9f2e",
       "path": "st/stm32f4/generated/runtime/devices/stm32f401re/driver_semantics/common.hpp"
     },
     {
@@ -553,8 +553,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 15916,
-      "content_sha256": "92f6b9bc0c2d98fdcbb20e5ae949fb42db79ff02ec11d041e0e2f395a69a771c",
+      "content_bytes": 20978,
+      "content_sha256": "84f80b58e37e7ace9f366ea731629fef5186190fe7e740f58d5063a01b38201b",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/adc.hpp"
     },
     {
@@ -565,8 +565,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1100,
-      "content_sha256": "0dbd664c76b606662f9cefbca2d78502b56393740371a82ce1d6bedcb0003769",
+      "content_bytes": 4209,
+      "content_sha256": "366ff10a2d340b034e382c0a1a4984b674f9598f44bc7d0a7cdd9c4933eb24a1",
       "path": "st/stm32f4/generated/runtime/devices/stm32f405rg/driver_semantics/common.hpp"
     },
     {
@@ -835,14 +835,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 63409,
-      "content_sha256": "fd4e97a7d4a31d669a8ed8c497c026142325d5d3562f182dd3798f3a1441a390",
+      "content_bytes": 64035,
+      "content_sha256": "00e389cbb20ef9898346946f3adf37bcd8fce1b58d6c47b7cddc5910a5c6522c",
       "path": "st/stm32f4/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 18230,
-      "content_sha256": "d0d35de0cc3defc38eae505d6f27e4bfbad05048599d23bf11679e3adeb3be9b",
+      "content_bytes": 18324,
+      "content_sha256": "fd7f0d9a45cbbfaf74ea1d8580f6047fc293a4fe13696b30ea95864d3268fad6",
       "path": "st/stm32f4/reports/validation-summary.json"
     }
   ],
@@ -851,7 +851,7 @@
     "family": "stm32f4",
     "vendor": "st"
   },
-  "target_artifact_revision": "b843c3b082d76f17f265e2db4b270bb35df76ed7d5a0855f1252bebb72094ddc",
+  "target_artifact_revision": "7347db881c811f7bc7ce63b7270f7d6fc67b9f7df8e684ce252b68c0247f0943",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -887,7 +887,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 174 rule(s).",
+        "message": "gate-c passed with 176 rule(s).",
         "passed": true,
         "rule_ids": [
           "stm32f401re-package-pin-count-covers-known-pins",
@@ -897,6 +897,7 @@
           "stm32f401re-alternate-functions-explicit",
           "stm32f401re-memory-sizes-positive",
           "stm32f401re-peripheral-bases-unique",
+          "stm32f401re-adc-semantics-populated",
           "stm32f401re-interrupts-present",
           "stm32f401re-interrupts-reference-known-peripherals",
           "stm32f401re-referenced-peripherals-have-rcc-enable",
@@ -983,6 +984,7 @@
           "stm32f405rg-alternate-functions-explicit",
           "stm32f405rg-memory-sizes-positive",
           "stm32f405rg-peripheral-bases-unique",
+          "stm32f405rg-adc-semantics-populated",
           "stm32f405rg-interrupts-present",
           "stm32f405rg-interrupts-reference-known-peripherals",
           "stm32f405rg-referenced-peripherals-have-rcc-enable",
