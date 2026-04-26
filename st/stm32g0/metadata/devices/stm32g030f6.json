@@ -5593,6 +5593,16 @@
       "selector_id": null
     }
   ],
+  "peripheral_max_clock_hz": [
+    {
+      "max_clock_hz": 64000000,
+      "peripheral": "USART2"
+    },
+    {
+      "max_clock_hz": 64000000,
+      "peripheral": "SPI1"
+    }
+  ],
   "peripherals": [
     {
       "backend_schema_id": "alloy.adc.st-aditf4-v3-0-g0-cube",
