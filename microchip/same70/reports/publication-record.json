@@ -174,7 +174,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "bf7bd2ac21aaadd39f62ade1f9395144623c8078f1a3a360e1deea622c9db18a"
+    "validation_report_sha256": "bd64a52884705bf582f494627a304eadbc2a6754320ad10d64e7c21c8da966b1"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/atsame70n21b",
@@ -260,14 +260,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 7649,
-      "content_sha256": "e473426f33c308cf10227658accf563d18b05d7f8c841d18ff09646698b2f757",
+      "content_sha256": "e59a7bb58534d2ac79f7b309e693d29660a57dbf3bc723a74ddba7ab1e5e0fa9",
       "path": "microchip/same70/artifact-manifest.json"
     },
     {
@@ -356,8 +356,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10654,
-      "content_sha256": "1a039f19a0e1621bd428817bcb516a270590f0d3b96c5d71e8344fc3aff6a8b0",
+      "content_bytes": 14446,
+      "content_sha256": "275cbe40878931b9865340efa7e22a3056bb8cfa0c92376fb3001e921aef4113",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/adc.hpp"
     },
     {
@@ -368,8 +368,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1107,
-      "content_sha256": "f5a49d09a04265a6c6704c0cbaa9361ad84d30c9253e6ff3bf9ec7b157829917",
+      "content_bytes": 4216,
+      "content_sha256": "f50def6da0d952aeeffcf7b03cb4276e1257bdce2c7c40a80722ddeaecf1cfb9",
       "path": "microchip/same70/generated/runtime/devices/atsame70n21b/driver_semantics/common.hpp"
     },
     {
@@ -596,8 +596,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 10654,
-      "content_sha256": "1a67f5494a11779606e7b717729166d8a888f49cd2e7609669a87a3f7207ce18",
+      "content_bytes": 14446,
+      "content_sha256": "0e7ae7cbf628e1d0a8176e0c5489629c11b8b7e1106fe2c0dfc2fd36e8636826",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/driver_semantics/adc.hpp"
     },
     {
@@ -608,8 +608,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1107,
-      "content_sha256": "22e6eb498238434f20fa9229957531ff9fe358a8628d22b8066549e3910d6647",
+      "content_bytes": 4216,
+      "content_sha256": "6a80a5f7b0bbcd6a076712e7fb167f46d149ad287d659947e7d2364b88352e9f",
       "path": "microchip/same70/generated/runtime/devices/atsame70q21b/driver_semantics/common.hpp"
     },
     {
@@ -878,14 +878,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 64084,
-      "content_sha256": "bf7bd2ac21aaadd39f62ade1f9395144623c8078f1a3a360e1deea622c9db18a",
+      "content_bytes": 64716,
+      "content_sha256": "bd64a52884705bf582f494627a304eadbc2a6754320ad10d64e7c21c8da966b1",
       "path": "microchip/same70/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 18526,
-      "content_sha256": "bdfc1804fdc480fde1b957cf2cb0977315ef7f834c9707caa46019b5a24d1b03",
+      "content_bytes": 18622,
+      "content_sha256": "9d7e3a9ff455b53f8aa5724bbeefc5f08fda632fef57a6f636987734d4ff0192",
       "path": "microchip/same70/reports/validation-summary.json"
     }
   ],
@@ -894,7 +894,7 @@
     "family": "same70",
     "vendor": "microchip"
   },
-  "target_artifact_revision": "636512cb6c20325bda2d6fe273a9ba9fb4f61c91c94089140d7d090c77c515fd",
+  "target_artifact_revision": "cc907cfe3955d0ef1f5ce6d3e17b2f13319766ef31edd20058d6cd8e099f95a6",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -930,7 +930,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 174 rule(s).",
+        "message": "gate-c passed with 176 rule(s).",
         "passed": true,
         "rule_ids": [
           "atsame70n21b-package-pin-count-covers-known-pins",
@@ -940,6 +940,7 @@
           "atsame70n21b-alternate-functions-explicit",
           "atsame70n21b-memory-sizes-positive",
           "atsame70n21b-peripheral-bases-unique",
+          "atsame70n21b-adc-semantics-populated",
           "atsame70n21b-interrupts-present",
           "atsame70n21b-interrupts-reference-known-peripherals",
           "atsame70n21b-referenced-peripherals-have-rcc-enable",
@@ -1026,6 +1027,7 @@
           "atsame70q21b-alternate-functions-explicit",
           "atsame70q21b-memory-sizes-positive",
           "atsame70q21b-peripheral-bases-unique",
+          "atsame70q21b-adc-semantics-populated",
           "atsame70q21b-interrupts-present",
           "atsame70q21b-interrupts-reference-known-peripherals",
           "atsame70q21b-referenced-peripherals-have-rcc-enable",

@@ -32,7 +32,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 174 rule(s).",
+      "message": "gate-c passed with 176 rule(s).",
       "passed": true,
       "rule_ids": [
         "atsame70n21b-package-pin-count-covers-known-pins",
@@ -42,6 +42,7 @@
         "atsame70n21b-alternate-functions-explicit",
         "atsame70n21b-memory-sizes-positive",
         "atsame70n21b-peripheral-bases-unique",
+        "atsame70n21b-adc-semantics-populated",
         "atsame70n21b-interrupts-present",
         "atsame70n21b-interrupts-reference-known-peripherals",
         "atsame70n21b-referenced-peripherals-have-rcc-enable",
@@ -128,6 +129,7 @@
         "atsame70q21b-alternate-functions-explicit",
         "atsame70q21b-memory-sizes-positive",
         "atsame70q21b-peripheral-bases-unique",
+        "atsame70q21b-adc-semantics-populated",
         "atsame70q21b-interrupts-present",
         "atsame70q21b-interrupts-reference-known-peripherals",
         "atsame70q21b-referenced-peripherals-have-rcc-enable",
@@ -346,6 +348,13 @@
       "message": "atsame70n21b peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "atsame70n21b-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70n21b ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "atsame70n21b-adc-semantics-populated",
       "severity": "error"
     },
     {
@@ -948,6 +957,13 @@
       "message": "atsame70q21b peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "atsame70q21b-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "atsame70q21b ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "atsame70q21b-adc-semantics-populated",
       "severity": "error"
     },
     {
