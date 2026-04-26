@@ -2319,7 +2319,7 @@
       "rcc_reset_signal": null
     },
     {
-      "backend_schema_id": "alloy.sens.espressif-sens",
+      "backend_schema_id": "alloy.adc.espressif-sens",
       "base_address": 1610647552,
       "instance": 0,
       "ip_name": "sens",

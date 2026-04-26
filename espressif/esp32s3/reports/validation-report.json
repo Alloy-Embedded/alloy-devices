@@ -29,7 +29,7 @@
     {
       "blocking": true,
       "gate_id": "gate-c",
-      "message": "gate-c passed with 88 rule(s).",
+      "message": "gate-c passed with 89 rule(s).",
       "passed": true,
       "rule_ids": [
         "esp32s3-package-pin-count-covers-known-pins",
@@ -39,6 +39,7 @@
         "esp32s3-alternate-functions-explicit",
         "esp32s3-memory-sizes-positive",
         "esp32s3-peripheral-bases-unique",
+        "esp32s3-adc-semantics-populated",
         "esp32s3-interrupts-present",
         "esp32s3-interrupts-reference-known-peripherals",
         "esp32s3-referenced-peripherals-have-rcc-enable",
@@ -236,6 +237,13 @@
       "message": "esp32s3 peripheral base addresses are unique.",
       "passed": true,
       "rule_id": "esp32s3-peripheral-bases-unique",
+      "severity": "error"
+    },
+    {
+      "category": "semantic",
+      "message": "esp32s3 ADC peripherals admit a populated AdcSemanticTraits specialisation (no stub fallback).",
+      "passed": true,
+      "rule_id": "esp32s3-adc-semantics-populated",
       "severity": "error"
     },
     {

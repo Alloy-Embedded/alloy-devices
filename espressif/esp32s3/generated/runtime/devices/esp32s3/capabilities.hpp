@@ -467,6 +467,13 @@ struct PeripheralCapabilityTraits<PeripheralId::GPIO> {
 };
 
 template<>
+struct PeripheralCapabilityTraits<PeripheralId::SENS> {
+  static constexpr bool kPresent = false;
+  inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{
+  }};
+};
+
+template<>
 struct PeripheralCapabilityTraits<PeripheralId::SPI0> {
   static constexpr bool kPresent = false;
   inline static constexpr std::array<CapabilityId, 0> kCapabilityIds = {{

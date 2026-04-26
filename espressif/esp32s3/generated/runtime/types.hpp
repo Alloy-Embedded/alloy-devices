@@ -9,6 +9,7 @@ namespace runtime {
 enum class BackendSchemaId : std::uint16_t {
   none,
   schema_alloy_adc_espressif_esp32s3_saradc_v1,
+  schema_alloy_adc_espressif_sens,
   schema_alloy_aes_espressif_aes,
   schema_alloy_apb_ctrl_espressif_apb_ctrl,
   schema_alloy_assist_debug_espressif_assist_debug,
@@ -41,7 +42,6 @@ enum class BackendSchemaId : std::uint16_t {
   schema_alloy_rtc_i2c_espressif_rtc_i2c,
   schema_alloy_rtc_io_espressif_rtc_io,
   schema_alloy_sdhost_espressif_sdhost,
-  schema_alloy_sens_espressif_sens,
   schema_alloy_sensitive_espressif_sensitive,
   schema_alloy_sha_espressif_sha,
   schema_alloy_spi_espressif_esp32s3_spi_v1,
@@ -92,7 +92,6 @@ enum class PeripheralClassId : std::uint16_t {
   class_rtc_i2c,
   class_rtc_io,
   class_sdhost,
-  class_sens,
   class_sensitive,
   class_sha,
   class_spi,

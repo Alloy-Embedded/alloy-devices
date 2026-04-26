@@ -4330,7 +4330,8 @@
             ]
           },
           "supporting_fact_ids": [
-            "runtime-peripheral:APB_SARADC"
+            "runtime-peripheral:APB_SARADC",
+            "runtime-peripheral:SENS"
           ]
         },
         {

@@ -31,6 +31,15 @@
         },
         {
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SENS",
+          "peripheral_class": "adc"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
           "class_capability_count": 5,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -586,6 +595,15 @@
           "instance_capability_count": 0,
           "peripheral": "GPIO",
           "peripheral_class": "gpio"
+        },
+        {
+          "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",
+          "class_capability_count": 1,
+          "coverage_kind": "class-only",
+          "explanation": "Peripheral relies on class-level capability facts.",
+          "instance_capability_count": 0,
+          "peripheral": "SENS",
+          "peripheral_class": "adc"
         },
         {
           "artifact_path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp",

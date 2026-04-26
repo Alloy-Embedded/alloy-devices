@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "4c75acf8dff4b39c235569b593b4836835adb6ca992854cec306552392c13977",
+    "canonical_ir_sha256": "c1a5d05d8c72208e0fca053321c82422a01d189a81ce121bc4be9163ae08bebd",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -51,7 +51,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "584dd0cd088316523bb130367fc0e4e7820bd580f1556e479cee19a223a4e112"
+    "validation_report_sha256": "a03076d55aaeb671ab0b40d7ccbe537dcf647b5bbd75bd5e6d00f3a0c9994093"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/esp32s3",
@@ -146,14 +146,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "3aaabe2d180add93b778ff8d2c6713f3ddd2687c13e341b555fbd67f9ed8d313",
+      "content_sha256": "7864f5d09c6ff81e0f04b9afd8b4620e98c82a10b491dca6520f88e025319ef9",
       "path": "espressif/esp32s3/artifact-manifest.json"
     },
     {
@@ -176,8 +176,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 25967,
-      "content_sha256": "549a319dbcb3eb3ff09e9929d1a6b62fb93282fa61d5d9261ac6c63a397b4eda",
+      "content_bytes": 26160,
+      "content_sha256": "63e377e0cad34dee9b6089876a879ac5c42dfd16e17968267c0015024f8f4d3d",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/capabilities.hpp"
     },
     {
@@ -188,8 +188,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 6756,
-      "content_sha256": "c45ed1145422990ae48b5172a09a576a8be57f08e786fdd5ea41810b8a78dc89",
+      "content_bytes": 7082,
+      "content_sha256": "7f6d18322bf67715f7e687bce389afa7e19a78fe1c7c69fb584e023565f0b1ef",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/clock_bindings.hpp"
     },
     {
@@ -224,8 +224,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5306,
-      "content_sha256": "0f35c8a3e26481a47fff18018ede614aae3faab8b519fa54820785231ba26232",
+      "content_bytes": 12555,
+      "content_sha256": "09d1ed031c3fcfb849ef3c91b2318965340bcf592d40c187a7f7a2c8db38fde7",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/adc.hpp"
     },
     {
@@ -236,8 +236,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1103,
-      "content_sha256": "f4e541bab09c645a9f01d0d75bfcff82365d965771d59de72c491f73d0303612",
+      "content_bytes": 4212,
+      "content_sha256": "07db5ed2a4f12eda464e56834ea62e410a34f346bc6e63f262ffe7c55579bd69",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/common.hpp"
     },
     {
@@ -356,8 +356,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8229,
-      "content_sha256": "b8c977a5d10c1e69405519fc1df15f8f4052529dbe02a3d8146eea55aa39d928",
+      "content_bytes": 8844,
+      "content_sha256": "c08cfc3d2ae951dc28b9c93df90aa3ab45a90328d19eceb577188533d3954c8a",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/peripheral_instances.hpp"
     },
     {
@@ -368,14 +368,14 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1328752,
-      "content_sha256": "ea7346e4e42e4ecca8ddb422eefc68a8b4b5ab93eed9cb8d84de187b02fc34b6",
+      "content_bytes": 1457886,
+      "content_sha256": "994bd1d2c2454767c64a4cdb11bab4836d9cd992240ce4fb30177b630c78d350",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/register_fields.hpp"
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 217144,
-      "content_sha256": "1ed4f34ede74e8f2a6792ee07e170bd1f58b6fb61606b813977939fa5e1d98b9",
+      "content_bytes": 247137,
+      "content_sha256": "f0ef22f888f8bf349b2c95e2cf04660094739d3f4c47323296e4b3e3f4245c29",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/registers.hpp"
     },
     {
@@ -416,8 +416,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 4444,
-      "content_sha256": "ad4b242cad0ce0cc5e528af78e8bc5d68b6d0e12153641736e574ffa0cc3e253",
+      "content_bytes": 4429,
+      "content_sha256": "cedddcf04572da5f5d7ceb77e9c96ff363817d8c22122c592d46617a45a12d0f",
       "path": "espressif/esp32s3/generated/runtime/types.hpp"
     },
     {
@@ -434,14 +434,14 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 5942830,
-      "content_sha256": "183a993b4f9915b3a8d2f14aca72ba47a472af8843dfc561f4709817f62eff5a",
+      "content_bytes": 5942829,
+      "content_sha256": "f9c8dae9972e5d835dac306ddc68e8642fcc53b7c30fbf51e1b9e0a3e371ea77",
       "path": "espressif/esp32s3/metadata/devices/esp32s3.json"
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 77546,
-      "content_sha256": "16118c932b1ef0e3a6824bab1838d0992b706d06fdeae4fc04516558df76285e",
+      "content_bytes": 77545,
+      "content_sha256": "e301186bafbfc0bc718ab82a4491d9c2eda7941b831ec2d17609b48d69050a8d",
       "path": "espressif/esp32s3/metadata/family-connectivity.json"
     },
     {
@@ -476,38 +476,38 @@
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 4644,
-      "content_sha256": "5095263f8abb0ad4feb369d6a8b78c5ff47e19d8f76ad32ad460d26cb89161fc",
+      "content_bytes": 4664,
+      "content_sha256": "c6498ee3913da12389c69284844dce3a8d4fdb6c9528c71f9b47edd673f6e1d3",
       "path": "espressif/esp32s3/reports/runtime-capability-summary.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 2982,
-      "content_sha256": "bb136e0006d064d6257991e5b9fa8bb3dc33740b6cd6d0d2b455233b2d4b0d82",
+      "content_bytes": 3002,
+      "content_sha256": "7c1c8eaf48629aafb224c9b3e4601def6c18672f772b09dfb48f5dcd18261415",
       "path": "espressif/esp32s3/reports/runtime-compatibility-matrix.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 44870,
-      "content_sha256": "b2bda31757e2a942c59cbcfa2ec51da8f82ddaf0fd7259171433a44d5c778194",
+      "content_bytes": 45648,
+      "content_sha256": "c28317c3fe3fcb303701222f30ea72c81f34211ebded4b3efae87faf366a0bd5",
       "path": "espressif/esp32s3/reports/runtime-explainability.json"
     },
     {
       "artifact_kind": "runtime-report",
-      "content_bytes": 173222,
-      "content_sha256": "20f947ef0ff387fb4d12fac4c039484c8156d6e84c89c41845f1c8cde5efb2c6",
+      "content_bytes": 173261,
+      "content_sha256": "b46f6a1901b88467d3f859dd61b088e0786bcfe0396be759d482bbfd2ec74e56",
       "path": "espressif/esp32s3/reports/runtime-provenance.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 32527,
-      "content_sha256": "584dd0cd088316523bb130367fc0e4e7820bd580f1556e479cee19a223a4e112",
+      "content_bytes": 32828,
+      "content_sha256": "a03076d55aaeb671ab0b40d7ccbe537dcf647b5bbd75bd5e6d00f3a0c9994093",
       "path": "espressif/esp32s3/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 9687,
-      "content_sha256": "4a979bb76bfc8fb5fa1cfaedd60950bdc22ca0c5781459cdd15a63036ee61d2a",
+      "content_bytes": 9730,
+      "content_sha256": "23dbd38ae7ad68df5fdb9bcc94bd38840c7ed9a690be5fd1e5f1ca2b5123144a",
       "path": "espressif/esp32s3/reports/validation-summary.json"
     }
   ],
@@ -516,7 +516,7 @@
     "family": "esp32s3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "6c48ca53e32890b87b4a4930270d22eb8fcd45956e66dd75da20dffe00bb3aaf",
+  "target_artifact_revision": "345a9dcb91c6b8fa274486949d9df67e883a1696ac15f051dfff87964b327a63",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -549,7 +549,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 88 rule(s).",
+        "message": "gate-c passed with 89 rule(s).",
         "passed": true,
         "rule_ids": [
           "esp32s3-package-pin-count-covers-known-pins",
@@ -559,6 +559,7 @@
           "esp32s3-alternate-functions-explicit",
           "esp32s3-memory-sizes-positive",
           "esp32s3-peripheral-bases-unique",
+          "esp32s3-adc-semantics-populated",
           "esp32s3-interrupts-present",
           "esp32s3-interrupts-reference-known-peripherals",
           "esp32s3-referenced-peripherals-have-rcc-enable",

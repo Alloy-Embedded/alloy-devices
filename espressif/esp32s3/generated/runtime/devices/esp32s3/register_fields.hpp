@@ -325,6 +325,249 @@ enum class FieldId : std::uint16_t {
   field_gpio_status_w1tc_status_w1tc,
   field_gpio_status_w1ts_status_w1ts,
   field_gpio_strap_strapping,
+  field_sens_sar_amp_ctrl1_sar_amp_wait1,
+  field_sens_sar_amp_ctrl1_sar_amp_wait2,
+  field_sens_sar_amp_ctrl2_sar_sar1_dac_xpd_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_xpd_sar_amp_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_amp_rst_fb_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_amp_short_ref_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_amp_short_ref_gnd_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_xpd_sar_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_rstb_fsm_idle,
+  field_sens_sar_amp_ctrl2_sar_amp_wait3,
+  field_sens_sar_amp_ctrl3_sar1_dac_xpd_fsm,
+  field_sens_sar_amp_ctrl3_xpd_sar_amp_fsm,
+  field_sens_sar_amp_ctrl3_amp_rst_fb_fsm,
+  field_sens_sar_amp_ctrl3_amp_short_ref_fsm,
+  field_sens_sar_amp_ctrl3_amp_short_ref_gnd_fsm,
+  field_sens_sar_amp_ctrl3_xpd_sar_fsm,
+  field_sens_sar_amp_ctrl3_rstb_fsm,
+  field_sens_sar_atten1_sar1_atten,
+  field_sens_sar_atten2_sar2_atten,
+  field_sens_sar_cocpu_debug_sar_cocpu_pc,
+  field_sens_sar_cocpu_debug_sar_cocpu_mem_vld,
+  field_sens_sar_cocpu_debug_sar_cocpu_mem_rdy,
+  field_sens_sar_cocpu_debug_sar_cocpu_mem_wen,
+  field_sens_sar_cocpu_debug_sar_cocpu_mem_addr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_touch_done_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_touch_inactive_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_touch_active_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_saradc1_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_saradc2_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_tsens_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_start_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_sw_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_swd_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_touch_timeout_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_touch_approach_loop_done_int_clr,
+  field_sens_sar_cocpu_int_clr_sar_cocpu_touch_scan_done_int_clr,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_touch_done_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_touch_inactive_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_touch_active_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_saradc1_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_saradc2_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_tsens_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_start_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_sw_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_swd_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_touch_timeout_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_touch_approach_loop_done_int_ena,
+  field_sens_sar_cocpu_int_ena_sar_cocpu_touch_scan_done_int_ena,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_done_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_inactive_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_active_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_saradc1_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_saradc2_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_tsens_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_start_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_sw_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_swd_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_timeout_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_approach_loop_done_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_scan_done_int_ena_w1tc,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_done_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_inactive_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_active_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_saradc1_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_saradc2_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_tsens_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_start_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_sw_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_swd_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_timeout_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_approach_loop_done_int_ena_w1ts,
+  field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_scan_done_int_ena_w1ts,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_touch_done_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_touch_inactive_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_touch_active_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_saradc1_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_saradc2_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_tsens_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_start_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_sw_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_swd_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_touch_timeout_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_touch_approach_loop_done_int_raw,
+  field_sens_sar_cocpu_int_raw_sar_cocpu_touch_scan_done_int_raw,
+  field_sens_sar_cocpu_int_st_sar_cocpu_touch_done_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_touch_inactive_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_touch_active_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_saradc1_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_saradc2_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_tsens_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_start_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_sw_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_swd_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_touch_timeout_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_touch_approach_loop_done_int_st,
+  field_sens_sar_cocpu_int_st_sar_cocpu_touch_scan_done_int_st,
+  field_sens_sar_cocpu_state_sar_cocpu_dbg_trigger,
+  field_sens_sar_cocpu_state_sar_cocpu_clk_en_st,
+  field_sens_sar_cocpu_state_sar_cocpu_reset_n,
+  field_sens_sar_cocpu_state_sar_cocpu_eoi,
+  field_sens_sar_cocpu_state_sar_cocpu_trap,
+  field_sens_sar_cocpu_state_sar_cocpu_ebreak,
+  field_sens_sar_debug_conf_sar_debug_bit_sel,
+  field_sens_sar_hall_ctrl_xpd_hall,
+  field_sens_sar_hall_ctrl_xpd_hall_force,
+  field_sens_sar_hall_ctrl_hall_phase,
+  field_sens_sar_hall_ctrl_hall_phase_force,
+  field_sens_sar_i2c_ctrl_sar_i2c_ctrl,
+  field_sens_sar_i2c_ctrl_sar_i2c_start,
+  field_sens_sar_i2c_ctrl_sar_i2c_start_force,
+  field_sens_sar_meas1_ctrl1_force_xpd_amp,
+  field_sens_sar_meas1_ctrl1_amp_rst_fb_force,
+  field_sens_sar_meas1_ctrl1_amp_short_ref_force,
+  field_sens_sar_meas1_ctrl1_amp_short_ref_gnd_force,
+  field_sens_sar_meas1_ctrl2_meas1_data_sar,
+  field_sens_sar_meas1_ctrl2_meas1_done_sar,
+  field_sens_sar_meas1_ctrl2_meas1_start_sar,
+  field_sens_sar_meas1_ctrl2_meas1_start_force,
+  field_sens_sar_meas1_ctrl2_sar1_en_pad,
+  field_sens_sar_meas1_ctrl2_sar1_en_pad_force,
+  field_sens_sar_meas1_mux_sar1_dig_force,
+  field_sens_sar_meas2_ctrl1_sar_sar2_cntl_state,
+  field_sens_sar_meas2_ctrl1_sar_sar2_pwdet_cal_en,
+  field_sens_sar_meas2_ctrl1_sar_sar2_pkdet_cal_en,
+  field_sens_sar_meas2_ctrl1_sar_sar2_en_test,
+  field_sens_sar_meas2_ctrl1_sar_sar2_rstb_force,
+  field_sens_sar_meas2_ctrl1_sar_sar2_standby_wait,
+  field_sens_sar_meas2_ctrl1_sar_sar2_rstb_wait,
+  field_sens_sar_meas2_ctrl1_sar_sar2_xpd_wait,
+  field_sens_sar_meas2_ctrl2_meas2_data_sar,
+  field_sens_sar_meas2_ctrl2_meas2_done_sar,
+  field_sens_sar_meas2_ctrl2_meas2_start_sar,
+  field_sens_sar_meas2_ctrl2_meas2_start_force,
+  field_sens_sar_meas2_ctrl2_sar2_en_pad,
+  field_sens_sar_meas2_ctrl2_sar2_en_pad_force,
+  field_sens_sar_meas2_mux_sar2_pwdet_cct,
+  field_sens_sar_meas2_mux_sar2_rtc_force,
+  field_sens_sar_nouse_sar_nouse,
+  field_sens_sar_peri_clk_gate_conf_rtc_i2c_clk_en,
+  field_sens_sar_peri_clk_gate_conf_tsens_clk_en,
+  field_sens_sar_peri_clk_gate_conf_saradc_clk_en,
+  field_sens_sar_peri_clk_gate_conf_iomux_clk_en,
+  field_sens_sar_peri_reset_conf_sar_cocpu_reset,
+  field_sens_sar_peri_reset_conf_sar_rtc_i2c_reset,
+  field_sens_sar_peri_reset_conf_sar_tsens_reset,
+  field_sens_sar_peri_reset_conf_sar_saradc_reset,
+  field_sens_sar_power_xpd_sar_force_xpd_sar,
+  field_sens_sar_power_xpd_sar_sarclk_en,
+  field_sens_sar_reader1_ctrl_sar_sar1_clk_div,
+  field_sens_sar_reader1_ctrl_sar_sar1_clk_gated,
+  field_sens_sar_reader1_ctrl_sar_sar1_sample_num,
+  field_sens_sar_reader1_ctrl_sar_sar1_data_inv,
+  field_sens_sar_reader1_ctrl_sar_sar1_int_en,
+  field_sens_sar_reader1_status_sar_sar1_reader_status,
+  field_sens_sar_reader2_ctrl_sar_sar2_clk_div,
+  field_sens_sar_reader2_ctrl_sar_sar2_wait_arb_cycle,
+  field_sens_sar_reader2_ctrl_sar_sar2_clk_gated,
+  field_sens_sar_reader2_ctrl_sar_sar2_sample_num,
+  field_sens_sar_reader2_ctrl_sar_sar2_data_inv,
+  field_sens_sar_reader2_ctrl_sar_sar2_int_en,
+  field_sens_sar_reader2_status_sar_sar2_reader_status,
+  field_sens_sar_sardate_sar_date,
+  field_sens_sar_slave_addr1_sar_i2c_slave_addr1,
+  field_sens_sar_slave_addr1_sar_i2c_slave_addr0,
+  field_sens_sar_slave_addr1_sar_saradc_meas_status,
+  field_sens_sar_slave_addr2_sar_i2c_slave_addr3,
+  field_sens_sar_slave_addr2_sar_i2c_slave_addr2,
+  field_sens_sar_slave_addr3_sar_i2c_slave_addr5,
+  field_sens_sar_slave_addr3_sar_i2c_slave_addr4,
+  field_sens_sar_slave_addr4_sar_i2c_slave_addr7,
+  field_sens_sar_slave_addr4_sar_i2c_slave_addr6,
+  field_sens_sar_touch_chn_st_sar_touch_pad_active,
+  field_sens_sar_touch_chn_st_sar_touch_channel_clr,
+  field_sens_sar_touch_chn_st_sar_touch_meas_done,
+  field_sens_sar_touch_conf_sar_touch_outen,
+  field_sens_sar_touch_conf_sar_touch_status_clr,
+  field_sens_sar_touch_conf_sar_touch_data_sel,
+  field_sens_sar_touch_conf_sar_touch_denoise_end,
+  field_sens_sar_touch_conf_sar_touch_unit_end,
+  field_sens_sar_touch_conf_sar_touch_approach_pad2,
+  field_sens_sar_touch_conf_sar_touch_approach_pad1,
+  field_sens_sar_touch_conf_sar_touch_approach_pad0,
+  field_sens_sar_touch_denoise_data,
+  field_sens_sar_touch_status0_sar_touch_scan_curr,
+  field_sens_sar_touch_status1_sar_touch_pad1_data,
+  field_sens_sar_touch_status1_sar_touch_pad1_debounce,
+  field_sens_sar_touch_status10_sar_touch_pad10_data,
+  field_sens_sar_touch_status10_sar_touch_pad10_debounce,
+  field_sens_sar_touch_status11_sar_touch_pad11_data,
+  field_sens_sar_touch_status11_sar_touch_pad11_debounce,
+  field_sens_sar_touch_status12_sar_touch_pad12_data,
+  field_sens_sar_touch_status12_sar_touch_pad12_debounce,
+  field_sens_sar_touch_status13_sar_touch_pad13_data,
+  field_sens_sar_touch_status13_sar_touch_pad13_debounce,
+  field_sens_sar_touch_status14_sar_touch_pad14_data,
+  field_sens_sar_touch_status14_sar_touch_pad14_debounce,
+  field_sens_sar_touch_status15_sar_touch_slp_data,
+  field_sens_sar_touch_status15_sar_touch_slp_debounce,
+  field_sens_sar_touch_status16_sar_touch_approach_pad2_cnt,
+  field_sens_sar_touch_status16_sar_touch_approach_pad1_cnt,
+  field_sens_sar_touch_status16_sar_touch_approach_pad0_cnt,
+  field_sens_sar_touch_status16_sar_touch_slp_approach_cnt,
+  field_sens_sar_touch_status2_sar_touch_pad2_data,
+  field_sens_sar_touch_status2_sar_touch_pad2_debounce,
+  field_sens_sar_touch_status3_sar_touch_pad3_data,
+  field_sens_sar_touch_status3_sar_touch_pad3_debounce,
+  field_sens_sar_touch_status4_sar_touch_pad4_data,
+  field_sens_sar_touch_status4_sar_touch_pad4_debounce,
+  field_sens_sar_touch_status5_sar_touch_pad5_data,
+  field_sens_sar_touch_status5_sar_touch_pad5_debounce,
+  field_sens_sar_touch_status6_sar_touch_pad6_data,
+  field_sens_sar_touch_status6_sar_touch_pad6_debounce,
+  field_sens_sar_touch_status7_sar_touch_pad7_data,
+  field_sens_sar_touch_status7_sar_touch_pad7_debounce,
+  field_sens_sar_touch_status8_sar_touch_pad8_data,
+  field_sens_sar_touch_status8_sar_touch_pad8_debounce,
+  field_sens_sar_touch_status9_sar_touch_pad9_data,
+  field_sens_sar_touch_status9_sar_touch_pad9_debounce,
+  field_sens_sar_touch_thres1_sar_touch_out_th1,
+  field_sens_sar_touch_thres10_sar_touch_out_th10,
+  field_sens_sar_touch_thres11_sar_touch_out_th11,
+  field_sens_sar_touch_thres12_sar_touch_out_th12,
+  field_sens_sar_touch_thres13_sar_touch_out_th13,
+  field_sens_sar_touch_thres14_sar_touch_out_th14,
+  field_sens_sar_touch_thres2_sar_touch_out_th2,
+  field_sens_sar_touch_thres3_sar_touch_out_th3,
+  field_sens_sar_touch_thres4_sar_touch_out_th4,
+  field_sens_sar_touch_thres5_sar_touch_out_th5,
+  field_sens_sar_touch_thres6_sar_touch_out_th6,
+  field_sens_sar_touch_thres7_sar_touch_out_th7,
+  field_sens_sar_touch_thres8_sar_touch_out_th8,
+  field_sens_sar_touch_thres9_sar_touch_out_th9,
+  field_sens_sar_tsens_ctrl_sar_tsens_out,
+  field_sens_sar_tsens_ctrl_sar_tsens_ready,
+  field_sens_sar_tsens_ctrl_sar_tsens_int_en,
+  field_sens_sar_tsens_ctrl_sar_tsens_in_inv,
+  field_sens_sar_tsens_ctrl_sar_tsens_clk_div,
+  field_sens_sar_tsens_ctrl_sar_tsens_power_up,
+  field_sens_sar_tsens_ctrl_sar_tsens_power_up_force,
+  field_sens_sar_tsens_ctrl_sar_tsens_dump_out,
+  field_sens_sar_tsens_ctrl2_sar_tsens_xpd_wait,
+  field_sens_sar_tsens_ctrl2_sar_tsens_xpd_force,
+  field_sens_sar_tsens_ctrl2_sar_tsens_clk_inv,
   field_spi0_cache_fctrl_cache_req_en,
   field_spi0_cache_fctrl_cache_usr_cmd_4byte,
   field_spi0_cache_fctrl_cache_flash_usr_cmd,
@@ -5641,6 +5884,2193 @@ struct RegisterFieldTraits<FieldId::field_gpio_strap_strapping> {
   static constexpr std::uint16_t kBitOffset = 0u;
   static constexpr std::uint16_t kBitWidth = 16u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl1_sar_amp_wait1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl1_sar_amp_wait2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_sar1_dac_xpd_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_xpd_sar_amp_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_amp_rst_fb_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_amp_short_ref_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_amp_short_ref_gnd_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_xpd_sar_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_rstb_fsm_idle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl2_sar_amp_wait3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_sar1_dac_xpd_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_xpd_sar_amp_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_amp_rst_fb_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_amp_short_ref_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_amp_short_ref_gnd_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_xpd_sar_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_amp_ctrl3_rstb_fsm> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_amp_ctrl3;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_atten1_sar1_atten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_atten1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_atten2_sar2_atten> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_atten2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_debug_sar_cocpu_pc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_debug;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 13u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_vld> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_debug;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_rdy> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_debug;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_wen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_debug;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_addr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_debug;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 13u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_done_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_inactive_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_active_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_saradc1_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_saradc2_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_tsens_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_start_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_sw_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_swd_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_timeout_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_approach_loop_done_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_scan_done_int_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_clr;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_done_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_inactive_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_active_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_saradc1_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_saradc2_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_tsens_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_start_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_sw_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_swd_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_timeout_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_approach_loop_done_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_scan_done_int_ena> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_done_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_inactive_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_active_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_saradc1_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_saradc2_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_tsens_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_start_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_sw_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_swd_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_timeout_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_approach_loop_done_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_scan_done_int_ena_w1tc> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1tc;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_done_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_inactive_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_active_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_saradc1_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_saradc2_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_tsens_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_start_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_sw_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_swd_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_timeout_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_approach_loop_done_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_scan_done_int_ena_w1ts> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_ena_w1ts;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_done_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_inactive_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_active_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_saradc1_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_saradc2_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_tsens_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_start_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_sw_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_swd_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_timeout_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_approach_loop_done_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_scan_done_int_raw> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_raw;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_done_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_inactive_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_active_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_saradc1_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_saradc2_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_tsens_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_start_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_sw_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_swd_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_timeout_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_approach_loop_done_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_scan_done_int_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_int_st;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_state_sar_cocpu_dbg_trigger> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_state;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_state_sar_cocpu_clk_en_st> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_state;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_state_sar_cocpu_reset_n> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_state;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_state_sar_cocpu_eoi> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_state;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_state_sar_cocpu_trap> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_state;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_cocpu_state_sar_cocpu_ebreak> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_cocpu_state;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_debug_conf_sar_debug_bit_sel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_debug_conf;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_hall_ctrl_xpd_hall> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_hall_ctrl;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_hall_ctrl_xpd_hall_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_hall_ctrl;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_hall_ctrl_hall_phase> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_hall_ctrl;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_hall_ctrl_hall_phase_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_hall_ctrl;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_i2c_ctrl_sar_i2c_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_i2c_ctrl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_i2c_ctrl_sar_i2c_start> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_i2c_ctrl;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_i2c_ctrl_sar_i2c_start_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_i2c_ctrl;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl1_force_xpd_amp> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl1_amp_rst_fb_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 26u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl1_amp_short_ref_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl1_amp_short_ref_gnd_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl2_meas1_data_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl2_meas1_done_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl2_meas1_start_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl2_meas1_start_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl2_sar1_en_pad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_ctrl2_sar1_en_pad_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas1_mux_sar1_dig_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas1_mux;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_cntl_state> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_pwdet_cal_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_pkdet_cal_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_en_test> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_rstb_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_standby_wait> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_rstb_wait> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_xpd_wait> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl1;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl2_meas2_data_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl2_meas2_done_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl2_meas2_start_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 17u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl2_meas2_start_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl2_sar2_en_pad> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_ctrl2_sar2_en_pad_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_mux_sar2_pwdet_cct> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_mux;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_meas2_mux_sar2_rtc_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_meas2_mux;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_nouse_sar_nouse> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_nouse;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_clk_gate_conf_rtc_i2c_clk_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_clk_gate_conf;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_clk_gate_conf_tsens_clk_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_clk_gate_conf;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_clk_gate_conf_saradc_clk_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_clk_gate_conf;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_clk_gate_conf_iomux_clk_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_clk_gate_conf;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_reset_conf_sar_cocpu_reset> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_reset_conf;
+  static constexpr std::uint16_t kBitOffset = 25u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_reset_conf_sar_rtc_i2c_reset> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_reset_conf;
+  static constexpr std::uint16_t kBitOffset = 27u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_reset_conf_sar_tsens_reset> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_reset_conf;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_peri_reset_conf_sar_saradc_reset> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_peri_reset_conf;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_power_xpd_sar_force_xpd_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_power_xpd_sar;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_power_xpd_sar_sarclk_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_power_xpd_sar;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader1_ctrl_sar_sar1_clk_div> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader1_ctrl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader1_ctrl_sar_sar1_clk_gated> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader1_ctrl;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader1_ctrl_sar_sar1_sample_num> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader1_ctrl;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader1_ctrl_sar_sar1_data_inv> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader1_ctrl;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader1_ctrl_sar_sar1_int_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader1_ctrl;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader1_status_sar_sar1_reader_status> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader1_status;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_ctrl_sar_sar2_clk_div> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_ctrl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_ctrl_sar_sar2_wait_arb_cycle> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_ctrl;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_ctrl_sar_sar2_clk_gated> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_ctrl;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_ctrl_sar_sar2_sample_num> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_ctrl;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_ctrl_sar_sar2_data_inv> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_ctrl;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_ctrl_sar_sar2_int_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_ctrl;
+  static constexpr std::uint16_t kBitOffset = 30u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_reader2_status_sar_sar2_reader_status> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_reader2_status;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_sardate_sar_date> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_sardate;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 28u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr1_sar_i2c_slave_addr1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr1_sar_i2c_slave_addr0> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr1;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr1_sar_saradc_meas_status> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr1;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr2_sar_i2c_slave_addr3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr2_sar_i2c_slave_addr2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr2;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr3_sar_i2c_slave_addr5> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr3_sar_i2c_slave_addr4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr3;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr4_sar_i2c_slave_addr7> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_slave_addr4_sar_i2c_slave_addr6> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_slave_addr4;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 11u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_chn_st_sar_touch_pad_active> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_chn_st;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 15u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_chn_st_sar_touch_channel_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_chn_st;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 15u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_chn_st_sar_touch_meas_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_chn_st;
+  static constexpr std::uint16_t kBitOffset = 31u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_outen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 15u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_status_clr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_data_sel> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_denoise_end> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 18u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_unit_end> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 19u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_approach_pad2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 20u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_approach_pad1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_conf_sar_touch_approach_pad0> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_conf;
+  static constexpr std::uint16_t kBitOffset = 28u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_denoise_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_denoise;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status0_sar_touch_scan_curr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status0;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status1_sar_touch_pad1_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status1_sar_touch_pad1_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status1;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status10_sar_touch_pad10_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status10;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status10_sar_touch_pad10_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status10;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status11_sar_touch_pad11_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status11;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status11_sar_touch_pad11_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status11;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status12_sar_touch_pad12_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status12;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status12_sar_touch_pad12_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status12;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status13_sar_touch_pad13_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status13;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status13_sar_touch_pad13_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status13;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status14_sar_touch_pad14_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status14;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status14_sar_touch_pad14_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status14;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status15_sar_touch_slp_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status15;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status15_sar_touch_slp_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status15;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status16_sar_touch_approach_pad2_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status16;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status16_sar_touch_approach_pad1_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status16;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status16_sar_touch_approach_pad0_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status16;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status16_sar_touch_slp_approach_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status16;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status2_sar_touch_pad2_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status2_sar_touch_pad2_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status2;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status3_sar_touch_pad3_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status3_sar_touch_pad3_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status3;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status4_sar_touch_pad4_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status4_sar_touch_pad4_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status4;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status5_sar_touch_pad5_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status5;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status5_sar_touch_pad5_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status5;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status6_sar_touch_pad6_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status6;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status6_sar_touch_pad6_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status6;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status7_sar_touch_pad7_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status7;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status7_sar_touch_pad7_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status7;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status8_sar_touch_pad8_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status8;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status8_sar_touch_pad8_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status8;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status9_sar_touch_pad9_data> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status9;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_status9_sar_touch_pad9_debounce> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_status9;
+  static constexpr std::uint16_t kBitOffset = 29u;
+  static constexpr std::uint16_t kBitWidth = 3u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres1_sar_touch_out_th1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres10_sar_touch_out_th10> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres10;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres11_sar_touch_out_th11> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres11;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres12_sar_touch_out_th12> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres12;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres13_sar_touch_out_th13> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres13;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres14_sar_touch_out_th14> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres14;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres2_sar_touch_out_th2> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres3_sar_touch_out_th3> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres3;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres4_sar_touch_out_th4> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres4;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres5_sar_touch_out_th5> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres5;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres6_sar_touch_out_th6> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres6;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres7_sar_touch_out_th7> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres7;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres8_sar_touch_out_th8> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres8;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_touch_thres9_sar_touch_out_th9> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_touch_thres9;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 22u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_out> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_ready> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_int_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_in_inv> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_clk_div> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_power_up> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 22u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_power_up_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 23u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl_sar_tsens_dump_out> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl;
+  static constexpr std::uint16_t kBitOffset = 24u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl2_sar_tsens_xpd_wait> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 12u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl2_sar_tsens_xpd_force> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_sens_sar_tsens_ctrl2_sar_tsens_clk_inv> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_sens_sar_tsens_ctrl2;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
 template<>
@@ -28134,7 +30564,7 @@ struct RegisterFieldTraits<FieldId::field_usb0_pcgcctl_resetaftersusp> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
 
-inline constexpr std::array<FieldId, 2811> kRegisterFields = {{
+inline constexpr std::array<FieldId, 3054> kRegisterFields = {{
   FieldId::field_apb_saradc_apb_ctrl_date_apb_ctrl_date,
   FieldId::field_apb_saradc_apb_saradc1_data_status_apb_saradc1_data,
   FieldId::field_apb_saradc_apb_saradc2_data_status_apb_saradc2_data,
@@ -28447,6 +30877,249 @@ inline constexpr std::array<FieldId, 2811> kRegisterFields = {{
   FieldId::field_gpio_status_w1tc_status_w1tc,
   FieldId::field_gpio_status_w1ts_status_w1ts,
   FieldId::field_gpio_strap_strapping,
+  FieldId::field_sens_sar_amp_ctrl1_sar_amp_wait1,
+  FieldId::field_sens_sar_amp_ctrl1_sar_amp_wait2,
+  FieldId::field_sens_sar_amp_ctrl2_sar_sar1_dac_xpd_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_xpd_sar_amp_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_amp_rst_fb_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_amp_short_ref_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_amp_short_ref_gnd_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_xpd_sar_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_rstb_fsm_idle,
+  FieldId::field_sens_sar_amp_ctrl2_sar_amp_wait3,
+  FieldId::field_sens_sar_amp_ctrl3_sar1_dac_xpd_fsm,
+  FieldId::field_sens_sar_amp_ctrl3_xpd_sar_amp_fsm,
+  FieldId::field_sens_sar_amp_ctrl3_amp_rst_fb_fsm,
+  FieldId::field_sens_sar_amp_ctrl3_amp_short_ref_fsm,
+  FieldId::field_sens_sar_amp_ctrl3_amp_short_ref_gnd_fsm,
+  FieldId::field_sens_sar_amp_ctrl3_xpd_sar_fsm,
+  FieldId::field_sens_sar_amp_ctrl3_rstb_fsm,
+  FieldId::field_sens_sar_atten1_sar1_atten,
+  FieldId::field_sens_sar_atten2_sar2_atten,
+  FieldId::field_sens_sar_cocpu_debug_sar_cocpu_pc,
+  FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_vld,
+  FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_rdy,
+  FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_wen,
+  FieldId::field_sens_sar_cocpu_debug_sar_cocpu_mem_addr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_done_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_inactive_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_active_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_saradc1_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_saradc2_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_tsens_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_start_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_sw_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_swd_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_timeout_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_approach_loop_done_int_clr,
+  FieldId::field_sens_sar_cocpu_int_clr_sar_cocpu_touch_scan_done_int_clr,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_done_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_inactive_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_active_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_saradc1_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_saradc2_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_tsens_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_start_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_sw_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_swd_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_timeout_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_approach_loop_done_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_sar_cocpu_touch_scan_done_int_ena,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_done_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_inactive_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_active_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_saradc1_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_saradc2_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_tsens_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_start_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_sw_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_swd_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_timeout_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_approach_loop_done_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1tc_sar_cocpu_touch_scan_done_int_ena_w1tc,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_done_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_inactive_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_active_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_saradc1_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_saradc2_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_tsens_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_start_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_sw_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_swd_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_timeout_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_approach_loop_done_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_ena_w1ts_sar_cocpu_touch_scan_done_int_ena_w1ts,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_done_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_inactive_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_active_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_saradc1_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_saradc2_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_tsens_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_start_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_sw_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_swd_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_timeout_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_approach_loop_done_int_raw,
+  FieldId::field_sens_sar_cocpu_int_raw_sar_cocpu_touch_scan_done_int_raw,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_done_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_inactive_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_active_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_saradc1_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_saradc2_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_tsens_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_start_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_sw_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_swd_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_timeout_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_approach_loop_done_int_st,
+  FieldId::field_sens_sar_cocpu_int_st_sar_cocpu_touch_scan_done_int_st,
+  FieldId::field_sens_sar_cocpu_state_sar_cocpu_dbg_trigger,
+  FieldId::field_sens_sar_cocpu_state_sar_cocpu_clk_en_st,
+  FieldId::field_sens_sar_cocpu_state_sar_cocpu_reset_n,
+  FieldId::field_sens_sar_cocpu_state_sar_cocpu_eoi,
+  FieldId::field_sens_sar_cocpu_state_sar_cocpu_trap,
+  FieldId::field_sens_sar_cocpu_state_sar_cocpu_ebreak,
+  FieldId::field_sens_sar_debug_conf_sar_debug_bit_sel,
+  FieldId::field_sens_sar_hall_ctrl_xpd_hall,
+  FieldId::field_sens_sar_hall_ctrl_xpd_hall_force,
+  FieldId::field_sens_sar_hall_ctrl_hall_phase,
+  FieldId::field_sens_sar_hall_ctrl_hall_phase_force,
+  FieldId::field_sens_sar_i2c_ctrl_sar_i2c_ctrl,
+  FieldId::field_sens_sar_i2c_ctrl_sar_i2c_start,
+  FieldId::field_sens_sar_i2c_ctrl_sar_i2c_start_force,
+  FieldId::field_sens_sar_meas1_ctrl1_force_xpd_amp,
+  FieldId::field_sens_sar_meas1_ctrl1_amp_rst_fb_force,
+  FieldId::field_sens_sar_meas1_ctrl1_amp_short_ref_force,
+  FieldId::field_sens_sar_meas1_ctrl1_amp_short_ref_gnd_force,
+  FieldId::field_sens_sar_meas1_ctrl2_meas1_data_sar,
+  FieldId::field_sens_sar_meas1_ctrl2_meas1_done_sar,
+  FieldId::field_sens_sar_meas1_ctrl2_meas1_start_sar,
+  FieldId::field_sens_sar_meas1_ctrl2_meas1_start_force,
+  FieldId::field_sens_sar_meas1_ctrl2_sar1_en_pad,
+  FieldId::field_sens_sar_meas1_ctrl2_sar1_en_pad_force,
+  FieldId::field_sens_sar_meas1_mux_sar1_dig_force,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_cntl_state,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_pwdet_cal_en,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_pkdet_cal_en,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_en_test,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_rstb_force,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_standby_wait,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_rstb_wait,
+  FieldId::field_sens_sar_meas2_ctrl1_sar_sar2_xpd_wait,
+  FieldId::field_sens_sar_meas2_ctrl2_meas2_data_sar,
+  FieldId::field_sens_sar_meas2_ctrl2_meas2_done_sar,
+  FieldId::field_sens_sar_meas2_ctrl2_meas2_start_sar,
+  FieldId::field_sens_sar_meas2_ctrl2_meas2_start_force,
+  FieldId::field_sens_sar_meas2_ctrl2_sar2_en_pad,
+  FieldId::field_sens_sar_meas2_ctrl2_sar2_en_pad_force,
+  FieldId::field_sens_sar_meas2_mux_sar2_pwdet_cct,
+  FieldId::field_sens_sar_meas2_mux_sar2_rtc_force,
+  FieldId::field_sens_sar_nouse_sar_nouse,
+  FieldId::field_sens_sar_peri_clk_gate_conf_rtc_i2c_clk_en,
+  FieldId::field_sens_sar_peri_clk_gate_conf_tsens_clk_en,
+  FieldId::field_sens_sar_peri_clk_gate_conf_saradc_clk_en,
+  FieldId::field_sens_sar_peri_clk_gate_conf_iomux_clk_en,
+  FieldId::field_sens_sar_peri_reset_conf_sar_cocpu_reset,
+  FieldId::field_sens_sar_peri_reset_conf_sar_rtc_i2c_reset,
+  FieldId::field_sens_sar_peri_reset_conf_sar_tsens_reset,
+  FieldId::field_sens_sar_peri_reset_conf_sar_saradc_reset,
+  FieldId::field_sens_sar_power_xpd_sar_force_xpd_sar,
+  FieldId::field_sens_sar_power_xpd_sar_sarclk_en,
+  FieldId::field_sens_sar_reader1_ctrl_sar_sar1_clk_div,
+  FieldId::field_sens_sar_reader1_ctrl_sar_sar1_clk_gated,
+  FieldId::field_sens_sar_reader1_ctrl_sar_sar1_sample_num,
+  FieldId::field_sens_sar_reader1_ctrl_sar_sar1_data_inv,
+  FieldId::field_sens_sar_reader1_ctrl_sar_sar1_int_en,
+  FieldId::field_sens_sar_reader1_status_sar_sar1_reader_status,
+  FieldId::field_sens_sar_reader2_ctrl_sar_sar2_clk_div,
+  FieldId::field_sens_sar_reader2_ctrl_sar_sar2_wait_arb_cycle,
+  FieldId::field_sens_sar_reader2_ctrl_sar_sar2_clk_gated,
+  FieldId::field_sens_sar_reader2_ctrl_sar_sar2_sample_num,
+  FieldId::field_sens_sar_reader2_ctrl_sar_sar2_data_inv,
+  FieldId::field_sens_sar_reader2_ctrl_sar_sar2_int_en,
+  FieldId::field_sens_sar_reader2_status_sar_sar2_reader_status,
+  FieldId::field_sens_sar_sardate_sar_date,
+  FieldId::field_sens_sar_slave_addr1_sar_i2c_slave_addr1,
+  FieldId::field_sens_sar_slave_addr1_sar_i2c_slave_addr0,
+  FieldId::field_sens_sar_slave_addr1_sar_saradc_meas_status,
+  FieldId::field_sens_sar_slave_addr2_sar_i2c_slave_addr3,
+  FieldId::field_sens_sar_slave_addr2_sar_i2c_slave_addr2,
+  FieldId::field_sens_sar_slave_addr3_sar_i2c_slave_addr5,
+  FieldId::field_sens_sar_slave_addr3_sar_i2c_slave_addr4,
+  FieldId::field_sens_sar_slave_addr4_sar_i2c_slave_addr7,
+  FieldId::field_sens_sar_slave_addr4_sar_i2c_slave_addr6,
+  FieldId::field_sens_sar_touch_chn_st_sar_touch_pad_active,
+  FieldId::field_sens_sar_touch_chn_st_sar_touch_channel_clr,
+  FieldId::field_sens_sar_touch_chn_st_sar_touch_meas_done,
+  FieldId::field_sens_sar_touch_conf_sar_touch_outen,
+  FieldId::field_sens_sar_touch_conf_sar_touch_status_clr,
+  FieldId::field_sens_sar_touch_conf_sar_touch_data_sel,
+  FieldId::field_sens_sar_touch_conf_sar_touch_denoise_end,
+  FieldId::field_sens_sar_touch_conf_sar_touch_unit_end,
+  FieldId::field_sens_sar_touch_conf_sar_touch_approach_pad2,
+  FieldId::field_sens_sar_touch_conf_sar_touch_approach_pad1,
+  FieldId::field_sens_sar_touch_conf_sar_touch_approach_pad0,
+  FieldId::field_sens_sar_touch_denoise_data,
+  FieldId::field_sens_sar_touch_status0_sar_touch_scan_curr,
+  FieldId::field_sens_sar_touch_status1_sar_touch_pad1_data,
+  FieldId::field_sens_sar_touch_status1_sar_touch_pad1_debounce,
+  FieldId::field_sens_sar_touch_status10_sar_touch_pad10_data,
+  FieldId::field_sens_sar_touch_status10_sar_touch_pad10_debounce,
+  FieldId::field_sens_sar_touch_status11_sar_touch_pad11_data,
+  FieldId::field_sens_sar_touch_status11_sar_touch_pad11_debounce,
+  FieldId::field_sens_sar_touch_status12_sar_touch_pad12_data,
+  FieldId::field_sens_sar_touch_status12_sar_touch_pad12_debounce,
+  FieldId::field_sens_sar_touch_status13_sar_touch_pad13_data,
+  FieldId::field_sens_sar_touch_status13_sar_touch_pad13_debounce,
+  FieldId::field_sens_sar_touch_status14_sar_touch_pad14_data,
+  FieldId::field_sens_sar_touch_status14_sar_touch_pad14_debounce,
+  FieldId::field_sens_sar_touch_status15_sar_touch_slp_data,
+  FieldId::field_sens_sar_touch_status15_sar_touch_slp_debounce,
+  FieldId::field_sens_sar_touch_status16_sar_touch_approach_pad2_cnt,
+  FieldId::field_sens_sar_touch_status16_sar_touch_approach_pad1_cnt,
+  FieldId::field_sens_sar_touch_status16_sar_touch_approach_pad0_cnt,
+  FieldId::field_sens_sar_touch_status16_sar_touch_slp_approach_cnt,
+  FieldId::field_sens_sar_touch_status2_sar_touch_pad2_data,
+  FieldId::field_sens_sar_touch_status2_sar_touch_pad2_debounce,
+  FieldId::field_sens_sar_touch_status3_sar_touch_pad3_data,
+  FieldId::field_sens_sar_touch_status3_sar_touch_pad3_debounce,
+  FieldId::field_sens_sar_touch_status4_sar_touch_pad4_data,
+  FieldId::field_sens_sar_touch_status4_sar_touch_pad4_debounce,
+  FieldId::field_sens_sar_touch_status5_sar_touch_pad5_data,
+  FieldId::field_sens_sar_touch_status5_sar_touch_pad5_debounce,
+  FieldId::field_sens_sar_touch_status6_sar_touch_pad6_data,
+  FieldId::field_sens_sar_touch_status6_sar_touch_pad6_debounce,
+  FieldId::field_sens_sar_touch_status7_sar_touch_pad7_data,
+  FieldId::field_sens_sar_touch_status7_sar_touch_pad7_debounce,
+  FieldId::field_sens_sar_touch_status8_sar_touch_pad8_data,
+  FieldId::field_sens_sar_touch_status8_sar_touch_pad8_debounce,
+  FieldId::field_sens_sar_touch_status9_sar_touch_pad9_data,
+  FieldId::field_sens_sar_touch_status9_sar_touch_pad9_debounce,
+  FieldId::field_sens_sar_touch_thres1_sar_touch_out_th1,
+  FieldId::field_sens_sar_touch_thres10_sar_touch_out_th10,
+  FieldId::field_sens_sar_touch_thres11_sar_touch_out_th11,
+  FieldId::field_sens_sar_touch_thres12_sar_touch_out_th12,
+  FieldId::field_sens_sar_touch_thres13_sar_touch_out_th13,
+  FieldId::field_sens_sar_touch_thres14_sar_touch_out_th14,
+  FieldId::field_sens_sar_touch_thres2_sar_touch_out_th2,
+  FieldId::field_sens_sar_touch_thres3_sar_touch_out_th3,
+  FieldId::field_sens_sar_touch_thres4_sar_touch_out_th4,
+  FieldId::field_sens_sar_touch_thres5_sar_touch_out_th5,
+  FieldId::field_sens_sar_touch_thres6_sar_touch_out_th6,
+  FieldId::field_sens_sar_touch_thres7_sar_touch_out_th7,
+  FieldId::field_sens_sar_touch_thres8_sar_touch_out_th8,
+  FieldId::field_sens_sar_touch_thres9_sar_touch_out_th9,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_out,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_ready,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_int_en,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_in_inv,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_clk_div,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_power_up,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_power_up_force,
+  FieldId::field_sens_sar_tsens_ctrl_sar_tsens_dump_out,
+  FieldId::field_sens_sar_tsens_ctrl2_sar_tsens_xpd_wait,
+  FieldId::field_sens_sar_tsens_ctrl2_sar_tsens_xpd_force,
+  FieldId::field_sens_sar_tsens_ctrl2_sar_tsens_clk_inv,
   FieldId::field_spi0_cache_fctrl_cache_req_en,
   FieldId::field_spi0_cache_fctrl_cache_usr_cmd_4byte,
   FieldId::field_spi0_cache_fctrl_cache_flash_usr_cmd,
