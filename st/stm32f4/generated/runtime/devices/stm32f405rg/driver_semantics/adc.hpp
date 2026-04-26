@@ -103,18 +103,40 @@ struct AdcSemanticTraits<PeripheralId::ADC1> {
   static constexpr RuntimeIndexedFieldRef kChannelEnablePattern = kInvalidIndexedFieldRef;
   static constexpr RuntimeIndexedFieldRef kChannelDisablePattern = kInvalidIndexedFieldRef;
   static constexpr RuntimeIndexedFieldRef kChannelStatusPattern = kInvalidIndexedFieldRef;
-  static constexpr std::uint32_t kInternalChannelCount = 0u;
-  static constexpr std::array<InternalAdcChannel, 0> kInternalChannels = {};
-  static constexpr std::uint32_t kCalibrationDataPointCount = 0u;
-  static constexpr std::array<CalibrationDataPoint, 0> kCalibrationDataPoints = {};
-  static constexpr CalibrationContext kCalibrationContext = CalibrationContext{};
-  static constexpr std::uint32_t kSupportedResolutionCount = 0u;
-  static constexpr std::array<AdcResolutionOption, 0> kSupportedResolutions = {};
-  static constexpr std::uint32_t kSupportedSampleTimeCount = 0u;
-  static constexpr std::array<AdcSampleTimeOption, 0> kSupportedSampleTimes = {};
+  static constexpr std::uint32_t kInternalChannelCount = 3u;
+  static constexpr std::array<InternalAdcChannel, 3> kInternalChannels = {{
+    InternalAdcChannel{InternalAdcChannelKind::temperature_sensor, 16u, true},
+    InternalAdcChannel{InternalAdcChannelKind::vrefint, 17u, true},
+    InternalAdcChannel{InternalAdcChannelKind::vbat, 18u, true},
+  }};
+  static constexpr std::uint32_t kCalibrationDataPointCount = 3u;
+  static constexpr std::array<CalibrationDataPoint, 3> kCalibrationDataPoints = {{
+    CalibrationDataPoint{AdcCalibrationKind::ts_cal_low, RuntimeRegisterRef{RegisterId::none, 0x1FFF7A2Cu, 0u, true}, 30, true},
+    CalibrationDataPoint{AdcCalibrationKind::ts_cal_high, RuntimeRegisterRef{RegisterId::none, 0x1FFF7A2Eu, 0u, true}, 110, true},
+    CalibrationDataPoint{AdcCalibrationKind::vrefint_cal, RuntimeRegisterRef{RegisterId::none, 0x1FFF7A2Au, 0u, true}, 3300, true},
+  }};
+  static constexpr CalibrationContext kCalibrationContext = CalibrationContext{30, 110, 3300u, 1210u, true};
+  static constexpr std::uint32_t kSupportedResolutionCount = 4u;
+  static constexpr std::array<AdcResolutionOption, 4> kSupportedResolutions = {{
+    AdcResolutionOption{12u, 0u, true},
+    AdcResolutionOption{10u, 1u, true},
+    AdcResolutionOption{8u, 2u, true},
+    AdcResolutionOption{6u, 3u, true},
+  }};
+  static constexpr std::uint32_t kSupportedSampleTimeCount = 8u;
+  static constexpr std::array<AdcSampleTimeOption, 8> kSupportedSampleTimes = {{
+    AdcSampleTimeOption{768u, 0u, true},
+    AdcSampleTimeOption{3840u, 1u, true},
+    AdcSampleTimeOption{7168u, 2u, true},
+    AdcSampleTimeOption{14080u, 3u, true},
+    AdcSampleTimeOption{21504u, 4u, true},
+    AdcSampleTimeOption{35840u, 5u, true},
+    AdcSampleTimeOption{70656u, 6u, true},
+    AdcSampleTimeOption{122880u, 7u, true},
+  }};
   static constexpr std::uint32_t kSupportedOversamplingCount = 0u;
   static constexpr std::array<AdcOversamplingOption, 0> kSupportedOversamplings = {};
-  static constexpr std::uint32_t kAdcMaxClockHz = 0u;
+  static constexpr std::uint32_t kAdcMaxClockHz = 36000000u;
   static constexpr std::uint32_t kDmaBindingCount = 0u;
   static constexpr std::array<AdcDmaBinding, 0> kDmaBindings = {};
   static constexpr std::uint32_t kExternalTriggerCount = 0u;
@@ -170,7 +192,7 @@ struct AdcSemanticTraits<PeripheralId::ADC2> {
   static constexpr std::array<AdcSampleTimeOption, 0> kSupportedSampleTimes = {};
   static constexpr std::uint32_t kSupportedOversamplingCount = 0u;
   static constexpr std::array<AdcOversamplingOption, 0> kSupportedOversamplings = {};
-  static constexpr std::uint32_t kAdcMaxClockHz = 0u;
+  static constexpr std::uint32_t kAdcMaxClockHz = 36000000u;
   static constexpr std::uint32_t kDmaBindingCount = 0u;
   static constexpr std::array<AdcDmaBinding, 0> kDmaBindings = {};
   static constexpr std::uint32_t kExternalTriggerCount = 0u;
@@ -226,7 +248,7 @@ struct AdcSemanticTraits<PeripheralId::ADC3> {
   static constexpr std::array<AdcSampleTimeOption, 0> kSupportedSampleTimes = {};
   static constexpr std::uint32_t kSupportedOversamplingCount = 0u;
   static constexpr std::array<AdcOversamplingOption, 0> kSupportedOversamplings = {};
-  static constexpr std::uint32_t kAdcMaxClockHz = 0u;
+  static constexpr std::uint32_t kAdcMaxClockHz = 36000000u;
   static constexpr std::uint32_t kDmaBindingCount = 0u;
   static constexpr std::array<AdcDmaBinding, 0> kDmaBindings = {};
   static constexpr std::uint32_t kExternalTriggerCount = 0u;
