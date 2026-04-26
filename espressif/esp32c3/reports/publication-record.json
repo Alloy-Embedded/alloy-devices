@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "9d46bdb01715148ca8d93d653bec8fb226a0f2bfcb9d08be5df9619f56a19ae8",
+    "canonical_ir_sha256": "99a719370e87e021cad2d49ccf621c2ec5f4bf4455772857dc5ad98287d3f560",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -153,7 +153,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "10010a0bd28015deab6e7e863eec8d89d35aa2e0d22cab26e1b5c6b03869da78",
+      "content_sha256": "8887b2cb1823850536b1f30c1be63db8a125b21f91be5adcd6ac73c7a41d564f",
       "path": "espressif/esp32c3/artifact-manifest.json"
     },
     {
@@ -266,8 +266,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5081,
-      "content_sha256": "e7d9f6f81d9cd603d64796a36e010d1885d24b65795ad7e6130ffe80732731c3",
+      "content_bytes": 6887,
+      "content_sha256": "6c89e6edc8cf67b192413c8e64da52ffc3c96b64df04c9b0ea80f7a2d1fc18ab",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/i2c.hpp"
     },
     {
@@ -302,8 +302,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 8603,
-      "content_sha256": "6b2eb97fb0e9603d558e1bdb7d14e74a84b386efcbb5e0d9afe3c5ca64472850",
+      "content_bytes": 9921,
+      "content_sha256": "b7d4979a8fe1ee96137cdde85e75582a2aff91b2f9957f53d1300361cbf7391a",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/spi.hpp"
     },
     {
@@ -314,8 +314,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 16012,
-      "content_sha256": "ac86adcb76640f8f15b83184ecbf16a947c5ad903e841b0648d065bae25d2930",
+      "content_bytes": 18772,
+      "content_sha256": "0f7fe9b63d8ab973e0ca69eaef88b01afce6ffcdae768ae3ede6cb3e311f4ce9",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/uart.hpp"
     },
     {
@@ -434,8 +434,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 2805475,
-      "content_sha256": "3aa300074d6f1da2d51b16e5d5646f2859dcccd6e0788fe75bf8a0ba6272d0df",
+      "content_bytes": 2805934,
+      "content_sha256": "a0ae33832443a75b82daa4a851ac6622c3aeb93b28caec598681151352d8c665",
       "path": "espressif/esp32c3/metadata/devices/esp32c3.json"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32c3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "71fa8ce9ff62994726ed71424a6391b7ec4abb7aa1897284f46112f01df6035b",
+  "target_artifact_revision": "fcf09e0efc960190ff8b9000af1ad5af69617bddde90a64e038feff7cc667ee4",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
