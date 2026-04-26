@@ -5,7 +5,7 @@
         {
           "candidate_id": "candidate:gp0:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:pico:sda"
           ],
           "operation_ids": [
@@ -30,7 +30,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp0:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -104,7 +104,7 @@
         {
           "candidate_id": "candidate:gp10:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:pico:sda"
           ],
           "operation_ids": [
@@ -129,7 +129,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp10:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -203,7 +203,7 @@
         {
           "candidate_id": "candidate:gp11:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:pico:scl"
           ],
           "operation_ids": [
@@ -228,7 +228,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp11:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -302,7 +302,7 @@
         {
           "candidate_id": "candidate:gp12:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:pico:sda"
           ],
           "operation_ids": [
@@ -327,7 +327,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp12:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -401,7 +401,7 @@
         {
           "candidate_id": "candidate:gp13:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -426,7 +426,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp13:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -500,7 +500,7 @@
         {
           "candidate_id": "candidate:gp14:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:pico:sda"
           ],
           "operation_ids": [
@@ -525,7 +525,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp14:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -599,7 +599,7 @@
         {
           "candidate_id": "candidate:gp15:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:pico:scl"
           ],
           "operation_ids": [
@@ -624,7 +624,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp15:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -698,7 +698,7 @@
         {
           "candidate_id": "candidate:gp16:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:pico:sda"
           ],
           "operation_ids": [
@@ -723,7 +723,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp16:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -797,7 +797,7 @@
         {
           "candidate_id": "candidate:gp17:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -822,7 +822,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp17:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -896,7 +896,7 @@
         {
           "candidate_id": "candidate:gp18:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:pico:sda"
           ],
           "operation_ids": [
@@ -921,7 +921,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp18:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -995,7 +995,7 @@
         {
           "candidate_id": "candidate:gp19:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:pico:scl"
           ],
           "operation_ids": [
@@ -1020,7 +1020,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp19:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -1094,7 +1094,7 @@
         {
           "candidate_id": "candidate:gp1:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -1119,7 +1119,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp1:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -1193,7 +1193,7 @@
         {
           "candidate_id": "candidate:gp20:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:pico:sda"
           ],
           "operation_ids": [
@@ -1218,7 +1218,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp20:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -1292,7 +1292,7 @@
         {
           "candidate_id": "candidate:gp21:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -1317,7 +1317,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp21:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -1391,7 +1391,7 @@
         {
           "candidate_id": "candidate:gp22:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:pico:sda"
           ],
           "operation_ids": [
@@ -1416,7 +1416,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp22:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -1490,7 +1490,7 @@
         {
           "candidate_id": "candidate:gp25:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -1515,7 +1515,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp25:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -1685,7 +1685,7 @@
         {
           "candidate_id": "candidate:gp2:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:pico:sda"
           ],
           "operation_ids": [
@@ -1710,7 +1710,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp2:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -1784,7 +1784,7 @@
         {
           "candidate_id": "candidate:gp3:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:pico:scl"
           ],
           "operation_ids": [
@@ -1809,7 +1809,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp3:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -1883,7 +1883,7 @@
         {
           "candidate_id": "candidate:gp4:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:pico:sda"
           ],
           "operation_ids": [
@@ -1908,7 +1908,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp4:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -1982,7 +1982,7 @@
         {
           "candidate_id": "candidate:gp5:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -2007,7 +2007,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp5:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -2081,7 +2081,7 @@
         {
           "candidate_id": "candidate:gp6:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:pico:sda"
           ],
           "operation_ids": [
@@ -2106,7 +2106,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp6:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -2180,7 +2180,7 @@
         {
           "candidate_id": "candidate:gp7:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:pico:scl"
           ],
           "operation_ids": [
@@ -2205,7 +2205,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp7:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:pico:all-signals",
+          "route_group_id": "group:i2c1:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -2279,7 +2279,7 @@
         {
           "candidate_id": "candidate:gp8:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:pico:sda"
           ],
           "operation_ids": [
@@ -2304,7 +2304,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp8:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -2378,7 +2378,7 @@
         {
           "candidate_id": "candidate:gp9:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:pico:scl"
           ],
           "operation_ids": [
@@ -2403,7 +2403,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp9:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:pico:all-signals",
+          "route_group_id": "group:i2c0:pico:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -2516,8 +2516,8 @@
             "candidate:gp8:i2c0:sda",
             "candidate:gp9:i2c0:scl"
           ],
-          "conflict_group": "conflict:i2c0:pico:all-signals",
-          "group_id": "group:i2c0:pico:all-signals",
+          "conflict_group": "conflict:i2c0:pico:scl-sda",
+          "group_id": "group:i2c0:pico:scl-sda",
           "package": "pico",
           "peripheral": "I2C0",
           "provenance": {
@@ -2547,8 +2547,8 @@
             "candidate:gp6:i2c1:sda",
             "candidate:gp7:i2c1:scl"
           ],
-          "conflict_group": "conflict:i2c1:pico:all-signals",
-          "group_id": "group:i2c1:pico:all-signals",
+          "conflict_group": "conflict:i2c1:pico:scl-sda",
+          "group_id": "group:i2c1:pico:scl-sda",
           "package": "pico",
           "peripheral": "I2C1",
           "provenance": {
@@ -7636,7 +7636,7 @@
         {
           "candidate_id": "candidate:gp0:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -7661,7 +7661,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp0:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -7735,7 +7735,7 @@
         {
           "candidate_id": "candidate:gp10:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:qfn56:sda"
           ],
           "operation_ids": [
@@ -7760,7 +7760,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp10:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -7834,7 +7834,7 @@
         {
           "candidate_id": "candidate:gp11:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:qfn56:scl"
           ],
           "operation_ids": [
@@ -7859,7 +7859,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp11:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -7933,7 +7933,7 @@
         {
           "candidate_id": "candidate:gp12:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -7958,7 +7958,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp12:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -8032,7 +8032,7 @@
         {
           "candidate_id": "candidate:gp13:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -8057,7 +8057,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp13:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -8131,7 +8131,7 @@
         {
           "candidate_id": "candidate:gp14:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:qfn56:sda"
           ],
           "operation_ids": [
@@ -8156,7 +8156,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp14:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -8230,7 +8230,7 @@
         {
           "candidate_id": "candidate:gp15:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:qfn56:scl"
           ],
           "operation_ids": [
@@ -8255,7 +8255,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp15:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -8329,7 +8329,7 @@
         {
           "candidate_id": "candidate:gp16:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -8354,7 +8354,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp16:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -8428,7 +8428,7 @@
         {
           "candidate_id": "candidate:gp17:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -8453,7 +8453,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp17:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -8527,7 +8527,7 @@
         {
           "candidate_id": "candidate:gp18:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:qfn56:sda"
           ],
           "operation_ids": [
@@ -8552,7 +8552,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp18:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -8626,7 +8626,7 @@
         {
           "candidate_id": "candidate:gp19:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:qfn56:scl"
           ],
           "operation_ids": [
@@ -8651,7 +8651,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp19:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -8725,7 +8725,7 @@
         {
           "candidate_id": "candidate:gp1:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -8750,7 +8750,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp1:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -8824,7 +8824,7 @@
         {
           "candidate_id": "candidate:gp20:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -8849,7 +8849,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp20:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -8923,7 +8923,7 @@
         {
           "candidate_id": "candidate:gp21:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -8948,7 +8948,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp21:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -9022,7 +9022,7 @@
         {
           "candidate_id": "candidate:gp22:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:qfn56:sda"
           ],
           "operation_ids": [
@@ -9047,7 +9047,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp22:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -9121,7 +9121,7 @@
         {
           "candidate_id": "candidate:gp23:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:qfn56:scl"
           ],
           "operation_ids": [
@@ -9146,7 +9146,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp23:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -9220,7 +9220,7 @@
         {
           "candidate_id": "candidate:gp24:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -9245,7 +9245,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp24:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -9319,7 +9319,7 @@
         {
           "candidate_id": "candidate:gp25:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -9344,7 +9344,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp25:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -9546,7 +9546,7 @@
         {
           "candidate_id": "candidate:gp2:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:qfn56:sda"
           ],
           "operation_ids": [
@@ -9571,7 +9571,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp2:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -9645,7 +9645,7 @@
         {
           "candidate_id": "candidate:gp3:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:qfn56:scl"
           ],
           "operation_ids": [
@@ -9670,7 +9670,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp3:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -9744,7 +9744,7 @@
         {
           "candidate_id": "candidate:gp4:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -9769,7 +9769,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp4:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -9843,7 +9843,7 @@
         {
           "candidate_id": "candidate:gp5:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -9868,7 +9868,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp5:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -9942,7 +9942,7 @@
         {
           "candidate_id": "candidate:gp6:i2c1:sda",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c1:qfn56:sda"
           ],
           "operation_ids": [
@@ -9967,7 +9967,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp6:i2c1:sda"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -10041,7 +10041,7 @@
         {
           "candidate_id": "candidate:gp7:i2c1:scl",
           "capability_ids": [
-            "capability:i2c1:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c1:qfn56:scl"
           ],
           "operation_ids": [
@@ -10066,7 +10066,7 @@
             "requirement:reset-release:i2c1",
             "requirement:source-select:gp7:i2c1:scl"
           ],
-          "route_group_id": "group:i2c1:qfn56:all-signals",
+          "route_group_id": "group:i2c1:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -10140,7 +10140,7 @@
         {
           "candidate_id": "candidate:gp8:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:sda",
+            "capability:i2c:rp2040-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -10165,7 +10165,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp8:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "sda"
@@ -10239,7 +10239,7 @@
         {
           "candidate_id": "candidate:gp9:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:rp2040-i2c-v1:scl",
+            "capability:i2c:rp2040-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -10264,7 +10264,7 @@
             "requirement:reset-release:i2c0",
             "requirement:source-select:gp9:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:3",
           "signal": "scl"
@@ -10380,8 +10380,8 @@
             "candidate:gp8:i2c0:sda",
             "candidate:gp9:i2c0:scl"
           ],
-          "conflict_group": "conflict:i2c0:qfn56:all-signals",
-          "group_id": "group:i2c0:qfn56:all-signals",
+          "conflict_group": "conflict:i2c0:qfn56:scl-sda",
+          "group_id": "group:i2c0:qfn56:scl-sda",
           "package": "qfn56",
           "peripheral": "I2C0",
           "provenance": {
@@ -10412,8 +10412,8 @@
             "candidate:gp6:i2c1:sda",
             "candidate:gp7:i2c1:scl"
           ],
-          "conflict_group": "conflict:i2c1:qfn56:all-signals",
-          "group_id": "group:i2c1:qfn56:all-signals",
+          "conflict_group": "conflict:i2c1:qfn56:scl-sda",
+          "group_id": "group:i2c1:qfn56:scl-sda",
           "package": "qfn56",
           "peripheral": "I2C1",
           "provenance": {
@@ -15898,8 +15898,8 @@
     },
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2c0:scl",
-      "peripheral_class": "i2c0",
+      "endpoint_id": "endpoint:i2c:scl",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -15912,36 +15912,8 @@
     },
     {
       "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c0:sda",
-      "peripheral_class": "i2c0",
-      "provenance": {
-        "patch_ids": [
-          "raspberrypi-rp2040-family-bootstrap-v1",
-          "raspberrypi-pico-bootstrap"
-        ],
-        "source_id": "pico-sdk",
-        "source_path": "rp2040.svd"
-      },
-      "signal": "SDA"
-    },
-    {
-      "direction": null,
-      "endpoint_id": "endpoint:i2c1:scl",
-      "peripheral_class": "i2c1",
-      "provenance": {
-        "patch_ids": [
-          "raspberrypi-rp2040-family-bootstrap-v1",
-          "raspberrypi-pico-bootstrap"
-        ],
-        "source_id": "pico-sdk",
-        "source_path": "rp2040.svd"
-      },
-      "signal": "SCL"
-    },
-    {
-      "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c1:sda",
-      "peripheral_class": "i2c1",
+      "endpoint_id": "endpoint:i2c:sda",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",

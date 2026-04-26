@@ -50,6 +50,23 @@
         },
         {
           "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 4,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
             "runtime-supported"
           ],
           "class_capability_count": 1,
@@ -214,6 +231,23 @@
         },
         {
           "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 4,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
             "runtime-supported"
           ],
           "class_capability_count": 1,
@@ -333,6 +367,7 @@
     "adc",
     "device",
     "dma",
+    "i2c",
     "pwm",
     "rtc",
     "spi",

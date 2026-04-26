@@ -135,12 +135,12 @@
     },
     {
       "capability_id": "capability-instance:i2c0:pico:scl",
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "pico",
       "peripheral": "I2C0",
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -154,12 +154,12 @@
     },
     {
       "capability_id": "capability-instance:i2c0:pico:sda",
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "pico",
       "peripheral": "I2C0",
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -173,12 +173,12 @@
     },
     {
       "capability_id": "capability-instance:i2c0:qfn56:scl",
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "qfn56",
       "peripheral": "I2C0",
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -192,12 +192,12 @@
     },
     {
       "capability_id": "capability-instance:i2c0:qfn56:sda",
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "qfn56",
       "peripheral": "I2C0",
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -211,12 +211,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:pico:scl",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "pico",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -230,12 +230,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:pico:sda",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "pico",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -249,12 +249,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:qfn56:scl",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "qfn56",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -268,12 +268,12 @@
     },
     {
       "capability_id": "capability-instance:i2c1:qfn56:sda",
-      "ip_name": "i2c1",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "available-signal",
       "package": "qfn56",
       "peripheral": "I2C1",
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -970,13 +970,13 @@
       "value": "ch3"
     },
     {
-      "capability_id": "capability:i2c0:rp2040-i2c-v1:scl",
-      "ip_name": "i2c0",
+      "capability_id": "capability:i2c:rp2040-i2c-v1:scl",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -989,51 +989,13 @@
       "value": "scl"
     },
     {
-      "capability_id": "capability:i2c0:rp2040-i2c-v1:sda",
-      "ip_name": "i2c0",
+      "capability_id": "capability:i2c:rp2040-i2c-v1:sda",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
       "name": "signal-role",
       "package": null,
       "peripheral": null,
-      "peripheral_class": "i2c0",
-      "provenance": {
-        "patch_ids": [
-          "raspberrypi-rp2040-family-bootstrap-v1",
-          "raspberrypi-pico-bootstrap"
-        ],
-        "source_id": "pico-sdk",
-        "source_path": "rp2040.svd"
-      },
-      "scope": "ip-block",
-      "value": "sda"
-    },
-    {
-      "capability_id": "capability:i2c1:rp2040-i2c-v1:scl",
-      "ip_name": "i2c1",
-      "ip_version": "rp2040-i2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c1",
-      "provenance": {
-        "patch_ids": [
-          "raspberrypi-rp2040-family-bootstrap-v1",
-          "raspberrypi-pico-bootstrap"
-        ],
-        "source_id": "pico-sdk",
-        "source_path": "rp2040.svd"
-      },
-      "scope": "ip-block",
-      "value": "scl"
-    },
-    {
-      "capability_id": "capability:i2c1:rp2040-i2c-v1:sda",
-      "ip_name": "i2c1",
-      "ip_version": "rp2040-i2c-v1",
-      "name": "signal-role",
-      "package": null,
-      "peripheral": null,
-      "peripheral_class": "i2c1",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",

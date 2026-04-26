@@ -22,6 +22,24 @@
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -102,7 +120,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 50,
+      "capability_decision_count": 57,
       "capability_decisions": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
@@ -224,6 +242,83 @@
           "peripheral_class": "dma",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "capability:i2c:rp2040-i2c-v1:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "capability:i2c:rp2040-i2c-v1:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "capability-instance:i2c0:pico:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "capability-instance:i2c0:pico:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:pico:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:pico:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
@@ -767,7 +862,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 27,
+      "heuristic_fact_count": 28,
       "heuristic_facts": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
@@ -797,6 +892,12 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:dma",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -989,8 +1090,35 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "route_decision_count": 51,
+      "route_decision_count": 75,
       "route_decisions": [
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:pico:sda"
+          ],
+          "decision_id": "candidate:gp0:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp0:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP0",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp0",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp0:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
@@ -1044,6 +1172,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:pico:sda"
+          ],
+          "decision_id": "candidate:gp10:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp10:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP10",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp10",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp10:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1102,6 +1257,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:pico:scl"
+          ],
+          "decision_id": "candidate:gp11:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp11:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP11",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp11",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp11:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:tx",
             "capability-instance:spi1:pico:tx"
           ],
@@ -1152,6 +1334,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:pico:sda"
+          ],
+          "decision_id": "candidate:gp12:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp12:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP12",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp12",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp12:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1210,6 +1419,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp13:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp13:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP13",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp13",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp13:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:csn",
             "capability-instance:spi1:pico:csn"
           ],
@@ -1260,6 +1496,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:pico:sda"
+          ],
+          "decision_id": "candidate:gp14:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp14:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP14",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp14",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp14:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1318,6 +1581,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:pico:scl"
+          ],
+          "decision_id": "candidate:gp15:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp15:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP15",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp15",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp15:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:tx",
             "capability-instance:spi1:pico:tx"
           ],
@@ -1368,6 +1658,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:pico:sda"
+          ],
+          "decision_id": "candidate:gp16:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp16:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP16",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp16",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp16:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1426,6 +1743,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp17:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp17:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP17",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp17",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp17:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:csn",
             "capability-instance:spi0:pico:csn"
           ],
@@ -1476,6 +1820,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:pico:sda"
+          ],
+          "decision_id": "candidate:gp18:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp18:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP18",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp18",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp18:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1534,6 +1905,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:pico:scl"
+          ],
+          "decision_id": "candidate:gp19:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp19:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP19",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp19",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp19:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:tx",
             "capability-instance:spi0:pico:tx"
           ],
@@ -1584,6 +1982,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp1:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp1:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP1",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp1",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp1:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1642,6 +2067,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:pico:sda"
+          ],
+          "decision_id": "candidate:gp20:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp20:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP20",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp20",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp20:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi0:pico:rx"
           ],
@@ -1692,6 +2144,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp21:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp21:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP21",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp21",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp21:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1750,6 +2229,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:pico:sda"
+          ],
+          "decision_id": "candidate:gp22:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp22:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP22",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp22",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp22:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:sck",
             "capability-instance:spi0:pico:sck"
           ],
@@ -1800,6 +2306,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp25:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp25:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP25",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp25",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp25:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -1936,6 +2469,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:pico:sda"
+          ],
+          "decision_id": "candidate:gp2:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp2:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP2",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp2",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp2:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:sck",
             "capability-instance:spi0:pico:sck"
           ],
@@ -1986,6 +2546,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:pico:scl"
+          ],
+          "decision_id": "candidate:gp3:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp3:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP3",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp3",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp3:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -2044,6 +2631,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:pico:sda"
+          ],
+          "decision_id": "candidate:gp4:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp4:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP4",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp4",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp4:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi0:pico:rx"
           ],
@@ -2094,6 +2708,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp5:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp5:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP5",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp5",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp5:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -2152,6 +2793,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:pico:sda"
+          ],
+          "decision_id": "candidate:gp6:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp6:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP6",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp6",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp6:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:sck",
             "capability-instance:spi0:pico:sck"
           ],
@@ -2202,6 +2870,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:pico:scl"
+          ],
+          "decision_id": "candidate:gp7:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp7:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP7",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp7",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp7:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -2260,6 +2955,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:pico:sda"
+          ],
+          "decision_id": "candidate:gp8:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp8:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP8",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp8",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp8:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi1:pico:rx"
           ],
@@ -2310,6 +3032,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:pico:scl"
+          ],
+          "decision_id": "candidate:gp9:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp9:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP9",
+          "requirement_ids": [
+            "requirement:package:pico",
+            "requirement:bonded-pin:pico:gp9",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp9:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
@@ -2384,6 +3133,60 @@
             "ch0",
             "ch1",
             "ch2"
+          ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "candidate_ids": [
+            "candidate:gp0:i2c0:sda",
+            "candidate:gp12:i2c0:sda",
+            "candidate:gp13:i2c0:scl",
+            "candidate:gp16:i2c0:sda",
+            "candidate:gp17:i2c0:scl",
+            "candidate:gp1:i2c0:scl",
+            "candidate:gp20:i2c0:sda",
+            "candidate:gp21:i2c0:scl",
+            "candidate:gp25:i2c0:scl",
+            "candidate:gp4:i2c0:sda",
+            "candidate:gp5:i2c0:scl",
+            "candidate:gp8:i2c0:sda",
+            "candidate:gp9:i2c0:scl"
+          ],
+          "conflict_group": "conflict:i2c0:pico:scl-sda",
+          "decision_id": "group:i2c0:pico:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "pico",
+          "peripheral": "I2C0",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "candidate_ids": [
+            "candidate:gp10:i2c1:sda",
+            "candidate:gp11:i2c1:scl",
+            "candidate:gp14:i2c1:sda",
+            "candidate:gp15:i2c1:scl",
+            "candidate:gp18:i2c1:sda",
+            "candidate:gp19:i2c1:scl",
+            "candidate:gp22:i2c1:sda",
+            "candidate:gp2:i2c1:sda",
+            "candidate:gp3:i2c1:scl",
+            "candidate:gp6:i2c1:sda",
+            "candidate:gp7:i2c1:scl"
+          ],
+          "conflict_group": "conflict:i2c1:pico:scl-sda",
+          "decision_id": "group:i2c1:pico:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "pico",
+          "peripheral": "I2C1",
+          "signals": [
+            "scl",
+            "sda"
           ]
         },
         {
@@ -2656,6 +3459,24 @@
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "class_capability_count": 3,
+          "coverage_kind": "instance",
+          "explanation": "Peripheral has instance-specific published capability facts.",
+          "instance_capability_count": 2,
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
           "class_capability_count": 1,
           "coverage_kind": "class-only",
           "explanation": "Peripheral relies on class-level capability facts.",
@@ -2736,7 +3557,7 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "capability_decision_count": 52,
+      "capability_decision_count": 59,
       "capability_decisions": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
@@ -2880,6 +3701,83 @@
           "peripheral_class": "dma",
           "scope": "runtime_contract",
           "value": "true"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "capability:i2c:rp2040-i2c-v1:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "capability:i2c:rp2040-i2c-v1:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "signal-role",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "ip_block",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "runtime-support:i2c",
+          "decision_kind": "inferred_runtime_support",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "name": "runtime-supported",
+          "peripheral": null,
+          "peripheral_class": "i2c",
+          "scope": "runtime_contract",
+          "value": "true"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "capability-instance:i2c0:qfn56:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "capability-instance:i2c0:qfn56:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C0",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:qfn56:scl",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "decision_id": "capability-instance:i2c1:qfn56:sda",
+          "decision_kind": "direct_capability",
+          "explanation": "Capability is published directly from canonical capability data.",
+          "name": "available-signal",
+          "peripheral": "I2C1",
+          "peripheral_class": "i2c",
+          "scope": "instance_overlay",
+          "value": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
@@ -3423,7 +4321,7 @@
           "signal": "TX"
         }
       ],
-      "heuristic_fact_count": 27,
+      "heuristic_fact_count": 28,
       "heuristic_facts": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
@@ -3453,6 +4351,12 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
           "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
           "fact_id": "runtime-support:dma",
+          "fact_kind": "capability"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "explanation": "Capability is synthesized to mark baseline runtime support for the peripheral class.",
+          "fact_id": "runtime-support:i2c",
           "fact_kind": "capability"
         },
         {
@@ -3645,8 +4549,35 @@
           "peripheral_class": "watchdog"
         }
       ],
-      "route_decision_count": 56,
+      "route_decision_count": 82,
       "route_decisions": [
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp0:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp0:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP0",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp0",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp0:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
@@ -3700,6 +4631,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp10:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp10:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP10",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp10",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp10:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -3758,6 +4716,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp11:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp11:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP11",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp11",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp11:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:tx",
             "capability-instance:spi1:qfn56:tx"
           ],
@@ -3808,6 +4793,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp12:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp12:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP12",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp12",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp12:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -3866,6 +4878,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp13:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp13:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP13",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp13",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp13:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:csn",
             "capability-instance:spi1:qfn56:csn"
           ],
@@ -3916,6 +4955,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp14:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp14:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP14",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp14",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp14:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -3974,6 +5040,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp15:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp15:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP15",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp15",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp15:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:tx",
             "capability-instance:spi1:qfn56:tx"
           ],
@@ -4024,6 +5117,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp16:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp16:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP16",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp16",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp16:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4082,6 +5202,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp17:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp17:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP17",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp17",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp17:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:csn",
             "capability-instance:spi0:qfn56:csn"
           ],
@@ -4132,6 +5279,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp18:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp18:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP18",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp18",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp18:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4190,6 +5364,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp19:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp19:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP19",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp19",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp19:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:tx",
             "capability-instance:spi0:qfn56:tx"
           ],
@@ -4240,6 +5441,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "rts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp1:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp1:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP1",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp1",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp1:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4298,6 +5526,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp20:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp20:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP20",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp20",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp20:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi0:qfn56:rx"
           ],
@@ -4348,6 +5603,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp21:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp21:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP21",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp21",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp21:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4406,6 +5688,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp22:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp22:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP22",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp22",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp22:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:sck",
             "capability-instance:spi0:qfn56:sck"
           ],
@@ -4456,6 +5765,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp23:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp23:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP23",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp23",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp23:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4514,6 +5850,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp24:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp24:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP24",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp24",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp24:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi1:qfn56:rx"
           ],
@@ -4564,6 +5927,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp25:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp25:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP25",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp25",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp25:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4726,6 +6116,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp2:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp2:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP2",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp2",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp2:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:sck",
             "capability-instance:spi0:qfn56:sck"
           ],
@@ -4776,6 +6193,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp3:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp3:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP3",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp3",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp3:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4834,6 +6278,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp4:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp4:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP4",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp4",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp4:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi0:qfn56:rx"
           ],
@@ -4884,6 +6355,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp5:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp5:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP5",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp5",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp5:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -4942,6 +6440,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c1:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp6:i2c1:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp6:i2c1:sda"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP6",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp6",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp6:i2c1:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:sck",
             "capability-instance:spi0:qfn56:sck"
           ],
@@ -4992,6 +6517,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "cts"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c1:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp7:i2c1:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c1",
+            "operation:reset-release:i2c1",
+            "operation:route:gp7:i2c1:scl"
+          ],
+          "peripheral": "I2C1",
+          "pin": "GP7",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp7",
+            "requirement:clock-enable:i2c1",
+            "requirement:reset-release:i2c1",
+            "requirement:source-select:gp7:i2c1:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -5050,6 +6602,33 @@
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:sda",
+            "capability-instance:i2c0:qfn56:sda"
+          ],
+          "decision_id": "candidate:gp8:i2c0:sda",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp8:i2c0:sda"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP8",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp8",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp8:i2c0:sda"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "sda"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
             "capability:spi:rp2040-spi-v1:rx",
             "capability-instance:spi1:qfn56:rx"
           ],
@@ -5100,6 +6679,33 @@
           "route_kind": "mux",
           "route_selector": "selector:2",
           "signal": "tx"
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "capability_ids": [
+            "capability:i2c:rp2040-i2c-v1:scl",
+            "capability-instance:i2c0:qfn56:scl"
+          ],
+          "decision_id": "candidate:gp9:i2c0:scl",
+          "decision_kind": "accepted_runtime_candidate",
+          "explanation": "Candidate is published because it survived normalization and belongs to the runtime contract.",
+          "operation_ids": [
+            "operation:clock-enable:i2c0",
+            "operation:reset-release:i2c0",
+            "operation:route:gp9:i2c0:scl"
+          ],
+          "peripheral": "I2C0",
+          "pin": "GP9",
+          "requirement_ids": [
+            "requirement:package:qfn56",
+            "requirement:bonded-pin:qfn56:gp9",
+            "requirement:clock-enable:i2c0",
+            "requirement:reset-release:i2c0",
+            "requirement:source-select:gp9:i2c0:scl"
+          ],
+          "route_kind": "mux",
+          "route_selector": "selector:3",
+          "signal": "scl"
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
@@ -5176,6 +6782,62 @@
             "ch1",
             "ch2",
             "ch3"
+          ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "candidate_ids": [
+            "candidate:gp0:i2c0:sda",
+            "candidate:gp12:i2c0:sda",
+            "candidate:gp13:i2c0:scl",
+            "candidate:gp16:i2c0:sda",
+            "candidate:gp17:i2c0:scl",
+            "candidate:gp1:i2c0:scl",
+            "candidate:gp20:i2c0:sda",
+            "candidate:gp21:i2c0:scl",
+            "candidate:gp24:i2c0:sda",
+            "candidate:gp25:i2c0:scl",
+            "candidate:gp4:i2c0:sda",
+            "candidate:gp5:i2c0:scl",
+            "candidate:gp8:i2c0:sda",
+            "candidate:gp9:i2c0:scl"
+          ],
+          "conflict_group": "conflict:i2c0:qfn56:scl-sda",
+          "decision_id": "group:i2c0:qfn56:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "qfn56",
+          "peripheral": "I2C0",
+          "signals": [
+            "scl",
+            "sda"
+          ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "candidate_ids": [
+            "candidate:gp10:i2c1:sda",
+            "candidate:gp11:i2c1:scl",
+            "candidate:gp14:i2c1:sda",
+            "candidate:gp15:i2c1:scl",
+            "candidate:gp18:i2c1:sda",
+            "candidate:gp19:i2c1:scl",
+            "candidate:gp22:i2c1:sda",
+            "candidate:gp23:i2c1:scl",
+            "candidate:gp2:i2c1:sda",
+            "candidate:gp3:i2c1:scl",
+            "candidate:gp6:i2c1:sda",
+            "candidate:gp7:i2c1:scl"
+          ],
+          "conflict_group": "conflict:i2c1:qfn56:scl-sda",
+          "decision_id": "group:i2c1:qfn56:scl-sda",
+          "decision_kind": "accepted_runtime_group",
+          "explanation": "Group is published because every member candidate survived runtime filtering.",
+          "package": "qfn56",
+          "peripheral": "I2C1",
+          "signals": [
+            "scl",
+            "sda"
           ]
         },
         {

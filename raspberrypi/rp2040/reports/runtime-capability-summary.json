@@ -44,6 +44,21 @@
     },
     {
       "capability_names": [
+        "available-signal",
+        "runtime-supported",
+        "signal-role"
+      ],
+      "device_count": 2,
+      "devices": [
+        "pico",
+        "rp2040"
+      ],
+      "dma_signals": [],
+      "peripheral_class": "i2c",
+      "total_peripheral_count": 4
+    },
+    {
+      "capability_names": [
         "runtime-supported"
       ],
       "device_count": 2,
@@ -192,6 +207,23 @@
           "peripheral_count": 1,
           "peripherals": [
             "DMA"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 4,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
           ],
           "present": true
         },
@@ -356,6 +388,23 @@
           "peripheral_count": 1,
           "peripherals": [
             "DMA"
+          ],
+          "present": true
+        },
+        {
+          "capability_names": [
+            "available-signal",
+            "runtime-supported",
+            "signal-role"
+          ],
+          "class_capability_count": 3,
+          "dma_signals": [],
+          "instance_capability_count": 4,
+          "peripheral_class": "i2c",
+          "peripheral_count": 2,
+          "peripherals": [
+            "I2C0",
+            "I2C1"
           ],
           "present": true
         },

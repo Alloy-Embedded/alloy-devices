@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "pico",
-      "fact_count": 226,
+      "fact_count": 267,
       "facts": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/startup.hpp",
@@ -1499,6 +1499,60 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c0:i2c0-irq",
+            "interrupt": "I2C0_IRQ",
+            "line": 23,
+            "peripheral": "I2C0",
+            "vector_slot": 39
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c0:i2c0-irq",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c1-irq",
+            "interrupt": "I2C1_IRQ",
+            "line": 24,
+            "peripheral": "I2C1",
+            "vector_slot": 40
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c1-irq",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:pwm:pwm-irq-wrap",
             "interrupt": "PWM_IRQ_WRAP",
             "line": 4,
@@ -2056,6 +2110,58 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/resets.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "peripheral": "I2C0",
+            "register_field_id": "field:resets:reset:i2c0",
+            "register_id": "register:resets:reset",
+            "reset_id": "reset:i2c0"
+          },
+          "fact_id": "reset:reset:i2c0",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "I2C1",
+            "register_field_id": "field:resets:reset:i2c1",
+            "register_id": "register:resets:reset",
+            "reset_id": "reset:i2c1"
+          },
+          "fact_id": "reset:reset:i2c1",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "peripheral": "PWM",
             "register_field_id": "field:resets:reset:pwm",
             "register_id": "register:resets:reset",
@@ -2292,6 +2398,60 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:i2c0",
+            "parent_clock_node": "clock-node:resets-reset",
+            "peripheral": "I2C0",
+            "register_field_id": "field:resets:reset:i2c0",
+            "register_id": "register:resets:reset"
+          },
+          "fact_id": "enable-domain:gate:i2c0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c1",
+            "parent_clock_node": "clock-node:resets-reset",
+            "peripheral": "I2C1",
+            "register_field_id": "field:resets:reset:i2c1",
+            "register_id": "register:resets:reset"
+          },
+          "fact_id": "enable-domain:gate:i2c1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:spi0",
             "parent_clock_node": "clock-node:resets-reset",
             "peripheral": "SPI0",
@@ -2432,6 +2592,58 @@
             "selector_id": null
           },
           "fact_id": "clock-binding:DMA",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/raspberrypi/rp2040/devices/pico.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c0",
+            "peripheral": "I2C0",
+            "reset_id": "reset:i2c0",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C0",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/raspberrypi/rp2040/devices/pico.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c1",
+            "peripheral": "I2C1",
+            "reset_id": "reset:i2c1",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C1",
           "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
@@ -2886,6 +3098,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp0:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP0",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp0:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp0:spi0:rx",
             "peripheral": "SPI0",
             "pin": "GP0",
@@ -2922,6 +3162,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp0:uart0:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp10:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP10",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp10:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -2998,6 +3266,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp11:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP11",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp11:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp11:spi1:tx",
             "peripheral": "SPI1",
             "pin": "GP11",
@@ -3034,6 +3330,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:gp11:uart1:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp12:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP12",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp12:i2c0:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3110,6 +3434,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp13:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP13",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp13:i2c0:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp13:spi1:csn",
             "peripheral": "SPI1",
             "pin": "GP13",
@@ -3146,6 +3498,34 @@
             "signal": "rx"
           },
           "fact_id": "route-candidate:candidate:gp13:uart0:rx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp14:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP14",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp14:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3222,6 +3602,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp15:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP15",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp15:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp15:spi1:tx",
             "peripheral": "SPI1",
             "pin": "GP15",
@@ -3258,6 +3666,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:gp15:uart0:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp16:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP16",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp16:i2c0:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3334,6 +3770,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp17:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP17",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp17:i2c0:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp17:spi0:csn",
             "peripheral": "SPI0",
             "pin": "GP17",
@@ -3370,6 +3834,34 @@
             "signal": "rx"
           },
           "fact_id": "route-candidate:candidate:gp17:uart0:rx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp18:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP18",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp18:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3446,6 +3938,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp19:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP19",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp19:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp19:spi0:tx",
             "peripheral": "SPI0",
             "pin": "GP19",
@@ -3482,6 +4002,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:gp19:uart0:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp1:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP1",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp1:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3558,6 +4106,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp20:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP20",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp20:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp20:spi0:rx",
             "peripheral": "SPI0",
             "pin": "GP20",
@@ -3594,6 +4170,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp20:uart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp21:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP21",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp21:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3670,6 +4274,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp22:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP22",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp22:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp22:spi0:sck",
             "peripheral": "SPI0",
             "pin": "GP22",
@@ -3706,6 +4338,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp22:uart1:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp25:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP25",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp25:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3866,6 +4526,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp2:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP2",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp2:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp2:spi0:sck",
             "peripheral": "SPI0",
             "pin": "GP2",
@@ -3902,6 +4590,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp2:uart0:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp3:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP3",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp3:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -3978,6 +4694,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp4:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP4",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp4:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp4:spi0:rx",
             "peripheral": "SPI0",
             "pin": "GP4",
@@ -4014,6 +4758,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp4:uart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp5:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP5",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp5:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -4090,6 +4862,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp6:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP6",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp6:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp6:spi0:sck",
             "peripheral": "SPI0",
             "pin": "GP6",
@@ -4126,6 +4926,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp6:uart1:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp7:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP7",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp7:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -4202,6 +5030,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp8:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP8",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp8:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp8:spi1:rx",
             "peripheral": "SPI1",
             "pin": "GP8",
@@ -4238,6 +5094,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp8:uart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp9:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP9",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp9:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -4328,6 +5212,90 @@
             ]
           },
           "fact_id": "route-group:group:adc:pico:all-signals",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:gp0:i2c0:sda",
+              "candidate:gp12:i2c0:sda",
+              "candidate:gp13:i2c0:scl",
+              "candidate:gp16:i2c0:sda",
+              "candidate:gp17:i2c0:scl",
+              "candidate:gp1:i2c0:scl",
+              "candidate:gp20:i2c0:sda",
+              "candidate:gp21:i2c0:scl",
+              "candidate:gp25:i2c0:scl",
+              "candidate:gp4:i2c0:sda",
+              "candidate:gp5:i2c0:scl",
+              "candidate:gp8:i2c0:sda",
+              "candidate:gp9:i2c0:scl"
+            ],
+            "group_id": "group:i2c0:pico:scl-sda",
+            "peripheral": "I2C0",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c0:pico:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:gp10:i2c1:sda",
+              "candidate:gp11:i2c1:scl",
+              "candidate:gp14:i2c1:sda",
+              "candidate:gp15:i2c1:scl",
+              "candidate:gp18:i2c1:sda",
+              "candidate:gp19:i2c1:scl",
+              "candidate:gp22:i2c1:sda",
+              "candidate:gp2:i2c1:sda",
+              "candidate:gp3:i2c1:scl",
+              "candidate:gp6:i2c1:sda",
+              "candidate:gp7:i2c1:scl"
+            ],
+            "group_id": "group:i2c1:pico:scl-sda",
+            "peripheral": "I2C1",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c1:pico:scl-sda",
           "fact_kind": "route_group",
           "inference_rule": null,
           "provenance": {
@@ -4958,6 +5926,205 @@
           "supporting_fact_ids": [
             "runtime-peripheral:DMA"
           ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:rp2040-i2c-v1:scl",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability:i2c:rp2040-i2c-v1:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:rp2040-i2c-v1:sda",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability:i2c:rp2040-i2c-v1:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C0",
+            "runtime-peripheral:I2C1"
+          ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c0:pico:scl",
+            "name": "available-signal",
+            "peripheral": "I2C0",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c0:pico:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c0:pico:sda",
+            "name": "available-signal",
+            "peripheral": "I2C0",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c0:pico:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:pico:scl",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c1:pico:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:pico:sda",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c1:pico:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-pico-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/pico/capabilities.hpp",
@@ -6298,7 +7465,7 @@
     },
     {
       "device": "rp2040",
-      "fact_count": 233,
+      "fact_count": 276,
       "facts": [
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/startup.hpp",
@@ -7795,6 +8962,60 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "binding_id": "interrupt-binding:i2c0:i2c0-irq",
+            "interrupt": "I2C0_IRQ",
+            "line": 23,
+            "peripheral": "I2C0",
+            "vector_slot": 39
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c0:i2c0-irq",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "binding_id": "interrupt-binding:i2c1:i2c1-irq",
+            "interrupt": "I2C1_IRQ",
+            "line": 24,
+            "peripheral": "I2C1",
+            "vector_slot": 40
+          },
+          "fact_id": "interrupt-binding:interrupt-binding:i2c1:i2c1-irq",
+          "fact_kind": "interrupt_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/interrupts.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "binding_id": "interrupt-binding:pwm:pwm-irq-wrap",
             "interrupt": "PWM_IRQ_WRAP",
             "line": 4,
@@ -8352,6 +9573,58 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/resets.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "peripheral": "I2C0",
+            "register_field_id": "field:resets:reset:i2c0",
+            "register_id": "register:resets:reset",
+            "reset_id": "reset:i2c0"
+          },
+          "fact_id": "reset:reset:i2c0",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "peripheral": "I2C1",
+            "register_field_id": "field:resets:reset:i2c1",
+            "register_id": "register:resets:reset",
+            "reset_id": "reset:i2c1"
+          },
+          "fact_id": "reset:reset:i2c1",
+          "fact_kind": "reset_descriptor",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/resets.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "peripheral": "PWM",
             "register_field_id": "field:resets:reset:pwm",
             "register_id": "register:resets:reset",
@@ -8588,6 +9861,60 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/enable_domains.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "enable_domain_id": "gate:i2c0",
+            "parent_clock_node": "clock-node:resets-reset",
+            "peripheral": "I2C0",
+            "register_field_id": "field:resets:reset:i2c0",
+            "register_id": "register:resets:reset"
+          },
+          "fact_id": "enable-domain:gate:i2c0",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "enable_domain_id": "gate:i2c1",
+            "parent_clock_node": "clock-node:resets-reset",
+            "peripheral": "I2C1",
+            "register_field_id": "field:resets:reset:i2c1",
+            "register_id": "register:resets:reset"
+          },
+          "fact_id": "enable-domain:gate:i2c1",
+          "fact_kind": "enable_domain",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/enable_domains.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "enable_domain_id": "gate:spi0",
             "parent_clock_node": "clock-node:resets-reset",
             "peripheral": "SPI0",
@@ -8728,6 +10055,58 @@
             "selector_id": null
           },
           "fact_id": "clock-binding:DMA",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/raspberrypi/rp2040/devices/rp2040.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c0",
+            "peripheral": "I2C0",
+            "reset_id": "reset:i2c0",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C0",
+          "fact_kind": "peripheral_clock_binding",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "bootstrap-patch"
+            ],
+            "source_paths": [
+              "patches/raspberrypi/rp2040/devices/rp2040.json"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/clock_bindings.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "clock_gate_id": "gate:i2c1",
+            "peripheral": "I2C1",
+            "reset_id": "reset:i2c1",
+            "selector_id": null
+          },
+          "fact_id": "clock-binding:I2C1",
           "fact_kind": "peripheral_clock_binding",
           "inference_rule": null,
           "provenance": {
@@ -9182,6 +10561,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp0:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP0",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp0:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp0:spi0:rx",
             "peripheral": "SPI0",
             "pin": "GP0",
@@ -9218,6 +10625,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp0:uart0:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp10:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP10",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp10:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9294,6 +10729,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp11:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP11",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp11:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp11:spi1:tx",
             "peripheral": "SPI1",
             "pin": "GP11",
@@ -9330,6 +10793,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:gp11:uart1:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp12:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP12",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp12:i2c0:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9406,6 +10897,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp13:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP13",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp13:i2c0:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp13:spi1:csn",
             "peripheral": "SPI1",
             "pin": "GP13",
@@ -9442,6 +10961,34 @@
             "signal": "rx"
           },
           "fact_id": "route-candidate:candidate:gp13:uart0:rx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp14:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP14",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp14:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9518,6 +11065,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp15:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP15",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp15:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp15:spi1:tx",
             "peripheral": "SPI1",
             "pin": "GP15",
@@ -9554,6 +11129,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:gp15:uart0:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp16:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP16",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp16:i2c0:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9630,6 +11233,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp17:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP17",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp17:i2c0:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp17:spi0:csn",
             "peripheral": "SPI0",
             "pin": "GP17",
@@ -9666,6 +11297,34 @@
             "signal": "rx"
           },
           "fact_id": "route-candidate:candidate:gp17:uart0:rx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp18:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP18",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp18:i2c1:sda",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9742,6 +11401,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp19:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP19",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp19:i2c1:scl",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp19:spi0:tx",
             "peripheral": "SPI0",
             "pin": "GP19",
@@ -9778,6 +11465,34 @@
             "signal": "rts"
           },
           "fact_id": "route-candidate:candidate:gp19:uart0:rts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp1:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP1",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp1:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9854,6 +11569,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp20:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP20",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp20:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp20:spi0:rx",
             "peripheral": "SPI0",
             "pin": "GP20",
@@ -9890,6 +11633,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp20:uart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp21:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP21",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp21:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -9966,6 +11737,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp22:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP22",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp22:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp22:spi0:sck",
             "peripheral": "SPI0",
             "pin": "GP22",
@@ -10002,6 +11801,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp22:uart1:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp23:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP23",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp23:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -10078,6 +11905,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp24:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP24",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp24:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp24:spi1:rx",
             "peripheral": "SPI1",
             "pin": "GP24",
@@ -10114,6 +11969,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp24:uart1:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp25:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP25",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp25:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -10302,6 +12185,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp2:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP2",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp2:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp2:spi0:sck",
             "peripheral": "SPI0",
             "pin": "GP2",
@@ -10338,6 +12249,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp2:uart0:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp3:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP3",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp3:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -10414,6 +12353,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp4:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP4",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp4:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp4:spi0:rx",
             "peripheral": "SPI0",
             "pin": "GP4",
@@ -10450,6 +12417,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp4:uart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp5:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP5",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp5:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -10526,6 +12521,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp6:i2c1:sda",
+            "peripheral": "I2C1",
+            "pin": "GP6",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp6:i2c1:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp6:spi0:sck",
             "peripheral": "SPI0",
             "pin": "GP6",
@@ -10562,6 +12585,34 @@
             "signal": "cts"
           },
           "fact_id": "route-candidate:candidate:gp6:uart1:cts",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp7:i2c1:scl",
+            "peripheral": "I2C1",
+            "pin": "GP7",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp7:i2c1:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -10638,6 +12689,34 @@
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
           "derivation_kind": "patched",
           "detail": {
+            "candidate_id": "candidate:gp8:i2c0:sda",
+            "peripheral": "I2C0",
+            "pin": "GP8",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "sda"
+          },
+          "fact_id": "route-candidate:candidate:gp8:i2c0:sda",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
             "candidate_id": "candidate:gp8:spi1:rx",
             "peripheral": "SPI1",
             "pin": "GP8",
@@ -10674,6 +12753,34 @@
             "signal": "tx"
           },
           "fact_id": "route-candidate:candidate:gp8:uart1:tx",
+          "fact_kind": "route_candidate",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_id": "candidate:gp9:i2c0:scl",
+            "peripheral": "I2C0",
+            "pin": "GP9",
+            "route_kind": "mux",
+            "route_selector": "selector:3",
+            "signal": "scl"
+          },
+          "fact_id": "route-candidate:candidate:gp9:i2c0:scl",
           "fact_kind": "route_candidate",
           "inference_rule": null,
           "provenance": {
@@ -10766,6 +12873,92 @@
             ]
           },
           "fact_id": "route-group:group:adc:qfn56:all-signals",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:gp0:i2c0:sda",
+              "candidate:gp12:i2c0:sda",
+              "candidate:gp13:i2c0:scl",
+              "candidate:gp16:i2c0:sda",
+              "candidate:gp17:i2c0:scl",
+              "candidate:gp1:i2c0:scl",
+              "candidate:gp20:i2c0:sda",
+              "candidate:gp21:i2c0:scl",
+              "candidate:gp24:i2c0:sda",
+              "candidate:gp25:i2c0:scl",
+              "candidate:gp4:i2c0:sda",
+              "candidate:gp5:i2c0:scl",
+              "candidate:gp8:i2c0:sda",
+              "candidate:gp9:i2c0:scl"
+            ],
+            "group_id": "group:i2c0:qfn56:scl-sda",
+            "peripheral": "I2C0",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c0:qfn56:scl-sda",
+          "fact_kind": "route_group",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/routes.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "candidate_ids": [
+              "candidate:gp10:i2c1:sda",
+              "candidate:gp11:i2c1:scl",
+              "candidate:gp14:i2c1:sda",
+              "candidate:gp15:i2c1:scl",
+              "candidate:gp18:i2c1:sda",
+              "candidate:gp19:i2c1:scl",
+              "candidate:gp22:i2c1:sda",
+              "candidate:gp23:i2c1:scl",
+              "candidate:gp2:i2c1:sda",
+              "candidate:gp3:i2c1:scl",
+              "candidate:gp6:i2c1:sda",
+              "candidate:gp7:i2c1:scl"
+            ],
+            "group_id": "group:i2c1:qfn56:scl-sda",
+            "peripheral": "I2C1",
+            "signals": [
+              "scl",
+              "sda"
+            ]
+          },
+          "fact_id": "route-group:group:i2c1:qfn56:scl-sda",
           "fact_kind": "route_group",
           "inference_rule": null,
           "provenance": {
@@ -11456,6 +13649,205 @@
           "supporting_fact_ids": [
             "runtime-peripheral:DMA"
           ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:rp2040-i2c-v1:scl",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability:i2c:rp2040-i2c-v1:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability:i2c:rp2040-i2c-v1:sda",
+            "name": "signal-role",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "ip_block",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability:i2c:rp2040-i2c-v1:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "inferred",
+          "detail": {
+            "capability_id": "runtime-support:i2c",
+            "name": "runtime-supported",
+            "peripheral": null,
+            "peripheral_class": "i2c",
+            "scope": "runtime_contract",
+            "value": "true"
+          },
+          "fact_id": "capability:runtime-support:i2c",
+          "fact_kind": "capability",
+          "inference_rule": "runtime-class-support-baseline",
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": [
+            "runtime-peripheral:I2C0",
+            "runtime-peripheral:I2C1"
+          ]
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c0:qfn56:scl",
+            "name": "available-signal",
+            "peripheral": "I2C0",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c0:qfn56:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c0:qfn56:sda",
+            "name": "available-signal",
+            "peripheral": "I2C0",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c0:qfn56:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:qfn56:scl",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "scl"
+          },
+          "fact_id": "capability:capability-instance:i2c1:qfn56:scl",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "capability_id": "capability-instance:i2c1:qfn56:sda",
+            "name": "available-signal",
+            "peripheral": "I2C1",
+            "peripheral_class": "i2c",
+            "scope": "instance_overlay",
+            "value": "sda"
+          },
+          "fact_id": "capability:capability-instance:i2c1:qfn56:sda",
+          "fact_kind": "capability",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "raspberrypi-rp2040-bootstrap",
+              "raspberrypi-rp2040-family-bootstrap-v1"
+            ],
+            "source_ids": [
+              "pico-sdk"
+            ],
+            "source_paths": [
+              "rp2040.svd"
+            ]
+          },
+          "supporting_fact_ids": []
         },
         {
           "artifact_path": "raspberrypi/rp2040/generated/runtime/devices/rp2040/capabilities.hpp",

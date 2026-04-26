@@ -29,13 +29,13 @@
         },
         {
           "base_address": 1074020352,
-          "ip_name": "i2c0",
+          "ip_name": "i2c",
           "ip_version": "rp2040-i2c-v1",
           "name": "I2C0"
         },
         {
           "base_address": 1074036736,
-          "ip_name": "i2c1",
+          "ip_name": "i2c",
           "ip_version": "rp2040-i2c-v1",
           "name": "I2C1"
         },
@@ -256,13 +256,13 @@
         },
         {
           "base_address": 1074020352,
-          "ip_name": "i2c0",
+          "ip_name": "i2c",
           "ip_version": "rp2040-i2c-v1",
           "name": "I2C0"
         },
         {
           "base_address": 1074036736,
-          "ip_name": "i2c1",
+          "ip_name": "i2c",
           "ip_version": "rp2040-i2c-v1",
           "name": "I2C1"
         },
@@ -500,14 +500,14 @@
       "signal_roles": []
     },
     {
-      "backend_schema_id": "alloy.i2c0.raspberrypi-rp2040-i2c-v1",
+      "backend_schema_id": "alloy.i2c.raspberrypi-rp2040-i2c-v1",
       "capability_ids": [
-        "capability:i2c0:rp2040-i2c-v1:scl",
-        "capability:i2c0:rp2040-i2c-v1:sda"
+        "capability:i2c:rp2040-i2c-v1:scl",
+        "capability:i2c:rp2040-i2c-v1:sda"
       ],
-      "ip_name": "i2c0",
+      "ip_name": "i2c",
       "ip_version": "rp2040-i2c-v1",
-      "peripheral_class": "i2c0",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "raspberrypi-rp2040-family-bootstrap-v1",
@@ -516,30 +516,7 @@
         "source_id": "pico-sdk",
         "source_path": "rp2040.svd"
       },
-      "register_profile": "i2c0:rp2040-i2c-v1",
-      "signal_roles": [
-        "scl",
-        "sda"
-      ]
-    },
-    {
-      "backend_schema_id": "alloy.i2c1.raspberrypi-rp2040-i2c-v1",
-      "capability_ids": [
-        "capability:i2c1:rp2040-i2c-v1:scl",
-        "capability:i2c1:rp2040-i2c-v1:sda"
-      ],
-      "ip_name": "i2c1",
-      "ip_version": "rp2040-i2c-v1",
-      "peripheral_class": "i2c1",
-      "provenance": {
-        "patch_ids": [
-          "raspberrypi-rp2040-family-bootstrap-v1",
-          "raspberrypi-pico-bootstrap"
-        ],
-        "source_id": "pico-sdk",
-        "source_path": "rp2040.svd"
-      },
-      "register_profile": "i2c1:rp2040-i2c-v1",
+      "register_profile": "i2c:rp2040-i2c-v1",
       "signal_roles": [
         "scl",
         "sda"

@@ -3,7 +3,7 @@
   "devices": [
     {
       "counts": {
-        "capabilities": 38,
+        "capabilities": 36,
         "clock_gates": 8,
         "clock_nodes": 8,
         "clock_selectors": 2,
@@ -13,7 +13,7 @@
         "dma_controllers": 1,
         "dma_routes": 9,
         "interrupts": 32,
-        "ip_blocks": 12,
+        "ip_blocks": 11,
         "memories": 2,
         "package_pads": 27,
         "packages": 1,
@@ -24,7 +24,7 @@
         "resets": 18,
         "route_operations": 98,
         "route_requirements": 129,
-        "signal_endpoints": 15,
+        "signal_endpoints": 13,
         "startup_descriptors": 6,
         "vector_slots": 48
       },
@@ -45,7 +45,7 @@
     },
     {
       "counts": {
-        "capabilities": 40,
+        "capabilities": 38,
         "clock_gates": 8,
         "clock_nodes": 8,
         "clock_selectors": 2,
@@ -55,7 +55,7 @@
         "dma_controllers": 1,
         "dma_routes": 9,
         "interrupts": 32,
-        "ip_blocks": 12,
+        "ip_blocks": 11,
         "memories": 2,
         "package_pads": 30,
         "packages": 1,
@@ -66,7 +66,7 @@
         "resets": 18,
         "route_operations": 104,
         "route_requirements": 139,
-        "signal_endpoints": 16,
+        "signal_endpoints": 14,
         "startup_descriptors": 6,
         "vector_slots": 48
       },

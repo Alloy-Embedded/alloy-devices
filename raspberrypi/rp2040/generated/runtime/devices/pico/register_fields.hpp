@@ -466,6 +466,264 @@ enum class FieldId : std::uint16_t {
   field_dma_timer2_x,
   field_dma_timer3_y,
   field_dma_timer3_x,
+  field_i2c0_ic_ack_general_call_ack_gen_call,
+  field_i2c0_ic_clr_activity_clr_activity,
+  field_i2c0_ic_clr_gen_call_clr_gen_call,
+  field_i2c0_ic_clr_intr_clr_intr,
+  field_i2c0_ic_clr_rd_req_clr_rd_req,
+  field_i2c0_ic_clr_restart_det_clr_restart_det,
+  field_i2c0_ic_clr_rx_done_clr_rx_done,
+  field_i2c0_ic_clr_rx_over_clr_rx_over,
+  field_i2c0_ic_clr_rx_under_clr_rx_under,
+  field_i2c0_ic_clr_start_det_clr_start_det,
+  field_i2c0_ic_clr_stop_det_clr_stop_det,
+  field_i2c0_ic_clr_tx_abrt_clr_tx_abrt,
+  field_i2c0_ic_clr_tx_over_clr_tx_over,
+  field_i2c0_ic_comp_param_1_apb_data_width,
+  field_i2c0_ic_comp_param_1_max_speed_mode,
+  field_i2c0_ic_comp_param_1_hc_count_values,
+  field_i2c0_ic_comp_param_1_intr_io,
+  field_i2c0_ic_comp_param_1_has_dma,
+  field_i2c0_ic_comp_param_1_add_encoded_params,
+  field_i2c0_ic_comp_param_1_rx_buffer_depth,
+  field_i2c0_ic_comp_param_1_tx_buffer_depth,
+  field_i2c0_ic_comp_type_ic_comp_type,
+  field_i2c0_ic_comp_version_ic_comp_version,
+  field_i2c0_ic_con_master_mode,
+  field_i2c0_ic_con_speed,
+  field_i2c0_ic_con_ic_10bitaddr_slave,
+  field_i2c0_ic_con_ic_10bitaddr_master,
+  field_i2c0_ic_con_ic_restart_en,
+  field_i2c0_ic_con_ic_slave_disable,
+  field_i2c0_ic_con_stop_det_ifaddressed,
+  field_i2c0_ic_con_tx_empty_ctrl,
+  field_i2c0_ic_con_rx_fifo_full_hld_ctrl,
+  field_i2c0_ic_con_stop_det_if_master_active,
+  field_i2c0_ic_data_cmd_dat,
+  field_i2c0_ic_data_cmd_cmd,
+  field_i2c0_ic_data_cmd_stop,
+  field_i2c0_ic_data_cmd_restart,
+  field_i2c0_ic_data_cmd_first_data_byte,
+  field_i2c0_ic_dma_cr_rdmae,
+  field_i2c0_ic_dma_cr_tdmae,
+  field_i2c0_ic_dma_rdlr_dmardl,
+  field_i2c0_ic_dma_tdlr_dmatdl,
+  field_i2c0_ic_enable_enable,
+  field_i2c0_ic_enable_abort,
+  field_i2c0_ic_enable_tx_cmd_block,
+  field_i2c0_ic_enable_status_ic_en,
+  field_i2c0_ic_enable_status_slv_disabled_while_busy,
+  field_i2c0_ic_enable_status_slv_rx_data_lost,
+  field_i2c0_ic_fs_scl_hcnt_ic_fs_scl_hcnt,
+  field_i2c0_ic_fs_scl_lcnt_ic_fs_scl_lcnt,
+  field_i2c0_ic_fs_spklen_ic_fs_spklen,
+  field_i2c0_ic_intr_mask_m_rx_under,
+  field_i2c0_ic_intr_mask_m_rx_over,
+  field_i2c0_ic_intr_mask_m_rx_full,
+  field_i2c0_ic_intr_mask_m_tx_over,
+  field_i2c0_ic_intr_mask_m_tx_empty,
+  field_i2c0_ic_intr_mask_m_rd_req,
+  field_i2c0_ic_intr_mask_m_tx_abrt,
+  field_i2c0_ic_intr_mask_m_rx_done,
+  field_i2c0_ic_intr_mask_m_activity,
+  field_i2c0_ic_intr_mask_m_stop_det,
+  field_i2c0_ic_intr_mask_m_start_det,
+  field_i2c0_ic_intr_mask_m_gen_call,
+  field_i2c0_ic_intr_mask_m_restart_det,
+  field_i2c0_ic_intr_stat_r_rx_under,
+  field_i2c0_ic_intr_stat_r_rx_over,
+  field_i2c0_ic_intr_stat_r_rx_full,
+  field_i2c0_ic_intr_stat_r_tx_over,
+  field_i2c0_ic_intr_stat_r_tx_empty,
+  field_i2c0_ic_intr_stat_r_rd_req,
+  field_i2c0_ic_intr_stat_r_tx_abrt,
+  field_i2c0_ic_intr_stat_r_rx_done,
+  field_i2c0_ic_intr_stat_r_activity,
+  field_i2c0_ic_intr_stat_r_stop_det,
+  field_i2c0_ic_intr_stat_r_start_det,
+  field_i2c0_ic_intr_stat_r_gen_call,
+  field_i2c0_ic_intr_stat_r_restart_det,
+  field_i2c0_ic_raw_intr_stat_rx_under,
+  field_i2c0_ic_raw_intr_stat_rx_over,
+  field_i2c0_ic_raw_intr_stat_rx_full,
+  field_i2c0_ic_raw_intr_stat_tx_over,
+  field_i2c0_ic_raw_intr_stat_tx_empty,
+  field_i2c0_ic_raw_intr_stat_rd_req,
+  field_i2c0_ic_raw_intr_stat_tx_abrt,
+  field_i2c0_ic_raw_intr_stat_rx_done,
+  field_i2c0_ic_raw_intr_stat_activity,
+  field_i2c0_ic_raw_intr_stat_stop_det,
+  field_i2c0_ic_raw_intr_stat_start_det,
+  field_i2c0_ic_raw_intr_stat_gen_call,
+  field_i2c0_ic_raw_intr_stat_restart_det,
+  field_i2c0_ic_rxflr_rxflr,
+  field_i2c0_ic_rx_tl_rx_tl,
+  field_i2c0_ic_sar_ic_sar,
+  field_i2c0_ic_sda_hold_ic_sda_tx_hold,
+  field_i2c0_ic_sda_hold_ic_sda_rx_hold,
+  field_i2c0_ic_sda_setup_sda_setup,
+  field_i2c0_ic_slv_data_nack_only_nack,
+  field_i2c0_ic_ss_scl_hcnt_ic_ss_scl_hcnt,
+  field_i2c0_ic_ss_scl_lcnt_ic_ss_scl_lcnt,
+  field_i2c0_ic_status_activity,
+  field_i2c0_ic_status_tfnf,
+  field_i2c0_ic_status_tfe,
+  field_i2c0_ic_status_rfne,
+  field_i2c0_ic_status_rff,
+  field_i2c0_ic_status_mst_activity,
+  field_i2c0_ic_status_slv_activity,
+  field_i2c0_ic_tar_ic_tar,
+  field_i2c0_ic_tar_gc_or_start,
+  field_i2c0_ic_tar_special,
+  field_i2c0_ic_txflr_txflr,
+  field_i2c0_ic_tx_abrt_source_abrt_7b_addr_noack,
+  field_i2c0_ic_tx_abrt_source_abrt_10addr1_noack,
+  field_i2c0_ic_tx_abrt_source_abrt_10addr2_noack,
+  field_i2c0_ic_tx_abrt_source_abrt_txdata_noack,
+  field_i2c0_ic_tx_abrt_source_abrt_gcall_noack,
+  field_i2c0_ic_tx_abrt_source_abrt_gcall_read,
+  field_i2c0_ic_tx_abrt_source_abrt_hs_ackdet,
+  field_i2c0_ic_tx_abrt_source_abrt_sbyte_ackdet,
+  field_i2c0_ic_tx_abrt_source_abrt_hs_norstrt,
+  field_i2c0_ic_tx_abrt_source_abrt_sbyte_norstrt,
+  field_i2c0_ic_tx_abrt_source_abrt_10b_rd_norstrt,
+  field_i2c0_ic_tx_abrt_source_abrt_master_dis,
+  field_i2c0_ic_tx_abrt_source_arb_lost,
+  field_i2c0_ic_tx_abrt_source_abrt_slvflush_txfifo,
+  field_i2c0_ic_tx_abrt_source_abrt_slv_arblost,
+  field_i2c0_ic_tx_abrt_source_abrt_slvrd_intx,
+  field_i2c0_ic_tx_abrt_source_abrt_user_abrt,
+  field_i2c0_ic_tx_abrt_source_tx_flush_cnt,
+  field_i2c0_ic_tx_tl_tx_tl,
+  field_i2c1_ic_ack_general_call_ack_gen_call,
+  field_i2c1_ic_clr_activity_clr_activity,
+  field_i2c1_ic_clr_gen_call_clr_gen_call,
+  field_i2c1_ic_clr_intr_clr_intr,
+  field_i2c1_ic_clr_rd_req_clr_rd_req,
+  field_i2c1_ic_clr_restart_det_clr_restart_det,
+  field_i2c1_ic_clr_rx_done_clr_rx_done,
+  field_i2c1_ic_clr_rx_over_clr_rx_over,
+  field_i2c1_ic_clr_rx_under_clr_rx_under,
+  field_i2c1_ic_clr_start_det_clr_start_det,
+  field_i2c1_ic_clr_stop_det_clr_stop_det,
+  field_i2c1_ic_clr_tx_abrt_clr_tx_abrt,
+  field_i2c1_ic_clr_tx_over_clr_tx_over,
+  field_i2c1_ic_comp_param_1_apb_data_width,
+  field_i2c1_ic_comp_param_1_max_speed_mode,
+  field_i2c1_ic_comp_param_1_hc_count_values,
+  field_i2c1_ic_comp_param_1_intr_io,
+  field_i2c1_ic_comp_param_1_has_dma,
+  field_i2c1_ic_comp_param_1_add_encoded_params,
+  field_i2c1_ic_comp_param_1_rx_buffer_depth,
+  field_i2c1_ic_comp_param_1_tx_buffer_depth,
+  field_i2c1_ic_comp_type_ic_comp_type,
+  field_i2c1_ic_comp_version_ic_comp_version,
+  field_i2c1_ic_con_master_mode,
+  field_i2c1_ic_con_speed,
+  field_i2c1_ic_con_ic_10bitaddr_slave,
+  field_i2c1_ic_con_ic_10bitaddr_master,
+  field_i2c1_ic_con_ic_restart_en,
+  field_i2c1_ic_con_ic_slave_disable,
+  field_i2c1_ic_con_stop_det_ifaddressed,
+  field_i2c1_ic_con_tx_empty_ctrl,
+  field_i2c1_ic_con_rx_fifo_full_hld_ctrl,
+  field_i2c1_ic_con_stop_det_if_master_active,
+  field_i2c1_ic_data_cmd_dat,
+  field_i2c1_ic_data_cmd_cmd,
+  field_i2c1_ic_data_cmd_stop,
+  field_i2c1_ic_data_cmd_restart,
+  field_i2c1_ic_data_cmd_first_data_byte,
+  field_i2c1_ic_dma_cr_rdmae,
+  field_i2c1_ic_dma_cr_tdmae,
+  field_i2c1_ic_dma_rdlr_dmardl,
+  field_i2c1_ic_dma_tdlr_dmatdl,
+  field_i2c1_ic_enable_enable,
+  field_i2c1_ic_enable_abort,
+  field_i2c1_ic_enable_tx_cmd_block,
+  field_i2c1_ic_enable_status_ic_en,
+  field_i2c1_ic_enable_status_slv_disabled_while_busy,
+  field_i2c1_ic_enable_status_slv_rx_data_lost,
+  field_i2c1_ic_fs_scl_hcnt_ic_fs_scl_hcnt,
+  field_i2c1_ic_fs_scl_lcnt_ic_fs_scl_lcnt,
+  field_i2c1_ic_fs_spklen_ic_fs_spklen,
+  field_i2c1_ic_intr_mask_m_rx_under,
+  field_i2c1_ic_intr_mask_m_rx_over,
+  field_i2c1_ic_intr_mask_m_rx_full,
+  field_i2c1_ic_intr_mask_m_tx_over,
+  field_i2c1_ic_intr_mask_m_tx_empty,
+  field_i2c1_ic_intr_mask_m_rd_req,
+  field_i2c1_ic_intr_mask_m_tx_abrt,
+  field_i2c1_ic_intr_mask_m_rx_done,
+  field_i2c1_ic_intr_mask_m_activity,
+  field_i2c1_ic_intr_mask_m_stop_det,
+  field_i2c1_ic_intr_mask_m_start_det,
+  field_i2c1_ic_intr_mask_m_gen_call,
+  field_i2c1_ic_intr_mask_m_restart_det,
+  field_i2c1_ic_intr_stat_r_rx_under,
+  field_i2c1_ic_intr_stat_r_rx_over,
+  field_i2c1_ic_intr_stat_r_rx_full,
+  field_i2c1_ic_intr_stat_r_tx_over,
+  field_i2c1_ic_intr_stat_r_tx_empty,
+  field_i2c1_ic_intr_stat_r_rd_req,
+  field_i2c1_ic_intr_stat_r_tx_abrt,
+  field_i2c1_ic_intr_stat_r_rx_done,
+  field_i2c1_ic_intr_stat_r_activity,
+  field_i2c1_ic_intr_stat_r_stop_det,
+  field_i2c1_ic_intr_stat_r_start_det,
+  field_i2c1_ic_intr_stat_r_gen_call,
+  field_i2c1_ic_intr_stat_r_restart_det,
+  field_i2c1_ic_raw_intr_stat_rx_under,
+  field_i2c1_ic_raw_intr_stat_rx_over,
+  field_i2c1_ic_raw_intr_stat_rx_full,
+  field_i2c1_ic_raw_intr_stat_tx_over,
+  field_i2c1_ic_raw_intr_stat_tx_empty,
+  field_i2c1_ic_raw_intr_stat_rd_req,
+  field_i2c1_ic_raw_intr_stat_tx_abrt,
+  field_i2c1_ic_raw_intr_stat_rx_done,
+  field_i2c1_ic_raw_intr_stat_activity,
+  field_i2c1_ic_raw_intr_stat_stop_det,
+  field_i2c1_ic_raw_intr_stat_start_det,
+  field_i2c1_ic_raw_intr_stat_gen_call,
+  field_i2c1_ic_raw_intr_stat_restart_det,
+  field_i2c1_ic_rxflr_rxflr,
+  field_i2c1_ic_rx_tl_rx_tl,
+  field_i2c1_ic_sar_ic_sar,
+  field_i2c1_ic_sda_hold_ic_sda_tx_hold,
+  field_i2c1_ic_sda_hold_ic_sda_rx_hold,
+  field_i2c1_ic_sda_setup_sda_setup,
+  field_i2c1_ic_slv_data_nack_only_nack,
+  field_i2c1_ic_ss_scl_hcnt_ic_ss_scl_hcnt,
+  field_i2c1_ic_ss_scl_lcnt_ic_ss_scl_lcnt,
+  field_i2c1_ic_status_activity,
+  field_i2c1_ic_status_tfnf,
+  field_i2c1_ic_status_tfe,
+  field_i2c1_ic_status_rfne,
+  field_i2c1_ic_status_rff,
+  field_i2c1_ic_status_mst_activity,
+  field_i2c1_ic_status_slv_activity,
+  field_i2c1_ic_tar_ic_tar,
+  field_i2c1_ic_tar_gc_or_start,
+  field_i2c1_ic_tar_special,
+  field_i2c1_ic_txflr_txflr,
+  field_i2c1_ic_tx_abrt_source_abrt_7b_addr_noack,
+  field_i2c1_ic_tx_abrt_source_abrt_10addr1_noack,
+  field_i2c1_ic_tx_abrt_source_abrt_10addr2_noack,
+  field_i2c1_ic_tx_abrt_source_abrt_txdata_noack,
+  field_i2c1_ic_tx_abrt_source_abrt_gcall_noack,
+  field_i2c1_ic_tx_abrt_source_abrt_gcall_read,
+  field_i2c1_ic_tx_abrt_source_abrt_hs_ackdet,
+  field_i2c1_ic_tx_abrt_source_abrt_sbyte_ackdet,
+  field_i2c1_ic_tx_abrt_source_abrt_hs_norstrt,
+  field_i2c1_ic_tx_abrt_source_abrt_sbyte_norstrt,
+  field_i2c1_ic_tx_abrt_source_abrt_10b_rd_norstrt,
+  field_i2c1_ic_tx_abrt_source_abrt_master_dis,
+  field_i2c1_ic_tx_abrt_source_arb_lost,
+  field_i2c1_ic_tx_abrt_source_abrt_slvflush_txfifo,
+  field_i2c1_ic_tx_abrt_source_abrt_slv_arblost,
+  field_i2c1_ic_tx_abrt_source_abrt_slvrd_intx,
+  field_i2c1_ic_tx_abrt_source_abrt_user_abrt,
+  field_i2c1_ic_tx_abrt_source_tx_flush_cnt,
+  field_i2c1_ic_tx_tl_tx_tl,
   field_pwm_ch0_cc_a,
   field_pwm_ch0_cc_b,
   field_pwm_ch0_csr_en,
@@ -612,6 +870,8 @@ enum class FieldId : std::uint16_t {
   field_pwm_ints_ch7,
   field_resets_reset_adc,
   field_resets_reset_dma,
+  field_resets_reset_i2c0,
+  field_resets_reset_i2c1,
   field_resets_reset_pwm,
   field_resets_reset_rtc,
   field_resets_reset_spi0,
@@ -5481,6 +5741,2328 @@ struct RegisterFieldTraits<FieldId::field_dma_timer3_x> {
 };
 
 template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_ack_general_call_ack_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_ack_general_call;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_activity_clr_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_activity;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_gen_call_clr_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_gen_call;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_intr_clr_intr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_intr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_rd_req_clr_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_rd_req;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_restart_det_clr_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_restart_det;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_rx_done_clr_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_rx_done;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_rx_over_clr_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_rx_over;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_rx_under_clr_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_rx_under;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_start_det_clr_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_start_det;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_stop_det_clr_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_stop_det;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_tx_abrt_clr_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_tx_abrt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_clr_tx_over_clr_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_clr_tx_over;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_apb_data_width> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_max_speed_mode> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_hc_count_values> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_intr_io> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_has_dma> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_add_encoded_params> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_rx_buffer_depth> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_param_1_tx_buffer_depth> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_type_ic_comp_type> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_type;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_comp_version_ic_comp_version> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_comp_version;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_master_mode> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_speed> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_ic_10bitaddr_slave> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_ic_10bitaddr_master> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_ic_restart_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_ic_slave_disable> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_stop_det_ifaddressed> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_tx_empty_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_rx_fifo_full_hld_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_con_stop_det_if_master_active> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_con;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_data_cmd_dat> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_data_cmd_cmd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_data_cmd_stop> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_data_cmd_restart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_data_cmd_first_data_byte> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_dma_cr_rdmae> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_dma_cr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_dma_cr_tdmae> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_dma_cr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_dma_rdlr_dmardl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_dma_rdlr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_dma_tdlr_dmatdl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_dma_tdlr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_enable_enable> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_enable;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_enable_abort> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_enable;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_enable_tx_cmd_block> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_enable;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_enable_status_ic_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_enable_status;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_enable_status_slv_disabled_while_busy> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_enable_status;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_enable_status_slv_rx_data_lost> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_enable_status;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_fs_scl_hcnt_ic_fs_scl_hcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_fs_scl_hcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_fs_scl_lcnt_ic_fs_scl_lcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_fs_scl_lcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_fs_spklen_ic_fs_spklen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_fs_spklen;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_rx_full> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_tx_empty> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_mask_m_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_rx_full> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_tx_empty> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_intr_stat_r_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_rx_full> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_tx_empty> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_raw_intr_stat_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_rxflr_rxflr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_rxflr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_rx_tl_rx_tl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_rx_tl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_sar_ic_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_sar;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_sda_hold_ic_sda_tx_hold> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_sda_hold;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_sda_hold_ic_sda_rx_hold> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_sda_hold;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_sda_setup_sda_setup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_sda_setup;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_slv_data_nack_only_nack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_slv_data_nack_only;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_ss_scl_hcnt_ic_ss_scl_hcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_ss_scl_hcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_ss_scl_lcnt_ic_ss_scl_lcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_ss_scl_lcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_tfnf> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_tfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_rfne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_rff> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_mst_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_status_slv_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_status;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tar_ic_tar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tar;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tar_gc_or_start> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tar;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tar_special> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tar;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_txflr_txflr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_txflr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_7b_addr_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_10addr1_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_10addr2_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_txdata_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_gcall_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_gcall_read> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_hs_ackdet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_sbyte_ackdet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_hs_norstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_sbyte_norstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_10b_rd_norstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_master_dis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_arb_lost> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_slvflush_txfifo> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_slv_arblost> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_slvrd_intx> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_abrt_user_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_abrt_source_tx_flush_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 23u;
+  static constexpr std::uint16_t kBitWidth = 9u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c0_ic_tx_tl_tx_tl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c0_ic_tx_tl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_ack_general_call_ack_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_ack_general_call;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_activity_clr_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_activity;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_gen_call_clr_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_gen_call;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_intr_clr_intr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_intr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_rd_req_clr_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_rd_req;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_restart_det_clr_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_restart_det;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_rx_done_clr_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_rx_done;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_rx_over_clr_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_rx_over;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_rx_under_clr_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_rx_under;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_start_det_clr_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_start_det;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_stop_det_clr_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_stop_det;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_tx_abrt_clr_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_tx_abrt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_clr_tx_over_clr_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_clr_tx_over;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_apb_data_width> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_max_speed_mode> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_hc_count_values> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_intr_io> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_has_dma> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_add_encoded_params> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_rx_buffer_depth> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_param_1_tx_buffer_depth> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_param_1;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_type_ic_comp_type> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_type;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_comp_version_ic_comp_version> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_comp_version;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 32u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_master_mode> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_speed> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 2u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_ic_10bitaddr_slave> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_ic_10bitaddr_master> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_ic_restart_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_ic_slave_disable> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_stop_det_ifaddressed> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_tx_empty_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_rx_fifo_full_hld_ctrl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_con_stop_det_if_master_active> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_con;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_data_cmd_dat> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_data_cmd_cmd> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_data_cmd_stop> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_data_cmd_restart> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_write_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_data_cmd_first_data_byte> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_data_cmd;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_dma_cr_rdmae> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_dma_cr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_dma_cr_tdmae> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_dma_cr;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_dma_rdlr_dmardl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_dma_rdlr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_dma_tdlr_dmatdl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_dma_tdlr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 4u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_enable_enable> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_enable;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_enable_abort> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_enable;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_enable_tx_cmd_block> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_enable;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_enable_status_ic_en> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_enable_status;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_enable_status_slv_disabled_while_busy> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_enable_status;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_enable_status_slv_rx_data_lost> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_enable_status;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_fs_scl_hcnt_ic_fs_scl_hcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_fs_scl_hcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_fs_scl_lcnt_ic_fs_scl_lcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_fs_scl_lcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_fs_spklen_ic_fs_spklen> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_fs_spklen;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_rx_full> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_tx_empty> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_mask_m_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_mask;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_rx_full> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_tx_empty> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_intr_stat_r_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_rx_under> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_rx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_rx_full> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_tx_over> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_tx_empty> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_rd_req> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_tx_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_rx_done> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_stop_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_start_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_gen_call> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_raw_intr_stat_restart_det> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_raw_intr_stat;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_rxflr_rxflr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_rxflr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_rx_tl_rx_tl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_rx_tl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_sar_ic_sar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_sar;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_sda_hold_ic_sda_tx_hold> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_sda_hold;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_sda_hold_ic_sda_rx_hold> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_sda_hold;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_sda_setup_sda_setup> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_sda_setup;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_slv_data_nack_only_nack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_slv_data_nack_only;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_ss_scl_hcnt_ic_ss_scl_hcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_ss_scl_hcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_ss_scl_lcnt_ic_ss_scl_lcnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_ss_scl_lcnt;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 16u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_tfnf> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_tfe> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_rfne> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_rff> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_mst_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_status_slv_activity> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_status;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tar_ic_tar> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tar;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 10u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tar_gc_or_start> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tar;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tar_special> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tar;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_txflr_txflr> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_txflr;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 5u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_7b_addr_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_10addr1_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 1u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_10addr2_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_txdata_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_gcall_noack> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 4u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_gcall_read> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 5u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_hs_ackdet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 6u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_sbyte_ackdet> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 7u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_hs_norstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 8u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_sbyte_norstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 9u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_10b_rd_norstrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 10u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_master_dis> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 11u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_arb_lost> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 12u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_slvflush_txfifo> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 13u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_slv_arblost> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 14u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_slvrd_intx> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 15u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_abrt_user_abrt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 16u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_abrt_source_tx_flush_cnt> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_abrt_source;
+  static constexpr std::uint16_t kBitOffset = 23u;
+  static constexpr std::uint16_t kBitWidth = 9u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_i2c1_ic_tx_tl_tx_tl> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_i2c1_ic_tx_tl;
+  static constexpr std::uint16_t kBitOffset = 0u;
+  static constexpr std::uint16_t kBitWidth = 8u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
 struct RegisterFieldTraits<FieldId::field_pwm_ch0_cc_a> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_pwm_ch0_cc;
@@ -6790,6 +9372,24 @@ struct RegisterFieldTraits<FieldId::field_resets_reset_dma> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_resets_reset;
   static constexpr std::uint16_t kBitOffset = 2u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_resets_reset_i2c0> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_resets_reset;
+  static constexpr std::uint16_t kBitOffset = 3u;
+  static constexpr std::uint16_t kBitWidth = 1u;
+  static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
+};
+
+template<>
+struct RegisterFieldTraits<FieldId::field_resets_reset_i2c1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_resets_reset;
+  static constexpr std::uint16_t kBitOffset = 4u;
   static constexpr std::uint16_t kBitWidth = 1u;
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_write;
 };
@@ -13814,7 +16414,7 @@ struct RegisterFieldTraits<FieldId::field_watchdog_tick_count> {
   static constexpr AccessKindId kAccessId = AccessKindId::access_kind_read_only;
 };
 
-inline constexpr std::array<FieldId, 1379> kRegisterFields = {{
+inline constexpr std::array<FieldId, 1639> kRegisterFields = {{
   FieldId::field_adc_cs_en,
   FieldId::field_adc_cs_ts_en,
   FieldId::field_adc_cs_start_once,
@@ -14268,6 +16868,264 @@ inline constexpr std::array<FieldId, 1379> kRegisterFields = {{
   FieldId::field_dma_timer2_x,
   FieldId::field_dma_timer3_y,
   FieldId::field_dma_timer3_x,
+  FieldId::field_i2c0_ic_ack_general_call_ack_gen_call,
+  FieldId::field_i2c0_ic_clr_activity_clr_activity,
+  FieldId::field_i2c0_ic_clr_gen_call_clr_gen_call,
+  FieldId::field_i2c0_ic_clr_intr_clr_intr,
+  FieldId::field_i2c0_ic_clr_rd_req_clr_rd_req,
+  FieldId::field_i2c0_ic_clr_restart_det_clr_restart_det,
+  FieldId::field_i2c0_ic_clr_rx_done_clr_rx_done,
+  FieldId::field_i2c0_ic_clr_rx_over_clr_rx_over,
+  FieldId::field_i2c0_ic_clr_rx_under_clr_rx_under,
+  FieldId::field_i2c0_ic_clr_start_det_clr_start_det,
+  FieldId::field_i2c0_ic_clr_stop_det_clr_stop_det,
+  FieldId::field_i2c0_ic_clr_tx_abrt_clr_tx_abrt,
+  FieldId::field_i2c0_ic_clr_tx_over_clr_tx_over,
+  FieldId::field_i2c0_ic_comp_param_1_apb_data_width,
+  FieldId::field_i2c0_ic_comp_param_1_max_speed_mode,
+  FieldId::field_i2c0_ic_comp_param_1_hc_count_values,
+  FieldId::field_i2c0_ic_comp_param_1_intr_io,
+  FieldId::field_i2c0_ic_comp_param_1_has_dma,
+  FieldId::field_i2c0_ic_comp_param_1_add_encoded_params,
+  FieldId::field_i2c0_ic_comp_param_1_rx_buffer_depth,
+  FieldId::field_i2c0_ic_comp_param_1_tx_buffer_depth,
+  FieldId::field_i2c0_ic_comp_type_ic_comp_type,
+  FieldId::field_i2c0_ic_comp_version_ic_comp_version,
+  FieldId::field_i2c0_ic_con_master_mode,
+  FieldId::field_i2c0_ic_con_speed,
+  FieldId::field_i2c0_ic_con_ic_10bitaddr_slave,
+  FieldId::field_i2c0_ic_con_ic_10bitaddr_master,
+  FieldId::field_i2c0_ic_con_ic_restart_en,
+  FieldId::field_i2c0_ic_con_ic_slave_disable,
+  FieldId::field_i2c0_ic_con_stop_det_ifaddressed,
+  FieldId::field_i2c0_ic_con_tx_empty_ctrl,
+  FieldId::field_i2c0_ic_con_rx_fifo_full_hld_ctrl,
+  FieldId::field_i2c0_ic_con_stop_det_if_master_active,
+  FieldId::field_i2c0_ic_data_cmd_dat,
+  FieldId::field_i2c0_ic_data_cmd_cmd,
+  FieldId::field_i2c0_ic_data_cmd_stop,
+  FieldId::field_i2c0_ic_data_cmd_restart,
+  FieldId::field_i2c0_ic_data_cmd_first_data_byte,
+  FieldId::field_i2c0_ic_dma_cr_rdmae,
+  FieldId::field_i2c0_ic_dma_cr_tdmae,
+  FieldId::field_i2c0_ic_dma_rdlr_dmardl,
+  FieldId::field_i2c0_ic_dma_tdlr_dmatdl,
+  FieldId::field_i2c0_ic_enable_enable,
+  FieldId::field_i2c0_ic_enable_abort,
+  FieldId::field_i2c0_ic_enable_tx_cmd_block,
+  FieldId::field_i2c0_ic_enable_status_ic_en,
+  FieldId::field_i2c0_ic_enable_status_slv_disabled_while_busy,
+  FieldId::field_i2c0_ic_enable_status_slv_rx_data_lost,
+  FieldId::field_i2c0_ic_fs_scl_hcnt_ic_fs_scl_hcnt,
+  FieldId::field_i2c0_ic_fs_scl_lcnt_ic_fs_scl_lcnt,
+  FieldId::field_i2c0_ic_fs_spklen_ic_fs_spklen,
+  FieldId::field_i2c0_ic_intr_mask_m_rx_under,
+  FieldId::field_i2c0_ic_intr_mask_m_rx_over,
+  FieldId::field_i2c0_ic_intr_mask_m_rx_full,
+  FieldId::field_i2c0_ic_intr_mask_m_tx_over,
+  FieldId::field_i2c0_ic_intr_mask_m_tx_empty,
+  FieldId::field_i2c0_ic_intr_mask_m_rd_req,
+  FieldId::field_i2c0_ic_intr_mask_m_tx_abrt,
+  FieldId::field_i2c0_ic_intr_mask_m_rx_done,
+  FieldId::field_i2c0_ic_intr_mask_m_activity,
+  FieldId::field_i2c0_ic_intr_mask_m_stop_det,
+  FieldId::field_i2c0_ic_intr_mask_m_start_det,
+  FieldId::field_i2c0_ic_intr_mask_m_gen_call,
+  FieldId::field_i2c0_ic_intr_mask_m_restart_det,
+  FieldId::field_i2c0_ic_intr_stat_r_rx_under,
+  FieldId::field_i2c0_ic_intr_stat_r_rx_over,
+  FieldId::field_i2c0_ic_intr_stat_r_rx_full,
+  FieldId::field_i2c0_ic_intr_stat_r_tx_over,
+  FieldId::field_i2c0_ic_intr_stat_r_tx_empty,
+  FieldId::field_i2c0_ic_intr_stat_r_rd_req,
+  FieldId::field_i2c0_ic_intr_stat_r_tx_abrt,
+  FieldId::field_i2c0_ic_intr_stat_r_rx_done,
+  FieldId::field_i2c0_ic_intr_stat_r_activity,
+  FieldId::field_i2c0_ic_intr_stat_r_stop_det,
+  FieldId::field_i2c0_ic_intr_stat_r_start_det,
+  FieldId::field_i2c0_ic_intr_stat_r_gen_call,
+  FieldId::field_i2c0_ic_intr_stat_r_restart_det,
+  FieldId::field_i2c0_ic_raw_intr_stat_rx_under,
+  FieldId::field_i2c0_ic_raw_intr_stat_rx_over,
+  FieldId::field_i2c0_ic_raw_intr_stat_rx_full,
+  FieldId::field_i2c0_ic_raw_intr_stat_tx_over,
+  FieldId::field_i2c0_ic_raw_intr_stat_tx_empty,
+  FieldId::field_i2c0_ic_raw_intr_stat_rd_req,
+  FieldId::field_i2c0_ic_raw_intr_stat_tx_abrt,
+  FieldId::field_i2c0_ic_raw_intr_stat_rx_done,
+  FieldId::field_i2c0_ic_raw_intr_stat_activity,
+  FieldId::field_i2c0_ic_raw_intr_stat_stop_det,
+  FieldId::field_i2c0_ic_raw_intr_stat_start_det,
+  FieldId::field_i2c0_ic_raw_intr_stat_gen_call,
+  FieldId::field_i2c0_ic_raw_intr_stat_restart_det,
+  FieldId::field_i2c0_ic_rxflr_rxflr,
+  FieldId::field_i2c0_ic_rx_tl_rx_tl,
+  FieldId::field_i2c0_ic_sar_ic_sar,
+  FieldId::field_i2c0_ic_sda_hold_ic_sda_tx_hold,
+  FieldId::field_i2c0_ic_sda_hold_ic_sda_rx_hold,
+  FieldId::field_i2c0_ic_sda_setup_sda_setup,
+  FieldId::field_i2c0_ic_slv_data_nack_only_nack,
+  FieldId::field_i2c0_ic_ss_scl_hcnt_ic_ss_scl_hcnt,
+  FieldId::field_i2c0_ic_ss_scl_lcnt_ic_ss_scl_lcnt,
+  FieldId::field_i2c0_ic_status_activity,
+  FieldId::field_i2c0_ic_status_tfnf,
+  FieldId::field_i2c0_ic_status_tfe,
+  FieldId::field_i2c0_ic_status_rfne,
+  FieldId::field_i2c0_ic_status_rff,
+  FieldId::field_i2c0_ic_status_mst_activity,
+  FieldId::field_i2c0_ic_status_slv_activity,
+  FieldId::field_i2c0_ic_tar_ic_tar,
+  FieldId::field_i2c0_ic_tar_gc_or_start,
+  FieldId::field_i2c0_ic_tar_special,
+  FieldId::field_i2c0_ic_txflr_txflr,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_7b_addr_noack,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_10addr1_noack,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_10addr2_noack,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_txdata_noack,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_gcall_noack,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_gcall_read,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_hs_ackdet,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_sbyte_ackdet,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_hs_norstrt,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_sbyte_norstrt,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_10b_rd_norstrt,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_master_dis,
+  FieldId::field_i2c0_ic_tx_abrt_source_arb_lost,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_slvflush_txfifo,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_slv_arblost,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_slvrd_intx,
+  FieldId::field_i2c0_ic_tx_abrt_source_abrt_user_abrt,
+  FieldId::field_i2c0_ic_tx_abrt_source_tx_flush_cnt,
+  FieldId::field_i2c0_ic_tx_tl_tx_tl,
+  FieldId::field_i2c1_ic_ack_general_call_ack_gen_call,
+  FieldId::field_i2c1_ic_clr_activity_clr_activity,
+  FieldId::field_i2c1_ic_clr_gen_call_clr_gen_call,
+  FieldId::field_i2c1_ic_clr_intr_clr_intr,
+  FieldId::field_i2c1_ic_clr_rd_req_clr_rd_req,
+  FieldId::field_i2c1_ic_clr_restart_det_clr_restart_det,
+  FieldId::field_i2c1_ic_clr_rx_done_clr_rx_done,
+  FieldId::field_i2c1_ic_clr_rx_over_clr_rx_over,
+  FieldId::field_i2c1_ic_clr_rx_under_clr_rx_under,
+  FieldId::field_i2c1_ic_clr_start_det_clr_start_det,
+  FieldId::field_i2c1_ic_clr_stop_det_clr_stop_det,
+  FieldId::field_i2c1_ic_clr_tx_abrt_clr_tx_abrt,
+  FieldId::field_i2c1_ic_clr_tx_over_clr_tx_over,
+  FieldId::field_i2c1_ic_comp_param_1_apb_data_width,
+  FieldId::field_i2c1_ic_comp_param_1_max_speed_mode,
+  FieldId::field_i2c1_ic_comp_param_1_hc_count_values,
+  FieldId::field_i2c1_ic_comp_param_1_intr_io,
+  FieldId::field_i2c1_ic_comp_param_1_has_dma,
+  FieldId::field_i2c1_ic_comp_param_1_add_encoded_params,
+  FieldId::field_i2c1_ic_comp_param_1_rx_buffer_depth,
+  FieldId::field_i2c1_ic_comp_param_1_tx_buffer_depth,
+  FieldId::field_i2c1_ic_comp_type_ic_comp_type,
+  FieldId::field_i2c1_ic_comp_version_ic_comp_version,
+  FieldId::field_i2c1_ic_con_master_mode,
+  FieldId::field_i2c1_ic_con_speed,
+  FieldId::field_i2c1_ic_con_ic_10bitaddr_slave,
+  FieldId::field_i2c1_ic_con_ic_10bitaddr_master,
+  FieldId::field_i2c1_ic_con_ic_restart_en,
+  FieldId::field_i2c1_ic_con_ic_slave_disable,
+  FieldId::field_i2c1_ic_con_stop_det_ifaddressed,
+  FieldId::field_i2c1_ic_con_tx_empty_ctrl,
+  FieldId::field_i2c1_ic_con_rx_fifo_full_hld_ctrl,
+  FieldId::field_i2c1_ic_con_stop_det_if_master_active,
+  FieldId::field_i2c1_ic_data_cmd_dat,
+  FieldId::field_i2c1_ic_data_cmd_cmd,
+  FieldId::field_i2c1_ic_data_cmd_stop,
+  FieldId::field_i2c1_ic_data_cmd_restart,
+  FieldId::field_i2c1_ic_data_cmd_first_data_byte,
+  FieldId::field_i2c1_ic_dma_cr_rdmae,
+  FieldId::field_i2c1_ic_dma_cr_tdmae,
+  FieldId::field_i2c1_ic_dma_rdlr_dmardl,
+  FieldId::field_i2c1_ic_dma_tdlr_dmatdl,
+  FieldId::field_i2c1_ic_enable_enable,
+  FieldId::field_i2c1_ic_enable_abort,
+  FieldId::field_i2c1_ic_enable_tx_cmd_block,
+  FieldId::field_i2c1_ic_enable_status_ic_en,
+  FieldId::field_i2c1_ic_enable_status_slv_disabled_while_busy,
+  FieldId::field_i2c1_ic_enable_status_slv_rx_data_lost,
+  FieldId::field_i2c1_ic_fs_scl_hcnt_ic_fs_scl_hcnt,
+  FieldId::field_i2c1_ic_fs_scl_lcnt_ic_fs_scl_lcnt,
+  FieldId::field_i2c1_ic_fs_spklen_ic_fs_spklen,
+  FieldId::field_i2c1_ic_intr_mask_m_rx_under,
+  FieldId::field_i2c1_ic_intr_mask_m_rx_over,
+  FieldId::field_i2c1_ic_intr_mask_m_rx_full,
+  FieldId::field_i2c1_ic_intr_mask_m_tx_over,
+  FieldId::field_i2c1_ic_intr_mask_m_tx_empty,
+  FieldId::field_i2c1_ic_intr_mask_m_rd_req,
+  FieldId::field_i2c1_ic_intr_mask_m_tx_abrt,
+  FieldId::field_i2c1_ic_intr_mask_m_rx_done,
+  FieldId::field_i2c1_ic_intr_mask_m_activity,
+  FieldId::field_i2c1_ic_intr_mask_m_stop_det,
+  FieldId::field_i2c1_ic_intr_mask_m_start_det,
+  FieldId::field_i2c1_ic_intr_mask_m_gen_call,
+  FieldId::field_i2c1_ic_intr_mask_m_restart_det,
+  FieldId::field_i2c1_ic_intr_stat_r_rx_under,
+  FieldId::field_i2c1_ic_intr_stat_r_rx_over,
+  FieldId::field_i2c1_ic_intr_stat_r_rx_full,
+  FieldId::field_i2c1_ic_intr_stat_r_tx_over,
+  FieldId::field_i2c1_ic_intr_stat_r_tx_empty,
+  FieldId::field_i2c1_ic_intr_stat_r_rd_req,
+  FieldId::field_i2c1_ic_intr_stat_r_tx_abrt,
+  FieldId::field_i2c1_ic_intr_stat_r_rx_done,
+  FieldId::field_i2c1_ic_intr_stat_r_activity,
+  FieldId::field_i2c1_ic_intr_stat_r_stop_det,
+  FieldId::field_i2c1_ic_intr_stat_r_start_det,
+  FieldId::field_i2c1_ic_intr_stat_r_gen_call,
+  FieldId::field_i2c1_ic_intr_stat_r_restart_det,
+  FieldId::field_i2c1_ic_raw_intr_stat_rx_under,
+  FieldId::field_i2c1_ic_raw_intr_stat_rx_over,
+  FieldId::field_i2c1_ic_raw_intr_stat_rx_full,
+  FieldId::field_i2c1_ic_raw_intr_stat_tx_over,
+  FieldId::field_i2c1_ic_raw_intr_stat_tx_empty,
+  FieldId::field_i2c1_ic_raw_intr_stat_rd_req,
+  FieldId::field_i2c1_ic_raw_intr_stat_tx_abrt,
+  FieldId::field_i2c1_ic_raw_intr_stat_rx_done,
+  FieldId::field_i2c1_ic_raw_intr_stat_activity,
+  FieldId::field_i2c1_ic_raw_intr_stat_stop_det,
+  FieldId::field_i2c1_ic_raw_intr_stat_start_det,
+  FieldId::field_i2c1_ic_raw_intr_stat_gen_call,
+  FieldId::field_i2c1_ic_raw_intr_stat_restart_det,
+  FieldId::field_i2c1_ic_rxflr_rxflr,
+  FieldId::field_i2c1_ic_rx_tl_rx_tl,
+  FieldId::field_i2c1_ic_sar_ic_sar,
+  FieldId::field_i2c1_ic_sda_hold_ic_sda_tx_hold,
+  FieldId::field_i2c1_ic_sda_hold_ic_sda_rx_hold,
+  FieldId::field_i2c1_ic_sda_setup_sda_setup,
+  FieldId::field_i2c1_ic_slv_data_nack_only_nack,
+  FieldId::field_i2c1_ic_ss_scl_hcnt_ic_ss_scl_hcnt,
+  FieldId::field_i2c1_ic_ss_scl_lcnt_ic_ss_scl_lcnt,
+  FieldId::field_i2c1_ic_status_activity,
+  FieldId::field_i2c1_ic_status_tfnf,
+  FieldId::field_i2c1_ic_status_tfe,
+  FieldId::field_i2c1_ic_status_rfne,
+  FieldId::field_i2c1_ic_status_rff,
+  FieldId::field_i2c1_ic_status_mst_activity,
+  FieldId::field_i2c1_ic_status_slv_activity,
+  FieldId::field_i2c1_ic_tar_ic_tar,
+  FieldId::field_i2c1_ic_tar_gc_or_start,
+  FieldId::field_i2c1_ic_tar_special,
+  FieldId::field_i2c1_ic_txflr_txflr,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_7b_addr_noack,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_10addr1_noack,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_10addr2_noack,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_txdata_noack,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_gcall_noack,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_gcall_read,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_hs_ackdet,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_sbyte_ackdet,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_hs_norstrt,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_sbyte_norstrt,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_10b_rd_norstrt,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_master_dis,
+  FieldId::field_i2c1_ic_tx_abrt_source_arb_lost,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_slvflush_txfifo,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_slv_arblost,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_slvrd_intx,
+  FieldId::field_i2c1_ic_tx_abrt_source_abrt_user_abrt,
+  FieldId::field_i2c1_ic_tx_abrt_source_tx_flush_cnt,
+  FieldId::field_i2c1_ic_tx_tl_tx_tl,
   FieldId::field_pwm_ch0_cc_a,
   FieldId::field_pwm_ch0_cc_b,
   FieldId::field_pwm_ch0_csr_en,
@@ -14414,6 +17272,8 @@ inline constexpr std::array<FieldId, 1379> kRegisterFields = {{
   FieldId::field_pwm_ints_ch7,
   FieldId::field_resets_reset_adc,
   FieldId::field_resets_reset_dma,
+  FieldId::field_resets_reset_i2c0,
+  FieldId::field_resets_reset_i2c1,
   FieldId::field_resets_reset_pwm,
   FieldId::field_resets_reset_rtc,
   FieldId::field_resets_reset_spi0,
