@@ -21,6 +21,8 @@ enum class ConnectorId : std::uint16_t {
   candidate_gpio18_uart2_rx,
   candidate_gpio43_uart0_tx,
   candidate_gpio44_uart0_rx,
+  candidate_gpio8_i2c0_sda,
+  candidate_gpio9_i2c0_scl,
 };
 
 struct ConnectorDescriptor {
@@ -124,6 +126,66 @@ struct ConnectorTraits<PinId::GPIO44, PeripheralId::UART0, SignalId::signal_rx> 
   static constexpr RouteId kRouteId = RouteId::candidate_gpio44_uart0_rx;
   static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_mux;
   static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_uart0_qfn56_tx_rx;
+};
+
+template<>
+struct ConnectorTraits<PinId::GPIO8, PeripheralId::I2C0, SignalId::signal_sda> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_gpio8_i2c0_sda;
+  static constexpr RouteId kRouteId = RouteId::candidate_gpio8_i2c0_sda;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_mux;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_i2c0_qfn56_scl_sda;
+};
+
+template<>
+struct ConnectorTraits<PinId::GPIO9, PeripheralId::I2C0, SignalId::signal_scl> {
+  static constexpr bool kPresent = true;
+  static constexpr ConnectorId kConnectorId = ConnectorId::candidate_gpio9_i2c0_scl;
+  static constexpr RouteId kRouteId = RouteId::candidate_gpio9_i2c0_scl;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::route_kind_mux;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::group_i2c0_qfn56_scl_sda;
+};
+
+template<>
+struct ConnectorSignalTraits<PeripheralId::I2C0, SignalId::signal_scl> {
+  static constexpr bool kPresent = true;
+  static constexpr std::array<PinId, 1> kPins = {{
+    PinId::GPIO9,
+  }};
+  static constexpr std::array<ConnectorId, 1> kConnectors = {{
+    ConnectorId::candidate_gpio9_i2c0_scl,
+  }};
+};
+
+template<PinId Pin>
+struct ConnectorTraits<Pin, PeripheralId::I2C0, SignalId::signal_scl> {
+  static constexpr bool kPresent = false;
+  static constexpr ConnectorId kConnectorId = ConnectorId::none;
+  static constexpr RouteId kRouteId = RouteId::none;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::none;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+  static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for I2C0 scl. Valid pins: GPIO9. Provenance: espressif-svd; patches=espressif-esp32s3-bootstrap, espressif-esp32s3-family-bootstrap-v1.");
+};
+
+template<>
+struct ConnectorSignalTraits<PeripheralId::I2C0, SignalId::signal_sda> {
+  static constexpr bool kPresent = true;
+  static constexpr std::array<PinId, 1> kPins = {{
+    PinId::GPIO8,
+  }};
+  static constexpr std::array<ConnectorId, 1> kConnectors = {{
+    ConnectorId::candidate_gpio8_i2c0_sda,
+  }};
+};
+
+template<PinId Pin>
+struct ConnectorTraits<Pin, PeripheralId::I2C0, SignalId::signal_sda> {
+  static constexpr bool kPresent = false;
+  static constexpr ConnectorId kConnectorId = ConnectorId::none;
+  static constexpr RouteId kRouteId = RouteId::none;
+  static constexpr RouteKindId kRouteKindId = RouteKindId::none;
+  static constexpr ConnectionGroupId kConnectionGroupId = ConnectionGroupId::none;
+  static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for I2C0 sda. Valid pins: GPIO8. Provenance: espressif-svd; patches=espressif-esp32s3-bootstrap, espressif-esp32s3-family-bootstrap-v1.");
 };
 
 template<>
@@ -294,7 +356,7 @@ struct ConnectorTraits<Pin, PeripheralId::UART2, SignalId::signal_tx> {
   static_assert(detail::kInvalidConnector<Pin>, "Invalid connector for UART2 tx. Valid pins: GPIO17. Provenance: espressif-svd; patches=espressif-esp32s3-bootstrap, espressif-esp32s3-family-bootstrap-v1.");
 };
 
-inline constexpr std::array<ConnectorDescriptor, 8> kConnectors = {{
+inline constexpr std::array<ConnectorDescriptor, 10> kConnectors = {{
   {ConnectorId::candidate_gpio11_spi2_mosi, PinId::GPIO11, PeripheralId::SPI2, SignalId::signal_mosi, RouteId::candidate_gpio11_spi2_mosi, RouteKindId::route_kind_mux, ConnectionGroupId::group_spi2_qfn56_sck_mosi_miso},
   {ConnectorId::candidate_gpio12_spi2_sck, PinId::GPIO12, PeripheralId::SPI2, SignalId::signal_sck, RouteId::candidate_gpio12_spi2_sck, RouteKindId::route_kind_mux, ConnectionGroupId::group_spi2_qfn56_sck_mosi_miso},
   {ConnectorId::candidate_gpio13_spi2_miso, PinId::GPIO13, PeripheralId::SPI2, SignalId::signal_miso, RouteId::candidate_gpio13_spi2_miso, RouteKindId::route_kind_mux, ConnectionGroupId::group_spi2_qfn56_sck_mosi_miso},
@@ -303,6 +365,8 @@ inline constexpr std::array<ConnectorDescriptor, 8> kConnectors = {{
   {ConnectorId::candidate_gpio18_uart2_rx, PinId::GPIO18, PeripheralId::UART2, SignalId::signal_rx, RouteId::candidate_gpio18_uart2_rx, RouteKindId::route_kind_mux, ConnectionGroupId::group_uart2_qfn56_tx_rx},
   {ConnectorId::candidate_gpio43_uart0_tx, PinId::GPIO43, PeripheralId::UART0, SignalId::signal_tx, RouteId::candidate_gpio43_uart0_tx, RouteKindId::route_kind_mux, ConnectionGroupId::group_uart0_qfn56_tx_rx},
   {ConnectorId::candidate_gpio44_uart0_rx, PinId::GPIO44, PeripheralId::UART0, SignalId::signal_rx, RouteId::candidate_gpio44_uart0_rx, RouteKindId::route_kind_mux, ConnectionGroupId::group_uart0_qfn56_tx_rx},
+  {ConnectorId::candidate_gpio8_i2c0_sda, PinId::GPIO8, PeripheralId::I2C0, SignalId::signal_sda, RouteId::candidate_gpio8_i2c0_sda, RouteKindId::route_kind_mux, ConnectionGroupId::group_i2c0_qfn56_scl_sda},
+  {ConnectorId::candidate_gpio9_i2c0_scl, PinId::GPIO9, PeripheralId::I2C0, SignalId::signal_scl, RouteId::candidate_gpio9_i2c0_scl, RouteKindId::route_kind_mux, ConnectionGroupId::group_i2c0_qfn56_scl_sda},
 }};
 }
 }

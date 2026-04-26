@@ -253,7 +253,7 @@
         {
           "candidate_id": "candidate:gpio8:i2c0:sda",
           "capability_ids": [
-            "capability:i2c0:esp32s3-i2c-v1:sda",
+            "capability:i2c:esp32s3-i2c-v1:sda",
             "capability-instance:i2c0:qfn56:sda"
           ],
           "operation_ids": [
@@ -276,7 +276,7 @@
             "requirement:clock-enable:i2c0",
             "requirement:source-select:gpio8:i2c0:sda"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:10",
           "signal": "sda"
@@ -284,7 +284,7 @@
         {
           "candidate_id": "candidate:gpio9:i2c0:scl",
           "capability_ids": [
-            "capability:i2c0:esp32s3-i2c-v1:scl",
+            "capability:i2c:esp32s3-i2c-v1:scl",
             "capability-instance:i2c0:qfn56:scl"
           ],
           "operation_ids": [
@@ -307,7 +307,7 @@
             "requirement:clock-enable:i2c0",
             "requirement:source-select:gpio9:i2c0:scl"
           ],
-          "route_group_id": "group:i2c0:qfn56:all-signals",
+          "route_group_id": "group:i2c0:qfn56:scl-sda",
           "route_kind": "mux",
           "route_selector": "selector:9",
           "signal": "scl"
@@ -319,8 +319,8 @@
             "candidate:gpio8:i2c0:sda",
             "candidate:gpio9:i2c0:scl"
           ],
-          "conflict_group": "conflict:i2c0:qfn56:all-signals",
-          "group_id": "group:i2c0:qfn56:all-signals",
+          "conflict_group": "conflict:i2c0:qfn56:scl-sda",
+          "group_id": "group:i2c0:qfn56:scl-sda",
           "package": "qfn56",
           "peripheral": "I2C0",
           "provenance": {
@@ -1364,8 +1364,8 @@
   "signal_endpoints": [
     {
       "direction": null,
-      "endpoint_id": "endpoint:i2c0:scl",
-      "peripheral_class": "i2c0",
+      "endpoint_id": "endpoint:i2c:scl",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "espressif-esp32s3-family-bootstrap-v1",
@@ -1378,8 +1378,8 @@
     },
     {
       "direction": "bidirectional",
-      "endpoint_id": "endpoint:i2c0:sda",
-      "peripheral_class": "i2c0",
+      "endpoint_id": "endpoint:i2c:sda",
+      "peripheral_class": "i2c",
       "provenance": {
         "patch_ids": [
           "espressif-esp32s3-family-bootstrap-v1",

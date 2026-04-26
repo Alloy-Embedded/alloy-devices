@@ -21,6 +21,20 @@ struct ClockGateTraits {
 };
 
 template<>
+struct ClockGateTraits<ClockGateId::gate_i2c0> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_system_perip_clk_en0;
+  static constexpr FieldId kFieldId = FieldId::field_system_perip_clk_en0_i2c_ext0_clk_en;
+};
+
+template<>
+struct ClockGateTraits<ClockGateId::gate_i2c1> {
+  static constexpr bool kPresent = true;
+  static constexpr RegisterId kRegisterId = RegisterId::register_system_perip_clk_en0;
+  static constexpr FieldId kFieldId = FieldId::field_system_perip_clk_en0_i2c_ext1_clk_en;
+};
+
+template<>
 struct ClockGateTraits<ClockGateId::gate_spi2> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_system_perip_clk_en0;
@@ -103,6 +117,22 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIO> {
 };
 
 template<>
+struct PeripheralClockBindingTraits<PeripheralId::I2C0> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c0;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
+struct PeripheralClockBindingTraits<PeripheralId::I2C1> {
+  static constexpr bool kPresent = true;
+  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c1;
+  static constexpr ResetId kResetId = ResetId::none;
+  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
+};
+
+template<>
 struct PeripheralClockBindingTraits<PeripheralId::SENS> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
@@ -174,10 +204,12 @@ struct PeripheralClockBindingTraits<PeripheralId::USB0> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 12> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 14> kClockBoundPeripherals = {{
   PeripheralId::APB_SARADC,
   PeripheralId::DMA,
   PeripheralId::GPIO,
+  PeripheralId::I2C0,
+  PeripheralId::I2C1,
   PeripheralId::SENS,
   PeripheralId::SPI0,
   PeripheralId::SPI1,

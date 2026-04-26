@@ -13,7 +13,7 @@
         "dma_controllers": 1,
         "dma_routes": 5,
         "interrupts": 94,
-        "ip_blocks": 10,
+        "ip_blocks": 9,
         "memories": 3,
         "package_pads": 10,
         "packages": 1,
