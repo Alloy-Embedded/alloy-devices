@@ -51,7 +51,7 @@
       ]
     },
     "validation_report_id": "bootstrap-validation-v1",
-    "validation_report_sha256": "eb9fd612b849d5e339ea7f58dbbaba19c93135e430088c1ac54cb6a73ab36707"
+    "validation_report_sha256": "2846da74e195ce7c4924643950e376bb59a5eb113601b7a302cced9882ca91d8"
   },
   "consumer_verification": {
     "build_dir": "/home/runner/work/_temp/alloy-devices-release-artifacts/alloy-published-runtime-lite-smoke/esp32c3",
@@ -146,14 +146,14 @@
   "published_artifacts": [
     {
       "artifact_kind": "documentation",
-      "content_bytes": 3692,
-      "content_sha256": "5361fdf6fe2e6b7e26704327fb0778e8091a98963d043bca4e78a6fd63df5aba",
+      "content_bytes": 3704,
+      "content_sha256": "bb503665d0f084eddb3d70e6aa30925deecf40ef838c31ae97dda9b3f8cec13d",
       "path": "README.md"
     },
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "41a27f433dc02a1aed0402ad0cc885bc7116f584c7c747d86d878878c73e4a61",
+      "content_sha256": "f8e3bea93911d13854463522a790595a2b9b262dad4ab177c3e804c7c85966ac",
       "path": "espressif/esp32c3/artifact-manifest.json"
     },
     {
@@ -224,8 +224,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 5306,
-      "content_sha256": "4122e0ff73d005833d2df1298d15c447922761d122b09ffcabdcd9810eb1b8f5",
+      "content_bytes": 8808,
+      "content_sha256": "22eb4c1a293100287f1aff52338ea85976c607c8f11f6b2d6b422d5ce9705fac",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/adc.hpp"
     },
     {
@@ -236,8 +236,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 1103,
-      "content_sha256": "21e539b1a7a1ba501533a5fca833eef3bf0e15807b9e20d2c7a4cc9b757759ae",
+      "content_bytes": 4212,
+      "content_sha256": "3e82721e29680131f69b0987cc2f75649982ab9fe57f4b4bae8ec7b12e5c8b2c",
       "path": "espressif/esp32c3/generated/runtime/devices/esp32c3/driver_semantics/common.hpp"
     },
     {
@@ -500,14 +500,14 @@
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 32527,
-      "content_sha256": "eb9fd612b849d5e339ea7f58dbbaba19c93135e430088c1ac54cb6a73ab36707",
+      "content_bytes": 32828,
+      "content_sha256": "2846da74e195ce7c4924643950e376bb59a5eb113601b7a302cced9882ca91d8",
       "path": "espressif/esp32c3/reports/validation-report.json"
     },
     {
       "artifact_kind": "validation-report",
-      "content_bytes": 9687,
-      "content_sha256": "feb8c6f6cbde6e2efaddb8843c1f2bebb26f57316977d45e3bc121976424a459",
+      "content_bytes": 9730,
+      "content_sha256": "f63abea7927b54b548fcc7a18cc06fb156607397b00dd18a87f1308b832b6281",
       "path": "espressif/esp32c3/reports/validation-summary.json"
     }
   ],
@@ -516,7 +516,7 @@
     "family": "esp32c3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "549e97cabc2ea1d397646955b34bbd8255b84c490a8d61f3eac59c5c4621ea28",
+  "target_artifact_revision": "3ab1ec5a82f9f9c73c728097b5ffea43cb8622c88868c91c909700fbf2be331f",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
@@ -549,7 +549,7 @@
       {
         "blocking": true,
         "gate_id": "gate-c",
-        "message": "gate-c passed with 88 rule(s).",
+        "message": "gate-c passed with 89 rule(s).",
         "passed": true,
         "rule_ids": [
           "esp32c3-package-pin-count-covers-known-pins",
@@ -559,6 +559,7 @@
           "esp32c3-alternate-functions-explicit",
           "esp32c3-memory-sizes-positive",
           "esp32c3-peripheral-bases-unique",
+          "esp32c3-adc-semantics-populated",
           "esp32c3-interrupts-present",
           "esp32c3-interrupts-reference-known-peripherals",
           "esp32c3-referenced-peripherals-have-rcc-enable",
