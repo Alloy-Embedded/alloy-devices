@@ -6,7 +6,7 @@
       "pipeline_name": "alloy-codegen",
       "target_repository": "alloy-devices"
     },
-    "canonical_ir_sha256": "5c0614968663a2f90a0192ad2601c3e1b45c4e51a72038edb2bc1ae3fb3ec52f",
+    "canonical_ir_sha256": "3dbc57cccbab42924b72899b2ca90912845782eca749db2ef3dec884f1507454",
     "generator_version": "0.1.0",
     "ir_schema_version": "1.2.0",
     "manifest_kind": "artifact-manifest-v1",
@@ -153,7 +153,7 @@
     {
       "artifact_kind": "canonical-metadata",
       "content_bytes": 1676,
-      "content_sha256": "b03d274380d3d12ad490c90ef773909d7d1d23017babf6e2025206225d72c606",
+      "content_sha256": "c55d26287d608ddb121cad91e8d1f4b472dd92ed94ecd60b7252ba302a7bbf25",
       "path": "espressif/esp32s3/artifact-manifest.json"
     },
     {
@@ -302,8 +302,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 14408,
-      "content_sha256": "fdce49ecc4a708ce4da54406ade700e5fc8376a70bc37fb79b943121f0151942",
+      "content_bytes": 14506,
+      "content_sha256": "ba6a3398788841871696fb4d05a91d2e7e7689cd5694be2ed9245d916a146d41",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/spi.hpp"
     },
     {
@@ -314,8 +314,8 @@
     },
     {
       "artifact_kind": "generated-cpp",
-      "content_bytes": 24716,
-      "content_sha256": "1762bfab7226f1cfef5e15045049a52563caccccd1d1d526765ad18dbcb0542e",
+      "content_bytes": 24890,
+      "content_sha256": "d140f63138217521f60ed9222b1426eed0914e8a66c5aded02e6c10e32d331e3",
       "path": "espressif/esp32s3/generated/runtime/devices/esp32s3/driver_semantics/uart.hpp"
     },
     {
@@ -434,8 +434,8 @@
     },
     {
       "artifact_kind": "canonical-metadata",
-      "content_bytes": 5953541,
-      "content_sha256": "9695c793be024eb78d67cc54c6bb674a71a8ad0de56842a060ad743ef9d3b239",
+      "content_bytes": 5963362,
+      "content_sha256": "ca4d18e9f2fca1eb0b2edd652d7f9807ccccb52208d04439a33e8d2227398762",
       "path": "espressif/esp32s3/metadata/devices/esp32s3.json"
     },
     {
@@ -516,7 +516,7 @@
     "family": "esp32s3",
     "vendor": "espressif"
   },
-  "target_artifact_revision": "e6b05d0518ed0fe43a9759ae04aa02ff1c2c73e24aee483244ca73cbd5ad20d2",
+  "target_artifact_revision": "10a3bf3a3583cad83ed9abdf124f030f1439b7f53f9b1a499f1b7ec1fb6da77a",
   "target_repository": "alloy-devices",
   "validation": {
     "draft_system_descriptor_domains": [],
