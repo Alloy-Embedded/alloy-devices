@@ -10,8 +10,7 @@ if(NOT DEFINED ALLOY_DEVICE_ROOT)
 endif()
 
 set(_ALLOY_DEVICE_COMPONENT_PATHS
-  "esp32=espressif/esp32/generated/cmake/AlloyDevice-esp32.cmake"
-  "esp32-wroom32=espressif/esp32/generated/cmake/AlloyDevice-esp32-wroom32.cmake"
+  "esp32c3=espressif/esp32c3/generated/cmake/AlloyDevice-esp32c3.cmake"
 )
 
 foreach(component ${AlloyDevice_FIND_COMPONENTS})
