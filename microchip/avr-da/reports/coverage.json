@@ -12,7 +12,7 @@
         "dma_conflict_groups": 0,
         "dma_controllers": 0,
         "dma_routes": 0,
-        "interrupts": 27,
+        "interrupts": 8,
         "ip_blocks": 9,
         "memories": 3,
         "package_pads": 10,
@@ -26,7 +26,7 @@
         "route_requirements": 21,
         "signal_endpoints": 8,
         "startup_descriptors": 6,
-        "vector_slots": 28
+        "vector_slots": 9
       },
       "device": "avr128da32",
       "domains": {

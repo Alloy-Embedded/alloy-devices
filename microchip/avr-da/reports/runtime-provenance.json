@@ -2,7 +2,7 @@
   "devices": [
     {
       "device": "avr128da32",
-      "fact_count": 99,
+      "fact_count": 70,
       "facts": [
         {
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
@@ -14,6 +14,32 @@
             "symbol_name": "__vector_0"
           },
           "fact_id": "vector-slot:0",
+          "fact_kind": "vector_slot",
+          "inference_rule": null,
+          "provenance": {
+            "patch_ids": [
+              "microchip-avr-da-family-bootstrap-v1",
+              "microchip-avr128da32-bootstrap"
+            ],
+            "source_ids": [
+              "microchip-dfp-extract"
+            ],
+            "source_paths": [
+              "atdf/AVR128DA32.atdf"
+            ]
+          },
+          "supporting_fact_ids": []
+        },
+        {
+          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
+          "derivation_kind": "patched",
+          "detail": {
+            "interrupt": "RESET",
+            "kind": "external-interrupt",
+            "slot": 16,
+            "symbol_name": "RESET_IRQHandler"
+          },
+          "fact_id": "vector-slot:16",
           "fact_kind": "vector_slot",
           "inference_rule": null,
           "provenance": {
@@ -60,322 +86,10 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "interrupt": "BOD_VLM",
-            "kind": "external-interrupt",
-            "slot": 18,
-            "symbol_name": "BOD_VLM_IRQHandler"
-          },
-          "fact_id": "vector-slot:18",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "RTC_CNT",
-            "kind": "external-interrupt",
-            "slot": 19,
-            "symbol_name": "RTC_CNT_IRQHandler"
-          },
-          "fact_id": "vector-slot:19",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "RTC_PIT",
-            "kind": "external-interrupt",
-            "slot": 20,
-            "symbol_name": "RTC_PIT_IRQHandler"
-          },
-          "fact_id": "vector-slot:20",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "CCL",
-            "kind": "external-interrupt",
-            "slot": 21,
-            "symbol_name": "CCL_IRQHandler"
-          },
-          "fact_id": "vector-slot:21",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "PORTA_PORT",
-            "kind": "external-interrupt",
-            "slot": 22,
-            "symbol_name": "PORTA_PORT_IRQHandler"
-          },
-          "fact_id": "vector-slot:22",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TCA0_LUNF",
-            "kind": "external-interrupt",
-            "slot": 23,
-            "symbol_name": "TCA0_LUNF_IRQHandler"
-          },
-          "fact_id": "vector-slot:23",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TCA0_HUNF",
-            "kind": "external-interrupt",
-            "slot": 24,
-            "symbol_name": "TCA0_HUNF_IRQHandler"
-          },
-          "fact_id": "vector-slot:24",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TCA0_CMP0",
-            "kind": "external-interrupt",
-            "slot": 25,
-            "symbol_name": "TCA0_CMP0_IRQHandler"
-          },
-          "fact_id": "vector-slot:25",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TCA0_CMP1",
-            "kind": "external-interrupt",
-            "slot": 26,
-            "symbol_name": "TCA0_CMP1_IRQHandler"
-          },
-          "fact_id": "vector-slot:26",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TCA0_CMP2",
-            "kind": "external-interrupt",
-            "slot": 27,
-            "symbol_name": "TCA0_CMP2_IRQHandler"
-          },
-          "fact_id": "vector-slot:27",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TWI0_TWIS",
-            "kind": "external-interrupt",
-            "slot": 32,
-            "symbol_name": "TWI0_TWIS_IRQHandler"
-          },
-          "fact_id": "vector-slot:32",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "TWI0_TWIM",
-            "kind": "external-interrupt",
-            "slot": 33,
-            "symbol_name": "TWI0_TWIM_IRQHandler"
-          },
-          "fact_id": "vector-slot:33",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "SPI0_INT",
+            "interrupt": "USART0_RXC",
             "kind": "external-interrupt",
             "slot": 34,
-            "symbol_name": "SPI0_INT_IRQHandler"
+            "symbol_name": "USART0_RXC_IRQHandler"
           },
           "fact_id": "vector-slot:34",
           "fact_kind": "vector_slot",
@@ -398,10 +112,10 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "interrupt": "USART0_RXC",
+            "interrupt": "USART0_DRE",
             "kind": "external-interrupt",
             "slot": 35,
-            "symbol_name": "USART0_RXC_IRQHandler"
+            "symbol_name": "USART0_DRE_IRQHandler"
           },
           "fact_id": "vector-slot:35",
           "fact_kind": "vector_slot",
@@ -424,10 +138,10 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "interrupt": "USART0_DRE",
+            "interrupt": "USART0_TXC",
             "kind": "external-interrupt",
             "slot": 36,
-            "symbol_name": "USART0_DRE_IRQHandler"
+            "symbol_name": "USART0_TXC_IRQHandler"
           },
           "fact_id": "vector-slot:36",
           "fact_kind": "vector_slot",
@@ -450,12 +164,12 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "interrupt": "USART0_TXC",
+            "interrupt": "TWI0_TWIS",
             "kind": "external-interrupt",
-            "slot": 37,
-            "symbol_name": "USART0_TXC_IRQHandler"
+            "slot": 42,
+            "symbol_name": "TWI0_TWIS_IRQHandler"
           },
-          "fact_id": "vector-slot:37",
+          "fact_id": "vector-slot:42",
           "fact_kind": "vector_slot",
           "inference_rule": null,
           "provenance": {
@@ -476,88 +190,10 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "interrupt": "PORTD_PORT",
-            "kind": "external-interrupt",
-            "slot": 38,
-            "symbol_name": "PORTD_PORT_IRQHandler"
-          },
-          "fact_id": "vector-slot:38",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "ADC0_RESRDY",
-            "kind": "external-interrupt",
-            "slot": 40,
-            "symbol_name": "ADC0_RESRDY_IRQHandler"
-          },
-          "fact_id": "vector-slot:40",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "ADC0_WCMP",
-            "kind": "external-interrupt",
-            "slot": 41,
-            "symbol_name": "ADC0_WCMP_IRQHandler"
-          },
-          "fact_id": "vector-slot:41",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "PTC",
+            "interrupt": "TWI0_TWIM",
             "kind": "external-interrupt",
             "slot": 43,
-            "symbol_name": "PTC_IRQHandler"
+            "symbol_name": "TWI0_TWIM_IRQHandler"
           },
           "fact_id": "vector-slot:43",
           "fact_kind": "vector_slot",
@@ -580,142 +216,12 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "interrupt": "PORTC_PORT",
+            "interrupt": "SPI0_INT",
             "kind": "external-interrupt",
-            "slot": 45,
-            "symbol_name": "PORTC_PORT_IRQHandler"
+            "slot": 44,
+            "symbol_name": "SPI0_INT_IRQHandler"
           },
-          "fact_id": "vector-slot:45",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "USART1_RXC",
-            "kind": "external-interrupt",
-            "slot": 47,
-            "symbol_name": "USART1_RXC_IRQHandler"
-          },
-          "fact_id": "vector-slot:47",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "USART1_DRE",
-            "kind": "external-interrupt",
-            "slot": 48,
-            "symbol_name": "USART1_DRE_IRQHandler"
-          },
-          "fact_id": "vector-slot:48",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "USART1_TXC",
-            "kind": "external-interrupt",
-            "slot": 49,
-            "symbol_name": "USART1_TXC_IRQHandler"
-          },
-          "fact_id": "vector-slot:49",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "PORTF_PORT",
-            "kind": "external-interrupt",
-            "slot": 50,
-            "symbol_name": "PORTF_PORT_IRQHandler"
-          },
-          "fact_id": "vector-slot:50",
-          "fact_kind": "vector_slot",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/startup.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "interrupt": "NVMCTRL_EE",
-            "kind": "external-interrupt",
-            "slot": 51,
-            "symbol_name": "NVMCTRL_EE_IRQHandler"
-          },
-          "fact_id": "vector-slot:51",
+          "fact_id": "vector-slot:44",
           "fact_kind": "vector_slot",
           "inference_rule": null,
           "provenance": {
@@ -898,65 +404,11 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "binding_id": "interrupt-binding:adc0:adc0-resrdy",
-            "interrupt": "ADC0_RESRDY",
-            "line": 24,
-            "peripheral": "ADC0",
-            "vector_slot": 40
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:adc0:adc0-resrdy",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:adc0:adc0-wcmp",
-            "interrupt": "ADC0_WCMP",
-            "line": 25,
-            "peripheral": "ADC0",
-            "vector_slot": 41
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:adc0:adc0-wcmp",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
             "binding_id": "interrupt-binding:spi0:spi0-int",
             "interrupt": "SPI0_INT",
-            "line": 18,
+            "line": 28,
             "peripheral": "SPI0",
-            "vector_slot": 34
+            "vector_slot": 44
           },
           "fact_id": "interrupt-binding:interrupt-binding:spi0:spi0-int",
           "fact_kind": "interrupt_binding",
@@ -979,146 +431,11 @@
           "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
           "derivation_kind": "patched",
           "detail": {
-            "binding_id": "interrupt-binding:tca0:tca0-cmp0",
-            "interrupt": "TCA0_CMP0",
-            "line": 9,
-            "peripheral": "TCA0",
-            "vector_slot": 25
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:tca0:tca0-cmp0",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:tca0:tca0-cmp1",
-            "interrupt": "TCA0_CMP1",
-            "line": 10,
-            "peripheral": "TCA0",
-            "vector_slot": 26
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:tca0:tca0-cmp1",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:tca0:tca0-cmp2",
-            "interrupt": "TCA0_CMP2",
-            "line": 11,
-            "peripheral": "TCA0",
-            "vector_slot": 27
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:tca0:tca0-cmp2",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:tca0:tca0-hunf",
-            "interrupt": "TCA0_HUNF",
-            "line": 8,
-            "peripheral": "TCA0",
-            "vector_slot": 24
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:tca0:tca0-hunf",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:tca0:tca0-lunf",
-            "interrupt": "TCA0_LUNF",
-            "line": 7,
-            "peripheral": "TCA0",
-            "vector_slot": 23
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:tca0:tca0-lunf",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
             "binding_id": "interrupt-binding:twi0:twi0-twim",
             "interrupt": "TWI0_TWIM",
-            "line": 17,
+            "line": 27,
             "peripheral": "TWI0",
-            "vector_slot": 33
+            "vector_slot": 43
           },
           "fact_id": "interrupt-binding:interrupt-binding:twi0:twi0-twim",
           "fact_kind": "interrupt_binding",
@@ -1143,9 +460,9 @@
           "detail": {
             "binding_id": "interrupt-binding:twi0:twi0-twis",
             "interrupt": "TWI0_TWIS",
-            "line": 16,
+            "line": 26,
             "peripheral": "TWI0",
-            "vector_slot": 32
+            "vector_slot": 42
           },
           "fact_id": "interrupt-binding:interrupt-binding:twi0:twi0-twis",
           "fact_kind": "interrupt_binding",
@@ -1170,9 +487,9 @@
           "detail": {
             "binding_id": "interrupt-binding:usart0:usart0-dre",
             "interrupt": "USART0_DRE",
-            "line": 20,
+            "line": 19,
             "peripheral": "USART0",
-            "vector_slot": 36
+            "vector_slot": 35
           },
           "fact_id": "interrupt-binding:interrupt-binding:usart0:usart0-dre",
           "fact_kind": "interrupt_binding",
@@ -1197,9 +514,9 @@
           "detail": {
             "binding_id": "interrupt-binding:usart0:usart0-rxc",
             "interrupt": "USART0_RXC",
-            "line": 19,
+            "line": 18,
             "peripheral": "USART0",
-            "vector_slot": 35
+            "vector_slot": 34
           },
           "fact_id": "interrupt-binding:interrupt-binding:usart0:usart0-rxc",
           "fact_kind": "interrupt_binding",
@@ -1224,92 +541,11 @@
           "detail": {
             "binding_id": "interrupt-binding:usart0:usart0-txc",
             "interrupt": "USART0_TXC",
-            "line": 21,
+            "line": 20,
             "peripheral": "USART0",
-            "vector_slot": 37
+            "vector_slot": 36
           },
           "fact_id": "interrupt-binding:interrupt-binding:usart0:usart0-txc",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:usart1:usart1-dre",
-            "interrupt": "USART1_DRE",
-            "line": 32,
-            "peripheral": "USART1",
-            "vector_slot": 48
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:usart1:usart1-dre",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:usart1:usart1-rxc",
-            "interrupt": "USART1_RXC",
-            "line": 31,
-            "peripheral": "USART1",
-            "vector_slot": 47
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:usart1:usart1-rxc",
-          "fact_kind": "interrupt_binding",
-          "inference_rule": null,
-          "provenance": {
-            "patch_ids": [
-              "microchip-avr-da-family-bootstrap-v1",
-              "microchip-avr128da32-bootstrap"
-            ],
-            "source_ids": [
-              "microchip-dfp-extract"
-            ],
-            "source_paths": [
-              "atdf/AVR128DA32.atdf"
-            ]
-          },
-          "supporting_fact_ids": []
-        },
-        {
-          "artifact_path": "microchip/avr-da/generated/runtime/devices/avr128da32/interrupts.hpp",
-          "derivation_kind": "patched",
-          "detail": {
-            "binding_id": "interrupt-binding:usart1:usart1-txc",
-            "interrupt": "USART1_TXC",
-            "line": 33,
-            "peripheral": "USART1",
-            "vector_slot": 49
-          },
-          "fact_id": "interrupt-binding:interrupt-binding:usart1:usart1-txc",
           "fact_kind": "interrupt_binding",
           "inference_rule": null,
           "provenance": {

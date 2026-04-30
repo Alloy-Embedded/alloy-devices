@@ -222,7 +222,7 @@ struct I2cPeripheralTraits {
 template<>
 struct I2cPeripheralTraits<RuntimeI2cCtrlId::TWI0> {
   static constexpr bool kPresent = true;
-  static constexpr std::uint32_t kBaseAddress = 0x00000900u;
+  static constexpr std::uint32_t kBaseAddress = 0x000008a0u;
   static constexpr RuntimeI2cClockSource kClockSource = RuntimeI2cClockSource::None;
   static constexpr std::uint8_t kDreqTx = 0u;
   static constexpr std::uint8_t kDreqRx = 0u;

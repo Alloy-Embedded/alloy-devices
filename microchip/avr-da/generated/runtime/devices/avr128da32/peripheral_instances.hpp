@@ -50,7 +50,7 @@ struct PeripheralInstanceTraits<PeripheralId::ADC0> {
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_adc_microchip_avr_da_adc_v1;
   static constexpr int kInstance = 0;
-  static constexpr std::uintptr_t kBaseAddress = 0x00000600u;
+  static constexpr std::uintptr_t kBaseAddress = 0x00000000u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
@@ -62,7 +62,7 @@ struct PeripheralInstanceTraits<PeripheralId::SPI0> {
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_spi;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_spi_microchip_avr_da_spi_v1;
   static constexpr int kInstance = 0;
-  static constexpr std::uintptr_t kBaseAddress = 0x00000940u;
+  static constexpr std::uintptr_t kBaseAddress = 0x000008C0u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
@@ -86,7 +86,7 @@ struct PeripheralInstanceTraits<PeripheralId::TWI0> {
   static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_i2c_microchip_avr_da_twi_v1;
   static constexpr int kInstance = 0;
-  static constexpr std::uintptr_t kBaseAddress = 0x00000900u;
+  static constexpr std::uintptr_t kBaseAddress = 0x000008A0u;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;

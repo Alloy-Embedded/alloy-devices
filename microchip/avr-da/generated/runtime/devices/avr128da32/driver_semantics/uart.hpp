@@ -201,7 +201,7 @@ struct UartSemanticTraits<PeripheralId::USART0> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
-  static constexpr std::array<std::uint32_t, 3> kIrqNumbers = {{19u, 20u, 21u}};
+  static constexpr std::array<std::uint32_t, 3> kIrqNumbers = {{18u, 19u, 20u}};
   static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
   static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
   static constexpr std::uint32_t kKernelMaxClockHz = 24000000u;
@@ -299,7 +299,7 @@ struct UartSemanticTraits<PeripheralId::USART1> {
   static constexpr RuntimeFieldRef kUsTxemptyField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsTxchrField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kUsRxchrField = kInvalidFieldRef;
-  static constexpr std::array<std::uint32_t, 3> kIrqNumbers = {{31u, 32u, 33u}};
+  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
   static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
   static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
   static constexpr std::uint32_t kKernelMaxClockHz = 24000000u;

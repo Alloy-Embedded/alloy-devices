@@ -96,7 +96,7 @@ struct SpiSemanticTraits<PeripheralId::SPI0> {
   static constexpr bool kPresent = false;
   static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_spi_microchip_avr_da_spi_v1;
   static constexpr bool kHardwarePresent = false;
-  static constexpr std::uintptr_t kBaseAddress = 0x00000940u;
+  static constexpr std::uintptr_t kBaseAddress = 0x000008C0u;
   static constexpr std::uint32_t kMaxClockHz = 0u;
   static constexpr std::int16_t kMosiOutSignal = -1;
   static constexpr std::int16_t kMisoInSignal = -1;
@@ -163,7 +163,7 @@ struct SpiSemanticTraits<PeripheralId::SPI0> {
   static constexpr RuntimeFieldRef kTdField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTdrPcsField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRdField = kInvalidFieldRef;
-  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{18u}};
+  static constexpr std::array<std::uint32_t, 1> kIrqNumbers = {{28u}};
   static constexpr RuntimeFieldRef kKernelClockSelectorField = kInvalidFieldRef;
   static constexpr std::array<KernelClockSourceOption, 0> kKernelClockSourceOptions = {};
   static constexpr std::uint32_t kKernelMaxClockHz = 24000000u;

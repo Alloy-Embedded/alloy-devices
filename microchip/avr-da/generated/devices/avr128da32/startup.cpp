@@ -28,38 +28,18 @@ extern "C" {
     while (true) {}
 }
 
-void __vector_7() __attribute__((weak, alias("Default_Handler")));
-void TCA0_LUNF_IRQHandler() __attribute__((weak, alias("__vector_7")));
-void __vector_8() __attribute__((weak, alias("Default_Handler")));
-void TCA0_HUNF_IRQHandler() __attribute__((weak, alias("__vector_8")));
-void __vector_9() __attribute__((weak, alias("Default_Handler")));
-void TCA0_CMP0_IRQHandler() __attribute__((weak, alias("__vector_9")));
-void __vector_10() __attribute__((weak, alias("Default_Handler")));
-void TCA0_CMP1_IRQHandler() __attribute__((weak, alias("__vector_10")));
-void __vector_11() __attribute__((weak, alias("Default_Handler")));
-void TCA0_CMP2_IRQHandler() __attribute__((weak, alias("__vector_11")));
-void __vector_16() __attribute__((weak, alias("Default_Handler")));
-void TWI0_TWIS_IRQHandler() __attribute__((weak, alias("__vector_16")));
-void __vector_17() __attribute__((weak, alias("Default_Handler")));
-void TWI0_TWIM_IRQHandler() __attribute__((weak, alias("__vector_17")));
 void __vector_18() __attribute__((weak, alias("Default_Handler")));
-void SPI0_INT_IRQHandler() __attribute__((weak, alias("__vector_18")));
+void USART0_RXC_IRQHandler() __attribute__((weak, alias("__vector_18")));
 void __vector_19() __attribute__((weak, alias("Default_Handler")));
-void USART0_RXC_IRQHandler() __attribute__((weak, alias("__vector_19")));
+void USART0_DRE_IRQHandler() __attribute__((weak, alias("__vector_19")));
 void __vector_20() __attribute__((weak, alias("Default_Handler")));
-void USART0_DRE_IRQHandler() __attribute__((weak, alias("__vector_20")));
-void __vector_21() __attribute__((weak, alias("Default_Handler")));
-void USART0_TXC_IRQHandler() __attribute__((weak, alias("__vector_21")));
-void __vector_24() __attribute__((weak, alias("Default_Handler")));
-void ADC0_RESRDY_IRQHandler() __attribute__((weak, alias("__vector_24")));
-void __vector_25() __attribute__((weak, alias("Default_Handler")));
-void ADC0_WCMP_IRQHandler() __attribute__((weak, alias("__vector_25")));
-void __vector_31() __attribute__((weak, alias("Default_Handler")));
-void USART1_RXC_IRQHandler() __attribute__((weak, alias("__vector_31")));
-void __vector_32() __attribute__((weak, alias("Default_Handler")));
-void USART1_DRE_IRQHandler() __attribute__((weak, alias("__vector_32")));
-void __vector_33() __attribute__((weak, alias("Default_Handler")));
-void USART1_TXC_IRQHandler() __attribute__((weak, alias("__vector_33")));
+void USART0_TXC_IRQHandler() __attribute__((weak, alias("__vector_20")));
+void __vector_26() __attribute__((weak, alias("Default_Handler")));
+void TWI0_TWIS_IRQHandler() __attribute__((weak, alias("__vector_26")));
+void __vector_27() __attribute__((weak, alias("Default_Handler")));
+void TWI0_TWIM_IRQHandler() __attribute__((weak, alias("__vector_27")));
+void __vector_28() __attribute__((weak, alias("Default_Handler")));
+void SPI0_INT_IRQHandler() __attribute__((weak, alias("__vector_28")));
 
 }  // extern "C"
 #else

@@ -5,17 +5,12 @@
     "pipeline_name": "alloy-codegen",
     "target_repository": "alloy-devices"
   },
-  "canonical_ir_sha256": "05bc4da923368f47ae5cdfdf9db3ab5fa4252ad1eb7e572884b780f2f8310496",
+  "canonical_ir_sha256": "c07a6e3ab2e61e9bf8b0ed59181300728753597433459ad7e8c2113dfd20052a",
   "generator_version": "0.1.0",
   "ir_schema_version": "1.2.0",
   "manifest_kind": "artifact-manifest-v1",
   "patch_manifest": {
-    "applied_patches": [
-      {
-        "description": "Bootstrap overlay patch for avr128da32 using family catalog microchip-avr-da-family-bootstrap-v1.",
-        "patch_id": "microchip-avr128da32-bootstrap"
-      }
-    ],
+    "applied_patches": [],
     "bootstrap_family": "avr-da",
     "manifest_kind": "patch-manifest-v1",
     "targets": [
@@ -32,56 +27,17 @@
     "manifest_kind": "source-manifest-v1",
     "sources": [
       {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/Microchip.AVR-Dx_DFP.2.4.286.atpack",
-        "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
-        "revision": "content-sha256:9d81b26ee9db63004f996aa279bb08425b098d28ce785b0bbf75478c0766e67e",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/data/devices/vendors/microchip/avr-da/devices/avr128da32.yml",
+        "origin_url": "https://github.com/Alloy-Embedded/alloy-devices-yml",
+        "revision": "git-sha:9077be6a437f94a314d33fbd3db3c2a7d7e6b1e6",
         "scope": {
           "device": null,
           "family": "avr-da",
           "vendor": "microchip"
         },
-        "source_id": "microchip-dfp-pack",
+        "source_id": "alloy-devices-yml",
         "target_device": "avr128da32",
-        "upstream_path": "Microchip.AVR-Dx_DFP.2.4.286.atpack"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/avr-da-9d81b26ee9db6300",
-        "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
-        "revision": "content-sha256:9fb29afd2530e4ac854e6b1e21605bd613f9603e3331ee85d721223733118d37",
-        "scope": {
-          "device": null,
-          "family": "avr-da",
-          "vendor": "microchip"
-        },
-        "source_id": "microchip-dfp-extract",
-        "target_device": "avr128da32",
-        "upstream_path": "."
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/avr-da-9d81b26ee9db6300/Microchip.AVR-Dx_DFP.pdsc",
-        "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
-        "revision": "content-sha256:9fb29afd2530e4ac854e6b1e21605bd613f9603e3331ee85d721223733118d37",
-        "scope": {
-          "device": null,
-          "family": "avr-da",
-          "vendor": "microchip"
-        },
-        "source_id": "microchip-dfp-extract",
-        "target_device": "avr128da32",
-        "upstream_path": "Microchip.AVR-Dx_DFP.pdsc"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/microchip-dfp/avr-da-9d81b26ee9db6300/atdf/AVR128DA32.atdf",
-        "origin_url": "https://packs.download.microchip.com/Microchip.AVR-Dx_DFP.2.4.286.atpack",
-        "revision": "content-sha256:9fb29afd2530e4ac854e6b1e21605bd613f9603e3331ee85d721223733118d37",
-        "scope": {
-          "device": null,
-          "family": "avr-da",
-          "vendor": "microchip"
-        },
-        "source_id": "microchip-dfp-extract",
-        "target_device": "avr128da32",
-        "upstream_path": "atdf/AVR128DA32.atdf"
+        "upstream_path": "vendors/microchip/avr-da/devices/avr128da32.yml"
       }
     ],
     "targets": [
@@ -89,5 +45,5 @@
     ]
   },
   "validation_report_id": "bootstrap-validation-v1",
-  "validation_report_sha256": "7e73388b341d7dbbb69d4f98d26b3f697b5fde680c35a92ef7b61e6441b87c2c"
+  "validation_report_sha256": "537aec7262600f2abf059bb7b29a02af8715bcd5e7c7aaff73f5886fc03c08e8"
 }
