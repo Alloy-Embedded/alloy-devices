@@ -10,8 +10,9 @@ if(NOT DEFINED ALLOY_DEVICE_ROOT)
 endif()
 
 set(_ALLOY_DEVICE_COMPONENT_PATHS
-  "mimxrt1062=nxp/imxrt1060/generated/cmake/AlloyDevice-mimxrt1062.cmake"
-  "mimxrt1064=nxp/imxrt1060/generated/cmake/AlloyDevice-mimxrt1064.cmake"
+  "stm32g030f6=st/stm32g0/generated/cmake/AlloyDevice-stm32g030f6.cmake"
+  "stm32g071rb=st/stm32g0/generated/cmake/AlloyDevice-stm32g071rb.cmake"
+  "stm32g0b1re=st/stm32g0/generated/cmake/AlloyDevice-stm32g0b1re.cmake"
 )
 
 foreach(component ${AlloyDevice_FIND_COMPONENTS})
