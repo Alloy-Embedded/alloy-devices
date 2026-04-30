@@ -4,9 +4,9 @@
     {
       "core": "rv32imc",
       "device": "esp32c3",
-      "metadata_path": "espressif/esp32c3/metadata/devices/esp32c3.json",
       "package": "qfn32",
-      "summary": "Espressif ESP32-C3 single-core RISC-V RV32IMC SoC."
+      "summary": "Espressif ESP32-C3 single-core RISC-V RV32IMC SoC.",
+      "yaml_path": "data/devices/vendors/espressif/esp32c3/devices/esp32c3.yml"
     }
   ],
   "family": "esp32c3",

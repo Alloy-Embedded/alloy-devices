@@ -195,6 +195,49 @@ struct SpiPeripheralTraits {
   static constexpr std::array<std::uint8_t, 0> kValidCsPins = {};
 };
 
+
+// add-typed-peripheral-enums-everywhere: typed SpiPrescalerOf per peripheral.
+template<PeripheralId Id>
+struct SpiPrescalerOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct SpiPrescalerOf<PeripheralId::SPI2> {
+  enum class type : std::uint8_t {
+    div_2 = 0u,
+    div_4 = 1u,
+    div_8 = 2u,
+    div_16 = 3u,
+    div_32 = 4u,
+    div_64 = 5u,
+    div_128 = 6u,
+    div_256 = 7u,
+  };
+};
+
+template<PeripheralId Id>
+using SpiPrescaler = typename SpiPrescalerOf<Id>::type;
+
+// add-typed-peripheral-enums-everywhere: typed SpiFrameSizeOf per peripheral.
+template<PeripheralId Id>
+struct SpiFrameSizeOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct SpiFrameSizeOf<PeripheralId::SPI2> {
+  enum class type : std::uint8_t {
+    bits_4 = 0u,
+    bits_8 = 1u,
+    bits_16 = 2u,
+    bits_32 = 3u,
+  };
+};
+
+template<PeripheralId Id>
+using SpiFrameSize = typename SpiFrameSizeOf<Id>::type;
+
 }
 }
 }

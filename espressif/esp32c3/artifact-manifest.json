@@ -10,12 +10,7 @@
   "ir_schema_version": "1.2.0",
   "manifest_kind": "artifact-manifest-v1",
   "patch_manifest": {
-    "applied_patches": [
-      {
-        "description": "Bootstrap overlay patch for esp32c3 using family catalog espressif-esp32c3-family-bootstrap-v1.",
-        "patch_id": "espressif-esp32c3-bootstrap"
-      }
-    ],
+    "applied_patches": [],
     "bootstrap_family": "esp32c3",
     "manifest_kind": "patch-manifest-v1",
     "targets": [
@@ -32,17 +27,17 @@
     "manifest_kind": "source-manifest-v1",
     "sources": [
       {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/espressif-svd/svd/esp32c3.svd",
-        "origin_url": "https://github.com/espressif/svd.git",
-        "revision": "be20aa12560889d6125d144cdb48cf615ac17628",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/data/devices/vendors/espressif/esp32c3/devices/esp32c3.yml",
+        "origin_url": "https://github.com/Alloy-Embedded/alloy-devices-yml",
+        "revision": "git-sha:9077be6a437f94a314d33fbd3db3c2a7d7e6b1e6",
         "scope": {
           "device": null,
           "family": "esp32c3",
           "vendor": "espressif"
         },
-        "source_id": "espressif-svd",
+        "source_id": "alloy-devices-yml",
         "target_device": "esp32c3",
-        "upstream_path": "esp32c3.svd"
+        "upstream_path": "vendors/espressif/esp32c3/devices/esp32c3.yml"
       }
     ],
     "targets": [
@@ -50,5 +45,5 @@
     ]
   },
   "validation_report_id": "bootstrap-validation-v1",
-  "validation_report_sha256": "2846da74e195ce7c4924643950e376bb59a5eb113601b7a302cced9882ca91d8"
+  "validation_report_sha256": "4bc10f24f4c97e1409ab1f24f16aeebab6700938840399ebfcda9c6ccf781fa3"
 }
