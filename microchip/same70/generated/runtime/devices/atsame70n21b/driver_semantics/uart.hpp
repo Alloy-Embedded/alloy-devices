@@ -947,6 +947,369 @@ struct UartPeripheralTraits {
   static constexpr std::array<std::uint8_t, 0> kValidRtsPins = {};
 };
 
+
+// add-typed-peripheral-enums-everywhere: typed UartParityOf per peripheral.
+template<PeripheralId Id>
+struct UartParityOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct UartParityOf<PeripheralId::UART0> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::UART1> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::UART2> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::UART3> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::UART4> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::USART0> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::USART1> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<>
+struct UartParityOf<PeripheralId::USART2> {
+  enum class type : std::uint8_t {
+    none = 0u,
+    even = 1u,
+    odd = 2u,
+  };
+};
+
+template<PeripheralId Id>
+using UartParity = typename UartParityOf<Id>::type;
+
+// add-typed-peripheral-enums-everywhere: typed UartStopBitsOf per peripheral.
+template<PeripheralId Id>
+struct UartStopBitsOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::UART0> {
+  enum class type : std::uint8_t {
+    one = 0u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::UART1> {
+  enum class type : std::uint8_t {
+    one = 0u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::UART2> {
+  enum class type : std::uint8_t {
+    one = 0u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::UART3> {
+  enum class type : std::uint8_t {
+    one = 0u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::UART4> {
+  enum class type : std::uint8_t {
+    one = 0u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::USART0> {
+  enum class type : std::uint8_t {
+    one = 0u,
+    one_and_half = 1u,
+    two = 2u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::USART1> {
+  enum class type : std::uint8_t {
+    one = 0u,
+    one_and_half = 1u,
+    two = 2u,
+  };
+};
+
+template<>
+struct UartStopBitsOf<PeripheralId::USART2> {
+  enum class type : std::uint8_t {
+    one = 0u,
+    one_and_half = 1u,
+    two = 2u,
+  };
+};
+
+template<PeripheralId Id>
+using UartStopBits = typename UartStopBitsOf<Id>::type;
+
+// add-typed-peripheral-enums-everywhere: typed UartOversamplingOf per peripheral.
+template<PeripheralId Id>
+struct UartOversamplingOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::UART0> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::UART1> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::UART2> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::UART3> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::UART4> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::USART0> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+    over_8x = 1u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::USART1> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+    over_8x = 1u,
+  };
+};
+
+template<>
+struct UartOversamplingOf<PeripheralId::USART2> {
+  enum class type : std::uint8_t {
+    over_16x = 0u,
+    over_8x = 1u,
+  };
+};
+
+template<PeripheralId Id>
+using UartOversampling = typename UartOversamplingOf<Id>::type;
+
+// add-typed-peripheral-enums-everywhere: typed UartBaudClockSourceOf per peripheral.
+template<PeripheralId Id>
+struct UartBaudClockSourceOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::UART0> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::UART1> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::UART2> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::UART3> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::UART4> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::USART0> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::USART1> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<>
+struct UartBaudClockSourceOf<PeripheralId::USART2> {
+  enum class type : std::uint8_t {
+    mck = 0u,
+  };
+};
+
+template<PeripheralId Id>
+using UartBaudClockSource = typename UartBaudClockSourceOf<Id>::type;
+
+// add-typed-peripheral-enums-everywhere: typed UartDataBitsOf per peripheral.
+template<PeripheralId Id>
+struct UartDataBitsOf {
+  enum class type : std::uint8_t {};
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::UART0> {
+  enum class type : std::uint8_t {
+    bits_8 = 0u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::UART1> {
+  enum class type : std::uint8_t {
+    bits_8 = 0u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::UART2> {
+  enum class type : std::uint8_t {
+    bits_8 = 0u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::UART3> {
+  enum class type : std::uint8_t {
+    bits_8 = 0u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::UART4> {
+  enum class type : std::uint8_t {
+    bits_8 = 0u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::USART0> {
+  enum class type : std::uint8_t {
+    bits_5 = 0u,
+    bits_6 = 1u,
+    bits_7 = 2u,
+    bits_8 = 3u,
+    bits_9 = 4u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::USART1> {
+  enum class type : std::uint8_t {
+    bits_5 = 0u,
+    bits_6 = 1u,
+    bits_7 = 2u,
+    bits_8 = 3u,
+    bits_9 = 4u,
+  };
+};
+
+template<>
+struct UartDataBitsOf<PeripheralId::USART2> {
+  enum class type : std::uint8_t {
+    bits_5 = 0u,
+    bits_6 = 1u,
+    bits_7 = 2u,
+    bits_8 = 3u,
+    bits_9 = 4u,
+  };
+};
+
+template<PeripheralId Id>
+using UartDataBits = typename UartDataBitsOf<Id>::type;
+
 }
 }
 }

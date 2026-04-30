@@ -10,7 +10,8 @@ if(NOT DEFINED ALLOY_DEVICE_ROOT)
 endif()
 
 set(_ALLOY_DEVICE_COMPONENT_PATHS
-  "avr128da32=microchip/avr-da/generated/cmake/AlloyDevice-avr128da32.cmake"
+  "atsame70n21b=microchip/same70/generated/cmake/AlloyDevice-atsame70n21b.cmake"
+  "atsame70q21b=microchip/same70/generated/cmake/AlloyDevice-atsame70q21b.cmake"
 )
 
 foreach(component ${AlloyDevice_FIND_COMPONENTS})

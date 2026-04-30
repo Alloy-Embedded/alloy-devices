@@ -4,16 +4,16 @@
     {
       "core": "cortex-m7f",
       "device": "atsame70n21b",
-      "metadata_path": "microchip/same70/metadata/devices/atsame70n21b.json",
       "package": "lqfp100",
-      "summary": "Second SAME70 package variant used to validate package-sensitive normalization."
+      "summary": "Second SAME70 package variant used to validate package-sensitive normalization.",
+      "yaml_path": "data/devices/vendors/microchip/same70/devices/atsame70n21b.yml"
     },
     {
       "core": "cortex-m7f",
       "device": "atsame70q21b",
-      "metadata_path": "microchip/same70/metadata/devices/atsame70q21b.json",
       "package": "lqfp144",
-      "summary": "Board-target SAME70 Xplained Ultra device."
+      "summary": "Board-target SAME70 Xplained Ultra device.",
+      "yaml_path": "data/devices/vendors/microchip/same70/devices/atsame70q21b.yml"
     }
   ],
   "family": "same70",
