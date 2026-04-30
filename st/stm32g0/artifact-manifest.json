@@ -5,25 +5,12 @@
     "pipeline_name": "alloy-codegen",
     "target_repository": "alloy-devices"
   },
-  "canonical_ir_sha256": "899cfcc800608f04cd40697a3901547883e9f77d9e9ade26103081937463dbfc",
+  "canonical_ir_sha256": "2bd47f2b627cc8f307cbc603b3333724cc33229e4e24235266bbe96de89de60b",
   "generator_version": "0.1.0",
   "ir_schema_version": "1.2.0",
   "manifest_kind": "artifact-manifest-v1",
   "patch_manifest": {
-    "applied_patches": [
-      {
-        "description": "Bootstrap overlay patch for stm32g030f6 using family catalog st-stm32g0-family-bootstrap-v1.",
-        "patch_id": "st-stm32g0-stm32g030f6-bootstrap"
-      },
-      {
-        "description": "Bootstrap overlay patch for stm32g071rb using family catalog st-stm32g0-family-bootstrap-v1.",
-        "patch_id": "st-stm32g0-stm32g071rb-bootstrap"
-      },
-      {
-        "description": "Bootstrap overlay patch for stm32g0b1re using family catalog st-stm32g0-family-bootstrap-v1.",
-        "patch_id": "st-stm32g0-stm32g0b1re-bootstrap"
-      }
-    ],
+    "applied_patches": [],
     "bootstrap_family": "stm32g0",
     "manifest_kind": "patch-manifest-v1",
     "targets": [
@@ -42,121 +29,43 @@
     "manifest_kind": "source-manifest-v1",
     "sources": [
       {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32G030.svd",
-        "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
-        "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/data/devices/vendors/st/stm32g0/devices/stm32g030f6.yml",
+        "origin_url": "https://github.com/Alloy-Embedded/alloy-devices-yml",
+        "revision": "git-sha:9077be6a437f94a314d33fbd3db3c2a7d7e6b1e6",
         "scope": {
           "device": null,
           "family": "stm32g0",
           "vendor": "st"
         },
-        "source_id": "cmsis-svd-data",
+        "source_id": "alloy-devices-yml",
         "target_device": "stm32g030f6",
-        "upstream_path": "data/STMicro/STM32G030.svd"
+        "upstream_path": "vendors/st/stm32g0/devices/stm32g030f6.yml"
       },
       {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32G071.svd",
-        "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
-        "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/data/devices/vendors/st/stm32g0/devices/stm32g071rb.yml",
+        "origin_url": "https://github.com/Alloy-Embedded/alloy-devices-yml",
+        "revision": "git-sha:9077be6a437f94a314d33fbd3db3c2a7d7e6b1e6",
         "scope": {
           "device": null,
           "family": "stm32g0",
           "vendor": "st"
         },
-        "source_id": "cmsis-svd-data",
+        "source_id": "alloy-devices-yml",
         "target_device": "stm32g071rb",
-        "upstream_path": "data/STMicro/STM32G071.svd"
+        "upstream_path": "vendors/st/stm32g0/devices/stm32g071rb.yml"
       },
       {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/cmsis-svd-data/data/STMicro/STM32G0B1.svd",
-        "origin_url": "https://github.com/cmsis-svd/cmsis-svd-data.git",
-        "revision": "c65f8551e57c770344d229dcaa0bf838fa29aff4",
+        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/data/devices/vendors/st/stm32g0/devices/stm32g0b1re.yml",
+        "origin_url": "https://github.com/Alloy-Embedded/alloy-devices-yml",
+        "revision": "git-sha:9077be6a437f94a314d33fbd3db3c2a7d7e6b1e6",
         "scope": {
           "device": null,
           "family": "stm32g0",
           "vendor": "st"
         },
-        "source_id": "cmsis-svd-data",
+        "source_id": "alloy-devices-yml",
         "target_device": "stm32g0b1re",
-        "upstream_path": "data/STMicro/STM32G0B1.svd"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32G030F6Px.xml",
-        "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
-        "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
-        "scope": {
-          "device": null,
-          "family": "stm32g0",
-          "vendor": "st"
-        },
-        "source_id": "stm32-open-pin-data",
-        "target_device": "stm32g030f6",
-        "upstream_path": "mcu/STM32G030F6Px.xml"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32G03x_gpio_v1_0_Modes.xml",
-        "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
-        "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
-        "scope": {
-          "device": null,
-          "family": "stm32g0",
-          "vendor": "st"
-        },
-        "source_id": "stm32-open-pin-data",
-        "target_device": "stm32g030f6",
-        "upstream_path": "mcu/IP/GPIO-STM32G03x_gpio_v1_0_Modes.xml"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32G071R(6-8-B)Tx.xml",
-        "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
-        "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
-        "scope": {
-          "device": null,
-          "family": "stm32g0",
-          "vendor": "st"
-        },
-        "source_id": "stm32-open-pin-data",
-        "target_device": "stm32g071rb",
-        "upstream_path": "mcu/STM32G071R(6-8-B)Tx.xml"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32G07x_gpio_v1_0_Modes.xml",
-        "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
-        "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
-        "scope": {
-          "device": null,
-          "family": "stm32g0",
-          "vendor": "st"
-        },
-        "source_id": "stm32-open-pin-data",
-        "target_device": "stm32g071rb",
-        "upstream_path": "mcu/IP/GPIO-STM32G07x_gpio_v1_0_Modes.xml"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/STM32G0B1R(B-C-E)Tx.xml",
-        "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
-        "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
-        "scope": {
-          "device": null,
-          "family": "stm32g0",
-          "vendor": "st"
-        },
-        "source_id": "stm32-open-pin-data",
-        "target_device": "stm32g0b1re",
-        "upstream_path": "mcu/STM32G0B1R(B-C-E)Tx.xml"
-      },
-      {
-        "local_path": "/home/runner/work/alloy-codegen/alloy-codegen/.cache/sources/STM32_open_pin_data/mcu/IP/GPIO-STM32G0Bx_gpio_v1_0_Modes.xml",
-        "origin_url": "https://github.com/STMicroelectronics/STM32_open_pin_data.git",
-        "revision": "d2ca9b5ed0b35ad3aa92e91984ec7addae58bf7e",
-        "scope": {
-          "device": null,
-          "family": "stm32g0",
-          "vendor": "st"
-        },
-        "source_id": "stm32-open-pin-data",
-        "target_device": "stm32g0b1re",
-        "upstream_path": "mcu/IP/GPIO-STM32G0Bx_gpio_v1_0_Modes.xml"
+        "upstream_path": "vendors/st/stm32g0/devices/stm32g0b1re.yml"
       }
     ],
     "targets": [
@@ -166,5 +75,5 @@
     ]
   },
   "validation_report_id": "bootstrap-validation-v1",
-  "validation_report_sha256": "e8c673bd0fdb7e5ed3713c9f08426790c73a603fe672e4a531b5a70e113c86e5"
+  "validation_report_sha256": "7a9d40f86915cbe36f58e7d51e0810f51d279b5955690b261806084abedb4d5c"
 }

@@ -64,7 +64,7 @@ struct RtcSemanticTraits {
 template<>
 struct RtcSemanticTraits<PeripheralId::RTC> {
   static constexpr bool kPresent = true;
-  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_rtc_st_rtc3_v1_0_cube;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_rtc_st_rtc;
   static constexpr bool kHasCalendar = true;
   static constexpr bool kHasAlarm = true;
   static constexpr bool kHasWriteProtection = true;
@@ -74,7 +74,7 @@ struct RtcSemanticTraits<PeripheralId::RTC> {
   static constexpr RuntimeRegisterRef kControlRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kModeRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kStatusRegister = kInvalidRegisterRef;
-  static constexpr RuntimeRegisterRef kTimeRegister = kInvalidRegisterRef;
+  static constexpr RuntimeRegisterRef kTimeRegister = RuntimeRegisterRef{RegisterId::register_rtc_tr, 0x40002800u, 0u, true};
   static constexpr RuntimeRegisterRef kDateRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kAlarmTimeRegister = kInvalidRegisterRef;
   static constexpr RuntimeRegisterRef kAlarmDateRegister = kInvalidRegisterRef;

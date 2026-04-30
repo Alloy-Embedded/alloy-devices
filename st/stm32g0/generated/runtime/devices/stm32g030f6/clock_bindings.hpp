@@ -23,8 +23,8 @@ struct ClockGateTraits {
 template<>
 struct ClockGateTraits<ClockGateId::gate_adc1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_adcen;
+  static constexpr RegisterId kRegisterId = RegisterId::none;
+  static constexpr FieldId kFieldId = FieldId::none;
 };
 
 template<>
@@ -49,108 +49,24 @@ struct ClockGateTraits<ClockGateId::gate_gpioa> {
 };
 
 template<>
-struct ClockGateTraits<ClockGateId::gate_gpiob> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpioben;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_gpioc> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpiocen;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_gpiod> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpioden;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_gpiof> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_iopenr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_iopenr_gpiofen;
-};
-
-template<>
 struct ClockGateTraits<ClockGateId::gate_i2c1> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_i2c1en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_i2c2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_i2c2en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_spi1> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_spi1en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_spi2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_spi2en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_tim1> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_tim1en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_tim14> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_tim14en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_tim16> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_tim16en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_tim17> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_tim17en;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_tim2> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
   static constexpr FieldId kFieldId = FieldId::none;
 };
 
 template<>
-struct ClockGateTraits<ClockGateId::gate_tim3> {
+struct ClockGateTraits<ClockGateId::gate_spi1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr1_tim3en;
+  static constexpr RegisterId kRegisterId = RegisterId::none;
+  static constexpr FieldId kFieldId = FieldId::none;
 };
 
 template<>
-struct ClockGateTraits<ClockGateId::gate_usart1> {
+struct ClockGateTraits<ClockGateId::gate_tim1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbenr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbenr2_usart1en;
+  static constexpr RegisterId kRegisterId = RegisterId::none;
+  static constexpr FieldId kFieldId = FieldId::none;
 };
 
 template<>
@@ -171,8 +87,8 @@ struct ResetTraits {
 template<>
 struct ResetTraits<ResetId::reset_adc1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_adcrst;
+  static constexpr RegisterId kRegisterId = RegisterId::none;
+  static constexpr FieldId kFieldId = FieldId::none;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -201,103 +117,7 @@ struct ResetTraits<ResetId::reset_gpioa> {
 };
 
 template<>
-struct ResetTraits<ResetId::reset_gpiob> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiobrst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_gpioc> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiocrst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_gpiod> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiodrst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_gpiof> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ioprstr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_ioprstr_gpiofrst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
 struct ResetTraits<ResetId::reset_i2c1> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_i2c1rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_i2c2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_i2c2rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_spi1> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_spi1rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_spi2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_spi2rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_tim1> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_tim1rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_tim14> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_tim14rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_tim16> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_tim16rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_tim17> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_tim17rst;
-  static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
-};
-
-template<>
-struct ResetTraits<ResetId::reset_tim2> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
   static constexpr FieldId kFieldId = FieldId::none;
@@ -305,18 +125,18 @@ struct ResetTraits<ResetId::reset_tim2> {
 };
 
 template<>
-struct ResetTraits<ResetId::reset_tim3> {
+struct ResetTraits<ResetId::reset_spi1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr1;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr1_tim3rst;
+  static constexpr RegisterId kRegisterId = RegisterId::none;
+  static constexpr FieldId kFieldId = FieldId::none;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
 template<>
-struct ResetTraits<ResetId::reset_usart1> {
+struct ResetTraits<ResetId::reset_tim1> {
   static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_apbrstr2;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_apbrstr2_usart1rst;
+  static constexpr RegisterId kRegisterId = RegisterId::none;
+  static constexpr FieldId kFieldId = FieldId::none;
   static constexpr ActiveLevelId kActiveLevelId = ActiveLevelId::active_level_high;
 };
 
@@ -333,13 +153,6 @@ struct ClockSelectorTraits {
   static constexpr bool kPresent = false;
   static constexpr RegisterId kRegisterId = RegisterId::none;
   static constexpr FieldId kFieldId = FieldId::none;
-};
-
-template<>
-struct ClockSelectorTraits<ClockSelectorId::selector_usart1_kernel> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_rcc_ccipr;
-  static constexpr FieldId kFieldId = FieldId::field_rcc_ccipr_usart1sel;
 };
 
 template<PeripheralId Id>
@@ -383,50 +196,10 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIOA> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIOB> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpiob;
-  static constexpr ResetId kResetId = ResetId::reset_gpiob;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIOC> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpioc;
-  static constexpr ResetId kResetId = ResetId::reset_gpioc;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIOD> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpiod;
-  static constexpr ResetId kResetId = ResetId::reset_gpiod;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIOF> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpiof;
-  static constexpr ResetId kResetId = ResetId::reset_gpiof;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::I2C1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c1;
   static constexpr ResetId kResetId = ResetId::reset_i2c1;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::I2C2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_i2c2;
-  static constexpr ResetId kResetId = ResetId::reset_i2c2;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
@@ -455,67 +228,11 @@ struct PeripheralClockBindingTraits<PeripheralId::SPI1> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::SPI2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_spi2;
-  static constexpr ResetId kResetId = ResetId::reset_spi2;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::TIM1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_tim1;
   static constexpr ResetId kResetId = ResetId::reset_tim1;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::TIM14> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_tim14;
-  static constexpr ResetId kResetId = ResetId::reset_tim14;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::TIM16> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_tim16;
-  static constexpr ResetId kResetId = ResetId::reset_tim16;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::TIM17> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_tim17;
-  static constexpr ResetId kResetId = ResetId::reset_tim17;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::TIM2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_tim2;
-  static constexpr ResetId kResetId = ResetId::reset_tim2;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::TIM3> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_tim3;
-  static constexpr ResetId kResetId = ResetId::reset_tim3;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::USART1> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_usart1;
-  static constexpr ResetId kResetId = ResetId::reset_usart1;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::selector_usart1_kernel;
 };
 
 template<>
@@ -526,38 +243,17 @@ struct PeripheralClockBindingTraits<PeripheralId::USART2> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::WWDG> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-inline constexpr std::array<PeripheralId, 23> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 10> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::DMA1,
   PeripheralId::DMAMUX1,
   PeripheralId::GPIOA,
-  PeripheralId::GPIOB,
-  PeripheralId::GPIOC,
-  PeripheralId::GPIOD,
-  PeripheralId::GPIOF,
   PeripheralId::I2C1,
-  PeripheralId::I2C2,
   PeripheralId::IWDG,
   PeripheralId::RTC,
   PeripheralId::SPI1,
-  PeripheralId::SPI2,
   PeripheralId::TIM1,
-  PeripheralId::TIM14,
-  PeripheralId::TIM16,
-  PeripheralId::TIM17,
-  PeripheralId::TIM2,
-  PeripheralId::TIM3,
-  PeripheralId::USART1,
   PeripheralId::USART2,
-  PeripheralId::WWDG,
 }};
 
 template <auto> inline constexpr bool kClockBindingDependentFalse = false;
@@ -570,17 +266,6 @@ inline auto clock_enable() noexcept -> void {
 template <PeripheralId Id>
 inline auto clock_disable() noexcept -> void {
   static_assert(kClockBindingDependentFalse<Id>, "");
-}
-
-template <>
-inline auto clock_enable<PeripheralId::ADC1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 20);
-}
-template <>
-inline auto clock_disable<PeripheralId::ADC1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 20);
 }
 
 template <>
@@ -614,160 +299,6 @@ template <>
 inline auto clock_disable<PeripheralId::GPIOA>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
   *reg = *reg & ~(1u << 0);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::GPIOB>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg | (1u << 1);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIOB>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg & ~(1u << 1);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::GPIOC>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg | (1u << 2);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIOC>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg & ~(1u << 2);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::GPIOD>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg | (1u << 3);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIOD>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg & ~(1u << 3);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::GPIOF>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg | (1u << 5);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIOF>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021034u);
-  *reg = *reg & ~(1u << 5);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::I2C1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg | (1u << 21);
-}
-template <>
-inline auto clock_disable<PeripheralId::I2C1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg & ~(1u << 21);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::I2C2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg | (1u << 22);
-}
-template <>
-inline auto clock_disable<PeripheralId::I2C2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg & ~(1u << 22);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::SPI1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 12);
-}
-template <>
-inline auto clock_disable<PeripheralId::SPI1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 12);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::SPI2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg | (1u << 14);
-}
-template <>
-inline auto clock_disable<PeripheralId::SPI2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg & ~(1u << 14);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::TIM1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 11);
-}
-template <>
-inline auto clock_disable<PeripheralId::TIM1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 11);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::TIM14>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 15);
-}
-template <>
-inline auto clock_disable<PeripheralId::TIM14>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 15);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::TIM16>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 17);
-}
-template <>
-inline auto clock_disable<PeripheralId::TIM16>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 17);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::TIM17>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 18);
-}
-template <>
-inline auto clock_disable<PeripheralId::TIM17>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 18);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::TIM3>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg | (1u << 1);
-}
-template <>
-inline auto clock_disable<PeripheralId::TIM3>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x4002103Cu);
-  *reg = *reg & ~(1u << 1);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::USART1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg | (1u << 14);
-}
-template <>
-inline auto clock_disable<PeripheralId::USART1>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x40021040u);
-  *reg = *reg & ~(1u << 14);
 }
 
 template <>

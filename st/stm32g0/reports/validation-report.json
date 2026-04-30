@@ -4,15 +4,14 @@
     {
       "blocking": false,
       "gate_id": "gate-a",
-      "message": "gate-a passed with 6 rule(s).",
+      "message": "gate-a passed with 5 rule(s).",
       "passed": true,
       "rule_ids": [
         "source-records-cover-targets",
         "source-records-provide-required-upstreams",
         "source-records-have-revisions",
         "source-records-have-local-paths",
-        "patch-target-count-match",
-        "patch-ids-unique"
+        "patch-manifest-is-empty"
       ]
     },
     {
@@ -337,16 +336,9 @@
     },
     {
       "category": "schema",
-      "message": "Found 3 patch record(s) for 3 target(s).",
+      "message": "Patch manifest carries no records (YAML-only admission).",
       "passed": true,
-      "rule_id": "patch-target-count-match",
-      "severity": "error"
-    },
-    {
-      "category": "schema",
-      "message": "Patch identifiers are unique within the requested scope.",
-      "passed": true,
-      "rule_id": "patch-ids-unique",
+      "rule_id": "patch-manifest-is-empty",
       "severity": "error"
     },
     {
@@ -414,7 +406,7 @@
     },
     {
       "category": "semantic",
-      "message": "stm32g030f6 package pin count 20 covers 17 known pin definition(s).",
+      "message": "stm32g030f6 package pin count 20 covers 6 known pin definition(s).",
       "passed": true,
       "rule_id": "stm32g030f6-package-pin-count-covers-known-pins",
       "severity": "error"
@@ -1023,7 +1015,7 @@
     },
     {
       "category": "semantic",
-      "message": "stm32g071rb package pin count 64 covers 60 known pin definition(s).",
+      "message": "stm32g071rb package pin count 64 covers 7 known pin definition(s).",
       "passed": true,
       "rule_id": "stm32g071rb-package-pin-count-covers-known-pins",
       "severity": "error"
@@ -1632,7 +1624,7 @@
     },
     {
       "category": "semantic",
-      "message": "stm32g0b1re package pin count 64 covers 60 known pin definition(s).",
+      "message": "stm32g0b1re package pin count 64 covers 6 known pin definition(s).",
       "passed": true,
       "rule_id": "stm32g0b1re-package-pin-count-covers-known-pins",
       "severity": "error"

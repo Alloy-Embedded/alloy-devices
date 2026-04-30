@@ -103,7 +103,7 @@ template<>
 struct ControllerTraits<DmaControllerId::DMA1> {
   static constexpr bool kPresent = true;
   static constexpr PeripheralId kPeripheralId = PeripheralId::DMA1;
-  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_dma_st_dma;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_dma_st_bdma_v1_0;
   static constexpr int kChannelCount = 7;
   static constexpr int kRequestCount = 2;
 };

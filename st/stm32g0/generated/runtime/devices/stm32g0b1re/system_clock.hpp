@@ -177,9 +177,9 @@ inline constexpr auto kSwField = RuntimeFieldRef{FieldId::field_rcc_cfgr_sw, Run
 inline constexpr auto kSwsField = RuntimeFieldRef{FieldId::field_rcc_cfgr_sws, RuntimeRegisterRef{RegisterId::register_rcc_cfgr, 0x40021000u, 8u, true}, 3u, 3u, true};
 inline constexpr auto kPllsrcField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_pllsrc, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 0u, 2u, true};
 inline constexpr auto kPllmField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_pllm, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 4u, 3u, true};
-inline constexpr auto kPllnField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_plln, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 8u, 8u, true};
-inline constexpr auto kPllrenField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_pllren, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 28u, 1u, true};
-inline constexpr auto kPllrField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_pllr, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 29u, 3u, true};
+inline constexpr auto kPllnField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_plln, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 8u, 7u, true};
+inline constexpr auto kPllrenField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_pllren, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 24u, 1u, true};
+inline constexpr auto kPllrField = RuntimeFieldRef{FieldId::field_rcc_pllcfgr_pllr, RuntimeRegisterRef{RegisterId::register_rcc_pllcfgr, 0x40021000u, 12u, true}, 25u, 2u, true};
 inline constexpr auto kFlashLatencyField = RuntimeFieldRef{FieldId::field_flash_acr_latency, RuntimeRegisterRef{RegisterId::register_flash_acr, 0x40022000u, 0u, true}, 0u, 3u, true};
 
 template<SystemClockProfileId Id>

@@ -21,26 +21,14 @@ struct ResetDescriptor {
   FieldId field_id;
   ActiveLevelId active_level_id;
 };
-inline constexpr std::array<ResetDescriptor, 20> kResetDescriptors = {{
-  {ResetId::reset_adc1, PeripheralId::ADC1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_adcrst, ActiveLevelId::active_level_high},
+inline constexpr std::array<ResetDescriptor, 8> kResetDescriptors = {{
+  {ResetId::reset_adc1, PeripheralId::ADC1, RegisterId::none, FieldId::none, ActiveLevelId::active_level_high},
   {ResetId::reset_dma1, PeripheralId::DMA1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
   {ResetId::reset_dmamux1, PeripheralId::DMAMUX1, RegisterId::register_rcc_ahbrstr, FieldId::field_rcc_ahbrstr_dma1rst, ActiveLevelId::active_level_high},
   {ResetId::reset_gpioa, PeripheralId::GPIOA, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpioarst, ActiveLevelId::active_level_high},
-  {ResetId::reset_gpiob, PeripheralId::GPIOB, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiobrst, ActiveLevelId::active_level_high},
-  {ResetId::reset_gpioc, PeripheralId::GPIOC, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiocrst, ActiveLevelId::active_level_high},
-  {ResetId::reset_gpiod, PeripheralId::GPIOD, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiodrst, ActiveLevelId::active_level_high},
-  {ResetId::reset_gpiof, PeripheralId::GPIOF, RegisterId::register_rcc_ioprstr, FieldId::field_rcc_ioprstr_gpiofrst, ActiveLevelId::active_level_high},
-  {ResetId::reset_i2c1, PeripheralId::I2C1, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_i2c1rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_i2c2, PeripheralId::I2C2, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_i2c2rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_spi1, PeripheralId::SPI1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_spi1rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_spi2, PeripheralId::SPI2, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_spi2rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_tim1, PeripheralId::TIM1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_tim1rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_tim14, PeripheralId::TIM14, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_tim14rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_tim16, PeripheralId::TIM16, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_tim16rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_tim17, PeripheralId::TIM17, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_tim17rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_tim2, PeripheralId::TIM2, RegisterId::register_rcc_apbrstr1, FieldId::none, ActiveLevelId::active_level_high},
-  {ResetId::reset_tim3, PeripheralId::TIM3, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_tim3rst, ActiveLevelId::active_level_high},
-  {ResetId::reset_usart1, PeripheralId::USART1, RegisterId::register_rcc_apbrstr2, FieldId::field_rcc_apbrstr2_usart1rst, ActiveLevelId::active_level_high},
+  {ResetId::reset_i2c1, PeripheralId::I2C1, RegisterId::register_rcc_apbrstr1, FieldId::none, ActiveLevelId::active_level_high},
+  {ResetId::reset_spi1, PeripheralId::SPI1, RegisterId::none, FieldId::none, ActiveLevelId::active_level_high},
+  {ResetId::reset_tim1, PeripheralId::TIM1, RegisterId::none, FieldId::none, ActiveLevelId::active_level_high},
   {ResetId::reset_usart2, PeripheralId::USART2, RegisterId::register_rcc_apbrstr1, FieldId::field_rcc_apbrstr1_usart2rst, ActiveLevelId::active_level_high},
 }};
 }

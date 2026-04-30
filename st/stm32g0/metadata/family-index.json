@@ -4,23 +4,23 @@
     {
       "core": "cortex-m0plus",
       "device": "stm32g030f6",
-      "metadata_path": "st/stm32g0/metadata/devices/stm32g030f6.json",
       "package": "tssop20",
-      "summary": "Low-pin-count bootstrap device."
+      "summary": "Low-pin-count bootstrap device.",
+      "yaml_path": "data/devices/vendors/st/stm32g0/devices/stm32g030f6.yml"
     },
     {
       "core": "cortex-m0plus",
       "device": "stm32g071rb",
-      "metadata_path": "st/stm32g0/metadata/devices/stm32g071rb.json",
       "package": "lqfp64",
-      "summary": "Representative mid-range bootstrap device."
+      "summary": "Representative mid-range bootstrap device.",
+      "yaml_path": "data/devices/vendors/st/stm32g0/devices/stm32g071rb.yml"
     },
     {
       "core": "cortex-m0plus",
       "device": "stm32g0b1re",
-      "metadata_path": "st/stm32g0/metadata/devices/stm32g0b1re.json",
       "package": "lqfp64",
-      "summary": "Higher-feature bootstrap device."
+      "summary": "Higher-feature bootstrap device.",
+      "yaml_path": "data/devices/vendors/st/stm32g0/devices/stm32g0b1re.yml"
     }
   ],
   "family": "stm32g0",

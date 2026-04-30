@@ -1,0 +1,13 @@
+{
+  "boards": [
+    {
+      "board_id": "nucleo-g071rb",
+      "device": "stm32g071rb",
+      "family": "stm32g0",
+      "package": "lqfp64",
+      "summary": "ST Nucleo-64 board with STM32G071RB.",
+      "vendor": "st"
+    }
+  ],
+  "manifest_kind": "boards-manifest-v1"
+}

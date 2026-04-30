@@ -76,32 +76,32 @@ struct CanSemanticTraits {
 template<>
 struct CanSemanticTraits<PeripheralId::FDCAN1> {
   static constexpr bool kPresent = true;
-  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_can_st_fdcan1_v1_0_cube;
+  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_can_st_fdcan_v1_0;
   static constexpr bool kHasFlexibleDataRate = true;
-  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 24u, true};
-  static constexpr RuntimeRegisterRef kNominalTimingRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 28u, true};
-  static constexpr RuntimeRegisterRef kDataTimingRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 12u, true};
-  static constexpr RuntimeRegisterRef kTestRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 16u, true};
-  static constexpr RuntimeRegisterRef kErrorCounterRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 64u, true};
-  static constexpr RuntimeRegisterRef kProtocolStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 68u, true};
-  static constexpr RuntimeRegisterRef kInterruptRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 80u, true};
-  static constexpr RuntimeRegisterRef kInterruptEnableRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 84u, true};
-  static constexpr RuntimeRegisterRef kInterruptLineSelectRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 88u, true};
-  static constexpr RuntimeRegisterRef kInterruptLineEnableRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 92u, true};
-  static constexpr RuntimeRegisterRef kGlobalFilterRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 128u, true};
-  static constexpr RuntimeRegisterRef kStandardFilterConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 132u, true};
-  static constexpr RuntimeRegisterRef kExtendedFilterConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 136u, true};
-  static constexpr RuntimeRegisterRef kExtendedIdMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 144u, true};
-  static constexpr RuntimeRegisterRef kRxFifo0ConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 160u, true};
-  static constexpr RuntimeRegisterRef kRxFifo0StatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 164u, true};
-  static constexpr RuntimeRegisterRef kRxFifo0AckRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 168u, true};
-  static constexpr RuntimeRegisterRef kTxBufferConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 192u, true};
-  static constexpr RuntimeRegisterRef kTxFifoQueueStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 196u, true};
-  static constexpr RuntimeRegisterRef kTxBufferAddRequestRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 208u, true};
-  static constexpr RuntimeRegisterRef kTxBufferPendingRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 204u, true};
-  static constexpr RuntimeRegisterRef kTxEventFifoConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 240u, true};
-  static constexpr RuntimeRegisterRef kTxEventFifoStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 244u, true};
-  static constexpr RuntimeRegisterRef kTxEventFifoAckRegister = RuntimeRegisterRef{RegisterId::none, 0x40006400u, 248u, true};
+  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 24u, true};
+  static constexpr RuntimeRegisterRef kNominalTimingRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 28u, true};
+  static constexpr RuntimeRegisterRef kDataTimingRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 12u, true};
+  static constexpr RuntimeRegisterRef kTestRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 16u, true};
+  static constexpr RuntimeRegisterRef kErrorCounterRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 64u, true};
+  static constexpr RuntimeRegisterRef kProtocolStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 68u, true};
+  static constexpr RuntimeRegisterRef kInterruptRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 80u, true};
+  static constexpr RuntimeRegisterRef kInterruptEnableRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 84u, true};
+  static constexpr RuntimeRegisterRef kInterruptLineSelectRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 88u, true};
+  static constexpr RuntimeRegisterRef kInterruptLineEnableRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 92u, true};
+  static constexpr RuntimeRegisterRef kGlobalFilterRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 128u, true};
+  static constexpr RuntimeRegisterRef kStandardFilterConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 132u, true};
+  static constexpr RuntimeRegisterRef kExtendedFilterConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 136u, true};
+  static constexpr RuntimeRegisterRef kExtendedIdMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 144u, true};
+  static constexpr RuntimeRegisterRef kRxFifo0ConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 160u, true};
+  static constexpr RuntimeRegisterRef kRxFifo0StatusRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 164u, true};
+  static constexpr RuntimeRegisterRef kRxFifo0AckRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 168u, true};
+  static constexpr RuntimeRegisterRef kTxBufferConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 192u, true};
+  static constexpr RuntimeRegisterRef kTxFifoQueueStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 196u, true};
+  static constexpr RuntimeRegisterRef kTxBufferAddRequestRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 208u, true};
+  static constexpr RuntimeRegisterRef kTxBufferPendingRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 204u, true};
+  static constexpr RuntimeRegisterRef kTxEventFifoConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 240u, true};
+  static constexpr RuntimeRegisterRef kTxEventFifoStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 244u, true};
+  static constexpr RuntimeRegisterRef kTxEventFifoAckRegister = RuntimeRegisterRef{RegisterId::none, 0x4000A000u, 248u, true};
   static constexpr RuntimeFieldRef kInitField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kConfigEnableField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kRestrictedOperationField = kInvalidFieldRef;
@@ -129,75 +129,13 @@ struct CanSemanticTraits<PeripheralId::FDCAN1> {
   static constexpr RuntimeFieldRef kRxFifo0AckIndexField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxFifoQueuePutIndexField = kInvalidFieldRef;
   static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = kInvalidFieldRef;
-  static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x40006400u, 208u, 0u, 0u, 1u, 1u, true};
-  static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x40006400u, 204u, 0u, 0u, 1u, 1u, true};
+  static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x4000A000u, 208u, 0u, 0u, 1u, 1u, true};
+  static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x4000A000u, 204u, 0u, 0u, 1u, 1u, true};
   static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
 };
 
-template<>
-struct CanSemanticTraits<PeripheralId::FDCAN2> {
-  static constexpr bool kPresent = true;
-  static constexpr BackendSchemaId kSchemaId = BackendSchemaId::schema_alloy_can_st_fdcan1_v1_0_cube;
-  static constexpr bool kHasFlexibleDataRate = true;
-  static constexpr RuntimeRegisterRef kControlRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 24u, true};
-  static constexpr RuntimeRegisterRef kNominalTimingRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 28u, true};
-  static constexpr RuntimeRegisterRef kDataTimingRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 12u, true};
-  static constexpr RuntimeRegisterRef kTestRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 16u, true};
-  static constexpr RuntimeRegisterRef kErrorCounterRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 64u, true};
-  static constexpr RuntimeRegisterRef kProtocolStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 68u, true};
-  static constexpr RuntimeRegisterRef kInterruptRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 80u, true};
-  static constexpr RuntimeRegisterRef kInterruptEnableRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 84u, true};
-  static constexpr RuntimeRegisterRef kInterruptLineSelectRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 88u, true};
-  static constexpr RuntimeRegisterRef kInterruptLineEnableRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 92u, true};
-  static constexpr RuntimeRegisterRef kGlobalFilterRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 128u, true};
-  static constexpr RuntimeRegisterRef kStandardFilterConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 132u, true};
-  static constexpr RuntimeRegisterRef kExtendedFilterConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 136u, true};
-  static constexpr RuntimeRegisterRef kExtendedIdMaskRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 144u, true};
-  static constexpr RuntimeRegisterRef kRxFifo0ConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 160u, true};
-  static constexpr RuntimeRegisterRef kRxFifo0StatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 164u, true};
-  static constexpr RuntimeRegisterRef kRxFifo0AckRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 168u, true};
-  static constexpr RuntimeRegisterRef kTxBufferConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 192u, true};
-  static constexpr RuntimeRegisterRef kTxFifoQueueStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 196u, true};
-  static constexpr RuntimeRegisterRef kTxBufferAddRequestRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 208u, true};
-  static constexpr RuntimeRegisterRef kTxBufferPendingRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 204u, true};
-  static constexpr RuntimeRegisterRef kTxEventFifoConfigRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 240u, true};
-  static constexpr RuntimeRegisterRef kTxEventFifoStatusRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 244u, true};
-  static constexpr RuntimeRegisterRef kTxEventFifoAckRegister = RuntimeRegisterRef{RegisterId::none, 0x40006800u, 248u, true};
-  static constexpr RuntimeFieldRef kInitField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kConfigEnableField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRestrictedOperationField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRestrictedOperationAckField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kBusMonitorField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kFdOperationEnableField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kBitRateSwitchEnableField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kNominalPrescalerField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kNominalTimeSeg1Field = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kNominalTimeSeg2Field = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kNominalSyncJumpWidthField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kDataPrescalerField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kDataTimeSeg1Field = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kDataTimeSeg2Field = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kDataSyncJumpWidthField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRxFifo0NewInterruptField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kTxCompleteInterruptField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kTxEventFifoNewInterruptField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRxFifo0NewInterruptEnableField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kTxCompleteInterruptEnableField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kTxEventFifoNewInterruptEnableField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRxFifo0FillLevelField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRxFifo0GetIndexField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRxFifo0MessageLostField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kRxFifo0AckIndexField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kTxFifoQueuePutIndexField = kInvalidFieldRef;
-  static constexpr RuntimeFieldRef kTxFifoQueueFreeLevelField = kInvalidFieldRef;
-  static constexpr RuntimeIndexedFieldRef kTxBufferAddRequestPattern = RuntimeIndexedFieldRef{0x40006800u, 208u, 0u, 0u, 1u, 1u, true};
-  static constexpr RuntimeIndexedFieldRef kTxBufferPendingPattern = RuntimeIndexedFieldRef{0x40006800u, 204u, 0u, 0u, 1u, 1u, true};
-  static constexpr std::array<std::uint32_t, 0> kIrqNumbers = {};
-};
-
-inline constexpr std::array<PeripheralId, 2> kCanSemanticPeripherals = {{
+inline constexpr std::array<PeripheralId, 1> kCanSemanticPeripherals = {{
   PeripheralId::FDCAN1,
-  PeripheralId::FDCAN2,
 }};
 }
 }
