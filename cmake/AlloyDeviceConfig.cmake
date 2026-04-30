@@ -10,9 +10,8 @@ if(NOT DEFINED ALLOY_DEVICE_ROOT)
 endif()
 
 set(_ALLOY_DEVICE_COMPONENT_PATHS
-  "stm32g030f6=st/stm32g0/generated/cmake/AlloyDevice-stm32g030f6.cmake"
-  "stm32g071rb=st/stm32g0/generated/cmake/AlloyDevice-stm32g071rb.cmake"
-  "stm32g0b1re=st/stm32g0/generated/cmake/AlloyDevice-stm32g0b1re.cmake"
+  "esp32=espressif/esp32/generated/cmake/AlloyDevice-esp32.cmake"
+  "esp32-wroom32=espressif/esp32/generated/cmake/AlloyDevice-esp32-wroom32.cmake"
 )
 
 foreach(component ${AlloyDevice_FIND_COMPONENTS})
