@@ -4,16 +4,16 @@
     {
       "core": "xtensa-lx6",
       "device": "esp32",
-      "metadata_path": "espressif/esp32/metadata/devices/esp32.json",
       "package": "qfn48",
-      "summary": "Espressif ESP32 (classic) dual-core Xtensa LX6 SoC, ECO V3 silicon, QFN48."
+      "summary": "Espressif ESP32 (classic) dual-core Xtensa LX6 SoC, ECO V3 silicon, QFN48.",
+      "yaml_path": "data/devices/vendors/espressif/esp32/devices/esp32.yml"
     },
     {
       "core": "xtensa-lx6",
       "device": "esp32-wroom32",
-      "metadata_path": "espressif/esp32/metadata/devices/esp32-wroom32.json",
       "package": "wroom-32",
-      "summary": "Espressif ESP32 ECO V3 on the ESP32-WROOM-32 module (GPIO6\u2013GPIO11 reserved for the on-module SPI flash)."
+      "summary": "Espressif ESP32 ECO V3 on the ESP32-WROOM-32 module (GPIO6\u2013GPIO11 reserved for the on-module SPI flash).",
+      "yaml_path": "data/devices/vendors/espressif/esp32/devices/esp32-wroom32.yml"
     }
   ],
   "family": "esp32",

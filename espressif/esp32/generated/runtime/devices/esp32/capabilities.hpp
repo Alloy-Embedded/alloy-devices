@@ -87,125 +87,52 @@ struct CapabilityTraits {
   static constexpr PeripheralId kPeripheralId = PeripheralId::none;
 };
 
-template<>
-struct CapabilityTraits<CapabilityId::runtime_support_adc> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_adc;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+struct CapabilityHardwareLut {
+  CapabilityScopeId scope_id;
+  PeripheralClassId peripheral_class_id;
+  CapabilityNameId name_id;
+  CapabilityValueId value_id;
+  PeripheralId peripheral_id;
 };
 
-template<>
-struct CapabilityTraits<CapabilityId::device_core_count> {
+inline constexpr std::array<CapabilityHardwareLut, 12> kCapabilityHardwareLut = {{
+  {CapabilityScopeId::runtime_contract, PeripheralClassId::class_adc, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::core_count, CapabilityValueId::_2, PeripheralId::none},
+  {CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::multicore_topology, CapabilityValueId::xtensa_dual_core, PeripheralId::none},
+  {CapabilityScopeId::device, PeripheralClassId::class_device, CapabilityNameId::secondary_core_release_register, CapabilityValueId::register_dport_appcpu_ctrl_b, PeripheralId::none},
+  {CapabilityScopeId::runtime_contract, PeripheralClassId::class_gpio, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityScopeId::runtime_contract, PeripheralClassId::class_i2c, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityScopeId::runtime_contract, PeripheralClassId::class_spi, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityScopeId::ip_block, PeripheralClassId::class_uart, CapabilityNameId::signal_role, CapabilityValueId::rx, PeripheralId::none},
+  {CapabilityScopeId::ip_block, PeripheralClassId::class_uart, CapabilityNameId::signal_role, CapabilityValueId::tx, PeripheralId::none},
+  {CapabilityScopeId::runtime_contract, PeripheralClassId::class_uart, CapabilityNameId::runtime_supported, CapabilityValueId::true_value, PeripheralId::none},
+  {CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::rx, PeripheralId::UART0},
+  {CapabilityScopeId::instance_overlay, PeripheralClassId::class_uart, CapabilityNameId::available_signal, CapabilityValueId::tx, PeripheralId::UART0},
+}};
+
+template<std::size_t Index>
+struct CapabilityTraitsBase {
+  static constexpr auto& kFacts = kCapabilityHardwareLut[Index];
   static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::device;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_device;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::core_count;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::_2;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
+  static constexpr CapabilityScopeId kScopeId = kFacts.scope_id;
+  static constexpr PeripheralClassId kPeripheralClassId = kFacts.peripheral_class_id;
+  static constexpr CapabilityNameId kNameId = kFacts.name_id;
+  static constexpr CapabilityValueId kValueId = kFacts.value_id;
+  static constexpr PeripheralId kPeripheralId = kFacts.peripheral_id;
 };
 
-template<>
-struct CapabilityTraits<CapabilityId::device_multicore_topology> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::device;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_device;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::multicore_topology;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::xtensa_dual_core;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::device_secondary_core_release_register> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::device;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_device;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::secondary_core_release_register;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::register_dport_appcpu_ctrl_b;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::runtime_support_gpio> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_gpio;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::runtime_support_i2c> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_i2c;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::runtime_support_spi> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_spi;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::capability_uart_esp32_uart_v1_rx> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_uart;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::rx;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::capability_uart_esp32_uart_v1_tx> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::ip_block;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_uart;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::signal_role;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::tx;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::runtime_support_uart> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::runtime_contract;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_uart;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::runtime_supported;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::true_value;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::none;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::capability_instance_uart0_qfn48_rx> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_uart;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::rx;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::UART0;
-};
-
-template<>
-struct CapabilityTraits<CapabilityId::capability_instance_uart0_qfn48_tx> {
-  static constexpr bool kPresent = true;
-  static constexpr CapabilityScopeId kScopeId = CapabilityScopeId::instance_overlay;
-  static constexpr PeripheralClassId kPeripheralClassId = PeripheralClassId::class_uart;
-  static constexpr CapabilityNameId kNameId = CapabilityNameId::available_signal;
-  static constexpr CapabilityValueId kValueId = CapabilityValueId::tx;
-  static constexpr PeripheralId kPeripheralId = PeripheralId::UART0;
-};
+template<> struct CapabilityTraits<CapabilityId::runtime_support_adc> : CapabilityTraitsBase<0> {};
+template<> struct CapabilityTraits<CapabilityId::device_core_count> : CapabilityTraitsBase<1> {};
+template<> struct CapabilityTraits<CapabilityId::device_multicore_topology> : CapabilityTraitsBase<2> {};
+template<> struct CapabilityTraits<CapabilityId::device_secondary_core_release_register> : CapabilityTraitsBase<3> {};
+template<> struct CapabilityTraits<CapabilityId::runtime_support_gpio> : CapabilityTraitsBase<4> {};
+template<> struct CapabilityTraits<CapabilityId::runtime_support_i2c> : CapabilityTraitsBase<5> {};
+template<> struct CapabilityTraits<CapabilityId::runtime_support_spi> : CapabilityTraitsBase<6> {};
+template<> struct CapabilityTraits<CapabilityId::capability_uart_esp32_uart_v1_rx> : CapabilityTraitsBase<7> {};
+template<> struct CapabilityTraits<CapabilityId::capability_uart_esp32_uart_v1_tx> : CapabilityTraitsBase<8> {};
+template<> struct CapabilityTraits<CapabilityId::runtime_support_uart> : CapabilityTraitsBase<9> {};
+template<> struct CapabilityTraits<CapabilityId::capability_instance_uart0_qfn48_rx> : CapabilityTraitsBase<10> {};
+template<> struct CapabilityTraits<CapabilityId::capability_instance_uart0_qfn48_tx> : CapabilityTraitsBase<11> {};
 
 template<PeripheralClassId Id>
 struct PeripheralClassCapabilityTraits {
