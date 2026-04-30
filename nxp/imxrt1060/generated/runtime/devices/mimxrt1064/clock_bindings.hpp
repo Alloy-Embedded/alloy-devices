@@ -28,31 +28,10 @@ struct ClockGateTraits<ClockGateId::gate_gpio1> {
 };
 
 template<>
-struct ClockGateTraits<ClockGateId::gate_gpio2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr0;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr0_cg15;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_gpio3> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr2;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr2_cg13;
-};
-
-template<>
 struct ClockGateTraits<ClockGateId::gate_gpio4> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr3;
   static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr3_cg13;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_gpio5> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr1;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr1_cg15;
 };
 
 template<>
@@ -63,27 +42,6 @@ struct ClockGateTraits<ClockGateId::gate_lpspi1> {
 };
 
 template<>
-struct ClockGateTraits<ClockGateId::gate_lpspi2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr1;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr1_cg1;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpspi3> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr1;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr1_cg2;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpspi4> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr1;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr1_cg3;
-};
-
-template<>
 struct ClockGateTraits<ClockGateId::gate_lpuart1> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr5;
@@ -91,52 +49,10 @@ struct ClockGateTraits<ClockGateId::gate_lpuart1> {
 };
 
 template<>
-struct ClockGateTraits<ClockGateId::gate_lpuart2> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr0;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr0_cg14;
-};
-
-template<>
 struct ClockGateTraits<ClockGateId::gate_lpuart3> {
   static constexpr bool kPresent = true;
   static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr0;
   static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr0_cg6;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpuart4> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr1;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr1_cg12;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpuart5> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr3;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr3_cg1;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpuart6> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr3;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr3_cg3;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpuart7> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr5;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr5_cg13;
-};
-
-template<>
-struct ClockGateTraits<ClockGateId::gate_lpuart8> {
-  static constexpr bool kPresent = true;
-  static constexpr RegisterId kRegisterId = RegisterId::register_ccm_ccgr6;
-  static constexpr FieldId kFieldId = FieldId::field_ccm_ccgr6_cg7;
 };
 
 template<ResetId Id>
@@ -241,14 +157,6 @@ struct PeripheralClockBindingTraits<PeripheralId::ENET> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::ENET2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::GPIO1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpio1;
@@ -257,73 +165,9 @@ struct PeripheralClockBindingTraits<PeripheralId::GPIO1> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO10> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpio2;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO3> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpio3;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::GPIO4> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpio4;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO5> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_gpio5;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO6> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO7> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO8> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::GPIO9> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
@@ -353,30 +197,6 @@ struct PeripheralClockBindingTraits<PeripheralId::LPSPI1> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPSPI2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpspi2;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPSPI3> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpspi3;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPSPI4> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpspi4;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::LPUART1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart1;
@@ -385,57 +205,9 @@ struct PeripheralClockBindingTraits<PeripheralId::LPUART1> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPUART2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart2;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::LPUART3> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart3;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPUART4> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart4;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPUART5> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart5;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPUART6> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart6;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPUART7> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart7;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
-struct PeripheralClockBindingTraits<PeripheralId::LPUART8> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::gate_lpuart8;
   static constexpr ResetId kResetId = ResetId::none;
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
@@ -497,14 +269,6 @@ struct PeripheralClockBindingTraits<PeripheralId::USB1> {
 };
 
 template<>
-struct PeripheralClockBindingTraits<PeripheralId::USB2> {
-  static constexpr bool kPresent = true;
-  static constexpr ClockGateId kClockGateId = ClockGateId::none;
-  static constexpr ResetId kResetId = ResetId::none;
-  static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
-};
-
-template<>
 struct PeripheralClockBindingTraits<PeripheralId::WDOG1> {
   static constexpr bool kPresent = true;
   static constexpr ClockGateId kClockGateId = ClockGateId::none;
@@ -520,7 +284,7 @@ struct PeripheralClockBindingTraits<PeripheralId::WDOG2> {
   static constexpr ClockSelectorId kSelectorId = ClockSelectorId::none;
 };
 
-inline constexpr std::array<PeripheralId, 43> kClockBoundPeripherals = {{
+inline constexpr std::array<PeripheralId, 24> kClockBoundPeripherals = {{
   PeripheralId::ADC1,
   PeripheralId::ADC2,
   PeripheralId::CAN1,
@@ -529,31 +293,13 @@ inline constexpr std::array<PeripheralId, 43> kClockBoundPeripherals = {{
   PeripheralId::DMA0,
   PeripheralId::DMAMUX1,
   PeripheralId::ENET,
-  PeripheralId::ENET2,
   PeripheralId::GPIO1,
-  PeripheralId::GPIO10,
-  PeripheralId::GPIO2,
-  PeripheralId::GPIO3,
   PeripheralId::GPIO4,
-  PeripheralId::GPIO5,
-  PeripheralId::GPIO6,
-  PeripheralId::GPIO7,
-  PeripheralId::GPIO8,
-  PeripheralId::GPIO9,
   PeripheralId::GPT1,
   PeripheralId::GPT2,
   PeripheralId::LPSPI1,
-  PeripheralId::LPSPI2,
-  PeripheralId::LPSPI3,
-  PeripheralId::LPSPI4,
   PeripheralId::LPUART1,
-  PeripheralId::LPUART2,
   PeripheralId::LPUART3,
-  PeripheralId::LPUART4,
-  PeripheralId::LPUART5,
-  PeripheralId::LPUART6,
-  PeripheralId::LPUART7,
-  PeripheralId::LPUART8,
   PeripheralId::PIT,
   PeripheralId::PWM1,
   PeripheralId::PWM2,
@@ -561,7 +307,6 @@ inline constexpr std::array<PeripheralId, 43> kClockBoundPeripherals = {{
   PeripheralId::PWM4,
   PeripheralId::RTWDOG,
   PeripheralId::USB1,
-  PeripheralId::USB2,
   PeripheralId::WDOG1,
   PeripheralId::WDOG2,
 }};
@@ -590,28 +335,6 @@ inline auto clock_disable<PeripheralId::GPIO1>() noexcept -> void {
 }
 
 template <>
-inline auto clock_enable<PeripheralId::GPIO2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
-  *reg = *reg | (1u << 30);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIO2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
-  *reg = *reg & ~(1u << 30);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::GPIO3>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC070u);
-  *reg = *reg | (1u << 26);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIO3>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC070u);
-  *reg = *reg & ~(1u << 26);
-}
-
-template <>
 inline auto clock_enable<PeripheralId::GPIO4>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
   *reg = *reg | (1u << 26);
@@ -620,17 +343,6 @@ template <>
 inline auto clock_disable<PeripheralId::GPIO4>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
   *reg = *reg & ~(1u << 26);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::GPIO5>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg | (1u << 30);
-}
-template <>
-inline auto clock_disable<PeripheralId::GPIO5>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg & ~(1u << 30);
 }
 
 template <>
@@ -645,39 +357,6 @@ inline auto clock_disable<PeripheralId::LPSPI1>() noexcept -> void {
 }
 
 template <>
-inline auto clock_enable<PeripheralId::LPSPI2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg | (1u << 2);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPSPI2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg & ~(1u << 2);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPSPI3>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg | (1u << 4);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPSPI3>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg & ~(1u << 4);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPSPI4>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg | (1u << 6);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPSPI4>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg & ~(1u << 6);
-}
-
-template <>
 inline auto clock_enable<PeripheralId::LPUART1>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
   *reg = *reg | (1u << 24);
@@ -689,17 +368,6 @@ inline auto clock_disable<PeripheralId::LPUART1>() noexcept -> void {
 }
 
 template <>
-inline auto clock_enable<PeripheralId::LPUART2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
-  *reg = *reg | (1u << 28);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPUART2>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
-  *reg = *reg & ~(1u << 28);
-}
-
-template <>
 inline auto clock_enable<PeripheralId::LPUART3>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
   *reg = *reg | (1u << 12);
@@ -708,61 +376,6 @@ template <>
 inline auto clock_disable<PeripheralId::LPUART3>() noexcept -> void {
   auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC068u);
   *reg = *reg & ~(1u << 12);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPUART4>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg | (1u << 24);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPUART4>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC06Cu);
-  *reg = *reg & ~(1u << 24);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPUART5>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
-  *reg = *reg | (1u << 2);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPUART5>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
-  *reg = *reg & ~(1u << 2);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPUART6>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
-  *reg = *reg | (1u << 6);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPUART6>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC074u);
-  *reg = *reg & ~(1u << 6);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPUART7>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
-  *reg = *reg | (1u << 26);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPUART7>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC07Cu);
-  *reg = *reg & ~(1u << 26);
-}
-
-template <>
-inline auto clock_enable<PeripheralId::LPUART8>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC080u);
-  *reg = *reg | (1u << 14);
-}
-template <>
-inline auto clock_disable<PeripheralId::LPUART8>() noexcept -> void {
-  auto* reg = reinterpret_cast<volatile std::uint32_t*>(0x400FC080u);
-  *reg = *reg & ~(1u << 14);
 }
 
 }

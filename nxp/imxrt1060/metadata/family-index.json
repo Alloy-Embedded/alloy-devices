@@ -4,16 +4,16 @@
     {
       "core": "cortex-m7f",
       "device": "mimxrt1062",
-      "metadata_path": "nxp/imxrt1060/metadata/devices/mimxrt1062.json",
       "package": "bga196",
-      "summary": "NXP MIMXRT1062DVL6B i.MX RT1060 Crossover MCU with 1 MB OCRAM."
+      "summary": "NXP MIMXRT1062DVL6B i.MX RT1060 Crossover MCU with 1 MB OCRAM.",
+      "yaml_path": "data/devices/vendors/nxp/imxrt1060/devices/mimxrt1062.yml"
     },
     {
       "core": "cortex-m7f",
       "device": "mimxrt1064",
-      "metadata_path": "nxp/imxrt1060/metadata/devices/mimxrt1064.json",
       "package": "bga196",
-      "summary": "NXP MIMXRT1064DVL6A i.MX RT1060 Crossover MCU with 1 MB OCRAM and 4 MB on-chip flash."
+      "summary": "NXP MIMXRT1064DVL6A i.MX RT1060 Crossover MCU with 1 MB OCRAM and 4 MB on-chip flash.",
+      "yaml_path": "data/devices/vendors/nxp/imxrt1060/devices/mimxrt1064.yml"
     }
   ],
   "family": "imxrt1060",
