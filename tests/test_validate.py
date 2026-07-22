@@ -20,6 +20,7 @@ MINIMAL_RCC: dict[str, Any] = {
     "schema": "alloy.registers.v1",
     "vendor": "st",
     "ip": "rcc_g0",
+    "class": "clock",
     "provenance": {"sources": ["test"], "completeness": "bring-up-subset"},
     "registers": [
         {

@@ -1,6 +1,7 @@
 schema: alloy.registers.v1
 vendor: st
 ip: usart_v4
+class: uart
 description: >
   ST USART with PRESC + FIFO (STM32G0/G4/H7/L5-era). BRR is recorded with the
   16-bit functional USARTDIV width; the SVD declares a 20-bit field because

@@ -1,6 +1,7 @@
 schema: alloy.registers.v1
 vendor: st
 ip: rcc_g0
+class: clock
 description: >
   STM32G0 reset & clock control. PLLCFGR field positions are hardware-verified
   (old-alloy commit 6d47f2cb found wrong offsets on a real Nucleo-G071RB);

@@ -3,12 +3,17 @@
   "$id": "alloy.registers.v1",
   "title": "Alloy register map for one peripheral IP version",
   "type": "object",
-  "required": ["schema", "vendor", "ip", "provenance", "registers"],
+  "required": ["schema", "vendor", "ip", "class", "provenance", "registers"],
   "additionalProperties": false,
   "properties": {
     "schema": { "const": "alloy.registers.v1" },
     "vendor": { "type": "string", "pattern": "^[a-z0-9_]+$" },
     "ip": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "class": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Peripheral class (gpio, uart, spi, i2c, clock, flash, ...). Codegen uses it to include the matching HAL driver header alloy/hal/<class>/<vendor>_<ip>.hpp when one exists."
+    },
     "description": { "type": "string" },
     "provenance": {
       "type": "object",

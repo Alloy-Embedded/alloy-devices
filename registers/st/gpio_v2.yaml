@@ -1,6 +1,7 @@
 schema: alloy.registers.v1
 vendor: st
 ip: gpio_v2
+class: gpio
 description: >
   ST GPIO block used across STM32G0/G4/L4+/F7/H7-era parts. Bit-per-pin
   registers (IDR/ODR/BSRR/BRR) intentionally carry no field entries — drivers

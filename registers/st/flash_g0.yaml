@@ -1,6 +1,7 @@
 schema: alloy.registers.v1
 vendor: st
 ip: flash_g0
+class: flash
 description: >
   STM32G0 flash interface — bring-up subset (ACR only, needed by clock
   programs for wait-state ordering).
