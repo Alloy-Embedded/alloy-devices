@@ -1,0 +1,27 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: timg_v1
+class: watchdog
+description: >
+  ESP32 timer-group watchdog subset. The ESP-IDF v5 bootloader leaves TIMG0
+  WDT armed (~1 s) — chip bring-up MUST disable it (observed reset before
+  the second blink loop in old-alloy 29ba8a04). Writes only, no RMW: the
+  APP_CPU ROM concurrently polls DPORT and corrupts read-modify-write.
+  Unlock key 0x50D83AA1 in WDTWPROTECT, write WDTCONFIG0=0, relock.
+provenance:
+  sources:
+    - "old-alloy commit 29ba8a04 boards/esp32_devkit/board.cpp disable_watchdogs() (observed ~1s reset without it; TIMG0=0x3FF5F000, TIMG1=0x3FF60000, WDTCONFIG0=+0x48, WDTWPROTECT=+0x64, key 0x50D83AA1)"
+    - "alloy-devices-yml esp32.yml timg block (same offsets)"
+  completeness: bring-up-subset
+registers:
+  - name: WDTCONFIG0
+    offset: "0x48"
+    access: rw
+    fields:
+      - { name: WDT_EN, bit: 31 }
+  - name: WDTFEED
+    offset: "0x60"
+    access: wo
+  - name: WDTWPROTECT
+    offset: "0x64"
+    access: rw

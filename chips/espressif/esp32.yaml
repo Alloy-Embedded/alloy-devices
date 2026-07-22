@@ -1,0 +1,70 @@
+schema: alloy.chip.v1
+vendor: espressif
+family: esp32
+part: ESP32
+die: esp32
+provenance:
+  sources:
+    - "old-alloy commit 0f6a41cb — HW VALIDATED on ESP32-D0WD-V3 rev3.1: XIP app at flash 0x10000 under the factory-resident ESP-IDF 2nd-stage bootloader (0x1000, never reflashed), IROM/DROM +0x10 origins, entry call_start_cpu0"
+    - "old-alloy commit 29ba8a04 — TIMG0/TIMG1/RTC watchdog disable sequence (bootloader leaves TIMG0 armed ~1s; observed reset without it)"
+    - "old-alloy boards/esp32_devkit/{esp32.ld,startup.S,board_uart_raw.hpp} — memory map, startup, ROM-configured UART0"
+    - "alloy-devices-yml vendors/espressif/esp32 esp32.yml — register offsets (idf-derived; classic ESP32 has no SVD)"
+  verified:
+    - "v1 scope (NORTH_STAR amendment): clocks stay at bootloader defaults — CPU 80 MHz (proven by the old ~500ms blink calibration); no clock-tree bring-up; timebase = CCOUNT polling; no interrupts modeled yet (no vector table)"
+    - "The clock 'program' is really chip bring-up: the mandatory watchdog disables (write-only ops — RMW is corrupted by APP_CPU ROM DPORT polling)"
+    - "Single-core (PRO_CPU) only: the old repo documents APP_CPU dispatch never working from IRAM addresses"
+    - "Memories are the hardware-validated linker regions (incl. +0x10 image-header offsets and the IRAM hole below 0x40080400), not raw SRAM extents"
+cores:
+  - { name: lx6, arch: xtensa_lx6, fpu: false }
+memories:
+  - { name: irom, kind: flash, base: "0x400D0010", size: 2031600 }
+  - { name: drom, kind: flash, base: "0x3F400010", size: 3670000 }
+  - { name: iram, kind: ram, base: "0x40080400", size: 129024 }
+  - { name: dram, kind: ram, base: "0x3FFB0000", size: 278528 }
+peripherals:
+  gpio:
+    ip: espressif/gpio_v1
+    base: "0x3FF44000"
+  uart0:
+    ip: espressif/uart_v1
+    base: "0x3FF40000"
+    kernel_clock: apb
+  timg0:
+    ip: espressif/timg_v1
+    base: "0x3FF5F000"
+  timg1:
+    ip: espressif/timg_v1
+    base: "0x3FF60000"
+  rtc_cntl:
+    ip: espressif/rtc_cntl_v1
+    base: "0x3FF48000"
+pins:
+  pa0: { port: a, index: 0, bank: gpio }
+  pa2: { port: a, index: 2, bank: gpio }
+  pa4: { port: a, index: 4, bank: gpio }
+routes: []
+clock:
+  sources:
+    xtal40m: { hz: 40000000 }
+  boot_source: xtal40m
+  profiles:
+    bootloader_defaults:
+      description: >
+        Clocks exactly as the factory ESP-IDF bootloader leaves them
+        (CPU 80 MHz, APB 80 MHz — proven by old-alloy's HW-validated 500 ms
+        blink calibration). The program only performs the MANDATORY
+        watchdog disables: unlock (0x50D83AA1) / clear / relock for TIMG0,
+        TIMG1 and the RTC WDT, as single whole-register writes.
+      sysclk_hz: 80000000
+      ahb_hz: 80000000
+      apb_hz: 80000000
+      program:
+        - { op: write, peripheral: timg0, register: WDTWPROTECT, value: "0x50D83AA1" }
+        - { op: write, peripheral: timg0, register: WDTCONFIG0, value: "0x0" }
+        - { op: write, peripheral: timg0, register: WDTWPROTECT, value: "0x0" }
+        - { op: write, peripheral: timg1, register: WDTWPROTECT, value: "0x50D83AA1" }
+        - { op: write, peripheral: timg1, register: WDTCONFIG0, value: "0x0" }
+        - { op: write, peripheral: timg1, register: WDTWPROTECT, value: "0x0" }
+        - { op: write, peripheral: rtc_cntl, register: WDTWPROTECT, value: "0x50D83AA1" }
+        - { op: write, peripheral: rtc_cntl, register: WDTCONFIG0, value: "0x0" }
+        - { op: write, peripheral: rtc_cntl, register: WDTWPROTECT, value: "0x0" }

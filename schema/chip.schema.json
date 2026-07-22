@@ -3,7 +3,7 @@
   "$id": "alloy.chip.v1",
   "title": "Alloy per-chip instance file",
   "type": "object",
-  "required": ["schema", "vendor", "family", "part", "provenance", "cores", "memories", "peripherals", "interrupts", "clock"],
+  "required": ["schema", "vendor", "family", "part", "provenance", "cores", "memories", "peripherals", "clock"],
   "additionalProperties": false,
   "properties": {
     "schema": { "const": "alloy.chip.v1" },

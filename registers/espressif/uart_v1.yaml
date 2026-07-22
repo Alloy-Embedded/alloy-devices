@@ -1,0 +1,32 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: uart_v1
+class: uart
+description: >
+  ESP32 (LX6) UART. In the v1 ROM-configured mode the boot ROM/bootloader
+  leaves UART0 at 115200 8N1 with pins routed — drivers only use FIFO and
+  STATUS. TX FIFO is 128 deep; poll TXFIFO_CNT < 126 before writing.
+provenance:
+  sources:
+    - "old-alloy boards/esp32_devkit/board_uart_raw.hpp (HW-validated: FIFO@base+0, STATUS@+0x1C, txfifo_cnt=(status>>16)&mask, threshold 126, no init)"
+    - "alloy-devices-yml esp32.yml uart block (fifo=0, status=28 with txfifo_cnt bits 16-23, clkdiv=20, conf0=32)"
+  completeness: bring-up-subset
+registers:
+  - name: FIFO
+    offset: "0x00"
+    access: rw
+  - name: CLKDIV
+    offset: "0x14"
+    access: rw
+    fields:
+      - { name: CLKDIV, bit: 0, width: 20 }
+      - { name: FRAG, bit: 20, width: 4 }
+  - name: STATUS
+    offset: "0x1C"
+    access: ro
+    fields:
+      - { name: RXFIFO_CNT, bit: 0, width: 8 }
+      - { name: TXFIFO_CNT, bit: 16, width: 8 }
+  - name: CONF0
+    offset: "0x20"
+    access: rw

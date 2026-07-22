@@ -1,0 +1,67 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: gpio_v1
+class: gpio
+description: >
+  ESP32 (LX6) GPIO with output matrix. Two banks: pins 0-31 in the primary
+  registers, 32-39 in the *1 bank. FUNC_OUT_SEL_CFG is indexed by PIN
+  (value = output signal; 0x100 = simple GPIO); FUNC_IN_SEL_CFG is indexed
+  by SIGNAL (value = pin). Bit-per-pin registers carry no field entries.
+provenance:
+  sources:
+    - "old-alloy hello_esp32 era (commits 30a4a2fc/0f6a41cb, HW-validated on ESP32-D0WD-V3: FUNC_OUT_SEL_CFG@0x530=256 + ENABLE_W1TS blinked GPIO2) and 29ba8a04 offset table"
+    - "alloy-devices-yml vendors/espressif/esp32/devices/esp32.yml gpio block (idf-derived: out_w1ts=8, enable_w1ts=36, func_out_sel@0x530, func_in_sel@0x130)"
+  completeness: bring-up-subset
+registers:
+  - name: OUT
+    offset: "0x04"
+    access: rw
+  - name: OUT_W1TS
+    offset: "0x08"
+    access: wo
+  - name: OUT_W1TC
+    offset: "0x0C"
+    access: wo
+  - name: OUT1
+    offset: "0x10"
+    access: rw
+  - name: OUT1_W1TS
+    offset: "0x14"
+    access: wo
+  - name: OUT1_W1TC
+    offset: "0x18"
+    access: wo
+  - name: ENABLE
+    offset: "0x20"
+    access: rw
+  - name: ENABLE_W1TS
+    offset: "0x24"
+    access: wo
+  - name: ENABLE_W1TC
+    offset: "0x28"
+    access: wo
+  - name: ENABLE1
+    offset: "0x2C"
+    access: rw
+  - name: ENABLE1_W1TS
+    offset: "0x30"
+    access: wo
+  - name: ENABLE1_W1TC
+    offset: "0x34"
+    access: wo
+  - name: IN
+    offset: "0x3C"
+    access: ro
+  - name: IN1
+    offset: "0x40"
+    access: ro
+  - name: FUNC_IN_SEL_CFG
+    offset: "0x130"
+    access: rw
+    array: { count: 256, stride: 4 }
+  - name: FUNC_OUT_SEL_CFG
+    offset: "0x530"
+    access: rw
+    array: { count: 40, stride: 4 }
+    fields:
+      - { name: OUT_SEL, bit: 0, width: 9, description: "output signal index; 0x100 = simple GPIO" }

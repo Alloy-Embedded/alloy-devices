@@ -1,0 +1,20 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: rtc_cntl_v1
+class: watchdog
+description: >
+  ESP32 RTC controller watchdog subset. Disabled with the same
+  unlock/clear/relock dance as the TIMG watchdogs (key 0x50D83AA1).
+  Classic ESP32 (LX6) has NO Super WDT — that arrived with S2/S3.
+provenance:
+  sources:
+    - "old-alloy commit 29ba8a04 boards/esp32_devkit/board.cpp disable_watchdogs() (RTC_CNTL=0x3FF48000, WDTCONFIG0=+0x8C, WDTWPROTECT=+0xA4)"
+    - "alloy-devices-yml esp32.yml rtc_cntl block (same offsets)"
+  completeness: bring-up-subset
+registers:
+  - name: WDTCONFIG0
+    offset: "0x8C"
+    access: rw
+  - name: WDTWPROTECT
+    offset: "0xA4"
+    access: rw

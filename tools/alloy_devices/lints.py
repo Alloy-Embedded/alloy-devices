@@ -139,10 +139,16 @@ def lint_chips(db: Database) -> None:
     for key, doc in db.chips.items():
         path = db.chip_paths[key]
         periphs: dict[str, Any] = doc["peripherals"]
-        irq_names = {i["name"] for i in doc["interrupts"]}
+        interrupts = doc.get("interrupts", [])
+        irq_names = {i["name"] for i in interrupts}
+        if not interrupts:
+            db.issues.append(Issue(
+                path, "no interrupts modeled — vector table will not be generated",
+                kind="warning",
+            ))
 
         seen_nums: set[int] = set()
-        for irq in doc["interrupts"]:
+        for irq in interrupts:
             if irq["number"] in seen_nums:
                 db.issues.append(Issue(path, f"duplicate interrupt number {irq['number']}"))
             seen_nums.add(irq["number"])
