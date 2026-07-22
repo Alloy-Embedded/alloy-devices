@@ -1,0 +1,99 @@
+schema: alloy.registers.v1
+vendor: st
+ip: i2c_v2
+class: i2c
+description: >
+  ST I2C with TIMINGR/ISR/ICR (F3/G0/G4/H7/L4/WB common, ip_version
+  i2c2_v1_1). 7-bit addresses land at SADD[7:1] (write addr<<1). No
+  TIMINGR constant for 64 MHz exists anywhere in the old ecosystem —
+  drivers compute timing from the AN4235-style recipe instead of magic
+  numbers (the hardware-proven 16 MHz constant 0x20404768 is recorded in
+  provenance for cross-checking).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.i2c (SVD-derived) + old-alloy src/hal/i2c/lite.hpp (identical constants)"
+    - "old-alloy git 1bfe63fb generated i2c1_bitfields.hpp (TIMINGR field positions confirmed)"
+    - "old-alloy examples/lite_hal_probe: TIMINGR 0x20404768 = 100 kHz @ 16 MHz HSI executed on real Nucleo-G071RB"
+  completeness: bring-up-subset
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: PE, bit: 0 }
+      - { name: TXIE, bit: 1 }
+      - { name: RXIE, bit: 2 }
+      - { name: NACKIE, bit: 4 }
+      - { name: ERRIE, bit: 7 }
+      - { name: ANFOFF, bit: 12 }
+      - { name: NOSTRETCH, bit: 17 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: SADD, bit: 0, width: 10 }
+      - { name: RD_WRN, bit: 10 }
+      - { name: ADD10, bit: 11 }
+      - { name: START, bit: 13 }
+      - { name: STOP, bit: 14 }
+      - { name: NACK, bit: 15 }
+      - { name: NBYTES, bit: 16, width: 8 }
+      - { name: RELOAD, bit: 24 }
+      - { name: AUTOEND, bit: 25 }
+  - name: OAR1
+    offset: "0x08"
+    access: rw
+  - name: OAR2
+    offset: "0x0C"
+    access: rw
+  - name: TIMINGR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: SCLL, bit: 0, width: 8 }
+      - { name: SCLH, bit: 8, width: 8 }
+      - { name: SDADEL, bit: 16, width: 4 }
+      - { name: SCLDEL, bit: 20, width: 4 }
+      - { name: PRESC, bit: 28, width: 4 }
+  - name: TIMEOUTR
+    offset: "0x14"
+    access: rw
+  - name: ISR
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: TXE, bit: 0 }
+      - { name: TXIS, bit: 1 }
+      - { name: RXNE, bit: 2 }
+      - { name: ADDR, bit: 3 }
+      - { name: NACKF, bit: 4 }
+      - { name: STOPF, bit: 5 }
+      - { name: TC, bit: 6 }
+      - { name: TCR, bit: 7 }
+      - { name: BERR, bit: 8 }
+      - { name: ARLO, bit: 9 }
+      - { name: OVR, bit: 10 }
+      - { name: BUSY, bit: 15 }
+  - name: ICR
+    offset: "0x1C"
+    access: wo
+    fields:
+      - { name: ADDRCF, bit: 3 }
+      - { name: NACKCF, bit: 4 }
+      - { name: STOPCF, bit: 5 }
+      - { name: BERRCF, bit: 8 }
+      - { name: ARLOCF, bit: 9 }
+      - { name: OVRCF, bit: 10 }
+  - name: PECR
+    offset: "0x20"
+    access: ro
+  - name: RXDR
+    offset: "0x24"
+    access: ro
+    fields:
+      - { name: RXDATA, bit: 0, width: 8 }
+  - name: TXDR
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: TXDATA, bit: 0, width: 8 }
