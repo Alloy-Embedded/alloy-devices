@@ -1,0 +1,272 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: xdmac_v1
+class: dma
+description: >
+  SAM E70/S70/V70 Extensible DMA Controller (XDMAC, canonical ip_version
+  xdmac_K). Global block at 0x00-0x40, then 24 identical channel blocks:
+  channel n's register X lives at 0x50 + n*0x40 + local offset — modeled
+  here as interleaved arrays (each channel register declared at its
+  channel-0 offset with array count 24 / stride 0x40, the st/dma_v1
+  pattern). ONE NVIC line for the whole block (XDMAC = 58, == PMC PID,
+  gate PCER1 bit 26 write_set): in the ISR read GIS to find the pending
+  channel, then read that channel's CIS exactly ONCE — CIS is CLEARED BY
+  READING — and dispatch from the captured value. Channel run control is
+  write-only set/clear: GE (enable, write 1<<ch after CSA/CDA/CUBC/CC are
+  programmed) / GD (disable) / GS (status; poll bit 0 after GD before
+  reprogramming). There is NO circular/ring bit anywhere: circular
+  transfers require linked-list descriptors (CNDA/CNDC descriptor views
+  NDV0-3), so a v1 driver is one-shot only. Cortex-M7 caches are OFF at
+  reset and alloy startup never enables them (VTOR only, startup.cpp) —
+  no cache maintenance needed today; if D-cache is ever enabled, DMA
+  buffers will need SCB clean/invalidate or MPU non-cacheable regions.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml templates.xdmac (SVD-derived, ip_version xdmac_K) — channel-local offsets 0x00-0x34 for CIE..CDUS, every CC/CIE/CID/CIM/CIS/CNDA/CNDC/CUBC/CBC/CDS_MSP/CSUS/CDUS bit position, complete 52-entry PERID enum (0..51), GSWR/GSWS/GSWF at 0x38/0x3C/0x40; instance base 0x40078000, IRQ 58"
+    - "SAME70 datasheet DS60001527 (XDMAC chapter) — global registers GTYPE..GRWR at 0x00-0x34 (MISSING from the SVD-derived template), channel geometry ch0 at 0x50 / stride 0x40 / 24 channels, per-channel bit packing of GIE/GID/GIM/GIS/GE/GD/GS, CIS read-to-clear semantics, linked-list requirement for circular mode"
+    - "alloy-devices chips/microchip/atsame70q21.yaml interrupts (XDMAC = 58) + verified note 'PID == NVIC line; 32..63 gate via PCER1' — PMC PID 58 -> PCER1 bit 26, style write_set"
+  completeness: bring-up-subset
+  verified:
+    - "CC layout bit-for-bit from canonical enum: TYPE bit0 (0=mem2mem 1=peripheral), MBSIZE 2:1, DSYNC bit4 (0=PER2MEM 1=MEM2PER), SWREQ bit6, MEMSET bit7, CSIZE 10:8, DWIDTH 12:11 (0=byte 1=halfword 2=word), SIF bit13, DIF bit14, SAM 17:16, DAM 19:18 (0=fixed 1=increment 2/3=ubs), PERID 30:24 — plus read-only INITD bit21 / RDIP bit22 / WRIP bit23"
+    - "PERID enum is exactly 52 entries (0..51) in the canonical yml; TX and RX are SEPARATE request lines per peripheral (USART1_TX=9 / USART1_RX=10); AFEC0=35 / AFEC1=36 are single RX-only lines"
+    - "24 channels corroborated twice: datasheet geometry AND canonical GSWR/GSWS/GSWF carrying exactly swreq0..swreq23 (24 bits)"
+    - "canonical template quirk: it mixes channel-LOCAL offsets (CIE..CDUS at 0x00-0x34) with ABSOLUTE global offsets (GSWR 0x38 / GSWS 0x3C / GSWF 0x40) in one flat map and omits GTYPE..GRWR entirely; the 0x50 / stride 0x40 / 24-channel geometry appears nowhere in it (datasheet-only)"
+    - "no CIRC/ring bit exists in CC or CNDC (canonical field lists are exhaustive for these registers) — circular mode = linked-list descriptors only, v1 driver stays one-shot"
+    - "CIS read-clears is datasheet semantics; the canonical yml marks it plain ro (same class of SVD access under-specification as st/dma_v1 IFCR)"
+registers:
+  # ---- global block 0x00-0x40 (GTYPE..GRWR datasheet-only; GSWR/GSWS/GSWF also in canonical yml) ----
+  - name: GTYPE
+    offset: "0x00"
+    access: ro
+    description: "datasheet-only: NB_CH[4:0] = channels-1 (SAME70 reads 23), FIFO_SZ[15:5], NB_REQ[22:16] = requests-1 — cheap bring-up sanity probe; field slices kept as prose, not modeled"
+  - name: GCFG
+    offset: "0x04"
+    access: rw
+    description: "datasheet-only: clock-gating disable knobs; reset defaults are correct — leave untouched"
+  - name: GWAC
+    offset: "0x08"
+    access: rw
+    description: "datasheet-only: arbiter pool weights; reset defaults are correct"
+  - name: GIE
+    offset: "0x0C"
+    access: wo
+    description: "Global per-channel interrupt enable — write 1<<ch (channel's CIE selects WHICH events propagate)"
+    fields:
+      - { name: IE, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GID
+    offset: "0x10"
+    access: wo
+    fields:
+      - { name: ID, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GIM
+    offset: "0x14"
+    access: ro
+    fields:
+      - { name: IM, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GIS
+    offset: "0x18"
+    access: ro
+    description: "Which channel(s) have a pending interrupt — read FIRST in the ISR, then that channel's CIS (CIS read clears)"
+    fields:
+      - { name: IS, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GE
+    offset: "0x1C"
+    access: wo
+    description: "Channel enable — write 1<<ch only AFTER CSA/CDA/CUBC/CC are programmed; enabling starts the transfer (mem2mem) or arms the request (peripheral)"
+    fields:
+      - { name: EN, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GD
+    offset: "0x20"
+    access: wo
+    fields:
+      - { name: DI, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GS
+    offset: "0x24"
+    access: ro
+    description: "1 = channel enabled/transfer ongoing; after GD, poll the bit to 0 before reprogramming the channel"
+    fields:
+      - { name: ST, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GRS
+    offset: "0x28"
+    access: rw
+    description: "datasheet-only: per-channel read suspend (bit n = channel n)"
+  - name: GWS
+    offset: "0x2C"
+    access: rw
+    description: "datasheet-only: per-channel write suspend (bit n = channel n)"
+  - name: GRWS
+    offset: "0x30"
+    access: wo
+    description: "datasheet-only: read+write suspend, write 1<<ch"
+  - name: GRWR
+    offset: "0x34"
+    access: wo
+    description: "datasheet-only: read+write resume, write 1<<ch"
+  - name: GSWR
+    offset: "0x38"
+    access: wo
+    description: "Software request trigger per channel (canonical swreq0..23) — only meaningful with CC.SWREQ=1"
+    fields:
+      - { name: SWREQ_CH, bit: 0, repeat: { count: 24, stride: 1 }, description: "TRM name SWREQx — suffixed to keep per-IP accessor names unique (CC also has SWREQ)" }
+  - name: GSWS
+    offset: "0x3C"
+    access: ro
+    description: "Software request status per channel (canonical swrs0..23)"
+    fields:
+      - { name: SWRS, bit: 0, repeat: { count: 24, stride: 1 } }
+  - name: GSWF
+    offset: "0x40"
+    access: wo
+    description: "Software flush — write 1<<ch to push the channel FIFO to memory; completion raises CIS.FIS"
+    fields:
+      - { name: SWF, bit: 0, repeat: { count: 24, stride: 1 } }
+  # ---- per-channel block: channel n at 0x50 + n*0x40; interleaved arrays, stride 0x40, 24 channels ----
+  - name: CIE
+    offset: "0x50"
+    access: wo
+    array: { count: 24, stride: 64 }
+    description: "Channel interrupt enable (write-only set); pair with GIE for the NVIC line to fire"
+    fields:
+      - { name: BIE, bit: 0, description: "End of block — THE completion interrupt for a one-shot single-block transfer" }
+      - { name: LIE, bit: 1, description: "End of linked list" }
+      - { name: DIE, bit: 2, description: "End of disable" }
+      - { name: FIE, bit: 3, description: "End of flush" }
+      - { name: RBIE, bit: 4, description: "Read bus error" }
+      - { name: WBIE, bit: 5, description: "Write bus error" }
+      - { name: ROIE, bit: 6, description: "Request overflow" }
+  - name: CID
+    offset: "0x54"
+    access: wo
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: BID, bit: 0 }
+      - { name: LID, bit: 1 }
+      - { name: DID, bit: 2 }
+      - { name: FID, bit: 3 }
+      - { name: RBEID, bit: 4 }
+      - { name: WBEID, bit: 5 }
+      - { name: ROID, bit: 6 }
+  - name: CIM
+    offset: "0x58"
+    access: ro
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: BIM, bit: 0 }
+      - { name: LIM, bit: 1 }
+      - { name: DIM, bit: 2 }
+      - { name: FIM, bit: 3 }
+      - { name: RBEIM, bit: 4 }
+      - { name: WBEIM, bit: 5 }
+      - { name: ROIM, bit: 6 }
+  - name: CIS
+    offset: "0x5C"
+    access: ro
+    array: { count: 24, stride: 64 }
+    description: "CLEARED BY READING (datasheet; SVD says plain ro) — read once per interrupt, cache the value, dispatch from the copy. RBEIS/WBEIS = bus error (bad address / TCM from DMA), ROIS = request overflow."
+    fields:
+      - { name: BIS, bit: 0, description: "End of block — completion flag for one-shot transfers" }
+      - { name: LIS, bit: 1 }
+      - { name: DIS, bit: 2 }
+      - { name: FIS, bit: 3 }
+      - { name: RBEIS, bit: 4, description: "Read bus error" }
+      - { name: WBEIS, bit: 5, description: "Write bus error" }
+      - { name: ROIS, bit: 6, description: "Request overflow" }
+  - name: CSA
+    offset: "0x60"
+    access: rw
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: SA, bit: 0, width: 32, description: "Source address; must not point into ITCM/DTCM (not visible to the DMA AHB masters)" }
+  - name: CDA
+    offset: "0x64"
+    access: rw
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: DA, bit: 0, width: 32 }
+  - name: CNDA
+    offset: "0x68"
+    access: rw
+    array: { count: 24, stride: 64 }
+    description: "Next descriptor address — linked-list mode only; v1 one-shot driver writes 0"
+    fields:
+      - { name: NDAIF, bit: 0, description: "AHB interface for descriptor fetch" }
+      - { name: NDA, bit: 2, width: 30, description: "Word-aligned descriptor address bits 31:2" }
+  - name: CNDC
+    offset: "0x6C"
+    access: rw
+    array: { count: 24, stride: 64 }
+    description: "Next descriptor control — v1 one-shot driver writes 0 (NDE=0 disables descriptor fetch; there is NO simple circular bit, rings need descriptors)"
+    fields:
+      - { name: NDE, bit: 0, description: "1 = fetch descriptors (linked-list mode)" }
+      - { name: NDSUP, bit: 1, description: "1 = descriptor updates source params" }
+      - { name: NDDUP, bit: 2, description: "1 = descriptor updates destination params" }
+      - { name: NDVIEW, bit: 3, width: 2, description: "Descriptor structure view 0-3 (NDV0..NDV3)" }
+  - name: CUBC
+    offset: "0x70"
+    access: rw
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: UBLEN, bit: 0, width: 24, description: "Microblock length in DATA UNITS of CC.DWIDTH (not bytes); reads back remaining count while running" }
+  - name: CBC
+    offset: "0x74"
+    access: rw
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: BLEN, bit: 0, width: 12, description: "Block length = microblocks per block MINUS ONE; 0 = single microblock (the v1 one-shot case)" }
+  - name: CC
+    offset: "0x78"
+    access: rw
+    array: { count: 24, stride: 64 }
+    description: "Channel configuration — program while channel disabled (GS bit 0). Peripheral transfer: TYPE=1, SWREQ=0, DSYNC per direction, PERID selects the request line. Memory-to-memory: TYPE=0 (PERID ignored, use 0x7F by convention)."
+    fields:
+      - { name: TYPE, bit: 0, description: "0 = memory-to-memory, 1 = peripheral-synchronized" }
+      - { name: MBSIZE, bit: 1, width: 2, description: "Memory burst: 0=1, 1=4, 2=8, 3=16 beats" }
+      - { name: DSYNC, bit: 4, description: "0 = PER2MEM (rx), 1 = MEM2PER (tx)" }
+      - { name: SWREQ, bit: 6, description: "0 = hardware request line, 1 = software request (GSWR)" }
+      - { name: MEMSET, bit: 7, description: "1 = memory-set pattern mode (fill from CDS_MSP)" }
+      - { name: CSIZE, bit: 8, width: 3, description: "Chunk size: 0=1, 1=2, 2=4, 3=8, 4=16 data" }
+      - { name: DWIDTH, bit: 11, width: 2, description: "0 = byte, 1 = halfword, 2 = word (CUBC counts in this unit)" }
+      - { name: SIF, bit: 13, description: "Source AHB interface: 0 = IF0, 1 = IF1 (peripheral APB access goes via IF1 on SAME70)" }
+      - { name: DIF, bit: 14, description: "Destination AHB interface: 0 = IF0, 1 = IF1" }
+      - { name: SAM, bit: 16, width: 2, description: "Source addressing: 0 = fixed, 1 = increment, 2/3 = microblock/data striding (UBS)" }
+      - { name: DAM, bit: 18, width: 2, description: "Destination addressing: same encoding as SAM" }
+      - { name: INITD, bit: 21, description: "ro status: 0 = descriptor fetch in progress" }
+      - { name: RDIP, bit: 22, description: "ro status: read in progress" }
+      - { name: WRIP, bit: 23, description: "ro status: write in progress" }
+      - name: PERID
+        bit: 24
+        width: 7
+        description: >-
+          Hardware request line (TYPE=1, SWREQ=0 only; ignored for mem2mem).
+          Full SAME70 table, canonical 52-entry enum: HSMCI=0, SPI0_TX=1,
+          SPI0_RX=2, SPI1_TX=3, SPI1_RX=4, QSPI_TX=5, QSPI_RX=6,
+          USART0_TX=7, USART0_RX=8, USART1_TX=9, USART1_RX=10,
+          USART2_TX=11, USART2_RX=12, PWM0=13, TWIHS0_TX=14, TWIHS0_RX=15,
+          TWIHS1_TX=16, TWIHS1_RX=17, TWIHS2_TX=18, TWIHS2_RX=19,
+          UART0_TX=20, UART0_RX=21, UART1_TX=22, UART1_RX=23, UART2_TX=24,
+          UART2_RX=25, UART3_TX=26, UART3_RX=27, UART4_TX=28, UART4_RX=29,
+          DACC0=30, DACC1=31, SSC_TX=32, SSC_RX=33, PIOA=34, AFEC0=35,
+          AFEC1=36, AES_TX=37, AES_RX=38, PWM1=39, TC0=40, TC3=41, TC6=42,
+          TC9=43, I2SC0_TX_LEFT=44, I2SC0_RX_LEFT=45, I2SC1_TX_LEFT=46,
+          I2SC1_RX_LEFT=47, I2SC0_TX_RIGHT=48, I2SC0_RX_RIGHT=49,
+          I2SC1_TX_RIGHT=50, I2SC1_RX_RIGHT=51.
+  - name: CDS_MSP
+    offset: "0x7C"
+    access: rw
+    array: { count: 24, stride: 64 }
+    description: "Data stride (striding modes) or memory-set pattern (CC.MEMSET=1)"
+    fields:
+      - { name: SDS_MSP, bit: 0, width: 16 }
+      - { name: DDS_MSP, bit: 16, width: 16 }
+  - name: CSUS
+    offset: "0x80"
+    access: rw
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: SUBS, bit: 0, width: 24, description: "Source microblock stride (SAM=2/3 only)" }
+  - name: CDUS
+    offset: "0x84"
+    access: rw
+    array: { count: 24, stride: 64 }
+    fields:
+      - { name: DUBS, bit: 0, width: 24, description: "Destination microblock stride (DAM=2/3 only)" }

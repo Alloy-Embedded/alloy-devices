@@ -15,6 +15,7 @@ provenance:
     A from hardware-era routes.hpp; temp sensor = AFEC0 ch11; COCR mid-scale quirk'
   - 'SPI0 mining 2026-07-22: base 0x40008000 / PID 21 (PCER0 bit 21, matches interrupts SPI0=21) from canonical yml; PD20/PD21/PD22 = MISO/MOSI/SPCK peripheral B (selector 1) from old-alloy git 8b1b1bc7^ generated routes.hpp write_selector operands (PD20=1 PD21=1 PD22=1 = function B; same source style as the TWIHS0 line) + board.json spi block (Xplained EXT/Arduino headers); CSR modeled as 4-entry array (old hw()->CSR[cs]; canonical yml collapsed it — mining quirk spi-csr-array)'
   - 'IC inventory 2026-07-22 (Atmel-44050A user guide): PC11 = AT24MAC402 WP (low = writable), PD25 = SPI0 NPCS1 on EXT1 pin 15 (used as GPIO software CS); 0x37 do scan = alias write-protect do proprio AT24MAC402, nao um segundo EDBG endpoint'
+  - 'XDMAC mining 2026-07-22: base 0x40078000 / PID 58 -> PCER1 bit 26 from canonical yml (irq XDMAC ja na lista); PERIDs do enum CC.PERID canonico (52 entradas): USART1_TX=9/RX=10, AFEC0=35; 24 canais corroborados por GSWR swreq0..23 + datasheet (geometria 0x50/stride 0x40 e datasheet-only)'
   verified:
   - "PID == NVIC line; PID 7..31 gate via PCER0 (write-only set-register), 32..63 via PCER1 \u2014 gates\
     \ here use style write_set"
@@ -117,6 +118,9 @@ peripherals:
       style: write_set
     irq: USART1
     kernel_clock: apb
+    dma_requests:
+      tx: 9
+      rx: 10
   twihs0:
     ip: microchip/twihs_v1
     base: '0x40018000'
@@ -137,6 +141,8 @@ peripherals:
       style: write_set
     irq: AFEC0
     kernel_clock: apb
+    dma_requests:
+      conv: 35
     channels:
       temp: 11
   spi0:
@@ -149,6 +155,18 @@ peripherals:
       style: write_set
     irq: SPI0
     kernel_clock: apb
+  xdmac:
+    ip: microchip/xdmac_v1
+    base: '0x40078000'
+    gate:
+      peripheral: pmc
+      register: PCER1
+      bit: 26
+      style: write_set
+    irq: XDMAC
+    kernel_clock: ahb
+    channels:
+      count: 24
 pins:
   pc8:
     port: c
