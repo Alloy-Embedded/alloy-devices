@@ -1,0 +1,15 @@
+# Vendor sources — fetched at pipeline time, NEVER committed (NORTH_STAR guard #3)
+sources/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
