@@ -1,0 +1,161 @@
+schema: alloy.registers.v1
+vendor: st
+ip: rcc_g0
+description: >
+  STM32G0 reset & clock control. PLLCFGR field positions are hardware-verified
+  (old-alloy commit 6d47f2cb found wrong offsets on a real Nucleo-G071RB);
+  PLLR is 3 bits [31:29] per SVD (the commit narrowed it to 2 bits — SVD
+  judged correct, two independent files agree).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.rcc (SVD cmsis-svd:STM32G071.svd; SVD names PLLCFGR 'pllsyscfgr')"
+    - "old-alloy examples/blink/.alloy/generated/st_stm32g0_stm32g071rb/peripheral_traits.h (offset + field cross-check: identical)"
+    - "old-alloy commit 6d47f2cb (hardware-verified on Nucleo-G071RB: HSION=8, HSIRDY=10, PLLON=24, PLLRDY=25, SW=[2:0], SWS=[5:3], PLLREN=28, PLLR lsb=29)"
+  completeness: bring-up-subset
+  verified:
+    - "USART2EN=APBENR1 bit17 confirmed by 4 sources (yml, gate table, board_uart, traits)"
+    - "IOPENR has no bit 4: STM32G071 has no port E"
+    - "PLLSRC encoding: 2=HSI16, 3=HSE (yml domain encoding map + regenerated runtime_init.c agree; commit 6d47f2cb's message used 1 and is judged wrong)"
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: HSION, bit: 8 }
+      - { name: HSIKERON, bit: 9 }
+      - { name: HSIRDY, bit: 10 }
+      - { name: HSIDIV, bit: 11, width: 3 }
+      - { name: HSEON, bit: 16 }
+      - { name: HSERDY, bit: 17 }
+      - { name: HSEBYP, bit: 18 }
+      - { name: CSSON, bit: 19 }
+      - { name: PLLON, bit: 24 }
+      - { name: PLLRDY, bit: 25 }
+  - name: ICSCR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: HSICAL, bit: 0, width: 8 }
+      - { name: HSITRIM, bit: 8, width: 7 }
+  - name: CFGR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: SW, bit: 0, width: 3, description: "0=HSISYS 1=HSE 2=PLLRCLK 3=LSI 4=LSE" }
+      - { name: SWS, bit: 3, width: 3 }
+      - { name: HPRE, bit: 8, width: 4 }
+      - { name: PPRE, bit: 12, width: 3 }
+      - { name: MCOSEL, bit: 24, width: 3 }
+      - { name: MCOPRE, bit: 28, width: 3 }
+  - name: PLLCFGR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: PLLSRC, bit: 0, width: 2, description: "2=HSI16 3=HSE" }
+      - { name: PLLM, bit: 4, width: 3, description: "input divider = field+1 (RM0444)" }
+      - { name: PLLN, bit: 8, width: 7, description: "VCO multiplier = field (8..86)" }
+      - { name: PLLPEN, bit: 16 }
+      - { name: PLLP, bit: 17, width: 5 }
+      - { name: PLLQEN, bit: 24 }
+      - { name: PLLQ, bit: 25, width: 3 }
+      - { name: PLLREN, bit: 28, description: "must be 1 before SW=PLLRCLK takes effect (hardware-verified)" }
+      - { name: PLLR, bit: 29, width: 3, description: "sysclk divider = field+1, min field 1 (/2)" }
+  - name: CIER
+    offset: "0x18"
+    access: rw
+  - name: CIFR
+    offset: "0x1C"
+    access: ro
+  - name: CICR
+    offset: "0x20"
+    access: wo
+  - name: IOPRSTR
+    offset: "0x24"
+    access: rw
+  - name: AHBRSTR
+    offset: "0x28"
+    access: rw
+  - name: APBRSTR1
+    offset: "0x2C"
+    access: rw
+  - name: APBRSTR2
+    offset: "0x30"
+    access: rw
+  - name: IOPENR
+    offset: "0x34"
+    access: rw
+    fields:
+      - { name: IOPAEN, bit: 0 }
+      - { name: IOPBEN, bit: 1 }
+      - { name: IOPCEN, bit: 2 }
+      - { name: IOPDEN, bit: 3 }
+      - { name: IOPFEN, bit: 5 }
+  - name: AHBENR
+    offset: "0x38"
+    access: rw
+    fields:
+      - { name: DMAEN, bit: 0 }
+      - { name: FLASHEN, bit: 8 }
+      - { name: CRCEN, bit: 12 }
+  - name: APBENR1
+    offset: "0x3C"
+    access: rw
+    fields:
+      - { name: TIM2EN, bit: 0 }
+      - { name: TIM3EN, bit: 1 }
+      - { name: TIM6EN, bit: 4 }
+      - { name: TIM7EN, bit: 5 }
+      - { name: RTCAPBEN, bit: 10 }
+      - { name: WWDGEN, bit: 11 }
+      - { name: SPI2EN, bit: 14 }
+      - { name: USART2EN, bit: 17 }
+      - { name: USART3EN, bit: 18 }
+      - { name: USART4EN, bit: 19 }
+      - { name: LPUART1EN, bit: 20 }
+      - { name: I2C1EN, bit: 21 }
+      - { name: I2C2EN, bit: 22 }
+      - { name: CECEN, bit: 24 }
+      - { name: UCPD1EN, bit: 25 }
+      - { name: UCPD2EN, bit: 26 }
+      - { name: DBGEN, bit: 27 }
+      - { name: PWREN, bit: 28 }
+      - { name: DAC1EN, bit: 29 }
+      - { name: LPTIM2EN, bit: 30 }
+      - { name: LPTIM1EN, bit: 31 }
+  - name: APBENR2
+    offset: "0x40"
+    access: rw
+    fields:
+      - { name: SYSCFGEN, bit: 0 }
+      - { name: TIM1EN, bit: 11 }
+      - { name: SPI1EN, bit: 12 }
+      - { name: USART1EN, bit: 14 }
+      - { name: TIM14EN, bit: 15 }
+      - { name: TIM15EN, bit: 16 }
+      - { name: TIM16EN, bit: 17 }
+      - { name: TIM17EN, bit: 18 }
+      - { name: ADCEN, bit: 20 }
+  - name: IOPSMENR
+    offset: "0x44"
+    access: rw
+  - name: AHBSMENR
+    offset: "0x48"
+    access: rw
+  - name: APBSMENR1
+    offset: "0x4C"
+    access: rw
+  - name: APBSMENR2
+    offset: "0x50"
+    access: rw
+  - name: CCIPR
+    offset: "0x54"
+    access: rw
+    fields:
+      - { name: USART1SEL, bit: 0, width: 2, description: "0=PCLK 1=SYSCLK 2=HSI16 3=LSE" }
+      - { name: USART2SEL, bit: 2, width: 2, description: "0=PCLK 1=SYSCLK 2=HSI16 3=LSE" }
+  - name: BDCR
+    offset: "0x5C"
+    access: rw
+  - name: CSR
+    offset: "0x60"
+    access: rw

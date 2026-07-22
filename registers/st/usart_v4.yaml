@@ -1,0 +1,128 @@
+schema: alloy.registers.v1
+vendor: st
+ip: usart_v4
+description: >
+  ST USART with PRESC + FIFO (STM32G0/G4/H7/L5-era). BRR is recorded with the
+  16-bit functional USARTDIV width; the SVD declares a 20-bit field because
+  the description is shared with LPUART.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.usart (SVD cmsis-svd:STM32G071.svd)"
+    - "old-alloy examples/blink/.alloy/generated/st_stm32g0_stm32g071rb/peripheral_traits.h (offset cross-check: identical)"
+  completeness: bring-up-subset
+  verified:
+    - "CR1 ue=0 re=2 te=3 rxneie=5 tcie=6 txeie=7 m0=12 over8=15 m1=28 fifoen=29 read directly from SVD-derived data"
+    - "ISR rxne=5 tc=6 txe=7 ore=3 fe=1 pe=0 read directly from SVD-derived data"
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: UE, bit: 0 }
+      - { name: UESM, bit: 1 }
+      - { name: RE, bit: 2 }
+      - { name: TE, bit: 3 }
+      - { name: IDLEIE, bit: 4 }
+      - { name: RXNEIE, bit: 5, description: "RXFNEIE when FIFOEN=1" }
+      - { name: TCIE, bit: 6 }
+      - { name: TXEIE, bit: 7, description: "TXFNFIE when FIFOEN=1" }
+      - { name: PEIE, bit: 8 }
+      - { name: PS, bit: 9 }
+      - { name: PCE, bit: 10 }
+      - { name: WAKE, bit: 11 }
+      - { name: M0, bit: 12 }
+      - { name: MME, bit: 13 }
+      - { name: OVER8, bit: 15 }
+      - { name: M1, bit: 28 }
+      - { name: FIFOEN, bit: 29 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: STOP, bit: 12, width: 2 }
+      - { name: ABREN, bit: 20 }
+      - { name: RTOEN, bit: 23 }
+  - name: CR3
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: EIE, bit: 0 }
+      - { name: DMAR, bit: 6 }
+      - { name: DMAT, bit: 7 }
+      - { name: RTSE, bit: 8 }
+      - { name: CTSE, bit: 9 }
+  - name: BRR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: BRR, bit: 0, width: 16, description: "USARTDIV; SVD declares 20 bits (shared with LPUART)" }
+  - name: GTPR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 8 }
+      - { name: GT, bit: 8, width: 8 }
+  - name: RTOR
+    offset: "0x14"
+    access: rw
+    fields:
+      - { name: RTO, bit: 0, width: 24 }
+      - { name: BLEN, bit: 24, width: 8 }
+  - name: RQR
+    offset: "0x18"
+    access: wo
+    fields:
+      - { name: ABRRQ, bit: 0 }
+      - { name: SBKRQ, bit: 1 }
+      - { name: MMRQ, bit: 2 }
+      - { name: RXFRQ, bit: 3 }
+      - { name: TXFRQ, bit: 4 }
+  - name: ISR
+    offset: "0x1C"
+    access: ro
+    fields:
+      - { name: PE, bit: 0 }
+      - { name: FE, bit: 1 }
+      - { name: NF, bit: 2 }
+      - { name: ORE, bit: 3 }
+      - { name: IDLE, bit: 4 }
+      - { name: RXNE, bit: 5, description: "RXFNE when FIFOEN=1" }
+      - { name: TC, bit: 6 }
+      - { name: TXE, bit: 7, description: "TXFNF when FIFOEN=1" }
+      - { name: BUSY, bit: 16 }
+      - { name: TEACK, bit: 21 }
+      - { name: REACK, bit: 22 }
+      - { name: TXFE, bit: 23 }
+      - { name: RXFF, bit: 24 }
+  - name: ICR
+    offset: "0x20"
+    access: wo
+    fields:
+      - { name: PECF, bit: 0 }
+      - { name: FECF, bit: 1 }
+      - { name: NCF, bit: 2 }
+      - { name: ORECF, bit: 3 }
+      - { name: IDLECF, bit: 4 }
+      - { name: TXFECF, bit: 5 }
+      - { name: TCCF, bit: 6 }
+      - { name: CTSCF, bit: 9 }
+      - { name: RTOCF, bit: 11 }
+      - { name: EOBCF, bit: 12 }
+      - { name: UDRCF, bit: 13 }
+      - { name: CMCF, bit: 17 }
+      - { name: WUCF, bit: 20 }
+  - name: RDR
+    offset: "0x24"
+    access: ro
+    fields:
+      - { name: RDR, bit: 0, width: 9 }
+  - name: TDR
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: TDR, bit: 0, width: 9 }
+  - name: PRESC
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: PRESCALER, bit: 0, width: 4 }

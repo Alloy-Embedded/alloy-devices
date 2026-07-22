@@ -1,0 +1,22 @@
+schema: alloy.registers.v1
+vendor: st
+ip: flash_g0
+description: >
+  STM32G0 flash interface — bring-up subset (ACR only, needed by clock
+  programs for wait-state ordering).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.flash (SVD cmsis-svd:STM32G071.svd)"
+    - "old-alloy commit 6d47f2cb (hardware-verified: ACR offset 0x00, LATENCY [2:0])"
+  completeness: bring-up-subset
+registers:
+  - name: ACR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: LATENCY, bit: 0, width: 3 }
+      - { name: PRFTEN, bit: 8 }
+      - { name: ICEN, bit: 9 }
+      - { name: ICRST, bit: 11 }
+      - { name: EMPTY, bit: 16 }
+      - { name: DBG_SWEN, bit: 18 }

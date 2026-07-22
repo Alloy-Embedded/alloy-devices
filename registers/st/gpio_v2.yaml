@@ -1,0 +1,65 @@
+schema: alloy.registers.v1
+vendor: st
+ip: gpio_v2
+description: >
+  ST GPIO block used across STM32G0/G4/L4+/F7/H7-era parts. Bit-per-pin
+  registers (IDR/ODR/BSRR/BRR) intentionally carry no field entries — drivers
+  address them with shifts; field accessors exist only where drivers configure
+  by index (MODER/OTYPER/OSPEEDR/PUPDR/LCKR/AFRL/AFRH).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.gpio (SVD cmsis-svd:STM32G071.svd)"
+    - "old-alloy examples/blink/.alloy/generated/st_stm32g0_stm32g071rb/peripheral_traits.h (offset cross-check: identical)"
+  completeness: bring-up-subset
+  verified:
+    - "All 11 register offsets agree between the two sources (2026-07-22 mining run)"
+    - "AFRL afsel0..7 stride 4 and AFRH afsel8..15 stride 4 verified entry-by-entry in SVD-derived data"
+registers:
+  - name: MODER
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: MODER, bit: 0, width: 2, repeat: { count: 16, stride: 2 } }
+  - name: OTYPER
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: OT, bit: 0, width: 1, repeat: { count: 16, stride: 1 } }
+  - name: OSPEEDR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: OSPEEDR, bit: 0, width: 2, repeat: { count: 16, stride: 2 } }
+  - name: PUPDR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: PUPDR, bit: 0, width: 2, repeat: { count: 16, stride: 2 } }
+  - name: IDR
+    offset: "0x10"
+    access: ro
+  - name: ODR
+    offset: "0x14"
+    access: rw
+  - name: BSRR
+    offset: "0x18"
+    access: wo
+  - name: LCKR
+    offset: "0x1C"
+    access: rw
+    fields:
+      - { name: LCK, bit: 0, width: 1, repeat: { count: 16, stride: 1 } }
+      - { name: LCKK, bit: 16 }
+  - name: AFRL
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: AFRL, bit: 0, width: 4, repeat: { count: 8, stride: 4 } }
+  - name: AFRH
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: AFRH, bit: 0, width: 4, repeat: { count: 8, stride: 4 } }
+  - name: BRR
+    offset: "0x28"
+    access: wo
