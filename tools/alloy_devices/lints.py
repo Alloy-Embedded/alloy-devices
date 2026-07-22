@@ -176,8 +176,27 @@ def lint_chips(db: Database) -> None:
                     db.issues.append(Issue(path, f"peripheral {name}: gate references unknown peripheral {gate['peripheral']}"))
                 else:
                     gate_ip = db.registers.get(gp["ip"])
-                    if gate_ip and not any(r["name"] == gate["register"] for r in gate_ip["registers"]):
+                    gate_reg = next(
+                        (r for r in gate_ip["registers"] if r["name"] == gate["register"]),
+                        None,
+                    ) if gate_ip else None
+                    if gate_ip and gate_reg is None:
                         db.issues.append(Issue(path, f"peripheral {name}: gate register {gate['register']} not in {gp['ip']}"))
+                    if gate_reg is not None:
+                        style = gate.get("style", "rmw")
+                        if gate_reg["access"] == "wo" and style != "write_set":
+                            db.issues.append(Issue(
+                                path,
+                                f"peripheral {name}: gate register {gate['register']} is write-only — "
+                                "RMW would read garbage; declare style: write_set",
+                            ))
+                        if gate_reg["access"] != "wo" and style == "write_set":
+                            db.issues.append(Issue(
+                                path,
+                                f"peripheral {name}: gate style write_set on a readable register — "
+                                "confirm this is a set-register, else use rmw",
+                                kind="warning",
+                            ))
             if "irq" in p and p["irq"] not in irq_names:
                 db.issues.append(Issue(path, f"peripheral {name}: irq {p['irq']} not in interrupts list"))
             if "kernel_clock" in p and p["kernel_clock"] not in clock_nodes:
