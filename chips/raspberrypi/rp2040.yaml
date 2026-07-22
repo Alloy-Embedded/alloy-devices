@@ -59,6 +59,7 @@ peripherals:
 pins:
   pa0: { port: a, index: 0, bank: io_bank0 }
   pa1: { port: a, index: 1, bank: io_bank0 }
+  pa16: { port: a, index: 16, bank: io_bank0 }
   pa25: { port: a, index: 25, bank: io_bank0 }
 routes:
   - { pin: pa0, peripheral: uart0, signal: tx, kind: funcsel, funcsel: 2 }
