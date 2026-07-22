@@ -70,9 +70,13 @@
               "register": { "type": "string" },
               "bit": { "type": "integer", "minimum": 0, "maximum": 31 },
               "style": {
-                "enum": ["rmw", "write_set"],
+                "enum": ["rmw", "write_set", "reset_release"],
                 "default": "rmw",
-                "description": "rmw: set the bit read-modify-write (ST *ENR). write_set: the register is a write-only set register — write the mask directly (Microchip PMC_PCERx)."
+                "description": "rmw: set the bit read-modify-write (ST *ENR). write_set: write-only set register — write the mask directly (Microchip PMC_PCERx). reset_release: CLEAR the bit to release the block from reset, then poll the same bit in done_register (RP2040 RESETS)."
+              },
+              "done_register": {
+                "type": "string",
+                "description": "reset_release only: register (same peripheral) whose bit must read 1 after release (RP2040 RESET_DONE)."
               }
             }
           },

@@ -44,6 +44,16 @@
         "access": { "enum": ["rw", "ro", "wo"] },
         "reset": { "$ref": "#/$defs/hex" },
         "description": { "type": "string" },
+        "array": {
+          "type": "object",
+          "description": "Register repeated per instance (e.g. RP2040 IO_BANK0 GPIOx_CTRL: offset 0x04, stride 8, count 30). Emitted as offset/stride/count constants + raw_field accessors instead of struct members.",
+          "required": ["count", "stride"],
+          "additionalProperties": false,
+          "properties": {
+            "count": { "type": "integer", "minimum": 2 },
+            "stride": { "type": "integer", "minimum": 4 }
+          }
+        },
         "fields": { "type": "array", "items": { "$ref": "#/$defs/field" } }
       }
     },

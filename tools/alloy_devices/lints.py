@@ -47,16 +47,19 @@ def lint_registers(db: Database) -> None:
     for key, doc in db.registers.items():
         path = db.register_paths[key]
         names: set[str] = set()
-        offsets: set[int] = set()
+        reg_spans: list[tuple[int, int, str]] = []
         for reg in doc["registers"]:
             size = reg.get("size", 32)
             offset = int(reg["offset"], 16)
             if reg["name"] in names:
                 db.issues.append(Issue(path, f"duplicate register name {reg['name']}"))
             names.add(reg["name"])
-            if offset in offsets:
-                db.issues.append(Issue(path, f"duplicate register offset {reg['offset']} ({reg['name']})"))
-            offsets.add(offset)
+            arr = reg.get("array")
+            end = offset + (arr["count"] * arr["stride"] if arr else size // 8)
+            for o_start, o_end, o_name in reg_spans:
+                if offset < o_end and o_start < end:
+                    db.issues.append(Issue(path, f"registers {reg['name']} and {o_name} overlap"))
+            reg_spans.append((offset, end, reg["name"]))
             if size == 32 and offset % 4 != 0:
                 db.issues.append(Issue(path, f"{reg['name']}: 32-bit register at unaligned offset {reg['offset']}"))
             if "reset" in reg and int(reg["reset"], 16) >= (1 << size):
@@ -196,6 +199,25 @@ def lint_chips(db: Database) -> None:
                                 f"peripheral {name}: gate style write_set on a readable register — "
                                 "confirm this is a set-register, else use rmw",
                                 kind="warning",
+                            ))
+                        if style == "reset_release":
+                            done_name = gate.get("done_register")
+                            if not done_name:
+                                db.issues.append(Issue(
+                                    path,
+                                    f"peripheral {name}: gate style reset_release requires done_register",
+                                ))
+                            elif gate_ip and not any(
+                                r["name"] == done_name for r in gate_ip["registers"]
+                            ):
+                                db.issues.append(Issue(
+                                    path,
+                                    f"peripheral {name}: done_register {done_name} not in {gp['ip']}",
+                                ))
+                        elif "done_register" in gate:
+                            db.issues.append(Issue(
+                                path,
+                                f"peripheral {name}: done_register only valid with style reset_release",
                             ))
             if "irq" in p and p["irq"] not in irq_names:
                 db.issues.append(Issue(path, f"peripheral {name}: irq {p['irq']} not in interrupts list"))
