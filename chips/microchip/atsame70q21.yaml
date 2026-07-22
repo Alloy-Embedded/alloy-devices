@@ -14,6 +14,7 @@ provenance:
   - 'peripheral mining 2026-07-22: TWIHS0/AFEC0 bases+PIDs from canonical yml; PA4=TWCK0/PA3=TWD0 function
     A from hardware-era routes.hpp; temp sensor = AFEC0 ch11; COCR mid-scale quirk'
   - 'SPI0 mining 2026-07-22: base 0x40008000 / PID 21 (PCER0 bit 21, matches interrupts SPI0=21) from canonical yml; PD20/PD21/PD22 = MISO/MOSI/SPCK peripheral B (selector 1) from old-alloy git 8b1b1bc7^ generated routes.hpp write_selector operands (PD20=1 PD21=1 PD22=1 = function B; same source style as the TWIHS0 line) + board.json spi block (Xplained EXT/Arduino headers); CSR modeled as 4-entry array (old hw()->CSR[cs]; canonical yml collapsed it — mining quirk spi-csr-array)'
+  - 'IC inventory 2026-07-22 (Atmel-44050A user guide): PC11 = AT24MAC402 WP (low = writable), PD25 = SPI0 NPCS1 on EXT1 pin 15 (used as GPIO software CS); 0x37 do scan = alias write-protect do proprio AT24MAC402, nao um segundo EDBG endpoint'
   verified:
   - "PID == NVIC line; PID 7..31 gate via PCER0 (write-only set-register), 32..63 via PCER1 \u2014 gates\
     \ here use style write_set"
@@ -180,6 +181,12 @@ pins:
   pd22:
     port: d
     index: 22
+  pc11:
+    port: c
+    index: 11
+  pd25:
+    port: d
+    index: 25
 routes:
 - pin: pb4
   peripheral: usart1
