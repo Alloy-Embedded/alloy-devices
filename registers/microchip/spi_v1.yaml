@@ -1,0 +1,101 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: spi_v1
+class: spi
+description: >
+  Atmel/Microchip SPI (SAM E70/S70/V70 and earlier SAM3/4 lineage).
+  Command-style write-only CR (SPIEN/SPIDIS/SWRST — SWRST drops the block
+  to slave mode, re-write MR after), per-chip-select CSR0..3 array at +0x30.
+  Quirks encoded in field descriptions because they are silicon semantics:
+  NCPHA is INVERTED Motorola CPHA (mode0 = CPOL=0 + NCPHA=1); SCBR is a
+  LINEAR divider of the peripheral clock with SCBR=0 forbidden; in Variable
+  PS mode a TDR write with PCS=0xF ('none') SUPPRESSES SCK entirely —
+  hardware-found on SAME70 Xplained, write one-cold PCS=0xE (NPCS0) even
+  when the real CS is a GPIO. MR.MODFDIS required for GPIO chip-selects.
+provenance:
+  sources:
+    - "peripheral mining 2026-07-22 scratchpad/mining/same70-periph.json ips[spi] (canonical atsame70q21.yml templates.spi + old-alloy spi_hardware_policy.hpp git 3732c1bb — configure path HW-passed on SAME70 Xplained, CHECKLIST spi_probe x2)"
+    - "old-alloy git 0e25cd03 (PMC PCER0 PID21 enable was THE bring-up blocker) + git 4e9f7863 (TDR PCS=0xF clock-suppression fix, observed on silicon)"
+    - "SAME70 TRM DS60001527 (SPI chapter): SCBR=0 prohibition, SPCK=periph_clk/SCBR formula, WPKEY value"
+  completeness: bring-up-subset
+  verified:
+    - "NCPHA inversion: canonical yml enum NCPHA 1 = valid_leading_edge (= CPHA 0); old driver's `mode & 1 -> NCPHA` mapping was INVERTED (mining disagreement #6) — do not copy it"
+    - "CSR is a 4-entry array (old code hw()->CSR[cs]); the canonical yml collapsed it to a single register (mining quirk spi-csr-array)"
+registers:
+  - name: CR
+    offset: "0x00"
+    access: wo
+    description: "Command register — write composed masks, never RMW. SWRST resets into SLAVE mode."
+    fields:
+      - { name: SPIEN, bit: 0 }
+      - { name: SPIDIS, bit: 1 }
+      - { name: SWRST, bit: 7 }
+      - { name: LASTXFER, bit: 24 }
+  - name: MR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: MSTR, bit: 0 }
+      - { name: PS, bit: 1, description: "0 = fixed peripheral select (MR.PCS); 1 = variable (PCS in each TDR write)" }
+      - { name: PCSDEC, bit: 2 }
+      - { name: MODFDIS, bit: 4, description: "MUST be 1 when CS is a GPIO — otherwise a floating NPCS0 raises MODF and hardware drops master mode" }
+      - { name: WDRBT, bit: 5 }
+      - { name: LLB, bit: 7, description: "Local loopback: MOSI internally tied to MISO (self-test without wiring)" }
+      - { name: PCS, bit: 16, width: 4, description: "One-cold (PCSDEC=0): NPCS0=0xE, NPCS1=0xD, NPCS2=0xB, NPCS3=0x7; 0xF = none" }
+      - { name: DLYBCS, bit: 24, width: 8 }
+  - name: RDR
+    offset: "0x08"
+    access: ro
+    description: "Reading clears SR.RDRF — always drain, or OVRES sets (full duplex: every TX byte produces an RX byte)"
+    fields:
+      - { name: RD, bit: 0, width: 16 }
+  - name: TDR
+    offset: "0x0C"
+    access: wo
+    description: "One composed 32-bit write: data | PCS | optional LASTXFER. Variable PS mode: PCS=0xF here suppresses SCK — always select a real line (0xE)."
+    fields:
+      - { name: TD, bit: 0, width: 16 }
+      - { name: TD_PCS, bit: 16, width: 4, description: "TRM name PCS — prefixed to keep per-IP accessor names unique (MR also has PCS)" }
+      - { name: TD_LASTXFER, bit: 24, description: "TRM name LASTXFER — prefixed (CR also has LASTXFER)" }
+  - name: SR
+    offset: "0x10"
+    access: ro
+    description: "Read clears MODF/OVRES/NSSR — sample once per loop into a local"
+    fields:
+      - { name: RDRF, bit: 0 }
+      - { name: TDRE, bit: 1 }
+      - { name: MODF, bit: 2 }
+      - { name: OVRES, bit: 3 }
+      - { name: NSSR, bit: 8 }
+      - { name: TXEMPTY, bit: 9, description: "Wait THIS (not TDRE) before releasing a software CS" }
+      - { name: SPIENS, bit: 16 }
+  - name: IER
+    offset: "0x14"
+    access: wo
+  - name: IDR
+    offset: "0x18"
+    access: wo
+  - name: IMR
+    offset: "0x1C"
+    access: ro
+  - name: CSR
+    offset: "0x30"
+    access: rw
+    array: { count: 4, stride: 4 }
+    description: "One per NPCS line; software-CS drivers use CSR0 only"
+    fields:
+      - { name: CPOL, bit: 0 }
+      - { name: NCPHA, bit: 1, description: "INVERTED Motorola CPHA: 1 = capture on leading edge = CPHA 0. mode0 => CPOL=0, NCPHA=1" }
+      - { name: CSNAAT, bit: 2 }
+      - { name: CSAAT, bit: 3 }
+      - { name: BITS, bit: 4, width: 4, description: "Frame bits = BITS + 8 (0 = 8-bit … 8 = 16-bit)" }
+      - { name: SCBR, bit: 8, width: 8, description: "LINEAR divider: SPCK = periph_clk / SCBR; SCBR=0 FORBIDDEN — clamp to 1..255" }
+      - { name: DLYBS, bit: 16, width: 8 }
+      - { name: DLYBCT, bit: 24, width: 8 }
+  - name: WPMR
+    offset: "0xE4"
+    access: rw
+    description: "Write protection: WPKEY=0x535049 ('SPI'); with WPEN set, MR/CSR writes are silently ignored"
+    fields:
+      - { name: WPEN, bit: 0 }
+      - { name: WPKEY, bit: 8, width: 24 }

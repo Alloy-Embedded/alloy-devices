@@ -7,7 +7,7 @@ provenance:
   sources:
   - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml (SVD cmsis-svd:STM32G071.svd) \u2014\
     \ bases, IRQs, gate bits"
-  - "alloy-devices-yml bulk-admitted stm32g071rbtx.yml schema 1.3.0 (stm32-open-pin-data) \u2014 pin AF\
+  - "alloy-devices-yml bulk-admitted stm32g071r(6-8-b)tx.yml schema 1.3.0 (stm32-open-pin-data) \u2014 pin AF\
     \ routes"
   - "old-alloy boards/nucleo_g071rb/board.json + generated linker.ld \u2014 memory sizes 128K/36K"
   - "old-alloy commit 6d47f2cb \u2014 PLL bring-up sequence order, hardware-verified on Nucleo-G071RB"
@@ -16,6 +16,9 @@ provenance:
   - 'peripheral mining 2026-07-22: TIM2/ADC bases+gates from canonical yml; PA5->TIM2_CH1 AF2 from bulk
     1.3.0 AF tables; vrefint=ch13 (CAL 0x1FFF75AA), temp=ch12'
   - 'I2C1 mining 2026-07-22: base/gate from canonical yml; PB8/PB9 AF6 (Arduino D15/D14) from bulk 1.3.0'
+  - 'SPI1 mining 2026-07-22: base/gate (APBENR2 bit 12) from canonical yml; PB3/PB4/PB5 AF0 from bulk
+    1.3.0 — set hardware-exercised on real Nucleo-G071RB by old-alloy lite_hal_probe; PA5/PA6/PA7 AF0
+    exist too but PA5 = LD4 LED (deliberately not routed to keep the LED role alive)'
   verified:
   - "Memories: yml claimed family-max 512K/144K and self-flags 'requires enrichment'; part code 'RB'=128K\
     \ and two independent old-alloy sources agree on 128K/36K \u2014 128K/36K seeded"
@@ -131,6 +134,15 @@ peripherals:
       bit: 21
     irq: I2C1
     kernel_clock: apb
+  spi1:
+    ip: st/spi_v2
+    base: '0x40013000'
+    gate:
+      peripheral: rcc
+      register: APBENR2
+      bit: 12
+    irq: SPI1
+    kernel_clock: apb
 pins:
   pa2:
     port: a
@@ -150,6 +162,15 @@ pins:
   pb9:
     port: b
     index: 9
+  pb3:
+    port: b
+    index: 3
+  pb4:
+    port: b
+    index: 4
+  pb5:
+    port: b
+    index: 5
 routes:
 - pin: pa2
   peripheral: usart2
@@ -176,6 +197,21 @@ routes:
   signal: sda
   kind: af_fixed
   af: 6
+- pin: pb3
+  peripheral: spi1
+  signal: sck
+  kind: af_fixed
+  af: 0
+- pin: pb4
+  peripheral: spi1
+  signal: miso
+  kind: af_fixed
+  af: 0
+- pin: pb5
+  peripheral: spi1
+  signal: mosi
+  kind: af_fixed
+  af: 0
 interrupts:
 - name: WWDG
   number: 0

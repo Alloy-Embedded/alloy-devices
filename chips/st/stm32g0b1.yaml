@@ -15,6 +15,8 @@ provenance:
   - 'peripheral mining 2026-07-22: TIM2/ADC bases+gates from canonical yml; PA5->TIM2_CH1 AF2 from bulk
     1.3.0 AF tables; vrefint=ch13 (CAL 0x1FFF75AA), temp=ch12'
   - 'I2C1 mining 2026-07-22: base/gate from canonical yml; PB8/PB9 AF6 (Arduino D15/D14) from bulk 1.3.0'
+  - 'SPI1 mining 2026-07-22: base/gate mirror of g071rb (ip_version spi2s1_v3_5_Cube on G0B1, same
+    register subset); PB3/PB4/PB5 AF0 from bulk 1.3.0 stm32g0b1r(b-c-e)tx.yml — identical AF0 set'
   verified:
   - "New chip added with ZERO new C++ and ZERO emitter changes \u2014 the 'new chip = data only' proof"
   - Same hardware-verified PLL profile as stm32g071rb (HSI16 /1 x8 /2 = 64 MHz, 2WS); the old generated
@@ -135,6 +137,15 @@ peripherals:
       bit: 21
     irq: I2C1
     kernel_clock: apb
+  spi1:
+    ip: st/spi_v2
+    base: '0x40013000'
+    gate:
+      peripheral: rcc
+      register: APBENR2
+      bit: 12
+    irq: SPI1
+    kernel_clock: apb
 pins:
   pa2:
     port: a
@@ -154,6 +165,15 @@ pins:
   pb9:
     port: b
     index: 9
+  pb3:
+    port: b
+    index: 3
+  pb4:
+    port: b
+    index: 4
+  pb5:
+    port: b
+    index: 5
 routes:
 - pin: pa2
   peripheral: usart2
@@ -180,6 +200,21 @@ routes:
   signal: sda
   kind: af_fixed
   af: 6
+- pin: pb3
+  peripheral: spi1
+  signal: sck
+  kind: af_fixed
+  af: 0
+- pin: pb4
+  peripheral: spi1
+  signal: miso
+  kind: af_fixed
+  af: 0
+- pin: pb5
+  peripheral: spi1
+  signal: mosi
+  kind: af_fixed
+  af: 0
 interrupts:
 - name: WWDG
   number: 0

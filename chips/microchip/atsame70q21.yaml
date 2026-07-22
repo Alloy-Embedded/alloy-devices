@@ -13,6 +13,7 @@ provenance:
     \ WDT disable, CCFG_SYSIO, USART1 8N1 config"
   - 'peripheral mining 2026-07-22: TWIHS0/AFEC0 bases+PIDs from canonical yml; PA4=TWCK0/PA3=TWD0 function
     A from hardware-era routes.hpp; temp sensor = AFEC0 ch11; COCR mid-scale quirk'
+  - 'SPI0 mining 2026-07-22: base 0x40008000 / PID 21 (PCER0 bit 21, matches interrupts SPI0=21) from canonical yml; PD20/PD21/PD22 = MISO/MOSI/SPCK peripheral B (selector 1) from old-alloy git 8b1b1bc7^ generated routes.hpp write_selector operands (PD20=1 PD21=1 PD22=1 = function B; same source style as the TWIHS0 line) + board.json spi block (Xplained EXT/Arduino headers); CSR modeled as 4-entry array (old hw()->CSR[cs]; canonical yml collapsed it — mining quirk spi-csr-array)'
   verified:
   - "PID == NVIC line; PID 7..31 gate via PCER0 (write-only set-register), 32..63 via PCER1 \u2014 gates\
     \ here use style write_set"
@@ -137,6 +138,16 @@ peripherals:
     kernel_clock: apb
     channels:
       temp: 11
+  spi0:
+    ip: microchip/spi_v1
+    base: '0x40008000'
+    gate:
+      peripheral: pmc
+      register: PCER0
+      bit: 21
+      style: write_set
+    irq: SPI0
+    kernel_clock: apb
 pins:
   pc8:
     port: c
@@ -160,6 +171,15 @@ pins:
   pa4:
     port: a
     index: 4
+  pd20:
+    port: d
+    index: 20
+  pd21:
+    port: d
+    index: 21
+  pd22:
+    port: d
+    index: 22
 routes:
 - pin: pb4
   peripheral: usart1
@@ -181,6 +201,21 @@ routes:
   signal: sda
   kind: af_fixed
   af: 0
+- pin: pd22
+  peripheral: spi0
+  signal: sck
+  kind: af_fixed
+  af: 1
+- pin: pd20
+  peripheral: spi0
+  signal: miso
+  kind: af_fixed
+  af: 1
+- pin: pd21
+  peripheral: spi0
+  signal: mosi
+  kind: af_fixed
+  af: 1
 interrupts:
 - name: SUPC
   number: 0

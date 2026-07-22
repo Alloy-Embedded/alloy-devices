@@ -222,6 +222,11 @@
               "sysclk_hz": { "type": "integer", "minimum": 1 },
               "ahb_hz": { "type": "integer", "minimum": 1 },
               "apb_hz": { "type": "integer", "minimum": 1 },
+              "apb2_hz": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Second APB bus frequency where the chip has one (STM32 F/H APB2). Omit on single-APB chips: codegen mirrors apb_hz."
+              },
               "description": { "type": "string" },
               "program": {
                 "type": "array",

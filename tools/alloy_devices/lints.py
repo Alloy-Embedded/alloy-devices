@@ -104,8 +104,8 @@ def _lint_clock(db: Database, key: str, doc: dict[str, Any]) -> None:
     for pname, profile in clock["profiles"].items():
         if not 32_768 <= profile["sysclk_hz"] <= 1_000_000_000:
             db.issues.append(Issue(path, f"profile {pname}: implausible sysclk {profile['sysclk_hz']} Hz"))
-        for bus in ("ahb_hz", "apb_hz"):
-            if profile[bus] > profile["sysclk_hz"]:
+        for bus in ("ahb_hz", "apb_hz", "apb2_hz"):
+            if bus in profile and profile[bus] > profile["sysclk_hz"]:
                 db.issues.append(Issue(path, f"profile {pname}: {bus} exceeds sysclk", kind="warning"))
         for i, op in enumerate(profile["program"]):
             where = f"profile {pname} op[{i}]"
@@ -178,7 +178,7 @@ def lint_chips(db: Database) -> None:
                         "family-max sizes; this lint exists to stop that",
                     ))
 
-        clock_nodes = {"sysclk", "ahb", "apb"} | set(doc["clock"]["sources"].keys())
+        clock_nodes = {"sysclk", "ahb", "apb", "apb2"} | set(doc["clock"]["sources"].keys())
         for name, p in periphs.items():
             if p["ip"] not in db.registers:
                 db.issues.append(Issue(path, f"peripheral {name}: unknown IP {p['ip']} (no registers/{p['ip']}.yaml)"))

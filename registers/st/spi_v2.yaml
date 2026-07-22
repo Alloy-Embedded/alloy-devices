@@ -1,0 +1,124 @@
+schema: alloy.registers.v1
+vendor: st
+ip: spi_v2
+class: spi
+description: >
+  ST SPI FIFO variant (spi2s1 v3.x — G071 ip_version spi2s1_v3_3_Cube, G0B1
+  v3_5, F722 same register subset per RM0431; embassy stm32-data calls this
+  layout spi_v3/v3_i2s — embassy's own spi_v2 is the NON-FIFO F2/F4 style;
+  our tag numbers only what this database models, so no v1 sibling implied).
+  32-bit FIFOs (four 8-bit or two 16-bit frames), frame size in
+  CR2.DS[3:0]. CR1 bit 11 is CRCL (CRC
+  length), NOT DFF — the STM32 SVDs and everything derived from them carry
+  the legacy F1/F4 name at that position; corrected against RM0444 §35 /
+  RM0431. DR must be byte-accessed for 8-bit frames (a 16/32-bit store
+  data-packs TWO bytes into the TX FIFO); modeled as one 32-bit register —
+  drivers take a volatile uint8_t pointer to it. BR divider encoding:
+  f_kernel / 2^(BR+1). G0-only ID registers at 0x3F0+ (HWCFGR/VERR/IPIDR/
+  SIDR) deliberately omitted so this file is shared with F7.
+provenance:
+  sources:
+    - "peripheral mining 2026-07-22 scratchpad/mining/stm32g0-periph.json ips[spi] (canonical stm32g071rb.yml templates.spi, SVD-derived, + old-alloy src/hal/spi/lite.hpp constants — driver ran on real Nucleo-G071RB via lite_hal_probe on PB3/PB4/PB5)"
+    - "alloy-devices-yml vendors/st/stm32g0 templates.spi + options.baud_prescaler_encoding (div_2=0 … div_256=7)"
+    - "RM0444 §35 (STM32G0 SPI/I2S) — CR1 bit 11 corrected SVD DFF -> CRCL; SR bit 8 corrected SVD TIFRFE -> FRE"
+    - "RM0431 (STM32F72x/73x) — same register subset confirmed for F722"
+  completeness: full
+  verified:
+    - "CR1 bit 11 = CRCL: all machine-readable sources say DFF (legacy name); the FIFO-variant markers (CR2.DS, FRXTH, SR.FRLVL/FTLVL, NSSP) present in the same sources make the IP unambiguous — bit POSITION unanimous, name corrected per RM"
+    - "all other field positions identical across mined JSON, canonical yml and old driver constants"
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CPHA, bit: 0 }
+      - { name: CPOL, bit: 1 }
+      - { name: MSTR, bit: 2 }
+      - { name: BR, bit: 3, width: 3, description: "Baud divider: f_kernel / 2^(BR+1); no /1 option" }
+      - { name: SPE, bit: 6 }
+      - { name: LSBFIRST, bit: 7 }
+      - { name: SSI, bit: 8 }
+      - { name: SSM, bit: 9 }
+      - { name: RXONLY, bit: 10 }
+      - { name: CRCL, bit: 11, description: "CRC length 0=8-bit 1=16-bit. SVD name DFF is wrong — DFF exists only on the non-FIFO F1/F4 variant (RM0444 §35)" }
+      - { name: CRCNEXT, bit: 12 }
+      - { name: CRCEN, bit: 13 }
+      - { name: BIDIOE, bit: 14 }
+      - { name: BIDIMODE, bit: 15 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: RXDMAEN, bit: 0 }
+      - { name: TXDMAEN, bit: 1 }
+      - { name: SSOE, bit: 2 }
+      - { name: NSSP, bit: 3 }
+      - { name: FRF, bit: 4 }
+      - { name: ERRIE, bit: 5 }
+      - { name: RXNEIE, bit: 6 }
+      - { name: TXEIE, bit: 7 }
+      - { name: DS, bit: 8, width: 4, description: "Frame size = DS+1 bits; 0x7=8-bit, 0xF=16-bit; 0-2 forbidden (hardware forces 8-bit)" }
+      - { name: FRXTH, bit: 12, description: "1 = RXNE at 1 byte in RX FIFO (required for 8-bit frames); 0 = at 2 bytes" }
+      - { name: LDMA_RX, bit: 13 }
+      - { name: LDMA_TX, bit: 14 }
+  - name: SR
+    offset: "0x08"
+    access: rw
+    description: "Read-only except CRCERR (write 0 to clear)"
+    fields:
+      - { name: RXNE, bit: 0 }
+      - { name: TXE, bit: 1 }
+      - { name: CHSIDE, bit: 2 }
+      - { name: UDR, bit: 3 }
+      - { name: CRCERR, bit: 4 }
+      - { name: MODF, bit: 5 }
+      - { name: OVR, bit: 6 }
+      - { name: BSY, bit: 7 }
+      - { name: FRE, bit: 8, description: "Frame format error (SVD name TIFRFE)" }
+      - { name: FRLVL, bit: 9, width: 2, description: "RX FIFO level: 00 empty" }
+      - { name: FTLVL, bit: 11, width: 2, description: "TX FIFO level: 00 empty" }
+  - name: DR
+    offset: "0x0C"
+    access: rw
+    description: >
+      FIFO window. MUST be byte-accessed for 8-bit frames — a 16/32-bit
+      store pushes TWO bytes (data packing), a wide load pops two RX bytes.
+      Drivers use a volatile uint8_t* at this register's address.
+    fields:
+      - { name: DR, bit: 0, width: 16 }
+  - name: CRCPR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: CRCPOLY, bit: 0, width: 16 }
+  - name: RXCRCR
+    offset: "0x14"
+    access: ro
+    fields:
+      - { name: RXCRC, bit: 0, width: 16 }
+  - name: TXCRCR
+    offset: "0x18"
+    access: ro
+    fields:
+      - { name: TXCRC, bit: 0, width: 16 }
+  - name: I2SCFGR
+    offset: "0x1C"
+    access: rw
+    description: "I2S audio mode — carried from SVD, never exercised (reference only)"
+    fields:
+      - { name: CHLEN, bit: 0 }
+      - { name: DATLEN, bit: 1, width: 2 }
+      - { name: CKPOL, bit: 3 }
+      - { name: I2SSTD, bit: 4, width: 2 }
+      - { name: PCMSYNC, bit: 7 }
+      - { name: I2SCFG, bit: 8, width: 2 }
+      - { name: I2SE, bit: 10, description: "I2S enable (SVD misname SE2, corrected per RM0444)" }
+      - { name: I2SMOD, bit: 11 }
+      - { name: ASTRTEN, bit: 12, description: "Async start enable — absent from the G071 SVD, present in RM0444/RM0431" }
+  - name: I2SPR
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: I2SDIV, bit: 0, width: 8 }
+      - { name: ODD, bit: 8 }
+      - { name: MCKOE, bit: 9 }
