@@ -1,0 +1,123 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: i2c_v1
+class: i2c
+description: >
+  ESP32 (LX6) I2C with the 16-slot command engine. A transfer is a short
+  program in COMD0..15 (opcodes RSTART=0 WRITE=1 READ=2 STOP=3 END=4),
+  started by CTR.TRANS_START and polled via INT_RAW (TRANS_COMPLETE ok,
+  ACK_ERR = NACK). Data flows through the FIFO port at +0x1C. Timing in
+  APB cycles (80 MHz), TO is the 20-bit bus timeout.
+provenance:
+  sources:
+    - "peripheral mining 2026-07-22: canonical esp32.yml templates.i2c + old-alloy git e27a117a i2c0_{registers,bitfields}.hpp (SVD-derived offsets/fields incl. COMD opcode list verbatim)"
+    - "ESP32 TRM §11 / esp-idf i2c_ll.h (COMD sub-field layout byte_num[7:0] ack_check_en[8] ack_exp[9] ack_value[10] op_code[13:11] — NOT in mined sources, TRM-cited like the RP2040 clock encodings)"
+    - "esp-idf soc/gpio_sig_map.h (matrix signals I2CEXT0_SCL=29, I2CEXT0_SDA=30, shared in/out)"
+  completeness: bring-up-subset
+registers:
+  - name: SCL_LOW_PERIOD
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: SCL_LOW, bit: 0, width: 14 }
+  - name: CTR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: SDA_FORCE_OUT, bit: 0 }
+      - { name: SCL_FORCE_OUT, bit: 1 }
+      - { name: MS_MODE, bit: 4 }
+      - { name: TRANS_START, bit: 5 }
+      - { name: CLK_EN, bit: 8 }
+  - name: SR
+    offset: "0x08"
+    access: ro
+    fields:
+      - { name: BUS_BUSY, bit: 4 }
+      - { name: RXFIFO_CNT, bit: 8, width: 6 }
+      - { name: TXFIFO_CNT, bit: 18, width: 6 }
+  - name: TO
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: TIME_OUT, bit: 0, width: 20 }
+  - name: SLAVE_ADDR
+    offset: "0x10"
+    access: rw
+  - name: RXFIFO_ST
+    offset: "0x14"
+    access: ro
+  - name: FIFO_CONF
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: NONFIFO_EN, bit: 10 }
+      - { name: RX_FIFO_RST, bit: 12 }
+      - { name: TX_FIFO_RST, bit: 13 }
+  - name: DATA
+    offset: "0x1C"
+    access: rw
+    fields:
+      - { name: FIFO_DATA, bit: 0, width: 8 }
+  - name: INT_RAW
+    offset: "0x20"
+    access: ro
+    fields:
+      - { name: END_DETECT, bit: 3 }
+      - { name: ARB_LOST, bit: 5 }
+      - { name: TRANS_COMPLETE, bit: 7 }
+      - { name: TIME_OUT_INT, bit: 8 }
+      - { name: ACK_ERR, bit: 10 }
+  - name: INT_CLR
+    offset: "0x24"
+    access: wo
+  - name: INT_ENA
+    offset: "0x28"
+    access: rw
+  - name: INT_STATUS
+    offset: "0x2C"
+    access: ro
+  - name: SDA_HOLD
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: SDA_HOLD_TIME, bit: 0, width: 10 }
+  - name: SDA_SAMPLE
+    offset: "0x34"
+    access: rw
+    fields:
+      - { name: SDA_SAMPLE_TIME, bit: 0, width: 10 }
+  - name: SCL_HIGH_PERIOD
+    offset: "0x38"
+    access: rw
+    fields:
+      - { name: SCL_HIGH, bit: 0, width: 14 }
+  - name: SCL_START_HOLD
+    offset: "0x40"
+    access: rw
+  - name: SCL_RSTART_SETUP
+    offset: "0x44"
+    access: rw
+  - name: SCL_STOP_HOLD
+    offset: "0x48"
+    access: rw
+  - name: SCL_STOP_SETUP
+    offset: "0x4C"
+    access: rw
+  - name: SCL_FILTER_CFG
+    offset: "0x50"
+    access: rw
+  - name: SDA_FILTER_CFG
+    offset: "0x54"
+    access: rw
+  - name: COMD
+    offset: "0x58"
+    access: rw
+    array: { count: 16, stride: 4 }
+    fields:
+      - { name: BYTE_NUM, bit: 0, width: 8 }
+      - { name: ACK_CHECK_EN, bit: 8 }
+      - { name: ACK_EXP, bit: 9 }
+      - { name: ACK_VALUE, bit: 10 }
+      - { name: OP_CODE, bit: 11, width: 3 }
+      - { name: CMD_DONE, bit: 31 }

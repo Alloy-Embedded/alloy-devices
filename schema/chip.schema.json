@@ -122,6 +122,16 @@
             "type": "string",
             "description": "Explicit controlling peripheral for this pin when it is not gpio<port>/pio<port> (RP2040: io_bank0)."
           },
+          "iomux": {
+            "type": "object",
+            "description": "Per-pin pad-control register at a NON-sequential offset (ESP32 IO_MUX): absolute address = peripheral.base + offset.",
+            "required": ["peripheral", "offset"],
+            "additionalProperties": false,
+            "properties": {
+              "peripheral": { "type": "string" },
+              "offset": { "$ref": "#/$defs/hex" }
+            }
+          },
           "mux_unlock": {
             "type": "object",
             "description": "A bit that must be SET before this pin can leave its system function (e.g. SAM E70 PB4 is JTAG TDI until MATRIX CCFG_SYSIO bit 4 is set). Resolved like a gate: peripheral.register.bit.",

@@ -1,0 +1,26 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: io_mux_v1
+class: pads
+description: >
+  ESP32 IO_MUX pad control. Per-pin registers at NON-sequential offsets —
+  each pin's absolute register address comes from chip data (pins.iomux),
+  and the PIN array here exists only to publish the field layout as
+  raw_field accessors (MCU_SEL=2 selects the GPIO/matrix path; FUN_WPU is
+  the internal pull-up, FUN_IE the input buffer).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/espressif/esp32 esp32.yml io_mux block (idf-derived: base 0x3FF49000, per-pin offsets non-sequential — gpio2=0x40 hardware-corroborated by old-alloy 29ba8a04)"
+    - "esp-idf soc/io_mux_reg.h field layout (FUN_WPD=7, FUN_WPU=8, FUN_IE=9, FUN_DRV=[11:10], MCU_SEL=[14:12])"
+  completeness: bring-up-subset
+registers:
+  - name: PIN
+    offset: "0x10"
+    access: rw
+    array: { count: 40, stride: 4 }
+    fields:
+      - { name: FUN_WPD, bit: 7 }
+      - { name: FUN_WPU, bit: 8 }
+      - { name: FUN_IE, bit: 9 }
+      - { name: FUN_DRV, bit: 10, width: 2 }
+      - { name: MCU_SEL, bit: 12, width: 3, description: "2 = GPIO/matrix function" }

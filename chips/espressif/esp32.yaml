@@ -16,6 +16,8 @@ provenance:
     \ ESP32 has no SVD)"
   - 'LEDC mining 2026-07-22: base 0x3FF59000, DPORT CLK/RST bit 11, GPIO matrix out signal 71 (ledc_hs_sig_out0),
     timer reset-at-powerup quirk, Q10.8 divider'
+  - 'I2C mining 2026-07-22: i2c0 base 0x3FF53000 DPORT bit7, COMD engine (TRM-cited layout), matrix signals
+    29/30 shared in/out, IO_MUX GPIO21=0x7C/GPIO22=0x80 (canonical io_mux block)'
   verified:
   - "v1 scope (NORTH_STAR amendment): clocks stay at bootloader defaults \u2014 CPU 80 MHz (proven by\
     \ the old ~500ms blink calibration); no clock-tree bring-up; timebase = CCOUNT polling; no interrupts\
@@ -78,6 +80,21 @@ peripherals:
       register: PERIP_RST_EN
       bit: 11
     kernel_clock: apb
+  io_mux:
+    ip: espressif/io_mux_v1
+    base: '0x3FF49000'
+  i2c0:
+    ip: espressif/i2c_v1
+    base: '0x3FF53000'
+    gate:
+      peripheral: dport
+      register: PERIP_CLK_EN
+      bit: 7
+    reset_clear:
+      peripheral: dport
+      register: PERIP_RST_EN
+      bit: 7
+    kernel_clock: apb
 pins:
   pa0:
     port: a
@@ -91,6 +108,20 @@ pins:
     port: a
     index: 4
     bank: gpio
+  pa21:
+    port: a
+    index: 21
+    bank: gpio
+    iomux:
+      peripheral: io_mux
+      offset: '0x7C'
+  pa22:
+    port: a
+    index: 22
+    bank: gpio
+    iomux:
+      peripheral: io_mux
+      offset: '0x80'
 routes:
 - pin: pa2
   peripheral: ledc
@@ -98,6 +129,18 @@ routes:
   kind: full_matrix
   matrix_signal: 71
   direction: out
+- pin: pa22
+  peripheral: i2c0
+  signal: scl
+  kind: full_matrix
+  matrix_signal: 29
+  direction: inout
+- pin: pa21
+  peripheral: i2c0
+  signal: sda
+  kind: full_matrix
+  matrix_signal: 30
+  direction: inout
 clock:
   sources:
     xtal40m:

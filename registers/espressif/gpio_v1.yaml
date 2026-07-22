@@ -55,10 +55,20 @@ registers:
   - name: IN1
     offset: "0x40"
     access: ro
+  - name: PIN
+    offset: "0x88"
+    access: rw
+    array: { count: 40, stride: 4 }
+    fields:
+      - { name: PAD_DRIVER, bit: 2, description: "1 = open-drain" }
   - name: FUNC_IN_SEL_CFG
     offset: "0x130"
     access: rw
     array: { count: 256, stride: 4 }
+    fields:
+      - { name: IN_FUNC_SEL, bit: 0, width: 6, description: "source pin index" }
+      - { name: IN_INV, bit: 6 }
+      - { name: IN_SIG_SEL, bit: 7, description: "1 = route through the matrix" }
   - name: FUNC_OUT_SEL_CFG
     offset: "0x530"
     access: rw
