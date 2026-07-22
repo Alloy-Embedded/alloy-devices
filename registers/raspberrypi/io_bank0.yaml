@@ -1,0 +1,24 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: io_bank0
+class: gpio
+description: >
+  RP2040 GPIO function mux, 30 pins, one STATUS/CTRL pair per pin (stride 8).
+  Only the CTRL array is modeled (bring-up subset; STATUS interleaves the
+  same span and is read-only diagnostics). FUNCSEL values: 1=SPI 2=UART
+  3=I2C 4=PWM 5=SIO 6=PIO0 7=PIO1 8=CLOCK_GPOUT 9=USB 31=NULL.
+provenance:
+  sources:
+    - "alloy-devices-yml pico.yml templates.io_bank0 (SVD-derived: gpio0_ctrl offset 4, stride 8, funcsel bits 0-4, 30 pins)"
+    - "old-alloy git 3a5ff683 hardware.hpp FUNCSEL_* enum (SIO=5, NULL=31 — not present in the YAML) + rp2040_dual_core example (writes 5 for SIO, 2 for UART)"
+  completeness: bring-up-subset
+registers:
+  - name: GPIO_CTRL
+    offset: "0x04"
+    access: rw
+    array: { count: 30, stride: 8 }
+    fields:
+      - { name: FUNCSEL, bit: 0, width: 5 }
+      - { name: OUTOVER, bit: 8, width: 2 }
+      - { name: OEOVER, bit: 12, width: 2 }
+      - { name: INOVER, bit: 16, width: 2 }

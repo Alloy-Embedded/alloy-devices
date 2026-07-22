@@ -1,0 +1,36 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: xosc
+class: clock
+description: >
+  RP2040 crystal oscillator. Magic field values (datasheet §2.16.7, absent
+  from every local source): CTRL.ENABLE=0xFAB enable / 0xD1E disable;
+  CTRL.FREQ_RANGE=0xAA0 (1-15 MHz); STARTUP.DELAY=47 for 12 MHz (~1 ms).
+provenance:
+  sources:
+    - "alloy-devices-yml pico.yml templates.xosc (SVD-derived field positions)"
+    - "RP2040 datasheet §2.16 (enum magic values + startup delay — no alloy code ever touched XOSC)"
+  completeness: bring-up-subset
+registers:
+  - name: CTRL
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: FREQ_RANGE, bit: 0, width: 12 }
+      - { name: ENABLE, bit: 12, width: 12 }
+  - name: STATUS
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: ENABLED, bit: 12 }
+      - { name: BADWRITE, bit: 24 }
+      - { name: STABLE, bit: 31 }
+  - name: DORMANT
+    offset: "0x08"
+    access: rw
+  - name: STARTUP
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: DELAY, bit: 0, width: 14 }
+      - { name: X4, bit: 20 }

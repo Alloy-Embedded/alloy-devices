@@ -1,0 +1,62 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: sio
+class: sio
+description: >
+  RP2040 single-cycle IO: fast GPIO with atomic SET/CLR/XOR registers and the
+  inter-core FIFO. Not on the APB reset bus (no gate). Bit-per-pin registers
+  carry no field entries; drivers shift by pin index. NOTE: the old repo's
+  rp2040_gpio_schema.hpp used the GPIO_HI_* offsets by mistake — three
+  independent sources (SVD YAML, old hardware.hpp, example code) agree on
+  the map below.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/raspberrypi pico.yml templates.sio (SVD-derived)"
+    - "old-alloy git 3a5ff683 hardware.hpp SIO_Registers + examples/rp2040_dual_core (agreeing map)"
+  completeness: bring-up-subset
+registers:
+  - name: CPUID
+    offset: "0x00"
+    access: ro
+  - name: GPIO_IN
+    offset: "0x04"
+    access: ro
+  - name: GPIO_HI_IN
+    offset: "0x08"
+    access: ro
+  - name: GPIO_OUT
+    offset: "0x10"
+    access: rw
+  - name: GPIO_OUT_SET
+    offset: "0x14"
+    access: wo
+  - name: GPIO_OUT_CLR
+    offset: "0x18"
+    access: wo
+  - name: GPIO_OUT_XOR
+    offset: "0x1C"
+    access: wo
+  - name: GPIO_OE
+    offset: "0x20"
+    access: rw
+  - name: GPIO_OE_SET
+    offset: "0x24"
+    access: wo
+  - name: GPIO_OE_CLR
+    offset: "0x28"
+    access: wo
+  - name: GPIO_OE_XOR
+    offset: "0x2C"
+    access: wo
+  - name: FIFO_ST
+    offset: "0x50"
+    access: rw
+    fields:
+      - { name: VLD, bit: 0 }
+      - { name: RDY, bit: 1 }
+  - name: FIFO_WR
+    offset: "0x54"
+    access: wo
+  - name: FIFO_RD
+    offset: "0x58"
+    access: ro

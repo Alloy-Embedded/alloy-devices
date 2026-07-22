@@ -1,0 +1,55 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: resets
+class: reset
+description: >
+  RP2040 subsystem resets. Peripherals boot HELD IN RESET: gates on this
+  block use style reset_release (clear bit in RESET, poll same bit high in
+  RESET_DONE). The old ecosystem's example released only UART0 and never
+  IO_BANK0/PADS_BANK0 — its pin muxing could never have worked.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/raspberrypi/boards(pico).yml templates.resets (SVD-derived; bit map identical in old-alloy resets.hpp)"
+    - "RP2040 datasheet §2.14 (reset controller semantics)"
+  completeness: full
+registers:
+  - name: RESET
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: ADC, bit: 0 }
+      - { name: BUSCTRL, bit: 1 }
+      - { name: DMA, bit: 2 }
+      - { name: I2C0, bit: 3 }
+      - { name: I2C1, bit: 4 }
+      - { name: IO_BANK0, bit: 5 }
+      - { name: IO_QSPI, bit: 6 }
+      - { name: JTAG, bit: 7 }
+      - { name: PADS_BANK0, bit: 8 }
+      - { name: PADS_QSPI, bit: 9 }
+      - { name: PIO0, bit: 10 }
+      - { name: PIO1, bit: 11 }
+      - { name: PLL_SYS, bit: 12 }
+      - { name: PLL_USB, bit: 13 }
+      - { name: PWM, bit: 14 }
+      - { name: RTC, bit: 15 }
+      - { name: SPI0, bit: 16 }
+      - { name: SPI1, bit: 17 }
+      - { name: SYSCFG, bit: 18 }
+      - { name: SYSINFO, bit: 19 }
+      - { name: TBMAN, bit: 20 }
+      - { name: TIMER, bit: 21 }
+      - { name: UART0, bit: 22 }
+      - { name: UART1, bit: 23 }
+      - { name: USBCTRL, bit: 24 }
+  - name: WDSEL
+    offset: "0x04"
+    access: rw
+  - name: RESET_DONE
+    offset: "0x08"
+    access: ro
+    fields:
+      - { name: DONE_IO_BANK0, bit: 5 }
+      - { name: DONE_PADS_BANK0, bit: 8 }
+      - { name: DONE_PLL_SYS, bit: 12 }
+      - { name: DONE_UART0, bit: 22 }

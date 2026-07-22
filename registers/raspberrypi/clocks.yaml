@@ -1,0 +1,56 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: clocks
+class: clock
+description: >
+  RP2040 clock generators (bring-up subset: clk_ref, clk_sys, clk_peri).
+  SELECTED registers are 1-hot (bit index = current glitchless src).
+  ENCODING WARNING: the old canonical YAML conflated SRC and AUXSRC
+  encodings (its 'pll-sys: 1' would have selected PLL_USB). Values here are
+  from the datasheet: CLK_REF.SRC 0=rosc 1=aux 2=xosc; CLK_SYS.SRC 0=clk_ref
+  1=aux; CLK_SYS.AUXSRC 0=pll_sys 1=pll_usb 2=rosc 3=xosc; CLK_PERI.AUXSRC
+  0=clk_sys.
+provenance:
+  sources:
+    - "alloy-devices-yml pico.yml templates.clocks (SVD-derived offsets/field positions)"
+    - "RP2040 datasheet §2.15.7 (SRC/AUXSRC encodings — the YAML's encoding maps are wrong and were rejected; no alloy code ever configured clocks)"
+  completeness: bring-up-subset
+registers:
+  - name: CLK_REF_CTRL
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: REF_SRC, bit: 0, width: 2 }
+      - { name: REF_AUXSRC, bit: 5, width: 2 }
+  - name: CLK_REF_DIV
+    offset: "0x34"
+    access: rw
+  - name: CLK_REF_SELECTED
+    offset: "0x38"
+    access: ro
+    fields:
+      - { name: REF_SEL_ROSC, bit: 0 }
+      - { name: REF_SEL_AUX, bit: 1 }
+      - { name: REF_SEL_XOSC, bit: 2 }
+  - name: CLK_SYS_CTRL
+    offset: "0x3C"
+    access: rw
+    fields:
+      - { name: SYS_SRC, bit: 0 }
+      - { name: SYS_AUXSRC, bit: 5, width: 3 }
+  - name: CLK_SYS_DIV
+    offset: "0x40"
+    access: rw
+  - name: CLK_SYS_SELECTED
+    offset: "0x44"
+    access: ro
+    fields:
+      - { name: SYS_SEL_REF, bit: 0 }
+      - { name: SYS_SEL_AUX, bit: 1 }
+  - name: CLK_PERI_CTRL
+    offset: "0x48"
+    access: rw
+    fields:
+      - { name: PERI_AUXSRC, bit: 5, width: 3 }
+      - { name: PERI_KILL, bit: 10 }
+      - { name: PERI_ENABLE, bit: 11 }

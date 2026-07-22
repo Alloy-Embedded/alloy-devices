@@ -1,0 +1,129 @@
+schema: alloy.chip.v1
+vendor: raspberrypi
+family: rp2040
+part: RP2040
+die: rp2040
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/raspberrypi pico.yml/rp2040.yml (SVD-derived bases, offsets, IRQs, funcsel per pin)"
+    - "RP2040 datasheet §2.15/§2.16/§2.18 (clock bring-up encodings + XOSC magic values — the old YAML's SRC/AUXSRC encodings were wrong and were rejected)"
+    - "rp-rs/rp2040-boot2 precompiled boot2_w25q080.padded.bin, sha256 a1408dd2691089af701a1cad19530c539064608566633b9619d15b40d0357b1e (BSD-3-Clause, derived from pico-sdk boot_stage2)"
+  verified:
+    - "NO RP2040 configuration in the old ecosystem ever ran on hardware (zero-CRC boot2, clocks never written, clk_peri never enabled, IO_BANK0/PADS never released from reset) — everything here is datasheet/SVD-derived and pending first-ever hardware validation"
+    - "boot2 CRC-32/MPEG-2 verified: computed == stored == 0x7A4EB274 (also enforced by the validator lint)"
+    - "SIO register map triple-confirmed (SVD YAML + old hardware.hpp + example); the old gpio schema header's GPIO_HI_* offsets were a bug"
+    - "Flash size 2 MB is the Raspberry Pi Pico board's W25Q080-class chip — RP2040 flash is external; revisit as board-level data when a second RP2040 board lands"
+cores:
+  - { name: cm0plus, arch: armv6m, fpu: false }
+memories:
+  - { name: flash, kind: flash, base: "0x10000000", size: 2097152 }
+  - { name: sram, kind: ram, base: "0x20000000", size: 270336 }
+boot:
+  kind: rp2040_boot2
+  size: 256
+  license: "BSD-3-Clause (pico-sdk boot_stage2 boot2_w25q080, precompiled+checksummed via rp-rs/rp2040-boot2)"
+  description: "W25Q080-class QSPI XIP setup; CRC32/MPEG-2 of bytes 0-251 stored little-endian in bytes 252-255"
+  payload_hex: "00b5324b212058609868022188439860d860186158612e4b00219960022159610121f02299502b49196001219960352000f044f80222904214d00621196600f034f8196e01211966002018661a6600f02cf8196e196e196e052000f02ff801210842f9d1002199601b491960002159601a491b48016001219960eb211966a021196600f012f8002199601649144801600121996001bc002800d0004712481349086003c880f30888084703b5996a04200142fbd001200142f8d103bd02b518661866fff7f2ff186e186e02bd00000240000000180000070000035f0021220000f4000018222000a00001001008ed00e000000000000000000000000074b24e7a"
+peripherals:
+  resets:
+    ip: raspberrypi/resets
+    base: "0x4000C000"
+  clocks:
+    ip: raspberrypi/clocks
+    base: "0x40008000"
+  xosc:
+    ip: raspberrypi/xosc
+    base: "0x40024000"
+  pll_sys:
+    ip: raspberrypi/pll
+    base: "0x40028000"
+  sio:
+    ip: raspberrypi/sio
+    base: "0xD0000000"
+  pads_bank0:
+    ip: raspberrypi/pads_bank0
+    base: "0x4001C000"
+    gate: { peripheral: resets, register: RESET, bit: 8, style: reset_release, done_register: RESET_DONE }
+  io_bank0:
+    ip: raspberrypi/io_bank0
+    base: "0x40014000"
+    gate: { peripheral: resets, register: RESET, bit: 5, style: reset_release, done_register: RESET_DONE }
+    irq: IO_IRQ_BANK0
+    companions: { sio: sio, pads: pads_bank0 }
+  uart0:
+    ip: raspberrypi/uart_pl011
+    base: "0x40034000"
+    gate: { peripheral: resets, register: RESET, bit: 22, style: reset_release, done_register: RESET_DONE }
+    irq: UART0_IRQ
+    kernel_clock: apb
+pins:
+  pa0: { port: a, index: 0, bank: io_bank0 }
+  pa1: { port: a, index: 1, bank: io_bank0 }
+  pa25: { port: a, index: 25, bank: io_bank0 }
+routes:
+  - { pin: pa0, peripheral: uart0, signal: tx, kind: funcsel, funcsel: 2 }
+  - { pin: pa1, peripheral: uart0, signal: rx, kind: funcsel, funcsel: 2 }
+interrupts:
+  - { name: TIMER_IRQ_0, number: 0 }
+  - { name: TIMER_IRQ_1, number: 1 }
+  - { name: TIMER_IRQ_2, number: 2 }
+  - { name: TIMER_IRQ_3, number: 3 }
+  - { name: PWM_IRQ_WRAP, number: 4 }
+  - { name: USBCTRL_IRQ, number: 5 }
+  - { name: XIP_IRQ, number: 6 }
+  - { name: PIO0_IRQ_0, number: 7 }
+  - { name: PIO0_IRQ_1, number: 8 }
+  - { name: PIO1_IRQ_0, number: 9 }
+  - { name: PIO1_IRQ_1, number: 10 }
+  - { name: DMA_IRQ_0, number: 11 }
+  - { name: DMA_IRQ_1, number: 12 }
+  - { name: IO_IRQ_BANK0, number: 13 }
+  - { name: IO_IRQ_QSPI, number: 14 }
+  - { name: SIO_IRQ_PROC0, number: 15 }
+  - { name: SIO_IRQ_PROC1, number: 16 }
+  - { name: CLOCKS_IRQ, number: 17 }
+  - { name: SPI0_IRQ, number: 18 }
+  - { name: SPI1_IRQ, number: 19 }
+  - { name: UART0_IRQ, number: 20 }
+  - { name: UART1_IRQ, number: 21 }
+  - { name: ADC_IRQ_FIFO, number: 22 }
+  - { name: I2C0_IRQ, number: 23 }
+  - { name: I2C1_IRQ, number: 24 }
+  - { name: RTC_IRQ, number: 25 }
+clock:
+  sources:
+    rosc: { hz: 6500000 }
+    xosc12m: { hz: 12000000 }
+  boot_source: rosc
+  profiles:
+    pll_125mhz:
+      description: >
+        Datasheet-canonical bring-up (never existed in the old ecosystem):
+        park clk_sys on clk_ref, start XOSC (12 MHz, startup delay 47),
+        clk_ref -> xosc, release PLL_SYS from reset, REFDIV=1 FBDIV=125
+        (VCO 1500 MHz), power up, wait LOCK, postdivs 6/2 -> 125 MHz,
+        clk_sys -> pll_sys via aux, enable clk_peri from clk_sys.
+      sysclk_hz: 125000000
+      ahb_hz: 125000000
+      apb_hz: 125000000
+      program:
+        - { op: rmw, peripheral: clocks, register: CLK_SYS_CTRL, fields: { SYS_SRC: 0 } }
+        - { op: poll, peripheral: clocks, register: CLK_SYS_SELECTED, field: SYS_SEL_REF, equals: 1, timeout_us: 1000 }
+        - { op: rmw, peripheral: xosc, register: STARTUP, fields: { DELAY: 47 } }
+        - { op: rmw, peripheral: xosc, register: CTRL, fields: { FREQ_RANGE: 2720 } }
+        - { op: rmw, peripheral: xosc, register: CTRL, fields: { ENABLE: 4011 } }
+        - { op: poll, peripheral: xosc, register: STATUS, field: STABLE, equals: 1, timeout_us: 50000 }
+        - { op: rmw, peripheral: clocks, register: CLK_REF_CTRL, fields: { REF_SRC: 2 } }
+        - { op: poll, peripheral: clocks, register: CLK_REF_SELECTED, field: REF_SEL_XOSC, equals: 1, timeout_us: 1000 }
+        - { op: rmw, peripheral: resets, register: RESET, fields: { PLL_SYS: 0 } }
+        - { op: poll, peripheral: resets, register: RESET_DONE, field: DONE_PLL_SYS, equals: 1, timeout_us: 1000 }
+        - { op: rmw, peripheral: pll_sys, register: CS, fields: { REFDIV: 1 } }
+        - { op: rmw, peripheral: pll_sys, register: FBDIV_INT, fields: { FBDIV: 125 } }
+        - { op: rmw, peripheral: pll_sys, register: PWR, fields: { PD: 0, VCOPD: 0 } }
+        - { op: poll, peripheral: pll_sys, register: CS, field: LOCK, equals: 1, timeout_us: 10000 }
+        - { op: rmw, peripheral: pll_sys, register: PRIM, fields: { POSTDIV1: 6, POSTDIV2: 2 } }
+        - { op: rmw, peripheral: pll_sys, register: PWR, fields: { POSTDIVPD: 0 } }
+        - { op: rmw, peripheral: clocks, register: CLK_SYS_CTRL, fields: { SYS_AUXSRC: 0 } }
+        - { op: rmw, peripheral: clocks, register: CLK_SYS_CTRL, fields: { SYS_SRC: 1 } }
+        - { op: poll, peripheral: clocks, register: CLK_SYS_SELECTED, field: SYS_SEL_AUX, equals: 1, timeout_us: 1000 }
+        - { op: rmw, peripheral: clocks, register: CLK_PERI_CTRL, fields: { PERI_AUXSRC: 0, PERI_ENABLE: 1 } }

@@ -224,10 +224,38 @@ def lint_chips(db: Database) -> None:
             if "kernel_clock" in p and p["kernel_clock"] not in clock_nodes:
                 db.issues.append(Issue(path, f"peripheral {name}: unknown kernel_clock {p['kernel_clock']}"))
 
+        for name, p in periphs.items():
+            for cname, target in p.get("companions", {}).items():
+                if target not in periphs:
+                    db.issues.append(Issue(path, f"peripheral {name}: companion {cname} references unknown peripheral {target}"))
+
+        boot = doc.get("boot")
+        if boot and boot["kind"] == "rp2040_boot2":
+            payload = bytes.fromhex(boot["payload_hex"])
+            if len(payload) != boot["size"]:
+                db.issues.append(Issue(path, f"boot payload is {len(payload)} bytes, declared {boot['size']}"))
+            elif boot["size"] == 256:
+                crc = 0xFFFFFFFF
+                for b in payload[:252]:
+                    crc ^= b << 24
+                    for _ in range(8):
+                        crc = ((crc << 1) ^ 0x04C11DB7) & 0xFFFFFFFF if crc & 0x80000000 \
+                            else (crc << 1) & 0xFFFFFFFF
+                stored = int.from_bytes(payload[252:], "little")
+                if crc != stored:
+                    db.issues.append(Issue(
+                        path,
+                        f"boot2 CRC mismatch: computed 0x{crc:08X}, stored 0x{stored:08X} — "
+                        "the bootrom will reject this image (the old ecosystem shipped "
+                        "zero-CRC boot2 for months; this lint exists to stop that)",
+                    ))
+
         pins = doc.get("pins", {})
         for pname, pin in pins.items():
             if pname != f"p{pin['port']}{pin['index']}":
                 db.issues.append(Issue(path, f"pin {pname}: name does not match port/index p{pin['port']}{pin['index']}"))
+            if "bank" in pin and pin["bank"] not in periphs:
+                db.issues.append(Issue(path, f"pin {pname}: bank references unknown peripheral {pin['bank']}"))
             unlock = pin.get("mux_unlock")
             if unlock:
                 up = periphs.get(unlock["peripheral"])

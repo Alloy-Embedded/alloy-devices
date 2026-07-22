@@ -1,0 +1,40 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: pll
+class: clock
+description: >
+  RP2040 PLL (instantiated as pll_sys and pll_usb). Bring-up: REFDIV, FBDIV,
+  power up (clear PD+VCOPD), wait LOCK, set postdividers, clear POSTDIVPD.
+  VCO must stay within 750-1600 MHz.
+provenance:
+  sources:
+    - "alloy-devices-yml pico.yml templates.pll_sys (SVD-derived field positions)"
+    - "RP2040 datasheet §2.18 (sequence + VCO limits; the old repo never wrote these registers)"
+  completeness: bring-up-subset
+registers:
+  - name: CS
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: REFDIV, bit: 0, width: 6 }
+      - { name: BYPASS, bit: 8 }
+      - { name: LOCK, bit: 31 }
+  - name: PWR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: PD, bit: 0 }
+      - { name: DSMPD, bit: 2 }
+      - { name: POSTDIVPD, bit: 3 }
+      - { name: VCOPD, bit: 5 }
+  - name: FBDIV_INT
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: FBDIV, bit: 0, width: 12 }
+  - name: PRIM
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: POSTDIV2, bit: 12, width: 3 }
+      - { name: POSTDIV1, bit: 16, width: 3 }

@@ -1,0 +1,29 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: pads_bank0
+class: pads
+description: >
+  RP2040 pad control, one register per pin (stride 4) after VOLTAGE_SELECT.
+  Reset value 0x56 (IE=1, DRIVE=4mA, PUE=1, SCHMITT=1) leaves pads usable
+  for outputs and UART at defaults; drivers only touch pads for pulls.
+provenance:
+  sources:
+    - "alloy-devices-yml pico.yml templates.pads_bank0 (SVD-derived: gpio0 offset 4, stride 4, field bits)"
+    - "RP2040 datasheet §2.19.6.3 (reset value 0x56 — not captured in any local source)"
+  completeness: bring-up-subset
+registers:
+  - name: VOLTAGE_SELECT
+    offset: "0x00"
+    access: rw
+  - name: GPIO
+    offset: "0x04"
+    access: rw
+    array: { count: 30, stride: 4 }
+    fields:
+      - { name: SLEWFAST, bit: 0 }
+      - { name: SCHMITT, bit: 1 }
+      - { name: PDE, bit: 2 }
+      - { name: PUE, bit: 3 }
+      - { name: DRIVE, bit: 4, width: 2 }
+      - { name: IE, bit: 6 }
+      - { name: OD, bit: 7 }

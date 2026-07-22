@@ -1,0 +1,80 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: uart_pl011
+class: uart
+description: >
+  ARM PrimeCell PL011 UART as integrated in the RP2040. Baud (pico-sdk
+  formula): div = 8*kernel_hz/baud; IBRD = div>>7; FBRD = ((div & 0x7F)+1)/2.
+  Kernel clock is clk_peri.
+provenance:
+  sources:
+    - "alloy-devices-yml pico.yml templates.uart (SVD-derived offsets and field positions)"
+    - "RP2040 datasheet §4.2 / PL011 TRM (baud formula; the old example hardcoded IBRD=67/FBRD=53 — FBRD=52 per the rounding formula)"
+  completeness: bring-up-subset
+registers:
+  - name: UARTDR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: DATA, bit: 0, width: 8 }
+      - { name: FE, bit: 8 }
+      - { name: PE, bit: 9 }
+      - { name: BE, bit: 10 }
+      - { name: OE, bit: 11 }
+  - name: UARTRSR
+    offset: "0x04"
+    access: rw
+  - name: UARTFR
+    offset: "0x18"
+    access: ro
+    fields:
+      - { name: BUSY, bit: 3 }
+      - { name: RXFE, bit: 4 }
+      - { name: TXFF, bit: 5 }
+      - { name: RXFF, bit: 6 }
+      - { name: TXFE, bit: 7 }
+  - name: UARTILPR
+    offset: "0x20"
+    access: rw
+  - name: UARTIBRD
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: DIVINT, bit: 0, width: 16 }
+  - name: UARTFBRD
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: DIVFRAC, bit: 0, width: 6 }
+  - name: UARTLCR_H
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: BRK, bit: 0 }
+      - { name: PEN, bit: 1 }
+      - { name: EPS, bit: 2 }
+      - { name: STP2, bit: 3 }
+      - { name: FEN, bit: 4 }
+      - { name: WLEN, bit: 5, width: 2 }
+      - { name: SPS, bit: 7 }
+  - name: UARTCR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: UARTEN, bit: 0 }
+      - { name: TXE, bit: 8 }
+      - { name: RXE, bit: 9 }
+      - { name: RTSEN, bit: 14 }
+      - { name: CTSEN, bit: 15 }
+  - name: UARTIFLS
+    offset: "0x34"
+    access: rw
+  - name: UARTIMSC
+    offset: "0x38"
+    access: rw
+  - name: UARTICR
+    offset: "0x44"
+    access: wo
+  - name: UARTDMACR
+    offset: "0x48"
+    access: rw

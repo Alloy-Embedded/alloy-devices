@@ -81,7 +81,13 @@
             }
           },
           "irq": { "type": "string" },
-          "kernel_clock": { "type": "string" }
+          "kernel_clock": { "type": "string" },
+          "companions": {
+            "type": "object",
+            "description": "Named references to sibling peripherals a driver needs alongside this block (RP2040 io_bank0 -> {sio, pads}). Emitted as using-aliases inside the instance descriptor.",
+            "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+            "additionalProperties": { "type": "string" }
+          }
         }
       }
     },
@@ -95,6 +101,10 @@
         "properties": {
           "port": { "type": "string", "pattern": "^[a-z]$" },
           "index": { "type": "integer", "minimum": 0, "maximum": 31 },
+          "bank": {
+            "type": "string",
+            "description": "Explicit controlling peripheral for this pin when it is not gpio<port>/pio<port> (RP2040: io_bank0)."
+          },
           "mux_unlock": {
             "type": "object",
             "description": "A bit that must be SET before this pin can leave its system function (e.g. SAM E70 PB4 is JTAG TDI until MATRIX CCFG_SYSIO bit 4 is set). Resolved like a gate: peripheral.register.bit.",
@@ -138,6 +148,19 @@
           "name": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]*$" },
           "number": { "type": "integer", "minimum": 0, "maximum": 495 }
         }
+      }
+    },
+    "boot": {
+      "type": "object",
+      "description": "Second-stage boot payload required before application code can run (RP2040 boot2: 256 bytes at flash start, CRC32/MPEG-2 over the first 252 bytes in the last word).",
+      "required": ["kind", "size", "payload_hex", "license"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["rp2040_boot2"] },
+        "size": { "type": "integer", "minimum": 4 },
+        "payload_hex": { "type": "string", "pattern": "^[0-9a-f]+$" },
+        "license": { "type": "string" },
+        "description": { "type": "string" }
       }
     },
     "clock": {
