@@ -1,0 +1,39 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: wdt_v1
+class: watchdog
+description: >
+  SAM E70 watchdog (also instantiated as RSWDT). RUNNING AT RESET with a
+  ~16 s timeout, and MR is WRITE-ONCE — chip bring-up must disable it (or
+  configure it) as the FIRST step, before clock bring-up, with a single
+  full-register write. The old generated board.cpp forgot this; the
+  hardware-validated legacy board.cpp did it first thing.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml templates.wdt (SVD-derived)"
+    - "old-alloy git 7559c143 board.cpp + src/hal/watchdog.hpp (hardware-validated: WDT_MR=0x0FFF8000 disables; write-once semantics)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: wo
+    fields:
+      - { name: WDRSTT, bit: 0 }
+      - { name: KEY, bit: 24, width: 8, description: "0xA5" }
+  - name: MR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: WDV, bit: 0, width: 12 }
+      - { name: WDFIEN, bit: 12 }
+      - { name: WDRSTEN, bit: 13 }
+      - { name: WDDIS, bit: 15 }
+      - { name: WDD, bit: 16, width: 12 }
+      - { name: WDDBGHLT, bit: 28 }
+      - { name: WDIDLEHLT, bit: 29 }
+  - name: SR
+    offset: "0x08"
+    access: ro
+    fields:
+      - { name: WDUNF, bit: 0 }
+      - { name: WDERR, bit: 1 }

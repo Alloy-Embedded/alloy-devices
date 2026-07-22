@@ -1,0 +1,111 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: pmc_v1
+class: clock
+description: >
+  SAM E70 power management controller. PCER0/PCDR0/PCER1/PCDR1/SCER/SCDR are
+  write-only SET/CLEAR registers — gates on them MUST use style write_set
+  (readback via PCSR0/PCSR1/SCSR). Gate rule: peripheral ID (PID) == NVIC
+  line; PID 7..31 -> PCER0 bit PID, PID 32..63 -> PCER1 bit PID-32.
+  CKGR_MOR writes require KEY=0x37 in bits 16-23.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml templates.pmc (SVD-derived)"
+    - "old-alloy git 8b1b1bc7^ system_clock.hpp + clock_bindings.hpp (hardware-validated field positions and set-register semantics on same70_xplained)"
+  completeness: bring-up-subset
+registers:
+  - name: SCER
+    offset: "0x00"
+    access: wo
+  - name: SCDR
+    offset: "0x04"
+    access: wo
+  - name: SCSR
+    offset: "0x08"
+    access: ro
+  - name: PCER0
+    offset: "0x10"
+    access: wo
+  - name: PCDR0
+    offset: "0x14"
+    access: wo
+  - name: PCSR0
+    offset: "0x18"
+    access: ro
+  - name: CKGR_UCKR
+    offset: "0x1C"
+    access: rw
+  - name: CKGR_MOR
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: MOSCXTEN, bit: 0 }
+      - { name: MOSCXTBY, bit: 1 }
+      - { name: MOSCRCEN, bit: 3 }
+      - { name: MOSCRCF, bit: 4, width: 3, description: "0=4MHz 1=8MHz 2=12MHz internal RC" }
+      - { name: MOSCXTST, bit: 8, width: 8, description: "crystal startup time, units of 8 slow-clock cycles" }
+      - { name: KEY, bit: 16, width: 8, description: "must be 0x37 on every write" }
+      - { name: MOSCSEL, bit: 24 }
+  - name: CKGR_MCFR
+    offset: "0x24"
+    access: rw
+  - name: CKGR_PLLAR
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: DIVA, bit: 0, width: 8, description: "0=PLL off, 1=/1" }
+      - { name: PLLACOUNT, bit: 8, width: 6 }
+      - { name: MULA, bit: 16, width: 11, description: "PLLA = MAINCK * (MULA+1) / DIVA" }
+      - { name: ONE, bit: 29, description: "must be written 1" }
+  - name: MCKR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: CSS, bit: 0, width: 2, description: "0=SLOW 1=MAIN 2=PLLA 3=UPLL" }
+      - { name: PRES, bit: 4, width: 3, description: "0=/1 1=/2 2=/4 3=/8 4=/16 5=/32 6=/64 7=/3" }
+      - { name: MDIV, bit: 8, width: 2, description: "0=MCK=PCK 1=/2 2=/4 3=/3" }
+  - name: USB
+    offset: "0x38"
+    access: rw
+  - name: IER
+    offset: "0x60"
+    access: wo
+  - name: IDR
+    offset: "0x64"
+    access: wo
+  - name: SR
+    offset: "0x68"
+    access: ro
+    fields:
+      - { name: MOSCXTS, bit: 0 }
+      - { name: LOCKA, bit: 1 }
+      - { name: MCKRDY, bit: 3 }
+      - { name: MOSCSELS, bit: 16 }
+      - { name: MOSCRCS, bit: 17 }
+  - name: IMR
+    offset: "0x6C"
+    access: ro
+  - name: FSMR
+    offset: "0x70"
+    access: rw
+  - name: FOCR
+    offset: "0x78"
+    access: wo
+  - name: WPMR
+    offset: "0xE4"
+    access: rw
+  - name: WPSR
+    offset: "0xE8"
+    access: ro
+  - name: PCER1
+    offset: "0x100"
+    access: wo
+  - name: PCDR1
+    offset: "0x104"
+    access: wo
+  - name: PCSR1
+    offset: "0x108"
+    access: ro
+  - name: PCR
+    offset: "0x10C"
+    access: rw

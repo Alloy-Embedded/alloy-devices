@@ -1,0 +1,74 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: usart_v1
+class: uart
+description: >
+  SAM full USART (E70-era), async subset. NOT the same IP as the simple SAM
+  UART: MR needs USART_MODE=0, USCLKS=0 and CHRL=3 (8-bit) explicitly — the
+  old lite driver drove it through the plain-UART model, leaving CHRL=0
+  (5-bit chars), one of the regressions this file exists to prevent.
+  Baud: BRGR.CD = round(kernel_hz / (16 * baud)).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml templates.usart (SVD-derived)"
+    - "old-alloy git 7559c143 src/hal/uart/detail/backend.hpp configure_microchip_usart_zw (hardware-validated on same70_xplained: MR MODE=0 USCLKS=0 CHRL=3 PAR=4, BRGR CD=81 @150MHz/115200)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: wo
+    fields:
+      - { name: RSTRX, bit: 2 }
+      - { name: RSTTX, bit: 3 }
+      - { name: RXEN, bit: 4 }
+      - { name: RXDIS, bit: 5 }
+      - { name: TXEN, bit: 6 }
+      - { name: TXDIS, bit: 7 }
+      - { name: RSTSTA, bit: 8 }
+  - name: MR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: MODE, bit: 0, width: 4, description: "0 = normal UART" }
+      - { name: USCLKS, bit: 4, width: 2, description: "0 = MCK (peripheral clock)" }
+      - { name: CHRL, bit: 6, width: 2, description: "3 = 8-bit characters" }
+      - { name: SYNC, bit: 8 }
+      - { name: PAR, bit: 9, width: 3, description: "4 = no parity" }
+      - { name: NBSTOP, bit: 12, width: 2 }
+      - { name: CHMODE, bit: 14, width: 2 }
+      - { name: OVER, bit: 19 }
+  - name: IER
+    offset: "0x08"
+    access: wo
+  - name: IDR
+    offset: "0x0C"
+    access: wo
+  - name: IMR
+    offset: "0x10"
+    access: ro
+  - name: CSR
+    offset: "0x14"
+    access: ro
+    fields:
+      - { name: RXRDY, bit: 0 }
+      - { name: TXRDY, bit: 1 }
+      - { name: OVRE, bit: 5 }
+      - { name: FRAME, bit: 6 }
+      - { name: PARE, bit: 7 }
+      - { name: TXEMPTY, bit: 9 }
+  - name: RHR
+    offset: "0x18"
+    access: ro
+    fields:
+      - { name: RXCHR, bit: 0, width: 9 }
+  - name: THR
+    offset: "0x1C"
+    access: wo
+    fields:
+      - { name: TXCHR, bit: 0, width: 9 }
+  - name: BRGR
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: CD, bit: 0, width: 16 }
+      - { name: FP, bit: 16, width: 3 }

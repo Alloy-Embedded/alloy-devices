@@ -206,6 +206,15 @@ def lint_chips(db: Database) -> None:
         for pname, pin in pins.items():
             if pname != f"p{pin['port']}{pin['index']}":
                 db.issues.append(Issue(path, f"pin {pname}: name does not match port/index p{pin['port']}{pin['index']}"))
+            unlock = pin.get("mux_unlock")
+            if unlock:
+                up = periphs.get(unlock["peripheral"])
+                if up is None:
+                    db.issues.append(Issue(path, f"pin {pname}: mux_unlock references unknown peripheral {unlock['peripheral']}"))
+                else:
+                    unlock_ip = db.registers.get(up["ip"])
+                    if unlock_ip and not any(r["name"] == unlock["register"] for r in unlock_ip["registers"]):
+                        db.issues.append(Issue(path, f"pin {pname}: mux_unlock register {unlock['register']} not in {up['ip']}"))
 
         for i, route in enumerate(doc.get("routes", [])):
             where = f"route[{i}] ({route['pin']}->{route['peripheral']}.{route['signal']})"

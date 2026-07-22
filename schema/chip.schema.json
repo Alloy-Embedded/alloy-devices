@@ -90,7 +90,18 @@
         "additionalProperties": false,
         "properties": {
           "port": { "type": "string", "pattern": "^[a-z]$" },
-          "index": { "type": "integer", "minimum": 0, "maximum": 31 }
+          "index": { "type": "integer", "minimum": 0, "maximum": 31 },
+          "mux_unlock": {
+            "type": "object",
+            "description": "A bit that must be SET before this pin can leave its system function (e.g. SAM E70 PB4 is JTAG TDI until MATRIX CCFG_SYSIO bit 4 is set). Resolved like a gate: peripheral.register.bit.",
+            "required": ["peripheral", "register", "bit"],
+            "additionalProperties": false,
+            "properties": {
+              "peripheral": { "type": "string" },
+              "register": { "type": "string" },
+              "bit": { "type": "integer", "minimum": 0, "maximum": 31 }
+            }
+          }
         }
       }
     },

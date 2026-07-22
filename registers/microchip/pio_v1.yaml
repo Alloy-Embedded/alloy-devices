@@ -1,0 +1,119 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: pio_v1
+class: gpio
+description: >
+  SAM parallel I/O controller (E70/S70/V71 era). Almost everything is
+  write-only SET/CLEAR register pairs (PER/PDR, OER/ODR, SODR/CODR,
+  PUER/PUDR...) — drivers write masks, never RMW those. Peripheral function
+  select is TWO rw registers (ABCDSR1/ABCDSR2): function encoding
+  A={0,0} B={1,0} C={0,1} D={1,1} as (ABCDSR1 bit, ABCDSR2 bit) — af values
+  0..3 with bit0->ABCDSR1, bit1->ABCDSR2. Bit-per-pin registers carry no
+  field entries; drivers shift by pin index.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml templates.pio (SVD-derived)"
+    - "old-alloy git 8b1b1bc7^ routes.hpp + driver_semantics/gpio.hpp (hardware-validated register usage: SODR 0x30, PUER 0x64, ABCDSR1/2 0x70/0x74)"
+  completeness: bring-up-subset
+  verified:
+    - "The old canonical YAML flattened ABCDSR into a single entry at 0x70; silicon and the hardware-validated route code use TWO registers 0x70/0x74 — modeled correctly here"
+registers:
+  - name: PER
+    offset: "0x00"
+    access: wo
+  - name: PDR
+    offset: "0x04"
+    access: wo
+  - name: PSR
+    offset: "0x08"
+    access: ro
+  - name: OER
+    offset: "0x10"
+    access: wo
+  - name: ODR
+    offset: "0x14"
+    access: wo
+  - name: OSR
+    offset: "0x18"
+    access: ro
+  - name: IFER
+    offset: "0x20"
+    access: wo
+  - name: IFDR
+    offset: "0x24"
+    access: wo
+  - name: IFSR
+    offset: "0x28"
+    access: ro
+  - name: SODR
+    offset: "0x30"
+    access: wo
+  - name: CODR
+    offset: "0x34"
+    access: wo
+  - name: ODSR
+    offset: "0x38"
+    access: rw
+  - name: PDSR
+    offset: "0x3C"
+    access: ro
+  - name: IER
+    offset: "0x40"
+    access: wo
+  - name: IDR
+    offset: "0x44"
+    access: wo
+  - name: IMR
+    offset: "0x48"
+    access: ro
+  - name: ISR
+    offset: "0x4C"
+    access: ro
+  - name: MDER
+    offset: "0x50"
+    access: wo
+  - name: MDDR
+    offset: "0x54"
+    access: wo
+  - name: MDSR
+    offset: "0x58"
+    access: ro
+  - name: PUDR
+    offset: "0x60"
+    access: wo
+  - name: PUER
+    offset: "0x64"
+    access: wo
+  - name: PUSR
+    offset: "0x68"
+    access: ro
+  - name: ABCDSR1
+    offset: "0x70"
+    access: rw
+  - name: ABCDSR2
+    offset: "0x74"
+    access: rw
+  - name: PPDDR
+    offset: "0x90"
+    access: wo
+  - name: PPDER
+    offset: "0x94"
+    access: wo
+  - name: PPDSR
+    offset: "0x98"
+    access: ro
+  - name: OWER
+    offset: "0xA0"
+    access: wo
+  - name: OWDR
+    offset: "0xA4"
+    access: wo
+  - name: OWSR
+    offset: "0xA8"
+    access: ro
+  - name: WPMR
+    offset: "0xE4"
+    access: rw
+  - name: WPSR
+    offset: "0xE8"
+    access: ro

@@ -1,0 +1,16 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: matrix_v1
+class: sysio
+description: >
+  SAM E70 bus matrix — bring-up subset: only CCFG_SYSIO, which releases
+  system I/O pins (JTAG/ERASE) to PIO use. PB4 (JTAG TDI) needs bit 4 set
+  before it can carry USART1 TXD1 — pins declare this via mux_unlock.
+provenance:
+  sources:
+    - "old-alloy git 7559c143 board.cpp (hardware-validated: 0x40088114 |= 1<<4 with comment 'PB4 is multiplexed with JTAG TDI')"
+  completeness: bring-up-subset
+registers:
+  - name: CCFG_SYSIO
+    offset: "0x114"
+    access: rw
