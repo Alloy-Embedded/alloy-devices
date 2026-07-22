@@ -122,9 +122,13 @@
     },
     "clock": {
       "type": "object",
-      "required": ["sources", "profiles"],
+      "required": ["sources", "boot_source", "profiles"],
       "additionalProperties": false,
       "properties": {
+        "boot_source": {
+          "type": "string",
+          "description": "The clock source the chip runs from at reset; the generated board::init() falls back to it when a clock program fails (e.g. missing crystal)."
+        },
         "sources": {
           "type": "object",
           "minProperties": 1,

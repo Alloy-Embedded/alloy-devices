@@ -89,6 +89,8 @@ def _lint_clock(db: Database, key: str, doc: dict[str, Any]) -> None:
     for name, src in clock["sources"].items():
         if not 1_000 <= src["hz"] <= 1_000_000_000:
             db.issues.append(Issue(path, f"clock source {name}: implausible frequency {src['hz']} Hz"))
+    if clock["boot_source"] not in clock["sources"]:
+        db.issues.append(Issue(path, f"boot_source {clock['boot_source']} not in clock sources"))
 
     for pname, profile in clock["profiles"].items():
         if not 32_768 <= profile["sysclk_hz"] <= 1_000_000_000:

@@ -59,6 +59,7 @@ MINIMAL_CHIP: dict[str, Any] = {
     "interrupts": [{"name": "USART2", "number": 28}],
     "clock": {
         "sources": {"hsi16": {"hz": 16000000}},
+        "boot_source": "hsi16",
         "profiles": {
             "hsi_16mhz": {
                 "sysclk_hz": 16000000,
