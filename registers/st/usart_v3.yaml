@@ -1,0 +1,91 @@
+schema: alloy.registers.v1
+vendor: st
+ip: usart_v3
+class: uart
+description: >
+  ST USART generation with ISR/ICR/RDR/TDR but NO PRESC register (F7/L4-era;
+  the immediate ancestor of usart_v4). The v4-compatible subset (UE/RE/TE,
+  BRR, ISR.TXE/RXNE/TC, TDR/RDR) sits at identical offsets and bit positions.
+provenance:
+  sources:
+    - "old-alloy git b2f319c2^ src/hal/vendors/st/stm32f7/generated/{registers,bitfields}/usart3_* (CMSIS-SVD derived: map ends at TDR 0x28, no PRESC — confirmed)"
+  completeness: bring-up-subset
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: UE, bit: 0 }
+      - { name: RE, bit: 2 }
+      - { name: TE, bit: 3 }
+      - { name: IDLEIE, bit: 4 }
+      - { name: RXNEIE, bit: 5 }
+      - { name: TCIE, bit: 6 }
+      - { name: TXEIE, bit: 7 }
+      - { name: PEIE, bit: 8 }
+      - { name: PS, bit: 9 }
+      - { name: PCE, bit: 10 }
+      - { name: M0, bit: 12 }
+      - { name: OVER8, bit: 15 }
+      - { name: M1, bit: 28 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: STOP, bit: 12, width: 2 }
+  - name: CR3
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: EIE, bit: 0 }
+      - { name: DMAR, bit: 6 }
+      - { name: DMAT, bit: 7 }
+      - { name: RTSE, bit: 8 }
+      - { name: CTSE, bit: 9 }
+  - name: BRR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: BRR, bit: 0, width: 16 }
+  - name: GTPR
+    offset: "0x10"
+    access: rw
+  - name: RTOR
+    offset: "0x14"
+    access: rw
+  - name: RQR
+    offset: "0x18"
+    access: wo
+  - name: ISR
+    offset: "0x1C"
+    access: ro
+    fields:
+      - { name: PE, bit: 0 }
+      - { name: FE, bit: 1 }
+      - { name: NF, bit: 2 }
+      - { name: ORE, bit: 3 }
+      - { name: IDLE, bit: 4 }
+      - { name: RXNE, bit: 5 }
+      - { name: TC, bit: 6 }
+      - { name: TXE, bit: 7 }
+      - { name: BUSY, bit: 16 }
+      - { name: TEACK, bit: 21 }
+  - name: ICR
+    offset: "0x20"
+    access: wo
+    fields:
+      - { name: PECF, bit: 0 }
+      - { name: FECF, bit: 1 }
+      - { name: ORECF, bit: 3 }
+      - { name: IDLECF, bit: 4 }
+      - { name: TCCF, bit: 6 }
+  - name: RDR
+    offset: "0x24"
+    access: ro
+    fields:
+      - { name: RDR, bit: 0, width: 9 }
+  - name: TDR
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: TDR, bit: 0, width: 9 }

@@ -1,0 +1,35 @@
+schema: alloy.registers.v1
+vendor: st
+ip: flash_f7
+class: flash
+description: >
+  STM32F7 embedded flash + ART accelerator — bring-up subset (ACR wait
+  states before raising the core clock).
+provenance:
+  sources:
+    - "old-alloy git b2f319c2^ src/hal/vendors/st/stm32f7/generated/{registers,bitfields}/flash_* (CMSIS-SVD derived: ACR@0x00, LATENCY[3:0], PRFTEN=8, ARTEN=9)"
+  completeness: bring-up-subset
+registers:
+  - name: ACR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: LATENCY, bit: 0, width: 4 }
+      - { name: PRFTEN, bit: 8 }
+      - { name: ARTEN, bit: 9 }
+      - { name: ARTRST, bit: 11 }
+  - name: KEYR
+    offset: "0x04"
+    access: wo
+  - name: OPTKEYR
+    offset: "0x08"
+    access: wo
+  - name: SR
+    offset: "0x0C"
+    access: rw
+  - name: CR
+    offset: "0x10"
+    access: rw
+  - name: OPTCR
+    offset: "0x14"
+    access: rw

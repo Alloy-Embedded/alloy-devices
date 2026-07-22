@@ -1,0 +1,180 @@
+schema: alloy.chip.v1
+vendor: st
+family: stm32f7
+part: STM32F722ZE
+die: stm32f722
+provenance:
+  sources:
+    - "alloy-devices-yml bulk-admitted stm32f722zetx.yml (Keil STM32F7xx_DFP 3.1.1 SVD: memories, bases, interrupts) + stm32f7x2.yml (cmsis-svd-data: interrupt list cross-check)"
+    - "old-alloy git b2f319c2^ generated stm32f7 register headers (rcc/flash/usart3/gpiob — SVD-derived) + clock_platform.hpp cross-check"
+    - "alloy-devices-yml bulk-admitted stm32f730z8tx.yml 1.3.0 (sibling F73x Z-package: PD8/PD9 AF7 USART3 — no 1.3.0 file exists for f722 itself)"
+    - "old-alloy git e4864c0f boards/nucleo_f722ze (clock profile HSE8 M4 N180 P2 latency 5 — the only in-repo F7 clock recipe; board WIRING rejected as a Nucleo-64 copy-paste, see verified)"
+  verified:
+    - "SRAM modeled as one contiguous 256K region at 0x20000000 (DTCM 64K + SRAM1 176K + SRAM2 16K are address-contiguous on F7; the old linker did the same)"
+    - "F7 GPIO is gpio_v2 WITHOUT the BRR register — our driver never touches BRR; the overlay's trailing BRR member is simply never accessed"
+    - "USART v3 = v4 layout minus PRESC, same field positions for the driver subset (SVD-confirmed)"
+    - "180 MHz profile stays within reset VOS scale-1 (no overdrive sequence needed); 216 MHz deliberately NOT seeded — needs the RM0431 PWR overdrive dance, unproven anywhere in the old ecosystem"
+    - "Old nucleo_f722ze board files claimed USART2/PA2-PA3 VCP and one green LED on PB7 — Nucleo-64 template copy-paste; Nucleo-144 wiring (UM1974): LD1 green PB0, LD2 blue PB7, LD3 red PB14, B1 PC13, VCP USART3 PD8/PD9 AF7"
+cores:
+  - { name: cm7, arch: armv7em, fpu: true }
+memories:
+  - { name: flash, kind: flash, base: "0x08000000", size: 524288 }
+  - { name: sram, kind: ram, base: "0x20000000", size: 262144 }
+peripherals:
+  rcc:
+    ip: st/rcc_f7
+    base: "0x40023800"
+    irq: RCC
+  flash:
+    ip: st/flash_f7
+    base: "0x40023C00"
+    irq: FLASH
+  gpioa:
+    ip: st/gpio_v2
+    base: "0x40020000"
+    gate: { peripheral: rcc, register: AHB1ENR, bit: 0 }
+  gpiob:
+    ip: st/gpio_v2
+    base: "0x40020400"
+    gate: { peripheral: rcc, register: AHB1ENR, bit: 1 }
+  gpioc:
+    ip: st/gpio_v2
+    base: "0x40020800"
+    gate: { peripheral: rcc, register: AHB1ENR, bit: 2 }
+  gpiod:
+    ip: st/gpio_v2
+    base: "0x40020C00"
+    gate: { peripheral: rcc, register: AHB1ENR, bit: 3 }
+  usart2:
+    ip: st/usart_v3
+    base: "0x40004400"
+    gate: { peripheral: rcc, register: APB1ENR, bit: 17 }
+    irq: USART2
+    kernel_clock: apb
+  usart3:
+    ip: st/usart_v3
+    base: "0x40004800"
+    gate: { peripheral: rcc, register: APB1ENR, bit: 18 }
+    irq: USART3
+    kernel_clock: apb
+pins:
+  pb0: { port: b, index: 0 }
+  pb7: { port: b, index: 7 }
+  pb14: { port: b, index: 14 }
+  pc13: { port: c, index: 13 }
+  pd8: { port: d, index: 8 }
+  pd9: { port: d, index: 9 }
+routes:
+  - { pin: pd8, peripheral: usart3, signal: tx, kind: af_fixed, af: 7 }
+  - { pin: pd9, peripheral: usart3, signal: rx, kind: af_fixed, af: 7 }
+interrupts:
+  - { name: WWDG, number: 0 }
+  - { name: PVD, number: 1 }
+  - { name: TAMP_STAMP, number: 2 }
+  - { name: RTC_WKUP, number: 3 }
+  - { name: FLASH, number: 4 }
+  - { name: RCC, number: 5 }
+  - { name: EXTI0, number: 6 }
+  - { name: EXTI1, number: 7 }
+  - { name: EXTI2, number: 8 }
+  - { name: EXTI3, number: 9 }
+  - { name: EXTI4, number: 10 }
+  - { name: DMA1_Stream0, number: 11 }
+  - { name: DMA1_Stream1, number: 12 }
+  - { name: DMA1_Stream2, number: 13 }
+  - { name: DMA1_Stream3, number: 14 }
+  - { name: DMA1_Stream4, number: 15 }
+  - { name: DMA1_Stream5, number: 16 }
+  - { name: DMA1_Stream6, number: 17 }
+  - { name: ADC, number: 18 }
+  - { name: CAN1_TX, number: 19 }
+  - { name: CAN1_RX0, number: 20 }
+  - { name: CAN1_RX1, number: 21 }
+  - { name: CAN1_SCE, number: 22 }
+  - { name: EXTI9_5, number: 23 }
+  - { name: TIM1_BRK_TIM9, number: 24 }
+  - { name: TIM1_UP_TIM10, number: 25 }
+  - { name: TIM1_TRG_COM_TIM11, number: 26 }
+  - { name: TIM1_CC, number: 27 }
+  - { name: TIM2, number: 28 }
+  - { name: TIM3, number: 29 }
+  - { name: TIM4, number: 30 }
+  - { name: I2C1_EV, number: 31 }
+  - { name: I2C1_ER, number: 32 }
+  - { name: I2C2_EV, number: 33 }
+  - { name: I2C2_ER, number: 34 }
+  - { name: SPI1, number: 35 }
+  - { name: SPI2, number: 36 }
+  - { name: USART1, number: 37 }
+  - { name: USART2, number: 38 }
+  - { name: USART3, number: 39 }
+  - { name: EXTI15_10, number: 40 }
+  - { name: RTC_ALARM, number: 41 }
+  - { name: OTG_FS_WKUP, number: 42 }
+  - { name: TIM8_BRK_TIM12, number: 43 }
+  - { name: TIM8_UP_TIM13, number: 44 }
+  - { name: TIM8_TRG_COM_TIM14, number: 45 }
+  - { name: TIM8_CC, number: 46 }
+  - { name: DMA1_Stream7, number: 47 }
+  - { name: FMC, number: 48 }
+  - { name: SDMMC1, number: 49 }
+  - { name: TIM5, number: 50 }
+  - { name: SPI3, number: 51 }
+  - { name: UART4, number: 52 }
+  - { name: UART5, number: 53 }
+  - { name: TIM6_DAC, number: 54 }
+  - { name: TIM7, number: 55 }
+  - { name: DMA2_Stream0, number: 56 }
+  - { name: DMA2_Stream1, number: 57 }
+  - { name: DMA2_Stream2, number: 58 }
+  - { name: DMA2_Stream3, number: 59 }
+  - { name: DMA2_Stream4, number: 60 }
+  - { name: OTG_FS, number: 67 }
+  - { name: DMA2_Stream5, number: 68 }
+  - { name: DMA2_Stream6, number: 69 }
+  - { name: DMA2_Stream7, number: 70 }
+  - { name: USART6, number: 71 }
+  - { name: I2C3_EV, number: 72 }
+  - { name: I2C3_ER, number: 73 }
+  - { name: OTG_HS_EP1_OUT, number: 74 }
+  - { name: OTG_HS_EP1_IN, number: 75 }
+  - { name: OTG_HS_WKUP, number: 76 }
+  - { name: OTG_HS, number: 77 }
+  - { name: AES, number: 79 }
+  - { name: RNG, number: 80 }
+  - { name: FPU, number: 81 }
+  - { name: UART7, number: 82 }
+  - { name: UART8, number: 83 }
+  - { name: SPI4, number: 84 }
+  - { name: SPI5, number: 85 }
+  - { name: SAI1, number: 87 }
+  - { name: SAI2, number: 91 }
+  - { name: QUADSPI, number: 92 }
+  - { name: LPTIM1, number: 93 }
+  - { name: SDMMC2, number: 103 }
+clock:
+  sources:
+    hsi16: { hz: 16000000 }
+    hse8m: { hz: 8000000 }
+  boot_source: hsi16
+  profiles:
+    pll_180mhz:
+      description: >
+        HSE 8 MHz (ST-Link MCO) / M=4 (2 MHz) x N=180 (VCO 360 MHz) / P=2
+        = 180 MHz sysclk, AHB /1, APB1 /4 (45 MHz), APB2 /2 (90 MHz),
+        5 wait states. Stays within reset VOS scale-1 — no overdrive.
+        Recipe from the old repo's F7 board config (register positions
+        SVD-cross-checked); prescalers set BEFORE the switch to PLL.
+      sysclk_hz: 180000000
+      ahb_hz: 180000000
+      apb_hz: 45000000
+      program:
+        - { op: rmw, peripheral: rcc, register: CR, fields: { HSEON: 1 } }
+        - { op: poll, peripheral: rcc, register: CR, field: HSERDY, equals: 1, timeout_us: 100000 }
+        - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 5, ARTEN: 1, PRFTEN: 1 } }
+        - { op: rmw, peripheral: rcc, register: PLLCFGR, fields: { PLLM: 4, PLLN: 180, PLLP: 0, PLLSRC: 1, PLLQ: 8 } }
+        - { op: rmw, peripheral: rcc, register: CFGR, fields: { PPRE1: 5, PPRE2: 4 } }
+        - { op: rmw, peripheral: rcc, register: CR, fields: { PLLON: 1 } }
+        - { op: poll, peripheral: rcc, register: CR, field: PLLRDY, equals: 1, timeout_us: 10000 }
+        - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 2 } }
+        - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 2, timeout_us: 10000 }

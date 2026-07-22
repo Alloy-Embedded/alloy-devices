@@ -1,0 +1,109 @@
+schema: alloy.registers.v1
+vendor: st
+ip: rcc_f7
+class: clock
+description: >
+  STM32F7 reset & clock control (bring-up subset). Note vs rcc_g0: HSION is
+  bit 0 (not 8), SW/SWS are 2-bit at 0/2, PLLP is ENCODED (0=/2 1=/4 2=/6
+  3=/8), PPREx encoding 0=/1 4=/2 5=/4 6=/8 7=/16. GPIO gates live in
+  AHB1ENR (readable, rmw style).
+provenance:
+  sources:
+    - "old-alloy git b2f319c2^ src/hal/vendors/st/stm32f7/generated/{registers,bitfields}/rcc_* (CMSIS-SVD derived)"
+    - "old-alloy git b2f319c2^ clock_platform.hpp (cross-check: PLLM_POS=0, PLLN_POS=6, PLLP_POS=16, PLLSRC_POS=22, PLLQ_POS=24, SW=0, SWS=2, HPRE=4, PPRE1=10, PPRE2=13)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: HSION, bit: 0 }
+      - { name: HSIRDY, bit: 1 }
+      - { name: HSITRIM, bit: 3, width: 5 }
+      - { name: HSEON, bit: 16 }
+      - { name: HSERDY, bit: 17 }
+      - { name: HSEBYP, bit: 18 }
+      - { name: CSSON, bit: 19 }
+      - { name: PLLON, bit: 24 }
+      - { name: PLLRDY, bit: 25 }
+  - name: PLLCFGR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: PLLM, bit: 0, width: 6, description: "VCO input divider (2..63); PLL_in = src/M" }
+      - { name: PLLN, bit: 6, width: 9, description: "VCO multiplier (50..432)" }
+      - { name: PLLP, bit: 16, width: 2, description: "sysclk divider ENCODED: 0=/2 1=/4 2=/6 3=/8" }
+      - { name: PLLSRC, bit: 22, description: "0=HSI 1=HSE" }
+      - { name: PLLQ, bit: 24, width: 4 }
+  - name: CFGR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: SW, bit: 0, width: 2, description: "2=PLL" }
+      - { name: SWS, bit: 2, width: 2 }
+      - { name: HPRE, bit: 4, width: 4 }
+      - { name: PPRE1, bit: 10, width: 3, description: "0=/1 4=/2 5=/4 6=/8 7=/16" }
+      - { name: PPRE2, bit: 13, width: 3 }
+  - name: CIR
+    offset: "0x0C"
+    access: rw
+  - name: AHB1RSTR
+    offset: "0x10"
+    access: rw
+  - name: APB1RSTR
+    offset: "0x20"
+    access: rw
+  - name: APB2RSTR
+    offset: "0x24"
+    access: rw
+  - name: AHB1ENR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: GPIOAEN, bit: 0 }
+      - { name: GPIOBEN, bit: 1 }
+      - { name: GPIOCEN, bit: 2 }
+      - { name: GPIODEN, bit: 3 }
+      - { name: GPIOEEN, bit: 4 }
+      - { name: GPIOFEN, bit: 5 }
+      - { name: GPIOGEN, bit: 6 }
+      - { name: GPIOHEN, bit: 7 }
+      - { name: GPIOIEN, bit: 8 }
+      - { name: DMA1EN, bit: 21 }
+      - { name: DMA2EN, bit: 22 }
+  - name: AHB2ENR
+    offset: "0x34"
+    access: rw
+  - name: AHB3ENR
+    offset: "0x38"
+    access: rw
+  - name: APB1ENR
+    offset: "0x40"
+    access: rw
+    fields:
+      - { name: TIM2EN, bit: 0 }
+      - { name: TIM3EN, bit: 1 }
+      - { name: SPI2EN, bit: 14 }
+      - { name: SPI3EN, bit: 15 }
+      - { name: USART2EN, bit: 17 }
+      - { name: USART3EN, bit: 18 }
+      - { name: I2C1EN, bit: 21 }
+      - { name: I2C2EN, bit: 22 }
+      - { name: PWREN, bit: 28 }
+  - name: APB2ENR
+    offset: "0x44"
+    access: rw
+    fields:
+      - { name: TIM1EN, bit: 0 }
+      - { name: USART1EN, bit: 4 }
+      - { name: USART6EN, bit: 5 }
+      - { name: ADC1EN, bit: 8 }
+      - { name: SDMMC1EN, bit: 11 }
+      - { name: SPI1EN, bit: 12 }
+      - { name: SYSCFGEN, bit: 14 }
+  - name: BDCR
+    offset: "0x70"
+    access: rw
+  - name: CSR
+    offset: "0x74"
+    access: rw
