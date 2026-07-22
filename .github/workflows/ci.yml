@@ -1,0 +1,17 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: validator unit tests
+        run: uv run pytest -q
+      - name: schema + plausibility lints (the gate that was dead in the old ecosystem)
+        run: uv run alloy-devices validate
