@@ -47,7 +47,7 @@ def lint_registers(db: Database) -> None:
     for key, doc in db.registers.items():
         path = db.register_paths[key]
         names: set[str] = set()
-        reg_spans: list[tuple[int, int, str]] = []
+        reg_spans: list[tuple[int, int, str, dict | None]] = []
         for reg in doc["registers"]:
             size = reg.get("size", 32)
             offset = int(reg["offset"], 16)
@@ -56,10 +56,16 @@ def lint_registers(db: Database) -> None:
             names.add(reg["name"])
             arr = reg.get("array")
             end = offset + (arr["count"] * arr["stride"] if arr else size // 8)
-            for o_start, o_end, o_name in reg_spans:
-                if offset < o_end and o_start < end:
-                    db.issues.append(Issue(path, f"registers {reg['name']} and {o_name} overlap"))
-            reg_spans.append((offset, end, reg["name"]))
+            for o_start, o_end, o_name, o_arr in reg_spans:
+                if not (offset < o_end and o_start < end):
+                    continue
+                # Interleaved arrays with equal stride and different phase
+                # occupy disjoint words (LEDC HSCHn_CONF0/HPOINT/DUTY...).
+                if (arr and o_arr and arr["stride"] == o_arr["stride"]
+                        and offset % arr["stride"] != o_start % arr["stride"]):
+                    continue
+                db.issues.append(Issue(path, f"registers {reg['name']} and {o_name} overlap"))
+            reg_spans.append((offset, end, reg["name"], arr))
             if size == 32 and offset % 4 != 0:
                 db.issues.append(Issue(path, f"{reg['name']}: 32-bit register at unaligned offset {reg['offset']}"))
             if "reset" in reg and int(reg["reset"], 16) >= (1 << size):

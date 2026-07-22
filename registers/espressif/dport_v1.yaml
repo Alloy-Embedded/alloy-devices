@@ -1,0 +1,27 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: dport_v1
+class: sysio
+description: >
+  ESP32 DPORT peripheral clock/reset control — bring-up subset. CLK_EN
+  bits gate peripheral clocks (rmw); RST_EN bits hold blocks in reset and
+  must be CLEARED (rmw) before use.
+provenance:
+  sources:
+    - "peripheral mining 2026-07-22: DPORT_PERIP_CLK_EN@0x3FF000C0 / DPORT_PERIP_RST_EN@0x3FF000C4; ledc bit 11, i2c0 bit 7, i2c1 bit 18 (esp32.yml + old generated rcc_gate_table.hpp)"
+  completeness: bring-up-subset
+registers:
+  - name: PERIP_CLK_EN
+    offset: "0xC0"
+    access: rw
+    fields:
+      - { name: I2C0_CLK_EN, bit: 7 }
+      - { name: LEDC_CLK_EN, bit: 11 }
+      - { name: I2C1_CLK_EN, bit: 18 }
+  - name: PERIP_RST_EN
+    offset: "0xC4"
+    access: rw
+    fields:
+      - { name: I2C0_RST, bit: 7 }
+      - { name: LEDC_RST, bit: 11 }
+      - { name: I2C1_RST, bit: 18 }

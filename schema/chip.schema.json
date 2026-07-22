@@ -82,6 +82,17 @@
           },
           "irq": { "type": "string" },
           "kernel_clock": { "type": "string" },
+          "reset_clear": {
+            "type": "object",
+            "description": "A reset bit to CLEAR (rmw) before the block runs, when it lives in a separate readable register from the clock gate (ESP32 DPORT_PERIP_RST_EN).",
+            "required": ["peripheral", "register", "bit"],
+            "additionalProperties": false,
+            "properties": {
+              "peripheral": { "type": "string" },
+              "register": { "type": "string" },
+              "bit": { "type": "integer", "minimum": 0, "maximum": 31 }
+            }
+          },
           "channels": {
             "type": "object",
             "description": "Named channels of this peripheral (ADC internal channels etc.), emitted as ch_<name> constants on the instance descriptor.",

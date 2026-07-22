@@ -1,0 +1,64 @@
+schema: alloy.registers.v1
+vendor: espressif
+ip: ledc_v1
+class: pwm
+description: >
+  ESP32 LEDC PWM (high-speed side, bring-up subset). 8 HS channels
+  (interleaved register arrays, stride 0x14) + 4 HS timers (stride 8).
+  Timers power up HELD IN RESET (HSTIMER_CONF reset 0x01000000 — RST must
+  be cleared). div_num is a Q10.8 fixed-point divider of the selected tick
+  (tick_sel=1 → APB 80 MHz). DUTY is 25 bits: [24:4] integer, [3:0] dither.
+  HS updates apply immediately (no para_up latch — LS side only).
+provenance:
+  sources:
+    - "peripheral mining 2026-07-22: canonical esp32.yml templates.ledc + old-alloy git e27a117a generated ledc_{registers,bitfields}.hpp (SVD-derived; channel-0 offsets + stride math corroborated by reserved bytes)"
+    - "ESP32 TRM §14 (DUTY dither split [3:0] — not in mined sources)"
+  completeness: bring-up-subset
+registers:
+  - name: HSCH_CONF0
+    offset: "0x00"
+    access: rw
+    array: { count: 8, stride: 20 }
+    fields:
+      - { name: TIMER_SEL, bit: 0, width: 2 }
+      - { name: SIG_OUT_EN, bit: 2 }
+      - { name: IDLE_LV, bit: 3 }
+  - name: HSCH_HPOINT
+    offset: "0x04"
+    access: rw
+    array: { count: 8, stride: 20 }
+    fields:
+      - { name: HPOINT, bit: 0, width: 20 }
+  - name: HSCH_DUTY
+    offset: "0x08"
+    access: rw
+    array: { count: 8, stride: 20 }
+    fields:
+      - { name: DUTY, bit: 0, width: 25 }
+  - name: HSTIMER_CONF
+    offset: "0x140"
+    access: rw
+    array: { count: 4, stride: 8 }
+    fields:
+      - { name: DUTY_RES, bit: 0, width: 5 }
+      - { name: DIV_NUM, bit: 5, width: 18 }
+      - { name: PAUSE, bit: 23 }
+      - { name: RST, bit: 24 }
+      - { name: TICK_SEL, bit: 25 }
+  - name: INT_RAW
+    offset: "0x180"
+    access: ro
+  - name: INT_ST
+    offset: "0x184"
+    access: ro
+  - name: INT_ENA
+    offset: "0x188"
+    access: rw
+  - name: INT_CLR
+    offset: "0x18C"
+    access: wo
+  - name: CONF
+    offset: "0x190"
+    access: rw
+    fields:
+      - { name: APB_CLK_SEL, bit: 0 }
