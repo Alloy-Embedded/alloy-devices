@@ -12,6 +12,8 @@ provenance:
     \ 4 sources agree)"
   - IP registers shared with stm32g071rb (same gpio_v2/usart_v4/rcc_g0/flash_g0 layouts per SVD-derived
     templates)
+  - 'peripheral mining 2026-07-22: TIM2/ADC bases+gates from canonical yml; PA5->TIM2_CH1 AF2 from bulk
+    1.3.0 AF tables; vrefint=ch13 (CAL 0x1FFF75AA), temp=ch12'
   verified:
   - "New chip added with ZERO new C++ and ZERO emitter changes \u2014 the 'new chip = data only' proof"
   - Same hardware-verified PLL profile as stm32g071rb (HSI16 /1 x8 /2 = 64 MHz, 2WS); the old generated
@@ -102,6 +104,27 @@ peripherals:
       peripheral: rcc
       register: IOPENR
       bit: 4
+  tim2:
+    ip: st/tim_gp16
+    base: '0x40000000'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 0
+    irq: TIM2
+    kernel_clock: apb
+  adc:
+    ip: st/adc_v2
+    base: '0x40012400'
+    gate:
+      peripheral: rcc
+      register: APBENR2
+      bit: 20
+    irq: ADC_COMP
+    kernel_clock: apb
+    channels:
+      vref: 13
+      temp: 12
 pins:
   pa2:
     port: a
@@ -126,6 +149,11 @@ routes:
   signal: rx
   kind: af_fixed
   af: 1
+- pin: pa5
+  peripheral: tim2
+  signal: ch1
+  kind: af_fixed
+  af: 2
 interrupts:
 - name: WWDG
   number: 0

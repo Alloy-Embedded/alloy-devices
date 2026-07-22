@@ -5,132 +5,308 @@ part: STM32G071RB
 die: stm32g071
 provenance:
   sources:
-    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml (SVD cmsis-svd:STM32G071.svd) — bases, IRQs, gate bits"
-    - "alloy-devices-yml bulk-admitted stm32g071rbtx.yml schema 1.3.0 (stm32-open-pin-data) — pin AF routes"
-    - "old-alloy boards/nucleo_g071rb/board.json + generated linker.ld — memory sizes 128K/36K"
-    - "old-alloy commit 6d47f2cb — PLL bring-up sequence order, hardware-verified on Nucleo-G071RB"
-    - "RM0444 divider semantics: PLLM divider=field+1, PLLN multiplier=field, PLLR divider=field+1 (min /2)"
+  - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml (SVD cmsis-svd:STM32G071.svd) \u2014\
+    \ bases, IRQs, gate bits"
+  - "alloy-devices-yml bulk-admitted stm32g071rbtx.yml schema 1.3.0 (stm32-open-pin-data) \u2014 pin AF\
+    \ routes"
+  - "old-alloy boards/nucleo_g071rb/board.json + generated linker.ld \u2014 memory sizes 128K/36K"
+  - "old-alloy commit 6d47f2cb \u2014 PLL bring-up sequence order, hardware-verified on Nucleo-G071RB"
+  - 'RM0444 divider semantics: PLLM divider=field+1, PLLN multiplier=field, PLLR divider=field+1 (min
+    /2)'
+  - 'peripheral mining 2026-07-22: TIM2/ADC bases+gates from canonical yml; PA5->TIM2_CH1 AF2 from bulk
+    1.3.0 AF tables; vrefint=ch13 (CAL 0x1FFF75AA), temp=ch12'
   verified:
-    - "Memories: yml claimed family-max 512K/144K and self-flags 'requires enrichment'; part code 'RB'=128K and two independent old-alloy sources agree on 128K/36K — 128K/36K seeded"
-    - "PLL 64 MHz raw fields judged: PLLSRC=2 (HSI16), PLLM=0 (/1), PLLN=8 (x8, VCO=128MHz in 64-344 range), PLLR=1 (/2), PLLREN=1, latency=2WS — 16/1*8/2 = 64 MHz"
-    - "The old generated runtime_init.c wrote semantic dividers into raw fields and never set PLLREN (two codegen bugs found during mining, both avoided here)"
-    - "GPIOC gate = IOPENR bit 2 (the old generated gate table dropped it; user button is PC13)"
-    - "Cortex-M0+ with 2 NVIC priority bits (old yml said cm0/4 bits — judged wrong for M0+)"
+  - "Memories: yml claimed family-max 512K/144K and self-flags 'requires enrichment'; part code 'RB'=128K\
+    \ and two independent old-alloy sources agree on 128K/36K \u2014 128K/36K seeded"
+  - "PLL 64 MHz raw fields judged: PLLSRC=2 (HSI16), PLLM=0 (/1), PLLN=8 (x8, VCO=128MHz in 64-344 range),\
+    \ PLLR=1 (/2), PLLREN=1, latency=2WS \u2014 16/1*8/2 = 64 MHz"
+  - The old generated runtime_init.c wrote semantic dividers into raw fields and never set PLLREN (two
+    codegen bugs found during mining, both avoided here)
+  - GPIOC gate = IOPENR bit 2 (the old generated gate table dropped it; user button is PC13)
+  - "Cortex-M0+ with 2 NVIC priority bits (old yml said cm0/4 bits \u2014 judged wrong for M0+)"
 cores:
-  - { name: cm0plus, arch: armv6m, fpu: false, nvic_prio_bits: 2 }
+- name: cm0plus
+  arch: armv6m
+  fpu: false
+  nvic_prio_bits: 2
 memories:
-  - { name: flash, kind: flash, base: "0x08000000", size: 131072 }
-  - { name: sram, kind: ram, base: "0x20000000", size: 36864 }
+- name: flash
+  kind: flash
+  base: '0x08000000'
+  size: 131072
+- name: sram
+  kind: ram
+  base: '0x20000000'
+  size: 36864
 peripherals:
   rcc:
     ip: st/rcc_g0
-    base: "0x40021000"
+    base: '0x40021000'
     irq: RCC
   flash:
     ip: st/flash_g0
-    base: "0x40022000"
+    base: '0x40022000'
     irq: FLASH
   gpioa:
     ip: st/gpio_v2
-    base: "0x50000000"
-    gate: { peripheral: rcc, register: IOPENR, bit: 0 }
+    base: '0x50000000'
+    gate:
+      peripheral: rcc
+      register: IOPENR
+      bit: 0
   gpiob:
     ip: st/gpio_v2
-    base: "0x50000400"
-    gate: { peripheral: rcc, register: IOPENR, bit: 1 }
+    base: '0x50000400'
+    gate:
+      peripheral: rcc
+      register: IOPENR
+      bit: 1
   gpioc:
     ip: st/gpio_v2
-    base: "0x50000800"
-    gate: { peripheral: rcc, register: IOPENR, bit: 2 }
+    base: '0x50000800'
+    gate:
+      peripheral: rcc
+      register: IOPENR
+      bit: 2
   gpiod:
     ip: st/gpio_v2
-    base: "0x50000C00"
-    gate: { peripheral: rcc, register: IOPENR, bit: 3 }
+    base: '0x50000C00'
+    gate:
+      peripheral: rcc
+      register: IOPENR
+      bit: 3
   gpiof:
     ip: st/gpio_v2
-    base: "0x50001400"
-    gate: { peripheral: rcc, register: IOPENR, bit: 5 }
+    base: '0x50001400'
+    gate:
+      peripheral: rcc
+      register: IOPENR
+      bit: 5
   usart1:
     ip: st/usart_v4
-    base: "0x40013800"
-    gate: { peripheral: rcc, register: APBENR2, bit: 14 }
+    base: '0x40013800'
+    gate:
+      peripheral: rcc
+      register: APBENR2
+      bit: 14
     irq: USART1
     kernel_clock: apb
   usart2:
     ip: st/usart_v4
-    base: "0x40004400"
-    gate: { peripheral: rcc, register: APBENR1, bit: 17 }
+    base: '0x40004400'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 17
     irq: USART2
     kernel_clock: apb
+  tim2:
+    ip: st/tim_gp16
+    base: '0x40000000'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 0
+    irq: TIM2
+    kernel_clock: apb
+  adc:
+    ip: st/adc_v2
+    base: '0x40012400'
+    gate:
+      peripheral: rcc
+      register: APBENR2
+      bit: 20
+    irq: ADC_COMP
+    kernel_clock: apb
+    channels:
+      vref: 13
+      temp: 12
 pins:
-  pa2: { port: a, index: 2 }
-  pa3: { port: a, index: 3 }
-  pa5: { port: a, index: 5 }
-  pc13: { port: c, index: 13 }
+  pa2:
+    port: a
+    index: 2
+  pa3:
+    port: a
+    index: 3
+  pa5:
+    port: a
+    index: 5
+  pc13:
+    port: c
+    index: 13
 routes:
-  - { pin: pa2, peripheral: usart2, signal: tx, kind: af_fixed, af: 1 }
-  - { pin: pa3, peripheral: usart2, signal: rx, kind: af_fixed, af: 1 }
+- pin: pa2
+  peripheral: usart2
+  signal: tx
+  kind: af_fixed
+  af: 1
+- pin: pa3
+  peripheral: usart2
+  signal: rx
+  kind: af_fixed
+  af: 1
+- pin: pa5
+  peripheral: tim2
+  signal: ch1
+  kind: af_fixed
+  af: 2
 interrupts:
-  - { name: WWDG, number: 0 }
-  - { name: PVD, number: 1 }
-  - { name: RTC_STAMP, number: 2 }
-  - { name: FLASH, number: 3 }
-  - { name: RCC, number: 4 }
-  - { name: EXTI0_1, number: 5 }
-  - { name: EXTI2_3, number: 6 }
-  - { name: EXTI4_15, number: 7 }
-  - { name: UCPD1_UCPD2, number: 8 }
-  - { name: DMA_Channel1, number: 9 }
-  - { name: DMA_Channel2_3, number: 10 }
-  - { name: DMA_Channel4_5_6_7, number: 11 }
-  - { name: ADC_COMP, number: 12 }
-  - { name: TIM1_BRK_UP_TRG_COMP, number: 13 }
-  - { name: TIM1_CC, number: 14 }
-  - { name: TIM2, number: 15 }
-  - { name: TIM3, number: 16 }
-  - { name: TIM6_DAC_LPTIM1, number: 17 }
-  - { name: TIM7_LPTIM2, number: 18 }
-  - { name: TIM14, number: 19 }
-  - { name: TIM15, number: 20 }
-  - { name: TIM16, number: 21 }
-  - { name: TIM17, number: 22 }
-  - { name: I2C1, number: 23 }
-  - { name: I2C2, number: 24 }
-  - { name: SPI1, number: 25 }
-  - { name: SPI2, number: 26 }
-  - { name: USART1, number: 27 }
-  - { name: USART2, number: 28 }
-  - { name: USART3_USART4_LPUART1, number: 29 }
-  - { name: CEC, number: 30 }
-  - { name: RNG, number: 31 }
+- name: WWDG
+  number: 0
+- name: PVD
+  number: 1
+- name: RTC_STAMP
+  number: 2
+- name: FLASH
+  number: 3
+- name: RCC
+  number: 4
+- name: EXTI0_1
+  number: 5
+- name: EXTI2_3
+  number: 6
+- name: EXTI4_15
+  number: 7
+- name: UCPD1_UCPD2
+  number: 8
+- name: DMA_Channel1
+  number: 9
+- name: DMA_Channel2_3
+  number: 10
+- name: DMA_Channel4_5_6_7
+  number: 11
+- name: ADC_COMP
+  number: 12
+- name: TIM1_BRK_UP_TRG_COMP
+  number: 13
+- name: TIM1_CC
+  number: 14
+- name: TIM2
+  number: 15
+- name: TIM3
+  number: 16
+- name: TIM6_DAC_LPTIM1
+  number: 17
+- name: TIM7_LPTIM2
+  number: 18
+- name: TIM14
+  number: 19
+- name: TIM15
+  number: 20
+- name: TIM16
+  number: 21
+- name: TIM17
+  number: 22
+- name: I2C1
+  number: 23
+- name: I2C2
+  number: 24
+- name: SPI1
+  number: 25
+- name: SPI2
+  number: 26
+- name: USART1
+  number: 27
+- name: USART2
+  number: 28
+- name: USART3_USART4_LPUART1
+  number: 29
+- name: CEC
+  number: 30
+- name: RNG
+  number: 31
 clock:
   sources:
-    hsi16: { hz: 16000000 }
-    lsi: { hz: 32000 }
+    hsi16:
+      hz: 16000000
+    lsi:
+      hz: 32000
   boot_source: hsi16
   profiles:
     hsi_16mhz:
-      description: "HSI16 direct, no PLL, 0 wait states"
+      description: HSI16 direct, no PLL, 0 wait states
       sysclk_hz: 16000000
       ahb_hz: 16000000
       apb_hz: 16000000
       program:
-        - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
-        - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
-        - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 0 } }
-        - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 0 } }
-        - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 0, timeout_us: 2000 }
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          HSION: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: HSIRDY
+        equals: 1
+        timeout_us: 2000
+      - op: rmw
+        peripheral: flash
+        register: ACR
+        fields:
+          LATENCY: 0
+      - op: rmw
+        peripheral: rcc
+        register: CFGR
+        fields:
+          SW: 0
+      - op: poll
+        peripheral: rcc
+        register: CFGR
+        field: SWS
+        equals: 0
+        timeout_us: 2000
     pll_64mhz:
-      description: "HSI16 /1 x8 /2 = 64 MHz via PLLR, 2 wait states (order hardware-verified by old-alloy 6d47f2cb)"
+      description: HSI16 /1 x8 /2 = 64 MHz via PLLR, 2 wait states (order hardware-verified by old-alloy
+        6d47f2cb)
       sysclk_hz: 64000000
       ahb_hz: 64000000
       apb_hz: 64000000
       program:
-        - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
-        - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
-        - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 2 } }
-        - { op: rmw, peripheral: rcc, register: PLLCFGR, fields: { PLLSRC: 2, PLLM: 0, PLLN: 8, PLLR: 1, PLLREN: 1 } }
-        - { op: rmw, peripheral: rcc, register: CR, fields: { PLLON: 1 } }
-        - { op: poll, peripheral: rcc, register: CR, field: PLLRDY, equals: 1, timeout_us: 10000 }
-        - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 2 } }
-        - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 2, timeout_us: 10000 }
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          HSION: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: HSIRDY
+        equals: 1
+        timeout_us: 2000
+      - op: rmw
+        peripheral: flash
+        register: ACR
+        fields:
+          LATENCY: 2
+      - op: rmw
+        peripheral: rcc
+        register: PLLCFGR
+        fields:
+          PLLSRC: 2
+          PLLM: 0
+          PLLN: 8
+          PLLR: 1
+          PLLREN: 1
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          PLLON: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: PLLRDY
+        equals: 1
+        timeout_us: 10000
+      - op: rmw
+        peripheral: rcc
+        register: CFGR
+        fields:
+          SW: 2
+      - op: poll
+        peripheral: rcc
+        register: CFGR
+        field: SWS
+        equals: 2
+        timeout_us: 10000

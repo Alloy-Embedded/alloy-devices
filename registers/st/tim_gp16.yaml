@@ -1,0 +1,101 @@
+schema: alloy.registers.v1
+vendor: st
+ip: tim_gp16
+class: pwm
+description: >
+  ST 16-bit general-purpose timer (G0-era gptimer template shared by
+  TIM2/TIM3-class instances). Bring-up subset for edge-aligned PWM on
+  channels 1-4. Advanced-control instances (TIM1) additionally require
+  BDTR.MOE — not modeled yet; use GP timers for PWM roles.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.tim (SVD-derived; ip_version gptimer2_v3_x_Cube)"
+    - "old-alloy src/hal/timer/lite.hpp (constants cross-check)"
+  completeness: bring-up-subset
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CEN, bit: 0 }
+      - { name: UDIS, bit: 1 }
+      - { name: URS, bit: 2 }
+      - { name: OPM, bit: 3 }
+      - { name: DIR, bit: 4 }
+      - { name: CMS, bit: 5, width: 2 }
+      - { name: ARPE, bit: 7 }
+      - { name: CKD, bit: 8, width: 2 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+  - name: SMCR
+    offset: "0x08"
+    access: rw
+  - name: DIER
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: UIE, bit: 0 }
+  - name: SR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: UIF, bit: 0 }
+  - name: EGR
+    offset: "0x14"
+    access: wo
+    fields:
+      - { name: UG, bit: 0 }
+  - name: CCMR1
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: OC1PE, bit: 3 }
+      - { name: OC1M, bit: 4, width: 3, description: "6 = PWM mode 1" }
+      - { name: OC2PE, bit: 11 }
+      - { name: OC2M, bit: 12, width: 3 }
+  - name: CCMR2
+    offset: "0x1C"
+    access: rw
+    fields:
+      - { name: OC3PE, bit: 3 }
+      - { name: OC3M, bit: 4, width: 3 }
+      - { name: OC4PE, bit: 11 }
+      - { name: OC4M, bit: 12, width: 3 }
+  - name: CCER
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: CC1E, bit: 0 }
+      - { name: CC1P, bit: 1 }
+      - { name: CC2E, bit: 4 }
+      - { name: CC2P, bit: 5 }
+      - { name: CC3E, bit: 8 }
+      - { name: CC3P, bit: 9 }
+      - { name: CC4E, bit: 12 }
+      - { name: CC4P, bit: 13 }
+  - name: CNT
+    offset: "0x24"
+    access: rw
+  - name: PSC
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 16 }
+  - name: ARR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: ARR, bit: 0, width: 16 }
+  - name: CCR1
+    offset: "0x34"
+    access: rw
+  - name: CCR2
+    offset: "0x38"
+    access: rw
+  - name: CCR3
+    offset: "0x3C"
+    access: rw
+  - name: CCR4
+    offset: "0x40"
+    access: rw

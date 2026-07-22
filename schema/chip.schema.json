@@ -82,6 +82,12 @@
           },
           "irq": { "type": "string" },
           "kernel_clock": { "type": "string" },
+          "channels": {
+            "type": "object",
+            "description": "Named channels of this peripheral (ADC internal channels etc.), emitted as ch_<name> constants on the instance descriptor.",
+            "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+            "additionalProperties": { "type": "integer", "minimum": 0, "maximum": 255 }
+          },
           "companions": {
             "type": "object",
             "description": "Named references to sibling peripherals a driver needs alongside this block (RP2040 io_bank0 -> {sio, pads}). Emitted as using-aliases inside the instance descriptor.",

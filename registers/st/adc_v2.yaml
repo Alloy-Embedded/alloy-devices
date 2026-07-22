@@ -1,0 +1,73 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adc_v2
+class: adc
+description: >
+  ST single-ADC with CHSELR (F0/G0 style, ip_version aditf4). Includes the
+  common CCR at +0x308 (VREFEN bit 22 / TSEN bit 23) — single instance per
+  chip, so the common block is modeled inside the IP. Internal channels and
+  factory calibration addresses are chip data (channels map + notes).
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.adc + adc.channels/calibration (SVD-derived; vrefint=ch13 CAL@0x1FFF75AA, temp=ch12 CAL30@0x1FFF75A8 CAL130@0x1FFF75CA, Vdda 3.0V)"
+    - "old-alloy src/hal/adc/lite.hpp + examples/lite_hal_probe (ADC conversions ran on real Nucleo-G071RB hardware)"
+  completeness: bring-up-subset
+registers:
+  - name: ISR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: ADRDY, bit: 0 }
+      - { name: EOSMP, bit: 1 }
+      - { name: EOC, bit: 2 }
+      - { name: EOS, bit: 3 }
+      - { name: OVR, bit: 4 }
+      - { name: EOCAL, bit: 11 }
+      - { name: CCRDY, bit: 13 }
+  - name: IER
+    offset: "0x04"
+    access: rw
+  - name: CR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: ADEN, bit: 0 }
+      - { name: ADDIS, bit: 1 }
+      - { name: ADSTART, bit: 2 }
+      - { name: ADSTP, bit: 4 }
+      - { name: ADVREGEN, bit: 28 }
+      - { name: ADCAL, bit: 31 }
+  - name: CFGR1
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: RES, bit: 3, width: 2 }
+      - { name: ALIGN, bit: 5 }
+      - { name: CONT, bit: 13 }
+      - { name: AUTOFF, bit: 15 }
+      - { name: CHSELRMOD, bit: 21 }
+  - name: CFGR2
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: CKMODE, bit: 30, width: 2, description: "1 = PCLK/2 (synchronous)" }
+  - name: SMPR
+    offset: "0x14"
+    access: rw
+    fields:
+      - { name: SMP1, bit: 0, width: 3, description: "7 = 160.5 cycles (required for vref/temp)" }
+      - { name: SMP2, bit: 4, width: 3 }
+  - name: CHSELR
+    offset: "0x28"
+    access: rw
+  - name: DR
+    offset: "0x40"
+    access: ro
+  - name: CCR
+    offset: "0x308"
+    access: rw
+    fields:
+      - { name: PRESC, bit: 18, width: 4 }
+      - { name: VREFEN, bit: 22 }
+      - { name: TSEN, bit: 23 }
+      - { name: VBATEN, bit: 24 }
