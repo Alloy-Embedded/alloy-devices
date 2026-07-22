@@ -9,6 +9,7 @@ description: >
 provenance:
   sources:
     - "peripheral mining 2026-07-22: DPORT_PERIP_CLK_EN@0x3FF000C0 / DPORT_PERIP_RST_EN@0x3FF000C4; ledc bit 11, i2c0 bit 7, i2c1 bit 18 (esp32.yml + old generated rcc_gate_table.hpp)"
+    - "interrupt-matrix mining 2026-07-22: PRO_*_INTR_MAP array 0x104..0x214 (69 sources, stride 4, campo [4:0]) + PRO_INTR_STATUS 0xEC..0xF4 do canonico esp32.yml (idf-derived); tabela de niveis de CPU-int do esp-idf soc.h (nao SVD-derivavel); espelho APP 0x218..0x328 nao modelado (PRO-only)"
   completeness: bring-up-subset
 registers:
   - name: PERIP_CLK_EN
@@ -25,3 +26,44 @@ registers:
       - { name: I2C0_RST, bit: 7 }
       - { name: LEDC_RST, bit: 11 }
       - { name: I2C1_RST, bit: 18 }
+  - name: PRO_INTR_STATUS
+    offset: "0xEC"
+    access: ro
+    array: { count: 3, stride: 4 }
+    description: >-
+      Raw status of the 69 peripheral interrupt sources as seen by PRO_CPU:
+      word n bit b = source n*32+b (word 2 uses bits 0-4 only). Read in a
+      shared CPU-interrupt handler to find which mapped source(s) fired.
+  - name: PRO_INTR_MAP
+    offset: "0x104"
+    access: rw
+    array: { count: 69, stride: 4 }
+    description: >-
+      PRO_CPU interrupt matrix: one 32-bit register per peripheral interrupt
+      source (array index = source number). Write the 5-bit Xtensa CPU
+      interrupt number (0-31) to route the source; route to a never-enabled
+      internal int to detach. Source table (SVD PRO_*_INTR_MAP order,
+      0x104..0x214): 0 WIFI_MAC, 1 WIFI_MAC_NMI, 2 WIFI_BB, 3 BT_MAC,
+      4 BT_BB, 5 BT_BB_NMI, 6 RWBT, 7 RWBLE, 8 RWBT_NMI, 9 RWBLE_NMI,
+      10 SLC0, 11 SLC1, 12 UHCI0, 13 UHCI1, 14 TG0_T0_LEVEL, 15 TG0_T1_LEVEL,
+      16 TG0_WDT_LEVEL, 17 TG0_LACT_LEVEL, 18 TG1_T0_LEVEL, 19 TG1_T1_LEVEL,
+      20 TG1_WDT_LEVEL, 21 TG1_LACT_LEVEL, 22 GPIO, 23 GPIO_NMI,
+      24 FROM_CPU0, 25 FROM_CPU1, 26 FROM_CPU2, 27 FROM_CPU3, 28 SPI0,
+      29 SPI1, 30 SPI2, 31 SPI3, 32 I2S0, 33 I2S1, 34 UART0, 35 UART1,
+      36 UART2, 37 SDIO_HOST, 38 ETH_MAC, 39 MCPWM0, 40 MCPWM1, 41 MCPWM2,
+      42 MCPWM3, 43 LEDC, 44 EFUSE, 45 TWAI, 46 RTC_CORE, 47 RMT, 48 PCNT,
+      49 I2C_EXT0, 50 I2C_EXT1, 51 RSA, 52 SPI1_DMA, 53 SPI2_DMA,
+      54 SPI3_DMA, 55 WDG, 56 TIMER1, 57 TIMER2, 58 TG0_T0_EDGE,
+      59 TG0_T1_EDGE, 60 TG0_WDT_EDGE, 61 TG0_LACT_EDGE, 62 TG1_T0_EDGE,
+      63 TG1_T1_EDGE, 64 TG1_WDT_EDGE, 65 TG1_LACT_EDGE, 66 MMU_IA,
+      67 MPU_IA, 68 CACHE_IA. APP_CPU mirror at 0x218..0x328 (not modeled;
+      alloy is PRO-only). CPU-int properties (Xtensa LX6 config, esp-idf
+      soc.h — not in SVD): L1 external level = 0,1,2,3,4,5,8,9,12,13,17,18;
+      10 = L1 edge; internal 6 (L1 CCOMPARE0), 7 (L1 sw), 11 (L3 prof),
+      15 (L3 CCOMPARE1), 16 (L5 CCOMPARE2), 29 (L3 sw); 14 = NMI;
+      19-21 L2, 22 L3 edge, 23/27 L3, 24/25 L4, 28/30 L4 edge, 26/31 L5.
+      v1 level-1 allocator pool: 12,13,17,18,9,2,3 (0,1,4,5,8 left
+      radio-reserved; alloy uses no CCOMPARE ints — SysTick is CCOUNT
+      polling).
+    fields:
+      - { name: CPU_INT_NUM, bit: 0, width: 5 }

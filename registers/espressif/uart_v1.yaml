@@ -9,6 +9,7 @@ description: >
 provenance:
   sources:
     - "old-alloy boards/esp32_devkit/board_uart_raw.hpp (HW-validated: FIFO@base+0, STATUS@+0x1C, txfifo_cnt=(status>>16)&mask, threshold 126, no init)"
+    - "uart-interrupt mining 2026-07-22: INT_RAW/ST/ENA/CLR @0x04-0x10 + CONF1 @0x24 do canonico esp32.yml; RX_TOUT_THRHD em byte-times no ESP32 classico; errata de leitura concorrente DPORT/FIFO (esp-idf usa alias AHB) - leitura APB validada em HW no spot-check"
     - "alloy-devices-yml esp32.yml uart block (fifo=0, status=28 with txfifo_cnt bits 16-23, clkdiv=20, conf0=32)"
   completeness: bring-up-subset
 registers:
@@ -30,3 +31,66 @@ registers:
   - name: CONF0
     offset: "0x20"
     access: rw
+  - name: INT_RAW
+    offset: "0x04"
+    access: ro
+    fields:
+      - { name: RXFIFO_FULL_INT_RAW, bit: 0 }
+      - { name: TXFIFO_EMPTY_INT_RAW, bit: 1 }
+      - { name: PARITY_ERR_INT_RAW, bit: 2 }
+      - { name: FRM_ERR_INT_RAW, bit: 3 }
+      - { name: RXFIFO_OVF_INT_RAW, bit: 4 }
+      - { name: BRK_DET_INT_RAW, bit: 7 }
+      - { name: RXFIFO_TOUT_INT_RAW, bit: 8 }
+      - { name: TX_DONE_INT_RAW, bit: 14 }
+  - name: INT_ST
+    offset: "0x08"
+    access: ro
+    description: Masked status (raw AND ena) — read this in the ISR.
+    fields:
+      - { name: RXFIFO_FULL_INT_ST, bit: 0 }
+      - { name: TXFIFO_EMPTY_INT_ST, bit: 1 }
+      - { name: PARITY_ERR_INT_ST, bit: 2 }
+      - { name: FRM_ERR_INT_ST, bit: 3 }
+      - { name: RXFIFO_OVF_INT_ST, bit: 4 }
+      - { name: BRK_DET_INT_ST, bit: 7 }
+      - { name: RXFIFO_TOUT_INT_ST, bit: 8 }
+      - { name: TX_DONE_INT_ST, bit: 14 }
+  - name: INT_ENA
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: RXFIFO_FULL_INT_ENA, bit: 0 }
+      - { name: TXFIFO_EMPTY_INT_ENA, bit: 1 }
+      - { name: PARITY_ERR_INT_ENA, bit: 2 }
+      - { name: FRM_ERR_INT_ENA, bit: 3 }
+      - { name: RXFIFO_OVF_INT_ENA, bit: 4 }
+      - { name: BRK_DET_INT_ENA, bit: 7 }
+      - { name: RXFIFO_TOUT_INT_ENA, bit: 8 }
+      - { name: TX_DONE_INT_ENA, bit: 14 }
+  - name: INT_CLR
+    offset: "0x10"
+    access: wo
+    fields:
+      - { name: RXFIFO_FULL_INT_CLR, bit: 0 }
+      - { name: TXFIFO_EMPTY_INT_CLR, bit: 1 }
+      - { name: PARITY_ERR_INT_CLR, bit: 2 }
+      - { name: FRM_ERR_INT_CLR, bit: 3 }
+      - { name: RXFIFO_OVF_INT_CLR, bit: 4 }
+      - { name: BRK_DET_INT_CLR, bit: 7 }
+      - { name: RXFIFO_TOUT_INT_CLR, bit: 8 }
+      - { name: TX_DONE_INT_CLR, bit: 14 }
+  - name: CONF1
+    offset: "0x24"
+    access: rw
+    description: >-
+      RX thresholds. RXFIFO_FULL fires when RXFIFO_CNT > RXFIFO_FULL_THRHD;
+      RXFIFO_TOUT fires after RX idle for RX_TOUT_THRHD byte-times (classic
+      ESP32 unit = one byte duration at current baud) with RX_TOUT_EN set.
+    fields:
+      - { name: RXFIFO_FULL_THRHD, bit: 0, width: 7 }
+      - { name: TXFIFO_EMPTY_THRHD, bit: 8, width: 7 }
+      - { name: RX_FLOW_THRHD, bit: 16, width: 7 }
+      - { name: RX_FLOW_EN, bit: 23 }
+      - { name: RX_TOUT_THRHD, bit: 24, width: 7 }
+      - { name: RX_TOUT_EN, bit: 31 }

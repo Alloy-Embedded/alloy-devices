@@ -8,6 +8,7 @@ provenance:
   - "old-alloy commit 0f6a41cb \u2014 HW VALIDATED on ESP32-D0WD-V3 rev3.1: XIP app at flash 0x10000 under\
     \ the factory-resident ESP-IDF 2nd-stage bootloader (0x1000, never reflashed), IROM/DROM +0x10 origins,\
     \ entry call_start_cpu0"
+  - "interrupt-source mining 2026-07-22: 69 sources 0..68 da ordem PRO_*_INTR_MAP (0x104..0x214) do canonico; UART0/1/2=34/35/36 conferido nas instancias; vetores: buraco IRAM 0x40080000-0x40080800 (tabela 1KiB alinhada + handlers) carve do iram, que passa a 0x40080800"
   - "old-alloy commit 29ba8a04 \u2014 TIMG0/TIMG1/RTC watchdog disable sequence (bootloader leaves TIMG0\
     \ armed ~1s; observed reset without it)"
   - "old-alloy boards/esp32_devkit/{esp32.ld,startup.S,board_uart_raw.hpp} \u2014 memory map, startup,\
@@ -40,10 +41,14 @@ memories:
   kind: flash
   base: '0x3F400010'
   size: 3670000
+- name: vectors
+  kind: ram
+  base: '0x40080000'
+  size: 2048
 - name: iram
   kind: ram
-  base: '0x40080400'
-  size: 129024
+  base: '0x40080800'
+  size: 128000
 - name: dram
   kind: ram
   base: '0x3FFB0000'
@@ -51,9 +56,11 @@ memories:
 peripherals:
   gpio:
     ip: espressif/gpio_v1
+    irq: GPIO
     base: '0x3FF44000'
   uart0:
     ip: espressif/uart_v1
+    irq: UART0
     base: '0x3FF40000'
     kernel_clock: apb
   timg0:
@@ -70,6 +77,7 @@ peripherals:
     base: '0x3FF00000'
   ledc:
     ip: espressif/ledc_v1
+    irq: LEDC
     base: '0x3FF59000'
     gate:
       peripheral: dport
@@ -85,6 +93,7 @@ peripherals:
     base: '0x3FF49000'
   i2c0:
     ip: espressif/i2c_v1
+    irq: I2C_EXT0
     base: '0x3FF53000'
     gate:
       peripheral: dport
@@ -141,6 +150,76 @@ routes:
   kind: full_matrix
   matrix_signal: 30
   direction: inout
+interrupts:
+- { name: WIFI_MAC, number: 0 }
+- { name: WIFI_MAC_NMI, number: 1 }
+- { name: WIFI_BB, number: 2 }
+- { name: BT_MAC, number: 3 }
+- { name: BT_BB, number: 4 }
+- { name: BT_BB_NMI, number: 5 }
+- { name: RWBT, number: 6 }
+- { name: RWBLE, number: 7 }
+- { name: RWBT_NMI, number: 8 }
+- { name: RWBLE_NMI, number: 9 }
+- { name: SLC0, number: 10 }
+- { name: SLC1, number: 11 }
+- { name: UHCI0, number: 12 }
+- { name: UHCI1, number: 13 }
+- { name: TG0_T0_LEVEL, number: 14 }
+- { name: TG0_T1_LEVEL, number: 15 }
+- { name: TG0_WDT_LEVEL, number: 16 }
+- { name: TG0_LACT_LEVEL, number: 17 }
+- { name: TG1_T0_LEVEL, number: 18 }
+- { name: TG1_T1_LEVEL, number: 19 }
+- { name: TG1_WDT_LEVEL, number: 20 }
+- { name: TG1_LACT_LEVEL, number: 21 }
+- { name: GPIO, number: 22 }
+- { name: GPIO_NMI, number: 23 }
+- { name: FROM_CPU0, number: 24 }
+- { name: FROM_CPU1, number: 25 }
+- { name: FROM_CPU2, number: 26 }
+- { name: FROM_CPU3, number: 27 }
+- { name: SPI0, number: 28 }
+- { name: SPI1, number: 29 }
+- { name: SPI2, number: 30 }
+- { name: SPI3, number: 31 }
+- { name: I2S0, number: 32 }
+- { name: I2S1, number: 33 }
+- { name: UART0, number: 34 }
+- { name: UART1, number: 35 }
+- { name: UART2, number: 36 }
+- { name: SDIO_HOST, number: 37 }
+- { name: ETH_MAC, number: 38 }
+- { name: MCPWM0, number: 39 }
+- { name: MCPWM1, number: 40 }
+- { name: MCPWM2, number: 41 }
+- { name: MCPWM3, number: 42 }
+- { name: LEDC, number: 43 }
+- { name: EFUSE, number: 44 }
+- { name: TWAI, number: 45 }
+- { name: RTC_CORE, number: 46 }
+- { name: RMT, number: 47 }
+- { name: PCNT, number: 48 }
+- { name: I2C_EXT0, number: 49 }
+- { name: I2C_EXT1, number: 50 }
+- { name: RSA, number: 51 }
+- { name: SPI1_DMA, number: 52 }
+- { name: SPI2_DMA, number: 53 }
+- { name: SPI3_DMA, number: 54 }
+- { name: WDG, number: 55 }
+- { name: TIMER1, number: 56 }
+- { name: TIMER2, number: 57 }
+- { name: TG0_T0_EDGE, number: 58 }
+- { name: TG0_T1_EDGE, number: 59 }
+- { name: TG0_WDT_EDGE, number: 60 }
+- { name: TG0_LACT_EDGE, number: 61 }
+- { name: TG1_T0_EDGE, number: 62 }
+- { name: TG1_T1_EDGE, number: 63 }
+- { name: TG1_WDT_EDGE, number: 64 }
+- { name: TG1_LACT_EDGE, number: 65 }
+- { name: MMU_IA, number: 66 }
+- { name: MPU_IA, number: 67 }
+- { name: CACHE_IA, number: 68 }
 clock:
   sources:
     xtal40m:
