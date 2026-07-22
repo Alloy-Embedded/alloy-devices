@@ -41,9 +41,12 @@ registers:
     offset: "0x0C"
     access: rw
     fields:
+      - { name: DMAEN, bit: 0 }
+      - { name: DMACFG, bit: 1, description: "0 = one-shot DMA (stops at CNDTR=0), 1 = circular" }
       - { name: RES, bit: 3, width: 2 }
       - { name: ALIGN, bit: 5 }
       - { name: CONT, bit: 13 }
+      - { name: OVRMOD, bit: 12, description: "1 = overwrite DR on overrun (keeps a DMA stream moving)" }
       - { name: AUTOFF, bit: 15 }
       - { name: CHSELRMOD, bit: 21 }
   - name: CFGR2

@@ -19,6 +19,7 @@ provenance:
   - 'SPI1 mining 2026-07-22: base/gate (APBENR2 bit 12) from canonical yml; PB3/PB4/PB5 AF0 from bulk
     1.3.0 — set hardware-exercised on real Nucleo-G071RB by old-alloy lite_hal_probe; PA5/PA6/PA7 AF0
     exist too but PA5 = LD4 LED (deliberately not routed to keep the LED role alive)'
+  - 'DMA mining 2026-07-22: DMA1 7ch @0x40020000 (AHBENR bit 0) + DMAMUX @0x40020800 (clocked with DMA1, no own gate) from canonical yml; request IDs ADC=5, TIM2_CH1/UP=26/31, USART2_RX/TX=52/53 from RM0444 §11 table (Zephyr overlay cross-checks); DMA IRQ grouping 9/10/11'
   verified:
   - "Memories: yml claimed family-max 512K/144K and self-flags 'requires enrichment'; part code 'RB'=128K\
     \ and two independent old-alloy sources agree on 128K/36K \u2014 128K/36K seeded"
@@ -104,6 +105,9 @@ peripherals:
       bit: 17
     irq: USART2
     kernel_clock: apb
+    dma_requests:
+      rx: 52
+      tx: 53
   tim2:
     ip: st/tim_gp16
     base: '0x40000000'
@@ -113,6 +117,9 @@ peripherals:
       bit: 0
     irq: TIM2
     kernel_clock: apb
+    dma_requests:
+      ch1: 26
+      up: 31
   adc:
     ip: st/adc_v2
     base: '0x40012400'
@@ -122,6 +129,8 @@ peripherals:
       bit: 20
     irq: ADC_COMP
     kernel_clock: apb
+    dma_requests:
+      conv: 5
     channels:
       vref: 13
       temp: 12
@@ -143,6 +152,24 @@ peripherals:
       bit: 12
     irq: SPI1
     kernel_clock: apb
+  dma1:
+    ip: st/dma_v1
+    base: '0x40020000'
+    gate:
+      peripheral: rcc
+      register: AHBENR
+      bit: 0
+    channels:
+      count: 7
+      mux_offset: 0
+      irqline1: 9
+      irqline2_3: 10
+      irqline4_7: 11
+    companions:
+      mux: dmamux
+  dmamux:
+    ip: st/dmamux_v1
+    base: '0x40020800'
 pins:
   pa2:
     port: a

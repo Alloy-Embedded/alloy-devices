@@ -17,6 +17,7 @@ provenance:
   - 'I2C1 mining 2026-07-22: base/gate from canonical yml; PB8/PB9 AF6 (Arduino D15/D14) from bulk 1.3.0'
   - 'SPI1 mining 2026-07-22: base/gate mirror of g071rb (ip_version spi2s1_v3_5_Cube on G0B1, same
     register subset); PB3/PB4/PB5 AF0 from bulk 1.3.0 stm32g0b1r(b-c-e)tx.yml — identical AF0 set'
+  - 'DMA mining 2026-07-22: DMA1 7ch @0x40020000 (AHBENR bit 0) + DMAMUX @0x40020800 (clocked with DMA1, no own gate) from canonical yml; request IDs ADC=5, TIM2_CH1/UP=26/31, USART2_RX/TX=52/53 from RM0444 §11 table (Zephyr overlay cross-checks); DMA IRQ grouping 9/10/11'
   verified:
   - "New chip added with ZERO new C++ and ZERO emitter changes \u2014 the 'new chip = data only' proof"
   - Same hardware-verified PLL profile as stm32g071rb (HSI16 /1 x8 /2 = 64 MHz, 2WS); the old generated
@@ -100,6 +101,9 @@ peripherals:
       bit: 17
     irq: USART2_LPUART2
     kernel_clock: apb
+    dma_requests:
+      rx: 52
+      tx: 53
   gpioe:
     ip: st/gpio_v2
     base: '0x50001000'
@@ -116,6 +120,9 @@ peripherals:
       bit: 0
     irq: TIM2
     kernel_clock: apb
+    dma_requests:
+      ch1: 26
+      up: 31
   adc:
     ip: st/adc_v2
     base: '0x40012400'
@@ -125,6 +132,8 @@ peripherals:
       bit: 20
     irq: ADC_COMP
     kernel_clock: apb
+    dma_requests:
+      conv: 5
     channels:
       vref: 13
       temp: 12
@@ -146,6 +155,24 @@ peripherals:
       bit: 12
     irq: SPI1
     kernel_clock: apb
+  dma1:
+    ip: st/dma_v1
+    base: '0x40020000'
+    gate:
+      peripheral: rcc
+      register: AHBENR
+      bit: 0
+    channels:
+      count: 7
+      mux_offset: 0
+      irqline1: 9
+      irqline2_3: 10
+      irqline4_7: 11
+    companions:
+      mux: dmamux
+  dmamux:
+    ip: st/dmamux_v1
+    base: '0x40020800'
 pins:
   pa2:
     port: a

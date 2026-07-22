@@ -3,21 +3,57 @@
   "$id": "alloy.chip.v1",
   "title": "Alloy per-chip instance file",
   "type": "object",
-  "required": ["schema", "vendor", "family", "part", "provenance", "cores", "memories", "peripherals", "clock"],
+  "required": [
+    "schema",
+    "vendor",
+    "family",
+    "part",
+    "provenance",
+    "cores",
+    "memories",
+    "peripherals",
+    "clock"
+  ],
   "additionalProperties": false,
   "properties": {
-    "schema": { "const": "alloy.chip.v1" },
-    "vendor": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-    "family": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-    "part": { "type": "string", "minLength": 4 },
-    "die": { "type": "string" },
+    "schema": {
+      "const": "alloy.chip.v1"
+    },
+    "vendor": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "family": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "part": {
+      "type": "string",
+      "minLength": 4
+    },
+    "die": {
+      "type": "string"
+    },
     "provenance": {
       "type": "object",
-      "required": ["sources"],
+      "required": [
+        "sources"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sources": { "type": "array", "minItems": 1, "items": { "type": "string" } },
-        "verified": { "type": "array", "items": { "type": "string" } }
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "verified": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "cores": {
@@ -25,13 +61,38 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["name", "arch"],
+        "required": [
+          "name",
+          "arch"
+        ],
         "additionalProperties": false,
         "properties": {
-          "name": { "type": "string" },
-          "arch": { "enum": ["armv6m", "armv7m", "armv7em", "armv8m_base", "armv8m_main", "rv32imc", "rv32imac", "xtensa_lx6", "xtensa_lx7", "avr8"] },
-          "fpu": { "type": "boolean", "default": false },
-          "nvic_prio_bits": { "type": "integer", "minimum": 1, "maximum": 8 }
+          "name": {
+            "type": "string"
+          },
+          "arch": {
+            "enum": [
+              "armv6m",
+              "armv7m",
+              "armv7em",
+              "armv8m_base",
+              "armv8m_main",
+              "rv32imc",
+              "rv32imac",
+              "xtensa_lx6",
+              "xtensa_lx7",
+              "avr8"
+            ]
+          },
+          "fpu": {
+            "type": "boolean",
+            "default": false
+          },
+          "nvic_prio_bits": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          }
         }
       }
     },
@@ -40,37 +101,83 @@
       "minItems": 2,
       "items": {
         "type": "object",
-        "required": ["name", "kind", "base", "size"],
+        "required": [
+          "name",
+          "kind",
+          "base",
+          "size"
+        ],
         "additionalProperties": false,
         "properties": {
-          "name": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
-          "kind": { "enum": ["flash", "ram", "ccm", "eeprom"] },
-          "base": { "$ref": "#/$defs/hex" },
-          "size": { "type": "integer", "minimum": 1 }
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "kind": {
+            "enum": [
+              "flash",
+              "ram",
+              "ccm",
+              "eeprom"
+            ]
+          },
+          "base": {
+            "$ref": "#/$defs/hex"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 1
+          }
         }
       }
     },
     "peripherals": {
       "type": "object",
       "minProperties": 1,
-      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
       "additionalProperties": {
         "type": "object",
-        "required": ["ip", "base"],
+        "required": [
+          "ip",
+          "base"
+        ],
         "additionalProperties": false,
         "properties": {
-          "ip": { "type": "string", "pattern": "^[a-z0-9_]+/[a-z0-9_]+$" },
-          "base": { "$ref": "#/$defs/hex" },
+          "ip": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+/[a-z0-9_]+$"
+          },
+          "base": {
+            "$ref": "#/$defs/hex"
+          },
           "gate": {
             "type": "object",
-            "required": ["peripheral", "register", "bit"],
+            "required": [
+              "peripheral",
+              "register",
+              "bit"
+            ],
             "additionalProperties": false,
             "properties": {
-              "peripheral": { "type": "string" },
-              "register": { "type": "string" },
-              "bit": { "type": "integer", "minimum": 0, "maximum": 31 },
+              "peripheral": {
+                "type": "string"
+              },
+              "register": {
+                "type": "string"
+              },
+              "bit": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              },
               "style": {
-                "enum": ["rmw", "write_set", "reset_release"],
+                "enum": [
+                  "rmw",
+                  "write_set",
+                  "reset_release"
+                ],
                 "default": "rmw",
                 "description": "rmw: set the bit read-modify-write (ST *ENR). write_set: write-only set register — write the mask directly (Microchip PMC_PCERx). reset_release: CLEAR the bit to release the block from reset, then poll the same bit in done_register (RP2040 RESETS)."
               },
@@ -80,44 +187,94 @@
               }
             }
           },
-          "irq": { "type": "string" },
-          "kernel_clock": { "type": "string" },
+          "irq": {
+            "type": "string"
+          },
+          "kernel_clock": {
+            "type": "string"
+          },
           "reset_clear": {
             "type": "object",
             "description": "A reset bit to CLEAR (rmw) before the block runs, when it lives in a separate readable register from the clock gate (ESP32 DPORT_PERIP_RST_EN).",
-            "required": ["peripheral", "register", "bit"],
+            "required": [
+              "peripheral",
+              "register",
+              "bit"
+            ],
             "additionalProperties": false,
             "properties": {
-              "peripheral": { "type": "string" },
-              "register": { "type": "string" },
-              "bit": { "type": "integer", "minimum": 0, "maximum": 31 }
+              "peripheral": {
+                "type": "string"
+              },
+              "register": {
+                "type": "string"
+              },
+              "bit": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              }
             }
           },
           "channels": {
             "type": "object",
             "description": "Named channels of this peripheral (ADC internal channels etc.), emitted as ch_<name> constants on the instance descriptor.",
-            "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
-            "additionalProperties": { "type": "integer", "minimum": 0, "maximum": 255 }
+            "propertyNames": {
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            }
           },
           "companions": {
             "type": "object",
             "description": "Named references to sibling peripherals a driver needs alongside this block (RP2040 io_bank0 -> {sio, pads}). Emitted as using-aliases inside the instance descriptor.",
-            "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
-            "additionalProperties": { "type": "string" }
+            "propertyNames": {
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "dma_requests": {
+            "type": "object",
+            "description": "DMA request/trigger IDs this peripheral drives on the chip's DMA router (ST DMAMUX request IDs, SAM XDMAC PERIDs, RP2040 DREQs). Emitted as dmareq_<name> constants on the instance descriptor.",
+            "propertyNames": {
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+            }
           }
         }
       }
     },
     "pins": {
       "type": "object",
-      "propertyNames": { "pattern": "^p[a-z][0-9]{1,2}$" },
+      "propertyNames": {
+        "pattern": "^p[a-z][0-9]{1,2}$"
+      },
       "additionalProperties": {
         "type": "object",
-        "required": ["port", "index"],
+        "required": [
+          "port",
+          "index"
+        ],
         "additionalProperties": false,
         "properties": {
-          "port": { "type": "string", "pattern": "^[a-z]$" },
-          "index": { "type": "integer", "minimum": 0, "maximum": 31 },
+          "port": {
+            "type": "string",
+            "pattern": "^[a-z]$"
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 31
+          },
           "bank": {
             "type": "string",
             "description": "Explicit controlling peripheral for this pin when it is not gpio<port>/pio<port> (RP2040: io_bank0)."
@@ -125,22 +282,41 @@
           "iomux": {
             "type": "object",
             "description": "Per-pin pad-control register at a NON-sequential offset (ESP32 IO_MUX): absolute address = peripheral.base + offset.",
-            "required": ["peripheral", "offset"],
+            "required": [
+              "peripheral",
+              "offset"
+            ],
             "additionalProperties": false,
             "properties": {
-              "peripheral": { "type": "string" },
-              "offset": { "$ref": "#/$defs/hex" }
+              "peripheral": {
+                "type": "string"
+              },
+              "offset": {
+                "$ref": "#/$defs/hex"
+              }
             }
           },
           "mux_unlock": {
             "type": "object",
             "description": "A bit that must be SET before this pin can leave its system function (e.g. SAM E70 PB4 is JTAG TDI until MATRIX CCFG_SYSIO bit 4 is set). Resolved like a gate: peripheral.register.bit.",
-            "required": ["peripheral", "register", "bit"],
+            "required": [
+              "peripheral",
+              "register",
+              "bit"
+            ],
             "additionalProperties": false,
             "properties": {
-              "peripheral": { "type": "string" },
-              "register": { "type": "string" },
-              "bit": { "type": "integer", "minimum": 0, "maximum": 31 }
+              "peripheral": {
+                "type": "string"
+              },
+              "register": {
+                "type": "string"
+              },
+              "bit": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              }
             }
           }
         }
@@ -150,17 +326,53 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["pin", "peripheral", "signal", "kind"],
+        "required": [
+          "pin",
+          "peripheral",
+          "signal",
+          "kind"
+        ],
         "additionalProperties": false,
         "properties": {
-          "pin": { "type": "string" },
-          "peripheral": { "type": "string" },
-          "signal": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
-          "kind": { "enum": ["af_fixed", "funcsel", "full_matrix", "psel"] },
-          "af": { "type": "integer", "minimum": 0, "maximum": 15 },
-          "funcsel": { "type": "integer", "minimum": 0, "maximum": 31 },
-          "matrix_signal": { "type": "integer", "minimum": 0 },
-          "direction": { "enum": ["in", "out", "inout"] }
+          "pin": {
+            "type": "string"
+          },
+          "peripheral": {
+            "type": "string"
+          },
+          "signal": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "kind": {
+            "enum": [
+              "af_fixed",
+              "funcsel",
+              "full_matrix",
+              "psel"
+            ]
+          },
+          "af": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "funcsel": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 31
+          },
+          "matrix_signal": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "direction": {
+            "enum": [
+              "in",
+              "out",
+              "inout"
+            ]
+          }
         }
       }
     },
@@ -169,30 +381,63 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["name", "number"],
+        "required": [
+          "name",
+          "number"
+        ],
         "additionalProperties": false,
         "properties": {
-          "name": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]*$" },
-          "number": { "type": "integer", "minimum": 0, "maximum": 495 }
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 495
+          }
         }
       }
     },
     "boot": {
       "type": "object",
       "description": "Second-stage boot payload required before application code can run (RP2040 boot2: 256 bytes at flash start, CRC32/MPEG-2 over the first 252 bytes in the last word).",
-      "required": ["kind", "size", "payload_hex", "license"],
+      "required": [
+        "kind",
+        "size",
+        "payload_hex",
+        "license"
+      ],
       "additionalProperties": false,
       "properties": {
-        "kind": { "enum": ["rp2040_boot2"] },
-        "size": { "type": "integer", "minimum": 4 },
-        "payload_hex": { "type": "string", "pattern": "^[0-9a-f]+$" },
-        "license": { "type": "string" },
-        "description": { "type": "string" }
+        "kind": {
+          "enum": [
+            "rp2040_boot2"
+          ]
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 4
+        },
+        "payload_hex": {
+          "type": "string",
+          "pattern": "^[0-9a-f]+$"
+        },
+        "license": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
       }
     },
     "clock": {
       "type": "object",
-      "required": ["sources", "boot_source", "profiles"],
+      "required": [
+        "sources",
+        "boot_source",
+        "profiles"
+      ],
       "additionalProperties": false,
       "properties": {
         "boot_source": {
@@ -202,36 +447,65 @@
         "sources": {
           "type": "object",
           "minProperties": 1,
-          "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+          "propertyNames": {
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
           "additionalProperties": {
             "type": "object",
-            "required": ["hz"],
+            "required": [
+              "hz"
+            ],
             "additionalProperties": false,
-            "properties": { "hz": { "type": "integer", "minimum": 1 } }
+            "properties": {
+              "hz": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
           }
         },
         "profiles": {
           "type": "object",
           "minProperties": 1,
-          "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+          "propertyNames": {
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
           "additionalProperties": {
             "type": "object",
-            "required": ["sysclk_hz", "ahb_hz", "apb_hz", "program"],
+            "required": [
+              "sysclk_hz",
+              "ahb_hz",
+              "apb_hz",
+              "program"
+            ],
             "additionalProperties": false,
             "properties": {
-              "sysclk_hz": { "type": "integer", "minimum": 1 },
-              "ahb_hz": { "type": "integer", "minimum": 1 },
-              "apb_hz": { "type": "integer", "minimum": 1 },
+              "sysclk_hz": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "ahb_hz": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "apb_hz": {
+                "type": "integer",
+                "minimum": 1
+              },
               "apb2_hz": {
                 "type": "integer",
                 "minimum": 1,
                 "description": "Second APB bus frequency where the chip has one (STM32 F/H APB2). Omit on single-APB chips: codegen mirrors apb_hz."
               },
-              "description": { "type": "string" },
+              "description": {
+                "type": "string"
+              },
               "program": {
                 "type": "array",
                 "minItems": 1,
-                "items": { "$ref": "#/$defs/clock_op" }
+                "items": {
+                  "$ref": "#/$defs/clock_op"
+                }
               }
             }
           }
@@ -240,55 +514,114 @@
     }
   },
   "$defs": {
-    "hex": { "type": "string", "pattern": "^0x[0-9A-Fa-f]+$" },
+    "hex": {
+      "type": "string",
+      "pattern": "^0x[0-9A-Fa-f]+$"
+    },
     "clock_op": {
       "oneOf": [
         {
           "type": "object",
-          "required": ["op", "peripheral", "register", "value"],
+          "required": [
+            "op",
+            "peripheral",
+            "register",
+            "value"
+          ],
           "additionalProperties": false,
           "properties": {
-            "op": { "const": "write" },
-            "peripheral": { "type": "string" },
-            "register": { "type": "string" },
-            "value": { "$ref": "#/$defs/hex" }
-          }
-        },
-        {
-          "type": "object",
-          "required": ["op", "peripheral", "register", "fields"],
-          "additionalProperties": false,
-          "properties": {
-            "op": { "const": "rmw" },
-            "peripheral": { "type": "string" },
-            "register": { "type": "string" },
-            "fields": {
-              "type": "object",
-              "minProperties": 1,
-              "additionalProperties": { "type": "integer", "minimum": 0 }
+            "op": {
+              "const": "write"
+            },
+            "peripheral": {
+              "type": "string"
+            },
+            "register": {
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/hex"
             }
           }
         },
         {
           "type": "object",
-          "required": ["op", "peripheral", "register", "field", "equals", "timeout_us"],
+          "required": [
+            "op",
+            "peripheral",
+            "register",
+            "fields"
+          ],
           "additionalProperties": false,
           "properties": {
-            "op": { "const": "poll" },
-            "peripheral": { "type": "string" },
-            "register": { "type": "string" },
-            "field": { "type": "string" },
-            "equals": { "type": "integer", "minimum": 0 },
-            "timeout_us": { "type": "integer", "minimum": 1 }
+            "op": {
+              "const": "rmw"
+            },
+            "peripheral": {
+              "type": "string"
+            },
+            "register": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
           }
         },
         {
           "type": "object",
-          "required": ["op", "us"],
+          "required": [
+            "op",
+            "peripheral",
+            "register",
+            "field",
+            "equals",
+            "timeout_us"
+          ],
           "additionalProperties": false,
           "properties": {
-            "op": { "const": "delay" },
-            "us": { "type": "integer", "minimum": 1 }
+            "op": {
+              "const": "poll"
+            },
+            "peripheral": {
+              "type": "string"
+            },
+            "register": {
+              "type": "string"
+            },
+            "field": {
+              "type": "string"
+            },
+            "equals": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "timeout_us": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "op",
+            "us"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "op": {
+              "const": "delay"
+            },
+            "us": {
+              "type": "integer",
+              "minimum": 1
+            }
           }
         }
       ]

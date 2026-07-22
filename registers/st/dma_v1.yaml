@@ -49,7 +49,7 @@ registers:
     array: { count: 7, stride: 20 }
     description: "Channel configuration; channel must be disabled (EN=0) to reconfigure"
     fields:
-      - { name: EN, bit: 0, description: "Channel enable; HW clears on completion of non-circular transfer" }
+      - { name: EN, bit: 0, description: "Channel enable; HW clears it ONLY on transfer error (RM0444) — completion leaves EN=1, software disables to reconfigure" }
       - { name: TCIE, bit: 1 }
       - { name: HTIE, bit: 2 }
       - { name: TEIE, bit: 3 }

@@ -36,6 +36,8 @@ registers:
     access: rw
     fields:
       - { name: UIE, bit: 0 }
+      - { name: UDE, bit: 8, description: "Update DMA request enable" }
+      - { name: CC1DE, bit: 9 }
   - name: SR
     offset: "0x10"
     access: rw
