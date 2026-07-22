@@ -1,0 +1,76 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: twihs_v1
+class: i2c
+description: >
+  SAM E70 two-wire interface (TWIHS). 7-bit address goes DIRECTLY in
+  MMR.DADR (no <<1). CR.QUICK sends address+stop only — the natural probe
+  primitive. NACK/TXCOMP live in SR (read clears NACK — sample SR once per
+  loop). CWGR: t_half = ((DIV * 2^CKDIV) + 3) / periph_clk.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70 atsame70q21b.yml templates.twihs (SVD-derived; bases 0x40018000/0x4001C000/0x40060000, PIDs 19/20/41)"
+    - "old-alloy git 8b1b1bc7^ twihs_hardware_policy.hpp (register usage cross-check)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: wo
+    fields:
+      - { name: START, bit: 0 }
+      - { name: STOP, bit: 1 }
+      - { name: MSEN, bit: 2 }
+      - { name: MSDIS, bit: 3 }
+      - { name: SVDIS, bit: 5 }
+      - { name: QUICK, bit: 6 }
+      - { name: SWRST, bit: 7 }
+  - name: MMR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: IADRSZ, bit: 8, width: 2 }
+      - { name: MREAD, bit: 12 }
+      - { name: DADR, bit: 16, width: 7 }
+  - name: SMR
+    offset: "0x08"
+    access: rw
+  - name: IADR
+    offset: "0x0C"
+    access: rw
+  - name: CWGR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: CLDIV, bit: 0, width: 8 }
+      - { name: CHDIV, bit: 8, width: 8 }
+      - { name: CKDIV, bit: 16, width: 3 }
+      - { name: HOLD, bit: 24, width: 6 }
+  - name: SR
+    offset: "0x20"
+    access: ro
+    fields:
+      - { name: TXCOMP, bit: 0 }
+      - { name: RXRDY, bit: 1 }
+      - { name: TXRDY, bit: 2 }
+      - { name: OVRE, bit: 6 }
+      - { name: NACK, bit: 8 }
+      - { name: ARBLST, bit: 9 }
+  - name: IER
+    offset: "0x24"
+    access: wo
+  - name: IDR
+    offset: "0x28"
+    access: wo
+  - name: IMR
+    offset: "0x2C"
+    access: ro
+  - name: RHR
+    offset: "0x30"
+    access: ro
+    fields:
+      - { name: RXDATA, bit: 0, width: 8 }
+  - name: THR
+    offset: "0x34"
+    access: wo
+    fields:
+      - { name: TXDATA, bit: 0, width: 8 }

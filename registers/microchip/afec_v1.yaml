@@ -1,0 +1,109 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: afec_v1
+class: adc
+description: >
+  SAM E70 analog front-end (AFEC), 12-bit, 12 channels. Per-channel access
+  goes through CSELR.CSEL then CDR/COCR. COCR.AOFF must be mid-scale
+  (0x200) per channel or readings are offset — a known silicon quirk.
+  MR.ONE must be written 1. Temperature sensor lives on AFEC0 channel 11.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/microchip/same70 atsame70q21b.yml templates.afec (SVD-derived; bases 0x4003C000/0x40064000, PIDs 29/40)"
+    - "old-alloy git 8b1b1bc7^ driver_semantics/adc.hpp (CR/MR/EMR/CHER/LCDR/ISR usage + kResultBits=12 cross-check)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: wo
+    fields:
+      - { name: SWRST, bit: 0 }
+      - { name: START, bit: 1 }
+  - name: MR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: TRGEN, bit: 0 }
+      - { name: FREERUN, bit: 7 }
+      - { name: PRESCAL, bit: 8, width: 8 }
+      - { name: STARTUP, bit: 16, width: 4, description: "4 = 64 periods" }
+      - { name: ONE, bit: 23, description: "must be written 1" }
+      - { name: TRACKTIM, bit: 24, width: 4 }
+      - { name: TRANSFER, bit: 28, width: 2 }
+  - name: EMR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: RES, bit: 16, width: 3 }
+      - { name: TAG, bit: 24 }
+  - name: SEQ1R
+    offset: "0x0C"
+    access: rw
+  - name: SEQ2R
+    offset: "0x10"
+    access: rw
+  - name: CHER
+    offset: "0x14"
+    access: wo
+  - name: CHDR
+    offset: "0x18"
+    access: wo
+  - name: CHSR
+    offset: "0x1C"
+    access: ro
+  - name: LCDR
+    offset: "0x20"
+    access: ro
+    fields:
+      - { name: LDATA, bit: 0, width: 16 }
+      - { name: CHNB, bit: 24, width: 4 }
+  - name: IER
+    offset: "0x24"
+    access: wo
+  - name: IDR
+    offset: "0x28"
+    access: wo
+  - name: IMR
+    offset: "0x2C"
+    access: ro
+  - name: ISR
+    offset: "0x30"
+    access: ro
+    fields:
+      - { name: DRDY, bit: 24 }
+  - name: CGR
+    offset: "0x54"
+    access: rw
+  - name: DIFFR
+    offset: "0x60"
+    access: rw
+  - name: CSELR
+    offset: "0x64"
+    access: rw
+    fields:
+      - { name: CSEL, bit: 0, width: 4 }
+  - name: CDR
+    offset: "0x68"
+    access: ro
+    fields:
+      - { name: DATA, bit: 0, width: 16 }
+  - name: COCR
+    offset: "0x6C"
+    access: rw
+    fields:
+      - { name: AOFF, bit: 0, width: 10 }
+  - name: TEMPMR
+    offset: "0x70"
+    access: rw
+    fields:
+      - { name: RTCT, bit: 0 }
+  - name: TEMPCWR
+    offset: "0x74"
+    access: rw
+  - name: ACR
+    offset: "0x94"
+    access: rw
+    fields:
+      - { name: PGA0EN, bit: 2 }
+      - { name: PGA1EN, bit: 3 }
+      - { name: IBCTL, bit: 8, width: 2 }
