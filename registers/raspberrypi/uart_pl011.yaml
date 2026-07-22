@@ -72,6 +72,10 @@ registers:
   - name: UARTIMSC
     offset: "0x38"
     access: rw
+    description: "Bit layout shared with UARTRIS/UARTMIS/UARTICR (PL011 TRM) — drivers reuse these masks for UARTICR writes"
+    fields:
+      - { name: RXIM, bit: 4 }
+      - { name: RTIM, bit: 6, description: "Receive timeout — fires for FIFO residue below the trigger level" }
   - name: UARTICR
     offset: "0x44"
     access: wo

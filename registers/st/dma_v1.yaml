@@ -1,0 +1,81 @@
+schema: alloy.registers.v1
+vendor: st
+ip: dma_v1
+class: dma
+description: >
+  ST DMA v1 channel engine (F0/F1/F3/L0/L4/G0/G4/WB shared layout,
+  G0 ip_version STM32G081_dma1_v1_3). Two shared flag registers (ISR/IFCR,
+  4 flags per channel packed at stride 4) plus a per-channel block of
+  CCR/CNDTR/CPAR/CMAR at stride 0x14 starting 0x08. This file models the
+  maximum 7-channel instance; the usable channel count is chip data:
+  G071/G081 DMA1 = 7, G0B1/G0C1 DMA1 = 7 and DMA2 = 5 (DMA2 base
+  0x40020400 reuses this same layout — SVD ships the full 7-slot block,
+  hardware implements channels 1-5). Channel numbering is 1-based in ST
+  documentation; array index i (0-based) is channel i+1. On DMAMUX parts
+  the request routing lives in st/dmamux_v1 (mux channel i routes DMA1
+  channel i+1; on G0B1 mux channels 7-11 route DMA2 channels 1-5).
+  IFCR is write-1-to-clear (reads as zero) — the G071RB SVD mislabels it
+  read-only. G0 IRQ lines: DMA1_Channel1 = 9, DMA1_Channel2_3 = 10,
+  DMA1_Channel4_5_6_7 (+DMAMUX +DMA2_Channel1..5 on G0B1) = 11.
+provenance:
+  sources:
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.dma (SVD-derived, ip_version STM32G081_dma1_v1_3) — every offset and bit position in this file matches entry-by-entry"
+    - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g0b1re.yml templates.dma — identical layout, instantiated twice (dma1@0x40020000, dma2@0x40020400); DMA2 usable channels 1-5 per RM0444"
+    - "old-alloy src/hal/dma/lite.hpp — channel stride 0x14 from base 0x08, CCR bit map, ISR/IFCR 4-flags-per-channel packing (hardware-agnostic cross-check, driver-proven layout)"
+    - "RM0444 §10 (DMA) — channel counts per device, IFCR write-1-to-clear semantics (SVD access override), IRQ line grouping 9/10/11"
+  completeness: bring-up-subset
+registers:
+  - name: ISR
+    offset: "0x00"
+    access: ro
+    description: "Flags for channel n (1-based) at bits (n-1)*4 .. (n-1)*4+3"
+    fields:
+      - { name: GIF, bit: 0, repeat: { count: 7, stride: 4 }, description: "Global interrupt flag, channel n at bit (n-1)*4" }
+      - { name: TCIF, bit: 1, repeat: { count: 7, stride: 4 }, description: "Transfer complete" }
+      - { name: HTIF, bit: 2, repeat: { count: 7, stride: 4 }, description: "Half transfer" }
+      - { name: TEIF, bit: 3, repeat: { count: 7, stride: 4 }, description: "Transfer error" }
+  - name: IFCR
+    offset: "0x04"
+    access: wo
+    description: "Write 1 to clear the matching ISR flag (SVD wrongly says ro)"
+    fields:
+      - { name: CGIF, bit: 0, repeat: { count: 7, stride: 4 }, description: "Clears GIF+TCIF+HTIF+TEIF of the channel" }
+      - { name: CTCIF, bit: 1, repeat: { count: 7, stride: 4 } }
+      - { name: CHTIF, bit: 2, repeat: { count: 7, stride: 4 } }
+      - { name: CTEIF, bit: 3, repeat: { count: 7, stride: 4 } }
+  - name: CCR
+    offset: "0x08"
+    access: rw
+    array: { count: 7, stride: 20 }
+    description: "Channel configuration; channel must be disabled (EN=0) to reconfigure"
+    fields:
+      - { name: EN, bit: 0, description: "Channel enable; HW clears on completion of non-circular transfer" }
+      - { name: TCIE, bit: 1 }
+      - { name: HTIE, bit: 2 }
+      - { name: TEIE, bit: 3 }
+      - { name: DIR, bit: 4, description: "0 = read from peripheral (CPAR->CMAR), 1 = read from memory (CMAR->CPAR)" }
+      - { name: CIRC, bit: 5, description: "Circular mode (CNDTR auto-reloads); incompatible with MEM2MEM" }
+      - { name: PINC, bit: 6 }
+      - { name: MINC, bit: 7 }
+      - { name: PSIZE, bit: 8, width: 2, description: "0 = 8-bit, 1 = 16-bit, 2 = 32-bit" }
+      - { name: MSIZE, bit: 10, width: 2 }
+      - { name: PL, bit: 12, width: 2, description: "0 = low .. 3 = very high" }
+      - { name: MEM2MEM, bit: 14, description: "Memory-to-memory (no peripheral request; starts on EN)" }
+  - name: CNDTR
+    offset: "0x0C"
+    access: rw
+    array: { count: 7, stride: 20 }
+    fields:
+      - { name: NDT, bit: 0, width: 16, description: "Number of data items (not bytes); write only while EN=0" }
+  - name: CPAR
+    offset: "0x10"
+    access: rw
+    array: { count: 7, stride: 20 }
+    fields:
+      - { name: PA, bit: 0, width: 32 }
+  - name: CMAR
+    offset: "0x14"
+    access: rw
+    array: { count: 7, stride: 20 }
+    fields:
+      - { name: MA, bit: 0, width: 32 }
