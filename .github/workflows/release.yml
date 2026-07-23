@@ -1,0 +1,29 @@
+# Publish alloy-devices to PyPI via Trusted Publishing (OIDC — no tokens).
+# Trigger: push a tag like v0.1.0. Requires the PyPI project to have this
+# repo registered as a trusted publisher (workflow release.yml, env pypi).
+name: release
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - name: sanity — version matches tag
+        run: |
+          v=$(grep -m1 '^version' pyproject.toml | cut -d'"' -f2)
+          [ "v$v" = "${GITHUB_REF_NAME}" ] || { echo "pyproject $v != tag ${GITHUB_REF_NAME}"; exit 1; }
+      - name: validate database
+        run: uv run --with jsonschema,pyyaml python -m tools.alloy_devices.cli validate
+      - name: build wheel
+        run: uv build --wheel -o dist
+      - name: publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist
