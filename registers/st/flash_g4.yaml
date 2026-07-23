@@ -1,0 +1,18 @@
+schema: alloy.registers.v1
+vendor: st
+ip: flash_g4
+class: flash
+description: >
+  STM32G4 embedded flash — bring-up subset: ACR wait-state control for the
+  boot clock program. Field bits verified against embassy stm32-data
+  flash:g4c2.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/flash_g4c2.json (MIT OR Apache-2.0): ACR offset 0x00, LATENCY[3:0]"
+  completeness: bring-up-subset
+registers:
+  - name: ACR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: LATENCY, bit: 0, width: 4 }

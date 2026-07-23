@@ -51,6 +51,81 @@ map:
   "i2s:v1": uncurated
   "aes:v2": uncurated
   "rng:v1": uncurated
+  # --- stm32f7 family tags ---
+  "rcc:f7": st/rcc_f7
+  "flash:f7": st/flash_f7
+  "adc:v2": uncurated
+  "adccommon:v2": uncurated
+  "dma:v2": uncurated
+  "timer:v1:TIM_GP16": uncurated
+  "timer:v1:TIM_GP32": uncurated
+  "timer:v1:TIM_ADV": uncurated
+  "timer:v1:TIM_BASIC": uncurated
+  "timer:v1:TIM_1CH": uncurated
+  "timer:v1:TIM_2CH": uncurated
+  "timer:v1:TIM_1CH_CMP": uncurated
+  "timer:v1:TIM_2CH_CMP": uncurated
+  "can:bxcan": uncurated
+  "dac:v2": uncurated
+  "dbgmcu:f7": uncurated
+  "exti:v1": uncurated
+  "otg:v1": uncurated
+  "pwr:f7": uncurated
+  "quadspi:v1": uncurated
+  "rtc:v2_f7": uncurated
+  "sai:v2": uncurated
+  "sdmmc:v1": uncurated
+  "syscfg:f7": uncurated
+  "wwdg:v1": uncurated
+  "rng:v1": uncurated
+  "fmc:v2x1": uncurated
+  "lptim:v1a": uncurated
+  # F7 high-end blocks (Ethernet, LCD-TFT, camera, crypto, audio)
+  "aes:f7": uncurated
+  "cryp:v2": uncurated
+  "dcmi:v1": uncurated
+  "dma2d:v1": uncurated
+  "dsihost:v1": uncurated
+  "eth:v1c": uncurated
+  "hash:v2": uncurated
+  "jpeg:v1": uncurated
+  "ltdc:v1": uncurated
+  "mdios:v1": uncurated
+  "spdifrx:v1": uncurated
+
+  # --- stm32g4 family tags ---
+  "rcc:g4": st/rcc_g4
+  "flash:g4c2": st/flash_g4
+  "flash:g4c3": st/flash_g4
+  "flash:g4c4": st/flash_g4
+  "hrtim:v2": uncurated
+  "timer:v2:TIM_GP16": uncurated
+  "timer:v2:TIM_GP32": uncurated
+  "timer:v2:TIM_ADV": uncurated
+  "timer:v2:TIM_BASIC": uncurated
+  "timer:v2:TIM_1CH": uncurated
+  "timer:v2:TIM_2CH": uncurated
+  "timer:v2:TIM_1CH_CMP": uncurated
+  "timer:v2:TIM_2CH_CMP": uncurated
+  "adc:g4": uncurated
+  "adccommon:g4": uncurated
+  "dac:v7": uncurated
+  "comp:v2": uncurated
+  "opamp:v5": uncurated
+  "cordic:v1": uncurated
+  "fmac:v1": uncurated
+  "can:fdcan_v1": uncurated
+  "fdcanram:v1": uncurated
+  "dbgmcu:g4": uncurated
+  "pwr:g4": uncurated
+  "syscfg:g4": uncurated
+  "tamp:g4": uncurated
+  "lptim:v1b_g4": uncurated
+  "usb:v3": uncurated
+  "usbram:16x2_1024": uncurated
+  "vrefbuf:v2b": uncurated
+  "sai:v4_4pdm": uncurated
+
 name_overrides:
   "lpuart": uncurated
   "lptim": uncurated

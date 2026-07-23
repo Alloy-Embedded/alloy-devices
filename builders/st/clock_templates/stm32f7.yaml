@@ -1,0 +1,22 @@
+# F7-family clock layer (builder input). Generated F7 chips ship BOOT-ONLY:
+# the silicon-validated 180 MHz PLL profile (Nucleo-F722ZE) is HSE-based
+# (8 MHz ST-Link MCO) — a BOARD fact, not a chip fact — so it stays in the
+# hand-curated stm32f722.yaml (provenance.verified, never regenerated).
+# HSI16 boot is always safe and always present. Boards wanting the PLL add
+# a curated profile family-by-family, per BUILDERS.md decision 3.
+sources:
+  hsi16: { hz: 16000000 }
+boot_source: hsi16
+profiles:
+  hsi_16mhz:
+    description: HSI16 direct, no PLL, 0 wait states (always-safe internal clock)
+    sysclk_hz: 16000000
+    ahb_hz: 16000000
+    apb_hz: 16000000
+    apb2_hz: 16000000
+    program:
+    - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
+    - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 0 } }
+    - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 0 } }
+    - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 0, timeout_us: 2000 }

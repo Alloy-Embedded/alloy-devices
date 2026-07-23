@@ -1,0 +1,45 @@
+schema: alloy.registers.v1
+vendor: st
+ip: rcc_g4
+class: clock
+description: >
+  STM32G4 RCC — bring-up subset: the boot clock program (HSI16 direct, no
+  PLL) plus the enable registers that peripheral gates resolve against by
+  BYTE OFFSET. Field bits verified against embassy stm32-data rcc:g4.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/rcc_g4.json (MIT OR Apache-2.0): register byte offsets + field bit positions (CR HSION 8/HSIRDY 10/PLLON 24/PLLRDY 25, CFGR SW[1:0]/SWS[3:2], enable registers AHB1ENR 0x48 .. APB2ENR 0x60)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: HSION, bit: 8 }
+      - { name: HSIRDY, bit: 10 }
+      - { name: PLLON, bit: 24 }
+      - { name: PLLRDY, bit: 25 }
+  - name: CFGR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: SW, bit: 0, width: 2 }
+      - { name: SWS, bit: 2, width: 2 }
+  - name: AHB1ENR
+    offset: "0x48"
+    access: rw
+  - name: AHB2ENR
+    offset: "0x4C"
+    access: rw
+  - name: AHB3ENR
+    offset: "0x50"
+    access: rw
+  - name: APB1ENR1
+    offset: "0x58"
+    access: rw
+  - name: APB1ENR2
+    offset: "0x5C"
+    access: rw
+  - name: APB2ENR
+    offset: "0x60"
+    access: rw
