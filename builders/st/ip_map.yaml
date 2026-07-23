@@ -1,0 +1,56 @@
+# embassy (kind:version[:block]) tag -> our curated registers/st/<ip>, or 'uncurated'.
+# Unmapped tags are BUILD ERRORS so new upstream tags surface loudly.
+# name_overrides win over tags: LPUART carries usart:v4 tags but its BRR is
+# x256 (different baud math) — binding it to usart_v4 would silently program
+# the wrong baud rate.
+map:
+  "gpio:v2": st/gpio_v2
+  "usart:v4": st/usart_v4
+  "usart:v3": st/usart_v3
+  "i2c:v2": st/i2c_v2
+  "spi:v3_i2s": st/spi_v2
+  "adc:g0": st/adc_v2
+  "adccommon:v3": uncurated
+  "timer:v3:TIM_GP16": st/tim_gp16
+  "timer:v3:TIM_GP32": st/tim_gp16
+  "timer:v3:TIM_ADV": uncurated
+  "timer:v3:TIM_BASIC": uncurated
+  "timer:v3:TIM_1CH": uncurated
+  "timer:v3:TIM_2CH": uncurated
+  "timer:v3:TIM_1CH_CMP": uncurated
+  "timer:v3:TIM_2CH_CMP": uncurated
+  "bdma:v1": st/dma_v1
+  "dmamux:v1": st/dmamux_v1
+  "rcc:g0x1": st/rcc_g0
+  "rcc:g0x0": st/rcc_g0
+  "flash:g0x1": st/flash_g0
+  "flash:g0x0": st/flash_g0
+  "exti:g0": uncurated
+  "syscfg:g0": uncurated
+  "pwr:g0": uncurated
+  "crc:v3": uncurated
+  "iwdg:v2": uncurated
+  "wwdg:v2": uncurated
+  "rtc:v3_base": uncurated
+  "rtc:v3": uncurated
+  "tamp:g0": uncurated
+  "dbgmcu:g0": uncurated
+  "lptim:v1b": uncurated
+  "lptim:v1b_g0": uncurated
+  "ucpd:v1": uncurated
+  "cec:v2": uncurated
+  "comp:v1": uncurated
+  "dac:v4": uncurated
+  "vrefbuf:v1": uncurated
+  "vrefintcal:v1": uncurated
+  "uid:v1": uncurated
+  "usb:v4": uncurated
+  "usbram:32_2048": uncurated
+  "crs:v1": uncurated
+  "fdcan:v1": uncurated
+  "i2s:v1": uncurated
+  "aes:v2": uncurated
+  "rng:v1": uncurated
+name_overrides:
+  "lpuart": uncurated
+  "lptim": uncurated

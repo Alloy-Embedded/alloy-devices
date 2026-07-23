@@ -1,0 +1,7 @@
+# Pinned upstreams for the ST builder. Bump = one PR: lock change + regenerated chips/.
+sources:
+  stm32-data-generated:
+    repo: https://github.com/embassy-rs/stm32-data-generated
+    sha: 669003eeb7ad30d123220a3cb9b520122c5ca2b6
+    license: "MIT OR Apache-2.0 (as published via stm32-metapac on crates.io)"
+    role: "per-chip JSON (bases, RCC gates, IRQs, pin AFs, DMA requests, memories, ip version tags) + rcc register yaml for gate-field bit resolution"

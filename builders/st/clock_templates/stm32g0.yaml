@@ -1,0 +1,34 @@
+# G0-family clock layer (builder input). boot = always-safe internal osc;
+# pll = hardware-verified recipe (old-alloy 6d47f2cb, silicon: G071RB+G0B1RE).
+# All G0 parts share HSI16 and the same PLL-to-64MHz limits (2 WS).
+sources:
+  hsi16: { hz: 16000000 }
+  lsi: { hz: 32000 }
+boot_source: hsi16
+profiles:
+  hsi_16mhz:
+    description: HSI16 direct, no PLL, 0 wait states
+    sysclk_hz: 16000000
+    ahb_hz: 16000000
+    apb_hz: 16000000
+    program:
+    - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
+    - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 0 } }
+    - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 0 } }
+    - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 0, timeout_us: 2000 }
+  pll_64mhz:
+    description: HSI16 /1 x8 /2 = 64 MHz via PLLR, 2 wait states (order hardware-verified
+      by old-alloy 6d47f2cb; silicon-validated on Nucleo-G071RB and Nucleo-G0B1RE)
+    sysclk_hz: 64000000
+    ahb_hz: 64000000
+    apb_hz: 64000000
+    program:
+    - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
+    - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 2 } }
+    - { op: rmw, peripheral: rcc, register: PLLCFGR, fields: { PLLSRC: 2, PLLM: 0, PLLN: 8, PLLR: 1, PLLREN: 1 } }
+    - { op: rmw, peripheral: rcc, register: CR, fields: { PLLON: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: PLLRDY, equals: 1, timeout_us: 10000 }
+    - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 2 } }
+    - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 2, timeout_us: 2000 }

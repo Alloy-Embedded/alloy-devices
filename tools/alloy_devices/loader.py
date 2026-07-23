@@ -19,6 +19,15 @@ from typing import Any
 import jsonschema
 import yaml
 
+try:  # libyaml C loader: ~7.6x faster parses; pure-python fallback
+    _YamlLoader = yaml.CSafeLoader
+except AttributeError:  # pragma: no cover
+    _YamlLoader = yaml.SafeLoader
+
+
+def _load_yaml(text: str):
+    return yaml.load(text, Loader=_YamlLoader)
+
 def data_root() -> Path:
     """Database root: packaged data when installed as a wheel, repo layout
     when running from a checkout (schema/chips/registers at the top level)."""
@@ -76,7 +85,7 @@ def load_database(root: Path) -> Database:
     chip_schema = _load_schema("chip.schema.json")
 
     for path in sorted((root / "registers").glob("*/*.yaml")):
-        doc = yaml.safe_load(path.read_text())
+        doc = _load_yaml(path.read_text())
         if not _validate_schema(doc, reg_schema, path, db.issues):
             continue
         key = f"{doc['vendor']}/{doc['ip']}"
@@ -88,7 +97,7 @@ def load_database(root: Path) -> Database:
         db.register_paths[key] = path
 
     for path in sorted((root / "chips").glob("*/*.yaml")):
-        doc = yaml.safe_load(path.read_text())
+        doc = _load_yaml(path.read_text())
         if not _validate_schema(doc, chip_schema, path, db.issues):
             continue
         key = f"{doc['vendor']}/{path.stem}"

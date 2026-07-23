@@ -180,6 +180,12 @@ def lint_chips(db: Database) -> None:
 
         clock_nodes = {"sysclk", "ahb", "apb", "apb2"} | set(doc["clock"]["sources"].keys())
         for name, p in periphs.items():
+            if p.get("uncurated"):
+                # Stub: facts recorded, codegen skips it. It must never be
+                # LOAD-BEARING: nothing curated may depend on it.
+                if "ip" in p:
+                    db.issues.append(Issue(path, f"peripheral {name}: uncurated stubs must not bind an ip"))
+                continue
             if p["ip"] not in db.registers:
                 db.issues.append(Issue(path, f"peripheral {name}: unknown IP {p['ip']} (no registers/{p['ip']}.yaml)"))
             if int(p["base"], 16) % 4 != 0:
@@ -189,6 +195,8 @@ def lint_chips(db: Database) -> None:
                 gp = periphs.get(gate["peripheral"])
                 if gp is None:
                     db.issues.append(Issue(path, f"peripheral {name}: gate references unknown peripheral {gate['peripheral']}"))
+                elif gp.get("uncurated"):
+                    db.issues.append(Issue(path, f"peripheral {name}: gate references UNCURATED peripheral {gate['peripheral']} — stubs cannot be load-bearing"))
                 else:
                     gate_ip = db.registers.get(gp["ip"])
                     gate_reg = next(
@@ -240,6 +248,8 @@ def lint_chips(db: Database) -> None:
             for cname, target in p.get("companions", {}).items():
                 if target not in periphs:
                     db.issues.append(Issue(path, f"peripheral {name}: companion {cname} references unknown peripheral {target}"))
+                elif periphs[target].get("uncurated"):
+                    db.issues.append(Issue(path, f"peripheral {name}: companion {cname} references UNCURATED peripheral {target}"))
 
         boot = doc.get("boot")
         if boot and boot["kind"] == "rp2040_boot2":
@@ -297,7 +307,8 @@ def lint_chips(db: Database) -> None:
 
 
 def lint_cross(db: Database) -> None:
-    referenced = {p["ip"] for chip in db.chips.values() for p in chip["peripherals"].values()}
+    referenced = {p["ip"] for chip in db.chips.values()
+                  for p in chip["peripherals"].values() if "ip" in p}
     for key in db.registers:
         if key not in referenced:
             db.issues.append(Issue(db.register_paths[key], "IP not referenced by any chip", kind="warning"))
