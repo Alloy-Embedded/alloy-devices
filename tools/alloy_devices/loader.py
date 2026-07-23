@@ -19,7 +19,16 @@ from typing import Any
 import jsonschema
 import yaml
 
-SCHEMA_DIR = Path(__file__).resolve().parents[2] / "schema"
+def data_root() -> Path:
+    """Database root: packaged data when installed as a wheel, repo layout
+    when running from a checkout (schema/chips/registers at the top level)."""
+    packaged = Path(__file__).resolve().parent / "data"
+    if (packaged / "schema").is_dir():
+        return packaged
+    return Path(__file__).resolve().parents[2]
+
+
+SCHEMA_DIR = data_root() / "schema"
 
 
 @dataclass

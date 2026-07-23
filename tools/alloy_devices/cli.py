@@ -16,7 +16,9 @@ from .loader import load_database
 
 
 def _repo_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+    from .loader import data_root
+
+    return data_root()
 
 
 def cmd_validate(args: argparse.Namespace) -> int:

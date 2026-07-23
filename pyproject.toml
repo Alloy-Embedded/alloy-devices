@@ -18,5 +18,13 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["tools/alloy_devices"]
 
+# The wheel IS the database: chips/registers/schema ship as package data
+# under alloy_devices/data/ (resolved via importlib.resources in loader.py,
+# with the repo layout as a checkout-time fallback).
+[tool.hatch.build.targets.wheel.force-include]
+"chips" = "alloy_devices/data/chips"
+"registers" = "alloy_devices/data/registers"
+"schema" = "alloy_devices/data/schema"
+
 [dependency-groups]
 dev = ["pytest>=8.0"]
