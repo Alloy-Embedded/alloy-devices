@@ -1,0 +1,332 @@
+schema: alloy.registers.v1
+vendor: microchip
+ip: gmac_v1
+class: eth
+description: "SAM E70 Gigabit Ethernet MAC (10/100 GMAC, Cadence GEM). Bring-up subset for a polled/interrupt NetDevice +\
+  \ clause-22 MDIO driver \u2014 NOT the full 114-reg statistics block. MDIO lives in MAN (write op/phya/rega, poll NSR.IDLE,\
+  \ read MAN.DATA) and needs NCR.MPE=1 first. Descriptor rings are 8-byte {addr,status} pairs pointed to by RBQB/TBQB; RX\
+  \ addr[0]=ownership, addr[1]=wrap; TX status carries USED/LAST/wrap. NCFGR.SPD/FD come from the PHY link result, NCFGR.CLK\
+  \ is the MDC divider from MCK (0b100 = MCK/64 for KSZ8081). UR selects MII/RMII (SAME70 Xplained is RMII). SA1B/SA1T hold\
+  \ the station MAC address.\n"
+provenance:
+  sources:
+  - "alloy-devices-yml vendors/microchip/same70 atsame70j19b.yml templates.gmac + instance id:gmac (SVD-derived; base 0x40050000,\
+    \ PID/IRQ 39, ip_version gmac_S) \u2014 offsets 0x08..0x34 confirmed"
+  - "SAME70 datasheet DS60001527 \xA738 (GMAC) + CMSIS atsame70q21b.h GmacRegs \u2014 field bit positions, NCR/NCFGR names\
+    \ (SVD mislabels offset 0x00/0x04 as sab/sat), SA1B/SA1T = 0x88/0x8C"
+  - "old-alloy git afa2ae5f docs/NETWORK.md + boards/same70_xplained/board_ethernet.hpp + drivers/net/ksz8081/ksz8081.hpp\
+    \ \u2014 RMII, 8-byte descriptor alignment, MDC divider NCFGR.CLK=0b100 (MCK/64) for KSZ8081, MDIO clause-22 access"
+  completeness: bring-up-subset
+registers:
+- name: NCR
+  offset: '0x00'
+  access: rw
+  fields:
+  - name: LB
+    bit: 0
+    description: Loopback (PHY loopback pin)
+  - name: LBL
+    bit: 1
+    description: Loopback local (internal MAC loopback)
+  - name: RXEN
+    bit: 2
+    description: Receive enable
+  - name: TXEN
+    bit: 3
+    description: Transmit enable
+  - name: MPE
+    bit: 4
+    description: "Management port enable \u2014 MUST be 1 before any MDIO (MAN) access"
+  - name: CLRSTAT
+    bit: 5
+    description: Clear statistics registers (write 1)
+  - name: INCSTAT
+    bit: 6
+    description: Increment statistics registers (test)
+  - name: WESTAT
+    bit: 7
+    description: Write enable for statistics registers
+  - name: BP
+    bit: 8
+    description: Back pressure (force collisions in half duplex)
+  - name: STARTTX
+    bit: 9
+    description: Start transmission (kick the TX DMA)
+  - name: STOPTX
+    bit: 10
+    description: Stop transmission after current frame
+  - name: THALT
+    bit: 11
+    description: Transmit halt (abort without completing)
+  - name: TXPF
+    bit: 12
+    description: Transmit pause frame
+  - name: TXZQPF
+    bit: 13
+    description: Transmit zero-quantum pause frame
+- name: NCFGR
+  offset: '0x04'
+  access: rw
+  fields:
+  - name: SPD
+    bit: 0
+    description: 'Speed: 1 = 100 Mbps, 0 = 10 Mbps (set from PHY link result)'
+  - name: FD
+    bit: 1
+    description: Full duplex (set from PHY link result)
+  - name: DNVLAN
+    bit: 2
+    description: Discard non-VLAN frames
+  - name: JFRAME
+    bit: 3
+    description: Jumbo frame size enable
+  - name: CAF
+    bit: 4
+    description: Copy all frames (promiscuous)
+  - name: NBC
+    bit: 5
+    description: No broadcast (reject broadcast frames)
+  - name: MTIHEN
+    bit: 6
+    description: Multicast hash enable
+  - name: UNIHEN
+    bit: 7
+    description: Unicast hash enable
+  - name: MAXFS
+    bit: 8
+    description: Receive 1536-byte frames (instead of 1518)
+  - name: RTY
+    bit: 10
+    description: Retry test
+  - name: PEN
+    bit: 11
+    description: Pause enable (802.3 flow control)
+  - name: RXBUFO
+    bit: 12
+    width: 2
+    description: Receive buffer offset (bytes prepended before frame data)
+  - name: LFERD
+    bit: 14
+    description: Length field error frame discard
+  - name: RFCS
+    bit: 15
+    description: Remove FCS (strip the 4-byte CRC from received frames)
+  - name: CLK
+    bit: 18
+    width: 3
+    description: 'MDC clock divider from MCK: 000=/8 010=/32 100=/64 101=/96 110=/128 111=/224 (0b100 for KSZ8081 @150MHz
+      MCK)'
+  - name: DBW
+    bit: 21
+    width: 2
+    description: 'Data bus width (read-only: 00=32-bit)'
+  - name: RXCOEN
+    bit: 24
+    description: Receive checksum offload enable
+- name: NSR
+  offset: '0x08'
+  access: ro
+  fields:
+  - name: MDIO
+    bit: 1
+    description: State of the mdio_in pin
+  - name: IDLE
+    bit: 2
+    description: 'PHY management idle: 1 = MDIO logic idle (poll for 1 after writing MAN before reading MAN.DATA)'
+- name: UR
+  offset: '0x0C'
+  access: rw
+  fields:
+  - name: RMII
+    bit: 0
+    description: "MII/RMII mode select. SAME70 Xplained is RMII. Polarity per datasheet \xA738.8.10 (see confidence notes)."
+- name: DCFGR
+  offset: '0x10'
+  access: rw
+  fields:
+  - name: FBLDO
+    bit: 0
+    width: 5
+    description: Fixed burst length for DMA data ops (1,4,8,16)
+  - name: ESMA
+    bit: 6
+    description: Endian swap mode for management descriptor accesses
+  - name: ESPA
+    bit: 7
+    description: Endian swap mode for packet data accesses
+  - name: RXBMS
+    bit: 8
+    width: 2
+    description: Receiver packet buffer memory size select (11 = full 4 KB)
+  - name: TXPBMS
+    bit: 10
+    description: Transmitter packet buffer memory size select (1 = full 4 KB)
+  - name: TXCOEN
+    bit: 11
+    description: Transmitter checksum generation offload enable
+  - name: DRBS
+    bit: 16
+    width: 8
+    description: DMA receive buffer size in 64-byte units (24 = 0x18 for 1536-byte buffers)
+  - name: DDRP
+    bit: 24
+    description: Discard received packets when no descriptor is available
+- name: RBQB
+  offset: '0x18'
+  access: rw
+  fields:
+  - name: RB_ADDR
+    bit: 2
+    width: 30
+    description: Receive buffer queue base address [31:2]; low 2 bits are 0 (8-byte-aligned descriptor ring)
+- name: TBQB
+  offset: '0x1C'
+  access: rw
+  fields:
+  - name: TB_ADDR
+    bit: 2
+    width: 30
+    description: Transmit buffer queue base address [31:2]; low 2 bits are 0 (8-byte-aligned descriptor ring)
+- name: TSR
+  offset: '0x14'
+  access: rw
+  fields:
+  - name: UBR
+    bit: 0
+    description: Used bit read (TX descriptor USED encountered)
+  - name: COL
+    bit: 1
+    description: Collision occurred (write 1 to clear)
+  - name: RLE
+    bit: 2
+    description: Retry limit exceeded (write 1 to clear)
+  - name: TXGO
+    bit: 3
+    description: Transmit go (DMA is active)
+  - name: TFC
+    bit: 4
+    description: Transmit frame corruption due to AHB error (write 1 to clear)
+  - name: TXCOMP
+    bit: 5
+    description: Transmit complete (write 1 to clear)
+  - name: UND
+    bit: 6
+    description: Transmit underrun (write 1 to clear)
+  - name: HRESP
+    bit: 8
+    description: "HRESP not OK \u2014 AHB bus error (write 1 to clear)"
+- name: RSR
+  offset: '0x20'
+  access: rw
+  fields:
+  - name: BNA
+    bit: 0
+    description: "Buffer not available \u2014 RX descriptor exhausted (write 1 to clear)"
+  - name: REC
+    bit: 1
+    description: Frame received into at least one buffer (write 1 to clear)
+  - name: RXOVR
+    bit: 2
+    description: Receive overrun (write 1 to clear)
+  - name: HNO
+    bit: 3
+    description: "HRESP not OK \u2014 AHB bus error (write 1 to clear)"
+- name: ISR
+  offset: '0x24'
+  access: ro
+  fields:
+  - name: I_MFS
+    bit: 0
+    description: Management frame sent (MDIO transaction done)
+  - name: I_RCOMP
+    bit: 1
+    description: "Receive complete \u2014 a frame was received"
+  - name: I_RXUBR
+    bit: 2
+    description: RX used bit read (descriptor USED bit set)
+  - name: I_TXUBR
+    bit: 3
+    description: TX used bit read
+  - name: I_TUR
+    bit: 4
+    description: Transmit underrun
+  - name: I_RLEX
+    bit: 5
+    description: Retry limit exceeded
+  - name: I_TFC
+    bit: 6
+    description: Transmit frame corruption (AHB error)
+  - name: I_TCOMP
+    bit: 7
+    description: "Transmit complete \u2014 a frame was transmitted"
+  - name: I_ROVR
+    bit: 10
+    description: Receive overrun
+  - name: I_HRESP
+    bit: 11
+    description: HRESP not OK (AHB error)
+  - name: I_PFNZ
+    bit: 12
+    description: Pause frame with non-zero quantum received
+  - name: I_PTZ
+    bit: 13
+    description: Pause time zero
+- name: IER
+  offset: '0x28'
+  access: wo
+  description: " (bit layout identical to ISR \u2014 driver uses the ISR field masks)"
+- name: IDR
+  offset: '0x2C'
+  access: wo
+  description: " (bit layout identical to ISR \u2014 driver uses the ISR field masks)"
+- name: IMR
+  offset: '0x30'
+  access: rw
+  description: " (bit layout identical to ISR \u2014 driver uses the ISR field masks)"
+- name: MAN
+  offset: '0x34'
+  access: rw
+  fields:
+  - name: DATA
+    bit: 0
+    width: 16
+    description: 'Read: PHY register value after NSR.IDLE=1. Write: value to write to the PHY register.'
+  - name: WTN
+    bit: 16
+    width: 2
+    description: "Write ten \u2014 clause-22 framing constant, must be 0b10"
+  - name: REGA
+    bit: 18
+    width: 5
+    description: Register address within the PHY
+  - name: PHYA
+    bit: 23
+    width: 5
+    description: PHY address on the MDIO bus (KSZ8081 = 0x00 on this board)
+  - name: OP
+    bit: 28
+    width: 2
+    description: 'Operation: 01 = write, 10 = read'
+  - name: WZO
+    bit: 31
+    description: "Write ZERO \u2014 must be written 0"
+  - name: CLTTO
+    bit: 30
+    description: 'Clause 22 operation: 1 = clause 22 (used here), 0 = clause 45'
+- name: SA1B
+  offset: '0x88'
+  access: rw
+  fields:
+  - name: SA1B_ADDR
+    bit: 0
+    width: 32
+    description: "MAC address bytes 0..3 (byte 0 in bits [7:0]). Write BOTTOM before TOP \u2014 writing SA1T activates the\
+      \ filter."
+- name: SA1T
+  offset: '0x8C'
+  access: rw
+  fields:
+  - name: SA1T_ADDR
+    bit: 0
+    width: 16
+    description: MAC address bytes 4..5 (byte 4 in bits [7:0]). Write after SA1B.

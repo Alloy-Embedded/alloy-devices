@@ -110,7 +110,7 @@ peripherals:
     irq: PIOE
   usart1:
     ip: microchip/usart_v1
-    base: '0x40028000'
+    base: '0x40050000'
     gate:
       peripheral: pmc
       register: PCER0
@@ -155,6 +155,16 @@ peripherals:
       style: write_set
     irq: SPI0
     kernel_clock: apb
+  gmac:
+    ip: microchip/gmac_v1
+    base: '0x40050000'
+    gate:
+      peripheral: pmc
+      register: PCER1
+      bit: 7
+      style: write_set
+    irq: GMAC
+    kernel_clock: ahb
   xdmac:
     ip: microchip/xdmac_v1
     base: '0x40078000'
