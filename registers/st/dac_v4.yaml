@@ -1,0 +1,26 @@
+schema: alloy.registers.v1
+vendor: st
+ip: dac_v4
+class: dac
+description: >
+  STM32 DAC "v4" (G0/G4/L5-era) — channel-1 output bring-up subset. Enable the
+  channel (CR.EN1) and write a 12-bit right-aligned code to DHR12R1; with the
+  trigger disabled (CR.TEN1=0, reset default) the code transfers to the output
+  (DOR1 -> DAC_OUT1 pin) automatically. The output buffer + external-pin
+  connection are the MCR reset default (MODE1=0), so no MCR write is needed.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/dac_v4.json (CR offset 0x00 EN1 bit 0; DHR12R1 offset 0x08 [12-bit]; RM0444 §17)"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: EN1, bit: 0 }
+      - { name: TEN1, bit: 1 }
+  - name: DHR12R1
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: DACC1DHR, bit: 0, width: 12 }

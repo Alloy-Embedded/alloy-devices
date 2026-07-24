@@ -66,6 +66,13 @@ peripherals:
       register: APBENR1
       bit: 10
     irq: RTC_TAMP
+  dac:
+    ip: st/dac_v4
+    base: '0x40007400'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 29
   gpioa:
     ip: st/gpio_v2
     base: '0x50000000'
