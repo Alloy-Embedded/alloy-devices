@@ -1,0 +1,64 @@
+schema: alloy.registers.v1
+vendor: st
+ip: rtc_v3
+class: rtc
+description: >
+  STM32 RTC "v3" (G0/L4/L5/C0-era) — calendar bring-up subset. BCD time (TR)
+  and date (DR), the init handshake (ICSR.INIT/INITF/RSF), the async+sync
+  prescaler (PRER) that divides the RTC clock to 1 Hz, format/shadow control
+  (CR.FMT/BYPSHAD) and the write-protection key (WPR: 0xCA then 0x53 unlocks).
+  The RTC clock source (LSI) is selected in RCC.BDCR by the board clock program;
+  this driver only owns the RTC registers themselves.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/rtc_v3_base.json (offsets + field bits)"
+    - "RM0444 §35 (STM32G0 RTC): TR/DR BCD layout, INIT sequence, PRER = (PREDIV_A+1)(PREDIV_S+1) = f_rtc"
+  completeness: bring-up-subset
+registers:
+  - name: TR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: SU, bit: 0, width: 4 }
+      - { name: ST, bit: 4, width: 3 }
+      - { name: MNU, bit: 8, width: 4 }
+      - { name: MNT, bit: 12, width: 3 }
+      - { name: HU, bit: 16, width: 4 }
+      - { name: HT, bit: 20, width: 2 }
+      - { name: PM, bit: 22 }
+  - name: DR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: DU, bit: 0, width: 4 }
+      - { name: DT, bit: 4, width: 2 }
+      - { name: MU, bit: 8, width: 4 }
+      - { name: MT, bit: 12 }
+      - { name: WDU, bit: 13, width: 3 }
+      - { name: YU, bit: 16, width: 4 }
+      - { name: YT, bit: 20, width: 4 }
+  - name: ICSR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: INITS, bit: 4 }
+      - { name: RSF, bit: 5 }
+      - { name: INITF, bit: 6 }
+      - { name: INIT, bit: 7 }
+  - name: PRER
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: PREDIV_S, bit: 0, width: 15 }
+      - { name: PREDIV_A, bit: 16, width: 7 }
+  - name: CR
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: BYPSHAD, bit: 5 }
+      - { name: FMT, bit: 6 }
+  - name: WPR
+    offset: "0x24"
+    access: wo
+    fields:
+      - { name: KEY, bit: 0, width: 8 }

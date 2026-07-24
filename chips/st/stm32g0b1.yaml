@@ -51,6 +51,21 @@ peripherals:
   iwdg:
     ip: st/iwdg_v2
     base: '0x40003000'
+  pwr:
+    ip: st/pwr_g0
+    base: '0x40007000'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 28
+  rtc:
+    ip: st/rtc_v3
+    base: '0x40002800'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 10
+    irq: RTC_TAMP
   gpioa:
     ip: st/gpio_v2
     base: '0x50000000'

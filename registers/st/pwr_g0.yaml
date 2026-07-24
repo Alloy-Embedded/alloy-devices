@@ -1,0 +1,20 @@
+schema: alloy.registers.v1
+vendor: st
+ip: pwr_g0
+class: pwr
+description: >
+  STM32G0 power control — bring-up subset. Only CR1.DBP is needed so the RTC
+  clock program can lift backup-domain write protection before touching
+  RCC.BDCR (RTC clock source/enable live in the always-powered backup domain).
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/pwr_g0.json (CR1 offset 0x00, DBP bit 8; RM0444 §5)"
+  completeness: bring-up-subset
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: LPMS, bit: 0, width: 3 }
+      - { name: FPD_STOP, bit: 3 }
+      - { name: DBP, bit: 8, description: "1 = disable backup-domain write protection" }

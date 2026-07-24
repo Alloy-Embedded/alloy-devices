@@ -157,6 +157,15 @@ registers:
   - name: BDCR
     offset: "0x5C"
     access: rw
+    fields:
+      - { name: LSEON, bit: 0 }
+      - { name: LSERDY, bit: 1 }
+      - { name: RTCSEL, bit: 8, width: 2, description: "RTC clock source", values: { DISABLE: 0, LSE: 1, LSI: 2, HSE_DIV_32: 3 } }
+      - { name: RTCEN, bit: 15 }
+      - { name: BDRST, bit: 16 }
   - name: CSR
     offset: "0x60"
     access: rw
+    fields:
+      - { name: LSION, bit: 0 }
+      - { name: LSIRDY, bit: 1 }
