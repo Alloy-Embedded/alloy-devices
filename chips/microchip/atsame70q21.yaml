@@ -215,6 +215,39 @@ pins:
   pd25:
     port: d
     index: 25
+  pd0:
+    port: d
+    index: 0
+  pd1:
+    port: d
+    index: 1
+  pd2:
+    port: d
+    index: 2
+  pd3:
+    port: d
+    index: 3
+  pd4:
+    port: d
+    index: 4
+  pd5:
+    port: d
+    index: 5
+  pd6:
+    port: d
+    index: 6
+  pd7:
+    port: d
+    index: 7
+  pd8:
+    port: d
+    index: 8
+  pd9:
+    port: d
+    index: 9
+  pc10:
+    port: c
+    index: 10
 routes:
 - pin: pb4
   peripheral: usart1
