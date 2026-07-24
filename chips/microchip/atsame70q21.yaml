@@ -165,6 +165,11 @@ peripherals:
       style: write_set
     irq: GMAC
     kernel_clock: ahb
+    # RMII bank is fixed by the die: GMAC RMII lives on PD0-PD9, peripheral
+    # function A (AF 0). A board only chooses to wire Ethernet, not these pins.
+    rmii:
+      af: 0
+      pins: [pd0, pd1, pd2, pd3, pd4, pd5, pd6, pd7, pd8, pd9]
   xdmac:
     ip: microchip/xdmac_v1
     base: '0x40078000'

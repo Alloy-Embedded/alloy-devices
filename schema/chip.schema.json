@@ -249,6 +249,16 @@
               "maximum": 255
             }
           },
+          "rmii": {
+            "type": "object",
+            "description": "RMII pin bank for a MAC (GMAC/EMAC): the fixed pins the block's RMII function occupies on this die and their alternate-function number. A chip fact — a board only chooses whether to wire Ethernet, not which pins the RMII function lives on.",
+            "required": ["af", "pins"],
+            "additionalProperties": false,
+            "properties": {
+              "af": {"type": "integer", "minimum": 0, "maximum": 15},
+              "pins": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+            }
+          },
           "uncurated": {
             "const": true,
             "description": "Peripheral exists on the die but its IP register file is not curated yet: base/gate/irq/pin/DMA facts are recorded, codegen emits nothing for it. Builders set this; ip_hint carries the verbatim upstream tag."
