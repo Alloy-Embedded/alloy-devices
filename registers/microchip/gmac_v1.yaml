@@ -140,7 +140,7 @@ registers:
   fields:
   - name: RMII
     bit: 0
-    description: "MII/RMII mode select. SAME70 Xplained is RMII. Polarity per datasheet \xA738.8.10 (see confidence notes)."
+    description: "MII/RMII mode select. Polarity is INVERTED vs the name: 0 = RMII, 1 = MII (silicon-confirmed on same70_xplained 2026-07-24 — writing 1 kills the RMII data path while MDIO/refclk still work). Driver writes UR=0 for RMII."
 - name: DCFGR
   offset: '0x10'
   access: rw
