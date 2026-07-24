@@ -108,6 +108,7 @@ registers:
       - { name: TIM7EN, bit: 5 }
       - { name: RTCAPBEN, bit: 10 }
       - { name: WWDGEN, bit: 11 }
+      - { name: FDCANEN, bit: 12 }
       - { name: SPI2EN, bit: 14 }
       - { name: USART2EN, bit: 17 }
       - { name: USART3EN, bit: 18 }

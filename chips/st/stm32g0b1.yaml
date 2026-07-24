@@ -73,6 +73,18 @@ peripherals:
       peripheral: rcc
       register: APBENR1
       bit: 29
+  fdcan1:
+    ip: st/fdcan_v1
+    base: '0x40006400'
+    gate:
+      peripheral: rcc
+      register: APBENR1
+      bit: 12
+    companions:
+      ram: fdcanram1
+  fdcanram1:
+    ip: st/fdcanram_v1
+    base: '0x4000b400'
   gpioa:
     ip: st/gpio_v2
     base: '0x50000000'

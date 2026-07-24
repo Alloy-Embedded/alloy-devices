@@ -1,0 +1,64 @@
+schema: alloy.registers.v1
+vendor: st
+ip: fdcan_v1
+class: can
+description: >
+  Bosch M_CAN (FDCAN) as integrated on STM32G0/G4 — classic-CAN bring-up subset.
+  This variant has a FIXED message-RAM layout (no start-address registers): the
+  filter list, RX FIFOs and TX buffers sit at hardware-fixed offsets inside the
+  per-instance message RAM (companion fdcanram). CCCR gates init/config + test
+  mode, NBTP sets the nominal bit timing, TEST.LBCK enables loopback, RXGFC
+  routes non-matching frames to RX FIFO 0, RXFS/RXFA and TXBAR drive the FIFOs.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/can_fdcan_v1.json (offsets + field bits)"
+    - "RM0444 §36 (STM32G0 FDCAN) + Bosch M_CAN r1 user manual (message RAM element formats T0/T1/R0/R1)"
+  completeness: bring-up-subset
+registers:
+  - name: TEST
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: LBCK, bit: 4 }
+  - name: CCCR
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: INIT, bit: 0 }
+      - { name: CCE, bit: 1 }
+      - { name: MON, bit: 5 }
+      - { name: TSTMODE, bit: 7, description: "TEST — renamed to avoid clashing with the TEST register's flags enum" }
+      - { name: FDOE, bit: 8 }
+      - { name: BRSE, bit: 9 }
+  - name: NBTP
+    offset: "0x1C"
+    access: rw
+    fields:
+      - { name: NTSEG2, bit: 0, width: 7 }
+      - { name: NTSEG1, bit: 8, width: 8 }
+      - { name: NBRP, bit: 16, width: 9 }
+      - { name: NSJW, bit: 25, width: 7 }
+  - name: RXGFC
+    offset: "0x80"
+    access: rw
+    fields:
+      - { name: ANFE, bit: 2, width: 2 }
+      - { name: ANFS, bit: 4, width: 2 }
+      - { name: LSS, bit: 16, width: 5 }
+      - { name: LSE, bit: 24, width: 4 }
+  - name: RXFS
+    offset: "0x90"
+    access: rw
+    fields:
+      - { name: FFL, bit: 0, width: 4 }
+      - { name: FGI, bit: 8, width: 2 }
+  - name: RXFA
+    offset: "0x94"
+    access: rw
+    fields:
+      - { name: FAI, bit: 0, width: 3 }
+  - name: TXBAR
+    offset: "0xCC"
+    access: rw
+    fields:
+      - { name: AR, bit: 0 }

@@ -1,0 +1,29 @@
+schema: alloy.registers.v1
+vendor: st
+ip: fdcanram_v1
+class: fdcanram
+description: >
+  FDCAN message RAM (M_CAN fixed layout) for STM32G0. A per-instance SRAM the
+  FDCAN core reads/writes for filters, RX FIFOs and TX buffers, at fixed word
+  offsets: standard filters 0x000, RX FIFO 0 at 0x0B0 (3 elements x 18 words),
+  TX buffers at 0x278 (3 x 18 words). The FDCAN driver reaches these via the
+  companion instance's base; the M_CAN element formats (T0/T1/R0/R1 headers) are
+  hand-written behavior, not data.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/fdcanram_v1.json (section offsets)"
+    - "Bosch M_CAN r1 user manual §2.4 (message RAM element layout)"
+  completeness: bring-up-subset
+registers:
+  - name: FLSSA
+    offset: "0x000"
+    access: rw
+    array: { count: 28, stride: 4 }
+  - name: RXFIFO0
+    offset: "0x0B0"
+    access: rw
+    array: { count: 54, stride: 4 }
+  - name: TXBUF
+    offset: "0x278"
+    access: rw
+    array: { count: 54, stride: 4 }
