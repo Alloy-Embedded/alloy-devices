@@ -110,7 +110,7 @@ peripherals:
     irq: PIOE
   usart1:
     ip: microchip/usart_v1
-    base: '0x40050000'
+    base: '0x40028000'
     gate:
       peripheral: pmc
       register: PCER0

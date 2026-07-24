@@ -179,6 +179,23 @@ def lint_chips(db: Database) -> None:
                     ))
 
         clock_nodes = {"sysclk", "ahb", "apb", "apb2"} | set(doc["clock"]["sources"].keys())
+        # Two peripherals at one base means one silently points at the other's
+        # registers — a dead peripheral (found the hard way: usart1's base was
+        # clobbered to the GMAC's 0x40050000 while wiring Ethernet, so every
+        # console write hit the MAC and the UART went silent).
+        base_owner: dict[int, str] = {}
+        for name, p in periphs.items():
+            if p.get("uncurated") or "base" not in p:
+                continue
+            base = int(p["base"], 16)
+            if base in base_owner:
+                db.issues.append(Issue(
+                    path,
+                    f"peripheral {name}: base {p['base']} collides with "
+                    f"{base_owner[base]} — one of them points at the other's registers",
+                ))
+            else:
+                base_owner[base] = name
         for name, p in periphs.items():
             if p.get("uncurated"):
                 # Stub: facts recorded, codegen skips it. It must never be
