@@ -29,11 +29,11 @@ registers:
     offset: "0x04"
     access: rw
     fields:
-      - { name: MODE, bit: 0, width: 4, description: "0 = normal UART" }
-      - { name: USCLKS, bit: 4, width: 2, description: "0 = MCK (peripheral clock)" }
-      - { name: CHRL, bit: 6, width: 2, description: "3 = 8-bit characters" }
+      - { name: MODE, bit: 0, width: 4, description: "normal UART", values: { NORMAL: 0 } }
+      - { name: USCLKS, bit: 4, width: 2, description: "clock source", values: { MCK: 0 } }
+      - { name: CHRL, bit: 6, width: 2, description: "character length", values: { FIVE: 0, SIX: 1, SEVEN: 2, EIGHT: 3 } }
       - { name: SYNC, bit: 8 }
-      - { name: PAR, bit: 9, width: 3, description: "4 = no parity" }
+      - { name: PAR, bit: 9, width: 3, description: "parity", values: { EVEN: 0, ODD: 1, SPACE: 2, MARK: 3, NONE: 4, MULTIDROP: 6 } }
       - { name: NBSTOP, bit: 12, width: 2 }
       - { name: CHMODE, bit: 14, width: 2 }
       - { name: OVER, bit: 19 }
