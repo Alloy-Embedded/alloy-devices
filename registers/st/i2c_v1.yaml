@@ -122,7 +122,7 @@ registers:
       Fast mode Duty=0 (Tlow/Thigh=2): CCR = fPCLK1 / (3*fSCL), min 1.
       Fast mode Duty=1 (16/9): CCR = fPCLK1 / (25*fSCL), min 1.
     fields:
-      - { name: CCR, bit: 0, width: 12, description: "SCL clock divider from fPCLK1 (see register formulas above)" }
+      - { name: DIV, bit: 0, width: 12, description: "CCR: SCL clock divider from fPCLK1 (see register formulas above). Named DIV so the field accessor does not collide with the register-flags enum 'ccr'." }
       - { name: DUTY, bit: 14, description: "Fast-mode duty: 0=Tlow/Thigh=2/1, 1=16/9 (only meaningful when F_S=1)" }
       - { name: F_S, bit: 15, description: "0=Standard mode (<=100 kHz), 1=Fast mode (<=400 kHz)" }
   - name: TRISE
