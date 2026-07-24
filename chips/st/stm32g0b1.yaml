@@ -35,6 +35,7 @@ memories:
   kind: flash
   base: '0x08000000'
   size: 524288
+  erase_size: 2048   # STM32G0 flash page (erase granularity); nvm/fs regions must be a multiple
 - name: sram
   kind: ram
   base: '0x20000000'

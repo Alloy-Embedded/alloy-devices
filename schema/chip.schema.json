@@ -127,6 +127,11 @@
           "size": {
             "type": "integer",
             "minimum": 1
+          },
+          "erase_size": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Flash erase-page granularity (bytes). Optional; when present, nvm/fs regions must be a whole multiple of it."
           }
         }
       }
