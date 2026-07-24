@@ -115,6 +115,11 @@ def _lint_clock(db: Database, key: str, doc: dict[str, Any]) -> None:
             if periph is None:
                 db.issues.append(Issue(path, f"{where}: unknown peripheral {op['peripheral']}"))
                 continue
+            if "ip" not in periph:  # uncurated stub carries facts but no register model
+                db.issues.append(Issue(
+                    path, f"{where}: references uncurated peripheral {op['peripheral']} "
+                    "(a clock program must target a curated peripheral)"))
+                continue
             ip_doc = db.registers.get(periph["ip"])
             if ip_doc is None:
                 continue  # reported by lint_chips already
@@ -300,6 +305,8 @@ def lint_chips(db: Database) -> None:
                 up = periphs.get(unlock["peripheral"])
                 if up is None:
                     db.issues.append(Issue(path, f"pin {pname}: mux_unlock references unknown peripheral {unlock['peripheral']}"))
+                elif "ip" not in up:
+                    db.issues.append(Issue(path, f"pin {pname}: mux_unlock references uncurated peripheral {unlock['peripheral']}"))
                 else:
                     unlock_ip = db.registers.get(up["ip"])
                     if unlock_ip and not any(r["name"] == unlock["register"] for r in unlock_ip["registers"]):

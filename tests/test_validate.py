@@ -117,6 +117,21 @@ def test_clock_program_with_unknown_field_is_rejected(tmp_path: Path) -> None:
     assert any("has no field NOPE" in e for e in validate(tmp_path))
 
 
+def test_clock_program_referencing_uncurated_peripheral_reports_not_crashes(tmp_path: Path) -> None:
+    # A clock program op that targets an uncurated stub (facts only, no register
+    # model) used to crash the validator with a raw KeyError('ip'); it must now
+    # report a readable Issue instead.
+    chip = copy.deepcopy(MINIMAL_CHIP)
+    chip["peripherals"]["adc1"] = {
+        "base": "0x40012400", "uncurated": True, "ip_hint": "adc:v2:ADC",
+    }
+    chip["clock"]["profiles"]["hsi_16mhz"]["program"] = [
+        {"op": "rmw", "peripheral": "adc1", "register": "CR", "fields": {"ADEN": 1}},
+    ]
+    write_db(tmp_path, MINIMAL_RCC, chip)
+    assert any("uncurated peripheral adc1" in e for e in validate(tmp_path))
+
+
 def test_field_exceeding_register_width_is_rejected(tmp_path: Path) -> None:
     rcc = copy.deepcopy(MINIMAL_RCC)
     rcc["registers"][0]["fields"].append({"name": "BAD", "bit": 30, "width": 4})
