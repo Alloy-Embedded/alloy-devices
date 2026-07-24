@@ -1,0 +1,49 @@
+schema: alloy.registers.v1
+vendor: st
+ip: iwdg_v2
+class: watchdog
+description: >
+  STM32 Independent Watchdog (v2: G0/G4/F7-newer/L4 — adds the WINR window
+  register and SR.WVU over v1). Same key protocol and counter as v1: KR takes
+  0xCCCC (start, forces the ~32 kHz LSI on), 0x5555 (unlock PR/RLR), 0xAAAA
+  (reload/feed); PR is the /4../256 prescaler, RLR the 12-bit reload. WINR (max
+  at reset) leaves the window disabled so feed() is allowed at any time — this
+  driver does not use windowed mode. Not write-once; configured at runtime.
+  BRING-UP SUBSET (the registers start()/feed() touch).
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee (iwdg kind, version v2; MIT OR Apache-2.0)"
+    - "RM0444 (STM32G0) §26 IWDG — KR 0xCCCC/0x5555/0xAAAA, PR /4../256, RLR[11:0], WINR[11:0] (reset 0x0FFF = window off), SR PVU/RVU/WVU"
+  completeness: bring-up-subset
+registers:
+  - name: KR
+    offset: "0x00"
+    access: wo
+    description: "Key register (0xCCCC start / 0x5555 unlock / 0xAAAA reload)"
+    fields:
+      - { name: KEY, bit: 0, width: 16 }
+  - name: PR
+    offset: "0x04"
+    access: rw
+    description: "Prescaler (0=/4 .. 6=/256)"
+    fields:
+      - { name: PR, bit: 0, width: 3 }
+  - name: RLR
+    offset: "0x08"
+    access: rw
+    description: "12-bit reload"
+    fields:
+      - { name: RL, bit: 0, width: 12 }
+  - name: SR
+    offset: "0x0C"
+    access: ro
+    fields:
+      - { name: PVU, bit: 0 }
+      - { name: RVU, bit: 1 }
+      - { name: WVU, bit: 2 }
+  - name: WINR
+    offset: "0x10"
+    access: rw
+    description: "Window (reset 0x0FFF = window disabled)"
+    fields:
+      - { name: WIN, bit: 0, width: 12 }

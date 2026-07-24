@@ -30,6 +30,9 @@ peripherals:
     ip: st/flash_f7
     base: "0x40023C00"
     irq: FLASH
+  iwdg:
+    ip: st/iwdg_v2
+    base: '0x40003000'
   gpioa:
     ip: st/gpio_v2
     base: "0x40020000"
