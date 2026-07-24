@@ -116,6 +116,7 @@ registers:
     width: 3
     description: 'MDC clock divider from MCK: 000=/8 010=/32 100=/64 101=/96 110=/128 111=/224 (0b100 for KSZ8081 @150MHz
       MCK)'
+    values: { MCK_8: 0, MCK_32: 2, MCK_64: 4, MCK_96: 5, MCK_128: 6, MCK_224: 7 }
   - name: DBW
     bit: 21
     width: 2

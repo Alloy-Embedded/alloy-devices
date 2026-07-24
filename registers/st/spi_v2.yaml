@@ -57,7 +57,7 @@ registers:
       - { name: ERRIE, bit: 5 }
       - { name: RXNEIE, bit: 6 }
       - { name: TXEIE, bit: 7 }
-      - { name: DS, bit: 8, width: 4, description: "Frame size = DS+1 bits; 0x7=8-bit, 0xF=16-bit; 0-2 forbidden (hardware forces 8-bit)" }
+      - { name: DS, bit: 8, width: 4, description: "Frame size = DS+1 bits; 0x7=8-bit, 0xF=16-bit; 0-2 forbidden (hardware forces 8-bit)", values: { EIGHT: 7, SIXTEEN: 15 } }
       - { name: FRXTH, bit: 12, description: "1 = RXNE at 1 byte in RX FIFO (required for 8-bit frames); 0 = at 2 bytes" }
       - { name: LDMA_RX, bit: 13 }
       - { name: LDMA_TX, bit: 14 }

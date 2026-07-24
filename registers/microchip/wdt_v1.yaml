@@ -19,7 +19,7 @@ registers:
     access: wo
     fields:
       - { name: WDRSTT, bit: 0 }
-      - { name: KEY, bit: 24, width: 8, description: "0xA5" }
+      - { name: KEY, bit: 24, width: 8, description: "0xA5", values: { PASSWD: 165 } }
   - name: MR
     offset: "0x04"
     access: rw
