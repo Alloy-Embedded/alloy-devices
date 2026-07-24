@@ -36,6 +36,7 @@ _FAMILY = {
     "stm32g0": {"rcc_json": "rcc_g0x1", "rcc_ours": "rcc_g0"},
     "stm32f7": {"rcc_json": "rcc_f7", "rcc_ours": "rcc_f7"},
     "stm32g4": {"rcc_json": "rcc_g4", "rcc_ours": "rcc_g4"},
+    "stm32f4": {"rcc_json": "rcc_f4", "rcc_ours": "rcc_f4"},
 }
 
 _SIGNAL_MAP = {"TX": "tx", "RX": "rx", "SCL": "scl", "SDA": "sda",

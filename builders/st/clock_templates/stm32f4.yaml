@@ -1,0 +1,21 @@
+# F4-family clock layer (builder input). Boot-only HSI16 (F4 SW=0 = HSI,
+# verified against embassy rcc:f4 enum — differs from G4's SW=1). A curated
+# PLL profile is added when an F4 board is validated in silicon (per
+# BUILDERS.md decision 3); no F4 hardware on hand today, so F4 ships tier-2
+# (CI-compiled, not silicon-verified).
+sources:
+  hsi16: { hz: 16000000 }
+boot_source: hsi16
+profiles:
+  hsi_16mhz:
+    description: HSI16 direct, no PLL, 0 wait states (always-safe internal clock)
+    sysclk_hz: 16000000
+    ahb_hz: 16000000
+    apb_hz: 16000000
+    apb2_hz: 16000000
+    program:
+    - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
+    - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 0 } }
+    - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 0 } }
+    - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 0, timeout_us: 2000 }

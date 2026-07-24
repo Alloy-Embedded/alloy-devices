@@ -1,0 +1,121 @@
+schema: alloy.registers.v1
+vendor: st
+ip: usart_v2
+class: uart
+description: >
+  ST USART, classic non-FIFO variant (embassy usart:v2 — STM32F1/F2/F4/F7/L1
+  and the L0/F0 SR-based parts). NO PRESC register and NO unified ISR/ICR: this
+  layout has a separate SR (status) and a read/write DR (data) register, unlike
+  our usart_v3/v4 which expose ISR/RDR/TDR/ICR + PRESC. Memory map (matches the
+  old-alloy sci2_regs struct exactly): SR 0x00, DR 0x04, BRR 0x08, CR1 0x0C,
+  CR2 0x10, CR3 0x14, GTPR 0x18. BRR is the CLASSIC fractional divider —
+  DIV_MANTISSA[15:4] + DIV_FRACTION[3:0], a 12.4 fixed-point USARTDIV. With
+  OVER8=0 the raw 16-bit BRR value equals round(fck / baud) directly (the low 4
+  bits ARE the fraction, not padding); with OVER8=1 the fraction is 3 bits and
+  BRR[3] must read 0 (see driver quirks). Embassy flattens BRR to a single
+  16-bit USARTDIV field; the mantissa/fraction split here is restored per
+  RM0090 §30.5.4 because it is load-bearing for the OVER8=1 encoding. SR/DR
+  status flags are read-cleared, not write-1-to-clear: RXNE clears on DR read,
+  ORE clears on an SR read then a DR read, TXE clears on DR write. All field
+  accessor names are unique within this IP (no cross-register collisions, so no
+  disambiguation prefixes are needed).
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/usart:v2.json (MIT OR Apache-2.0 via stm32-metapac; RM-curated)"
+    - "RM0090 (STM32F4xx) §30.6 USART register map + §30.5.4 fractional baud-rate generation — DIV_MANTISSA[15:4]/DIV_FRACTION[3:0] split restored from embassy's flattened 16-bit BRR, and OVER8=1 3-bit-fraction rule"
+    - "old-alloy src/hal/uart/lite.hpp detail::sci2_regs (SR 0x00/DR 0x04/BRR 0x08/CR1 0x0C/CR2 0x10/CR3 0x14/GTPR 0x18) + OVER8 at CR1 bit 15 — offsets and bit positions cross-checked identical"
+  completeness: full
+registers:
+  - name: SR
+    offset: "0x00"
+    access: rw
+    description: >
+      Status register. Flags are read-only-ish: they are cleared by a defined
+      read/write sequence on SR and DR, NOT by writing 1. TC, LBD, CTS may also
+      be cleared by writing 0 to that bit. Not a w1c ICR.
+    fields:
+      - { name: PE, bit: 0, description: "Parity error; clear by SR read then DR read" }
+      - { name: FE, bit: 1, description: "Framing error; clear by SR read then DR read" }
+      - { name: NE, bit: 2, description: "Noise detected; clear by SR read then DR read" }
+      - { name: ORE, bit: 3, description: "Overrun; clear by SR read then DR read" }
+      - { name: IDLE, bit: 4, description: "Idle line; clear by SR read then DR read" }
+      - { name: RXNE, bit: 5, description: "Read data reg not empty; cleared by reading DR (or write 0)" }
+      - { name: TC, bit: 6, description: "Transmission complete; clear by SR read then DR write, or write 0" }
+      - { name: TXE, bit: 7, description: "Transmit data reg empty; cleared by writing DR" }
+      - { name: LBD, bit: 8, description: "LIN break detected; clear by writing 0" }
+      - { name: CTS, bit: 9, description: "CTS toggle flag; clear by writing 0" }
+  - name: DR
+    offset: "0x04"
+    access: rw
+    description: >
+      Data register. Reads pop RDR (RX), writes push TDR (TX) — one physical
+      address, direction depends on access. Reading DR clears RXNE and, as the
+      second step of the SR-then-DR sequence, clears ORE/FE/NE/PE/IDLE.
+    fields:
+      - { name: DR, bit: 0, width: 9, description: "9-bit data (bit 8 used only when M=1 word length)" }
+  - name: BRR
+    offset: "0x08"
+    access: rw
+    description: >
+      Baud rate register = USARTDIV in 12.4 fixed point. OVER8=0: raw value =
+      round(fck / baud), low 4 bits are the fraction (writing round(fck/baud)
+      directly is correct). OVER8=1: USARTDIV = fck/(8*baud), fraction is 3 bits
+      and DIV_FRACTION[3] must be kept 0.
+    fields:
+      - { name: DIV_FRACTION, bit: 0, width: 4, description: "Fraction of USARTDIV; only [2:0] valid and [3]=0 when OVER8=1" }
+      - { name: DIV_MANTISSA, bit: 4, width: 12, description: "Integer part of USARTDIV" }
+  - name: CR1
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: SBK, bit: 0, description: "Send break" }
+      - { name: RWU, bit: 1, description: "Receiver wakeup (mute)" }
+      - { name: RE, bit: 2, description: "Receiver enable" }
+      - { name: TE, bit: 3, description: "Transmitter enable" }
+      - { name: IDLEIE, bit: 4, description: "IDLE interrupt enable" }
+      - { name: RXNEIE, bit: 5, description: "RXNE/ORE interrupt enable" }
+      - { name: TCIE, bit: 6, description: "Transmission complete interrupt enable" }
+      - { name: TXEIE, bit: 7, description: "TXE interrupt enable" }
+      - { name: PEIE, bit: 8, description: "Parity error interrupt enable" }
+      - { name: PS, bit: 9, description: "Parity selection: 0=even 1=odd" }
+      - { name: PCE, bit: 10, description: "Parity control enable" }
+      - { name: WAKE, bit: 11, description: "Wakeup method: 0=idle 1=address mark" }
+      - { name: M, bit: 12, description: "Word length: 0=8-bit 1=9-bit (embassy names this M0; single M bit on this IP, no M1)" }
+      - { name: UE, bit: 13, description: "USART enable (bit 13 here, unlike bit 0 on usart_v3/v4)" }
+      - { name: OVER8, bit: 15, description: "Oversampling: 0=16x 1=8x; changes BRR fraction encoding" }
+  - name: CR2
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: ADD, bit: 0, width: 4, description: "USART node address (multiprocessor)" }
+      - { name: LBDL, bit: 5, description: "LIN break detection length: 0=10-bit 1=11-bit" }
+      - { name: LBDIE, bit: 6, description: "LIN break detection interrupt enable" }
+      - { name: LBCL, bit: 8, description: "Last bit clock pulse (synchronous mode)" }
+      - { name: CPHA, bit: 9, description: "Clock phase (synchronous mode)" }
+      - { name: CPOL, bit: 10, description: "Clock polarity (synchronous mode)" }
+      - { name: CLKEN, bit: 11, description: "Clock enable (CK pin, synchronous mode)" }
+      - { name: STOP, bit: 12, width: 2, description: "Stop bits: 00=1 01=0.5 10=2 11=1.5" }
+      - { name: LINEN, bit: 14, description: "LIN mode enable" }
+  - name: CR3
+    offset: "0x14"
+    access: rw
+    fields:
+      - { name: EIE, bit: 0, description: "Error interrupt enable (FE/NE/ORE in DMA RX)" }
+      - { name: IREN, bit: 1, description: "IrDA mode enable" }
+      - { name: IRLP, bit: 2, description: "IrDA low-power" }
+      - { name: HDSEL, bit: 3, description: "Half-duplex selection" }
+      - { name: NACK, bit: 4, description: "Smartcard NACK enable" }
+      - { name: SCEN, bit: 5, description: "Smartcard mode enable" }
+      - { name: DMAR, bit: 6, description: "DMA enable receiver" }
+      - { name: DMAT, bit: 7, description: "DMA enable transmitter" }
+      - { name: RTSE, bit: 8, description: "RTS hardware flow control enable" }
+      - { name: CTSE, bit: 9, description: "CTS hardware flow control enable" }
+      - { name: CTSIE, bit: 10, description: "CTS interrupt enable" }
+      - { name: ONEBIT, bit: 11, description: "One-sample-bit method enable" }
+  - name: GTPR
+    offset: "0x18"
+    access: rw
+    description: "Guard time and prescaler (IrDA / smartcard only; unused for plain async UART)"
+    fields:
+      - { name: PSC, bit: 0, width: 8, description: "Prescaler value" }
+      - { name: GT, bit: 8, width: 8, description: "Guard time value (smartcard)" }

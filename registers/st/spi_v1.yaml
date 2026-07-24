@@ -1,0 +1,120 @@
+schema: alloy.registers.v1
+vendor: st
+ip: spi_v1
+class: spi
+description: >
+  ST SPI NON-FIFO variant (STM32F1/F2/F4/L1 style — embassy stm32-data tags
+  this register layout spi:v1, applied to parts embassy marks spi2s1 v2_i2s).
+  Single 8/16-bit shift path, NO RX/TX FIFO. Frame size is CR1.DFF
+  (bit 11): 0 = 8-bit, 1 = 16-bit — this is a GENUINE DFF, the opposite of
+  our spi_v2 (FIFO variant) where bit 11 is CRCL and frame size lives in
+  CR2.DS[3:0]. This IP has NO CR2.DS, NO FRXTH, NO SR.FRLVL/FTLVL, NO NSSP.
+  DR is a 16-bit data register accessed as a halfword (a single word carries
+  one frame); there is no byte-packing FIFO window. CR2 stops at TXEIE
+  (bit 7). SR stops at FRE (bit 8). I2S audio registers (I2SCFGR/I2SPR) are
+  carried from the source for completeness but never exercised.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/spi:v1.json (MIT OR Apache-2.0 via stm32-metapac; RM-curated)"
+    - "RM0090 (STM32F4xx) §28 SPI — CR1.DFF at bit 11 = data frame format (8/16-bit), no CR2.DS; SR fields RXNE0..FRE8; CR2 fields RXDMAEN0..TXEIE7"
+    - "old-alloy src/hal/spi/lite.hpp @ HEAD — kCr1Dff = 1u<<11 labeled '16-bit frame (legacy: v2)'; comments confirm DS[3:0]/FRXTH are v3+ (FIFO) ONLY, so the non-FIFO IP uses CR1.DFF for frame size"
+  completeness: full
+  verified:
+    - "CR1 bit 11 = DFF (genuine): embassy JSON names it DFF with enum Bits8=0/Bits16=1, RM0090 §28 confirms, and old-alloy driver treats bit 11 as the 16-bit selector exactly on this variant. This is the OPPOSITE correction from spi_v2 (FIFO), where bit 11 was renamed DFF->CRCL"
+    - "absence markers confirm non-FIFO IP: no CR2.DS, no FRXTH, no SR.FRLVL/FTLVL, no CR2.NSSP/LDMA — all present in spi_v2 (FIFO) and all absent here"
+    - "all field bit positions taken verbatim from embassy spi:v1.json; F4 SPI layout is stable across F1/F2/F4/L1"
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    description: "control register 1"
+    fields:
+      - { name: CPHA, bit: 0, description: "Clock phase (0=first edge capture, 1=second edge)" }
+      - { name: CPOL, bit: 1, description: "Clock polarity (0=idle low, 1=idle high)" }
+      - { name: MSTR, bit: 2, description: "Master selection (1=master, 0=slave)" }
+      - { name: BR, bit: 3, width: 3, description: "Baud rate: f_PCLK / 2^(BR+1); 0=/2 .. 7=/256" }
+      - { name: SPE, bit: 6, description: "SPI enable" }
+      - { name: LSBFIRST, bit: 7, description: "Frame format (1=LSB first, 0=MSB first)" }
+      - { name: SSI, bit: 8, description: "Internal slave select" }
+      - { name: SSM, bit: 9, description: "Software slave management" }
+      - { name: RXONLY, bit: 10, description: "Receive only (1=output disabled, receive-only)" }
+      - { name: DFF, bit: 11, description: "Data frame format: 0=8-bit, 1=16-bit. GENUINE DFF on this non-FIFO variant (frame size lives here, NOT in CR2.DS — that field does not exist on spi_v1)" }
+      - { name: CRCNEXT, bit: 12, description: "CRC transfer next (1=next TX value is Tx CRC)" }
+      - { name: CRCEN, bit: 13, description: "Hardware CRC calculation enable" }
+      - { name: BIDIOE, bit: 14, description: "Bidirectional output enable (1=transmit-only, 0=receive-only)" }
+      - { name: BIDIMODE, bit: 15, description: "Bidirectional data mode (1=1-line bidirectional)" }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    description: "control register 2 — stops at TXEIE; NO DS/FRXTH on this variant"
+    fields:
+      - { name: RXDMAEN, bit: 0, description: "Rx buffer DMA enable" }
+      - { name: TXDMAEN, bit: 1, description: "Tx buffer DMA enable" }
+      - { name: SSOE, bit: 2, description: "SS output enable" }
+      - { name: FRF, bit: 4, description: "Frame format (0=Motorola, 1=TI)" }
+      - { name: ERRIE, bit: 5, description: "Error interrupt enable" }
+      - { name: RXNEIE, bit: 6, description: "RX buffer not empty interrupt enable" }
+      - { name: TXEIE, bit: 7, description: "Tx buffer empty interrupt enable" }
+  - name: SR
+    offset: "0x08"
+    access: rw
+    description: "status register — mostly read-only; CRCERR is write-0-to-clear"
+    fields:
+      - { name: RXNE, bit: 0, description: "Receive buffer not empty" }
+      - { name: TXE, bit: 1, description: "Transmit buffer empty" }
+      - { name: CHSIDE, bit: 2, description: "Channel side (I2S)" }
+      - { name: UDR, bit: 3, description: "Underrun flag (I2S)" }
+      - { name: CRCERR, bit: 4, description: "CRC error flag (write 0 to clear)" }
+      - { name: MODF, bit: 5, description: "Mode fault" }
+      - { name: OVR, bit: 6, description: "Overrun flag" }
+      - { name: BSY, bit: 7, description: "Busy flag" }
+      - { name: FRE, bit: 8, description: "TI frame format error (last SR bit — no FRLVL/FTLVL on this variant)" }
+  - name: DR
+    offset: "0x0C"
+    access: rw
+    description: >
+      Data register. 16-bit, accessed as a halfword — one word carries a
+      single frame (8-bit frames use the low byte). There is NO FIFO and NO
+      data-packing: unlike spi_v2, a 16-bit access moves exactly one frame,
+      not two. Reading clears RXNE; writing when TXE=1 loads the shift path.
+    fields:
+      - { name: DR, bit: 0, width: 16, description: "Data register" }
+  - name: CRCPR
+    offset: "0x10"
+    access: rw
+    description: "CRC polynomial register"
+    fields:
+      - { name: CRCPOLY, bit: 0, width: 16, description: "CRC polynomial (reset 0x0007)" }
+  - name: RXCRCR
+    offset: "0x14"
+    access: ro
+    description: "RX CRC register (read-only)"
+    fields:
+      - { name: RXCRC, bit: 0, width: 16, description: "Rx CRC register" }
+  - name: TXCRCR
+    offset: "0x18"
+    access: ro
+    description: "TX CRC register (read-only)"
+    fields:
+      - { name: TXCRC, bit: 0, width: 16, description: "Tx CRC register" }
+  - name: I2SCFGR
+    offset: "0x1C"
+    access: rw
+    description: "I2S configuration register — carried for completeness, never exercised"
+    fields:
+      - { name: CHLEN, bit: 0, description: "Channel length (bits per audio channel)" }
+      - { name: DATLEN, bit: 1, width: 2, description: "Data length (0=16b, 1=24b, 2=32b)" }
+      - { name: CKPOL, bit: 3, description: "Steady-state clock polarity" }
+      - { name: I2SSTD, bit: 4, width: 2, description: "I2S standard (0=Philips,1=MSB,2=LSB,3=PCM)" }
+      - { name: PCMSYNC, bit: 7, description: "PCM frame synchronization" }
+      - { name: I2SCFG, bit: 8, width: 2, description: "I2S configuration mode" }
+      - { name: I2SE, bit: 10, description: "I2S enable" }
+      - { name: I2SMOD, bit: 11, description: "I2S mode selection (1=I2S, 0=SPI)" }
+  - name: I2SPR
+    offset: "0x20"
+    access: rw
+    description: "I2S prescaler register — carried for completeness, never exercised"
+    fields:
+      - { name: I2SDIV, bit: 0, width: 8, description: "I2S linear prescaler" }
+      - { name: ODD, bit: 8, description: "Odd factor for the prescaler" }
+      - { name: MCKOE, bit: 9, description: "Master clock output enable" }

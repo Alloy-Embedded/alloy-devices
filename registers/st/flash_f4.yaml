@@ -1,0 +1,36 @@
+schema: alloy.registers.v1
+vendor: st
+ip: flash_f4
+class: flash
+description: >
+  STM32F4 embedded flash access control — BRING-UP SUBSET (ACR only). The
+  flash controller gates the maximum achievable core clock: LATENCY[3:0]
+  wait states MUST be raised BEFORE increasing SYSCLK and lowered only
+  AFTER decreasing it, or the CPU takes a bus fault reading flash. At the
+  post-reset default (HSI 16 MHz, VOS scale) LATENCY=0 (WS0) is valid, so a
+  minimal blink bring-up can leave ACR untouched; the field is modeled so
+  the RCC/clock driver can bump it when it raises PLL frequency. PRFTEN
+  (prefetch), ICEN (instruction cache) and DCEN (data cache) are optional
+  accelerators; the F4 reference manual recommends enabling all three after
+  setting latency. KEYR/OPTKEYR/SR/CR/OPTCR (program & erase) exist on this
+  IP but are deliberately omitted from this subset. ACR sits at offset 0x00
+  from the flash interface base (0x40023C00 on F4 — a chip-level address
+  that belongs in the device contract, not here).
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/flash:f4.json (MIT OR Apache-2.0 via stm32-metapac; RM-curated)"
+    - "RM0090 §3.5.1 (STM32F405/415/407/417/427/437/429/439 flash access control register ACR) — LATENCY[3:0] width, PRFTEN/ICEN/DCEN/ICRST/DCRST bit positions, WS0 valid at 16 MHz HSI"
+    - "old-alloy alloy/src/hal/flash/lite.hpp — identical ACR field masks (kAcrLatMask=0xF, PRFTEN=1<<8, ICEN=1<<9, DCEN=1<<10, ICRST=1<<11, DCRST=1<<12) and base 0x40023C00 for F4"
+  completeness: bring-up-subset
+registers:
+  - name: ACR
+    offset: "0x00"
+    access: rw
+    description: "Flash access control register. Set LATENCY before raising SYSCLK."
+    fields:
+      - { name: LATENCY, bit: 0, width: 4, description: "Wait states [3:0]. 0=WS0 (valid at HSI 16 MHz). Raise before increasing clock, lower after decreasing." }
+      - { name: PRFTEN, bit: 8, description: "Prefetch enable" }
+      - { name: ICEN, bit: 9, description: "Instruction cache enable" }
+      - { name: DCEN, bit: 10, description: "Data cache enable" }
+      - { name: ICRST, bit: 11, description: "Instruction cache reset (must be done with cache disabled)" }
+      - { name: DCRST, bit: 12, description: "Data cache reset (must be done with cache disabled)" }

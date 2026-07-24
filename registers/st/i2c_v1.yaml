@@ -1,0 +1,143 @@
+schema: alloy.registers.v1
+vendor: st
+ip: i2c_v1
+class: i2c
+description: >
+  ST legacy I2C (F1/F2/F4/L1 "I2Cv1", embassy i2c:v1). Completely different
+  register model from i2c_v2: NO TIMINGR — bit timing is COMPUTED from the
+  APB1 clock via CR2.FREQ (clock in MHz), CCR (SCL divider) and TRISE (max
+  rise time), AN4235-style but a different formula. The master
+  START/ADDR/STOP transfer is a manual state machine driven by SR1/SR2
+  flags with read-clear side effects (ADDR cleared by SR1-then-SR2 read;
+  STOPF cleared by SR1 read then CR1 write). 7-bit address in OAR1.ADD[7:1]
+  for own address; the target address is written to DR after START. FLTR
+  (digital/analog noise filter) exists on F4/F2 but not on the earliest F1.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/i2c:v1.json (MIT OR Apache-2.0 via stm32-metapac; RM-curated)"
+    - "RM0090 (STM32F405/415/407/417/427/437/429/439) §27 I2C: CR2.FREQ 2..50 MHz bounds, CCR Sm/FM formulas, TRISE recipe, SR1/SR2 read-clear sequences"
+    - "RM0008 (STM32F1) §26 I2C confirms same layout minus FLTR"
+  completeness: full
+  verified:
+    - "all register offsets and field bit positions taken verbatim from embassy i2c:v1.json; no position corrections applied"
+    - "field-name collisions resolved by adopting the RM's own distinct names (SR1 SB / SMBALERT) or a suffix (SR2 PECVAL) so per-IP accessors stay unique — bit positions unchanged"
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    description: "Control register 1. PE last; program CR2/CCR/TRISE before setting PE."
+    fields:
+      - { name: PE, bit: 0, description: "Peripheral enable" }
+      - { name: SMBUS, bit: 1, description: "0=I2C mode, 1=SMBus mode" }
+      - { name: SMBTYPE, bit: 3, description: "0=SMBus device, 1=SMBus host" }
+      - { name: ENARP, bit: 4, description: "SMBus ARP enable" }
+      - { name: ENPEC, bit: 5, description: "PEC enable" }
+      - { name: ENGC, bit: 6, description: "General-call enable" }
+      - { name: NOSTRETCH, bit: 7, description: "Clock stretching disable (slave)" }
+      - { name: START, bit: 8, description: "Master: generate START (or repeated START). Self-clears when start sent." }
+      - { name: STOP, bit: 9, description: "Master: generate STOP after current byte/transfer" }
+      - { name: ACK, bit: 10, description: "1=send ACK after byte received. Clear before last byte for NACK." }
+      - { name: POS, bit: 11, description: "ACK/PEC position: 0=controls current byte, 1=controls next byte (2-byte reception trick)" }
+      - { name: PEC, bit: 12, description: "Packet error checking transfer (self-clears)" }
+      - { name: ALERT, bit: 13, description: "SMBus alert (drives SMBA pin low)" }
+      - { name: SWRST, bit: 15, description: "Software reset: hold peripheral under reset (used to recover a stuck bus)" }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    description: "Control register 2. FREQ carries the APB1 clock in MHz and is required for timing."
+    fields:
+      - { name: FREQ, bit: 0, width: 6, description: "APB1 clock frequency in MHz. MUST equal fPCLK1(MHz); valid range 2..50 (min 4 for Fast mode). Wrong value = wrong SCL." }
+      - { name: ITERREN, bit: 8, description: "Error interrupt enable" }
+      - { name: ITEVTEN, bit: 9, description: "Event interrupt enable" }
+      - { name: ITBUFEN, bit: 10, description: "Buffer (TXE/RXNE) interrupt enable" }
+      - { name: DMAEN, bit: 11, description: "DMA requests enable" }
+      - { name: LAST, bit: 12, description: "DMA last transfer (generates NACK on last received byte)" }
+  - name: OAR1
+    offset: "0x08"
+    access: rw
+    description: "Own address 1 (slave). Bit 14 must be kept at 1 by software (RM)."
+    fields:
+      - { name: ADD, bit: 0, width: 10, description: "Own address. 7-bit mode uses ADD[7:1]; 10-bit uses ADD[9:0]." }
+      - { name: ADDMODE, bit: 15, description: "0=7-bit, 1=10-bit slave addressing" }
+  - name: OAR2
+    offset: "0x0C"
+    access: rw
+    description: "Own address 2 (dual addressing, slave)"
+    fields:
+      - { name: ENDUAL, bit: 0, description: "0=single addr, 1=dual addr (OAR1 and OAR2 both matched)" }
+      - { name: ADD2, bit: 1, width: 7, description: "Second own 7-bit address" }
+  - name: DR
+    offset: "0x10"
+    access: rw
+    description: "Data register. Master: write the target address (addr<<1 | R/W) here after SB, then payload bytes. Read pops received bytes."
+    fields:
+      - { name: DR, bit: 0, width: 8, description: "8-bit data / address byte" }
+  - name: SR1
+    offset: "0x14"
+    access: rw
+    description: >
+      Status register 1. Event flags (SB/ADDR/BTF/ADD10/STOPF/RXNE/TXE) are
+      cleared by defined read/write SEQUENCES, not by writing SR1. Error
+      flags (BERR/ARLO/AF/OVR/PECERR/TIMEOUT/SMBALERT) are cleared by
+      writing 0 to that bit (rc_w0); writing 1 has no effect. Do not do a
+      naive read-modify-write that clears bits you did not mean to.
+    fields:
+      - { name: SB, bit: 0, description: "Start bit sent (master). Cleared by reading SR1 then writing DR (the address). Embassy name: START." }
+      - { name: ADDR, bit: 1, description: "Address sent (master) / matched (slave). Cleared by reading SR1 then reading SR2. This read-SR1-then-SR2 is mandatory to advance the transfer." }
+      - { name: BTF, bit: 2, description: "Byte transfer finished (shift+DR both full/empty; clock stretched). Cleared by reading SR1 then reading/writing DR." }
+      - { name: ADD10, bit: 3, description: "10-bit header sent (master); cleared by reading SR1 then writing DR" }
+      - { name: STOPF, bit: 4, description: "STOP detected (slave). Cleared by reading SR1 then writing CR1." }
+      - { name: RXNE, bit: 6, description: "Receive data register not empty; cleared by reading DR" }
+      - { name: TXE, bit: 7, description: "Transmit data register empty; cleared by writing DR" }
+      - { name: BERR, bit: 8, description: "Bus error (misplaced START/STOP). Clear by writing 0." }
+      - { name: ARLO, bit: 9, description: "Arbitration lost (master). Clear by writing 0. Reverts device to slave." }
+      - { name: AF, bit: 10, description: "Acknowledge failure (NACK received). Clear by writing 0. On master TX this signals a missing/ended slave." }
+      - { name: OVR, bit: 11, description: "Overrun/underrun (slave, NOSTRETCH). Clear by writing 0." }
+      - { name: PECERR, bit: 12, description: "PEC error on reception. Clear by writing 0." }
+      - { name: TIMEOUT, bit: 14, description: "SMBus timeout / tLOW. Clear by writing 0." }
+      - { name: SMBALERT, bit: 15, description: "SMBus alert received. Clear by writing 0. Embassy name: ALERT (renamed to keep accessor unique vs CR1.ALERT)." }
+  - name: SR2
+    offset: "0x18"
+    access: ro
+    description: >
+      Status register 2. READ-ONLY. Reading SR2 is also the second half of
+      the ADDR-clear sequence (read SR1 then SR2), so a driver must read SR2
+      at the right moment, not speculatively — reading it after SR1 with
+      ADDR set clears ADDR and lets the transfer proceed.
+    fields:
+      - { name: MSL, bit: 0, description: "0=slave, 1=master" }
+      - { name: BUSY, bit: 1, description: "Bus busy (SDA/SCL activity). Poll for 0 before a START." }
+      - { name: TRA, bit: 2, description: "0=receiver, 1=transmitter (data direction of last address)" }
+      - { name: GENCALL, bit: 4, description: "General call address received (slave, ENGC=1)" }
+      - { name: SMBDEFAULT, bit: 5, description: "SMBus device default address received (slave)" }
+      - { name: SMBHOST, bit: 6, description: "SMBus host header received (slave)" }
+      - { name: DUALF, bit: 7, description: "Dual flag: 1=OAR2 matched, 0=OAR1 matched (slave)" }
+      - { name: PECVAL, bit: 8, width: 8, description: "Current PEC value. Embassy name: PEC (renamed to keep accessor unique vs CR1.PEC)." }
+  - name: CCR
+    offset: "0x1C"
+    access: rw
+    description: >
+      Clock control register. Program ONLY while PE=0. Sets SCL from fPCLK1.
+      Standard mode (F_S=0): CCR = fPCLK1 / (2*fSCL), min 4.
+      Fast mode Duty=0 (Tlow/Thigh=2): CCR = fPCLK1 / (3*fSCL), min 1.
+      Fast mode Duty=1 (16/9): CCR = fPCLK1 / (25*fSCL), min 1.
+    fields:
+      - { name: CCR, bit: 0, width: 12, description: "SCL clock divider from fPCLK1 (see register formulas above)" }
+      - { name: DUTY, bit: 14, description: "Fast-mode duty: 0=Tlow/Thigh=2/1, 1=16/9 (only meaningful when F_S=1)" }
+      - { name: F_S, bit: 15, description: "0=Standard mode (<=100 kHz), 1=Fast mode (<=400 kHz)" }
+  - name: TRISE
+    offset: "0x20"
+    access: rw
+    description: >
+      Maximum SCL rise time. Program ONLY while PE=0.
+      Standard mode: TRISE = fPCLK1(MHz) + 1 (1000 ns rise).
+      Fast mode: TRISE = fPCLK1(MHz) * 300 / 1000 + 1 (300 ns rise).
+    fields:
+      - { name: TRISE, bit: 0, width: 6, description: "Rise-time value in fPCLK1 periods + 1 (see formulas)" }
+  - name: FLTR
+    offset: "0x24"
+    access: rw
+    description: "Noise filters (F2/F4; absent on earliest F1). Program ONLY while PE=0."
+    fields:
+      - { name: DNF, bit: 0, width: 4, description: "Digital noise filter: 0=off, N=suppress spikes up to N * tI2CCLK" }
+      - { name: ANOFF, bit: 4, description: "Analog noise filter: 0=enabled, 1=disabled (note inverted sense)" }

@@ -1,0 +1,82 @@
+schema: alloy.registers.v1
+vendor: st
+ip: rcc_f4
+class: clock
+description: >
+  ST STM32F4 Reset and Clock Control — BRING-UP SUBSET only (mirrors
+  rcc_g0/rcc_g4 scope): the registers the boot clock program and peripheral
+  gates need, not the full 100+ field RCC. Boot program (HSI 16 MHz direct):
+  CR.HSION/HSIRDY spin-up, then CFGR.SW = 00 (HSI) with CFGR.SWS reading back
+  00. F4 system-clock-switch encoding differs from G0/G4: SW/SWS 00=HSI
+  01=HSE 10=PLL (2 bits), whereas G0 uses 3-bit codes. PLLCFGR is mapped for
+  a FUTURE PLL profile (PLLM/PLLN/PLLP/PLLSRC/PLLQ) but the generated family
+  ships boot-only (HSI direct). Peripheral-gate enable registers (AHB1/AHB2/
+  AHB3/APB1/APB2 ENR) are declared by BYTE OFFSET with no fields — gate
+  resolution matches by offset, and the per-bit gate map lives in the device
+  contract, not here. AHB/APB prescaler fields use the F4 sparse encoding
+  (HPRE Div2=0b1000, PPRE Div2=0b100) — see field descriptions; a driver must
+  NOT treat these as linear shift counts.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee registers/rcc:f4.json (MIT OR Apache-2.0 via stm32-metapac; RM-curated)"
+    - "RM0090 (STM32F405/415/407/417/427/437/429/439) §6 RCC — SW/SWS 2-bit encoding and HPRE/PPRE prescaler tables confirmed"
+    - "old-alloy tests/emulation/renode/stm32f4/scripts/boot_smoke.robot — RCC base 0x40023800, AHB1ENR@0x40023830 (offset 0x30), APB1ENR@0x40023840 (offset 0x40), APB1ENR bit17=USART2EN, AHB1ENR bit0=GPIOAEN cross-check gate offsets"
+  completeness: bring-up-subset
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    description: "Clock control register"
+    fields:
+      - { name: HSION, bit: 0, description: "Internal 16 MHz HSI oscillator enable" }
+      - { name: HSIRDY, bit: 1, description: "HSI ready flag (read-only); poll =1 before switching SW to HSI" }
+      - { name: HSEON, bit: 16, description: "HSE oscillator enable" }
+      - { name: HSERDY, bit: 17, description: "HSE ready flag (read-only); poll =1 before using HSE" }
+      - { name: HSEBYP, bit: 18, description: "HSE bypass (external clock, not crystal); set only while HSEON=0" }
+      - { name: PLLON, bit: 24, description: "Main PLL enable; do not disable while PLL is the system clock" }
+      - { name: PLLRDY, bit: 25, description: "Main PLL locked flag (read-only); poll =1 before switching SW to PLL" }
+  - name: PLLCFGR
+    offset: "0x04"
+    access: rw
+    description: >
+      Main PLL configuration. Mapped for a future PLL profile only — the
+      generated F4 family currently boots HSI-direct and does not program
+      this. VCO in = f_input / PLLM; VCO out = VCO in * PLLN;
+      SYSCLK = VCO out / PLLP. Reset value 0x2400_3010. PLL fields are
+      writable ONLY while PLLON=0 (RM0090 §6.3.2).
+    fields:
+      - { name: PLLM, bit: 0, width: 6, description: "PLL input divider; legal 2..63; 000000/000001 forbidden. VCO input must be 1-2 MHz (2 MHz recommended)" }
+      - { name: PLLN, bit: 6, width: 9, description: "PLL VCO multiplier; legal 50..432; VCO output 100-432 MHz" }
+      - { name: PLLP, bit: 16, width: 2, description: "SYSCLK divider — ENCODED not literal: 0=/2 1=/4 2=/6 3=/8" }
+      - { name: PLLSRC, bit: 22, description: "PLL input source: 0=HSI 1=HSE (shared with PLLI2S)" }
+      - { name: PLLQ, bit: 24, width: 4, description: "Divider for 48 MHz domain (USB OTG FS/SDIO/RNG); legal 2..15" }
+  - name: CFGR
+    offset: "0x08"
+    access: rw
+    description: "Clock configuration register"
+    fields:
+      - { name: SW, bit: 0, width: 2, description: "System clock switch — F4 2-bit encoding: 00=HSI 01=HSE 10=PLL (11 reserved)" }
+      - { name: SWS, bit: 2, width: 2, description: "System clock switch STATUS (read-only): 00=HSI 01=HSE 10=PLL; poll until it mirrors SW after a switch" }
+      - { name: HPRE, bit: 4, width: 4, description: "AHB prescaler — sparse: 0-7=/1, 8=/2, 9=/4, 10=/8, 11=/16, 12=/64, 13=/128, 14=/256, 15=/512 (note: no /32)" }
+      - { name: PPRE1, bit: 10, width: 3, description: "APB1 (low-speed) prescaler — sparse: 0-3=/1, 4=/2, 5=/4, 6=/8, 7=/16. APB1 max 42/45 MHz" }
+      - { name: PPRE2, bit: 13, width: 3, description: "APB2 (high-speed) prescaler — sparse: 0-3=/1, 4=/2, 5=/4, 6=/8, 7=/16. APB2 max 84/90 MHz" }
+  - name: AHB1ENR
+    offset: "0x30"
+    access: rw
+    description: "AHB1 peripheral clock enable (GPIOA..GPIOK bits 0-10, DMA1/2 bits 21/22, ETH bits 25-28). Per-bit gate map resolved by byte offset from the device contract."
+  - name: AHB2ENR
+    offset: "0x34"
+    access: rw
+    description: "AHB2 peripheral clock enable (DCMI/CRYP/HASH/RNG bits 0-6, USB_OTG_FS bit 7). Per-bit gate map resolved by byte offset from the device contract."
+  - name: AHB3ENR
+    offset: "0x38"
+    access: rw
+    description: "AHB3 peripheral clock enable (FMC/FSMC bit 0, QUADSPI bit 1). Per-bit gate map resolved by byte offset from the device contract."
+  - name: APB1ENR
+    offset: "0x40"
+    access: rw
+    description: "APB1 peripheral clock enable (TIM2-14, SPI2/3, USART2/3+UART4/5 bits 17-20, I2C1/2/3 bits 21-23, PWR bit 28, etc). Per-bit gate map resolved by byte offset from the device contract."
+  - name: APB2ENR
+    offset: "0x44"
+    access: rw
+    description: "APB2 peripheral clock enable (TIM1/8, USART1 bit 4/USART6 bit 5, ADC1-3 bits 8-10, SPI1 bit 12, SYSCFG bit 14, etc). Per-bit gate map resolved by byte offset from the device contract."

@@ -126,6 +126,35 @@ map:
   "vrefbuf:v2b": uncurated
   "sai:v4_4pdm": uncurated
 
+  # --- stm32f4 family tags ---
+  "rcc:f4": st/rcc_f4
+  "flash:f4": st/flash_f4
+  "usart:v2": st/usart_v2
+  "spi:v2_i2s": st/spi_v1
+  "i2c:v1": st/i2c_v1
+  "adc:v2": uncurated
+  "adccommon:v2": uncurated
+  "timer:v1": uncurated
+  "dma:v2": uncurated
+  "dbgmcu:f4": uncurated
+  "pwr:f4": uncurated
+  "syscfg:f4": uncurated
+  "rtc:v2_f4": uncurated
+  "sdmmc:v1": uncurated
+  "otg:v1": uncurated
+  "crc:v1": uncurated
+  "iwdg:v1": uncurated
+  "rcc:f410": st/rcc_f4
+  "hash:v1": uncurated
+  "sai:v1": uncurated
+  "aes:v1": uncurated
+  "cryp:v1": uncurated
+  "eth:v1b": uncurated
+  "fmc:v1x3": uncurated
+  "fmpi2c:v2": uncurated
+  "fsmc:v1x0": uncurated
+  "fsmc:v1x3": uncurated
+
 name_overrides:
   "lpuart": uncurated
   "lptim": uncurated
