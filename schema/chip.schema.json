@@ -264,6 +264,25 @@
               "pins": {"type": "array", "items": {"type": "string"}, "minItems": 1}
             }
           },
+          "rmii_select": {
+            "type": "object",
+            "description": "For a MAC whose RMII-vs-MII select lives OUTSIDE its own register block (STM32: SYSCFG_PMC, not the ETH block): the register address + bit to set for RMII, and the clock-enable to run first. A chip fact, emitted into the generated eth_configure_pins() so no silicon address sits in the hand-written HAL. MACs whose select is in-block (SAME70 GMAC's UR) omit it.",
+            "required": ["addr", "bit", "clock"],
+            "additionalProperties": false,
+            "properties": {
+              "addr": {"type": "string", "pattern": "^0x[0-9A-Fa-f]+$"},
+              "bit": {"type": "integer", "minimum": 0, "maximum": 31},
+              "clock": {
+                "type": "object",
+                "required": ["addr", "bit"],
+                "additionalProperties": false,
+                "properties": {
+                  "addr": {"type": "string", "pattern": "^0x[0-9A-Fa-f]+$"},
+                  "bit": {"type": "integer", "minimum": 0, "maximum": 31}
+                }
+              }
+            }
+          },
           "uncurated": {
             "const": true,
             "description": "Peripheral exists on the die but its IP register file is not curated yet: base/gate/irq/pin/DMA facts are recorded, codegen emits nothing for it. Builders set this; ip_hint carries the verbatim upstream tag."

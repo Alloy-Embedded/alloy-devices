@@ -1,0 +1,119 @@
+schema: alloy.registers.v1
+vendor: st
+ip: eth_v1
+class: eth
+description: "STM32 Ethernet MAC (Synopsys DWC_ether_mac, 10/100). Bring-up subset for a polled/interrupt \
+  NetDevice + clause-22 MDIO driver — NOT the full MMC statistics / PTP block. MDIO lives in MACMIIAR (pack \
+  PA/MR/CR, set MW for a write, set MB to start, poll MB=0; data in MACMIIDR). Descriptor rings are pointed \
+  to by DMARDLAR/DMATDLAR; DES0.OWN bit31 = 1 means DMA owns (opposite sense from the Cadence GEM). Rings are \
+  CHAINED (RDES1.RCH / TDES0.TCH = 1, word 3 = next-descriptor pointer). MACCR.FES is speed and MACCR.DM is \
+  duplex, both from the PHY link result; MACCR.TE/RE start the MAC last. MACA0LR/MACA0HR hold the station MAC \
+  address (write low then high). DMABMR.SR is the self-clearing soft reset (curated as SWR to avoid clashing \
+  with DMAOMR.SR = start receive, since field accessor names are per-IP unique); DMAOMR.ST/SR start the TX/RX \
+  DMA; DMASR RS/TS are the write-1-to-clear poll flags. NOT hardware-validated — offsets/bits from RM0410 \
+  and CMSIS; the MDIO PHY-ID read is the cable-free first checkpoint (mirrors the M1 GMAC path).\n"
+provenance:
+  sources:
+  - "RM0410 (STM32F74x/F75x/F76x/F77x) §Ethernet (ETH) — MACCR/MACFFR/MACMIIAR/MACMIIDR/MACFCR/MACA0x, \
+    DMABMR/DMATPDR/DMARPDR/DMARDLAR/DMATDLAR/DMASR/DMAOMR offsets + field bit positions; normal \
+    (non-enhanced) 4-word descriptor layout (DMABMR.EDFE=0)"
+  - "CMSIS ETH_TypeDef (stm32f767xx.h) — register offsets 0x0000 (MAC) / 0x1000 (DMA), base 0x40028000"
+  - "alloy microchip/gmac_v1 bring-up pattern — mirrored NetDevice + clause-22 MDIO interface"
+  completeness: bring-up-subset
+registers:
+- name: MACCR
+  offset: '0x0000'
+  access: rw
+  fields:
+  - { name: RE,   bit: 2,  description: "Receiver enable (set LAST to start the MAC)" }
+  - { name: TE,   bit: 3,  description: "Transmitter enable (set LAST to start the MAC)" }
+  - { name: APCS, bit: 7,  description: "Automatic pad/CRC stripping — left 0; the driver strips the FCS in software" }
+  - { name: IPCO, bit: 10, description: "IPv4 checksum offload on RX (optional)" }
+  - { name: DM,   bit: 11, description: "Duplex mode (1 = full duplex) from the PHY link result" }
+  - { name: FES,  bit: 14, description: "Fast Ethernet speed (1 = 100 Mbps) from the PHY link result" }
+- name: MACFFR
+  offset: '0x0004'
+  access: rw
+  fields:
+  - { name: PM, bit: 0,  description: "Promiscuous mode (pass all frames)" }
+  - { name: RA, bit: 31, description: "Receive all (hand every frame to the app)" }
+- name: MACMIIAR
+  offset: '0x0010'
+  access: rw
+  fields:
+  - { name: MB, bit: 0, description: "MII busy — set to start a transaction, hardware self-clears; poll for 0" }
+  - { name: MW, bit: 1, description: "MII write (1 = write, 0 = read)" }
+  - name: CR
+    bit: 2
+    width: 3
+    description: "Clock range — MDC divider from HCLK. 0b100 = HCLK/102 for a 150-216 MHz HCLK"
+    values: { HCLK_42: 0, HCLK_62: 1, HCLK_16: 2, HCLK_26: 3, HCLK_102: 4 }
+  - { name: MR, bit: 6,  width: 5, description: "MII register address inside the PHY" }
+  - { name: PA, bit: 11, width: 5, description: "PHY address on the MDIO bus" }
+- name: MACMIIDR
+  offset: '0x0014'
+  access: rw
+  fields:
+  - { name: MD, bit: 0, width: 16, description: "PHY register value on read / value to write" }
+- name: MACFCR
+  offset: '0x0018'
+  access: rw
+- name: MACA0HR
+  offset: '0x0040'
+  access: rw
+  fields:
+  - { name: MACA0H, bit: 0, width: 16, description: "MAC address bytes 4..5; write AFTER MACA0LR" }
+- name: MACA0LR
+  offset: '0x0044'
+  access: rw
+  fields:
+  - { name: MACA0L, bit: 0, width: 32, description: "MAC address bytes 0..3, byte 0 in bits [7:0]; write BEFORE MACA0HR" }
+- name: DMABMR
+  offset: '0x1000'
+  access: rw
+  fields:
+  - { name: SWR,  bit: 0,  description: "Software reset (RM name SR; renamed to avoid clashing with DMAOMR.SR) — set to 1, self-clears, poll until 0" }
+  - { name: EDFE, bit: 7,  description: "Enhanced descriptor format — MUST be 0 for the 4-word normal descriptors this driver uses" }
+  - { name: PBL,  bit: 8,  width: 6, description: "Programmable burst length (0b100000 = 32 beats)" }
+  - { name: FB,   bit: 16, description: "Fixed burst" }
+  - { name: AAB,  bit: 25, description: "Address-aligned beats" }
+- name: DMATPDR
+  offset: '0x1004'
+  access: rw
+  fields:
+  - { name: TPD, bit: 0, width: 32, description: "Write any value to resume a suspended TX DMA" }
+- name: DMARPDR
+  offset: '0x1008'
+  access: rw
+  fields:
+  - { name: RPD, bit: 0, width: 32, description: "Write any value to resume a suspended RX DMA" }
+- name: DMARDLAR
+  offset: '0x100C'
+  access: rw
+  fields:
+  - { name: RDLA, bit: 0, width: 32, description: "RX descriptor list start address; program while the DMA is stopped" }
+- name: DMATDLAR
+  offset: '0x1010'
+  access: rw
+  fields:
+  - { name: TDLA, bit: 0, width: 32, description: "TX descriptor list start address; program while the DMA is stopped" }
+- name: DMASR
+  offset: '0x1014'
+  access: rw
+  fields:
+  - { name: TS,   bit: 0,  description: "Transmit status — a frame was sent (write 1 to clear)" }
+  - { name: RS,   bit: 6,  description: "Receive status — a frame was received (poll; write 1 to clear)" }
+  - { name: RBUS, bit: 7,  description: "RX buffer unavailable (write 1 to clear; recover with a DMARPDR poll demand)" }
+  - { name: NIS,  bit: 16, description: "Normal interrupt summary (write 1 to clear alongside TS/RS)" }
+- name: DMAOMR
+  offset: '0x1018'
+  access: rw
+  fields:
+  - { name: SR,  bit: 1,  description: "Start receive — start/stop the RX DMA" }
+  - { name: ST,  bit: 13, description: "Start transmit — start/stop the TX DMA" }
+  - { name: FTF, bit: 20, description: "Flush TX FIFO — self-clearing; set once before start and poll until 0" }
+  - { name: TSF, bit: 21, description: "TX store-and-forward" }
+  - { name: RSF, bit: 25, description: "RX store-and-forward" }
+- name: DMAIER
+  offset: '0x101C'
+  access: rw
