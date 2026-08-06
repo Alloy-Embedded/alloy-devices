@@ -7,6 +7,7 @@ description: >
   needed by clock programs before raising the core clock).
 provenance:
   sources:
+    - "SAME70 datasheet 22.5: FCR command interface + FSR status for the flash HAL (WP/EPA)"
     - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml templates.efc (SVD-derived)"
     - "old-alloy git 8b1b1bc7^ system_clock.hpp kEfcFmrRegister/kEfcFwsField (hardware-validated: FWS bit 8 width 4)"
   completeness: bring-up-subset
@@ -15,16 +16,25 @@ registers:
     offset: "0x00"
     access: rw
     fields:
-      - { name: FRDY, bit: 0 }
+      - { name: FRDY_IE, bit: 0, description: "ready-interrupt enable (the READY flag itself is FSR.FRDY)" }
       - { name: FWS, bit: 8, width: 4 }
       - { name: SCOD, bit: 16 }
       - { name: CLOE, bit: 26 }
   - name: FCR
     offset: "0x04"
     access: wo
+    fields:
+      - { name: FCMD, bit: 0, width: 8 }
+      - { name: FARG, bit: 8, width: 16 }
+      - { name: FKEY, bit: 24, width: 8, description: "must be 0x5A or the command is refused (FSR.FCMDE)" }
   - name: FSR
     offset: "0x08"
     access: ro
+    fields:
+      - { name: FRDY, bit: 0 }
+      - { name: FCMDE, bit: 1 }
+      - { name: FLOCKE, bit: 2 }
+      - { name: FLERR, bit: 3 }
   - name: FRR
     offset: "0x0C"
     access: ro
