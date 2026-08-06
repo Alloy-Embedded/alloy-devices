@@ -7,6 +7,7 @@ description: >
   states before raising the core clock).
 provenance:
   sources:
+    - "RM0431 3.3: SR/CR program/erase fields for the flash HAL (sector erase + x32 programming)"
     - "old-alloy git b2f319c2^ src/hal/vendors/st/stm32f7/generated/{registers,bitfields}/flash_* (CMSIS-SVD derived: ACR@0x00, LATENCY[3:0], PRFTEN=8, ARTEN=9)"
   completeness: bring-up-subset
 registers:
@@ -27,9 +28,27 @@ registers:
   - name: SR
     offset: "0x0C"
     access: rw
+    fields:
+      - { name: EOP, bit: 0 }
+      - { name: OPERR, bit: 1 }
+      - { name: WRPERR, bit: 4 }
+      - { name: PGAERR, bit: 5 }
+      - { name: PGPERR, bit: 6 }
+      - { name: ERSERR, bit: 7 }
+      - { name: BSY, bit: 16 }
   - name: CR
     offset: "0x10"
     access: rw
+    fields:
+      - { name: PG, bit: 0 }
+      - { name: SER, bit: 1 }
+      - { name: MER, bit: 2 }
+      - { name: SNB, bit: 3, width: 4 }
+      - { name: PSIZE, bit: 8, width: 2, description: "0=x8 1=x16 2=x32 3=x64 program parallelism" }
+      - { name: STRT, bit: 16 }
+      - { name: EOPIE, bit: 24 }
+      - { name: ERRIE, bit: 25 }
+      - { name: LOCK, bit: 31 }
   - name: OPTCR
     offset: "0x14"
     access: rw
