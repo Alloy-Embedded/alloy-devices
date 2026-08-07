@@ -71,6 +71,8 @@ peripherals:
       peripheral: rcc
       register: IOPENR
       bit: 0
+    companions:
+      exti: exti
   gpiob:
     ip: st/gpio_v2
     base: '0x50000400'
@@ -79,6 +81,8 @@ peripherals:
       peripheral: rcc
       register: IOPENR
       bit: 1
+    companions:
+      exti: exti
   gpioc:
     ip: st/gpio_v2
     base: '0x50000800'
@@ -87,6 +91,8 @@ peripherals:
       peripheral: rcc
       register: IOPENR
       bit: 2
+    companions:
+      exti: exti
   gpiod:
     ip: st/gpio_v2
     base: '0x50000C00'
@@ -95,6 +101,8 @@ peripherals:
       peripheral: rcc
       register: IOPENR
       bit: 3
+    companions:
+      exti: exti
   gpiof:
     ip: st/gpio_v2
     base: '0x50001400'
@@ -103,6 +111,8 @@ peripherals:
       peripheral: rcc
       register: IOPENR
       bit: 5
+    companions:
+      exti: exti
   usart1:
     ip: st/usart_v4
     base: '0x40013800'

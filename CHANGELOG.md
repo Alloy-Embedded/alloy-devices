@@ -28,6 +28,12 @@ understand and fail loudly on a mismatch.
 - `stm32g071rb` and `stm32g0b1` gain a curated `exti` peripheral with its three
   IRQ-line groups, and `port_index` on every GPIO port. Both chips are
   hand-verified, so the builder never supplied these.
+- Every GPIO port on those two chips gains `companions: {exti: exti}`. A pin
+  driver holds a PORT, and nothing in the data told it which block turns that
+  port's edges into interrupts — the same reason `dma1` names its `dmamux`
+  companion. On a die with two interrupt controllers, or an EXTI that only some
+  ports reach, this is the fact that says which one; on these two it is uniform,
+  and stating it per port is what keeps it a fact rather than an assumption.
 
 ## 0.2.0 — 2026-08-07
 
