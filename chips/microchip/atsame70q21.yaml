@@ -5,31 +5,41 @@ part: ATSAME70Q21B
 die: atsame70q21
 provenance:
   sources:
-  - "alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml (SVD-derived) \u2014 bases, PIDs,\
-    \ IRQs, register templates"
-  - "old-alloy git 8b1b1bc7^ .alloy-devices-patched system_clock.hpp/routes.hpp/clock_bindings.hpp \u2014\
-    \ hardware-validated clock sequence + pin functions"
-  - "old-alloy git 7559c143 boards/same70_xplained (commit 'validate uart-backed hardware probes') \u2014\
-    \ WDT disable, CCFG_SYSIO, USART1 8N1 config"
+  - alloy-devices-yml vendors/microchip/same70/devices/atsame70q21b.yml (SVD-derived) — bases, PIDs, IRQs,
+    register templates
+  - old-alloy git 8b1b1bc7^ .alloy-devices-patched system_clock.hpp/routes.hpp/clock_bindings.hpp — hardware-validated
+    clock sequence + pin functions
+  - old-alloy git 7559c143 boards/same70_xplained (commit 'validate uart-backed hardware probes') — WDT
+    disable, CCFG_SYSIO, USART1 8N1 config
   - 'peripheral mining 2026-07-22: TWIHS0/AFEC0 bases+PIDs from canonical yml; PA4=TWCK0/PA3=TWD0 function
     A from hardware-era routes.hpp; temp sensor = AFEC0 ch11; COCR mid-scale quirk'
-  - 'SPI0 mining 2026-07-22: base 0x40008000 / PID 21 (PCER0 bit 21, matches interrupts SPI0=21) from canonical yml; PD20/PD21/PD22 = MISO/MOSI/SPCK peripheral B (selector 1) from old-alloy git 8b1b1bc7^ generated routes.hpp write_selector operands (PD20=1 PD21=1 PD22=1 = function B; same source style as the TWIHS0 line) + board.json spi block (Xplained EXT/Arduino headers); CSR modeled as 4-entry array (old hw()->CSR[cs]; canonical yml collapsed it — mining quirk spi-csr-array)'
-  - 'IC inventory 2026-07-22 (Atmel-44050A user guide): PC11 = AT24MAC402 WP (low = writable), PD25 = SPI0 NPCS1 on EXT1 pin 15 (used as GPIO software CS); 0x37 do scan = alias write-protect do proprio AT24MAC402, nao um segundo EDBG endpoint'
-  - 'XDMAC mining 2026-07-22: base 0x40078000 / PID 58 -> PCER1 bit 26 from canonical yml (irq XDMAC ja na lista); PERIDs do enum CC.PERID canonico (52 entradas): USART1_TX=9/RX=10, AFEC0=35; 24 canais corroborados por GSWR swreq0..23 + datasheet (geometria 0x50/stride 0x40 e datasheet-only)'
+  - 'SPI0 mining 2026-07-22: base 0x40008000 / PID 21 (PCER0 bit 21, matches interrupts SPI0=21) from
+    canonical yml; PD20/PD21/PD22 = MISO/MOSI/SPCK peripheral B (selector 1) from old-alloy git 8b1b1bc7^
+    generated routes.hpp write_selector operands (PD20=1 PD21=1 PD22=1 = function B; same source style
+    as the TWIHS0 line) + board.json spi block (Xplained EXT/Arduino headers); CSR modeled as 4-entry
+    array (old hw()->CSR[cs]; canonical yml collapsed it — mining quirk spi-csr-array)'
+  - 'IC inventory 2026-07-22 (Atmel-44050A user guide): PC11 = AT24MAC402 WP (low = writable), PD25 =
+    SPI0 NPCS1 on EXT1 pin 15 (used as GPIO software CS); 0x37 do scan = alias write-protect do proprio
+    AT24MAC402, nao um segundo EDBG endpoint'
+  - 'XDMAC mining 2026-07-22: base 0x40078000 / PID 58 -> PCER1 bit 26 from canonical yml (irq XDMAC ja
+    na lista); PERIDs do enum CC.PERID canonico (52 entradas): USART1_TX=9/RX=10, AFEC0=35; 24 canais
+    corroborados por GSWR swreq0..23 + datasheet (geometria 0x50/stride 0x40 e datasheet-only)'
+  - same70-dfp-4.9.129.atpack ATSAME70Q21B.atdf <pinouts>/LQFP144 (Apache-2.0 (SPDX-License-Identifier
+    in every ATDF; Copyright (c) 2017 Microchip Technology Inc.)) — physical pinout, accepted by the pinout
+    plausibility lint
   verified:
-  - "PID == NVIC line; PID 7..31 gate via PCER0 (write-only set-register), 32..63 via PCER1 \u2014 gates\
-    \ here use style write_set"
-  - "WDT and RSWDT run at reset with write-once MR \u2014 the clock program disables both FIRST (the newer\
-    \ old-repo codegen forgot this; the hardware-validated legacy board.cpp did it)"
-  - "PB4 = USART1 TXD1 is peripheral function D and needs MATRIX CCFG_SYSIO bit 4 (JTAG TDI release) \u2014\
-    \ modeled as route af=3 + pin mux_unlock (the old lite codegen wrongly used function A and skipped\
-    \ SYSIO)"
-  - "Validated profile is 150 MHz (PLLA 300 / PRES 2, MDIV=EQ_PCK so CPU==MCK). The 300 MHz max profile\
-    \ was never hardware-validated in the old ecosystem \u2014 not seeded"
+  - PID == NVIC line; PID 7..31 gate via PCER0 (write-only set-register), 32..63 via PCER1 — gates here
+    use style write_set
+  - WDT and RSWDT run at reset with write-once MR — the clock program disables both FIRST (the newer old-repo
+    codegen forgot this; the hardware-validated legacy board.cpp did it)
+  - PB4 = USART1 TXD1 is peripheral function D and needs MATRIX CCFG_SYSIO bit 4 (JTAG TDI release) —
+    modeled as route af=3 + pin mux_unlock (the old lite codegen wrongly used function A and skipped SYSIO)
+  - Validated profile is 150 MHz (PLLA 300 / PRES 2, MDIV=EQ_PCK so CPU==MCK). The 300 MHz max profile
+    was never hardware-validated in the old ecosystem — not seeded
   - Boot clock is the 4 MHz internal RC (MOSCRCF reset value 0), per canonical factory-mainck-rc-4mhz
     profile
-  - "Old YAML claimed PCLK 75 MHz for this profile; hardware-validated contract used 150 MHz and the working\
-    \ UART BRGR proves it \u2014 150 MHz seeded"
+  - Old YAML claimed PCLK 75 MHz for this profile; hardware-validated contract used 150 MHz and the working
+    UART BRGR proves it — 150 MHz seeded
 cores:
 - name: cm7
   arch: armv7em
@@ -165,11 +175,19 @@ peripherals:
       style: write_set
     irq: GMAC
     kernel_clock: ahb
-    # RMII bank is fixed by the die: GMAC RMII lives on PD0-PD9, peripheral
-    # function A (AF 0). A board only chooses to wire Ethernet, not these pins.
     rmii:
       af: 0
-      pins: [pd0, pd1, pd2, pd3, pd4, pd5, pd6, pd7, pd8, pd9]
+      pins:
+      - pd0
+      - pd1
+      - pd2
+      - pd3
+      - pd4
+      - pd5
+      - pd6
+      - pd7
+      - pd8
+      - pd9
   xdmac:
     ip: microchip/xdmac_v1
     base: '0x40078000'
@@ -534,3 +552,440 @@ clock:
         field: MCKRDY
         equals: 1
         timeout_us: 20000
+package:
+  type: LQFP144
+  pins: 144
+  part: ATSAME70Q21B
+  layout:
+  - position: '1'
+    signal: pd0
+    kind: gpio
+  - position: '2'
+    signal: pd31
+    kind: gpio
+  - position: '3'
+    signal: vddout
+    kind: power
+  - position: '4'
+    signal: pe0
+    kind: gpio
+  - position: '5'
+    signal: vddin
+    kind: power
+  - position: '6'
+    signal: pe1
+    kind: gpio
+  - position: '7'
+    signal: pe2
+    kind: gpio
+  - position: '8'
+    signal: vrefn
+    kind: analog
+  - position: '9'
+    signal: vrefp
+    kind: analog
+  - position: '10'
+    signal: pe3
+    kind: gpio
+  - position: '11'
+    signal: pc0
+    kind: gpio
+  - position: '12'
+    signal: pc27
+    kind: gpio
+  - position: '13'
+    signal: pc26
+    kind: gpio
+  - position: '14'
+    signal: pc31
+    kind: gpio
+  - position: '15'
+    signal: pc30
+    kind: gpio
+  - position: '16'
+    signal: pc29
+    kind: gpio
+  - position: '17'
+    signal: pc12
+    kind: gpio
+  - position: '18'
+    signal: pc15
+    kind: gpio
+  - position: '19'
+    signal: pc13
+    kind: gpio
+  - position: '20'
+    signal: pb1
+    kind: gpio
+  - position: '21'
+    signal: pb0
+    kind: gpio
+  - position: '22'
+    signal: pa20
+    kind: gpio
+  - position: '23'
+    signal: pa19
+    kind: gpio
+  - position: '24'
+    signal: pa18
+    kind: gpio
+  - position: '25'
+    signal: pa17
+    kind: gpio
+  - position: '26'
+    signal: pb2
+    kind: gpio
+  - position: '27'
+    signal: pe4
+    kind: gpio
+  - position: '28'
+    signal: pe5
+    kind: gpio
+  - position: '29'
+    signal: vddcore
+    kind: power
+  - position: '30'
+    signal: vddio
+    kind: power
+  - position: '31'
+    signal: pb3
+    kind: gpio
+  - position: '32'
+    signal: pa21
+    kind: gpio
+  - position: '33'
+    signal: vddcore
+    kind: power
+  - position: '34'
+    signal: pd30
+    kind: gpio
+  - position: '35'
+    signal: pa7
+    kind: gpio
+  - position: '36'
+    signal: pa8
+    kind: gpio
+  - position: '37'
+    signal: pa22
+    kind: gpio
+  - position: '38'
+    signal: pc1
+    kind: gpio
+  - position: '39'
+    signal: pc2
+    kind: gpio
+  - position: '40'
+    signal: pc3
+    kind: gpio
+  - position: '41'
+    signal: pc4
+    kind: gpio
+  - position: '42'
+    signal: pa13
+    kind: gpio
+  - position: '43'
+    signal: vddio
+    kind: power
+  - position: '44'
+    signal: gnd
+    kind: ground
+  - position: '45'
+    signal: pa16
+    kind: gpio
+  - position: '46'
+    signal: pa23
+    kind: gpio
+  - position: '47'
+    signal: pd27
+    kind: gpio
+  - position: '48'
+    signal: pc7
+    kind: gpio
+  - position: '49'
+    signal: pa15
+    kind: gpio
+  - position: '50'
+    signal: vddcore
+    kind: power
+  - position: '51'
+    signal: pa14
+    kind: gpio
+  - position: '52'
+    signal: pd25
+    kind: gpio
+  - position: '53'
+    signal: pd26
+    kind: gpio
+  - position: '54'
+    signal: pc6
+    kind: gpio
+  - position: '55'
+    signal: pd24
+    kind: gpio
+  - position: '56'
+    signal: pa24
+    kind: gpio
+  - position: '57'
+    signal: pd23
+    kind: gpio
+  - position: '58'
+    signal: pc5
+    kind: gpio
+  - position: '59'
+    signal: pa25
+    kind: gpio
+  - position: '60'
+    signal: pd22
+    kind: gpio
+  - position: '61'
+    signal: gnd
+    kind: ground
+  - position: '62'
+    signal: pa26
+    kind: gpio
+  - position: '63'
+    signal: pd21
+    kind: gpio
+  - position: '64'
+    signal: pa11
+    kind: gpio
+  - position: '65'
+    signal: pd20
+    kind: gpio
+  - position: '66'
+    signal: pa10
+    kind: gpio
+  - position: '67'
+    signal: pd19
+    kind: gpio
+  - position: '68'
+    signal: pa12
+    kind: gpio
+  - position: '69'
+    signal: pd18
+    kind: gpio
+  - position: '70'
+    signal: pa27
+    kind: gpio
+  - position: '71'
+    signal: pd28
+    kind: gpio
+  - position: '72'
+    signal: vddio
+    kind: power
+  - position: '73'
+    signal: pa5
+    kind: gpio
+  - position: '74'
+    signal: pd17
+    kind: gpio
+  - position: '75'
+    signal: pa9
+    kind: gpio
+  - position: '76'
+    signal: pc28
+    kind: gpio
+  - position: '77'
+    signal: pa4
+    kind: gpio
+  - position: '78'
+    signal: pd16
+    kind: gpio
+  - position: '79'
+    signal: pb6
+    kind: gpio
+  - position: '80'
+    signal: vddio
+    kind: power
+  - position: '81'
+    signal: vddcore
+    kind: power
+  - position: '82'
+    signal: pc8
+    kind: gpio
+  - position: '83'
+    signal: nrst
+    kind: reset
+  - position: '84'
+    signal: pd14
+    kind: gpio
+  - position: '85'
+    signal: tst
+    kind: boot
+  - position: '86'
+    signal: pc9
+    kind: gpio
+  - position: '87'
+    signal: pb12
+    kind: gpio
+  - position: '88'
+    signal: pd13
+    kind: gpio
+  - position: '89'
+    signal: pb7
+    kind: gpio
+  - position: '90'
+    signal: pc10
+    kind: gpio
+  - position: '91'
+    signal: pa3
+    kind: gpio
+  - position: '92'
+    signal: pd12
+    kind: gpio
+  - position: '93'
+    signal: pa2
+    kind: gpio
+  - position: '94'
+    signal: pc11
+    kind: gpio
+  - position: '95'
+    signal: gnd
+    kind: ground
+  - position: '96'
+    signal: vddio
+    kind: power
+  - position: '97'
+    signal: pc14
+    kind: gpio
+  - position: '98'
+    signal: pd11
+    kind: gpio
+  - position: '99'
+    signal: pa1
+    kind: gpio
+  - position: '100'
+    signal: pc16
+    kind: gpio
+  - position: '101'
+    signal: pd10
+    kind: gpio
+  - position: '102'
+    signal: pa0
+    kind: gpio
+  - position: '103'
+    signal: pc17
+    kind: gpio
+  - position: '104'
+    signal: jtagsel
+    kind: boot
+  - position: '105'
+    signal: pb4
+    kind: gpio
+  - position: '106'
+    signal: pd15
+    kind: gpio
+  - position: '107'
+    signal: vddcore
+    kind: power
+  - position: '108'
+    signal: pd29
+    kind: gpio
+  - position: '109'
+    signal: pb5
+    kind: gpio
+  - position: '110'
+    signal: pd9
+    kind: gpio
+  - position: '111'
+    signal: pc18
+    kind: gpio
+  - position: '112'
+    signal: pa28
+    kind: gpio
+  - position: '113'
+    signal: pd8
+    kind: gpio
+  - position: '114'
+    signal: pa6
+    kind: gpio
+  - position: '115'
+    signal: gnd
+    kind: ground
+  - position: '116'
+    signal: pa30
+    kind: gpio
+  - position: '117'
+    signal: pc19
+    kind: gpio
+  - position: '118'
+    signal: pa31
+    kind: gpio
+  - position: '119'
+    signal: pd7
+    kind: gpio
+  - position: '120'
+    signal: pc20
+    kind: gpio
+  - position: '121'
+    signal: pd6
+    kind: gpio
+  - position: '122'
+    signal: pc21
+    kind: gpio
+  - position: '123'
+    signal: vddpll
+    kind: power
+  - position: '124'
+    signal: pc22
+    kind: gpio
+  - position: '125'
+    signal: pd5
+    kind: gpio
+  - position: '126'
+    signal: pd4
+    kind: gpio
+  - position: '127'
+    signal: pc23
+    kind: gpio
+  - position: '128'
+    signal: pd3
+    kind: gpio
+  - position: '129'
+    signal: pa29
+    kind: gpio
+  - position: '130'
+    signal: pc24
+    kind: gpio
+  - position: '131'
+    signal: pd2
+    kind: gpio
+  - position: '132'
+    signal: pd1
+    kind: gpio
+  - position: '133'
+    signal: pc25
+    kind: gpio
+  - position: '134'
+    signal: vddutmii
+    kind: power
+  - position: '135'
+    signal: gnd
+    kind: ground
+  - position: '136'
+    signal: hsdm
+    kind: other
+  - position: '137'
+    signal: hsdp
+    kind: other
+  - position: '138'
+    signal: gnd
+    kind: ground
+  - position: '139'
+    signal: vddutmic
+    kind: power
+  - position: '140'
+    signal: vbg
+    kind: analog
+  - position: '141'
+    signal: pb8
+    kind: gpio
+  - position: '142'
+    signal: pb9
+    kind: gpio
+  - position: '143'
+    signal: vddpllusb
+    kind: power
+  - position: '144'
+    signal: pb13
+    kind: gpio

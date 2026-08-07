@@ -1,0 +1,9 @@
+# Pinned upstream for the Microchip builder. Bump = one PR: lock change +
+# regenerated chips/.
+sources:
+  same70-dfp:
+    url: "https://packs.download.microchip.com/Microchip.SAME70_DFP.4.9.129.atpack"
+    version: "4.9.129"
+    sha256: "2fdea8c4c59ee7c8116475882614bdcac0b3752b4b6d4f1c7346eda5d80eb6d6"   # filled by the first fetch; a changed pack must fail loudly
+    license: "Apache-2.0 (SPDX-License-Identifier in every ATDF; Copyright (c) 2017 Microchip Technology Inc.)"
+    role: "ATDF device files — per-package pinouts (<pinouts>/<pinout>/<pin position pad>)"
