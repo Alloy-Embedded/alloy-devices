@@ -1,0 +1,27 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adccommon_v3
+class: adccommon
+description: >
+  Common block shared by the adc_v3 pair (ADC12_COMMON): clock mode, the
+  internal-channel switches (VREFINT = channel 0 via VREFEN, temperature =
+  channel 17 via CH17SEL — NOT the G0's 13/12), and dual-mode controls this
+  subset leaves alone. CKMODE=0 keeps the asynchronous kernel clock the
+  RCC.CCIPR.ADCSEL step selected (sysclk) — the combination that cannot hang.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/adccommon_v3.json (CCR offset 0x08, fields)"
+    - "RM0394 rev 4 §16.4.3 / table 66: internal channel numbering"
+  completeness: bring-up-subset
+registers:
+  - name: CSR
+    offset: "0x00"
+    access: ro
+  - name: CCR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: CKMODE, bit: 16, width: 2, description: "0 = async kernel clock (CCIPR.ADCSEL)" }
+      - { name: VREFEN, bit: 22 }
+      - { name: CH17SEL, bit: 24, description: "temperature sensor onto channel 17" }
+      - { name: CH18SEL, bit: 23 }

@@ -1,0 +1,70 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adc_v3
+class: adc
+description: >
+  ST adc_v3 (L4/F3 lineage): sequencer-based single ADC. Nothing like the
+  G0's adc_v2 (CHSELR bitmap) — conversions are programmed through SQR1..4,
+  the analog side wakes in three explicit steps (exit DEEPPWD, ADVREGEN + a
+  20 us settle, ADCAL self-calibration with ADEN still 0), and the hardware
+  oversampler in CFGR2 can stretch 12-bit conversions to a full 16-bit range
+  (ROVSE + OVSR=3 for 16x, OVSS=0). Bring-up subset: single software-started
+  regular conversions; injected/analog-watchdog/DMA later.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/adc_v3.json (all offsets/fields)"
+    - "RM0394 rev 4 §16: wake order DEEPPWD->ADVREGEN(20us)->ADCAL->ADEN, ADRDY gate, oversampler"
+  completeness: bring-up-subset
+registers:
+  - name: ISR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: ADRDY, bit: 0 }
+      - { name: EOSMP, bit: 1 }
+      - { name: EOC, bit: 2 }
+      - { name: EOS, bit: 3 }
+      - { name: OVR, bit: 4 }
+  - name: IER
+    offset: "0x04"
+    access: rw
+  - name: CR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: ADEN, bit: 0 }
+      - { name: ADDIS, bit: 1 }
+      - { name: ADSTART, bit: 2 }
+      - { name: ADSTP, bit: 4 }
+      - { name: ADVREGEN, bit: 28 }
+      - { name: DEEPPWD, bit: 29 }
+      - { name: ADCAL, bit: 31 }
+  - name: CFGR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: RES, bit: 3, width: 2 }
+      - { name: CONT, bit: 13 }
+      - { name: OVRMOD, bit: 12 }
+  - name: CFGR2
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: ROVSE, bit: 0 }
+      - { name: OVSR, bit: 2, width: 3, description: "oversampling ratio 2^(n+1): 3 = 16x" }
+      - { name: OVSS, bit: 5, width: 4, description: "post-sum right shift; 0 keeps the full sum (12b x16 = 16b)" }
+  - name: SMPR1
+    offset: "0x14"
+    access: rw
+  - name: SMPR2
+    offset: "0x18"
+    access: rw
+  - name: SQR1
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: L, bit: 0, width: 4, description: "sequence length - 1" }
+      - { name: SQ1, bit: 6, width: 5 }
+  - name: DR
+    offset: "0x40"
+    access: ro

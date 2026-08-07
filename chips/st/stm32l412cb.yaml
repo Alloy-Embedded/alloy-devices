@@ -36,8 +36,10 @@ memories:
 peripherals:
   adc1:
     base: '0x50040000'
-    uncurated: true
-    ip_hint: adc:v3:ADC
+    ip: st/adc_v3
+    kernel_clock: sysclk
+    companions:
+      common: adc12_common
     gate:
       peripheral: rcc
       register: AHB2ENR
@@ -45,8 +47,7 @@ peripherals:
     irq: ADC1_2
   adc12_common:
     base: '0x50040300'
-    uncurated: true
-    ip_hint: adccommon:v3:ADC_COMMON
+    ip: st/adccommon_v3
   adc2:
     base: '0x50040100'
     uncurated: true
