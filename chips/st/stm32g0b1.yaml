@@ -17,6 +17,7 @@ provenance:
   - 'I2C1 mining 2026-07-22: base/gate from canonical yml; PB8/PB9 AF6 (Arduino D15/D14) from bulk 1.3.0'
   - 'SPI1 mining 2026-07-22: base/gate mirror of g071rb (ip_version spi2s1_v3_5_Cube on G0B1, same
     register subset); PB3/PB4/PB5 AF0 from bulk 1.3.0 stm32g0b1r(b-c-e)tx.yml — identical AF0 set'
+  - 'EXTI mining 2026-08-07: EXTI base 0x40021800 and the line->vector grouping (0-1 EXTI0_1, 2-3 EXTI2_3, 4-15 EXTI4_15) read from builders/st/cache/669003ee.../data_chips_STM32G0B1CB.json (EXTI address 1073879040 + its 16-entry signal->interrupt table, identical to the G071); gpio port_index values are the EXTICR port codes from ST cmsis_device_g0 (A=0..F=5) — this die HAS port E, so the numbering is dense 0..5'
   - 'DMA mining 2026-07-22: DMA1 7ch @0x40020000 (AHBENR bit 0) + DMAMUX @0x40020800 (clocked with DMA1, no own gate) from canonical yml; request IDs ADC=5, TIM2_CH1/UP=26/31, USART2_RX/TX=52/53 from RM0444 §11 table (Zephyr overlay cross-checks); DMA IRQ grouping 9/10/11'
   verified:
   - "New chip added with ZERO new C++ and ZERO emitter changes \u2014 the 'new chip = data only' proof"
@@ -86,9 +87,17 @@ peripherals:
   fdcanram1:
     ip: st/fdcanram_v1
     base: '0x4000b400'
+  exti:
+    ip: st/exti_g0
+    base: '0x40021800'
+    irq_lines:
+    - {irq: EXTI0_1, first: 0, last: 1}
+    - {irq: EXTI2_3, first: 2, last: 3}
+    - {irq: EXTI4_15, first: 4, last: 15}
   gpioa:
     ip: st/gpio_v2
     base: '0x50000000'
+    port_index: 0
     gate:
       peripheral: rcc
       register: IOPENR
@@ -96,6 +105,7 @@ peripherals:
   gpiob:
     ip: st/gpio_v2
     base: '0x50000400'
+    port_index: 1
     gate:
       peripheral: rcc
       register: IOPENR
@@ -103,6 +113,7 @@ peripherals:
   gpioc:
     ip: st/gpio_v2
     base: '0x50000800'
+    port_index: 2
     gate:
       peripheral: rcc
       register: IOPENR
@@ -110,6 +121,7 @@ peripherals:
   gpiod:
     ip: st/gpio_v2
     base: '0x50000C00'
+    port_index: 3
     gate:
       peripheral: rcc
       register: IOPENR
@@ -117,6 +129,7 @@ peripherals:
   gpiof:
     ip: st/gpio_v2
     base: '0x50001400'
+    port_index: 5
     gate:
       peripheral: rcc
       register: IOPENR
@@ -145,6 +158,7 @@ peripherals:
   gpioe:
     ip: st/gpio_v2
     base: '0x50001000'
+    port_index: 4
     gate:
       peripheral: rcc
       register: IOPENR

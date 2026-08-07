@@ -194,6 +194,44 @@
           "irq": {
             "type": "string"
           },
+          "irq_lines": {
+            "type": "array",
+            "description": "For a controller whose numbered lines are GROUPED onto several NVIC vectors rather than one (STM32 EXTI: lines 0-1 -> EXTI0_1, 2-3 -> EXTI2_3, 4-15 -> EXTI4_15), the vector each contiguous range of lines raises. Ranges are inclusive and must not overlap. This is what lets a handler and a platform emitter learn the grouping as DATA instead of hardcoding the split; `irq` stays for the single-vector case.",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "irq",
+                "first",
+                "last"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "irq": {
+                  "type": "string",
+                  "description": "Name of an entry in the chip's `interrupts` table."
+                },
+                "first": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 255,
+                  "description": "First line of the range, inclusive."
+                },
+                "last": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 255,
+                  "description": "Last line of the range, inclusive."
+                }
+              }
+            }
+          },
+          "port_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255,
+            "description": "This I/O port's number in its chip's port-select encoding — the value written to the pin-interrupt mux to route this port's pins (STM32 EXTI/SYSCFG EXTICR: A=0, B=1, ... F=5). It is a silicon fact, not the alphabetical position of the peripheral's name: a die that omits a port leaves a HOLE in the numbering, so it must be recorded rather than inferred."
+          },
           "kernel_clock": {
             "type": "string"
           },

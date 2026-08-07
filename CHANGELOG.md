@@ -5,6 +5,30 @@ release of the silicon facts every generated header is built from. Schema
 changes are called out explicitly — consumers pin the schema version they
 understand and fail loudly on a mismatch.
 
+## Unreleased
+
+### Schema
+
+- `alloy.chip.v1` gains two **optional** peripheral keys, both for pin
+  interrupts. `irq_lines` — `[{irq, first, last}]` — is `irq` for a controller
+  whose numbered lines are GROUPED onto several NVIC vectors (STM32 EXTI: 0-1,
+  2-3, 4-15), so the split is data instead of a constant in whatever consumes
+  it. `port_index` is an I/O port's number in its chip's port-select encoding
+  (EXTICR: A=0 … F=5) — a silicon fact, not the alphabetical position of the
+  peripheral name, because a die that omits a port leaves a hole. Existing
+  files are unaffected; a new lint checks `irq_lines` names against the
+  interrupts table and rejects inverted or overlapping ranges.
+
+### Data
+
+- New IP `st/exti_g0` — the STM32G0 extended interrupt/event controller, the
+  block that turns a GPIO edge into an NVIC interrupt. There was no EXTI
+  register file in the database at all. `bring-up-subset`: bank 1 only
+  (RTSR1/FTSR1/SWIER1/RPR1/FPR1/EXTICR/IMR1/EMR1), no IMR2/EMR2.
+- `stm32g071rb` and `stm32g0b1` gain a curated `exti` peripheral with its three
+  IRQ-line groups, and `port_index` on every GPIO port. Both chips are
+  hand-verified, so the builder never supplied these.
+
 ## 0.2.0 — 2026-08-07
 
 ### Schema

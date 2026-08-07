@@ -263,6 +263,28 @@ def lint_chips(db: Database) -> None:
                             ))
             if "irq" in p and p["irq"] not in irq_names:
                 db.issues.append(Issue(path, f"peripheral {name}: irq {p['irq']} not in interrupts list"))
+            # irq_lines is `irq` for a controller whose lines are GROUPED onto
+            # several vectors (STM32 EXTI). Same name check, plus: the ranges are
+            # inclusive and must neither invert nor overlap, because a consumer
+            # maps line -> vector by scanning them.
+            covered: dict[int, str] = {}
+            for grp in p.get("irq_lines", []):
+                if grp["irq"] not in irq_names:
+                    db.issues.append(Issue(
+                        path, f"peripheral {name}: irq_lines irq {grp['irq']} not in interrupts list"))
+                if grp["last"] < grp["first"]:
+                    db.issues.append(Issue(
+                        path, f"peripheral {name}: irq_lines range {grp['first']}..{grp['last']} is inverted"))
+                    continue
+                for line in range(grp["first"], grp["last"] + 1):
+                    if line in covered:
+                        db.issues.append(Issue(
+                            path,
+                            f"peripheral {name}: irq_lines line {line} claimed by both "
+                            f"{covered[line]} and {grp['irq']}",
+                        ))
+                        break
+                    covered[line] = grp["irq"]
             if "kernel_clock" in p and p["kernel_clock"] not in clock_nodes:
                 db.issues.append(Issue(path, f"peripheral {name}: unknown kernel_clock {p['kernel_clock']}"))
 

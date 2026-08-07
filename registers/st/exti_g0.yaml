@@ -1,0 +1,74 @@
+schema: alloy.registers.v1
+vendor: st
+ip: exti_g0
+class: exti
+description: >
+  STM32G0 extended interrupt and event controller (EXTI), the block that turns a
+  GPIO pin edge into an NVIC interrupt. Two things separate it from the older
+  F1/F4/F7 EXTI: it owns the GPIO PORT SELECT itself (EXTICR is here at 0x60,
+  not in SYSCFG), and it splits the pending register in two — RPR1 records
+  rising edges, FPR1 falling edges. Both are WRITE-1-TO-CLEAR; a handler that
+  does not clear its bit re-enters forever (this is the same pending-flag trap
+  st/dma_v1 documents, and it has bitten this project twice).
+  Configurable line n (0..15) is pin n of whichever port EXTICR selects: one
+  BYTE per line, 3 usable bits, register i covering lines 4i..4i+3 with line L
+  at bit (L % 4) * 8, value = port index (0=A, 1=B, ... 5=F). Lines 16 and up
+  are internal/direct sources with no port select.
+  Bit-per-line registers carry no field entries, exactly like st/gpio_v2 —
+  drivers shift by line index.
+  This file models BANK 1 (lines 0..31) only, which covers the whole
+  configurable GPIO range on every G0. IMR2/EMR2 (0x90/0x94, direct lines 32+)
+  are deliberately left out of the bring-up subset, as is the G0B1's second
+  trigger bank.
+  The block has NO RCC enable bit — it is always clocked, which is why the chip
+  entries that use it carry no `gate`.
+  NVIC grouping is NOT in this file: it varies per die and lives in the chip's
+  `irq_lines` (G0: lines 0-1 -> EXTI0_1, 2-3 -> EXTI2_3, 4-15 -> EXTI4_15).
+provenance:
+  sources:
+    - "STMicroelectronics cmsis_device_g0 Include/stm32g071xx.h EXTI_TypeDef — RTSR1 0x00, FTSR1 0x04, SWIER1 0x08, RPR1 0x0C, FPR1 0x10, EXTICR[4] 0x60-0x6C, IMR1 0x80, EMR1 0x84, read entry-by-entry from the vendor header"
+    - "same header: EXTI_EXTICR1_EXTI0_Msk = 0x7 at Pos 0 and EXTI_EXTICR1_EXTI1_Pos = 8 — the port-select field is 3 usable bits on an 8-bit stride"
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/exti_g0.json — independent second source, agrees on every offset below"
+    - "builders/st/cache/669003eeb7ad30d123220a3cb9b520122c5ca2b6/data_chips_STM32G071RB.json — EXTI at address 1073879040 (0x40021800), registers.kind=exti version=g0"
+    - "RM0444 (STM32G0x1 reference manual), 'Extended interrupt and event controller (EXTI)' chapter — cited by name for the RPR1/FPR1 write-1-to-clear and EXTICR port-select semantics described above; the OFFSETS in this file were read from ST's own CMSIS header, not transcribed from the PDF"
+  completeness: bring-up-subset
+  verified:
+    - "The vendor header and the embassy JSON agree on every bank-1 offset (checked 2026-08-07)"
+    - "The 3-bit EXTICR width is taken from the header's _Msk; embassy models it 8 bits wide, which is the whole reserved byte rather than a usable field"
+    - "embassy additionally models RTSR/FTSR/SWIER/RPR/FPR as arrays of 2 at stride 0x28; stm32g071xx.h shows 0x14-0x5C as RESERVED, so the G071/G081 has no second trigger bank and this file models one"
+registers:
+  - name: RTSR1
+    offset: "0x00"
+    access: rw
+    description: "Rising-edge trigger enable, bit per line (0..15 configurable)"
+  - name: FTSR1
+    offset: "0x04"
+    access: rw
+    description: "Falling-edge trigger enable, bit per line"
+  - name: SWIER1
+    offset: "0x08"
+    access: rw
+    description: "Write 1 to raise line n in software (sets the RPR1 bit)"
+  - name: RPR1
+    offset: "0x0C"
+    access: rw
+    description: "Rising-edge pending, bit per line, WRITE 1 TO CLEAR. A handler MUST clear it or the interrupt re-enters forever."
+  - name: FPR1
+    offset: "0x10"
+    access: rw
+    description: "Falling-edge pending, bit per line, WRITE 1 TO CLEAR. Separate register from RPR1 — clearing one does not clear the other."
+  - name: EXTICR
+    offset: "0x60"
+    access: rw
+    array: { count: 4, stride: 4 }
+    description: "GPIO port select, one BYTE per line: register i covers lines 4i..4i+3, line L sits at bit (L % 4) * 8"
+    fields:
+      - { name: EXTI, bit: 0, width: 3, description: "Port for the line: 0=A 1=B 2=C 3=D 4=E 5=F. Shift by (line % 4) * 8; the port's own number is the chip's gpio `port_index`." }
+  - name: IMR1
+    offset: "0x80"
+    access: rw
+    description: "Interrupt unmask, bit per line — the bit NVIC delivery depends on"
+  - name: EMR1
+    offset: "0x84"
+    access: rw
+    description: "Event (wake without IRQ) unmask, bit per line"
