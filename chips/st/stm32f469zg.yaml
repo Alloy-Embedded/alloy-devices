@@ -1772,3 +1772,440 @@ clock:
         field: SWS
         equals: 0
         timeout_us: 2000
+package:
+  type: LQFP144
+  pins: 144
+  part: STM32F469ZGTx
+  layout:
+  - position: '1'
+    signal: pe3
+    kind: gpio
+  - position: '2'
+    signal: pe4
+    kind: gpio
+  - position: '3'
+    signal: pe5
+    kind: gpio
+  - position: '4'
+    signal: pe6
+    kind: gpio
+  - position: '5'
+    signal: vbat
+    kind: power
+  - position: '6'
+    signal: pc13
+    kind: gpio
+  - position: '7'
+    signal: pc14
+    kind: gpio
+  - position: '8'
+    signal: pc15
+    kind: gpio
+  - position: '9'
+    signal: pf0
+    kind: gpio
+  - position: '10'
+    signal: pf1
+    kind: gpio
+  - position: '11'
+    signal: pf2
+    kind: gpio
+  - position: '12'
+    signal: pf3
+    kind: gpio
+  - position: '13'
+    signal: pf4
+    kind: gpio
+  - position: '14'
+    signal: pf5
+    kind: gpio
+  - position: '15'
+    signal: vss
+    kind: ground
+  - position: '16'
+    signal: vdd
+    kind: power
+  - position: '17'
+    signal: pf10
+    kind: gpio
+  - position: '18'
+    signal: ph0
+    kind: gpio
+  - position: '19'
+    signal: ph1
+    kind: gpio
+  - position: '20'
+    signal: nrst
+    kind: reset
+  - position: '21'
+    signal: pc0
+    kind: gpio
+  - position: '22'
+    signal: pc1
+    kind: gpio
+  - position: '23'
+    signal: pc2
+    kind: gpio
+  - position: '24'
+    signal: pc3
+    kind: gpio
+  - position: '25'
+    signal: vdd
+    kind: power
+  - position: '26'
+    signal: vssa
+    kind: analog
+  - position: '27'
+    signal: vref+
+    kind: analog
+  - position: '28'
+    signal: vdda
+    kind: analog
+  - position: '29'
+    signal: pa0
+    kind: gpio
+  - position: '30'
+    signal: pa1
+    kind: gpio
+  - position: '31'
+    signal: pa2
+    kind: gpio
+  - position: '32'
+    signal: pa3
+    kind: gpio
+  - position: '33'
+    signal: vss
+    kind: ground
+  - position: '34'
+    signal: vdd
+    kind: power
+  - position: '35'
+    signal: pa4
+    kind: gpio
+  - position: '36'
+    signal: pa5
+    kind: gpio
+  - position: '37'
+    signal: pa6
+    kind: gpio
+  - position: '38'
+    signal: pa7
+    kind: gpio
+  - position: '39'
+    signal: pc4
+    kind: gpio
+  - position: '40'
+    signal: pc5
+    kind: gpio
+  - position: '41'
+    signal: pb0
+    kind: gpio
+  - position: '42'
+    signal: pb1
+    kind: gpio
+  - position: '43'
+    signal: pb2
+    kind: gpio
+  - position: '44'
+    signal: pf11
+    kind: gpio
+  - position: '45'
+    signal: pf12
+    kind: gpio
+  - position: '46'
+    signal: vdd
+    kind: power
+  - position: '47'
+    signal: pf13
+    kind: gpio
+  - position: '48'
+    signal: pf14
+    kind: gpio
+  - position: '49'
+    signal: pf15
+    kind: gpio
+  - position: '50'
+    signal: pg0
+    kind: gpio
+  - position: '51'
+    signal: pg1
+    kind: gpio
+  - position: '52'
+    signal: pe7
+    kind: gpio
+  - position: '53'
+    signal: pe8
+    kind: gpio
+  - position: '54'
+    signal: pe9
+    kind: gpio
+  - position: '55'
+    signal: vss
+    kind: ground
+  - position: '56'
+    signal: vdd
+    kind: power
+  - position: '57'
+    signal: pe10
+    kind: gpio
+  - position: '58'
+    signal: pe11
+    kind: gpio
+  - position: '59'
+    signal: pe12
+    kind: gpio
+  - position: '60'
+    signal: pe13
+    kind: gpio
+  - position: '61'
+    signal: pe14
+    kind: gpio
+  - position: '62'
+    signal: pe15
+    kind: gpio
+  - position: '63'
+    signal: pb10
+    kind: gpio
+  - position: '64'
+    signal: pb11
+    kind: gpio
+  - position: '65'
+    signal: vcap1
+    kind: power
+  - position: '66'
+    signal: vdd
+    kind: power
+  - position: '67'
+    signal: pb12
+    kind: gpio
+  - position: '68'
+    signal: pb13
+    kind: gpio
+  - position: '69'
+    signal: pb14
+    kind: gpio
+  - position: '70'
+    signal: pb15
+    kind: gpio
+  - position: '71'
+    signal: pd8
+    kind: gpio
+  - position: '72'
+    signal: pd9
+    kind: gpio
+  - position: '73'
+    signal: pd10
+    kind: gpio
+  - position: '74'
+    signal: pd11
+    kind: gpio
+  - position: '75'
+    signal: pd12
+    kind: gpio
+  - position: '76'
+    signal: vss
+    kind: ground
+  - position: '77'
+    signal: vdd
+    kind: power
+  - position: '78'
+    signal: pd14
+    kind: gpio
+  - position: '79'
+    signal: pd15
+    kind: gpio
+  - position: '80'
+    signal: vdddsi
+    kind: power
+  - position: '81'
+    signal: vcapdsi
+    kind: power
+  - position: '82'
+    signal: dsihost_d0p
+    kind: other
+  - position: '83'
+    signal: dsihost_d0n
+    kind: other
+  - position: '84'
+    signal: vssdsi
+    kind: ground
+  - position: '85'
+    signal: dsihost_ckp
+    kind: other
+  - position: '86'
+    signal: dsihost_ckn
+    kind: other
+  - position: '87'
+    signal: vdd12dsi
+    kind: power
+  - position: '88'
+    signal: dsihost_d1p
+    kind: other
+  - position: '89'
+    signal: dsihost_d1n
+    kind: other
+  - position: '90'
+    signal: pg2
+    kind: gpio
+  - position: '91'
+    signal: pg3
+    kind: gpio
+  - position: '92'
+    signal: pg4
+    kind: gpio
+  - position: '93'
+    signal: pg5
+    kind: gpio
+  - position: '94'
+    signal: pg6
+    kind: gpio
+  - position: '95'
+    signal: pg7
+    kind: gpio
+  - position: '96'
+    signal: pg8
+    kind: gpio
+  - position: '97'
+    signal: vddusb
+    kind: power
+  - position: '98'
+    signal: pc6
+    kind: gpio
+  - position: '99'
+    signal: pc7
+    kind: gpio
+  - position: '100'
+    signal: pc8
+    kind: gpio
+  - position: '101'
+    signal: pc9
+    kind: gpio
+  - position: '102'
+    signal: pa8
+    kind: gpio
+  - position: '103'
+    signal: pa9
+    kind: gpio
+  - position: '104'
+    signal: pa10
+    kind: gpio
+  - position: '105'
+    signal: pa11
+    kind: gpio
+  - position: '106'
+    signal: pa12
+    kind: gpio
+  - position: '107'
+    signal: pa13
+    kind: gpio
+  - position: '108'
+    signal: vcap2
+    kind: power
+  - position: '109'
+    signal: vss
+    kind: ground
+  - position: '110'
+    signal: vdd
+    kind: power
+  - position: '111'
+    signal: pa14
+    kind: gpio
+  - position: '112'
+    signal: pa15
+    kind: gpio
+  - position: '113'
+    signal: pc10
+    kind: gpio
+  - position: '114'
+    signal: pc11
+    kind: gpio
+  - position: '115'
+    signal: pc12
+    kind: gpio
+  - position: '116'
+    signal: pd0
+    kind: gpio
+  - position: '117'
+    signal: pd1
+    kind: gpio
+  - position: '118'
+    signal: pd2
+    kind: gpio
+  - position: '119'
+    signal: pd3
+    kind: gpio
+  - position: '120'
+    signal: pd4
+    kind: gpio
+  - position: '121'
+    signal: pd5
+    kind: gpio
+  - position: '122'
+    signal: vss
+    kind: ground
+  - position: '123'
+    signal: vdd
+    kind: power
+  - position: '124'
+    signal: pd6
+    kind: gpio
+  - position: '125'
+    signal: pg9
+    kind: gpio
+  - position: '126'
+    signal: pg10
+    kind: gpio
+  - position: '127'
+    signal: pg11
+    kind: gpio
+  - position: '128'
+    signal: pg12
+    kind: gpio
+  - position: '129'
+    signal: vss
+    kind: ground
+  - position: '130'
+    signal: vdd
+    kind: power
+  - position: '131'
+    signal: pg15
+    kind: gpio
+  - position: '132'
+    signal: pb3
+    kind: gpio
+  - position: '133'
+    signal: pb4
+    kind: gpio
+  - position: '134'
+    signal: pb5
+    kind: gpio
+  - position: '135'
+    signal: pb6
+    kind: gpio
+  - position: '136'
+    signal: pb7
+    kind: gpio
+  - position: '137'
+    signal: boot0
+    kind: boot
+  - position: '138'
+    signal: pb8
+    kind: gpio
+  - position: '139'
+    signal: pb9
+    kind: gpio
+  - position: '140'
+    signal: pe0
+    kind: gpio
+  - position: '141'
+    signal: pe1
+    kind: gpio
+  - position: '142'
+    signal: pdr_on
+    kind: ground
+  - position: '143'
+    signal: vdd
+    kind: power
+  - position: '144'
+    signal: pe2
+    kind: gpio

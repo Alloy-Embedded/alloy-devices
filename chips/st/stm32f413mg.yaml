@@ -1778,3 +1778,251 @@ clock:
         field: SWS
         equals: 0
         timeout_us: 2000
+package:
+  type: WLCSP81
+  pins: 81
+  part: STM32F413MGYx
+  layout:
+  - position: A1
+    signal: vdd
+    kind: power
+  - position: A2
+    signal: pc10
+    kind: gpio
+  - position: A3
+    signal: pa15
+    kind: gpio
+  - position: A4
+    signal: pd0
+    kind: gpio
+  - position: A5
+    signal: pb3
+    kind: gpio
+  - position: A6
+    signal: pb5
+    kind: gpio
+  - position: A7
+    signal: boot0
+    kind: boot
+  - position: A8
+    signal: vss
+    kind: ground
+  - position: A9
+    signal: vdd
+    kind: power
+  - position: B1
+    signal: vss
+    kind: ground
+  - position: B2
+    signal: pa14
+    kind: gpio
+  - position: B3
+    signal: pa12
+    kind: gpio
+  - position: B4
+    signal: pc12
+    kind: gpio
+  - position: B5
+    signal: pb4
+    kind: gpio
+  - position: B6
+    signal: pb6
+    kind: gpio
+  - position: B7
+    signal: pb7
+    kind: gpio
+  - position: B8
+    signal: pdr_on
+    kind: ground
+  - position: B9
+    signal: vbat
+    kind: power
+  - position: C1
+    signal: vcap_2
+    kind: power
+  - position: C2
+    signal: pa13
+    kind: gpio
+  - position: C3
+    signal: pa11
+    kind: gpio
+  - position: C4
+    signal: pc11
+    kind: gpio
+  - position: C5
+    signal: pd2
+    kind: gpio
+  - position: C6
+    signal: pb8
+    kind: gpio
+  - position: C7
+    signal: pc1
+    kind: gpio
+  - position: C8
+    signal: pc13
+    kind: gpio
+  - position: C9
+    signal: pc14
+    kind: gpio
+  - position: D1
+    signal: pa10
+    kind: gpio
+  - position: D2
+    signal: pa9
+    kind: gpio
+  - position: D3
+    signal: pa8
+    kind: gpio
+  - position: D4
+    signal: pc7
+    kind: gpio
+  - position: D5
+    signal: pc6
+    kind: gpio
+  - position: D6
+    signal: pb9
+    kind: gpio
+  - position: D7
+    signal: pc2
+    kind: gpio
+  - position: D8
+    signal: vss
+    kind: ground
+  - position: D9
+    signal: pc15
+    kind: gpio
+  - position: E1
+    signal: pc8
+    kind: gpio
+  - position: E2
+    signal: pc9
+    kind: gpio
+  - position: E3
+    signal: pb14
+    kind: gpio
+  - position: E4
+    signal: pb0
+    kind: gpio
+  - position: E5
+    signal: pa4
+    kind: gpio
+  - position: E6
+    signal: pa3
+    kind: gpio
+  - position: E7
+    signal: pc3
+    kind: gpio
+  - position: E8
+    signal: vdd
+    kind: power
+  - position: E9
+    signal: ph0
+    kind: gpio
+  - position: F1
+    signal: vddusb
+    kind: power
+  - position: F2
+    signal: pd9
+    kind: gpio
+  - position: F3
+    signal: pb12
+    kind: gpio
+  - position: F4
+    signal: pe13
+    kind: gpio
+  - position: F5
+    signal: pa6
+    kind: gpio
+  - position: F6
+    signal: bypass_reg
+    kind: other
+  - position: F7
+    signal: vdda
+    kind: analog
+  - position: F8
+    signal: pc0
+    kind: gpio
+  - position: F9
+    signal: ph1
+    kind: gpio
+  - position: G1
+    signal: pd10
+    kind: gpio
+  - position: G2
+    signal: pb13
+    kind: gpio
+  - position: G3
+    signal: pe14
+    kind: gpio
+  - position: G4
+    signal: pe10
+    kind: gpio
+  - position: G5
+    signal: pb1
+    kind: gpio
+  - position: G6
+    signal: pa5
+    kind: gpio
+  - position: G7
+    signal: pa0
+    kind: gpio
+  - position: G8
+    signal: vref+
+    kind: analog
+  - position: G9
+    signal: nrst
+    kind: reset
+  - position: H1
+    signal: pb15
+    kind: gpio
+  - position: H2
+    signal: vcap_1
+    kind: power
+  - position: H3
+    signal: pb10
+    kind: gpio
+  - position: H4
+    signal: pe11
+    kind: gpio
+  - position: H5
+    signal: pb2
+    kind: gpio
+  - position: H6
+    signal: pc4
+    kind: gpio
+  - position: H7
+    signal: vss
+    kind: ground
+  - position: H8
+    signal: pa1
+    kind: gpio
+  - position: H9
+    signal: vssa
+    kind: analog
+  - position: J1
+    signal: vdd
+    kind: power
+  - position: J2
+    signal: vss
+    kind: ground
+  - position: J3
+    signal: pe15
+    kind: gpio
+  - position: J4
+    signal: pe12
+    kind: gpio
+  - position: J5
+    signal: pe9
+    kind: gpio
+  - position: J6
+    signal: pc5
+    kind: gpio
+  - position: J7
+    signal: pa7
+    kind: gpio
+  - position: J8
+    signal: vdd
+    kind: power
+  - position: J9
+    signal: pa2
+    kind: gpio
