@@ -17,6 +17,11 @@ registers:
     fields:
       - { name: HSION, bit: 8 }
       - { name: HSIRDY, bit: 10 }
+      # External oscillator (RM0440 6.4.1) — a product runs the PLL from a
+      # crystal, not the internal RC. Same bit layout as the G0.
+      - { name: HSEON, bit: 16 }
+      - { name: HSERDY, bit: 17 }
+      - { name: HSEBYP, bit: 18 }
       - { name: PLLON, bit: 24 }
       - { name: PLLRDY, bit: 25 }
   - name: CFGR

@@ -407,6 +407,16 @@ clock:
       apb_hz: 45000000
       apb2_hz: 90000000
       program:
+      # The 8 MHz is a DRIVEN clock from the ST-Link MCO, not a crystal: HSEBYP
+      # selects the bypass input, and it is writable only while HSEON is clear,
+      # so it must come first. Without it the MCU enables its oscillator
+      # inverter against a CMOS clock source — out of spec, and the failure is a
+      # board that boots on HSI at the wrong speed instead of refusing.
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          HSEBYP: 1
       - op: rmw
         peripheral: rcc
         register: CR
