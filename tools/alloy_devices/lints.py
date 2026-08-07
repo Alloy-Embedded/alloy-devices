@@ -351,16 +351,45 @@ def lint_cross(db: Database) -> None:
 # trips one is not merely lean, it is missing pins.
 _SERVICE_PIN_FLOOR = ((176, 24), (144, 20), (100, 12), (64, 8), (48, 6), (32, 4))
 
-# Names that are not a GPIO. Everything else on a package position is expected
-# to be a port pin.
-_SERVICE_PREFIX = ("VDD", "VSS", "VBAT", "VREF", "VCAP", "VLCD", "VDDA", "VDDIO",
-                   "NRST", "RST", "BOOT", "PDR", "OSC", "GND", "AVDD", "AVSS")
+# What a pad IS, by name. Vendors spell power differently (ST's VDDA next to
+# Microchip's VDDIO/VDDCORE/VDDPLL), so the table is shared rather than copied
+# into each builder — a builder that classified pads its own way could disagree
+# with the lint about whether a package has enough supply pins.
+_KIND_PREFIX: tuple[tuple[tuple[str, ...], str], ...] = (
+    (("VDDA", "AVDD", "VREF", "VBG", "ADC_AVDD"), "analog"),
+    (("VSSA", "AVSS"), "analog"),
+    (("VDD", "VBAT", "VCAP", "VLCD", "VCC", "IOVDD", "DVDD", "USB_VDD",
+      "VREG"), "power"),
+    (("VSS", "GND", "PDR"), "ground"),
+    # RUN is the RP2040's reset; CHIP_PU / EN is the ESP32's. Vendor-specific
+    # names belong here rather than in a per-builder table: the lint asks "does
+    # this package have a reset pin" and must recognise one whatever it is called.
+    (("NRST", "RST", "RUN", "CHIP_PU"), "reset"),
+    (("BOOT", "TST", "JTAGSEL", "TESTEN"), "boot"),
+    (("OSC", "XTAL", "XIN", "XOUT"), "clock"),
+)
 
-_GPIO_NAME = re.compile(r"^P[A-Z]\d{1,2}$")
+# Port-and-index (STM32, SAM: PA5) or bare-numbered (RP2040, ESP32: GPIO16).
+# Both spellings must read as a GPIO, or a package full of GPIOs would count
+# every one of them as a supply pin and pass the floor for the wrong reason.
+_GPIO_NAME = re.compile(r"^(P[A-Z]\d{1,2}|GPIO\d{1,2}|IO\d{1,2})$")
+# A pad with no name of its own — do not let it count towards the supply floor.
+_UNNAMED = {"", "NC", "N/C", "DNC"}
+
+
+def pin_kind(signal: str) -> str:
+    """gpio | power | ground | reset | analog | clock | boot | other."""
+    s = signal.upper()
+    if _GPIO_NAME.match(s):
+        return "gpio"
+    for prefixes, kind in _KIND_PREFIX:
+        if s.startswith(prefixes):
+            return kind
+    return "other"
 
 
 def _is_gpio(signal: str) -> bool:
-    return bool(_GPIO_NAME.match(signal.upper()))
+    return pin_kind(signal) == "gpio"
 
 
 def _service_floor(pin_count: int) -> int:
@@ -415,15 +444,20 @@ def check_pinout(package: dict[str, Any]) -> list[str]:
     if len(set(gpios)) != len(gpios):
         problems.append(f"{name}: the same GPIO appears on more than one pin")
 
-    service = [s for s in signals if s.upper().startswith(_SERVICE_PREFIX)]
+    # Everything that is neither a GPIO nor an unnamed pad is a service pin.
+    service = [s for s in signals
+               if not _is_gpio(s) and s.upper() not in _UNNAMED]
     floor = _service_floor(count)
     if len(service) < floor:
         problems.append(
             f"{name}: {len(service)} power/ground/reset pins on a {count}-pin package "
             f"(expected at least {floor}) — positions are likely attributed to GPIOs "
             f"that are supply pins on the real part")
-    if not any(s.upper().startswith(("NRST", "RST")) for s in signals):
-        problems.append(f"{name}: no reset pin — every Cortex-M package has one")
+    # Ask the classifier, not a second copy of the prefix list: the reset pad is
+    # NRST on ST and SAM, RUN on RP2040, CHIP_PU on ESP32.
+    if not any(pin_kind(s) == "reset" for s in signals):
+        problems.append(f"{name}: no reset pin — every package has one, whatever "
+                        f"the vendor calls it")
 
     return problems
 
