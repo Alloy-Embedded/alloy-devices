@@ -28,6 +28,7 @@ memories:
   kind: flash
   base: '0x08000000'
   size: 131072
+  erase_size: 2048
 - name: sram
   kind: ram
   base: '0x20000000'

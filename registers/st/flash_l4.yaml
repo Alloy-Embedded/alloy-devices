@@ -3,15 +3,17 @@ vendor: st
 ip: flash_l4
 class: flash
 description: >
-  STM32L4 flash interface — ACR-only bring-up subset. ACR carries the wait
-  states every clock program must raise BEFORE switching sysclk up (3 WS at
-  64 MHz range 1 per RM0394 table 9). The program/erase subset (KEYR unlock, SR errors, CR PNB/PER/PG,
-  OPTR + option-byte programming) is the Tier-1 st_flash_l4 driver's job and
-  lands when that driver does — the registers are stubbed by name+offset so
-  the layout is already pinned.
+  STM32L4 flash interface. ACR carries the wait states every clock program
+  must raise BEFORE switching sysclk up (3 WS at 64 MHz range 1 per RM0394
+  table 9), plus the program/erase subset the flash HAL driver consumes: KEYR
+  unlock (same magic keys as G0), SR busy/error flags (the L4 adds MISERR/
+  FASTERR/RDERR/OPTVERR over the G0 set), CR page-erase and double-word
+  program (PNB is 8 bits at [10:3], BKER bit 11, START bit 16 — all three
+  positions differ from G0), and OPTR (RDP level, IWDG modes, DUALBANK on the
+  1 MB parts; option-byte PROGRAMMING is a later, deliberate API).
 provenance:
   sources:
-    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/flash_l4.json (all offsets; ACR fields LATENCY [2:0], PRFTEN 8, ICEN 9, DCEN 10)"
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/flash_l4.json (all offsets and SR/CR/OPTR field positions; ACR LATENCY [2:0])"
     - "RM0394 rev 4 §3.3.3: 64 MHz @ range 1 needs LATENCY=3 (0WS<=16, 1WS<=32, 2WS<=48, 3WS<=64)"
   completeness: bring-up-subset
 registers:
@@ -38,12 +40,42 @@ registers:
   - name: SR
     offset: "0x10"
     access: rw
+    fields:
+      - { name: EOP, bit: 0 }
+      - { name: OPERR, bit: 1 }
+      - { name: PROGERR, bit: 3 }
+      - { name: WRPERR, bit: 4 }
+      - { name: PGAERR, bit: 5 }
+      - { name: SIZERR, bit: 6 }
+      - { name: PGSERR, bit: 7 }
+      - { name: MISERR, bit: 8 }
+      - { name: FASTERR, bit: 9 }
+      - { name: RDERR, bit: 14 }
+      - { name: OPTVERR, bit: 15 }
+      - { name: BSY, bit: 16 }
   - name: CR
     offset: "0x14"
     access: rw
+    fields:
+      - { name: PG, bit: 0 }
+      - { name: PER, bit: 1 }
+      - { name: MER, bit: 2 }
+      - { name: PNB, bit: 3, width: 8 }
+      - { name: BKER, bit: 11 }
+      - { name: START, bit: 16 }
+      - { name: OPTSTRT, bit: 17 }
+      - { name: OBL_LAUNCH, bit: 27 }
+      - { name: OPTLOCK, bit: 30 }
+      - { name: LOCK, bit: 31 }
   - name: ECCR
     offset: "0x18"
     access: rw
   - name: OPTR
     offset: "0x20"
     access: rw
+    fields:
+      - { name: RDP, bit: 0, width: 8 }
+      - { name: IWDG_SW, bit: 16 }
+      - { name: IWDG_STOP, bit: 17 }
+      - { name: IWDG_STDBY, bit: 18 }
+      - { name: DUALBANK, bit: 21, description: "1 MB parts only; reads 0 on single-bank dies (L412)" }
