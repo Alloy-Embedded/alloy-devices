@@ -5,194 +5,846 @@ part: STM32F722ZE
 die: stm32f722
 provenance:
   sources:
-    - "alloy-devices-yml bulk-admitted stm32f722zetx.yml (Keil STM32F7xx_DFP 3.1.1 SVD: memories, bases, interrupts) + stm32f7x2.yml (cmsis-svd-data: interrupt list cross-check)"
-    - "old-alloy git b2f319c2^ generated stm32f7 register headers (rcc/flash/usart3/gpiob — SVD-derived) + clock_platform.hpp cross-check"
-    - "SPI1 mining 2026-07-22: base 0x40013000 from Keil DFP SVD; APB2ENR.SPI1EN bit 12 (rcc_f7.yaml); PA5/PA6/PA7 AF5 from bulk 1.3.0 stm32f730z8tx sibling (no 1.3.0 pin file for f722 - same caveat as USART3 PD8/PD9); apb2_hz=90MHz added (PPRE2=4 -> 180/2), SPI1 is the first APB2 consumer"
-    - "alloy-devices-yml bulk-admitted stm32f730z8tx.yml 1.3.0 (sibling F73x Z-package: PD8/PD9 AF7 USART3 — no 1.3.0 file exists for f722 itself)"
-    - "old-alloy git e4864c0f boards/nucleo_f722ze (clock profile HSE8 M4 N180 P2 latency 5 — the only in-repo F7 clock recipe; board WIRING rejected as a Nucleo-64 copy-paste, see verified)"
+  - 'alloy-devices-yml bulk-admitted stm32f722zetx.yml (Keil STM32F7xx_DFP 3.1.1 SVD: memories, bases,
+    interrupts) + stm32f7x2.yml (cmsis-svd-data: interrupt list cross-check)'
+  - old-alloy git b2f319c2^ generated stm32f7 register headers (rcc/flash/usart3/gpiob — SVD-derived)
+    + clock_platform.hpp cross-check
+  - 'SPI1 mining 2026-07-22: base 0x40013000 from Keil DFP SVD; APB2ENR.SPI1EN bit 12 (rcc_f7.yaml); PA5/PA6/PA7
+    AF5 from bulk 1.3.0 stm32f730z8tx sibling (no 1.3.0 pin file for f722 - same caveat as USART3 PD8/PD9);
+    apb2_hz=90MHz added (PPRE2=4 -> 180/2), SPI1 is the first APB2 consumer'
+  - 'alloy-devices-yml bulk-admitted stm32f730z8tx.yml 1.3.0 (sibling F73x Z-package: PD8/PD9 AF7 USART3
+    — no 1.3.0 file exists for f722 itself)'
+  - old-alloy git e4864c0f boards/nucleo_f722ze (clock profile HSE8 M4 N180 P2 latency 5 — the only in-repo
+    F7 clock recipe; board WIRING rejected as a Nucleo-64 copy-paste, see verified)
+  - embassy-rs/stm32-data-generated@669003ee data/chips/STM32F722ZE.json packages[] (MIT OR Apache-2.0;
+    derived from ST STM32_open_pin_data BSD-3) — physical pinout, accepted by the pinout plausibility
+    lint
   verified:
-    - "SRAM modeled as one contiguous 256K region at 0x20000000 (DTCM 64K + SRAM1 176K + SRAM2 16K are address-contiguous on F7; the old linker did the same)"
-    - "F7 GPIO is gpio_v2 WITHOUT the BRR register — our driver never touches BRR; the overlay's trailing BRR member is simply never accessed"
-    - "USART v3 = v4 layout minus PRESC, same field positions for the driver subset (SVD-confirmed)"
-    - "180 MHz profile stays within reset VOS scale-1 (no overdrive sequence needed); 216 MHz deliberately NOT seeded — needs the RM0431 PWR overdrive dance, unproven anywhere in the old ecosystem"
-    - "Old nucleo_f722ze board files claimed USART2/PA2-PA3 VCP and one green LED on PB7 — Nucleo-64 template copy-paste; Nucleo-144 wiring (UM1974): LD1 green PB0, LD2 blue PB7, LD3 red PB14, B1 PC13, VCP USART3 PD8/PD9 AF7"
+  - SRAM modeled as one contiguous 256K region at 0x20000000 (DTCM 64K + SRAM1 176K + SRAM2 16K are address-contiguous
+    on F7; the old linker did the same)
+  - F7 GPIO is gpio_v2 WITHOUT the BRR register — our driver never touches BRR; the overlay's trailing
+    BRR member is simply never accessed
+  - USART v3 = v4 layout minus PRESC, same field positions for the driver subset (SVD-confirmed)
+  - 180 MHz profile stays within reset VOS scale-1 (no overdrive sequence needed); 216 MHz deliberately
+    NOT seeded — needs the RM0431 PWR overdrive dance, unproven anywhere in the old ecosystem
+  - 'Old nucleo_f722ze board files claimed USART2/PA2-PA3 VCP and one green LED on PB7 — Nucleo-64 template
+    copy-paste; Nucleo-144 wiring (UM1974): LD1 green PB0, LD2 blue PB7, LD3 red PB14, B1 PC13, VCP USART3
+    PD8/PD9 AF7'
 cores:
-  - { name: cm7, arch: armv7em, fpu: true }
+- name: cm7
+  arch: armv7em
+  fpu: true
 memories:
-  - { name: flash, kind: flash, base: "0x08000000", size: 524288 }
-  - { name: sram, kind: ram, base: "0x20000000", size: 262144 }
+- name: flash
+  kind: flash
+  base: '0x08000000'
+  size: 524288
+- name: sram
+  kind: ram
+  base: '0x20000000'
+  size: 262144
 peripherals:
   rcc:
     ip: st/rcc_f7
-    base: "0x40023800"
+    base: '0x40023800'
     irq: RCC
   flash:
     ip: st/flash_f7
-    base: "0x40023C00"
+    base: '0x40023C00'
     irq: FLASH
   iwdg:
     ip: st/iwdg_v2
     base: '0x40003000'
   gpioa:
     ip: st/gpio_v2
-    base: "0x40020000"
-    gate: { peripheral: rcc, register: AHB1ENR, bit: 0 }
+    base: '0x40020000'
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 0
   gpiob:
     ip: st/gpio_v2
-    base: "0x40020400"
-    gate: { peripheral: rcc, register: AHB1ENR, bit: 1 }
+    base: '0x40020400'
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 1
   gpioc:
     ip: st/gpio_v2
-    base: "0x40020800"
-    gate: { peripheral: rcc, register: AHB1ENR, bit: 2 }
+    base: '0x40020800'
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 2
   gpiod:
     ip: st/gpio_v2
-    base: "0x40020C00"
-    gate: { peripheral: rcc, register: AHB1ENR, bit: 3 }
+    base: '0x40020C00'
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 3
   usart2:
     ip: st/usart_v3
-    base: "0x40004400"
-    gate: { peripheral: rcc, register: APB1ENR, bit: 17 }
+    base: '0x40004400'
+    gate:
+      peripheral: rcc
+      register: APB1ENR
+      bit: 17
     irq: USART2
     kernel_clock: apb
   usart3:
     ip: st/usart_v3
-    base: "0x40004800"
-    gate: { peripheral: rcc, register: APB1ENR, bit: 18 }
+    base: '0x40004800'
+    gate:
+      peripheral: rcc
+      register: APB1ENR
+      bit: 18
     irq: USART3
     kernel_clock: apb
   spi1:
     ip: st/spi_v2
-    base: "0x40013000"
-    gate: { peripheral: rcc, register: APB2ENR, bit: 12 }
+    base: '0x40013000'
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 12
     irq: SPI1
     kernel_clock: apb2
 pins:
-  pa4: { port: a, index: 4 }
-  pa5: { port: a, index: 5 }
-  pa6: { port: a, index: 6 }
-  pa7: { port: a, index: 7 }
-  pb0: { port: b, index: 0 }
-  pb7: { port: b, index: 7 }
-  pb14: { port: b, index: 14 }
-  pc13: { port: c, index: 13 }
-  pd8: { port: d, index: 8 }
-  pd9: { port: d, index: 9 }
+  pa4:
+    port: a
+    index: 4
+  pa5:
+    port: a
+    index: 5
+  pa6:
+    port: a
+    index: 6
+  pa7:
+    port: a
+    index: 7
+  pb0:
+    port: b
+    index: 0
+  pb7:
+    port: b
+    index: 7
+  pb14:
+    port: b
+    index: 14
+  pc13:
+    port: c
+    index: 13
+  pd8:
+    port: d
+    index: 8
+  pd9:
+    port: d
+    index: 9
 routes:
-  - { pin: pd8, peripheral: usart3, signal: tx, kind: af_fixed, af: 7 }
-  - { pin: pd9, peripheral: usart3, signal: rx, kind: af_fixed, af: 7 }
-  - { pin: pa5, peripheral: spi1, signal: sck, kind: af_fixed, af: 5 }
-  - { pin: pa6, peripheral: spi1, signal: miso, kind: af_fixed, af: 5 }
-  - { pin: pa7, peripheral: spi1, signal: mosi, kind: af_fixed, af: 5 }
+- pin: pd8
+  peripheral: usart3
+  signal: tx
+  kind: af_fixed
+  af: 7
+- pin: pd9
+  peripheral: usart3
+  signal: rx
+  kind: af_fixed
+  af: 7
+- pin: pa5
+  peripheral: spi1
+  signal: sck
+  kind: af_fixed
+  af: 5
+- pin: pa6
+  peripheral: spi1
+  signal: miso
+  kind: af_fixed
+  af: 5
+- pin: pa7
+  peripheral: spi1
+  signal: mosi
+  kind: af_fixed
+  af: 5
 interrupts:
-  - { name: WWDG, number: 0 }
-  - { name: PVD, number: 1 }
-  - { name: TAMP_STAMP, number: 2 }
-  - { name: RTC_WKUP, number: 3 }
-  - { name: FLASH, number: 4 }
-  - { name: RCC, number: 5 }
-  - { name: EXTI0, number: 6 }
-  - { name: EXTI1, number: 7 }
-  - { name: EXTI2, number: 8 }
-  - { name: EXTI3, number: 9 }
-  - { name: EXTI4, number: 10 }
-  - { name: DMA1_Stream0, number: 11 }
-  - { name: DMA1_Stream1, number: 12 }
-  - { name: DMA1_Stream2, number: 13 }
-  - { name: DMA1_Stream3, number: 14 }
-  - { name: DMA1_Stream4, number: 15 }
-  - { name: DMA1_Stream5, number: 16 }
-  - { name: DMA1_Stream6, number: 17 }
-  - { name: ADC, number: 18 }
-  - { name: CAN1_TX, number: 19 }
-  - { name: CAN1_RX0, number: 20 }
-  - { name: CAN1_RX1, number: 21 }
-  - { name: CAN1_SCE, number: 22 }
-  - { name: EXTI9_5, number: 23 }
-  - { name: TIM1_BRK_TIM9, number: 24 }
-  - { name: TIM1_UP_TIM10, number: 25 }
-  - { name: TIM1_TRG_COM_TIM11, number: 26 }
-  - { name: TIM1_CC, number: 27 }
-  - { name: TIM2, number: 28 }
-  - { name: TIM3, number: 29 }
-  - { name: TIM4, number: 30 }
-  - { name: I2C1_EV, number: 31 }
-  - { name: I2C1_ER, number: 32 }
-  - { name: I2C2_EV, number: 33 }
-  - { name: I2C2_ER, number: 34 }
-  - { name: SPI1, number: 35 }
-  - { name: SPI2, number: 36 }
-  - { name: USART1, number: 37 }
-  - { name: USART2, number: 38 }
-  - { name: USART3, number: 39 }
-  - { name: EXTI15_10, number: 40 }
-  - { name: RTC_ALARM, number: 41 }
-  - { name: OTG_FS_WKUP, number: 42 }
-  - { name: TIM8_BRK_TIM12, number: 43 }
-  - { name: TIM8_UP_TIM13, number: 44 }
-  - { name: TIM8_TRG_COM_TIM14, number: 45 }
-  - { name: TIM8_CC, number: 46 }
-  - { name: DMA1_Stream7, number: 47 }
-  - { name: FMC, number: 48 }
-  - { name: SDMMC1, number: 49 }
-  - { name: TIM5, number: 50 }
-  - { name: SPI3, number: 51 }
-  - { name: UART4, number: 52 }
-  - { name: UART5, number: 53 }
-  - { name: TIM6_DAC, number: 54 }
-  - { name: TIM7, number: 55 }
-  - { name: DMA2_Stream0, number: 56 }
-  - { name: DMA2_Stream1, number: 57 }
-  - { name: DMA2_Stream2, number: 58 }
-  - { name: DMA2_Stream3, number: 59 }
-  - { name: DMA2_Stream4, number: 60 }
-  - { name: OTG_FS, number: 67 }
-  - { name: DMA2_Stream5, number: 68 }
-  - { name: DMA2_Stream6, number: 69 }
-  - { name: DMA2_Stream7, number: 70 }
-  - { name: USART6, number: 71 }
-  - { name: I2C3_EV, number: 72 }
-  - { name: I2C3_ER, number: 73 }
-  - { name: OTG_HS_EP1_OUT, number: 74 }
-  - { name: OTG_HS_EP1_IN, number: 75 }
-  - { name: OTG_HS_WKUP, number: 76 }
-  - { name: OTG_HS, number: 77 }
-  - { name: AES, number: 79 }
-  - { name: RNG, number: 80 }
-  - { name: FPU, number: 81 }
-  - { name: UART7, number: 82 }
-  - { name: UART8, number: 83 }
-  - { name: SPI4, number: 84 }
-  - { name: SPI5, number: 85 }
-  - { name: SAI1, number: 87 }
-  - { name: SAI2, number: 91 }
-  - { name: QUADSPI, number: 92 }
-  - { name: LPTIM1, number: 93 }
-  - { name: SDMMC2, number: 103 }
+- name: WWDG
+  number: 0
+- name: PVD
+  number: 1
+- name: TAMP_STAMP
+  number: 2
+- name: RTC_WKUP
+  number: 3
+- name: FLASH
+  number: 4
+- name: RCC
+  number: 5
+- name: EXTI0
+  number: 6
+- name: EXTI1
+  number: 7
+- name: EXTI2
+  number: 8
+- name: EXTI3
+  number: 9
+- name: EXTI4
+  number: 10
+- name: DMA1_Stream0
+  number: 11
+- name: DMA1_Stream1
+  number: 12
+- name: DMA1_Stream2
+  number: 13
+- name: DMA1_Stream3
+  number: 14
+- name: DMA1_Stream4
+  number: 15
+- name: DMA1_Stream5
+  number: 16
+- name: DMA1_Stream6
+  number: 17
+- name: ADC
+  number: 18
+- name: CAN1_TX
+  number: 19
+- name: CAN1_RX0
+  number: 20
+- name: CAN1_RX1
+  number: 21
+- name: CAN1_SCE
+  number: 22
+- name: EXTI9_5
+  number: 23
+- name: TIM1_BRK_TIM9
+  number: 24
+- name: TIM1_UP_TIM10
+  number: 25
+- name: TIM1_TRG_COM_TIM11
+  number: 26
+- name: TIM1_CC
+  number: 27
+- name: TIM2
+  number: 28
+- name: TIM3
+  number: 29
+- name: TIM4
+  number: 30
+- name: I2C1_EV
+  number: 31
+- name: I2C1_ER
+  number: 32
+- name: I2C2_EV
+  number: 33
+- name: I2C2_ER
+  number: 34
+- name: SPI1
+  number: 35
+- name: SPI2
+  number: 36
+- name: USART1
+  number: 37
+- name: USART2
+  number: 38
+- name: USART3
+  number: 39
+- name: EXTI15_10
+  number: 40
+- name: RTC_ALARM
+  number: 41
+- name: OTG_FS_WKUP
+  number: 42
+- name: TIM8_BRK_TIM12
+  number: 43
+- name: TIM8_UP_TIM13
+  number: 44
+- name: TIM8_TRG_COM_TIM14
+  number: 45
+- name: TIM8_CC
+  number: 46
+- name: DMA1_Stream7
+  number: 47
+- name: FMC
+  number: 48
+- name: SDMMC1
+  number: 49
+- name: TIM5
+  number: 50
+- name: SPI3
+  number: 51
+- name: UART4
+  number: 52
+- name: UART5
+  number: 53
+- name: TIM6_DAC
+  number: 54
+- name: TIM7
+  number: 55
+- name: DMA2_Stream0
+  number: 56
+- name: DMA2_Stream1
+  number: 57
+- name: DMA2_Stream2
+  number: 58
+- name: DMA2_Stream3
+  number: 59
+- name: DMA2_Stream4
+  number: 60
+- name: OTG_FS
+  number: 67
+- name: DMA2_Stream5
+  number: 68
+- name: DMA2_Stream6
+  number: 69
+- name: DMA2_Stream7
+  number: 70
+- name: USART6
+  number: 71
+- name: I2C3_EV
+  number: 72
+- name: I2C3_ER
+  number: 73
+- name: OTG_HS_EP1_OUT
+  number: 74
+- name: OTG_HS_EP1_IN
+  number: 75
+- name: OTG_HS_WKUP
+  number: 76
+- name: OTG_HS
+  number: 77
+- name: AES
+  number: 79
+- name: RNG
+  number: 80
+- name: FPU
+  number: 81
+- name: UART7
+  number: 82
+- name: UART8
+  number: 83
+- name: SPI4
+  number: 84
+- name: SPI5
+  number: 85
+- name: SAI1
+  number: 87
+- name: SAI2
+  number: 91
+- name: QUADSPI
+  number: 92
+- name: LPTIM1
+  number: 93
+- name: SDMMC2
+  number: 103
 clock:
   sources:
-    hsi16: { hz: 16000000 }
-    hse8m: { hz: 8000000 }
+    hsi16:
+      hz: 16000000
+    hse8m:
+      hz: 8000000
   boot_source: hsi16
   profiles:
     pll_180mhz:
-      description: >
-        HSE 8 MHz (ST-Link MCO) / M=4 (2 MHz) x N=180 (VCO 360 MHz) / P=2
-        = 180 MHz sysclk, AHB /1, APB1 /4 (45 MHz), APB2 /2 (90 MHz),
-        5 wait states. Stays within reset VOS scale-1 — no overdrive.
-        Recipe from the old repo's F7 board config (register positions
-        SVD-cross-checked); prescalers set BEFORE the switch to PLL.
+      description: 'HSE 8 MHz (ST-Link MCO) / M=4 (2 MHz) x N=180 (VCO 360 MHz) / P=2 = 180 MHz sysclk,
+        AHB /1, APB1 /4 (45 MHz), APB2 /2 (90 MHz), 5 wait states. Stays within reset VOS scale-1 — no
+        overdrive. Recipe from the old repo''s F7 board config (register positions SVD-cross-checked);
+        prescalers set BEFORE the switch to PLL.
+
+        '
       sysclk_hz: 180000000
       ahb_hz: 180000000
       apb_hz: 45000000
       apb2_hz: 90000000
       program:
-        - { op: rmw, peripheral: rcc, register: CR, fields: { HSEON: 1 } }
-        - { op: poll, peripheral: rcc, register: CR, field: HSERDY, equals: 1, timeout_us: 100000 }
-        - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 5, ARTEN: 1, PRFTEN: 1 } }
-        - { op: rmw, peripheral: rcc, register: PLLCFGR, fields: { PLLM: 4, PLLN: 180, PLLP: 0, PLLSRC: 1, PLLQ: 8 } }
-        - { op: rmw, peripheral: rcc, register: CFGR, fields: { PPRE1: 5, PPRE2: 4 } }
-        - { op: rmw, peripheral: rcc, register: CR, fields: { PLLON: 1 } }
-        - { op: poll, peripheral: rcc, register: CR, field: PLLRDY, equals: 1, timeout_us: 10000 }
-        - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 2 } }
-        - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 2, timeout_us: 10000 }
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          HSEON: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: HSERDY
+        equals: 1
+        timeout_us: 100000
+      - op: rmw
+        peripheral: flash
+        register: ACR
+        fields:
+          LATENCY: 5
+          ARTEN: 1
+          PRFTEN: 1
+      - op: rmw
+        peripheral: rcc
+        register: PLLCFGR
+        fields:
+          PLLM: 4
+          PLLN: 180
+          PLLP: 0
+          PLLSRC: 1
+          PLLQ: 8
+      - op: rmw
+        peripheral: rcc
+        register: CFGR
+        fields:
+          PPRE1: 5
+          PPRE2: 4
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          PLLON: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: PLLRDY
+        equals: 1
+        timeout_us: 10000
+      - op: rmw
+        peripheral: rcc
+        register: CFGR
+        fields:
+          SW: 2
+      - op: poll
+        peripheral: rcc
+        register: CFGR
+        field: SWS
+        equals: 2
+        timeout_us: 10000
+package:
+  type: LQFP144
+  pins: 144
+  part: STM32F722ZETx
+  layout:
+  - position: '1'
+    signal: pe2
+    kind: gpio
+  - position: '2'
+    signal: pe3
+    kind: gpio
+  - position: '3'
+    signal: pe4
+    kind: gpio
+  - position: '4'
+    signal: pe5
+    kind: gpio
+  - position: '5'
+    signal: pe6
+    kind: gpio
+  - position: '6'
+    signal: vbat
+    kind: power
+  - position: '7'
+    signal: pc13
+    kind: gpio
+  - position: '8'
+    signal: pc14
+    kind: gpio
+  - position: '9'
+    signal: pc15
+    kind: gpio
+  - position: '10'
+    signal: pf0
+    kind: gpio
+  - position: '11'
+    signal: pf1
+    kind: gpio
+  - position: '12'
+    signal: pf2
+    kind: gpio
+  - position: '13'
+    signal: pf3
+    kind: gpio
+  - position: '14'
+    signal: pf4
+    kind: gpio
+  - position: '15'
+    signal: pf5
+    kind: gpio
+  - position: '16'
+    signal: vss
+    kind: ground
+  - position: '17'
+    signal: vdd
+    kind: power
+  - position: '18'
+    signal: pf6
+    kind: gpio
+  - position: '19'
+    signal: pf7
+    kind: gpio
+  - position: '20'
+    signal: pf8
+    kind: gpio
+  - position: '21'
+    signal: pf9
+    kind: gpio
+  - position: '22'
+    signal: pf10
+    kind: gpio
+  - position: '23'
+    signal: ph0
+    kind: gpio
+  - position: '24'
+    signal: ph1
+    kind: gpio
+  - position: '25'
+    signal: nrst
+    kind: reset
+  - position: '26'
+    signal: pc0
+    kind: gpio
+  - position: '27'
+    signal: pc1
+    kind: gpio
+  - position: '28'
+    signal: pc2
+    kind: gpio
+  - position: '29'
+    signal: pc3
+    kind: gpio
+  - position: '30'
+    signal: vdd
+    kind: power
+  - position: '31'
+    signal: vssa
+    kind: analog
+  - position: '32'
+    signal: vref+
+    kind: analog
+  - position: '33'
+    signal: vdda
+    kind: analog
+  - position: '34'
+    signal: pa0
+    kind: gpio
+  - position: '35'
+    signal: pa1
+    kind: gpio
+  - position: '36'
+    signal: pa2
+    kind: gpio
+  - position: '37'
+    signal: pa3
+    kind: gpio
+  - position: '38'
+    signal: vss
+    kind: ground
+  - position: '39'
+    signal: vdd
+    kind: power
+  - position: '40'
+    signal: pa4
+    kind: gpio
+  - position: '41'
+    signal: pa5
+    kind: gpio
+  - position: '42'
+    signal: pa6
+    kind: gpio
+  - position: '43'
+    signal: pa7
+    kind: gpio
+  - position: '44'
+    signal: pc4
+    kind: gpio
+  - position: '45'
+    signal: pc5
+    kind: gpio
+  - position: '46'
+    signal: pb0
+    kind: gpio
+  - position: '47'
+    signal: pb1
+    kind: gpio
+  - position: '48'
+    signal: pb2
+    kind: gpio
+  - position: '49'
+    signal: pf11
+    kind: gpio
+  - position: '50'
+    signal: pf12
+    kind: gpio
+  - position: '51'
+    signal: vss
+    kind: ground
+  - position: '52'
+    signal: vdd
+    kind: power
+  - position: '53'
+    signal: pf13
+    kind: gpio
+  - position: '54'
+    signal: pf14
+    kind: gpio
+  - position: '55'
+    signal: pf15
+    kind: gpio
+  - position: '56'
+    signal: pg0
+    kind: gpio
+  - position: '57'
+    signal: pg1
+    kind: gpio
+  - position: '58'
+    signal: pe7
+    kind: gpio
+  - position: '59'
+    signal: pe8
+    kind: gpio
+  - position: '60'
+    signal: pe9
+    kind: gpio
+  - position: '61'
+    signal: vss
+    kind: ground
+  - position: '62'
+    signal: vdd
+    kind: power
+  - position: '63'
+    signal: pe10
+    kind: gpio
+  - position: '64'
+    signal: pe11
+    kind: gpio
+  - position: '65'
+    signal: pe12
+    kind: gpio
+  - position: '66'
+    signal: pe13
+    kind: gpio
+  - position: '67'
+    signal: pe14
+    kind: gpio
+  - position: '68'
+    signal: pe15
+    kind: gpio
+  - position: '69'
+    signal: pb10
+    kind: gpio
+  - position: '70'
+    signal: pb11
+    kind: gpio
+  - position: '71'
+    signal: vcap_1
+    kind: power
+  - position: '72'
+    signal: vdd
+    kind: power
+  - position: '73'
+    signal: pb12
+    kind: gpio
+  - position: '74'
+    signal: pb13
+    kind: gpio
+  - position: '75'
+    signal: pb14
+    kind: gpio
+  - position: '76'
+    signal: pb15
+    kind: gpio
+  - position: '77'
+    signal: pd8
+    kind: gpio
+  - position: '78'
+    signal: pd9
+    kind: gpio
+  - position: '79'
+    signal: pd10
+    kind: gpio
+  - position: '80'
+    signal: pd11
+    kind: gpio
+  - position: '81'
+    signal: pd12
+    kind: gpio
+  - position: '82'
+    signal: pd13
+    kind: gpio
+  - position: '83'
+    signal: vss
+    kind: ground
+  - position: '84'
+    signal: vdd
+    kind: power
+  - position: '85'
+    signal: pd14
+    kind: gpio
+  - position: '86'
+    signal: pd15
+    kind: gpio
+  - position: '87'
+    signal: pg2
+    kind: gpio
+  - position: '88'
+    signal: pg3
+    kind: gpio
+  - position: '89'
+    signal: pg4
+    kind: gpio
+  - position: '90'
+    signal: pg5
+    kind: gpio
+  - position: '91'
+    signal: pg6
+    kind: gpio
+  - position: '92'
+    signal: pg7
+    kind: gpio
+  - position: '93'
+    signal: pg8
+    kind: gpio
+  - position: '94'
+    signal: vss
+    kind: ground
+  - position: '95'
+    signal: vddusb
+    kind: power
+  - position: '96'
+    signal: pc6
+    kind: gpio
+  - position: '97'
+    signal: pc7
+    kind: gpio
+  - position: '98'
+    signal: pc8
+    kind: gpio
+  - position: '99'
+    signal: pc9
+    kind: gpio
+  - position: '100'
+    signal: pa8
+    kind: gpio
+  - position: '101'
+    signal: pa9
+    kind: gpio
+  - position: '102'
+    signal: pa10
+    kind: gpio
+  - position: '103'
+    signal: pa11
+    kind: gpio
+  - position: '104'
+    signal: pa12
+    kind: gpio
+  - position: '105'
+    signal: pa13
+    kind: gpio
+  - position: '106'
+    signal: vcap_2
+    kind: power
+  - position: '107'
+    signal: vss
+    kind: ground
+  - position: '108'
+    signal: vdd
+    kind: power
+  - position: '109'
+    signal: pa14
+    kind: gpio
+  - position: '110'
+    signal: pa15
+    kind: gpio
+  - position: '111'
+    signal: pc10
+    kind: gpio
+  - position: '112'
+    signal: pc11
+    kind: gpio
+  - position: '113'
+    signal: pc12
+    kind: gpio
+  - position: '114'
+    signal: pd0
+    kind: gpio
+  - position: '115'
+    signal: pd1
+    kind: gpio
+  - position: '116'
+    signal: pd2
+    kind: gpio
+  - position: '117'
+    signal: pd3
+    kind: gpio
+  - position: '118'
+    signal: pd4
+    kind: gpio
+  - position: '119'
+    signal: pd5
+    kind: gpio
+  - position: '120'
+    signal: vss
+    kind: ground
+  - position: '121'
+    signal: vddsdmmc
+    kind: power
+  - position: '122'
+    signal: pd6
+    kind: gpio
+  - position: '123'
+    signal: pd7
+    kind: gpio
+  - position: '124'
+    signal: pg9
+    kind: gpio
+  - position: '125'
+    signal: pg10
+    kind: gpio
+  - position: '126'
+    signal: pg11
+    kind: gpio
+  - position: '127'
+    signal: pg12
+    kind: gpio
+  - position: '128'
+    signal: pg13
+    kind: gpio
+  - position: '129'
+    signal: pg14
+    kind: gpio
+  - position: '130'
+    signal: vss
+    kind: ground
+  - position: '131'
+    signal: vdd
+    kind: power
+  - position: '132'
+    signal: pg15
+    kind: gpio
+  - position: '133'
+    signal: pb3
+    kind: gpio
+  - position: '134'
+    signal: pb4
+    kind: gpio
+  - position: '135'
+    signal: pb5
+    kind: gpio
+  - position: '136'
+    signal: pb6
+    kind: gpio
+  - position: '137'
+    signal: pb7
+    kind: gpio
+  - position: '138'
+    signal: boot0
+    kind: boot
+  - position: '139'
+    signal: pb8
+    kind: gpio
+  - position: '140'
+    signal: pb9
+    kind: gpio
+  - position: '141'
+    signal: pe0
+    kind: gpio
+  - position: '142'
+    signal: pe1
+    kind: gpio
+  - position: '143'
+    signal: pdr_on
+    kind: ground
+  - position: '144'
+    signal: vdd
+    kind: power

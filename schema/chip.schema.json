@@ -256,29 +256,63 @@
           },
           "rmii": {
             "type": "object",
-            "description": "RMII pin bank for a MAC (GMAC/EMAC): the fixed pins the block's RMII function occupies on this die and their alternate-function number. A chip fact — a board only chooses whether to wire Ethernet, not which pins the RMII function lives on.",
-            "required": ["af", "pins"],
+            "description": "RMII pin bank for a MAC (GMAC/EMAC): the fixed pins the block's RMII function occupies on this die and their alternate-function number. A chip fact \u2014 a board only chooses whether to wire Ethernet, not which pins the RMII function lives on.",
+            "required": [
+              "af",
+              "pins"
+            ],
             "additionalProperties": false,
             "properties": {
-              "af": {"type": "integer", "minimum": 0, "maximum": 15},
-              "pins": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+              "af": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 15
+              },
+              "pins": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
             }
           },
           "rmii_select": {
             "type": "object",
             "description": "For a MAC whose RMII-vs-MII select lives OUTSIDE its own register block (STM32: SYSCFG_PMC, not the ETH block): the register address + bit to set for RMII, and the clock-enable to run first. A chip fact, emitted into the generated eth_configure_pins() so no silicon address sits in the hand-written HAL. MACs whose select is in-block (SAME70 GMAC's UR) omit it.",
-            "required": ["addr", "bit", "clock"],
+            "required": [
+              "addr",
+              "bit",
+              "clock"
+            ],
             "additionalProperties": false,
             "properties": {
-              "addr": {"type": "string", "pattern": "^0x[0-9A-Fa-f]+$"},
-              "bit": {"type": "integer", "minimum": 0, "maximum": 31},
+              "addr": {
+                "type": "string",
+                "pattern": "^0x[0-9A-Fa-f]+$"
+              },
+              "bit": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              },
               "clock": {
                 "type": "object",
-                "required": ["addr", "bit"],
+                "required": [
+                  "addr",
+                  "bit"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "addr": {"type": "string", "pattern": "^0x[0-9A-Fa-f]+$"},
-                  "bit": {"type": "integer", "minimum": 0, "maximum": 31}
+                  "addr": {
+                    "type": "string",
+                    "pattern": "^0x[0-9A-Fa-f]+$"
+                  },
+                  "bit": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 31
+                  }
                 }
               }
             }
@@ -560,6 +594,73 @@
                 "items": {
                   "$ref": "#/$defs/clock_op"
                 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "package": {
+      "type": "object",
+      "description": "The physical part: which package this chip file describes and what sits on each pin. Optional \u2014 a chip is fully usable without it, and a pinout that fails the plausibility lint is left out rather than shipped wrong.",
+      "required": [
+        "type",
+        "pins",
+        "layout"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9]+$",
+          "description": "LQFP64, UFBGA100, QFN56, \u2026"
+        },
+        "pins": {
+          "type": "integer",
+          "minimum": 8,
+          "description": "pin count; must equal len(layout)"
+        },
+        "part": {
+          "type": "string",
+          "description": "the orderable part number this package belongs to (STM32G071RBTx), since one die ships in several"
+        },
+        "layout": {
+          "type": "array",
+          "minItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "position",
+              "signal"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "position": {
+                "type": "string",
+                "description": "1..N for quad packages, A1/B2 for grids"
+              },
+              "signal": {
+                "type": "string",
+                "description": "pin name (pa5, vdd, nrst)"
+              },
+              "kind": {
+                "enum": [
+                  "gpio",
+                  "power",
+                  "ground",
+                  "reset",
+                  "analog",
+                  "clock",
+                  "boot",
+                  "other"
+                ]
+              },
+              "alt": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "other names the datasheet gives this pin"
               }
             }
           }

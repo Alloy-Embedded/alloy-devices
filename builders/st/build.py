@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -84,6 +85,62 @@ def _list_family_chips(sha: str, family_prefix: str) -> list[str]:
             if stem.upper().startswith(family_prefix.upper()):
                 names.append(stem)
     return sorted(names)
+
+
+# ---------------------------------------------------------------- packages
+
+_PIN_KIND = (
+    (("VDDA", "AVDD"), "analog"), (("VREF",), "analog"),
+    (("VDD", "VBAT", "VCAP", "VLCD", "VDDIO"), "power"),
+    (("VSSA", "AVSS"), "analog"), (("VSS", "GND", "PDR"), "ground"),
+    (("NRST", "RST"), "reset"), (("BOOT",), "boot"), (("OSC", "PC14", "PC15"), "clock"),
+)
+
+
+def _pin_kind(signal: str) -> str:
+    s = signal.upper()
+    if re.match(r"^P[A-Z]\d{1,2}$", s):
+        return "gpio"
+    for prefixes, kind in _PIN_KIND:
+        if s.startswith(prefixes):
+            return kind
+    return "other"
+
+
+def _package(chip_json: dict, part: str) -> dict | None:
+    """The physical pinout for a part, or None when it cannot be trusted.
+
+    Upstream carries per-package pin lists, but their completeness varies by
+    family: STM32F4/F7 declare every pad, while STM32G0/G4 list barely any
+    supply pin and no reset at all — which means those positions have been given
+    to GPIOs that are VDD/VSS on the real part. That is a WRONG footprint, and a
+    wrong footprint is worse than none, so `check_pinout` decides and anything
+    it rejects is simply not emitted.
+    """
+    from alloy_devices.lints import check_pinout  # noqa: PLC0415
+
+    best = None
+    for pkg in chip_json.get("packages") or []:
+        layout = [
+            {"position": str(pin["position"]),
+             "signal": (pin["signals"][0] if pin.get("signals") else "").lower(),
+             "kind": _pin_kind(pin["signals"][0] if pin.get("signals") else "")}
+            for pin in pkg["pins"]
+        ]
+        for entry in layout:
+            if not entry["signal"]:
+                entry["signal"] = "nc"
+                entry["kind"] = "other"
+        candidate = {"type": pkg["package"], "pins": len(layout),
+                     "part": pkg.get("name", part), "layout": layout}
+        if check_pinout(candidate):
+            continue
+        # Several packages can pass; prefer the quad one, which is what a hand
+        # solderable board uses and what a picker can draw sensibly.
+        quad = not any(not e["position"].isdigit() for e in layout)
+        if best is None or (quad and not best[0]):
+            best = (quad, candidate)
+    return best[1] if best else None
 
 
 def _rcc_gate(rcc_ir: dict, ours_by_offset: dict[int, str],
@@ -247,6 +304,11 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
             "profiles": clock["profiles"],
         },
     }
+    # The physical part, when upstream's pin list for it survives the
+    # plausibility lint. Absent is a normal, honest state.
+    package = _package(src, part)
+    if package is not None:
+        chip["package"] = package
     return chip, set()
 
 
