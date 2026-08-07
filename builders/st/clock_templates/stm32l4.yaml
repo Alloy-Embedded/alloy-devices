@@ -1,0 +1,44 @@
+# L4-family clock layer (builder input). Unlike every family so far, the L4
+# boots on MSI at 4 MHz (not HSI16) — so the safe boot profile is MSI, and the
+# PLL profile must first turn HSI16 ON before it can feed the PLL. The 64 MHz
+# recipe is the standard L4 HSI16 path (/1 x16 /4 via PLLR) with 3 wait
+# states, the RM0394 table-9 value for 64 MHz at range 1. Voltage range 1 is
+# the reset default on L4, so no PWR step is needed at 64 MHz.
+sources:
+  msi: { hz: 4000000 }
+  hsi16: { hz: 16000000 }
+  lsi: { hz: 32000 }
+boot_source: msi
+profiles:
+  msi_4mhz:
+    description: MSI boot oscillator as-is, 0 wait states — the always-safe default
+    sysclk_hz: 4000000
+    ahb_hz: 4000000
+    apb_hz: 4000000
+    apb2_hz: 4000000
+    program:
+    - { op: rmw, peripheral: rcc, register: CR, fields: { MSION: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: MSIRDY, equals: 1, timeout_us: 2000 }
+    - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 0 } }
+    - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 0 } }
+    - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 0, timeout_us: 2000 }
+  pll_64mhz:
+    description: HSI16 /1 x16 /4 = 64 MHz via PLLR, 3 wait states (RM0394 table 9
+      for 64 MHz at range 1; same shape as the silicon-proven G0 64 MHz recipe)
+    sysclk_hz: 64000000
+    ahb_hz: 64000000
+    apb_hz: 64000000
+    apb2_hz: 64000000
+    program:
+    - { op: rmw, peripheral: rcc, register: CR, fields: { HSION: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: HSIRDY, equals: 1, timeout_us: 2000 }
+    - { op: rmw, peripheral: flash, register: ACR, fields: { LATENCY: 3 } }
+    - { op: rmw, peripheral: rcc, register: PLLCFGR, fields: { PLLSRC: 2, PLLM: 0, PLLN: 16, PLLR: 1, PLLREN: 1 } }
+    - { op: rmw, peripheral: rcc, register: CR, fields: { PLLON: 1 } }
+    - { op: poll, peripheral: rcc, register: CR, field: PLLRDY, equals: 1, timeout_us: 10000 }
+    # ADC kernel clock = SYSCLK. CCIPR.ADCSEL resets to 0 = NO CLOCK on L4 —
+    # left unset, an ADC driver hangs silently on its first ready-poll. Set it
+    # here, unconditionally: harmless without an ADC, load-bearing with one.
+    - { op: rmw, peripheral: rcc, register: CCIPR, fields: { ADCSEL: 3 } }
+    - { op: rmw, peripheral: rcc, register: CFGR, fields: { SW: 3 } }
+    - { op: poll, peripheral: rcc, register: CFGR, field: SWS, equals: 3, timeout_us: 2000 }

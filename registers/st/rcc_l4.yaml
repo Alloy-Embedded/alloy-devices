@@ -1,0 +1,216 @@
+schema: alloy.registers.v1
+vendor: st
+ip: rcc_l4
+class: clock
+description: >
+  STM32L4 reset & clock control (L41x/L42x/L43x/L44x/L45x/L46x single-PLLSAI1
+  dies). Differs from every family curated so far in three load-bearing ways:
+  the boot oscillator is MSI at 4 MHz (not HSI16 — HSI16 must be turned ON
+  before a PLL can use it), the enable registers split across SIX words
+  (AHB1/AHB2/AHB3/APB1ENR1/APB1ENR2/APB2), and peripheral kernel clocks are
+  muxed per-peripheral through CCIPR (USARTxSEL/I2CxSEL/ADCSEL — all reset to
+  00, which means "bus clock", except ADCSEL where 00 means NO CLOCK: an ADC
+  driver that forgets CCIPR hangs silently).
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad (MIT OR Apache-2.0): data/registers/rcc_l4.json — all offsets and field positions below"
+    - "ST CMSIS device header stm32l412xx.h + STM32CubeL4 LL drivers (ST-published): independent cross-check of field positions and of the HSI16->PLL(/1 x16 /4)->64MHz bring-up order"
+    - "RM0394 rev 4 §6: MSI is the boot source (4 MHz, MSIRANGE=6 default via MSISRANGE), CFGR.SW encoding 0=MSI 1=HSI16 2=HSE 3=PLL"
+  completeness: bring-up-subset
+  verified:
+    - "PLLCFGR PLLM at [6:4] (divider = field+1), PLLN at [14:8], PLLR at [26:25] (00=/2 01=/4 10=/6 11=/8), PLLREN bit 24 — the LL_RCC_PLL_ConfigDomain_SYS(HSI, DIV_1, 16, PLLR_DIV_4) recipe = 16/1*16/4 = 64 MHz"
+    - "USART2EN = APB1ENR1 bit 17, USART3EN bit 18 (embassy gate table; ST CMSIS header agrees)"
+    - "ADCSEL = CCIPR [29:28]: 0 = no clock (silent hang), 3 = sysclk"
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: MSION, bit: 0 }
+      - { name: MSIRDY, bit: 1 }
+      - { name: MSIPLLEN, bit: 2 }
+      - { name: MSIRGSEL, bit: 3, description: "0=range from CSR.MSISRANGE (boot), 1=range from CR.MSIRANGE" }
+      - { name: MSIRANGE, bit: 4, width: 4, description: "6=4MHz (boot default via MSISRANGE)" }
+      - { name: HSION, bit: 8 }
+      - { name: HSIKERON, bit: 9 }
+      - { name: HSIRDY, bit: 10 }
+      - { name: HSIASFS, bit: 11 }
+      - { name: HSEON, bit: 16 }
+      - { name: HSERDY, bit: 17 }
+      - { name: HSEBYP, bit: 18 }
+      - { name: CSSON, bit: 19 }
+      - { name: PLLON, bit: 24 }
+      - { name: PLLRDY, bit: 25 }
+      - { name: PLLSAI1ON, bit: 26 }
+      - { name: PLLSAI1RDY, bit: 27 }
+  - name: ICSCR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: MSICAL, bit: 0, width: 8 }
+      - { name: MSITRIM, bit: 8, width: 8 }
+      - { name: HSICAL, bit: 16, width: 8 }
+      - { name: HSITRIM, bit: 24, width: 7 }
+  - name: CFGR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: SW, bit: 0, width: 2, description: "0=MSI 1=HSI16 2=HSE 3=PLL" }
+      - { name: SWS, bit: 2, width: 2 }
+      - { name: HPRE, bit: 4, width: 4 }
+      - { name: PPRE1, bit: 8, width: 3 }
+      - { name: PPRE2, bit: 11, width: 3 }
+      - { name: STOPWUCK, bit: 15 }
+      - { name: MCOSEL, bit: 24, width: 4 }
+      - { name: MCOPRE, bit: 28, width: 3 }
+  - name: PLLCFGR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: PLLSRC, bit: 0, width: 2, description: "0=none 1=MSI 2=HSI16 3=HSE" }
+      - { name: PLLM, bit: 4, width: 3, description: "input divider = field+1 (RM0394)" }
+      - { name: PLLN, bit: 8, width: 7, description: "VCO multiplier = field (8..86)" }
+      - { name: PLLPEN, bit: 16 }
+      - { name: PLLQEN, bit: 20 }
+      - { name: PLLQ, bit: 21, width: 2 }
+      - { name: PLLREN, bit: 24, description: "must be 1 before SW=PLL takes effect (same rule hardware-verified on G0)" }
+      - { name: PLLR, bit: 25, width: 2, description: "sysclk divider: 0=/2 1=/4 2=/6 3=/8" }
+      - { name: PLLP, bit: 27, width: 5 }
+  - name: CIER
+    offset: "0x18"
+    access: rw
+  - name: CIFR
+    offset: "0x1C"
+    access: ro
+  - name: CICR
+    offset: "0x20"
+    access: wo
+  - name: AHB1RSTR
+    offset: "0x28"
+    access: rw
+  - name: AHB2RSTR
+    offset: "0x2C"
+    access: rw
+  - name: AHB3RSTR
+    offset: "0x30"
+    access: rw
+  - name: APB1RSTR1
+    offset: "0x38"
+    access: rw
+  - name: APB1RSTR2
+    offset: "0x3C"
+    access: rw
+  - name: APB2RSTR
+    offset: "0x40"
+    access: rw
+  - name: AHB1ENR
+    offset: "0x48"
+    access: rw
+    fields:
+      - { name: DMA1EN, bit: 0 }
+      - { name: DMA2EN, bit: 1 }
+      - { name: FLASHEN, bit: 8 }
+      - { name: CRCEN, bit: 12 }
+      - { name: TSCEN, bit: 16 }
+  - name: AHB2ENR
+    offset: "0x4C"
+    access: rw
+    fields:
+      - { name: GPIOAEN, bit: 0 }
+      - { name: GPIOBEN, bit: 1 }
+      - { name: GPIOCEN, bit: 2 }
+      - { name: GPIODEN, bit: 3 }
+      - { name: GPIOHEN, bit: 7 }
+      - { name: ADCEN, bit: 13 }
+      - { name: RNGEN, bit: 18 }
+  - name: AHB3ENR
+    offset: "0x50"
+    access: rw
+    fields:
+      - { name: QUADSPIEN, bit: 8 }
+  - name: APB1ENR1
+    offset: "0x58"
+    access: rw
+    fields:
+      - { name: TIM2EN, bit: 0 }
+      - { name: TIM6EN, bit: 4 }
+      - { name: RTCAPBEN, bit: 10 }
+      - { name: WWDGEN, bit: 11 }
+      - { name: SPI2EN, bit: 14 }
+      - { name: USART2EN, bit: 17 }
+      - { name: USART3EN, bit: 18 }
+      - { name: I2C1EN, bit: 21 }
+      - { name: I2C2EN, bit: 22 }
+      - { name: I2C3EN, bit: 23 }
+      - { name: CRSEN, bit: 24 }
+      - { name: USBEN, bit: 26 }
+      - { name: PWREN, bit: 28 }
+      - { name: OPAMPEN, bit: 30 }
+      - { name: LPTIM1EN, bit: 31 }
+  - name: APB1ENR2
+    offset: "0x5C"
+    access: rw
+    fields:
+      - { name: LPUART1EN, bit: 0 }
+      - { name: SWPMI1EN, bit: 2 }
+      - { name: LPTIM2EN, bit: 5 }
+  - name: APB2ENR
+    offset: "0x60"
+    access: rw
+    fields:
+      - { name: SYSCFGEN, bit: 0 }
+      - { name: TIM1EN, bit: 11 }
+      - { name: SPI1EN, bit: 12 }
+      - { name: USART1EN, bit: 14 }
+      - { name: TIM15EN, bit: 16 }
+      - { name: TIM16EN, bit: 17 }
+  - name: CCIPR
+    offset: "0x88"
+    access: rw
+    fields:
+      - { name: USART1SEL, bit: 0, width: 2, description: "0=PCLK 1=SYSCLK 2=HSI16 3=LSE" }
+      - { name: USART2SEL, bit: 2, width: 2 }
+      - { name: USART3SEL, bit: 4, width: 2 }
+      - { name: LPUART1SEL, bit: 10, width: 2 }
+      - { name: I2C1SEL, bit: 12, width: 2 }
+      - { name: I2C2SEL, bit: 14, width: 2 }
+      - { name: I2C3SEL, bit: 16, width: 2 }
+      - { name: LPTIM1SEL, bit: 18, width: 2 }
+      - { name: LPTIM2SEL, bit: 20, width: 2 }
+      - { name: CLK48SEL, bit: 26, width: 2 }
+      - { name: ADCSEL, bit: 28, width: 2, description: "0=NO CLOCK (hangs a naive driver) 1=PLLSAI1 R 2=(reserved on L412) 3=SYSCLK" }
+  - name: BDCR
+    offset: "0x90"
+    access: rw
+    fields:
+      - { name: LSEON, bit: 0 }
+      - { name: LSERDY, bit: 1 }
+      - { name: LSEBYP, bit: 2 }
+      - { name: LSEDRV, bit: 3, width: 2, description: "0=low drive (LL_RCC_LSEDRIVE_LOW)" }
+      - { name: LSECSSON, bit: 5 }
+      - { name: LSECSSD, bit: 6 }
+      - { name: RTCSEL, bit: 8, width: 2, description: "0=none 1=LSE 2=LSI 3=HSE/32" }
+      - { name: RTCEN, bit: 15 }
+      - { name: BDRST, bit: 16 }
+  - name: CSR
+    offset: "0x94"
+    access: rw
+    fields:
+      - { name: LSION, bit: 0 }
+      - { name: LSIRDY, bit: 1 }
+      - { name: MSISRANGE, bit: 8, width: 4, description: "MSI range after standby/reset; 6 = 4 MHz boot default" }
+      - { name: RMVF, bit: 23, description: "write 1 to clear all reset flags" }
+      - { name: FWRSTF, bit: 24 }
+      - { name: OBLRSTF, bit: 25 }
+      - { name: PINRSTF, bit: 26 }
+      - { name: BORRSTF, bit: 27 }
+      - { name: SFTRSTF, bit: 28 }
+      - { name: IWDGRSTF, bit: 29 }
+      - { name: WWDGRSTF, bit: 30 }
+      - { name: LPWRRSTF, bit: 31 }
+  - name: CRRCR
+    offset: "0x98"
+    access: rw
+    fields:
+      - { name: HSI48ON, bit: 0 }
+      - { name: HSI48RDY, bit: 1 }

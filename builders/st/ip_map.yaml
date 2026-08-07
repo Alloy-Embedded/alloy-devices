@@ -155,6 +155,25 @@ map:
   "fsmc:v1x0": uncurated
   "fsmc:v1x3": uncurated
 
+  # --- stm32l4 family tags (L412 first; shared tags gpio:v2/usart:v3/i2c:v2/
+  # iwdg:v2/timer:v1:*/exti:v1/wwdg:v1/usb:v3/... are already mapped above).
+  # iwdg:v2 stays uncurated in the SHARED entry on purpose: flipping it would
+  # churn every generated F4/F7/G4/G0 yaml; the L412 chip yaml curates its
+  # iwdg by hand under provenance.verified instead.
+  "rcc:l4": st/rcc_l4
+  "flash:l4": st/flash_l4
+  "pwr:l4": st/pwr_l4
+  "rtc:v3_l4": st/rtc_v3
+  "spi:v3": uncurated
+  "bdma:v2": uncurated
+  "adc:v3": uncurated
+  "tsc:v3": uncurated
+  "syscfg:l4": uncurated
+  "dbgmcu:l4": uncurated
+  "comp:v3": uncurated
+  "opamp:v3": uncurated
+
+
 name_overrides:
   "lpuart": uncurated
   "lptim": uncurated

@@ -1,0 +1,1174 @@
+schema: alloy.chip.v1
+vendor: st
+family: stm32l4
+part: STM32L412CB
+die: die464
+provenance:
+  sources:
+  - "builders/st (embassy-rs/stm32-data-generated @ 669003eeb7ad, MIT OR Apache-2.0 via stm32-metapac)\
+    \ \u2014 bases, RCC gates, IRQs, pin AFs, DMA requests, memories, ip tags \u2014 then hand-curated:\
+    \ this file is the first stm32l4 in the database"
+  - clock profiles from builders/st/clock_templates/stm32l4.yaml
+  verified:
+  - "DATA-verified, silicon pending (no L4 board has run alloy yet): gates/IRQs cross-checked against\
+    \ the ST CMSIS device header (stm32l412xx.h) and RM0394; USART2EN=APB1ENR1.17, USART3EN=.18,\
+    \ TSCEN=AHB1ENR.16 confirmed both sides"
+  - "RAM 40K = SRAM1 32K + SRAM2 8K contiguous at 0x20000000 per the RM0394 memory map (SRAM2_ICODE\
+    \ at 0x10000000 is an alias, excluded)"
+  - "pll_64mhz is the standard L4 HSI16 /1 x16 /4 recipe with 3 WS per RM0394 table 9"
+  - "iwdg hand-mapped to st/iwdg_v2 (shared ip_map entry stays uncurated to avoid churning every generated\
+    \ F4/F7/G4 yaml); same shape as the verified stm32g071rb entry"
+cores:
+- name: cm4
+  arch: armv7em
+  fpu: true
+  nvic_prio_bits: 4
+memories:
+- name: flash
+  kind: flash
+  base: '0x08000000'
+  size: 131072
+- name: sram
+  kind: ram
+  base: '0x20000000'
+  size: 40960
+peripherals:
+  adc1:
+    base: '0x50040000'
+    uncurated: true
+    ip_hint: adc:v3:ADC
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 13
+    irq: ADC1_2
+  adc12_common:
+    base: '0x50040300'
+    uncurated: true
+    ip_hint: adccommon:v3:ADC_COMMON
+  adc2:
+    base: '0x50040100'
+    uncurated: true
+    ip_hint: adc:v3:ADC
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 13
+    irq: ADC1_2
+  comp1:
+    base: '0x40010200'
+    uncurated: true
+    ip_hint: comp:v3:COMP
+    irq: COMP
+  crc:
+    base: '0x40023000'
+    uncurated: true
+    ip_hint: crc:v3:CRC
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 12
+  crs:
+    base: '0x40006000'
+    uncurated: true
+    ip_hint: crs:v1:CRS
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 24
+  dbgmcu:
+    base: '0xE0042000'
+    uncurated: true
+    ip_hint: dbgmcu:l4:DBGMCU
+  dma1:
+    base: '0x40020000'
+    uncurated: true
+    ip_hint: bdma:v2:DMA
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 0
+    irq: DMA1_Channel1
+  dma2:
+    base: '0x40020400'
+    uncurated: true
+    ip_hint: bdma:v2:DMA
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 1
+    irq: DMA2_Channel1
+  exti:
+    base: '0x40010400'
+    uncurated: true
+    ip_hint: exti:v1:EXTI
+    irq: EXTI0
+  flash:
+    base: '0x40022000'
+    ip: st/flash_l4
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 8
+    irq: FLASH
+  gpioa:
+    base: '0x48000000'
+    ip: st/gpio_v2
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 0
+    kernel_clock: ahb
+  gpiob:
+    base: '0x48000400'
+    ip: st/gpio_v2
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 1
+    kernel_clock: ahb
+  gpioc:
+    base: '0x48000800'
+    ip: st/gpio_v2
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 2
+    kernel_clock: ahb
+  gpiod:
+    base: '0x48000C00'
+    ip: st/gpio_v2
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 3
+    kernel_clock: ahb
+  gpioh:
+    base: '0x48001C00'
+    ip: st/gpio_v2
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 7
+    kernel_clock: ahb
+  i2c1:
+    base: '0x40005400'
+    ip: st/i2c_v2
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 21
+    irq: I2C1_ER
+    kernel_clock: apb
+    dma_requests:
+      rx: 5
+      tx: 5
+  i2c2:
+    base: '0x40005800'
+    ip: st/i2c_v2
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 22
+    irq: I2C2_ER
+    kernel_clock: apb
+    dma_requests:
+      rx: 3
+      tx: 3
+  i2c3:
+    base: '0x40005C00'
+    ip: st/i2c_v2
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 23
+    irq: I2C3_ER
+    kernel_clock: apb
+    dma_requests:
+      rx: 3
+      tx: 3
+  iwdg:
+    base: '0x40003000'
+    ip: st/iwdg_v2
+  lptim1:
+    base: '0x40007C00'
+    uncurated: true
+    ip_hint: lptim:v1a:LPTIM
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 31
+    irq: LPTIM1
+  lptim2:
+    base: '0x40009400'
+    uncurated: true
+    ip_hint: lptim:v1a:LPTIM
+    gate:
+      peripheral: rcc
+      register: APB1ENR2
+      bit: 5
+    irq: LPTIM2
+  lpuart1:
+    base: '0x40008000'
+    uncurated: true
+    ip_hint: usart:v3:LPUART
+    gate:
+      peripheral: rcc
+      register: APB1ENR2
+      bit: 0
+    irq: LPUART1
+  opamp1:
+    base: '0x40007800'
+    uncurated: true
+    ip_hint: opamp:v3:OPAMP
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 30
+  pwr:
+    base: '0x40007000'
+    ip: st/pwr_l4
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 28
+    kernel_clock: apb
+  quadspi:
+    base: '0xA0001000'
+    uncurated: true
+    ip_hint: quadspi:v1:QUADSPI
+    gate:
+      peripheral: rcc
+      register: AHB3ENR
+      bit: 8
+    irq: QUADSPI
+  rcc:
+    base: '0x40021000'
+    ip: st/rcc_l4
+    irq: RCC
+  rng:
+    base: '0x50060800'
+    uncurated: true
+    ip_hint: rng:v1:RNG
+    gate:
+      peripheral: rcc
+      register: AHB2ENR
+      bit: 18
+    irq: RNG
+  rtc:
+    base: '0x40002800'
+    ip: st/rtc_v3
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 10
+    irq: RTC_Alarm
+    kernel_clock: apb
+  spi1:
+    base: '0x40013000'
+    uncurated: true
+    ip_hint: spi:v3:SPI
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 12
+    irq: SPI1
+  spi2:
+    base: '0x40003800'
+    uncurated: true
+    ip_hint: spi:v3:SPI
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 14
+    irq: SPI2
+  syscfg:
+    base: '0x40010000'
+    uncurated: true
+    ip_hint: syscfg:l4:SYSCFG
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 0
+  tim1:
+    base: '0x40012C00'
+    uncurated: true
+    ip_hint: timer:v1:TIM_ADV
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 11
+    irq: TIM1_BRK_TIM15
+  tim15:
+    base: '0x40014000'
+    uncurated: true
+    ip_hint: timer:v1:TIM_2CH_CMP
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 16
+    irq: TIM1_BRK_TIM15
+  tim16:
+    base: '0x40014400'
+    uncurated: true
+    ip_hint: timer:v1:TIM_1CH_CMP
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 17
+    irq: TIM1_UP_TIM16
+  tim2:
+    base: '0x40000000'
+    uncurated: true
+    ip_hint: timer:v1:TIM_GP32
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 0
+    irq: TIM2
+  tim6:
+    base: '0x40001000'
+    uncurated: true
+    ip_hint: timer:v1:TIM_BASIC
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 4
+    irq: TIM6
+  tsc:
+    base: '0x40024000'
+    uncurated: true
+    ip_hint: tsc:v3:TSC
+    gate:
+      peripheral: rcc
+      register: AHB1ENR
+      bit: 16
+    irq: TSC
+  uid:
+    base: '0x1FFF7590'
+    uncurated: true
+    ip_hint: uid:v1:UID
+  usart1:
+    base: '0x40013800'
+    ip: st/usart_v3
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 14
+    irq: USART1
+    kernel_clock: apb2
+    dma_requests:
+      rx: 2
+      tx: 2
+  usart2:
+    base: '0x40004400'
+    ip: st/usart_v3
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 17
+    irq: USART2
+    kernel_clock: apb
+    dma_requests:
+      rx: 2
+      tx: 2
+  usart3:
+    base: '0x40004800'
+    ip: st/usart_v3
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 18
+    irq: USART3
+    kernel_clock: apb
+    dma_requests:
+      rx: 2
+      tx: 2
+  usb:
+    base: '0x40006800'
+    uncurated: true
+    ip_hint: usb:v3:USB
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 26
+    irq: USB
+  usbram:
+    base: '0x40006C00'
+    uncurated: true
+    ip_hint: usbram:16x2_1024:USBRAM
+  vrefintcal:
+    base: '0x1FFF75AA'
+    uncurated: true
+    ip_hint: vrefintcal:v1:VREFINTCAL
+  wwdg:
+    base: '0x40002C00'
+    uncurated: true
+    ip_hint: wwdg:v1:WWDG
+    gate:
+      peripheral: rcc
+      register: APB1ENR1
+      bit: 11
+    irq: WWDG
+pins:
+  pa0:
+    port: a
+    index: 0
+  pa1:
+    port: a
+    index: 1
+  pa10:
+    port: a
+    index: 10
+  pa11:
+    port: a
+    index: 11
+  pa12:
+    port: a
+    index: 12
+  pa15:
+    port: a
+    index: 15
+  pa2:
+    port: a
+    index: 2
+  pa3:
+    port: a
+    index: 3
+  pa4:
+    port: a
+    index: 4
+  pa5:
+    port: a
+    index: 5
+  pa6:
+    port: a
+    index: 6
+  pa7:
+    port: a
+    index: 7
+  pa8:
+    port: a
+    index: 8
+  pa9:
+    port: a
+    index: 9
+  pb0:
+    port: b
+    index: 0
+  pb10:
+    port: b
+    index: 10
+  pb11:
+    port: b
+    index: 11
+  pb12:
+    port: b
+    index: 12
+  pb13:
+    port: b
+    index: 13
+  pb14:
+    port: b
+    index: 14
+  pb15:
+    port: b
+    index: 15
+  pb3:
+    port: b
+    index: 3
+  pb4:
+    port: b
+    index: 4
+  pb5:
+    port: b
+    index: 5
+  pb6:
+    port: b
+    index: 6
+  pb7:
+    port: b
+    index: 7
+  pb8:
+    port: b
+    index: 8
+  pb9:
+    port: b
+    index: 9
+routes:
+- pin: pa0
+  peripheral: tim2
+  signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa1
+  peripheral: spi1
+  signal: sck
+  kind: af_fixed
+  af: 5
+- pin: pa1
+  peripheral: tim2
+  signal: ch2
+  kind: af_fixed
+  af: 1
+- pin: pa10
+  peripheral: i2c1
+  signal: sda
+  kind: af_fixed
+  af: 4
+- pin: pa10
+  peripheral: tim1
+  signal: ch3
+  kind: af_fixed
+  af: 1
+- pin: pa10
+  peripheral: usart1
+  signal: rx
+  kind: af_fixed
+  af: 7
+- pin: pa11
+  peripheral: spi1
+  signal: miso
+  kind: af_fixed
+  af: 5
+- pin: pa11
+  peripheral: tim1
+  signal: ch4
+  kind: af_fixed
+  af: 1
+- pin: pa12
+  peripheral: spi1
+  signal: mosi
+  kind: af_fixed
+  af: 5
+- pin: pa15
+  peripheral: spi1
+  signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pa15
+  peripheral: tim2
+  signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa15
+  peripheral: usart2
+  signal: rx
+  kind: af_fixed
+  af: 3
+- pin: pa2
+  peripheral: lpuart1
+  signal: tx
+  kind: af_fixed
+  af: 8
+- pin: pa2
+  peripheral: tim15
+  signal: ch1
+  kind: af_fixed
+  af: 14
+- pin: pa2
+  peripheral: tim2
+  signal: ch3
+  kind: af_fixed
+  af: 1
+- pin: pa2
+  peripheral: usart2
+  signal: tx
+  kind: af_fixed
+  af: 7
+- pin: pa3
+  peripheral: lpuart1
+  signal: rx
+  kind: af_fixed
+  af: 8
+- pin: pa3
+  peripheral: tim15
+  signal: ch2
+  kind: af_fixed
+  af: 14
+- pin: pa3
+  peripheral: tim2
+  signal: ch4
+  kind: af_fixed
+  af: 1
+- pin: pa3
+  peripheral: usart2
+  signal: rx
+  kind: af_fixed
+  af: 7
+- pin: pa4
+  peripheral: spi1
+  signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pa5
+  peripheral: spi1
+  signal: sck
+  kind: af_fixed
+  af: 5
+- pin: pa5
+  peripheral: tim2
+  signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa6
+  peripheral: spi1
+  signal: miso
+  kind: af_fixed
+  af: 5
+- pin: pa6
+  peripheral: tim16
+  signal: ch1
+  kind: af_fixed
+  af: 14
+- pin: pa7
+  peripheral: i2c3
+  signal: scl
+  kind: af_fixed
+  af: 4
+- pin: pa7
+  peripheral: spi1
+  signal: mosi
+  kind: af_fixed
+  af: 5
+- pin: pa8
+  peripheral: tim1
+  signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa9
+  peripheral: i2c1
+  signal: scl
+  kind: af_fixed
+  af: 4
+- pin: pa9
+  peripheral: tim1
+  signal: ch2
+  kind: af_fixed
+  af: 1
+- pin: pa9
+  peripheral: usart1
+  signal: tx
+  kind: af_fixed
+  af: 7
+- pin: pb0
+  peripheral: spi1
+  signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pb10
+  peripheral: i2c2
+  signal: scl
+  kind: af_fixed
+  af: 4
+- pin: pb10
+  peripheral: lpuart1
+  signal: rx
+  kind: af_fixed
+  af: 8
+- pin: pb10
+  peripheral: spi2
+  signal: sck
+  kind: af_fixed
+  af: 5
+- pin: pb10
+  peripheral: tim2
+  signal: ch3
+  kind: af_fixed
+  af: 1
+- pin: pb10
+  peripheral: usart3
+  signal: tx
+  kind: af_fixed
+  af: 7
+- pin: pb11
+  peripheral: i2c2
+  signal: sda
+  kind: af_fixed
+  af: 4
+- pin: pb11
+  peripheral: lpuart1
+  signal: tx
+  kind: af_fixed
+  af: 8
+- pin: pb11
+  peripheral: tim2
+  signal: ch4
+  kind: af_fixed
+  af: 1
+- pin: pb11
+  peripheral: usart3
+  signal: rx
+  kind: af_fixed
+  af: 7
+- pin: pb12
+  peripheral: spi2
+  signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pb13
+  peripheral: i2c2
+  signal: scl
+  kind: af_fixed
+  af: 4
+- pin: pb13
+  peripheral: spi2
+  signal: sck
+  kind: af_fixed
+  af: 5
+- pin: pb14
+  peripheral: i2c2
+  signal: sda
+  kind: af_fixed
+  af: 4
+- pin: pb14
+  peripheral: spi2
+  signal: miso
+  kind: af_fixed
+  af: 5
+- pin: pb14
+  peripheral: tim15
+  signal: ch1
+  kind: af_fixed
+  af: 14
+- pin: pb15
+  peripheral: spi2
+  signal: mosi
+  kind: af_fixed
+  af: 5
+- pin: pb15
+  peripheral: tim15
+  signal: ch2
+  kind: af_fixed
+  af: 14
+- pin: pb3
+  peripheral: spi1
+  signal: sck
+  kind: af_fixed
+  af: 5
+- pin: pb3
+  peripheral: tim2
+  signal: ch2
+  kind: af_fixed
+  af: 1
+- pin: pb4
+  peripheral: i2c3
+  signal: sda
+  kind: af_fixed
+  af: 4
+- pin: pb4
+  peripheral: spi1
+  signal: miso
+  kind: af_fixed
+  af: 5
+- pin: pb5
+  peripheral: spi1
+  signal: mosi
+  kind: af_fixed
+  af: 5
+- pin: pb6
+  peripheral: i2c1
+  signal: scl
+  kind: af_fixed
+  af: 4
+- pin: pb6
+  peripheral: usart1
+  signal: tx
+  kind: af_fixed
+  af: 7
+- pin: pb7
+  peripheral: i2c1
+  signal: sda
+  kind: af_fixed
+  af: 4
+- pin: pb7
+  peripheral: usart1
+  signal: rx
+  kind: af_fixed
+  af: 7
+- pin: pb8
+  peripheral: i2c1
+  signal: scl
+  kind: af_fixed
+  af: 4
+- pin: pb8
+  peripheral: tim16
+  signal: ch1
+  kind: af_fixed
+  af: 14
+- pin: pb9
+  peripheral: i2c1
+  signal: sda
+  kind: af_fixed
+  af: 4
+- pin: pb9
+  peripheral: spi2
+  signal: cs
+  kind: af_fixed
+  af: 5
+interrupts:
+- name: WWDG
+  number: 0
+- name: PVD_PVM
+  number: 1
+- name: TAMP_STAMP
+  number: 2
+- name: RTC_WKUP
+  number: 3
+- name: FLASH
+  number: 4
+- name: RCC
+  number: 5
+- name: EXTI0
+  number: 6
+- name: EXTI1
+  number: 7
+- name: EXTI2
+  number: 8
+- name: EXTI3
+  number: 9
+- name: EXTI4
+  number: 10
+- name: DMA1_Channel1
+  number: 11
+- name: DMA1_Channel2
+  number: 12
+- name: DMA1_Channel3
+  number: 13
+- name: DMA1_Channel4
+  number: 14
+- name: DMA1_Channel5
+  number: 15
+- name: DMA1_Channel6
+  number: 16
+- name: DMA1_Channel7
+  number: 17
+- name: ADC1_2
+  number: 18
+- name: EXTI9_5
+  number: 23
+- name: TIM1_BRK_TIM15
+  number: 24
+- name: TIM1_UP_TIM16
+  number: 25
+- name: TIM1_TRG_COM
+  number: 26
+- name: TIM1_CC
+  number: 27
+- name: TIM2
+  number: 28
+- name: I2C1_EV
+  number: 31
+- name: I2C1_ER
+  number: 32
+- name: I2C2_EV
+  number: 33
+- name: I2C2_ER
+  number: 34
+- name: SPI1
+  number: 35
+- name: SPI2
+  number: 36
+- name: USART1
+  number: 37
+- name: USART2
+  number: 38
+- name: USART3
+  number: 39
+- name: EXTI15_10
+  number: 40
+- name: RTC_Alarm
+  number: 41
+- name: TIM6
+  number: 54
+- name: DMA2_Channel1
+  number: 56
+- name: DMA2_Channel2
+  number: 57
+- name: DMA2_Channel3
+  number: 58
+- name: DMA2_Channel4
+  number: 59
+- name: DMA2_Channel5
+  number: 60
+- name: COMP
+  number: 64
+- name: LPTIM1
+  number: 65
+- name: LPTIM2
+  number: 66
+- name: USB
+  number: 67
+- name: DMA2_Channel6
+  number: 68
+- name: DMA2_Channel7
+  number: 69
+- name: LPUART1
+  number: 70
+- name: QUADSPI
+  number: 71
+- name: I2C3_EV
+  number: 72
+- name: I2C3_ER
+  number: 73
+- name: TSC
+  number: 77
+- name: RNG
+  number: 80
+- name: FPU
+  number: 81
+- name: CRS
+  number: 82
+clock:
+  sources:
+    msi:
+      hz: 4000000
+    hsi16:
+      hz: 16000000
+    lsi:
+      hz: 32000
+  boot_source: msi
+  profiles:
+    msi_4mhz:
+      description: "MSI boot oscillator as-is, 0 wait states \u2014 the always-safe default"
+      sysclk_hz: 4000000
+      ahb_hz: 4000000
+      apb_hz: 4000000
+      apb2_hz: 4000000
+      program:
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          MSION: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: MSIRDY
+        equals: 1
+        timeout_us: 2000
+      - op: rmw
+        peripheral: flash
+        register: ACR
+        fields:
+          LATENCY: 0
+      - op: rmw
+        peripheral: rcc
+        register: CFGR
+        fields:
+          SW: 0
+      - op: poll
+        peripheral: rcc
+        register: CFGR
+        field: SWS
+        equals: 0
+        timeout_us: 2000
+    pll_64mhz:
+      description: "HSI16 /1 x16 /4 = 64 MHz via PLLR, 3 wait states (RM0394 table 9 for 64 MHz at range 1;\
+        \ same shape as the silicon-proven G0 64 MHz recipe)"
+      sysclk_hz: 64000000
+      ahb_hz: 64000000
+      apb_hz: 64000000
+      apb2_hz: 64000000
+      program:
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          HSION: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: HSIRDY
+        equals: 1
+        timeout_us: 2000
+      - op: rmw
+        peripheral: flash
+        register: ACR
+        fields:
+          LATENCY: 3
+      - op: rmw
+        peripheral: rcc
+        register: PLLCFGR
+        fields:
+          PLLSRC: 2
+          PLLM: 0
+          PLLN: 16
+          PLLR: 1
+          PLLREN: 1
+      - op: rmw
+        peripheral: rcc
+        register: CR
+        fields:
+          PLLON: 1
+      - op: poll
+        peripheral: rcc
+        register: CR
+        field: PLLRDY
+        equals: 1
+        timeout_us: 10000
+      - op: rmw
+        peripheral: rcc
+        register: CCIPR
+        fields:
+          ADCSEL: 3
+      - op: rmw
+        peripheral: rcc
+        register: CFGR
+        fields:
+          SW: 3
+      - op: poll
+        peripheral: rcc
+        register: CFGR
+        field: SWS
+        equals: 3
+        timeout_us: 2000
+package:
+  type: LQFP48
+  pins: 48
+  part: STM32L412CBTx
+  layout:
+  - position: '1'
+    signal: vbat
+    kind: power
+  - position: '2'
+    signal: pc13
+    kind: gpio
+  - position: '3'
+    signal: pc14
+    kind: gpio
+  - position: '4'
+    signal: pc15
+    kind: gpio
+  - position: '5'
+    signal: ph0
+    kind: gpio
+  - position: '6'
+    signal: ph1
+    kind: gpio
+  - position: '7'
+    signal: nrst
+    kind: reset
+  - position: '8'
+    signal: vssa/vref-
+    kind: analog
+  - position: '9'
+    signal: vdda/vref+
+    kind: analog
+  - position: '10'
+    signal: pa0
+    kind: gpio
+  - position: '11'
+    signal: pa1
+    kind: gpio
+  - position: '12'
+    signal: pa2
+    kind: gpio
+  - position: '13'
+    signal: pa3
+    kind: gpio
+  - position: '14'
+    signal: pa4
+    kind: gpio
+  - position: '15'
+    signal: pa5
+    kind: gpio
+  - position: '16'
+    signal: pa6
+    kind: gpio
+  - position: '17'
+    signal: pa7
+    kind: gpio
+  - position: '18'
+    signal: pb0
+    kind: gpio
+  - position: '19'
+    signal: pb1
+    kind: gpio
+  - position: '20'
+    signal: pb2
+    kind: gpio
+  - position: '21'
+    signal: pb10
+    kind: gpio
+  - position: '22'
+    signal: pb11
+    kind: gpio
+  - position: '23'
+    signal: vss
+    kind: ground
+  - position: '24'
+    signal: vdd
+    kind: power
+  - position: '25'
+    signal: pb12
+    kind: gpio
+  - position: '26'
+    signal: pb13
+    kind: gpio
+  - position: '27'
+    signal: pb14
+    kind: gpio
+  - position: '28'
+    signal: pb15
+    kind: gpio
+  - position: '29'
+    signal: pa8
+    kind: gpio
+  - position: '30'
+    signal: pa9
+    kind: gpio
+  - position: '31'
+    signal: pa10
+    kind: gpio
+  - position: '32'
+    signal: pa11
+    kind: gpio
+  - position: '33'
+    signal: pa12
+    kind: gpio
+  - position: '34'
+    signal: pa13
+    kind: gpio
+  - position: '35'
+    signal: vss
+    kind: ground
+  - position: '36'
+    signal: vddusb
+    kind: power
+  - position: '37'
+    signal: pa14
+    kind: gpio
+  - position: '38'
+    signal: pa15
+    kind: gpio
+  - position: '39'
+    signal: pb3
+    kind: gpio
+  - position: '40'
+    signal: pb4
+    kind: gpio
+  - position: '41'
+    signal: pb5
+    kind: gpio
+  - position: '42'
+    signal: pb6
+    kind: gpio
+  - position: '43'
+    signal: pb7
+    kind: gpio
+  - position: '44'
+    signal: ph3
+    kind: gpio
+  - position: '45'
+    signal: pb8
+    kind: gpio
+  - position: '46'
+    signal: pb9
+    kind: gpio
+  - position: '47'
+    signal: vss
+    kind: ground
+  - position: '48'
+    signal: vdd
+    kind: power

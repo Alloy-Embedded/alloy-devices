@@ -38,6 +38,7 @@ _FAMILY = {
     "stm32f7": {"rcc_json": "rcc_f7", "rcc_ours": "rcc_f7"},
     "stm32g4": {"rcc_json": "rcc_g4", "rcc_ours": "rcc_g4"},
     "stm32f4": {"rcc_json": "rcc_f4", "rcc_ours": "rcc_f4"},
+    "stm32l4": {"rcc_json": "rcc_l4", "rcc_ours": "rcc_l4"},
 }
 
 _SIGNAL_MAP = {"TX": "tx", "RX": "rx", "SCL": "scl", "SDA": "sda",
@@ -219,8 +220,17 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
         if irq and irq in irq_names:
             entry["irq"] = irq
         if rcc and mapped != "uncurated" and name not in ("rcc", "flash"):
+            # embassy names buses HCLKn/PCLKn on most families. HCLK* IS the
+            # AHB clock — without this branch the endswith("2") fallback files
+            # L4 GPIO/ADC (HCLK2) under apb2. GATED to stm32l4 for now: the
+            # same mislabel exists latently in every generated F4/F7/G4/G0
+            # yaml (their HCLK1 peripherals read "apb"), but no shipped driver
+            # consumes those values yet, and fixing them means regenerating
+            # 400+ yamls in a deliberate commit of their own — not as a side
+            # effect of the first L4 chip. See the drift note in that commit.
             bus = rcc.get("bus_clock", "")
-            entry["kernel_clock"] = ("ahb" if "AHB" in bus
+            hclk_is_ahb = family == "stm32l4" and bus.startswith("HCLK")
+            entry["kernel_clock"] = ("ahb" if ("AHB" in bus or hclk_is_ahb)
                                      else "apb2" if bus.endswith("2") else "apb")
         dma_reqs = {}
         for ch in p.get("dma_channels", []):
@@ -272,9 +282,25 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
         flat.append({"name": "flash", "kind": "flash",
                      "base": f"0x{base:08X}", "size": total})
     if ram_regs:
-        main = max(ram_regs, key=lambda m: m["size"])
-        flat.append({"name": "sram", "kind": "ram",
-                     "base": f"0x{main['address']:08X}", "size": main["size"]})
+        if family == "stm32l4":
+            # L4 maps SRAM1 (0x20000000) and SRAM2 contiguously behind it —
+            # one usable 40 K run on the L412 (RM0394 memory map), and real
+            # linker scripts span both. Merge contiguous runs and take the
+            # largest. FAMILY-SCOPED on purpose: F7's largest-single choice
+            # (SRAM over the smaller DTCM) must stay byte-identical.
+            runs: list[dict[str, int]] = []
+            for m in sorted(ram_regs, key=lambda m: m["address"]):
+                if runs and m["address"] == runs[-1]["base"] + runs[-1]["size"]:
+                    runs[-1]["size"] += m["size"]
+                else:
+                    runs.append({"base": m["address"], "size": m["size"]})
+            best = max(runs, key=lambda r: r["size"])
+            flat.append({"name": "sram", "kind": "ram",
+                         "base": f"0x{best['base']:08X}", "size": best["size"]})
+        else:
+            main = max(ram_regs, key=lambda m: m["size"])
+            flat.append({"name": "sram", "kind": "ram",
+                         "base": f"0x{main['address']:08X}", "size": main["size"]})
 
     core_name, arch, fpu = _ARCH[core["name"].lower()]
     prio_bits = core.get("nvic_priority_bits") or _NVIC_PRIO_BITS.get(family, 2)

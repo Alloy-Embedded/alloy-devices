@@ -1,0 +1,49 @@
+schema: alloy.registers.v1
+vendor: st
+ip: flash_l4
+class: flash
+description: >
+  STM32L4 flash interface — ACR-only bring-up subset. ACR carries the wait
+  states every clock program must raise BEFORE switching sysclk up (3 WS at
+  64 MHz range 1 per RM0394 table 9). The program/erase subset (KEYR unlock, SR errors, CR PNB/PER/PG,
+  OPTR + option-byte programming) is the Tier-1 st_flash_l4 driver's job and
+  lands when that driver does — the registers are stubbed by name+offset so
+  the layout is already pinned.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/flash_l4.json (all offsets; ACR fields LATENCY [2:0], PRFTEN 8, ICEN 9, DCEN 10)"
+    - "RM0394 rev 4 §3.3.3: 64 MHz @ range 1 needs LATENCY=3 (0WS<=16, 1WS<=32, 2WS<=48, 3WS<=64)"
+  completeness: bring-up-subset
+registers:
+  - name: ACR
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: LATENCY, bit: 0, width: 3, description: "3 WS required at 64 MHz range 1" }
+      - { name: PRFTEN, bit: 8 }
+      - { name: ICEN, bit: 9 }
+      - { name: DCEN, bit: 10 }
+      - { name: ICRST, bit: 11 }
+      - { name: DCRST, bit: 12 }
+  - name: PDKEYR
+    offset: "0x04"
+    access: wo
+  - name: KEYR
+    offset: "0x08"
+    access: wo
+    description: "Unlock: write 0x45670123 then 0xCDEF89AB to clear CR.LOCK (same keys as G0)."
+  - name: OPTKEYR
+    offset: "0x0C"
+    access: wo
+  - name: SR
+    offset: "0x10"
+    access: rw
+  - name: CR
+    offset: "0x14"
+    access: rw
+  - name: ECCR
+    offset: "0x18"
+    access: rw
+  - name: OPTR
+    offset: "0x20"
+    access: rw

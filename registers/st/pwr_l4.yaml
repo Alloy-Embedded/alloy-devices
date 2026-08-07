@@ -1,0 +1,25 @@
+schema: alloy.registers.v1
+vendor: st
+ip: pwr_l4
+class: pwr
+description: >
+  STM32L4 power control — bring-up subset. CR1.DBP lifts backup-domain write
+  protection before an RTC clock program touches RCC.BDCR (same role as
+  pwr_g0). CR1.VOS is included because 64 MHz requires voltage range 1 —
+  which is also the RESET value on L4, so clock programs need no VOS step;
+  the field exists so a future low-power profile can drop to range 2
+  deliberately rather than by accident.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/pwr_l4.json (CR1 offset 0x00: LPMS [2:0], DBP bit 8, VOS [10:9], LPR bit 14; RM0394 §5)"
+    - "STM32CubeL4 LL bring-up convention (ST-published): SCALE1 set explicitly before 64 MHz, DBP raised before any LSE/RTC touch — the two facts this subset carries"
+  completeness: bring-up-subset
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: LPMS, bit: 0, width: 3 }
+      - { name: DBP, bit: 8, description: "1 = disable backup-domain write protection" }
+      - { name: VOS, bit: 9, width: 2, description: "1 = range 1 (reset value; required for 64 MHz), 2 = range 2 (max 26 MHz)" }
+      - { name: LPR, bit: 14 }
