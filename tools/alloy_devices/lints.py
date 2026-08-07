@@ -338,7 +338,108 @@ def lint_cross(db: Database) -> None:
             db.issues.append(Issue(db.register_paths[key], "IP not referenced by any chip", kind="warning"))
 
 
+
+
+# ---------------------------------------------------------------- pinouts
+
+# A physical package spends pins on power, ground, reset and analog references.
+# How many varies by part, but not by much for a given size — and a pinout that
+# claims almost none has silently given those positions to GPIOs, which is a
+# WRONG footprint, not a partial one. These floors are deliberately generous:
+# they are set below every value observed in the families whose upstream data is
+# complete (STM32F4/F7 declare 13-14 service pins on an LQFP64), so a part that
+# trips one is not merely lean, it is missing pins.
+_SERVICE_PIN_FLOOR = ((176, 24), (144, 20), (100, 12), (64, 8), (48, 6), (32, 4))
+
+# Names that are not a GPIO. Everything else on a package position is expected
+# to be a port pin.
+_SERVICE_PREFIX = ("VDD", "VSS", "VBAT", "VREF", "VCAP", "VLCD", "VDDA", "VDDIO",
+                   "NRST", "RST", "BOOT", "PDR", "OSC", "GND", "AVDD", "AVSS")
+
+_GPIO_NAME = re.compile(r"^P[A-Z]\d{1,2}$")
+
+
+def _is_gpio(signal: str) -> bool:
+    return bool(_GPIO_NAME.match(signal.upper()))
+
+
+def _service_floor(pin_count: int) -> int:
+    for size, floor in _SERVICE_PIN_FLOOR:
+        if pin_count >= size:
+            return floor
+    return 2
+
+
+def check_pinout(package: dict[str, Any]) -> list[str]:
+    """Everything implausible about one package's pin list.
+
+    Returned as plain strings so both the database lints and the builder can use
+    it — the builder must be able to REFUSE to emit a pinout, not just report it
+    after it has already been written.
+    """
+    problems: list[str] = []
+    name = package.get("type") or package.get("package") or "?"
+    layout = package.get("layout") or package.get("pins") or []
+    declared = package.get("pins") if isinstance(package.get("pins"), int) else None
+    count = declared if declared is not None else len(layout)
+
+    if not layout:
+        return [f"{name}: no pin layout"]
+    if declared is not None and declared != len(layout):
+        problems.append(f"{name}: declares {declared} pins but lists {len(layout)}")
+
+    positions = [str(p.get("position", "")) for p in layout]
+    if len(set(positions)) != len(positions):
+        problems.append(f"{name}: duplicate pin positions")
+
+    numeric = [p for p in positions if p.isdigit()]
+    if numeric and len(numeric) == len(positions):
+        # A quad package is numbered 1..N with no gaps; a hole means a pin was
+        # dropped and every position after it may be attributed to the wrong pad.
+        expected = list(range(1, len(positions) + 1))
+        if sorted(int(p) for p in numeric) != expected:
+            problems.append(f"{name}: positions are not 1..{len(positions)} without gaps")
+    elif numeric:
+        problems.append(f"{name}: mixes numeric and grid (BGA) positions")
+
+    # A position with no signal at all is a legitimate unconnected pad; take the
+    # first name where there is one rather than assuming every pad is named.
+    def _first(entry: dict[str, Any]) -> str:
+        if entry.get("signal"):
+            return str(entry["signal"])
+        names = entry.get("signals") or []
+        return str(names[0]) if names else ""
+
+    signals = [_first(p) for p in layout]
+    gpios = [s for s in signals if _is_gpio(s)]
+    if len(set(gpios)) != len(gpios):
+        problems.append(f"{name}: the same GPIO appears on more than one pin")
+
+    service = [s for s in signals if s.upper().startswith(_SERVICE_PREFIX)]
+    floor = _service_floor(count)
+    if len(service) < floor:
+        problems.append(
+            f"{name}: {len(service)} power/ground/reset pins on a {count}-pin package "
+            f"(expected at least {floor}) — positions are likely attributed to GPIOs "
+            f"that are supply pins on the real part")
+    if not any(s.upper().startswith(("NRST", "RST")) for s in signals):
+        problems.append(f"{name}: no reset pin — every Cortex-M package has one")
+
+    return problems
+
+
+def lint_pinouts(db: Database) -> None:
+    """Refuse a package whose pin list cannot be a real part."""
+    for key, doc in db.chips.items():
+        package = doc.get("package")
+        if not package:
+            continue
+        for problem in check_pinout(package):
+            db.issues.append(Issue(db.chip_paths[key], problem))
+
+
 def run_all(db: Database) -> None:
     lint_registers(db)
     lint_chips(db)
+    lint_pinouts(db)
     lint_cross(db)
