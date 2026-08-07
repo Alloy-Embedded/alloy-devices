@@ -5,7 +5,7 @@ release of the silicon facts every generated header is built from. Schema
 changes are called out explicitly — consumers pin the schema version they
 understand and fail loudly on a mismatch.
 
-## Unreleased
+## 0.3.0 — 2026-08-07
 
 ### Schema
 
@@ -21,6 +21,12 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- `st/i2c_v2` CR1 gains **STOPIE** (bit 5). Without it an interrupt-driven I2C
+  transfer never gets the event that says the transfer ended — the framework's
+  `st_i2c_v2` driver reads this field, so alloy cannot generate a working
+  interrupt-driven or async I2C against 0.2.0. Behaviour-checked under Renode
+  (clearing that one bit and nothing else stops the interrupt arriving);
+  position transcribed from RM0444, never run on silicon.
 - New IP `st/exti_g0` — the STM32G0 extended interrupt/event controller, the
   block that turns a GPIO edge into an NVIC interrupt. There was no EXTI
   register file in the database at all. `bring-up-subset`: bank 1 only
