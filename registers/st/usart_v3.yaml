@@ -28,11 +28,16 @@ registers:
       - { name: M0, bit: 12 }
       - { name: OVER8, bit: 15 }
       - { name: M1, bit: 28 }
+      - { name: DEDT, bit: 16, width: 5, description: "driver-enable deassertion time, 16ths of a bit" }
+      - { name: DEAT, bit: 21, width: 5, description: "driver-enable assertion time, 16ths of a bit" }
   - name: CR2
     offset: "0x04"
     access: rw
     fields:
-      - { name: STOP, bit: 12, width: 2 }
+      - { name: STOP, bit: 12, width: 2, description: "0=1 stop 2=2 stop" }
+      - { name: SWAP, bit: 15 }
+      - { name: RXINV, bit: 16 }
+      - { name: TXINV, bit: 17 }
   - name: CR3
     offset: "0x08"
     access: rw
@@ -42,6 +47,8 @@ registers:
       - { name: DMAT, bit: 7 }
       - { name: RTSE, bit: 8 }
       - { name: CTSE, bit: 9 }
+      - { name: DEM, bit: 14, description: "driver-enable mode: RTS pin becomes DE" }
+      - { name: DEP, bit: 15, description: "DE polarity: 0=active high" }
   - name: BRR
     offset: "0x0C"
     access: rw
@@ -70,6 +77,7 @@ registers:
       - { name: TXE, bit: 7 }
       - { name: BUSY, bit: 16 }
       - { name: TEACK, bit: 21 }
+      - { name: REACK, bit: 22 }
   - name: ICR
     offset: "0x20"
     access: wo
