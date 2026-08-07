@@ -14,6 +14,7 @@ provenance:
     - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.i2c (SVD-derived) + old-alloy src/hal/i2c/lite.hpp (identical constants)"
     - "old-alloy git 1bfe63fb generated i2c1_bitfields.hpp (TIMINGR field positions confirmed)"
     - "old-alloy examples/lite_hal_probe: TIMINGR 0x20404768 = 100 kHz @ 16 MHz HSI executed on real Nucleo-G071RB"
+    - "CR1.STOPIE bit 5: behaviour-checked under Renode 1.16.1 (I2C.STM32F7_I2C on nucleo_g071rb). With that bit set an event interrupt reaches the NVIC and the handler finds ISR.STOPF set at the end of an AUTOEND transfer, after the data bytes have moved; with only that one bit-set removed and nothing else changed, no interrupt arrives at all. Position transcribed from RM0444's I2C_CR1 layout — NOT cross-checked against a vendor SVD in this tree, and never run on silicon."
   completeness: bring-up-subset
 registers:
   - name: CR1
@@ -24,6 +25,13 @@ registers:
       - { name: TXIE, bit: 1 }
       - { name: RXIE, bit: 2 }
       - { name: NACKIE, bit: 4 }
+      # STOPIE gates the interrupt for ISR.STOPF. Every AUTOEND transfer this
+      # IP performs ENDS on STOPF, so this is the completion signal an
+      # interrupt-driven driver needs; the bring-up subset never needed it
+      # because the driver polled. ADDRIE (bit 3, slave mode) and TCIE (bit 6,
+      # the AUTOEND=0 repeated-start hand-off) are still absent — see the
+      # `completeness` note; nothing in the tree exercises them yet.
+      - { name: STOPIE, bit: 5 }
       - { name: ERRIE, bit: 7 }
       - { name: ANFOFF, bit: 12 }
       - { name: NOSTRETCH, bit: 17 }
