@@ -1,0 +1,79 @@
+schema: alloy.registers.v1
+vendor: renesas
+ip: port_g14
+class: gpio
+
+# An RL78/G14 I/O port. The reason this IP exists as the first Renesas entry is
+# that it is the smallest thing that forces every structural assumption at once:
+#
+#   * every register is 8 bits — the architecture has no 32-bit SFRs at all;
+#   * the port's registers live in TWO address windows. Pn and PMn are in the
+#     SFR area at 0xFFF00+, while PUn/PIMn/POMn/PMCn are in the 2nd SFR area at
+#     0xF0000+, roughly 64 KB below. One port, two windows, which is why an IP
+#     may declare them;
+#   * the stride between ports is one BYTE, not one word.
+#
+# Offsets below are relative to each window's own base; the chip file supplies
+# both bases per port instance.
+
+provenance:
+  sources:
+    - "Renesas RL78/G14 hardware manual R01UH0186 §4.3 (port function registers)
+       — register names, widths and reset values"
+    - "Cross-checked against the SFR addresses declared by IAR's device header
+       for an RL78/G14 part: P0 0xFFF00, PM0 0xFFF20, PU0 0xF0030, PIM0 0xF0040,
+       POM0 0xF0050, PMC0 0xF0060, stride 1 byte per port"
+    - "HAND-CURATED, not generated: Renesas publishes no redistributable
+       machine-readable device file, so there is no build step behind this and
+       no byte-identical reproduction gate. Field detail is deliberately
+       minimal — only what a GPIO driver reads or writes."
+  completeness: bring-up-subset
+
+registers:
+  # ── SFR area (0xFFF00+) ──────────────────────────────────────────────────
+  - name: P
+    offset: "0x00"
+    size: 8
+    access: rw
+    description: "Port register — the output latch when the pin is an output,
+      the pin state when it is an input."
+
+  - name: PM
+    offset: "0x20"
+    size: 8
+    access: rw
+    description: "Port mode: 1 = input, 0 = output. Reset value is 0xFF, so a
+      pin is an input until something says otherwise."
+
+  # ── 2nd SFR area (0xF0000+) ──────────────────────────────────────────────
+  # A separate window, hence a separate struct. Offsets restart at zero because
+  # they are relative to this window's own base.
+  - name: PU
+    offset: "0x00"
+    size: 8
+    access: rw
+    window: sfr2
+    description: "Internal pull-up: 1 = connected."
+
+  - name: PIM
+    offset: "0x10"
+    size: 8
+    access: rw
+    window: sfr2
+    description: "Input buffer: 1 = TTL, 0 = CMOS."
+
+  - name: POM
+    offset: "0x20"
+    size: 8
+    access: rw
+    window: sfr2
+    description: "Output mode: 1 = N-ch open drain, 0 = push-pull."
+
+  - name: PMC
+    offset: "0x30"
+    size: 8
+    access: rw
+    window: sfr2
+    description: "Port mode control: 1 = analogue (the pin leaves the digital
+      domain), 0 = digital. Reset value is 0xFF on ports that share with the
+      ADC, which is why a digital output must clear it explicitly."

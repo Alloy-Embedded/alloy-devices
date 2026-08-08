@@ -55,8 +55,15 @@ def lint_registers(db: Database) -> None:
                 db.issues.append(Issue(path, f"duplicate register name {reg['name']}"))
             names.add(reg["name"])
             arr = reg.get("array")
+            # A peripheral may span more than one address window (RL78 splits
+            # ports and the ADC across the SFR and 2nd SFR areas). Offsets are
+            # relative to their OWN window, so two registers at 0x00 in
+            # different windows are 64 KB apart, not on top of each other.
+            window = reg.get("window") or ""
             end = offset + (arr["count"] * arr["stride"] if arr else size // 8)
-            for o_start, o_end, o_name, o_arr in reg_spans:
+            for o_start, o_end, o_name, o_arr, o_window in reg_spans:
+                if o_window != window:
+                    continue
                 if not (offset < o_end and o_start < end):
                     continue
                 # Interleaved arrays with equal stride and different phase
@@ -65,7 +72,7 @@ def lint_registers(db: Database) -> None:
                         and offset % arr["stride"] != o_start % arr["stride"]):
                     continue
                 db.issues.append(Issue(path, f"registers {reg['name']} and {o_name} overlap"))
-            reg_spans.append((offset, end, reg["name"], arr))
+            reg_spans.append((offset, end, reg["name"], arr, window))
             if size == 32 and offset % 4 != 0:
                 db.issues.append(Issue(path, f"{reg['name']}: 32-bit register at unaligned offset {reg['offset']}"))
             if "reset" in reg and int(reg["reset"], 16) >= (1 << size):
@@ -210,8 +217,23 @@ def lint_chips(db: Database) -> None:
                 continue
             if p["ip"] not in db.registers:
                 db.issues.append(Issue(path, f"peripheral {name}: unknown IP {p['ip']} (no registers/{p['ip']}.yaml)"))
-            if int(p["base"], 16) % 4 != 0:
-                db.issues.append(Issue(path, f"peripheral {name}: unaligned base {p['base']}"))
+            # A peripheral must be aligned to its WIDEST register, not to four
+            # bytes. RL78 ports are 8-bit and sit one byte apart; demanding word
+            # alignment there rejects the real address map.
+            ip_doc = db.registers.get(p["ip"]) or {}
+            widest = max((int(r.get("size", 32)) for r in ip_doc.get("registers", [])),
+                         default=32) // 8
+            if int(p["base"], 16) % widest != 0:
+                db.issues.append(Issue(
+                    path,
+                    f"peripheral {name}: base {p['base']} is not {widest}-byte "
+                    f"aligned, which its widest register requires"))
+            for wname, wbase in (p.get("bases") or {}).items():
+                if int(wbase, 16) % widest != 0:
+                    db.issues.append(Issue(
+                        path,
+                        f"peripheral {name}: window '{wname}' base {wbase} is not "
+                        f"{widest}-byte aligned"))
             gate = p.get("gate")
             if gate:
                 gp = periphs.get(gate["peripheral"])

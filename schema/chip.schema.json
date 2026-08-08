@@ -81,7 +81,8 @@
               "rv32imac",
               "xtensa_lx6",
               "xtensa_lx7",
-              "avr8"
+              "avr8",
+              "rl78_s3"
             ]
           },
           "fpu": {
@@ -230,7 +231,7 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 255,
-            "description": "This I/O port's number in its chip's port-select encoding — the value written to the pin-interrupt mux to route this port's pins (STM32 EXTI/SYSCFG EXTICR: A=0, B=1, ... F=5). It is a silicon fact, not the alphabetical position of the peripheral's name: a die that omits a port leaves a HOLE in the numbering, so it must be recorded rather than inferred."
+            "description": "This I/O port's number in its chip's port-select encoding \u2014 the value written to the pin-interrupt mux to route this port's pins (STM32 EXTI/SYSCFG EXTICR: A=0, B=1, ... F=5). It is a silicon fact, not the alphabetical position of the peripheral's name: a die that omits a port leaves a HOLE in the numbering, so it must be recorded rather than inferred."
           },
           "kernel_clock": {
             "type": "string"
@@ -362,6 +363,16 @@
           "ip_hint": {
             "type": "string",
             "description": "Upstream IP identification tag (e.g. embassy 'lptim:v1'), verbatim \u2014 the ip_map key a future curation resolves."
+          },
+          "bases": {
+            "type": "object",
+            "description": "Extra address windows for a peripheral that is not one contiguous block, keyed by the window name its register file uses. `base` is the default window; each entry here is another. RL78 splits ports and the ADC across the SFR area and the 2nd SFR area ~64 KB apart.",
+            "propertyNames": {
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/hex"
+            }
           }
         },
         "oneOf": [
@@ -628,10 +639,10 @@
               },
               "program": {
                 "type": "array",
-                "minItems": 1,
                 "items": {
                   "$ref": "#/$defs/clock_op"
-                }
+                },
+                "description": "The register writes that reach this profile, in order. MAY be empty: on some parts a profile is the reset state and there is nothing to write \u2014 RL78's HOCO frequency is selected by an option byte, which is image content rather than a program. An empty list means 'already there', not 'not described yet'; the description field is where that gets said."
               }
             }
           }

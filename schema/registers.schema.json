@@ -3,82 +3,199 @@
   "$id": "alloy.registers.v1",
   "title": "Alloy register map for one peripheral IP version",
   "type": "object",
-  "required": ["schema", "vendor", "ip", "class", "provenance", "registers"],
+  "required": [
+    "schema",
+    "vendor",
+    "ip",
+    "class",
+    "provenance",
+    "registers"
+  ],
   "additionalProperties": false,
   "properties": {
-    "schema": { "const": "alloy.registers.v1" },
-    "vendor": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-    "ip": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "schema": {
+      "const": "alloy.registers.v1"
+    },
+    "vendor": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "ip": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
     "class": {
       "type": "string",
       "pattern": "^[a-z][a-z0-9_]*$",
       "description": "Peripheral class (gpio, uart, spi, i2c, clock, flash, ...). Codegen uses it to include the matching HAL driver header alloy/hal/<class>/<vendor>_<ip>.hpp when one exists."
     },
-    "description": { "type": "string" },
+    "description": {
+      "type": "string"
+    },
     "provenance": {
       "type": "object",
-      "required": ["sources", "completeness"],
+      "required": [
+        "sources",
+        "completeness"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sources": { "type": "array", "minItems": 1, "items": { "type": "string" } },
-        "completeness": { "enum": ["bring-up-subset", "full"] },
-        "verified": { "type": "array", "items": { "type": "string" } }
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "completeness": {
+          "enum": [
+            "bring-up-subset",
+            "full"
+          ]
+        },
+        "verified": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "registers": {
       "type": "array",
       "minItems": 1,
-      "items": { "$ref": "#/$defs/register" }
+      "items": {
+        "$ref": "#/$defs/register"
+      }
     }
   },
   "$defs": {
-    "hex": { "type": "string", "pattern": "^0x[0-9A-Fa-f]+$" },
+    "hex": {
+      "type": "string",
+      "pattern": "^0x[0-9A-Fa-f]+$"
+    },
     "register": {
       "type": "object",
-      "required": ["name", "offset", "access"],
+      "required": [
+        "name",
+        "offset",
+        "access"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
-        "offset": { "$ref": "#/$defs/hex" },
-        "size": { "enum": [8, 16, 32], "default": 32 },
-        "access": { "enum": ["rw", "ro", "wo"] },
-        "reset": { "$ref": "#/$defs/hex" },
-        "description": { "type": "string" },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "offset": {
+          "$ref": "#/$defs/hex"
+        },
+        "size": {
+          "enum": [
+            8,
+            16,
+            32
+          ],
+          "default": 32
+        },
+        "access": {
+          "enum": [
+            "rw",
+            "ro",
+            "wo"
+          ]
+        },
+        "reset": {
+          "$ref": "#/$defs/hex"
+        },
+        "description": {
+          "type": "string"
+        },
         "array": {
           "type": "object",
           "description": "Register repeated per instance (e.g. RP2040 IO_BANK0 GPIOx_CTRL: offset 0x04, stride 8, count 30). Emitted as offset/stride/count constants + raw_field accessors instead of struct members.",
-          "required": ["count", "stride"],
+          "required": [
+            "count",
+            "stride"
+          ],
           "additionalProperties": false,
           "properties": {
-            "count": { "type": "integer", "minimum": 2 },
-            "stride": { "type": "integer", "minimum": 4 }
+            "count": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "stride": {
+              "type": "integer",
+              "minimum": 4
+            }
           }
         },
-        "fields": { "type": "array", "items": { "$ref": "#/$defs/field" } }
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field"
+          }
+        },
+        "window": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "description": "The address window this register lives in, when the peripheral is not one contiguous block. RL78 splits several peripherals across the SFR area and the 2nd SFR area ~64 KB apart; as a single struct that is a 65 KB object on a part with 4 KB of RAM. Registers naming no window share the default one, and the emitter gives each window its own struct with its own base from the chip file. Offsets are always relative to the register's own window."
+        }
       }
     },
     "field": {
       "type": "object",
-      "required": ["name", "bit"],
+      "required": [
+        "name",
+        "bit"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
-        "bit": { "type": "integer", "minimum": 0, "maximum": 31 },
-        "width": { "type": "integer", "minimum": 1, "maximum": 32, "default": 1 },
-        "description": { "type": "string" },
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "bit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 31
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32,
+          "default": 1
+        },
+        "description": {
+          "type": "string"
+        },
         "values": {
           "type": "object",
           "description": "Named enumerated values for a multi-bit field (NAME -> raw value, pre-shift). The codegen emits <field>_<NAME> = value << bit in the register's flags enum.",
-          "propertyNames": { "pattern": "^[A-Z][A-Z0-9_]*$" },
-          "additionalProperties": { "type": "integer", "minimum": 0 }
+          "propertyNames": {
+            "pattern": "^[A-Z][A-Z0-9_]*$"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
         },
         "repeat": {
           "type": "object",
-          "required": ["count", "stride"],
+          "required": [
+            "count",
+            "stride"
+          ],
           "additionalProperties": false,
           "properties": {
-            "count": { "type": "integer", "minimum": 2 },
-            "stride": { "type": "integer", "minimum": 1 }
+            "count": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "stride": {
+              "type": "integer",
+              "minimum": 1
+            }
           }
         }
       }

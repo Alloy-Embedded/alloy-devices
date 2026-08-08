@@ -1,0 +1,91 @@
+schema: alloy.chip.v1
+vendor: renesas
+family: rl78_g14
+part: R5F104BD
+
+# The first Renesas part in the database, and deliberately a small one: it is
+# here to prove the pipeline reaches a 16-bit CISC at all, not to be complete.
+#
+# What makes it different from every other chip in this tree, in one place:
+#   * 16-bit core, 16-bit int, 16-bit near pointers over a 20-bit space;
+#   * no 32-bit registers anywhere — every SFR is 8 or 16 bits;
+#   * peripherals split across two address windows (see registers/renesas/);
+#   * the vector table is fixed at 0x00000 and there is no VTOR;
+#   * RAM lives at the TOP of the address space, just below the SFR area.
+
+provenance:
+  sources:
+    - "Memory map extracted from the linker symbols an IAR project for this part
+       carries: __FLASH_START_ADDR=0x000D8, __FLASH_END_ADDR=0x0BFFD,
+       __DATAFLASH_START_ADDR=0xF1000, __DATAFLASH_END_ADDR=0xF17FF,
+       __RAM_START_ADDR=0xFED00, __RAM_END_ADDR=0xFFE1F"
+    - "Architectural regions (vector table 0x00000-0x0007F, CALLT 0x00080-0x000BF,
+       SADDR 0xFFE20-0xFFEDF, SFR area 0xFFF00-0xFFFFF, 2nd SFR area
+       0xF0000-0xF07FF) are RL78 constants, identical across the family"
+    - "HAND-CURATED. Renesas publishes no redistributable machine-readable
+       device file, so unlike every ST/Microchip/Espressif entry here there is
+       no builder behind this and no byte-identical reproduction gate. The
+       numbers above were read from vendor tooling output, NOT cross-checked
+       against the datasheet, and NOT verified on silicon."
+
+cores:
+  - name: rl78s3
+    arch: rl78_s3
+    fpu: false
+
+memories:
+  # Code flash starts at 0 architecturally; the first 0xD8 bytes are the vector
+  # table, the CALLT table, the option bytes and the security ID, which is why
+  # a project's link map starts after them. The PART's flash is the whole span.
+  - name: flash
+    kind: flash
+    base: "0x00000"
+    size: 49152          # 48 KiB, 0x00000-0x0BFFF
+
+  # Data flash is a separate array with its own controller — not memory-mapped
+  # for writes, which is why alloy's nvm role cannot simply point at it yet.
+  - name: dataflash
+    kind: flash
+    base: "0xF1000"
+    size: 2048           # 0xF1000-0xF17FF
+
+  # 4384 bytes. The general-purpose register banks sit above this, at
+  # 0xFFEE0-0xFFEFF, and the short-addressing (SADDR) area above that again.
+  - name: ram
+    kind: ram
+    base: "0xFED00"
+    size: 4384           # 0xFED00-0xFFE1F
+
+clock:
+  sources:
+    # The high-speed on-chip oscillator is trimmed at the factory and selected
+    # by an OPTION BYTE, not by a register — the frequency is fixed in the
+    # image, which is a shape alloy has no slot for yet.
+    hoco:
+      hz: 32000000
+  boot_source: hoco
+  profiles:
+    hoco_32mhz:
+      sysclk_hz: 32000000
+      # RL78 has no AHB and no APB. One clock, fCLK, feeds the core and every
+      # peripheral, so both fields carry it. The schema's names are ARM-shaped;
+      # the numbers are not a guess.
+      ahb_hz: 32000000
+      apb_hz: 32000000
+      # No register writes: this IS the reset state once the option byte has
+      # selected 32 MHz, and the option byte is image content, not a program.
+      program: []
+      description: "HOCO at 32 MHz, no divider — the reset default once the
+        option byte selects 32 MHz. NOT silicon-validated."
+
+peripherals:
+  # One port, as the smallest thing that exercises two windows and byte-wide
+  # registers. Port 1 because it is present on every package of this family.
+  #
+  # `base` is the SFR-area window; `bases` names the others. Port n is one BYTE
+  # along from port 0 in each window — the stride is 1, not 4.
+  port1:
+    ip: renesas/port_g14
+    base: "0xFFF01"
+    bases:
+      sfr2: "0xF0031"
