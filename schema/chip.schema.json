@@ -715,6 +715,40 @@
           }
         }
       }
+    },
+    "image_config": {
+      "type": "array",
+      "description": "Regions the IMAGE must carry that the CPU reads at reset, before a line of code runs \u2014 RL78's option bytes and security ID, AVR's fuses. Unlike `boot`, whose payload is a fixed chip fact, the VALUES here are a board decision (watchdog on or off, brown-out level, and on RL78 the HOCO frequency the whole clock tree derives from). The chip declares the slot and what the bytes mean; the board fills it. No values belong in this file.",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "base",
+          "size",
+          "description"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "base": {
+            "$ref": "#/$defs/hex"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "erased_value": {
+            "$ref": "#/$defs/hex",
+            "description": "What an unprogrammed byte reads as, when leaving the region blank is a legal (if rarely intended) configuration."
+          }
+        }
+      }
     }
   },
   "$defs": {

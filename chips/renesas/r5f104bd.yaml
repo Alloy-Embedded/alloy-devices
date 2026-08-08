@@ -56,6 +56,28 @@ memories:
     base: "0xFED00"
     size: 4384           # 0xFED00-0xFFE1F
 
+# Read by the CPU at reset, before any code runs. The VALUES are a board
+# decision and deliberately absent here: the watchdog interval, the low-voltage
+# detector level and — the one that reaches furthest — the HOCO frequency the
+# entire clock tree derives from. A board that leaves these blank gets 0xFF,
+# which on this part means no watchdog and no brown-out detection.
+image_config:
+  - name: option_bytes
+    base: "0x000C0"
+    size: 4
+    erased_value: "0xFF"
+    description: "0xC0 watchdog (interval, window, run-in-HALT); 0xC1 low-voltage
+      detector level; 0xC2 flash operating mode and the HOCO frequency that
+      selects fMAIN; 0xC3 on-chip debug enable and the security setting."
+
+  - name: security_id
+    base: "0x000C4"
+    size: 10
+    erased_value: "0xFF"
+    description: "Ten bytes the on-chip debugger must match before it will
+      connect. A product's value is a secret and belongs in the project, never
+      in a board or chip file."
+
 clock:
   sources:
     # The high-speed on-chip oscillator is trimmed at the factory and selected
