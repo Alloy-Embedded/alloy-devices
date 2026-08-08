@@ -3,17 +3,20 @@ vendor: st
 ip: flash_g0
 class: flash
 description: >
-  STM32G0 flash interface. ACR (wait-state ordering for clock programs) plus the
+  STM32G0 flash interface. ACR (wait-state ordering for clock programs), the
   program/erase subset (KEYR unlock, SR busy/error flags, CR page-erase and
-  double-word program, OPTR dual-bank detection) used by the flash HAL driver.
-  G0 programs one 64-bit double-word at a time, erases whole 2 KB pages; the
-  512 KB parts (G0B1) are dual-bank so CR.BKER selects the bank and CR.PNB the
-  page within it.
+  double-word program, OPTR dual-bank detection) used by the flash HAL driver,
+  and the option-byte subset (OPTKEYR unlock, CR option-control bits, OPTR RDP
+  byte, WRPxyR write-protect areas) used by `alloy secure` through a debug
+  probe. G0 programs one 64-bit double-word at a time, erases whole 2 KB pages;
+  the 512 KB parts (G0B1) are dual-bank so CR.BKER selects the bank and CR.PNB
+  the page within it.
 provenance:
   sources:
     - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.flash (SVD cmsis-svd:STM32G071.svd)"
     - "old-alloy commit 6d47f2cb (hardware-verified: ACR offset 0x00, LATENCY [2:0])"
     - "embassy-rs/stm32-data-generated @ 669003ee data/registers/flash_g0x1.json (KEYR/SR/CR/OPTR offsets + fields; RM0444 §3)"
+    - "option bytes 2026-08-08: OPTKEYR@0x0C, CR.OPTSTRT/OBL_LAUNCH/OPTLOCK, OPTR rw, WRP1AR/WRP1BR@0x2C/0x30, WRP2AR/WRP2BR@0x4C/0x50 from embassy flash_g0x1.json (= RM0444 §3.4-3.7, option-byte programming + WRP). NOT silicon-witnessed: no G0 board was option-programmed to verify these; openocd's stm32l4x option driver (community-proven on G0) is the consumer."
   completeness: bring-up-subset
 registers:
   - name: ACR
@@ -30,6 +33,10 @@ registers:
     offset: "0x08"
     access: wo
     description: "Unlock: write 0x45670123 then 0xCDEF89AB to clear CR.LOCK."
+  - name: OPTKEYR
+    offset: "0x0C"
+    access: wo
+    description: "Option unlock: write 0x08192A3B then 0x4C5D6E7F (after KEYR unlock) to clear CR.OPTLOCK. RM0444 §3.4."
   - name: SR
     offset: "0x10"
     access: rw
@@ -53,11 +60,49 @@ registers:
       - { name: PNB, bit: 3, width: 7 }
       - { name: BKER, bit: 13 }
       - { name: STRT, bit: 16 }
+      - { name: OPTSTRT, bit: 17, description: "Start programming the staged option bytes (OPTR/WRPxyR). Needs OPTLOCK clear." }
       - { name: EOPIE, bit: 24 }
+      - { name: OBL_LAUNCH, bit: 27, description: "Reload option bytes: RESETS the chip (a debug session dies here by design)." }
+      - { name: OPTLOCK, bit: 30 }
       - { name: LOCK, bit: 31 }
   - name: OPTR
     offset: "0x20"
-    access: ro
+    access: rw
+    description: >
+      Option register (rw: writes stage new option values, programmed by
+      CR.OPTSTRT and live after OBL_LAUNCH). RDP byte: 0xAA = level 0,
+      0xCC = level 2 (PERMANENT: debug port dead forever), anything else =
+      level 1. Regressing 1 -> 0 MASS-ERASES the flash (RM0444 §4.3).
     fields:
       - { name: RDP, bit: 0, width: 8 }
       - { name: DUAL_BANK, bit: 21 }
+  - name: WRP1AR
+    offset: "0x2C"
+    access: rw
+    description: >
+      Bank-1 write-protect area A in 2 KB-page units: pages
+      [WRP1A_STRT, WRP1A_END] are protected; STRT > END (the reset state)
+      disables the area. RM0444 §3.5.
+    fields:
+      - { name: WRP1A_STRT, bit: 0, width: 7 }
+      - { name: WRP1A_END, bit: 16, width: 7 }
+  - name: WRP1BR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: WRP1B_STRT, bit: 0, width: 7 }
+      - { name: WRP1B_END, bit: 16, width: 7 }
+  - name: WRP2AR
+    offset: "0x4C"
+    access: rw
+    description: "Bank-2 area A — dual-bank parts (G0B1/G0C1) only; reserved space on single-bank dies."
+    fields:
+      - { name: WRP2A_STRT, bit: 0, width: 7 }
+      - { name: WRP2A_END, bit: 16, width: 7 }
+  - name: WRP2BR
+    offset: "0x50"
+    access: rw
+    description: "Bank-2 area B — dual-bank parts only."
+    fields:
+      - { name: WRP2B_STRT, bit: 0, width: 7 }
+      - { name: WRP2B_END, bit: 16, width: 7 }

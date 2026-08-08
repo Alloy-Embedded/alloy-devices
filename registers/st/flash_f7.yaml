@@ -4,11 +4,14 @@ ip: flash_f7
 class: flash
 description: >
   STM32F7 embedded flash + ART accelerator — bring-up subset (ACR wait
-  states before raising the core clock).
+  states before raising the core clock), program/erase (KEYR/SR/CR), and the
+  option-byte subset (OPTKEYR unlock, OPTCR RDP + nWRP) used by
+  `alloy secure` through a debug probe.
 provenance:
   sources:
     - "RM0431 3.3: SR/CR program/erase fields for the flash HAL (sector erase + x32 programming)"
     - "old-alloy git b2f319c2^ src/hal/vendors/st/stm32f7/generated/{registers,bitfields}/flash_* (CMSIS-SVD derived: ACR@0x00, LATENCY[3:0], PRFTEN=8, ARTEN=9)"
+    - "option bytes 2026-08-08: OPTCR fields (OPTLOCK=0, OPTSTRT=1, RDP[15:8], nWRP[23:16]) + OPTCR1 boot addresses from embassy-rs/stm32-data-generated flash_f7.json (= RM0431 §3.4-3.5, F72x/F73x shape). F76x/F77x (RM0410) extend nWRP to [27:16] and add nDBANK(29)/nDBOOT(30) — deliberately NOT modeled here; tools must refuse option WRITES on those parts until it is. Renode-witnessed (MTD.STM32F4_FlashController, 1.16.1): OPTKEYR key sequence clears OPTLOCK, locked writes are ignored, programmed OPTCR values stick. NOT silicon-witnessed."
   completeness: bring-up-subset
 registers:
   - name: ACR
@@ -25,6 +28,7 @@ registers:
   - name: OPTKEYR
     offset: "0x08"
     access: wo
+    description: "Option unlock: write 0x08192A3B then 0x4C5D6E7F to clear OPTCR.OPTLOCK. RM0431 §3.4."
   - name: SR
     offset: "0x0C"
     access: rw
@@ -52,3 +56,22 @@ registers:
   - name: OPTCR
     offset: "0x14"
     access: rw
+    description: >
+      Option control (live values AND the programming interface: unlock via
+      OPTKEYR, stage new values, set OPTSTRT, poll SR.BSY). RDP byte: 0xAA =
+      level 0, 0xCC = level 2 (PERMANENT), else level 1; regressing 1 -> 0
+      MASS-ERASES the flash. NWRP is ACTIVE-LOW per sector (0 = protected).
+      Bits not listed here (BOR_LEV, WWDG_SW, IWDG_SW, nRST_STOP/STDBY, ...)
+      are real and MUST be preserved by read-modify-write.
+    fields:
+      - { name: OPTLOCK, bit: 0 }
+      - { name: OPTSTRT, bit: 1 }
+      - { name: RDP, bit: 8, width: 8 }
+      - { name: NWRP, bit: 16, width: 8, description: "F72x/F73x: one active-low bit per sector (8 sectors). F76x/F77x carry 12 bits + nDBANK — not modeled." }
+  - name: OPTCR1
+    offset: "0x18"
+    access: rw
+    description: "Boot addresses (BOOT pin low/high), in 16 KB units. RM0431 §3.5."
+    fields:
+      - { name: BOOT_ADD0, bit: 0, width: 16 }
+      - { name: BOOT_ADD1, bit: 16, width: 16 }
