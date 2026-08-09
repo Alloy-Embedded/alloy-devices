@@ -271,6 +271,18 @@
               "maximum": 255
             }
           },
+          "feat": {
+            "type": "object",
+            "description": "DEGREE, not presence: how MUCH of a graded silicon feature this instance has, as a number the register map cannot state. Emitted as a nested `struct feat` of constants on the instance descriptor (feat::rx_fifo_depth). ZERO MEANS ABSENT — there is never a companion boolean, because a bool and a count that can disagree is a bug class. Only facts a register map cannot carry belong here: a field's WIDTH is already generated (field_t::raw_mask), so a maximum programmable value must be read from there, not restated here.",
+            "propertyNames": {
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4294967295
+            }
+          },
           "companions": {
             "type": "object",
             "description": "Named references to sibling peripherals a driver needs alongside this block (RP2040 io_bank0 -> {sio, pads}). Emitted as using-aliases inside the instance descriptor.",

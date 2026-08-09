@@ -63,6 +63,9 @@ peripherals:
     irq: UART0
     base: '0x3FF40000'
     kernel_clock: apb
+    feat:
+      rx_fifo_depth: 128
+      tx_fifo_depth: 128
   timg0:
     ip: espressif/timg_v1
     base: '0x3FF5F000'

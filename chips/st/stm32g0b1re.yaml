@@ -566,6 +566,9 @@ peripherals:
     dma_requests:
       rx: 50
       tx: 51
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   usart2:
     base: '0x40004400'
     ip: st/usart_v4
@@ -578,6 +581,9 @@ peripherals:
     dma_requests:
       rx: 52
       tx: 53
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   usart3:
     base: '0x40004800'
     ip: st/usart_v4
@@ -590,6 +596,9 @@ peripherals:
     dma_requests:
       rx: 54
       tx: 55
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   usart4:
     base: '0x40004C00'
     ip: st/usart_v4
@@ -602,6 +611,9 @@ peripherals:
     dma_requests:
       rx: 56
       tx: 57
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   usart5:
     base: '0x40005000'
     ip: st/usart_v4
@@ -614,6 +626,9 @@ peripherals:
     dma_requests:
       rx: 74
       tx: 75
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   usart6:
     base: '0x40013C00'
     ip: st/usart_v4
@@ -626,6 +641,9 @@ peripherals:
     dma_requests:
       rx: 76
       tx: 77
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   usb:
     base: '0x40005C00'
     uncurated: true

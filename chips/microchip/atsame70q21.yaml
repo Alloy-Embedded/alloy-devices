@@ -131,6 +131,9 @@ peripherals:
     dma_requests:
       tx: 9
       rx: 10
+    feat:
+      rx_fifo_depth: 0
+      tx_fifo_depth: 0
   twihs0:
     ip: microchip/twihs_v1
     base: '0x40018000'

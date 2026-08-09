@@ -92,6 +92,9 @@ peripherals:
       bit: 17
     irq: USART2
     kernel_clock: apb
+    feat:
+      rx_fifo_depth: 0
+      tx_fifo_depth: 0
   usart3:
     ip: st/usart_v3
     base: '0x40004800'
@@ -101,6 +104,9 @@ peripherals:
       bit: 18
     irq: USART3
     kernel_clock: apb
+    feat:
+      rx_fifo_depth: 0
+      tx_fifo_depth: 0
   spi1:
     ip: st/spi_v2
     base: '0x40013000'

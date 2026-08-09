@@ -11,6 +11,7 @@ provenance:
     - "old-alloy boards/esp32_devkit/board_uart_raw.hpp (HW-validated: FIFO@base+0, STATUS@+0x1C, txfifo_cnt=(status>>16)&mask, threshold 126, no init)"
     - "uart-interrupt mining 2026-07-22: INT_RAW/ST/ENA/CLR @0x04-0x10 + CONF1 @0x24 do canonico esp32.yml; RX_TOUT_THRHD em byte-times no ESP32 classico; errata de leitura concorrente DPORT/FIFO (esp-idf usa alias AHB) - leitura APB validada em HW no spot-check"
     - "alloy-devices-yml esp32.yml uart block (fifo=0, status=28 with txfifo_cnt bits 16-23, clkdiv=20, conf0=32)"
+    - "ESP32 TRM v4.6 §13.5 UART_CONF0_REG: PARITY[0], PARITY_EN[1], BIT_NUM[3:2], STOP_BIT_NUM[5:4] — NOT silicon-validated by alloy (no ESP32 on the bench); the offsets already were, the field positions are read from the TRM"
   completeness: bring-up-subset
 registers:
   - name: FIFO
@@ -31,6 +32,18 @@ registers:
   - name: CONF0
     offset: "0x20"
     access: rw
+    description: >
+      Frame shape. The boot ROM leaves this at 8N1; a driver that changes
+      parity or stop bits read-modify-writes these fields and must not touch
+      the rest of the register (the ROM owns the flow-control and loopback
+      bits). STOP_BIT_NUM=3 is the TRM's two-stop-bit encoding; the classic
+      ESP32 is known to need UART_RS485_CONF.DL1_EN for it to reach the wire,
+      and that register is NOT in this file yet — see the driver's note.
+    fields:
+      - { name: PARITY, bit: 0, description: "0=even 1=odd (only meaningful with PARITY_EN=1)" }
+      - { name: PARITY_EN, bit: 1 }
+      - { name: BIT_NUM, bit: 2, width: 2, description: "data bits: 0=5 1=6 2=7 3=8" }
+      - { name: STOP_BIT_NUM, bit: 4, width: 2, description: "1=1 stop, 2=1.5, 3=2 (see description)" }
   - name: INT_RAW
     offset: "0x04"
     access: ro

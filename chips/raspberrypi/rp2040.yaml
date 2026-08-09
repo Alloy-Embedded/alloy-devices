@@ -56,6 +56,9 @@ peripherals:
     gate: { peripheral: resets, register: RESET, bit: 22, style: reset_release, done_register: RESET_DONE }
     irq: UART0_IRQ
     kernel_clock: apb
+    feat:
+      rx_fifo_depth: 32
+      tx_fifo_depth: 32
 pins:
   pa0: { port: a, index: 0, bank: io_bank0 }
   pa1: { port: a, index: 1, bank: io_bank0 }

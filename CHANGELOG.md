@@ -9,6 +9,26 @@ understand and fail loudly on a mismatch.
 
 ### Schema
 
+- `alloy.chip.v1` gains an **optional** peripheral key `feat` — a map of
+  name to non-negative integer, recording DEGREE: how MUCH of a graded silicon
+  feature an instance has, when the register map cannot state it. A FIFO is
+  eight bytes deep or thirty-two or absent, and no bit position says which.
+  Two rules travel with it, and consumers depend on both:
+
+  - **Zero means absent.** There is never a companion boolean; a bool and a
+    count that can disagree is a bug class, and deleting the bool deletes it.
+  - **A field's WIDTH is not a `feat`.** The generated accessor already knows
+    it (`field_t::raw_mask`), so a maximum programmable value must be read from
+    the register description, not restated here where it could drift.
+
+  alloy emits it as a nested `struct feat` of constants on the instance
+  descriptor, so a driver reads `Inst::feat::rx_fifo_depth` and a fact nobody
+  wrote down is a compile error naming the instance rather than a silent zero.
+
+  **Not yet enforced, and stated so nobody assumes it is:** a peripheral with
+  no `feat` block is not a lint failure today. Absence is currently
+  indistinguishable from "not recorded".
+
 - `alloy.chip.v1` gains an **optional** peripheral key `dma_routes`. On a chip
   with no DMA request router (F4/F7/L4) a DMA "request" number is only
   meaningful relative to the controller and channel it selects on, and a signal
@@ -27,6 +47,22 @@ understand and fail loudly on a mismatch.
   values presented as router ids, and a signal with two alternative streams had
   one of them silently dropped by the dict. `dma_routes` carries the real triple;
   it has no consumer yet, which makes now the cheap moment to change its shape.
+
+### Data
+
+- **UART FIFO depths recorded** for every uart-class peripheral on the chips
+  alloy's boards use: ESP32 `uart0` 128/128, RP2040 `uart0` 32/32, STM32G0
+  `usart1..6` 8/8, and 0/0 on the STM32F722/F767 `usart2/3` and the SAME70
+  `usart1`, which have no FIFO. From vendor reference manuals; SVDs do not
+  carry a depth, so this is the first fact in the database that could not have
+  been machine-extracted from one.
+- **`espressif/uart_v1` CONF0 gains its frame fields** — `PARITY`,
+  `PARITY_EN`, `BIT_NUM`, `STOP_BIT_NUM` — so a driver can program parity and
+  stop bits on a ROM-configured console instead of silently ignoring a request
+  for them. Field positions are from the ESP32 TRM v4.6 §13.5 and are **not
+  silicon-validated**; the offsets already were. The two-stop-bit encoding
+  (`STOP_BIT_NUM=3`) is the one known to need `UART_RS485_CONF.DL1_EN` on the
+  classic ESP32, and that register is not in this file.
 
 ### Corrections to 9949429's commit message
 

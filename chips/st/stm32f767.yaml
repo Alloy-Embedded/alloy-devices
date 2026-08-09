@@ -97,6 +97,9 @@ peripherals:
       bit: 18
     irq: USART3
     kernel_clock: apb
+    feat:
+      rx_fifo_depth: 0
+      tx_fifo_depth: 0
   eth:
     ip: st/eth_v1
     base: '0x40028000'
