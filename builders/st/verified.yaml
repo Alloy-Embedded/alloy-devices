@@ -1,0 +1,34 @@
+# Hardware-verification records, re-stamped into generated chip files
+# (BUILDERS.md §4). A part listed here is GRADUATED: the builder owns its
+# chips/st/ file from now on, and these notes — the things silicon, a board
+# bring-up or a reviewer's judgement taught us, which no upstream feed carries
+# — are written back into `provenance.verified` on every run.
+#
+# Keep each record a claim about the WORLD (what hardware did, what a die has),
+# not a description of the file. Anything the builder can derive belongs in the
+# builder, not here.
+
+records:
+  STM32G0B1RE:
+    - >-
+      Silicon: Nucleo-G0B1RE. Blink/UART bring-up ran from this chip's data with
+      ZERO new C++ and ZERO emitter changes — the "new chip = data only" proof.
+    - >-
+      Same hardware-verified PLL profile as stm32g071rb (HSI16 /1 x8 /2 = 64 MHz,
+      2 WS); the old generated kPllR=0 raw-value bug avoided again (PLLR field=1
+      selects /2).
+    - >-
+      IRQ lines are re-shared versus the G071 (31 lines): USART2 lives on line 28
+      together with LPUART2, and line 4 gains CRS alongside RCC.
+    - >-
+      GPIOE exists on this die (RCC_IOPENR bit 4) unlike the G071. Upstream omits
+      port E's clock enable entirely — see builders/st/patches/stm32g0.yaml
+      (g0-port-e-clock-enable), which is what puts the gate back.
+    - >-
+      Graduated from the hand-curated chips/st/stm32g0b1.yaml (23 peripherals) to
+      full-silicon builder output (65). Peripherals with no curated register file
+      arrive as `uncurated: true`: the gap is now visible instead of absent.
+    - >-
+      Instance names follow upstream on graduation: the hand file's `adc`, `dac`
+      and `dmamux` are `adc1`, `dac1` and `dmamux1` here, because this die has
+      numbered instances and a second DMA controller behind the same mux.

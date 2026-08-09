@@ -200,11 +200,23 @@ peripherals:
       peripheral: rcc
       register: APB1ENR
       bit: 21
-    irq: I2C1_ER
+    irq: I2C1_EV
     kernel_clock: apb
-    dma_requests:
-      rx: 1
-      tx: 1
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 0
+        request: 1
+      - controller: dma1
+        channel: 5
+        request: 1
+      tx:
+      - controller: dma1
+        channel: 6
+        request: 1
+      - controller: dma1
+        channel: 7
+        request: 1
   i2c2:
     base: '0x40005800'
     ip: st/i2c_v2
@@ -212,11 +224,20 @@ peripherals:
       peripheral: rcc
       register: APB1ENR
       bit: 22
-    irq: I2C2_ER
+    irq: I2C2_EV
     kernel_clock: apb
-    dma_requests:
-      rx: 7
-      tx: 7
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 2
+        request: 7
+      - controller: dma1
+        channel: 3
+        request: 7
+      tx:
+      - controller: dma1
+        channel: 7
+        request: 7
   i2c3:
     base: '0x40005C00'
     ip: st/i2c_v2
@@ -224,15 +245,23 @@ peripherals:
       peripheral: rcc
       register: APB1ENR
       bit: 23
-    irq: I2C3_ER
+    irq: I2C3_EV
     kernel_clock: apb
-    dma_requests:
-      rx: 3
-      tx: 3
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 1
+        request: 1
+      - controller: dma1
+        channel: 2
+        request: 3
+      tx:
+      - controller: dma1
+        channel: 4
+        request: 3
   iwdg:
     base: '0x40003000'
-    uncurated: true
-    ip_hint: iwdg:v2:IWDG
+    ip: st/iwdg_v2
   lptim1:
     base: '0x40002400'
     uncurated: true
@@ -326,9 +355,21 @@ peripherals:
       bit: 12
     irq: SPI1
     kernel_clock: apb2
-    dma_requests:
-      rx: 3
-      tx: 3
+    dma_routes:
+      rx:
+      - controller: dma2
+        channel: 0
+        request: 3
+      - controller: dma2
+        channel: 2
+        request: 3
+      tx:
+      - controller: dma2
+        channel: 3
+        request: 3
+      - controller: dma2
+        channel: 5
+        request: 3
   spi2:
     base: '0x40003800'
     ip: st/spi_v2
@@ -338,9 +379,15 @@ peripherals:
       bit: 14
     irq: SPI2
     kernel_clock: apb
-    dma_requests:
-      rx: 0
-      tx: 0
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 3
+        request: 0
+      tx:
+      - controller: dma1
+        channel: 4
+        request: 0
   spi3:
     base: '0x40003C00'
     ip: st/spi_v2
@@ -350,9 +397,21 @@ peripherals:
       bit: 15
     irq: SPI3
     kernel_clock: apb
-    dma_requests:
-      rx: 0
-      tx: 0
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 0
+        request: 0
+      - controller: dma1
+        channel: 2
+        request: 0
+      tx:
+      - controller: dma1
+        channel: 5
+        request: 0
+      - controller: dma1
+        channel: 7
+        request: 0
   spi4:
     base: '0x40013400'
     ip: st/spi_v2
@@ -362,9 +421,21 @@ peripherals:
       bit: 13
     irq: SPI4
     kernel_clock: apb2
-    dma_requests:
-      rx: 5
-      tx: 5
+    dma_routes:
+      rx:
+      - controller: dma2
+        channel: 0
+        request: 4
+      - controller: dma2
+        channel: 3
+        request: 5
+      tx:
+      - controller: dma2
+        channel: 1
+        request: 4
+      - controller: dma2
+        channel: 4
+        request: 5
   spi5:
     base: '0x40015000'
     ip: st/spi_v2
@@ -374,9 +445,21 @@ peripherals:
       bit: 20
     irq: SPI5
     kernel_clock: apb2
-    dma_requests:
-      rx: 7
-      tx: 7
+    dma_routes:
+      rx:
+      - controller: dma2
+        channel: 3
+        request: 2
+      - controller: dma2
+        channel: 5
+        request: 7
+      tx:
+      - controller: dma2
+        channel: 4
+        request: 2
+      - controller: dma2
+        channel: 6
+        request: 7
   syscfg:
     base: '0x40013800'
     uncurated: true
@@ -520,9 +603,15 @@ peripherals:
       bit: 19
     irq: UART4
     kernel_clock: apb
-    dma_requests:
-      rx: 4
-      tx: 4
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 2
+        request: 4
+      tx:
+      - controller: dma1
+        channel: 4
+        request: 4
   uart5:
     base: '0x40005000'
     ip: st/usart_v3
@@ -532,9 +621,15 @@ peripherals:
       bit: 20
     irq: UART5
     kernel_clock: apb
-    dma_requests:
-      rx: 4
-      tx: 4
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 0
+        request: 4
+      tx:
+      - controller: dma1
+        channel: 7
+        request: 4
   uart7:
     base: '0x40007800'
     ip: st/usart_v3
@@ -544,9 +639,15 @@ peripherals:
       bit: 30
     irq: UART7
     kernel_clock: apb
-    dma_requests:
-      rx: 5
-      tx: 5
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 3
+        request: 5
+      tx:
+      - controller: dma1
+        channel: 1
+        request: 5
   uart8:
     base: '0x40007C00'
     ip: st/usart_v3
@@ -556,9 +657,15 @@ peripherals:
       bit: 31
     irq: UART8
     kernel_clock: apb
-    dma_requests:
-      rx: 5
-      tx: 5
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 6
+        request: 5
+      tx:
+      - controller: dma1
+        channel: 0
+        request: 5
   uid:
     base: '0x1FF07A10'
     uncurated: true
@@ -572,9 +679,18 @@ peripherals:
       bit: 4
     irq: USART1
     kernel_clock: apb2
-    dma_requests:
-      rx: 4
-      tx: 4
+    dma_routes:
+      rx:
+      - controller: dma2
+        channel: 2
+        request: 4
+      - controller: dma2
+        channel: 5
+        request: 4
+      tx:
+      - controller: dma2
+        channel: 7
+        request: 4
   usart2:
     base: '0x40004400'
     ip: st/usart_v3
@@ -584,9 +700,15 @@ peripherals:
       bit: 17
     irq: USART2
     kernel_clock: apb
-    dma_requests:
-      rx: 4
-      tx: 4
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 5
+        request: 4
+      tx:
+      - controller: dma1
+        channel: 6
+        request: 4
   usart3:
     base: '0x40004800'
     ip: st/usart_v3
@@ -596,9 +718,18 @@ peripherals:
       bit: 18
     irq: USART3
     kernel_clock: apb
-    dma_requests:
-      rx: 4
-      tx: 7
+    dma_routes:
+      rx:
+      - controller: dma1
+        channel: 1
+        request: 4
+      tx:
+      - controller: dma1
+        channel: 3
+        request: 4
+      - controller: dma1
+        channel: 4
+        request: 7
   usart6:
     base: '0x40011400'
     ip: st/usart_v3
@@ -608,9 +739,21 @@ peripherals:
       bit: 5
     irq: USART6
     kernel_clock: apb2
-    dma_requests:
-      rx: 5
-      tx: 5
+    dma_routes:
+      rx:
+      - controller: dma2
+        channel: 1
+        request: 5
+      - controller: dma2
+        channel: 2
+        request: 5
+      tx:
+      - controller: dma2
+        channel: 6
+        request: 5
+      - controller: dma2
+        channel: 7
+        request: 5
   usb_otg_fs:
     base: '0x50000000'
     uncurated: true
@@ -658,6 +801,12 @@ pins:
   pa12:
     port: a
     index: 12
+  pa13:
+    port: a
+    index: 13
+  pa14:
+    port: a
+    index: 14
   pa15:
     port: a
     index: 15
@@ -703,6 +852,12 @@ pins:
   pb13:
     port: b
     index: 13
+  pb14:
+    port: b
+    index: 14
+  pb15:
+    port: b
+    index: 15
   pb2:
     port: b
     index: 2
@@ -727,6 +882,9 @@ pins:
   pb9:
     port: b
     index: 9
+  pc0:
+    port: c
+    index: 0
   pc1:
     port: c
     index: 1
@@ -739,12 +897,27 @@ pins:
   pc12:
     port: c
     index: 12
+  pc13:
+    port: c
+    index: 13
+  pc14:
+    port: c
+    index: 14
+  pc15:
+    port: c
+    index: 15
   pc2:
     port: c
     index: 2
   pc3:
     port: c
     index: 3
+  pc4:
+    port: c
+    index: 4
+  pc5:
+    port: c
+    index: 5
   pc6:
     port: c
     index: 6
@@ -763,6 +936,12 @@ pins:
   pd1:
     port: d
     index: 1
+  pd10:
+    port: d
+    index: 10
+  pd11:
+    port: d
+    index: 11
   pd12:
     port: d
     index: 12
@@ -781,12 +960,18 @@ pins:
   pd3:
     port: d
     index: 3
+  pd4:
+    port: d
+    index: 4
   pd5:
     port: d
     index: 5
   pd6:
     port: d
     index: 6
+  pd7:
+    port: d
+    index: 7
   pd8:
     port: d
     index: 8
@@ -799,6 +984,9 @@ pins:
   pe1:
     port: e
     index: 1
+  pe10:
+    port: e
+    index: 10
   pe11:
     port: e
     index: 11
@@ -811,9 +999,15 @@ pins:
   pe14:
     port: e
     index: 14
+  pe15:
+    port: e
+    index: 15
   pe2:
     port: e
     index: 2
+  pe3:
+    port: e
+    index: 3
   pe4:
     port: e
     index: 4
@@ -838,9 +1032,36 @@ pins:
   pf1:
     port: f
     index: 1
+  pf10:
+    port: f
+    index: 10
   pf11:
     port: f
     index: 11
+  pf12:
+    port: f
+    index: 12
+  pf13:
+    port: f
+    index: 13
+  pf14:
+    port: f
+    index: 14
+  pf15:
+    port: f
+    index: 15
+  pf2:
+    port: f
+    index: 2
+  pf3:
+    port: f
+    index: 3
+  pf4:
+    port: f
+    index: 4
+  pf5:
+    port: f
+    index: 5
   pf6:
     port: f
     index: 6
@@ -853,12 +1074,54 @@ pins:
   pf9:
     port: f
     index: 9
+  pg0:
+    port: g
+    index: 0
+  pg1:
+    port: g
+    index: 1
+  pg10:
+    port: g
+    index: 10
+  pg11:
+    port: g
+    index: 11
+  pg12:
+    port: g
+    index: 12
+  pg13:
+    port: g
+    index: 13
   pg14:
     port: g
     index: 14
+  pg15:
+    port: g
+    index: 15
+  pg2:
+    port: g
+    index: 2
+  pg3:
+    port: g
+    index: 3
+  pg4:
+    port: g
+    index: 4
+  pg5:
+    port: g
+    index: 5
+  pg8:
+    port: g
+    index: 8
   pg9:
     port: g
     index: 9
+  ph0:
+    port: h
+    index: 0
+  ph1:
+    port: h
+    index: 1
   ph10:
     port: h
     index: 10
@@ -874,6 +1137,15 @@ pins:
   ph14:
     port: h
     index: 14
+  ph15:
+    port: h
+    index: 15
+  ph2:
+    port: h
+    index: 2
+  ph3:
+    port: h
+    index: 3
   ph4:
     port: h
     index: 4
@@ -898,12 +1170,21 @@ pins:
   pi1:
     port: i
     index: 1
+  pi10:
+    port: i
+    index: 10
+  pi11:
+    port: i
+    index: 11
   pi2:
     port: i
     index: 2
   pi3:
     port: i
     index: 3
+  pi4:
+    port: i
+    index: 4
   pi5:
     port: i
     index: 5
@@ -913,13 +1194,26 @@ pins:
   pi7:
     port: i
     index: 7
+  pi8:
+    port: i
+    index: 8
   pi9:
     port: i
     index: 9
 routes:
 - pin: pa0
+  peripheral: sai2
+  signal: sd_b
+  kind: af_fixed
+  af: 10
+- pin: pa0
   peripheral: tim2
   signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa0
+  peripheral: tim2
+  signal: etr
   kind: af_fixed
   af: 1
 - pin: pa0
@@ -928,10 +1222,30 @@ routes:
   kind: af_fixed
   af: 2
 - pin: pa0
+  peripheral: tim8
+  signal: etr
+  kind: af_fixed
+  af: 3
+- pin: pa0
   peripheral: uart4
   signal: tx
   kind: af_fixed
   af: 8
+- pin: pa0
+  peripheral: usart2
+  signal: cts
+  kind: af_fixed
+  af: 7
+- pin: pa1
+  peripheral: quadspi
+  signal: bk1_io3
+  kind: af_fixed
+  af: 9
+- pin: pa1
+  peripheral: sai2
+  signal: mclk_b
+  kind: af_fixed
+  af: 10
 - pin: pa1
   peripheral: tim2
   signal: ch2
@@ -947,6 +1261,16 @@ routes:
   signal: rx
   kind: af_fixed
   af: 8
+- pin: pa1
+  peripheral: usart2
+  signal: de
+  kind: af_fixed
+  af: 7
+- pin: pa1
+  peripheral: usart2
+  signal: rts
+  kind: af_fixed
+  af: 7
 - pin: pa10
   peripheral: tim1
   signal: ch3
@@ -957,6 +1281,11 @@ routes:
   signal: rx
   kind: af_fixed
   af: 7
+- pin: pa10
+  peripheral: usb_otg_fs
+  signal: id
+  kind: af_fixed
+  af: 10
 - pin: pa11
   peripheral: can1
   signal: rx
@@ -967,14 +1296,54 @@ routes:
   signal: ch4
   kind: af_fixed
   af: 1
+- pin: pa11
+  peripheral: usart1
+  signal: cts
+  kind: af_fixed
+  af: 7
+- pin: pa11
+  peripheral: usb_otg_fs
+  signal: dm
+  kind: af_fixed
+  af: 10
 - pin: pa12
   peripheral: can1
   signal: tx
   kind: af_fixed
   af: 9
+- pin: pa12
+  peripheral: sai2
+  signal: fs_b
+  kind: af_fixed
+  af: 8
+- pin: pa12
+  peripheral: tim1
+  signal: etr
+  kind: af_fixed
+  af: 1
+- pin: pa12
+  peripheral: usart1
+  signal: de
+  kind: af_fixed
+  af: 7
+- pin: pa12
+  peripheral: usart1
+  signal: rts
+  kind: af_fixed
+  af: 7
+- pin: pa12
+  peripheral: usb_otg_fs
+  signal: dp
+  kind: af_fixed
+  af: 10
 - pin: pa15
   peripheral: spi1
   signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pa15
+  peripheral: spi1
+  signal: i2s_ws
   kind: af_fixed
   af: 5
 - pin: pa15
@@ -983,10 +1352,35 @@ routes:
   kind: af_fixed
   af: 6
 - pin: pa15
+  peripheral: spi3
+  signal: i2s_ws
+  kind: af_fixed
+  af: 6
+- pin: pa15
   peripheral: tim2
   signal: ch1
   kind: af_fixed
   af: 1
+- pin: pa15
+  peripheral: tim2
+  signal: etr
+  kind: af_fixed
+  af: 1
+- pin: pa15
+  peripheral: uart4
+  signal: de
+  kind: af_fixed
+  af: 8
+- pin: pa15
+  peripheral: uart4
+  signal: rts
+  kind: af_fixed
+  af: 8
+- pin: pa2
+  peripheral: sai2
+  signal: sck_b
+  kind: af_fixed
+  af: 8
 - pin: pa2
   peripheral: tim2
   signal: ch3
@@ -1033,10 +1427,35 @@ routes:
   kind: af_fixed
   af: 5
 - pin: pa4
+  peripheral: spi1
+  signal: i2s_ws
+  kind: af_fixed
+  af: 5
+- pin: pa4
   peripheral: spi3
   signal: cs
   kind: af_fixed
   af: 6
+- pin: pa4
+  peripheral: spi3
+  signal: i2s_ws
+  kind: af_fixed
+  af: 6
+- pin: pa4
+  peripheral: usart2
+  signal: ck
+  kind: af_fixed
+  af: 7
+- pin: pa4
+  peripheral: usb_otg_hs
+  signal: sof
+  kind: af_fixed
+  af: 12
+- pin: pa5
+  peripheral: spi1
+  signal: i2s_ck
+  kind: af_fixed
+  af: 5
 - pin: pa5
   peripheral: spi1
   signal: sck
@@ -1047,11 +1466,26 @@ routes:
   signal: ch1
   kind: af_fixed
   af: 1
+- pin: pa5
+  peripheral: tim2
+  signal: etr
+  kind: af_fixed
+  af: 1
+- pin: pa5
+  peripheral: tim8
+  signal: ch1n
+  kind: af_fixed
+  af: 3
 - pin: pa6
   peripheral: spi1
   signal: miso
   kind: af_fixed
   af: 5
+- pin: pa6
+  peripheral: tim1
+  signal: bkin
+  kind: af_fixed
+  af: 1
 - pin: pa6
   peripheral: tim13
   signal: ch1
@@ -1062,11 +1496,31 @@ routes:
   signal: ch1
   kind: af_fixed
   af: 2
+- pin: pa6
+  peripheral: tim8
+  signal: bkin
+  kind: af_fixed
+  af: 3
+- pin: pa7
+  peripheral: fmc
+  signal: sdnwe
+  kind: af_fixed
+  af: 12
+- pin: pa7
+  peripheral: spi1
+  signal: i2s_sd
+  kind: af_fixed
+  af: 5
 - pin: pa7
   peripheral: spi1
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pa7
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
 - pin: pa7
   peripheral: tim14
   signal: ch1
@@ -1077,16 +1531,51 @@ routes:
   signal: ch2
   kind: af_fixed
   af: 2
+- pin: pa7
+  peripheral: tim8
+  signal: ch1n
+  kind: af_fixed
+  af: 3
 - pin: pa8
   peripheral: i2c3
   signal: scl
   kind: af_fixed
   af: 4
 - pin: pa8
+  peripheral: rcc
+  signal: mco_1
+  kind: af_fixed
+  af: 0
+- pin: pa8
   peripheral: tim1
   signal: ch1
   kind: af_fixed
   af: 1
+- pin: pa8
+  peripheral: tim8
+  signal: bkin2
+  kind: af_fixed
+  af: 3
+- pin: pa8
+  peripheral: usart1
+  signal: ck
+  kind: af_fixed
+  af: 7
+- pin: pa8
+  peripheral: usb_otg_fs
+  signal: sof
+  kind: af_fixed
+  af: 10
+- pin: pa9
+  peripheral: i2c3
+  signal: smba
+  kind: af_fixed
+  af: 4
+- pin: pa9
+  peripheral: spi2
+  signal: i2s_ck
+  kind: af_fixed
+  af: 5
 - pin: pa9
   peripheral: spi2
   signal: sck
@@ -1103,20 +1592,50 @@ routes:
   kind: af_fixed
   af: 7
 - pin: pb0
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb0
   peripheral: tim3
   signal: ch3
   kind: af_fixed
   af: 2
+- pin: pb0
+  peripheral: tim8
+  signal: ch2n
+  kind: af_fixed
+  af: 3
+- pin: pb0
+  peripheral: uart4
+  signal: cts
+  kind: af_fixed
+  af: 8
+- pin: pb1
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
 - pin: pb1
   peripheral: tim3
   signal: ch4
   kind: af_fixed
   af: 2
+- pin: pb1
+  peripheral: tim8
+  signal: ch3n
+  kind: af_fixed
+  af: 3
 - pin: pb10
   peripheral: i2c2
   signal: scl
   kind: af_fixed
   af: 4
+- pin: pb10
+  peripheral: spi2
+  signal: i2s_ck
+  kind: af_fixed
+  af: 5
 - pin: pb10
   peripheral: spi2
   signal: sck
@@ -1148,8 +1667,38 @@ routes:
   kind: af_fixed
   af: 7
 - pin: pb12
+  peripheral: i2c2
+  signal: smba
+  kind: af_fixed
+  af: 4
+- pin: pb12
   peripheral: spi2
   signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pb12
+  peripheral: spi2
+  signal: i2s_ws
+  kind: af_fixed
+  af: 5
+- pin: pb12
+  peripheral: tim1
+  signal: bkin
+  kind: af_fixed
+  af: 1
+- pin: pb12
+  peripheral: usart3
+  signal: ck
+  kind: af_fixed
+  af: 7
+- pin: pb12
+  peripheral: usb_otg_hs
+  signal: id
+  kind: af_fixed
+  af: 12
+- pin: pb13
+  peripheral: spi2
+  signal: i2s_ck
   kind: af_fixed
   af: 5
 - pin: pb13
@@ -1157,16 +1706,66 @@ routes:
   signal: sck
   kind: af_fixed
   af: 5
+- pin: pb13
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pb13
+  peripheral: usart3
+  signal: cts
+  kind: af_fixed
+  af: 7
+- pin: pb14
+  peripheral: usb_otg_hs
+  signal: dm
+  kind: af_fixed
+  af: 12
+- pin: pb15
+  peripheral: usb_otg_hs
+  signal: dp
+  kind: af_fixed
+  af: 12
+- pin: pb2
+  peripheral: quadspi
+  signal: clk
+  kind: af_fixed
+  af: 9
+- pin: pb2
+  peripheral: sai1
+  signal: sd_a
+  kind: af_fixed
+  af: 6
+- pin: pb2
+  peripheral: spi3
+  signal: i2s_sd
+  kind: af_fixed
+  af: 7
 - pin: pb2
   peripheral: spi3
   signal: mosi
   kind: af_fixed
   af: 7
 - pin: pb3
+  peripheral: sdmmc2
+  signal: d2
+  kind: af_fixed
+  af: 10
+- pin: pb3
+  peripheral: spi1
+  signal: i2s_ck
+  kind: af_fixed
+  af: 5
+- pin: pb3
   peripheral: spi1
   signal: sck
   kind: af_fixed
   af: 5
+- pin: pb3
+  peripheral: spi3
+  signal: i2s_ck
+  kind: af_fixed
+  af: 6
 - pin: pb3
   peripheral: spi3
   signal: sck
@@ -1178,6 +1777,11 @@ routes:
   kind: af_fixed
   af: 1
 - pin: pb4
+  peripheral: sdmmc2
+  signal: d3
+  kind: af_fixed
+  af: 10
+- pin: pb4
   peripheral: spi1
   signal: miso
   kind: af_fixed
@@ -1185,6 +1789,11 @@ routes:
 - pin: pb4
   peripheral: spi2
   signal: cs
+  kind: af_fixed
+  af: 7
+- pin: pb4
+  peripheral: spi2
+  signal: i2s_ws
   kind: af_fixed
   af: 7
 - pin: pb4
@@ -1198,10 +1807,30 @@ routes:
   kind: af_fixed
   af: 2
 - pin: pb5
+  peripheral: fmc
+  signal: sdcke1
+  kind: af_fixed
+  af: 12
+- pin: pb5
+  peripheral: i2c1
+  signal: smba
+  kind: af_fixed
+  af: 4
+- pin: pb5
+  peripheral: spi1
+  signal: i2s_sd
+  kind: af_fixed
+  af: 5
+- pin: pb5
   peripheral: spi1
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pb5
+  peripheral: spi3
+  signal: i2s_sd
+  kind: af_fixed
+  af: 6
 - pin: pb5
   peripheral: spi3
   signal: mosi
@@ -1213,10 +1842,20 @@ routes:
   kind: af_fixed
   af: 2
 - pin: pb6
+  peripheral: fmc
+  signal: sdne1
+  kind: af_fixed
+  af: 12
+- pin: pb6
   peripheral: i2c1
   signal: scl
   kind: af_fixed
   af: 4
+- pin: pb6
+  peripheral: quadspi
+  signal: bk1_ncs
+  kind: af_fixed
+  af: 10
 - pin: pb6
   peripheral: tim4
   signal: ch1
@@ -1227,6 +1866,11 @@ routes:
   signal: tx
   kind: af_fixed
   af: 7
+- pin: pb7
+  peripheral: fmc
+  signal: nl
+  kind: af_fixed
+  af: 12
 - pin: pb7
   peripheral: i2c1
   signal: sda
@@ -1252,6 +1896,16 @@ routes:
   signal: scl
   kind: af_fixed
   af: 4
+- pin: pb8
+  peripheral: sdmmc1
+  signal: d4
+  kind: af_fixed
+  af: 12
+- pin: pb8
+  peripheral: sdmmc2
+  signal: d4
+  kind: af_fixed
+  af: 10
 - pin: pb8
   peripheral: tim10
   signal: ch1
@@ -1273,8 +1927,23 @@ routes:
   kind: af_fixed
   af: 4
 - pin: pb9
+  peripheral: sdmmc1
+  signal: d5
+  kind: af_fixed
+  af: 12
+- pin: pb9
+  peripheral: sdmmc2
+  signal: d5
+  kind: af_fixed
+  af: 10
+- pin: pb9
   peripheral: spi2
   signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pb9
+  peripheral: spi2
+  signal: i2s_ws
   kind: af_fixed
   af: 5
 - pin: pb9
@@ -1287,11 +1956,46 @@ routes:
   signal: ch4
   kind: af_fixed
   af: 2
+- pin: pc0
+  peripheral: fmc
+  signal: sdnwe
+  kind: af_fixed
+  af: 12
+- pin: pc0
+  peripheral: sai2
+  signal: fs_b
+  kind: af_fixed
+  af: 8
+- pin: pc1
+  peripheral: sai1
+  signal: sd_a
+  kind: af_fixed
+  af: 6
+- pin: pc1
+  peripheral: spi2
+  signal: i2s_sd
+  kind: af_fixed
+  af: 5
 - pin: pc1
   peripheral: spi2
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pc10
+  peripheral: quadspi
+  signal: bk1_io1
+  kind: af_fixed
+  af: 9
+- pin: pc10
+  peripheral: sdmmc1
+  signal: d2
+  kind: af_fixed
+  af: 12
+- pin: pc10
+  peripheral: spi3
+  signal: i2s_ck
+  kind: af_fixed
+  af: 6
 - pin: pc10
   peripheral: spi3
   signal: sck
@@ -1308,6 +2012,16 @@ routes:
   kind: af_fixed
   af: 7
 - pin: pc11
+  peripheral: quadspi
+  signal: bk2_ncs
+  kind: af_fixed
+  af: 9
+- pin: pc11
+  peripheral: sdmmc1
+  signal: d3
+  kind: af_fixed
+  af: 12
+- pin: pc11
   peripheral: spi3
   signal: miso
   kind: af_fixed
@@ -1323,6 +2037,16 @@ routes:
   kind: af_fixed
   af: 7
 - pin: pc12
+  peripheral: sdmmc1
+  signal: ck
+  kind: af_fixed
+  af: 12
+- pin: pc12
+  peripheral: spi3
+  signal: i2s_sd
+  kind: af_fixed
+  af: 6
+- pin: pc12
   peripheral: spi3
   signal: mosi
   kind: af_fixed
@@ -1332,9 +2056,29 @@ routes:
   signal: tx
   kind: af_fixed
   af: 8
+- pin: pc12
+  peripheral: usart3
+  signal: ck
+  kind: af_fixed
+  af: 7
+- pin: pc2
+  peripheral: fmc
+  signal: sdne0
+  kind: af_fixed
+  af: 12
 - pin: pc2
   peripheral: spi2
   signal: miso
+  kind: af_fixed
+  af: 5
+- pin: pc3
+  peripheral: fmc
+  signal: sdcke0
+  kind: af_fixed
+  af: 12
+- pin: pc3
+  peripheral: spi2
+  signal: i2s_sd
   kind: af_fixed
   af: 5
 - pin: pc3
@@ -1342,6 +2086,36 @@ routes:
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pc4
+  peripheral: fmc
+  signal: sdne0
+  kind: af_fixed
+  af: 12
+- pin: pc4
+  peripheral: spi1
+  signal: i2s_mck
+  kind: af_fixed
+  af: 5
+- pin: pc5
+  peripheral: fmc
+  signal: sdcke0
+  kind: af_fixed
+  af: 12
+- pin: pc6
+  peripheral: sdmmc1
+  signal: d6
+  kind: af_fixed
+  af: 12
+- pin: pc6
+  peripheral: sdmmc2
+  signal: d6
+  kind: af_fixed
+  af: 10
+- pin: pc6
+  peripheral: spi2
+  signal: i2s_mck
+  kind: af_fixed
+  af: 5
 - pin: pc6
   peripheral: tim3
   signal: ch1
@@ -1358,6 +2132,21 @@ routes:
   kind: af_fixed
   af: 8
 - pin: pc7
+  peripheral: sdmmc1
+  signal: d7
+  kind: af_fixed
+  af: 12
+- pin: pc7
+  peripheral: sdmmc2
+  signal: d7
+  kind: af_fixed
+  af: 10
+- pin: pc7
+  peripheral: spi3
+  signal: i2s_mck
+  kind: af_fixed
+  af: 6
+- pin: pc7
   peripheral: tim3
   signal: ch2
   kind: af_fixed
@@ -1373,6 +2162,11 @@ routes:
   kind: af_fixed
   af: 8
 - pin: pc8
+  peripheral: sdmmc1
+  signal: d0
+  kind: af_fixed
+  af: 12
+- pin: pc8
   peripheral: tim3
   signal: ch3
   kind: af_fixed
@@ -1382,12 +2176,42 @@ routes:
   signal: ch3
   kind: af_fixed
   af: 3
+- pin: pc8
+  peripheral: uart5
+  signal: de
+  kind: af_fixed
+  af: 7
+- pin: pc8
+  peripheral: uart5
+  signal: rts
+  kind: af_fixed
+  af: 7
+- pin: pc8
+  peripheral: usart6
+  signal: ck
+  kind: af_fixed
+  af: 8
 - pin: pc9
   peripheral: i2c3
   signal: sda
   kind: af_fixed
   af: 4
 - pin: pc9
+  peripheral: quadspi
+  signal: bk1_io0
+  kind: af_fixed
+  af: 9
+- pin: pc9
+  peripheral: rcc
+  signal: mco_2
+  kind: af_fixed
+  af: 0
+- pin: pc9
+  peripheral: sdmmc1
+  signal: d1
+  kind: af_fixed
+  af: 12
+- pin: pc9
   peripheral: tim3
   signal: ch4
   kind: af_fixed
@@ -1397,34 +2221,199 @@ routes:
   signal: ch4
   kind: af_fixed
   af: 3
+- pin: pc9
+  peripheral: uart5
+  signal: cts
+  kind: af_fixed
+  af: 7
 - pin: pd0
   peripheral: can1
   signal: rx
   kind: af_fixed
   af: 9
+- pin: pd0
+  peripheral: fmc
+  signal: d2
+  kind: af_fixed
+  af: 12
+- pin: pd0
+  peripheral: fmc
+  signal: da2
+  kind: af_fixed
+  af: 12
 - pin: pd1
   peripheral: can1
   signal: tx
   kind: af_fixed
   af: 9
+- pin: pd1
+  peripheral: fmc
+  signal: d3
+  kind: af_fixed
+  af: 12
+- pin: pd1
+  peripheral: fmc
+  signal: da3
+  kind: af_fixed
+  af: 12
+- pin: pd10
+  peripheral: fmc
+  signal: d15
+  kind: af_fixed
+  af: 12
+- pin: pd10
+  peripheral: fmc
+  signal: da15
+  kind: af_fixed
+  af: 12
+- pin: pd10
+  peripheral: usart3
+  signal: ck
+  kind: af_fixed
+  af: 7
+- pin: pd11
+  peripheral: fmc
+  signal: a16
+  kind: af_fixed
+  af: 12
+- pin: pd11
+  peripheral: fmc
+  signal: cle
+  kind: af_fixed
+  af: 12
+- pin: pd11
+  peripheral: quadspi
+  signal: bk1_io0
+  kind: af_fixed
+  af: 9
+- pin: pd11
+  peripheral: sai2
+  signal: sd_a
+  kind: af_fixed
+  af: 10
+- pin: pd11
+  peripheral: usart3
+  signal: cts
+  kind: af_fixed
+  af: 7
+- pin: pd12
+  peripheral: fmc
+  signal: a17
+  kind: af_fixed
+  af: 12
+- pin: pd12
+  peripheral: fmc
+  signal: ale
+  kind: af_fixed
+  af: 12
+- pin: pd12
+  peripheral: lptim1
+  signal: in1
+  kind: af_fixed
+  af: 3
+- pin: pd12
+  peripheral: quadspi
+  signal: bk1_io1
+  kind: af_fixed
+  af: 9
+- pin: pd12
+  peripheral: sai2
+  signal: fs_a
+  kind: af_fixed
+  af: 10
 - pin: pd12
   peripheral: tim4
   signal: ch1
   kind: af_fixed
   af: 2
+- pin: pd12
+  peripheral: usart3
+  signal: de
+  kind: af_fixed
+  af: 7
+- pin: pd12
+  peripheral: usart3
+  signal: rts
+  kind: af_fixed
+  af: 7
+- pin: pd13
+  peripheral: fmc
+  signal: a18
+  kind: af_fixed
+  af: 12
+- pin: pd13
+  peripheral: lptim1
+  signal: out
+  kind: af_fixed
+  af: 3
+- pin: pd13
+  peripheral: quadspi
+  signal: bk1_io3
+  kind: af_fixed
+  af: 9
+- pin: pd13
+  peripheral: sai2
+  signal: sck_a
+  kind: af_fixed
+  af: 10
 - pin: pd13
   peripheral: tim4
   signal: ch2
   kind: af_fixed
   af: 2
 - pin: pd14
+  peripheral: fmc
+  signal: d0
+  kind: af_fixed
+  af: 12
+- pin: pd14
+  peripheral: fmc
+  signal: da0
+  kind: af_fixed
+  af: 12
+- pin: pd14
   peripheral: tim4
   signal: ch3
   kind: af_fixed
   af: 2
+- pin: pd14
+  peripheral: uart8
+  signal: cts
+  kind: af_fixed
+  af: 8
+- pin: pd15
+  peripheral: fmc
+  signal: d1
+  kind: af_fixed
+  af: 12
+- pin: pd15
+  peripheral: fmc
+  signal: da1
+  kind: af_fixed
+  af: 12
 - pin: pd15
   peripheral: tim4
   signal: ch4
+  kind: af_fixed
+  af: 2
+- pin: pd15
+  peripheral: uart8
+  signal: de
+  kind: af_fixed
+  af: 8
+- pin: pd15
+  peripheral: uart8
+  signal: rts
+  kind: af_fixed
+  af: 8
+- pin: pd2
+  peripheral: sdmmc1
+  signal: cmd
+  kind: af_fixed
+  af: 12
+- pin: pd2
+  peripheral: tim3
+  signal: etr
   kind: af_fixed
   af: 2
 - pin: pd2
@@ -1433,15 +2422,70 @@ routes:
   kind: af_fixed
   af: 8
 - pin: pd3
+  peripheral: fmc
+  signal: clk
+  kind: af_fixed
+  af: 12
+- pin: pd3
+  peripheral: spi2
+  signal: i2s_ck
+  kind: af_fixed
+  af: 5
+- pin: pd3
   peripheral: spi2
   signal: sck
   kind: af_fixed
   af: 5
+- pin: pd3
+  peripheral: usart2
+  signal: cts
+  kind: af_fixed
+  af: 7
+- pin: pd4
+  peripheral: fmc
+  signal: noe
+  kind: af_fixed
+  af: 12
+- pin: pd4
+  peripheral: usart2
+  signal: de
+  kind: af_fixed
+  af: 7
+- pin: pd4
+  peripheral: usart2
+  signal: rts
+  kind: af_fixed
+  af: 7
+- pin: pd5
+  peripheral: fmc
+  signal: nwe
+  kind: af_fixed
+  af: 12
 - pin: pd5
   peripheral: usart2
   signal: tx
   kind: af_fixed
   af: 7
+- pin: pd6
+  peripheral: fmc
+  signal: nwait
+  kind: af_fixed
+  af: 12
+- pin: pd6
+  peripheral: sai1
+  signal: sd_a
+  kind: af_fixed
+  af: 6
+- pin: pd6
+  peripheral: sdmmc2
+  signal: ck
+  kind: af_fixed
+  af: 11
+- pin: pd6
+  peripheral: spi3
+  signal: i2s_sd
+  kind: af_fixed
+  af: 5
 - pin: pd6
   peripheral: spi3
   signal: mosi
@@ -1452,26 +2496,131 @@ routes:
   signal: rx
   kind: af_fixed
   af: 7
+- pin: pd7
+  peripheral: fmc
+  signal: ne1
+  kind: af_fixed
+  af: 12
+- pin: pd7
+  peripheral: sdmmc2
+  signal: cmd
+  kind: af_fixed
+  af: 11
+- pin: pd7
+  peripheral: usart2
+  signal: ck
+  kind: af_fixed
+  af: 7
+- pin: pd8
+  peripheral: fmc
+  signal: d13
+  kind: af_fixed
+  af: 12
+- pin: pd8
+  peripheral: fmc
+  signal: da13
+  kind: af_fixed
+  af: 12
 - pin: pd8
   peripheral: usart3
   signal: tx
   kind: af_fixed
   af: 7
 - pin: pd9
+  peripheral: fmc
+  signal: d14
+  kind: af_fixed
+  af: 12
+- pin: pd9
+  peripheral: fmc
+  signal: da14
+  kind: af_fixed
+  af: 12
+- pin: pd9
   peripheral: usart3
   signal: rx
   kind: af_fixed
   af: 7
+- pin: pe0
+  peripheral: fmc
+  signal: nbl0
+  kind: af_fixed
+  af: 12
+- pin: pe0
+  peripheral: lptim1
+  signal: etr
+  kind: af_fixed
+  af: 3
+- pin: pe0
+  peripheral: sai2
+  signal: mclk_a
+  kind: af_fixed
+  af: 10
+- pin: pe0
+  peripheral: tim4
+  signal: etr
+  kind: af_fixed
+  af: 2
 - pin: pe0
   peripheral: uart8
   signal: rx
   kind: af_fixed
   af: 8
 - pin: pe1
+  peripheral: fmc
+  signal: nbl1
+  kind: af_fixed
+  af: 12
+- pin: pe1
+  peripheral: lptim1
+  signal: in2
+  kind: af_fixed
+  af: 3
+- pin: pe1
   peripheral: uart8
   signal: tx
   kind: af_fixed
   af: 8
+- pin: pe10
+  peripheral: fmc
+  signal: d7
+  kind: af_fixed
+  af: 12
+- pin: pe10
+  peripheral: fmc
+  signal: da7
+  kind: af_fixed
+  af: 12
+- pin: pe10
+  peripheral: quadspi
+  signal: bk2_io3
+  kind: af_fixed
+  af: 10
+- pin: pe10
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pe10
+  peripheral: uart7
+  signal: cts
+  kind: af_fixed
+  af: 8
+- pin: pe11
+  peripheral: fmc
+  signal: d8
+  kind: af_fixed
+  af: 12
+- pin: pe11
+  peripheral: fmc
+  signal: da8
+  kind: af_fixed
+  af: 12
+- pin: pe11
+  peripheral: sai2
+  signal: sd_b
+  kind: af_fixed
+  af: 10
 - pin: pe11
   peripheral: spi4
   signal: cs
@@ -1483,10 +2632,45 @@ routes:
   kind: af_fixed
   af: 1
 - pin: pe12
+  peripheral: fmc
+  signal: d9
+  kind: af_fixed
+  af: 12
+- pin: pe12
+  peripheral: fmc
+  signal: da9
+  kind: af_fixed
+  af: 12
+- pin: pe12
+  peripheral: sai2
+  signal: sck_b
+  kind: af_fixed
+  af: 10
+- pin: pe12
   peripheral: spi4
   signal: sck
   kind: af_fixed
   af: 5
+- pin: pe12
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
+- pin: pe13
+  peripheral: fmc
+  signal: d10
+  kind: af_fixed
+  af: 12
+- pin: pe13
+  peripheral: fmc
+  signal: da10
+  kind: af_fixed
+  af: 12
+- pin: pe13
+  peripheral: sai2
+  signal: fs_b
+  kind: af_fixed
+  af: 10
 - pin: pe13
   peripheral: spi4
   signal: miso
@@ -1498,6 +2682,21 @@ routes:
   kind: af_fixed
   af: 1
 - pin: pe14
+  peripheral: fmc
+  signal: d11
+  kind: af_fixed
+  af: 12
+- pin: pe14
+  peripheral: fmc
+  signal: da11
+  kind: af_fixed
+  af: 12
+- pin: pe14
+  peripheral: sai2
+  signal: mclk_b
+  kind: af_fixed
+  af: 10
+- pin: pe14
   peripheral: spi4
   signal: mosi
   kind: af_fixed
@@ -1507,16 +2706,76 @@ routes:
   signal: ch4
   kind: af_fixed
   af: 1
+- pin: pe15
+  peripheral: fmc
+  signal: d12
+  kind: af_fixed
+  af: 12
+- pin: pe15
+  peripheral: fmc
+  signal: da12
+  kind: af_fixed
+  af: 12
+- pin: pe15
+  peripheral: tim1
+  signal: bkin
+  kind: af_fixed
+  af: 1
+- pin: pe2
+  peripheral: fmc
+  signal: a23
+  kind: af_fixed
+  af: 12
+- pin: pe2
+  peripheral: quadspi
+  signal: bk1_io2
+  kind: af_fixed
+  af: 9
+- pin: pe2
+  peripheral: sai1
+  signal: mclk_a
+  kind: af_fixed
+  af: 6
 - pin: pe2
   peripheral: spi4
   signal: sck
   kind: af_fixed
   af: 5
+- pin: pe3
+  peripheral: fmc
+  signal: a19
+  kind: af_fixed
+  af: 12
+- pin: pe3
+  peripheral: sai1
+  signal: sd_b
+  kind: af_fixed
+  af: 6
+- pin: pe4
+  peripheral: fmc
+  signal: a20
+  kind: af_fixed
+  af: 12
+- pin: pe4
+  peripheral: sai1
+  signal: fs_a
+  kind: af_fixed
+  af: 6
 - pin: pe4
   peripheral: spi4
   signal: cs
   kind: af_fixed
   af: 5
+- pin: pe5
+  peripheral: fmc
+  signal: a21
+  kind: af_fixed
+  af: 12
+- pin: pe5
+  peripheral: sai1
+  signal: sck_a
+  kind: af_fixed
+  af: 6
 - pin: pe5
   peripheral: spi4
   signal: miso
@@ -1528,45 +2787,205 @@ routes:
   kind: af_fixed
   af: 3
 - pin: pe6
+  peripheral: fmc
+  signal: a22
+  kind: af_fixed
+  af: 12
+- pin: pe6
+  peripheral: sai1
+  signal: sd_a
+  kind: af_fixed
+  af: 6
+- pin: pe6
+  peripheral: sai2
+  signal: mclk_b
+  kind: af_fixed
+  af: 10
+- pin: pe6
   peripheral: spi4
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pe6
+  peripheral: tim1
+  signal: bkin2
+  kind: af_fixed
+  af: 1
 - pin: pe6
   peripheral: tim9
   signal: ch2
   kind: af_fixed
   af: 3
 - pin: pe7
+  peripheral: fmc
+  signal: d4
+  kind: af_fixed
+  af: 12
+- pin: pe7
+  peripheral: fmc
+  signal: da4
+  kind: af_fixed
+  af: 12
+- pin: pe7
+  peripheral: quadspi
+  signal: bk2_io0
+  kind: af_fixed
+  af: 10
+- pin: pe7
+  peripheral: tim1
+  signal: etr
+  kind: af_fixed
+  af: 1
+- pin: pe7
   peripheral: uart7
   signal: rx
   kind: af_fixed
   af: 8
+- pin: pe8
+  peripheral: fmc
+  signal: d5
+  kind: af_fixed
+  af: 12
+- pin: pe8
+  peripheral: fmc
+  signal: da5
+  kind: af_fixed
+  af: 12
+- pin: pe8
+  peripheral: quadspi
+  signal: bk2_io1
+  kind: af_fixed
+  af: 10
+- pin: pe8
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
 - pin: pe8
   peripheral: uart7
   signal: tx
   kind: af_fixed
   af: 8
 - pin: pe9
+  peripheral: fmc
+  signal: d6
+  kind: af_fixed
+  af: 12
+- pin: pe9
+  peripheral: fmc
+  signal: da6
+  kind: af_fixed
+  af: 12
+- pin: pe9
+  peripheral: quadspi
+  signal: bk2_io2
+  kind: af_fixed
+  af: 10
+- pin: pe9
   peripheral: tim1
   signal: ch1
   kind: af_fixed
   af: 1
+- pin: pe9
+  peripheral: uart7
+  signal: de
+  kind: af_fixed
+  af: 8
+- pin: pe9
+  peripheral: uart7
+  signal: rts
+  kind: af_fixed
+  af: 8
+- pin: pf0
+  peripheral: fmc
+  signal: a0
+  kind: af_fixed
+  af: 12
 - pin: pf0
   peripheral: i2c2
   signal: sda
   kind: af_fixed
   af: 4
 - pin: pf1
+  peripheral: fmc
+  signal: a1
+  kind: af_fixed
+  af: 12
+- pin: pf1
   peripheral: i2c2
   signal: scl
   kind: af_fixed
   af: 4
 - pin: pf11
+  peripheral: fmc
+  signal: sdnras
+  kind: af_fixed
+  af: 12
+- pin: pf11
+  peripheral: sai2
+  signal: sd_b
+  kind: af_fixed
+  af: 10
+- pin: pf11
   peripheral: spi5
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pf12
+  peripheral: fmc
+  signal: a6
+  kind: af_fixed
+  af: 12
+- pin: pf13
+  peripheral: fmc
+  signal: a7
+  kind: af_fixed
+  af: 12
+- pin: pf14
+  peripheral: fmc
+  signal: a8
+  kind: af_fixed
+  af: 12
+- pin: pf15
+  peripheral: fmc
+  signal: a9
+  kind: af_fixed
+  af: 12
+- pin: pf2
+  peripheral: fmc
+  signal: a2
+  kind: af_fixed
+  af: 12
+- pin: pf2
+  peripheral: i2c2
+  signal: smba
+  kind: af_fixed
+  af: 4
+- pin: pf3
+  peripheral: fmc
+  signal: a3
+  kind: af_fixed
+  af: 12
+- pin: pf4
+  peripheral: fmc
+  signal: a4
+  kind: af_fixed
+  af: 12
+- pin: pf5
+  peripheral: fmc
+  signal: a5
+  kind: af_fixed
+  af: 12
+- pin: pf6
+  peripheral: quadspi
+  signal: bk1_io3
+  kind: af_fixed
+  af: 9
+- pin: pf6
+  peripheral: sai1
+  signal: sd_b
+  kind: af_fixed
+  af: 6
 - pin: pf6
   peripheral: spi5
   signal: cs
@@ -1583,6 +3002,16 @@ routes:
   kind: af_fixed
   af: 8
 - pin: pf7
+  peripheral: quadspi
+  signal: bk1_io2
+  kind: af_fixed
+  af: 9
+- pin: pf7
+  peripheral: sai1
+  signal: mclk_b
+  kind: af_fixed
+  af: 6
+- pin: pf7
   peripheral: spi5
   signal: sck
   kind: af_fixed
@@ -1598,6 +3027,16 @@ routes:
   kind: af_fixed
   af: 8
 - pin: pf8
+  peripheral: quadspi
+  signal: bk1_io0
+  kind: af_fixed
+  af: 10
+- pin: pf8
+  peripheral: sai1
+  signal: sck_b
+  kind: af_fixed
+  af: 6
+- pin: pf8
   peripheral: spi5
   signal: miso
   kind: af_fixed
@@ -1607,6 +3046,26 @@ routes:
   signal: ch1
   kind: af_fixed
   af: 9
+- pin: pf8
+  peripheral: uart7
+  signal: de
+  kind: af_fixed
+  af: 8
+- pin: pf8
+  peripheral: uart7
+  signal: rts
+  kind: af_fixed
+  af: 8
+- pin: pf9
+  peripheral: quadspi
+  signal: bk1_io1
+  kind: af_fixed
+  af: 10
+- pin: pf9
+  peripheral: sai1
+  signal: fs_b
+  kind: af_fixed
+  af: 6
 - pin: pf9
   peripheral: spi5
   signal: mosi
@@ -1617,26 +3076,216 @@ routes:
   signal: ch1
   kind: af_fixed
   af: 9
+- pin: pf9
+  peripheral: uart7
+  signal: cts
+  kind: af_fixed
+  af: 8
+- pin: pg0
+  peripheral: fmc
+  signal: a10
+  kind: af_fixed
+  af: 12
+- pin: pg1
+  peripheral: fmc
+  signal: a11
+  kind: af_fixed
+  af: 12
+- pin: pg10
+  peripheral: fmc
+  signal: ne3
+  kind: af_fixed
+  af: 12
+- pin: pg10
+  peripheral: sai2
+  signal: sd_b
+  kind: af_fixed
+  af: 10
+- pin: pg10
+  peripheral: sdmmc2
+  signal: d1
+  kind: af_fixed
+  af: 11
+- pin: pg11
+  peripheral: fmc
+  signal: int
+  kind: af_fixed
+  af: 12
+- pin: pg11
+  peripheral: sdmmc2
+  signal: d2
+  kind: af_fixed
+  af: 10
+- pin: pg12
+  peripheral: fmc
+  signal: ne4
+  kind: af_fixed
+  af: 12
+- pin: pg12
+  peripheral: lptim1
+  signal: in1
+  kind: af_fixed
+  af: 3
+- pin: pg12
+  peripheral: sdmmc2
+  signal: d3
+  kind: af_fixed
+  af: 11
+- pin: pg12
+  peripheral: usart6
+  signal: de
+  kind: af_fixed
+  af: 8
+- pin: pg12
+  peripheral: usart6
+  signal: rts
+  kind: af_fixed
+  af: 8
+- pin: pg13
+  peripheral: fmc
+  signal: a24
+  kind: af_fixed
+  af: 12
+- pin: pg13
+  peripheral: lptim1
+  signal: out
+  kind: af_fixed
+  af: 3
+- pin: pg13
+  peripheral: usart6
+  signal: cts
+  kind: af_fixed
+  af: 8
+- pin: pg14
+  peripheral: fmc
+  signal: a25
+  kind: af_fixed
+  af: 12
+- pin: pg14
+  peripheral: lptim1
+  signal: etr
+  kind: af_fixed
+  af: 3
+- pin: pg14
+  peripheral: quadspi
+  signal: bk2_io3
+  kind: af_fixed
+  af: 9
 - pin: pg14
   peripheral: usart6
   signal: tx
   kind: af_fixed
   af: 8
+- pin: pg15
+  peripheral: fmc
+  signal: sdncas
+  kind: af_fixed
+  af: 12
+- pin: pg15
+  peripheral: usart6
+  signal: cts
+  kind: af_fixed
+  af: 8
+- pin: pg2
+  peripheral: fmc
+  signal: a12
+  kind: af_fixed
+  af: 12
+- pin: pg3
+  peripheral: fmc
+  signal: a13
+  kind: af_fixed
+  af: 12
+- pin: pg4
+  peripheral: fmc
+  signal: a14
+  kind: af_fixed
+  af: 12
+- pin: pg4
+  peripheral: fmc
+  signal: ba0
+  kind: af_fixed
+  af: 12
+- pin: pg5
+  peripheral: fmc
+  signal: a15
+  kind: af_fixed
+  af: 12
+- pin: pg5
+  peripheral: fmc
+  signal: ba1
+  kind: af_fixed
+  af: 12
+- pin: pg8
+  peripheral: fmc
+  signal: sdclk
+  kind: af_fixed
+  af: 12
+- pin: pg8
+  peripheral: usart6
+  signal: de
+  kind: af_fixed
+  af: 8
+- pin: pg8
+  peripheral: usart6
+  signal: rts
+  kind: af_fixed
+  af: 8
+- pin: pg9
+  peripheral: fmc
+  signal: nce
+  kind: af_fixed
+  af: 12
+- pin: pg9
+  peripheral: fmc
+  signal: ne2
+  kind: af_fixed
+  af: 12
+- pin: pg9
+  peripheral: quadspi
+  signal: bk2_io2
+  kind: af_fixed
+  af: 9
+- pin: pg9
+  peripheral: sai2
+  signal: fs_b
+  kind: af_fixed
+  af: 10
+- pin: pg9
+  peripheral: sdmmc2
+  signal: d0
+  kind: af_fixed
+  af: 11
 - pin: pg9
   peripheral: usart6
   signal: rx
   kind: af_fixed
   af: 8
 - pin: ph10
+  peripheral: fmc
+  signal: d18
+  kind: af_fixed
+  af: 12
+- pin: ph10
   peripheral: tim5
   signal: ch1
   kind: af_fixed
   af: 2
 - pin: ph11
+  peripheral: fmc
+  signal: d19
+  kind: af_fixed
+  af: 12
+- pin: ph11
   peripheral: tim5
   signal: ch2
   kind: af_fixed
   af: 2
+- pin: ph12
+  peripheral: fmc
+  signal: d20
+  kind: af_fixed
+  af: 12
 - pin: ph12
   peripheral: tim5
   signal: ch3
@@ -1648,6 +3297,16 @@ routes:
   kind: af_fixed
   af: 9
 - pin: ph13
+  peripheral: fmc
+  signal: d21
+  kind: af_fixed
+  af: 12
+- pin: ph13
+  peripheral: tim8
+  signal: ch1n
+  kind: af_fixed
+  af: 3
+- pin: ph13
   peripheral: uart4
   signal: tx
   kind: af_fixed
@@ -1658,15 +3317,75 @@ routes:
   kind: af_fixed
   af: 9
 - pin: ph14
+  peripheral: fmc
+  signal: d22
+  kind: af_fixed
+  af: 12
+- pin: ph14
+  peripheral: tim8
+  signal: ch2n
+  kind: af_fixed
+  af: 3
+- pin: ph14
   peripheral: uart4
   signal: rx
   kind: af_fixed
   af: 8
+- pin: ph15
+  peripheral: fmc
+  signal: d23
+  kind: af_fixed
+  af: 12
+- pin: ph15
+  peripheral: tim8
+  signal: ch3n
+  kind: af_fixed
+  af: 3
+- pin: ph2
+  peripheral: fmc
+  signal: sdcke0
+  kind: af_fixed
+  af: 12
+- pin: ph2
+  peripheral: lptim1
+  signal: in2
+  kind: af_fixed
+  af: 3
+- pin: ph2
+  peripheral: quadspi
+  signal: bk2_io0
+  kind: af_fixed
+  af: 9
+- pin: ph2
+  peripheral: sai2
+  signal: sck_b
+  kind: af_fixed
+  af: 10
+- pin: ph3
+  peripheral: fmc
+  signal: sdne0
+  kind: af_fixed
+  af: 12
+- pin: ph3
+  peripheral: quadspi
+  signal: bk2_io1
+  kind: af_fixed
+  af: 9
+- pin: ph3
+  peripheral: sai2
+  signal: mclk_b
+  kind: af_fixed
+  af: 10
 - pin: ph4
   peripheral: i2c2
   signal: scl
   kind: af_fixed
   af: 4
+- pin: ph5
+  peripheral: fmc
+  signal: sdnwe
+  kind: af_fixed
+  af: 12
 - pin: ph5
   peripheral: i2c2
   signal: sda
@@ -1678,6 +3397,16 @@ routes:
   kind: af_fixed
   af: 5
 - pin: ph6
+  peripheral: fmc
+  signal: sdne1
+  kind: af_fixed
+  af: 12
+- pin: ph6
+  peripheral: i2c2
+  signal: smba
+  kind: af_fixed
+  af: 4
+- pin: ph6
   peripheral: spi5
   signal: sck
   kind: af_fixed
@@ -1687,6 +3416,11 @@ routes:
   signal: ch1
   kind: af_fixed
   af: 9
+- pin: ph7
+  peripheral: fmc
+  signal: sdcke1
+  kind: af_fixed
+  af: 12
 - pin: ph7
   peripheral: i2c3
   signal: scl
@@ -1698,8 +3432,23 @@ routes:
   kind: af_fixed
   af: 5
 - pin: ph8
+  peripheral: fmc
+  signal: d16
+  kind: af_fixed
+  af: 12
+- pin: ph8
   peripheral: i2c3
   signal: sda
+  kind: af_fixed
+  af: 4
+- pin: ph9
+  peripheral: fmc
+  signal: d17
+  kind: af_fixed
+  af: 12
+- pin: ph9
+  peripheral: i2c3
+  signal: smba
   kind: af_fixed
   af: 4
 - pin: ph9
@@ -1708,8 +3457,18 @@ routes:
   kind: af_fixed
   af: 9
 - pin: pi0
+  peripheral: fmc
+  signal: d24
+  kind: af_fixed
+  af: 12
+- pin: pi0
   peripheral: spi2
   signal: cs
+  kind: af_fixed
+  af: 5
+- pin: pi0
+  peripheral: spi2
+  signal: i2s_ws
   kind: af_fixed
   af: 5
 - pin: pi0
@@ -1718,10 +3477,35 @@ routes:
   kind: af_fixed
   af: 2
 - pin: pi1
+  peripheral: fmc
+  signal: d25
+  kind: af_fixed
+  af: 12
+- pin: pi1
+  peripheral: spi2
+  signal: i2s_ck
+  kind: af_fixed
+  af: 5
+- pin: pi1
   peripheral: spi2
   signal: sck
   kind: af_fixed
   af: 5
+- pin: pi1
+  peripheral: tim8
+  signal: bkin2
+  kind: af_fixed
+  af: 3
+- pin: pi10
+  peripheral: fmc
+  signal: d31
+  kind: af_fixed
+  af: 12
+- pin: pi2
+  peripheral: fmc
+  signal: d26
+  kind: af_fixed
+  af: 12
 - pin: pi2
   peripheral: spi2
   signal: miso
@@ -1733,20 +3517,80 @@ routes:
   kind: af_fixed
   af: 3
 - pin: pi3
+  peripheral: fmc
+  signal: d27
+  kind: af_fixed
+  af: 12
+- pin: pi3
+  peripheral: spi2
+  signal: i2s_sd
+  kind: af_fixed
+  af: 5
+- pin: pi3
   peripheral: spi2
   signal: mosi
   kind: af_fixed
   af: 5
+- pin: pi3
+  peripheral: tim8
+  signal: etr
+  kind: af_fixed
+  af: 3
+- pin: pi4
+  peripheral: fmc
+  signal: nbl2
+  kind: af_fixed
+  af: 12
+- pin: pi4
+  peripheral: sai2
+  signal: mclk_a
+  kind: af_fixed
+  af: 10
+- pin: pi4
+  peripheral: tim8
+  signal: bkin
+  kind: af_fixed
+  af: 3
+- pin: pi5
+  peripheral: fmc
+  signal: nbl3
+  kind: af_fixed
+  af: 12
+- pin: pi5
+  peripheral: sai2
+  signal: sck_a
+  kind: af_fixed
+  af: 10
 - pin: pi5
   peripheral: tim8
   signal: ch1
   kind: af_fixed
   af: 3
 - pin: pi6
+  peripheral: fmc
+  signal: d28
+  kind: af_fixed
+  af: 12
+- pin: pi6
+  peripheral: sai2
+  signal: sd_a
+  kind: af_fixed
+  af: 10
+- pin: pi6
   peripheral: tim8
   signal: ch2
   kind: af_fixed
   af: 3
+- pin: pi7
+  peripheral: fmc
+  signal: d29
+  kind: af_fixed
+  af: 12
+- pin: pi7
+  peripheral: sai2
+  signal: fs_a
+  kind: af_fixed
+  af: 10
 - pin: pi7
   peripheral: tim8
   signal: ch3
@@ -1757,6 +3601,11 @@ routes:
   signal: rx
   kind: af_fixed
   af: 9
+- pin: pi9
+  peripheral: fmc
+  signal: d30
+  kind: af_fixed
+  af: 12
 - pin: pi9
   peripheral: uart4
   signal: rx

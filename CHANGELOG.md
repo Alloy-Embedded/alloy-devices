@@ -5,6 +5,102 @@ release of the silicon facts every generated header is built from. Schema
 changes are called out explicitly — consumers pin the schema version they
 understand and fail loudly on a mismatch.
 
+## Unreleased
+
+### Schema
+
+- `alloy.chip.v1` gains an **optional** peripheral key `dma_routes`. On a chip
+  with no DMA request router (F4/F7/L4) a DMA "request" number is only
+  meaningful relative to the controller and channel it selects on, and a signal
+  usually offers several alternative channels. `dma_routes` records the whole
+  triple; `dma_requests` keeps its stated meaning — a chip-wide router id —
+  and is now emitted only where one exists. A new lint rejects a `dma_routes`
+  entry naming a controller the chip does not have.
+
+### Fixed — builder
+
+Four bugs in `builders/st/build.py`, each of which had silently shaped every
+generated file. All are covered by `tests/test_builder_st.py`.
+
+- **DMA geometry was never emitted.** `_enrich_family` looked for a peripheral
+  literally named `dmamux` (upstream calls it `DMAMUX1`) and for vectors
+  matching `DMA1_CHANNEL1` (upstream writes `DMA1_Channel1`). Both misses were
+  silent, so `dma1` shipped with no `channels` block — `count`, `mux_offset`
+  and the three IRQ lines that `st_dma_v1.hpp` reads — on **every** generated
+  STM32G0 chip. Both facts are now derived, from the channel table and from
+  each controller's own interrupt list, which also gets the **second**
+  controller right: the G0B1's `dma2` is five channels at `mux_offset: 7`.
+- **DMA requests lost their controller and channel.** For families with no
+  DMAMUX the builder kept only the per-channel selector, under `dma_requests` —
+  so `stm32f407vg`'s `spi1` claimed `{rx: 3, tx: 3}` where the silicon fact is
+  "RX on DMA2 channel 0 **or** 2, TX on channel 3 or 5, selector 3". The
+  alternatives were also collapsed by the dict. Now `dma_routes` (above).
+- **`_SIGNAL_MAP` was a twelve-entry allow-list** and every route whose signal
+  was not in it was dropped without a word: 291 of the STM32G0B1RE's 501, and
+  with them every complementary PWM output (`ch1n`…), every timer break and
+  external-trigger input, UART flow control and RS-485 `de`, I2S, comparator
+  inputs, DAC outputs and USB `dm`/`dp`. Signals are now normalised, not
+  filtered (+93,943 routes across the tree).
+- **`irq` named the I2C ERROR vector.** With no `GLOBAL` interrupt the builder
+  took upstream's first entry, and `ER` sorts before `EV` — so all 149
+  `stm32f4*.yaml` (and F7/G4, 1098 instances in all, plus 37 FMPI2C) told an
+  event-driven driver to attach to a vector a transfer never raises. `irq` now
+  prefers the vector that carries the block's normal events. **Still open, and
+  reported rather than guessed:** a block with several genuinely distinct
+  vectors and no preferred one (advanced-timer BRK/CC/COM/TRG/UP, bxCAN
+  RX0/RX1/TX/SCE, FDCAN IT0/IT1) keeps falling back to upstream's first entry.
+  Every such block is `uncurated`, so nothing generates against that choice —
+  but curating one needs a schema decision about carrying more than one vector
+  per peripheral, which is the maintainer's to make.
+
+### Added — builder inputs
+
+- `builders/st/verified.yaml` — hardware-verification records re-stamped into
+  generated `provenance.verified` (BUILDERS.md §4). A part listed here is
+  GRADUATED: the builder owns its file, and regeneration can no longer delete
+  what silicon taught us.
+- `builders/st/patches/stm32g0.yaml` — corrections to **upstream** data, with
+  provenance. A patch may only amend a peripheral the part already has, and an
+  `irq` it sets must exist in that part's vector table; the run prints how many
+  parts each entry reached. Three entries: port E's clock enable (upstream
+  omits `GPIOE`'s RCC block *and* `GPIOEEN` from the shared register
+  description — 31 parts), and the RCC vector, which upstream attaches to no
+  peripheral at all on any G0 (103 parts).
+
+### Data
+
+- **STM32G0B1RE graduated**: `chips/st/stm32g0b1.yaml` (hand-written, 23
+  peripherals) is replaced by generated `chips/st/stm32g0b1re.yaml` with all
+  **65** the die has, of which **37 are curated** and **28 arrive as
+  `uncurated: true`** — USB + USBRAM, UCPD1/2, LPUART1/2, LPTIM1/2, three
+  comparators, CEC, CRC, CRS, TIM1/6/7/14/15/16/17, SYSCFG, TAMP, WWDG,
+  DBGMCU, VREFBUF, VREFINTCAL, UID. That is the point: the gap is now visible
+  instead of absent. Every hand-curated fact is reproduced
+  (bases, gates, IRQ numbers, all 8 hand routes at the same AFs, the
+  hardware-verified PLL program, ADC channels, DMA geometry, EXTI grouping,
+  `port_index`, the FDCAN↔RAM companion); the removals are enumerated in the
+  commit that landed it. Instance names follow upstream on graduation:
+  `adc`→`adc1`, `dac`→`dac1`, `dmamux`→`dmamux1`.
+- **27 new STM32G0 parts** — the whole G0B1 and G0C1 lines (STM32G0B1CB …
+  STM32G0C1VE), which had no chip file at all.
+- `ip_map.yaml` binds eight IP tags that already had a curated register file
+  and were still marked `uncurated`: `exti:g0`, `pwr:g0`, `iwdg:v2`,
+  `rtc:v3_base`, `dac:v4`, `can:fdcan_v1`, `fdcanram:v1`, `eth:v1c`. Each is a
+  binding a hand-verified chip file already made, so leaving them uncurated
+  made the builder unable to reproduce a hand-verified fact.
+- `memories[].erase_size` is now read from upstream (179 files) — and
+  deliberately omitted where a part's flash regions disagree on it, which is
+  most of F4/F7. `emit/board.py` uses it to refuse an nvm/fs region that is not
+  a whole number of pages.
+- **Every I/O pin of a part** now appears under `pins:`, not only the ones some
+  peripheral routes to (+9,528). Analog-only and unused pads are pins of the
+  package and a configurator has to draw them. Package-level **pads** (power,
+  ground, NRST) are a different matter — see the note in BUILDERS.md §8.
+- Flash size corrected on 4 parts (`stm32g0b0ce/ke/re`, `stm32g0b0ve`):
+  262144 → 524288. Their two 256 KiB banks are contiguous; the committed files
+  predated the contiguous-run logic and contradicted their own part-number
+  flash code.
+
 ## 0.3.0 — 2026-08-07
 
 ### Schema

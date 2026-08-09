@@ -316,6 +316,16 @@ def lint_chips(db: Database) -> None:
                     db.issues.append(Issue(path, f"peripheral {name}: companion {cname} references unknown peripheral {target}"))
                 elif periphs[target].get("uncurated"):
                     db.issues.append(Issue(path, f"peripheral {name}: companion {cname} references UNCURATED peripheral {target}"))
+            # A dma_route names the controller that serves the signal. The
+            # whole point of the field is that the controller is load-bearing,
+            # so a dangling name is worse than no route at all.
+            for sig, entries in (p.get("dma_routes") or {}).items():
+                for entry in entries:
+                    if entry["controller"] not in periphs:
+                        db.issues.append(Issue(
+                            path,
+                            f"peripheral {name}: dma_routes.{sig} references unknown "
+                            f"DMA controller {entry['controller']}"))
 
         boot = doc.get("boot")
         if boot and boot["kind"] == "rp2040_boot2":

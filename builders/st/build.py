@@ -17,6 +17,7 @@ import argparse
 import json
 import re
 import subprocess
+from fnmatch import fnmatch
 from pathlib import Path
 
 import yaml
@@ -41,9 +42,37 @@ _FAMILY = {
     "stm32l4": {"rcc_json": "rcc_l4", "rcc_ours": "rcc_l4"},
 }
 
-_SIGNAL_MAP = {"TX": "tx", "RX": "rx", "SCL": "scl", "SDA": "sda",
-               "SCK": "sck", "MISO": "miso", "MOSI": "mosi", "NSS": "cs",
-               "CH1": "ch1", "CH2": "ch2", "CH3": "ch3", "CH4": "ch4"}
+# Upstream signal names we deliberately call something else. Everything ELSE
+# passes through `_signal` normalised — an allow-list here silently dropped
+# every route it had not heard of (58% of the G0B1RE's, including every
+# complementary PWM output, every timer break/ETR input and all of USB).
+_SIGNAL_RENAME = {"NSS": "cs"}
+
+_SIGNAL_BAD = re.compile(r"[^0-9a-z]+")
+
+
+def _signal(raw: str) -> str | None:
+    """Our name for an upstream pin/DMA signal, or None if unusable.
+
+    The chip schema demands `^[a-z][a-z0-9_]*$`, so `VREF+` becomes `vref`,
+    `I2S_SD` becomes `i2s_sd`, and anything that cannot start with a letter
+    (a bare number) is refused rather than mangled into something a driver
+    might later mistake for a real name.
+    """
+    raw = (raw or "").strip()
+    if not raw:
+        return None
+    renamed = _SIGNAL_RENAME.get(raw.upper())
+    if renamed is not None:
+        return renamed
+    name = _SIGNAL_BAD.sub("_", raw.lower()).strip("_")
+    if not name or not name[0].isalpha():
+        return None
+    return name
+
+
+# embassy names a non-DMAMUX channel `DMA2_CH0` (F4/F7 call that a *stream*).
+_DMA_CHANNEL_RE = re.compile(r"^(DMA\d+)_(?:CH|STREAM)(\d+)$", re.IGNORECASE)
 
 
 def _http_get(url: str) -> bytes:
@@ -163,9 +192,129 @@ def _rcc_gate(rcc_ir: dict, ours_by_offset: dict[int, str],
     return None
 
 
+# Which of a peripheral's vectors `irq` means, most-preferred first. `irq` is
+# the vector a DRIVER attaches to, so it must be the one that carries the
+# block's normal completion/transfer events.
+#
+# Most blocks have one and call it GLOBAL. The I2C (and F4's FMPI2C) splits
+# into EV and ER, and picking "whatever upstream listed first" picked ER —
+# alphabetically first, and the vector an event-driven driver would wait on
+# forever, because transfer events land on EV. That was true of all 149
+# generated stm32f4*.yaml.
+_IRQ_PREFERRED = ("GLOBAL", "", "EV")
+
+
+def _peripheral_irq(p: dict) -> str | None:
+    """The vector name for a peripheral, or None.
+
+    NOTE the remaining ambiguity, deliberately left alone: a block with several
+    genuinely distinct vectors and no preferred one (the advanced timer's
+    BRK/CC/COM/TRG/UP, bxCAN's RX0/RX1/TX/SCE, FDCAN's IT0/IT1) still falls
+    back to upstream's first entry. Every such block is `uncurated` in
+    ip_map.yaml today, so nothing generates a driver against that choice —
+    but curating one of them means teaching the schema to carry more than a
+    single vector per peripheral first.
+    """
+    entries = p.get("interrupts") or []
+    for want in _IRQ_PREFERRED:
+        for i in entries:
+            if i.get("signal", "") == want:
+                return i["interrupt"]
+    return entries[0]["interrupt"] if entries else None
+
+
+def _dma_facts(p: dict) -> tuple[dict[str, int], dict[str, list[dict]]]:
+    """One peripheral's DMA facts, split by what the silicon actually offers.
+
+    Two upstream shapes, and they mean different things:
+
+    * `{signal, dmamux, request}` (G0/G4/L5, anything with a DMAMUX) — the
+      request id is CHIP-WIDE: it selects this source on any channel of any
+      controller behind that mux, so the id alone is the whole fact. That is
+      what the schema's `dma_requests` describes.
+    * `{signal, channel: "DMA2_CH0", request}` (F4/F7/L4) — there is no router.
+      `request` is the per-stream channel SELECTOR and is meaningless without
+      the controller and stream it selects on; a peripheral usually offers
+      several alternatives. Flattening that to `{rx: 3}` both mislabelled the
+      number and threw the alternatives away, so it goes to `dma_routes`.
+    """
+    reqs: dict[str, int] = {}
+    routes: dict[str, list[dict]] = {}
+    for ch in p.get("dma_channels", []):
+        sig = _signal(ch.get("signal", ""))
+        if sig is None:
+            continue
+        req = ch.get("request")
+        if ch.get("dmamux"):
+            if req is not None:
+                reqs[sig] = req
+            continue
+        m = _DMA_CHANNEL_RE.match(str(ch.get("channel") or ""))
+        if m is None:
+            continue
+        entry = {"controller": m.group(1).lower(), "channel": int(m.group(2))}
+        if req is not None:
+            entry["request"] = req
+        bucket = routes.setdefault(sig, [])
+        if entry not in bucket:
+            bucket.append(entry)
+    for bucket in routes.values():
+        bucket.sort(key=lambda e: (e["controller"], e["channel"]))
+    return reqs, routes
+
+
 def _load_ip_map() -> tuple[dict[str, str], dict[str, str]]:
     doc = yaml.safe_load((HERE / "ip_map.yaml").read_text())
     return doc["map"], doc.get("name_overrides", {})
+
+
+def _load_patches(family: str) -> list[dict]:
+    path = HERE / "patches" / f"{family}.yaml"
+    if not path.exists():
+        return []
+    return (yaml.safe_load(path.read_text()) or {}).get("patches") or []
+
+
+def _apply_patches(patches: list[dict], part: str, chip: dict,
+                   applied: dict[str, int]) -> None:
+    """Corrections to upstream data (BUILDERS.md §4), recorded in patches/.
+
+    Deliberately unable to do much: a patch may only amend a peripheral the
+    part already has, and an `irq` it sets must name a vector in that part's
+    own table. Anything else and a stale patch would start inventing silicon.
+    """
+    vectors = {i["name"] for i in chip.get("interrupts", [])}
+    for patch in patches:
+        if not any(fnmatch(part.upper(), pat.upper())
+                   for pat in patch.get("parts", [])):
+            continue
+        hit = False
+        for name, fields in (patch.get("peripherals") or {}).items():
+            target = chip["peripherals"].get(name)
+            if target is None:
+                continue
+            if "irq" in fields and fields["irq"] not in vectors:
+                continue
+            target.update(fields)
+            hit = True
+        if hit:
+            applied[patch["id"]] = applied.get(patch["id"], 0) + 1
+
+
+def _load_verified() -> dict[str, list[str]]:
+    """Hardware-verification records to re-stamp, keyed by part number.
+
+    A part listed here is GRADUATED: its hand-curated chip file has been
+    replaced by builder output, and these notes — the things silicon, not
+    upstream, taught us — are stamped back into the generated file's
+    `provenance.verified` on every run. Without this, a regeneration would
+    quietly delete the only record of what a board actually proved.
+    """
+    path = HERE / "verified.yaml"
+    if not path.exists():
+        return {}
+    doc = yaml.safe_load(path.read_text()) or {}
+    return {k.upper(): list(v) for k, v in (doc.get("records") or {}).items()}
 
 
 def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
@@ -213,10 +362,7 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
             entry["ip"] = mapped
         if gate and name != "rcc":
             entry["gate"] = gate
-        irq = next((i["interrupt"] for i in p.get("interrupts", [])
-                    if i.get("signal") in ("GLOBAL", "")), None)
-        if irq is None and p.get("interrupts"):
-            irq = p["interrupts"][0]["interrupt"]
+        irq = _peripheral_irq(p)
         if irq and irq in irq_names:
             entry["irq"] = irq
         if rcc and mapped != "uncurated" and name not in ("rcc", "flash"):
@@ -232,18 +378,16 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
             hclk_is_ahb = family == "stm32l4" and bus.startswith("HCLK")
             entry["kernel_clock"] = ("ahb" if ("AHB" in bus or hclk_is_ahb)
                                      else "apb2" if bus.endswith("2") else "apb")
-        dma_reqs = {}
-        for ch in p.get("dma_channels", []):
-            sig = ch.get("signal", "")
-            req = ch.get("request")
-            if req is not None and sig:
-                dma_reqs[sig.lower()] = req
-        if dma_reqs and mapped != "uncurated":
-            entry["dma_requests"] = dict(sorted(dma_reqs.items()))
+        dma_reqs, dma_routes = _dma_facts(p)
+        if mapped != "uncurated":
+            if dma_reqs:
+                entry["dma_requests"] = dict(sorted(dma_reqs.items()))
+            if dma_routes:
+                entry["dma_routes"] = {k: dma_routes[k] for k in sorted(dma_routes)}
         periphs[name] = entry
 
         for pin in p.get("pins", []):
-            sig = _SIGNAL_MAP.get(pin.get("signal", ""))
+            sig = _signal(pin.get("signal", ""))
             af = pin.get("af")
             pname = pin["pin"].lower().split("_")[0]  # PA2 -> pa2
             if sig is None or af is None or len(pname) < 3:
@@ -252,13 +396,28 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
             if f"gpio{port}" not in {pp["name"].lower() for pp in core["peripherals"]}:
                 continue
             pins[pname] = {"port": port, "index": int(pname[2:])}
-            routes.append({"pin": pname, "peripheral": name, "signal": sig,
-                           "kind": "af_fixed", "af": af})
+            route = {"pin": pname, "peripheral": name, "signal": sig,
+                     "kind": "af_fixed", "af": af}
+            if route not in routes:
+                routes.append(route)
+
+    # Every I/O pin of the part, not only the ones some peripheral routes to.
+    # A pinout picker has to draw the analog-only and unused pads too, and
+    # upstream's core pin list is exactly that set (it is the PACKAGE's I/O,
+    # so a die port the package does not bond out simply does not appear).
+    port_periphs = {pp["name"].lower() for pp in core["peripherals"]}
+    for pin in core.get("pins") or []:
+        pname = str(pin.get("name", "")).lower()
+        if not re.fullmatch(r"p[a-z]\d{1,2}", pname):
+            continue
+        if f"gpio{pname[1]}" not in port_periphs:
+            continue
+        pins.setdefault(pname, {"port": pname[1], "index": int(pname[2:])})
 
     if unmapped:
         return None, unmapped  # caller collects; one report for the whole run
 
-    _enrich_family(family, periphs, core, irq_names)
+    _enrich_family(family, periphs, core)
 
     raw = src["memory"][0] if isinstance(src["memory"][0], list) else src["memory"]
     # Main flash = the contiguous run from the flash base (F7 splits one
@@ -279,8 +438,17 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
                 cur += m["size"]
             elif m["address"] > cur:
                 break  # gap: OTP / a second bank
-        flat.append({"name": "flash", "kind": "flash",
-                     "base": f"0x{base:08X}", "size": total})
+        entry = {"name": "flash", "kind": "flash",
+                 "base": f"0x{base:08X}", "size": total}
+        # Erase granularity, when every region of the run agrees on it. This is
+        # what makes an nvm/fs board region checkable (emit/board.py refuses a
+        # region that is not a whole number of pages), and it is a real
+        # upstream fact — not a family constant we would have to maintain.
+        erase = {m.get("settings", {}).get("erase_size") for m in flash_regs
+                 if m["address"] < cur}
+        if len(erase) == 1 and (only := erase.pop()):
+            entry["erase_size"] = int(only)
+        flat.append(entry)
     if ram_regs:
         if family == "stm32l4":
             # L4 maps SRAM1 (0x20000000) and SRAM2 contiguously behind it —
@@ -338,9 +506,15 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
     return chip, set()
 
 
-def _enrich_family(family: str, periphs: dict, core: dict, irq_names: set) -> None:
+def _enrich_family(family: str, periphs: dict, core: dict) -> None:
     """Family knowledge the upstream JSON does not carry in our shape:
-    driver-facing channel constants and DMA controller geometry."""
+    driver-facing channel constants and DMA controller geometry.
+
+    Gated to stm32g0 on purpose. The `irqline1 / irqline2_3 / irqline4_7`
+    grouping below is the G0's own vector layout; on L4/G4 every DMA channel
+    has its own vector, so the same three fields would quietly file channel 3
+    under channel 2's handler.
+    """
     if family != "stm32g0":
         return
     # ADC internal channels (RM0444: VREFINT=13, TSEN=12) + request name.
@@ -350,29 +524,97 @@ def _enrich_family(family: str, periphs: dict, core: dict, irq_names: set) -> No
             reqs = p.get("dma_requests", {})
             if name in reqs:  # embassy signals the request with the periph name
                 p["dma_requests"] = {"conv": reqs[name]}
-    # DMA1 geometry: channel count from the core-level channel list, the
-    # DMAMUX pairing, and the shared IRQ grouping (per-part names differ:
-    # G030 has 2_3 / 4_5, G071 has 4_5_6_7 — resolve from the actual list).
-    if "dma1" in periphs and "dmamux" in periphs:
-        count = sum(1 for ch in core.get("dma_channels", [])
-                    if ch.get("dma", "").upper() == "DMA1")
-        line1 = next((n for n in irq_names if n.startswith("DMA1_CHANNEL1")), None)
-        line23 = next((n for n in irq_names if n.startswith("DMA1_CHANNEL2")), None)
-        line4x = next((n for n in irq_names if n.startswith("DMA1_CHANNEL4")
-                       or n.startswith("DMA1_CH4")), None)
-        irq_nums = {i["name"]: i["number"] for i in core["interrupts"]}
-        if count and line1 and line23 and line4x:
-            periphs["dma1"]["channels"] = {
-                "count": count,
-                "mux_offset": 0,
-                "irqline1": irq_nums[line1],
-                "irqline2_3": irq_nums[line23],
-                "irqline4_7": irq_nums[line4x],
-            }
-            periphs["dma1"]["companions"] = {"mux": "dmamux"}
+    # DMA geometry, per controller: how many channels it has, where its block
+    # of DMAMUX channels starts, and which vector each channel raises.
+    #
+    # Both lookups here used to be spelled by hand and both missed. The mux was
+    # matched as the literal name "dmamux" while upstream calls it DMAMUX1, and
+    # the vectors were matched with `startswith("DMA1_CHANNEL1")` against names
+    # that read `DMA1_Channel1` — so the whole block was dead and every
+    # generated G0 chip shipped a dma1 with no geometry at all. Both are now
+    # DERIVED: the mux from the channel table, the vectors from the
+    # controller's own interrupt list.
+    irq_nums = {i["name"]: i["number"] for i in core["interrupts"]}
+    chans = core.get("dma_channels") or []
+    for p in core["peripherals"]:
+        name = p["name"].lower()
+        if periphs.get(name, {}).get("ip") != "st/dma_v1":
+            continue
+        mine = [ch for ch in chans if ch.get("dma", "").upper() == p["name"].upper()]
+        if not mine:
+            continue
+        vector: dict[int, int] = {}
+        for entry in p.get("interrupts", []) or []:
+            m = re.fullmatch(r"CH(\d+)", str(entry.get("signal", "")), re.IGNORECASE)
+            if m and entry.get("interrupt") in irq_nums:
+                vector[int(m.group(1))] = irq_nums[entry["interrupt"]]
+        # st_dma_v1.hpp addresses channels 1..N and groups their vectors the
+        # G0 way (1 / 2-3 / 4-7); a controller that does not answer for all
+        # three groups gets no geometry rather than a guessed one.
+        if not all(k in vector for k in (1, 2, 4)):
+            continue
+        geometry = {
+            "count": len(mine),
+            "mux_offset": min(ch.get("dmamux_channel", 0) for ch in mine),
+            "irqline1": vector[1],
+            "irqline2_3": vector[2],
+            "irqline4_7": vector[4],
+        }
+        periphs[name]["channels"] = geometry
+        mux = next((ch["dmamux"].lower() for ch in mine if ch.get("dmamux")), None)
+        if mux is not None and mux in periphs:
+            periphs[name]["companions"] = {"mux": mux}
     # The G0 dmamux has no own gate (clocked with DMA1) — drop a copied one.
-    if "dmamux" in periphs:
-        periphs["dmamux"].pop("gate", None)
+    for name, p in periphs.items():
+        if p.get("ip") == "st/dmamux_v1":
+            p.pop("gate", None)
+
+    # --- pin interrupts: which vector each EXTI line raises, and the port code
+    # each GPIO block answers to.
+    exti_name = next((n for n, p in periphs.items()
+                      if p.get("ip") == "st/exti_g0"), None)
+    if exti_name is not None:
+        lines: dict[int, str] = {}
+        for p in core["peripherals"]:
+            if p["name"].lower() != exti_name:
+                continue
+            for entry in p.get("interrupts") or []:
+                m = re.fullmatch(r"EXTI(\d+)", str(entry.get("signal", "")))
+                if m and entry.get("interrupt") in irq_nums:
+                    lines[int(m.group(1))] = entry["interrupt"]
+        # Contiguous runs of lines that share a vector become one group — the
+        # shape emit/device.py reads. Upstream lists them per line; collapsing
+        # is arithmetic, not a judgement.
+        groups: list[dict] = []
+        for line in sorted(lines):
+            if groups and groups[-1]["irq"] == lines[line] and groups[-1]["last"] == line - 1:
+                groups[-1]["last"] = line
+            else:
+                groups.append({"irq": lines[line], "first": line, "last": line})
+        if groups:
+            periphs[exti_name]["irq_lines"] = groups
+            # `irq` is for the single-vector case (schema). Leaving it beside
+            # irq_lines would name the first group's vector as if it were the
+            # block's only one.
+            periphs[exti_name].pop("irq", None)
+        for name, p in periphs.items():
+            if p.get("ip") != "st/gpio_v2":
+                continue
+            # RM0444 §12.1.3 EXTICR: the port SELECT code is fixed by the
+            # letter (PA=0 … PF=5), NOT by the die's alphabetical position —
+            # the G071 has no port E, and its gpiof is still 5, a hole at 4.
+            p["port_index"] = ord(name[len("gpio")]) - ord("a")
+            p["companions"] = {"exti": exti_name}
+
+    # --- a CAN controller and the message RAM it must be pointed at. The
+    # pairing is by instance number (FDCAN1 <-> FDCANRAM1), which is how the
+    # hand-curated G0B1 file stated it.
+    for name, p in periphs.items():
+        if p.get("ip") != "st/fdcan_v1":
+            continue
+        ram = f"fdcanram{name[len('fdcan'):]}"
+        if periphs.get(ram, {}).get("ip") == "st/fdcanram_v1":
+            p["companions"] = {"ram": ram}
 
 
 def emit_yaml(chip: dict) -> str:
@@ -398,14 +640,22 @@ def main() -> None:
     ours = yaml.safe_load((REPO / "registers" / "st" / f"{fam['rcc_ours']}.yaml").read_text())
     ours_by_offset = {int(r["offset"], 16): r["name"] for r in ours["registers"]}
 
-    # Parts already covered by a hand-verified chip file (matched by the
-    # `part` field, since the filename may differ, e.g. stm32f722.yaml holds
+    # GRADUATED parts: the builder now owns the file, and the hardware notes
+    # its hand-curated predecessor carried are re-stamped from verified.yaml so
+    # regeneration cannot erase what silicon taught us (BUILDERS.md §4).
+    graduated = _load_verified()
+    patches = _load_patches(args.family)
+    patched: dict[str, int] = {}
+
+    # Parts still covered by a hand-verified chip file (matched by the `part`
+    # field, since the filename may differ, e.g. stm32f722.yaml holds
     # STM32F722ZE): never regenerate — the silicon-validated file wins.
     verified_parts: set[str] = set()
     for existing in (REPO / "chips" / "st").glob("*.yaml"):
         doc = yaml.safe_load(existing.read_text())
         if doc.get("provenance", {}).get("verified"):
             verified_parts.add(doc["part"].upper())
+    verified_parts -= set(graduated)
 
     prefix = args.family.replace("stm32", "STM32").upper()
     parts = _list_family_chips(sha, prefix)
@@ -427,11 +677,15 @@ def main() -> None:
             all_unmapped |= unmapped
             unmapped_parts += 1
             continue
+        _apply_patches(patches, part, chip, patched)
+        notes = graduated.get(part.upper())
+        if notes:
+            chip["provenance"]["verified"] = list(notes)
         target = out_dir / f"{part.lower()}.yaml"
         text = emit_yaml(chip)
         if target.exists():
             existing = yaml.safe_load(target.read_text())
-            if existing.get("provenance", {}).get("verified"):
+            if existing.get("provenance", {}).get("verified") and not notes:
                 # Hand-curated with silicon notes: never overwrite; report.
                 compared += 1
                 print(f"  KEEP {target.name} (hand-verified; graduation pending)")
@@ -446,6 +700,8 @@ def main() -> None:
         print(f"  wrote {target.name}")
     print(f"done: {wrote} written, {skipped} unchanged, {compared} hand-kept, "
           f"{unmapped_parts} skipped for unmapped IP")
+    for patch in patches:
+        print(f"  patch {patch['id']}: applied to {patched.get(patch['id'], 0)} part(s)")
     if all_unmapped:
         print("\nUNMAPPED ip tags (add to builders/st/ip_map.yaml):")
         for tag in sorted(all_unmapped):

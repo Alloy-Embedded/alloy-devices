@@ -293,6 +293,43 @@
               "maximum": 255
             }
           },
+          "dma_routes": {
+            "type": "object",
+            "description": "For a chip with NO DMA request router (STM32F4/F7/L4): the specific controller+channel each of this peripheral's DMA signals can be served by, and the per-channel selector value to write there. A `request` alone is not a fact on these parts — it only means anything relative to the channel it selects on, and a signal usually offers several alternative channels. Chips WITH a router use `dma_requests` instead, whose id is chip-wide.",
+            "propertyNames": {
+              "pattern": "^[a-z][a-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "controller",
+                  "channel"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "controller": {
+                    "type": "string",
+                    "description": "Name of the DMA controller peripheral in this chip's `peripherals`."
+                  },
+                  "channel": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 31,
+                    "description": "Channel (F4/F7 call it a stream) index on that controller, as the silicon numbers it."
+                  },
+                  "request": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "description": "Value written to that channel's source selector (F4/F7 DMA_SxCR.CHSEL, L4 DMA_CSELR). Absent where the channel implies the source."
+                  }
+                }
+              }
+            }
+          },
           "rmii": {
             "type": "object",
             "description": "RMII pin bank for a MAC (GMAC/EMAC): the fixed pins the block's RMII function occupies on this die and their alternate-function number. A chip fact \u2014 a board only chooses whether to wire Ethernet, not which pins the RMII function lives on.",

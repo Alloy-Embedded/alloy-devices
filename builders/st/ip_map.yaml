@@ -25,13 +25,13 @@ map:
   "rcc:g0x0": st/rcc_g0
   "flash:g0x1": st/flash_g0
   "flash:g0x0": st/flash_g0
-  "exti:g0": uncurated
+  "exti:g0": st/exti_g0
   "syscfg:g0": uncurated
-  "pwr:g0": uncurated
+  "pwr:g0": st/pwr_g0
   "crc:v3": uncurated
-  "iwdg:v2": uncurated
+  "iwdg:v2": st/iwdg_v2
   "wwdg:v2": uncurated
-  "rtc:v3_base": uncurated
+  "rtc:v3_base": st/rtc_v3
   "rtc:v3": uncurated
   "tamp:g0": uncurated
   "dbgmcu:g0": uncurated
@@ -40,7 +40,7 @@ map:
   "ucpd:v1": uncurated
   "cec:v2": uncurated
   "comp:v1": uncurated
-  "dac:v4": uncurated
+  "dac:v4": st/dac_v4
   "vrefbuf:v1": uncurated
   "vrefintcal:v1": uncurated
   "uid:v1": uncurated
@@ -86,7 +86,7 @@ map:
   "dcmi:v1": uncurated
   "dma2d:v1": uncurated
   "dsihost:v1": uncurated
-  "eth:v1c": uncurated
+  "eth:v1c": st/eth_v1
   "hash:v2": uncurated
   "jpeg:v1": uncurated
   "ltdc:v1": uncurated
@@ -114,8 +114,8 @@ map:
   "opamp:v5": uncurated
   "cordic:v1": uncurated
   "fmac:v1": uncurated
-  "can:fdcan_v1": uncurated
-  "fdcanram:v1": uncurated
+  "can:fdcan_v1": st/fdcan_v1
+  "fdcanram:v1": st/fdcanram_v1
   "dbgmcu:g4": uncurated
   "pwr:g4": uncurated
   "syscfg:g4": uncurated
@@ -157,9 +157,12 @@ map:
 
   # --- stm32l4 family tags (L412 first; shared tags gpio:v2/usart:v3/i2c:v2/
   # iwdg:v2/timer:v1:*/exti:v1/wwdg:v1/usb:v3/... are already mapped above).
-  # iwdg:v2 stays uncurated in the SHARED entry on purpose: flipping it would
-  # churn every generated F4/F7/G4/G0 yaml; the L412 chip yaml curates its
-  # iwdg by hand under provenance.verified instead.
+  # iwdg:v2 USED to stay uncurated here on purpose, to avoid churning every
+  # generated F4/F7/G4/G0 yaml, with the L412 curating its iwdg by hand. It is
+  # mapped now: four hand-verified chip files (G0B1RE, G071RB, F722ZE, F767ZI,
+  # L412CB) all bind that tag to st/iwdg_v2, so leaving it uncurated made the
+  # builder unable to reproduce a hand-verified fact — the graduation gate.
+  # The churn is the point of the regeneration commit this landed in.
   "rcc:l4": st/rcc_l4
   "flash:l4": st/flash_l4
   "pwr:l4": st/pwr_l4

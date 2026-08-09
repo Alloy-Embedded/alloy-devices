@@ -312,6 +312,34 @@ from step 5 sets the curation order for new `registers/st/` files.
 - *Packages:* stm32-data carries per-package pinouts per part; emit the pin set for
   the part's package(s) (union where a part number spans packages), noted in
   provenance. A future `package:` field can narrow; boards pin exact parts anyway.
+
+  **Where this landed, measured, because a configurator needs every pad:**
+
+  - `pins:` — the die's I/O — is complete. Every pin upstream lists for the part
+    is emitted, not only the ones a peripheral routes to, so analog-only and
+    unused pads are drawable. The STM32G0B1RE has 60.
+  - `package.layout` — the PHYSICAL pad list, the one that also has power,
+    ground and NRST — is emitted **only where upstream's data survives
+    `check_pinout`**. It does on small packages (`stm32g030f6`'s TSSOP20 lists
+    VDD/VDDA, VSS/VSSA and NRST at their real positions, 20/20 pads). It does
+    **not** on the G0's 64-pin packages, and the lint says exactly why:
+
+    ```
+    STM32G0B1RETx LQFP64 -> the same GPIO appears on more than one pin
+                            4 power/ground/reset pins on a 64-pin package
+                              (expected at least 8) — positions are likely
+                              attributed to GPIOs that are supply pins on the
+                              real part
+                            no reset pin — every package has one
+    ```
+
+    Sixty of the sixty-four positions carry a GPIO name and the only service
+    pads declared are VBAT, VREF+, one VDD and one VSS. So: **the builder's
+    source data does not have the STM32G0B1RE's package pads**, and a footprint
+    that puts a GPIO where VSS is soldered is worse than no footprint. Nothing
+    is emitted, and that is the honest state until a source that has them is
+    pinned (ST's `STM32_open_pin_data` package XML, not the Cube-derived
+    subset embassy publishes).
 - *Route volume:* full AF tables mean hundreds of routes per chip (vs ~8 hand-mined).
   This is desired — bulk 1.3.0's AF tables were the one thing the old repo got right —
   but lints must stay fast at that volume.

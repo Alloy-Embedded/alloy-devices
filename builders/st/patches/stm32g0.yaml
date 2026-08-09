@@ -1,0 +1,59 @@
+# Corrections to UPSTREAM data, applied during a build.
+#
+# NORTH_STAR guard 5: fixes flow upstream. Hand-editing the generated chip file
+# is never the fix, because the next regeneration erases it — a patch here is,
+# and every entry states what is wrong upstream and what says otherwise.
+#
+# A patch applies to a peripheral that ALREADY EXISTS on the part (patches
+# correct facts, they never invent peripherals), and an `irq` it sets must name
+# a vector in that part's own interrupt table — so an entry that does not fit a
+# part simply does not apply there. The build prints how many parts each entry
+# touched; an entry that reaches zero parts is dead and should be deleted.
+
+patches:
+  - id: g0-port-e-clock-enable
+    parts: ["STM32G0B*", "STM32G0C*"]
+    upstream_says: >-
+      GPIOE is listed as a peripheral with NO `rcc` block at all, and the shared
+      rcc_g0x1 register description's GPIOENR fieldset declares only
+      GPIOA/B/C/D/F EN — port E is missing from both.
+    reality: >-
+      RCC_IOPENR bit 4 enables port E on the dice that have one. Recorded as a
+      hardware-verified note on the hand-curated stm32g0b1.yaml this build
+      replaces ("GPIOE exists on G0B1 (IOPENR bit 4) unlike G071"), and
+      consistent with the dense letter ordering of the other five ports
+      (A=0, B=1, C=2, D=3, F=5).
+    why_it_matters: >-
+      Without the gate, GPIOE is emitted with no clock enable and every pin on
+      port E reads back zero forever.
+    peripherals:
+      gpioe:
+        gate: {peripheral: rcc, register: IOPENR, bit: 4}
+
+  - id: g0-rcc-vector-g0x1
+    parts: ["STM32G0*"]
+    upstream_says: >-
+      The RCC peripheral carries no `interrupts` entry on any STM32G0 part, so
+      the block is emitted with no `irq` even though the chip's vector table
+      has one.
+    reality: >-
+      The G0x1 line raises RCC and CRS events on one vector, named RCC_CRS in
+      the same upstream file's interrupt table. Restated from the hand-curated
+      stm32g0b1.yaml (`rcc: irq: RCC_CRS`).
+    why_it_matters: >-
+      A clock-fault or CSS handler has no vector to attach to.
+    peripherals:
+      rcc:
+        irq: RCC_CRS
+
+  - id: g0-rcc-vector-g0x0
+    parts: ["STM32G0*"]
+    upstream_says: same omission as g0-rcc-vector-g0x1.
+    reality: >-
+      The value-line G0x0 dice (no CRS) name the same vector plain RCC. The two
+      entries are disjoint by construction — a part's vector table has one name
+      or the other, never both.
+    why_it_matters: same as g0-rcc-vector-g0x1.
+    peripherals:
+      rcc:
+        irq: RCC
