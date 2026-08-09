@@ -17,6 +17,17 @@ understand and fail loudly on a mismatch.
   and is now emitted only where one exists. A new lint rejects a `dma_routes`
   entry naming a controller the chip does not have.
 
+  **Consequence a consumer must know about:** F4/F7/L4 chips no longer emit
+  `dma_requests`, so the generated `dmareq_rx` / `dmareq_tx` / `dmareq_ext`
+  constants are gone on those families. Nothing breaks: every use of them in
+  alloy sits behind a `requires { Inst::dmareq_… }` guard (uart.hpp:85/112,
+  adc.hpp:42, pwm.hpp:46), so the DMA overloads simply stop being offered — the
+  same way they already were on chips that never had them. It is a correction,
+  not a loss: the numbers those families used to emit were per-stream CHSEL
+  values presented as router ids, and a signal with two alternative streams had
+  one of them silently dropped by the dict. `dma_routes` carries the real triple;
+  it has no consumer yet, which makes now the cheap moment to change its shape.
+
 ### Fixed — builder
 
 Four bugs in `builders/st/build.py`, each of which had silently shaped every
