@@ -28,6 +28,24 @@ understand and fail loudly on a mismatch.
   one of them silently dropped by the dict. `dma_routes` carries the real triple;
   it has no consumer yet, which makes now the cheap moment to change its shape.
 
+### Corrections to 9949429's commit message
+
+That commit's body quotes three counts the adversarial review re-measured and
+found overstated. The code is unaffected; the numbers are corrected here because
+a commit message cannot be.
+
+- Routes recovered by dropping the 12-signal allow-list: the body says "291 of
+  the STM32G0B1RE's 501 routes were being dropped". Measured: the old builder
+  emitted 210 routes and the new one emits 430 — **220** recovered. 501 counts
+  upstream entries, several of which map to the same route.
+- Tree-wide growth: "+93,943 routes" and "+9,528 pins" excluded the 27 chip files
+  the sweep newly added. Measured across the whole tree: routes 57,846 → 162,666
+  (**+104,820**), pins 25,020 → 36,166 (**+11,146**).
+- The body says every block with several genuinely distinct vectors and no
+  preferred one is `uncurated`, "so nothing generates against that choice". The
+  review found that is not true in general — the claim holds for the blocks it
+  was thinking of, not for every such block.
+
 ### Fixed — builder
 
 Four bugs in `builders/st/build.py`, each of which had silently shaped every
