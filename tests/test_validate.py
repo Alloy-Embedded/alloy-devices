@@ -153,3 +153,39 @@ def test_zero_hz_clock_source_is_rejected(tmp_path: Path) -> None:
     chip["clock"]["sources"]["hsi16"]["hz"] = 1  # schema minimum is 1; lint wants plausible
     write_db(tmp_path, MINIMAL_RCC, chip)
     assert any("implausible frequency" in e for e in validate(tmp_path))
+
+
+def test_ip_level_feat_is_accepted_and_bounded(tmp_path: Path) -> None:
+    # DEGREE has two homes. The chip file records what differs per INSTANCE (a
+    # FIFO depth); an IP register file records what the silicon DESIGN fixes (a
+    # watchdog count), so it is written once instead of copied into every chip
+    # that names the IP.
+    rcc = copy.deepcopy(MINIMAL_RCC)
+    rcc["feat"] = {"analog_watchdogs": 3}
+    write_db(tmp_path, rcc, MINIMAL_CHIP)
+    assert validate(tmp_path) == []
+
+
+def test_ip_level_feat_rejects_a_negative_count(tmp_path: Path) -> None:
+    rcc = copy.deepcopy(MINIMAL_RCC)
+    rcc["feat"] = {"analog_watchdogs": -1}
+    write_db(tmp_path, rcc, MINIMAL_CHIP)
+    assert any("feat/analog_watchdogs" in e for e in validate(tmp_path))
+
+
+def test_curated_adc_v2_carries_all_three_analog_watchdogs() -> None:
+    # Pins the curation this file's `feat` claims. A count of 3 with only AWD1's
+    # registers present would be exactly the lie the whole surface exists to
+    # remove: the number would say three and the driver could reach one.
+    from alloy_devices.loader import data_root
+
+    db = load_database(data_root())
+    adc = db.registers["st/adc_v2"]
+    assert adc["feat"]["analog_watchdogs"] == 3
+    by_name = {r["name"]: r for r in adc["registers"]}
+    for reg in ("AWD1TR", "AWD2TR", "AWD3TR", "AWD2CR", "AWD3CR"):
+        assert reg in by_name, f"adc_v2 claims 3 watchdogs but has no {reg}"
+    isr = {f["name"]: f["bit"] for f in by_name["ISR"]["fields"]}
+    ier = {f["name"]: f["bit"] for f in by_name["IER"]["fields"]}
+    assert (isr["AWD1"], isr["AWD2"], isr["AWD3"]) == (7, 8, 9)
+    assert (ier["AWD1IE"], ier["AWD2IE"], ier["AWD3IE"]) == (7, 8, 9)

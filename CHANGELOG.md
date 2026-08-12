@@ -49,6 +49,22 @@ understand and fail loudly on a mismatch.
   no `feat` block is not a lint failure today. Absence is currently
   indistinguishable from "not recorded".
 
+- `alloy.registers.v1` gains the **same optional key, `feat`, at the top
+  level** — because DEGREE turned out to have two homes and the schema had
+  one. A UART's FIFO depth genuinely differs between two instances on one die,
+  so it belongs to the chip file. An ADC's analog-watchdog COUNT does not: it
+  is fixed by the IP version, and recording it per instance would be the same
+  integer copied into every chip file that names the IP, free to drift in any
+  of them. Both spellings mean the same thing, obey the same **zero means
+  absent** rule, and land in the same emitted `struct feat` on the instance.
+
+  **A name declared in both places with different values is an emit error, not
+  a silent override.** An instance may not quietly contradict its own IP; if
+  an instance really does differ, that is a different IP version or a new
+  `feat` name, and either way somebody has to say so out loud.
+
+  First user: `st/adc_v2` declares `analog_watchdogs: 3`.
+
 - `alloy.chip.v1` gains an **optional** peripheral key `dma_routes`. On a chip
   with no DMA request router (F4/F7/L4) a DMA "request" number is only
   meaningful relative to the controller and channel it selects on, and a signal
@@ -69,6 +85,29 @@ understand and fail loudly on a mismatch.
   it has no consumer yet, which makes now the cheap moment to change its shape.
 
 ### Data
+
+- **`st/adc_v2` learns its three analog watchdogs** — `ISR`/`IER` bits 7-9
+  (`AWD1..3`, `AWD1IE..3IE`), `CFGR1.AWD1SGL`/`AWD1EN`/`AWD1CH`, the threshold
+  registers `AWD1TR` (0x20), `AWD2TR` (0x24) and `AWD3TR` (0x2C), and the
+  channel-mask registers `AWD2CR` (0xA0) and `AWD3CR` (0xA4). Before this the
+  curated map stopped at `CCR` with no `TR` register and no `AWD` flag, so the
+  feature was unreachable at every layer at once: no field for a typed knob to
+  name, and no `regs` member for even the raw escape hatch to write.
+
+  Bit positions are ST's own — `cmsis_device_g0` `Include/stm32g0b1xx.h`,
+  every `ADC_<REG>_<FIELD>_Pos` — cross-checked against
+  `stm32-data-generated@669003ee data/registers/adc_g0.json`, which agrees on
+  all of them. The arming constraints in the field comments are quoted from
+  ST's LL driver (`stm32g0xx_ll_adc.h`): the monitored CHANNEL is writable
+  only with the ADC **disabled**, the THRESHOLDS only with no regular
+  conversion in flight. **Not silicon-validated**; exercised in emulation
+  against Renode's own `Analog.STM32G0_ADC`, which models watchdog 1 only.
+
+  **One correction this curation forces on anyone who read the old file as a
+  census:** this IP has THREE analog watchdogs, not one. Watchdog 1 is shaped
+  differently from 2 and 3 — its enable and its single-or-all channel choice
+  live in `CFGR1`, while 2 and 3 own a 19-bit channel bitmask whose non-zero
+  value *is* the enable. Same count, two shapes.
 
 - **`st/tim_gp16` learns quadrature encoder mode** — `SMCR.SMS` (+ `SMS_3`) and
   `CCMR1.CC1S`/`CC2S`, with named `values` for the three encoder modes and for

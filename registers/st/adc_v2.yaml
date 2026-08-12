@@ -11,7 +11,17 @@ provenance:
   sources:
     - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.adc + adc.channels/calibration (SVD-derived; vrefint=ch13 CAL@0x1FFF75AA, temp=ch12 CAL30@0x1FFF75A8 CAL130@0x1FFF75CA, Vdda 3.0V)"
     - "old-alloy src/hal/adc/lite.hpp + examples/lite_hal_probe (ADC conversions ran on real Nucleo-G071RB hardware)"
+    - "ANALOG WATCHDOGS (AWD1/2/3: ISR+IER bits 7-9, CFGR1 AWD1SGL/AWD1EN/AWD1CH, AWD1TR/AWD2TR/AWD3TR, AWD2CR/AWD3CR) from ST's OWN CMSIS device header STMicroelectronics/cmsis_device_g0 Include/stm32g0b1xx.h — every bit position below is that file's ADC_<REG>_<FIELD>_Pos, cross-checked against embassy-rs/stm32-data-generated @ 669003ee data/registers/adc_g0.json, which agrees on all of them. RM0444 chapter 'Analog-to-digital converter (ADC)', subsections 'Analog window watchdog' and the ADC register map; the chapter NUMBER is deliberately not quoted because st.com would not serve the PDF from the environment this was curated in, and a section number nobody read is a fabricated citation."
+    - "ARMING CONSTRAINTS from ST's own LL driver STMicroelectronics/stm32g0xx_hal_driver Inc/stm32g0xx_ll_adc.h: LL_ADC_SetAnalogWDMonitChannels (CFGR1 AWD1CH/AWD1SGL/AWD1EN, AWD2CR AWD2CH, AWD3CR AWD3CH) is documented 'conditioned to ADC state: ADC must be disabled'; LL_ADC_ConfigAnalogWDThresholds (AWDnTR LT/HT) 'ADC must be disabled or enabled without conversion on going on group regular'. The thresholds compare against the ADC data register's own scale, so a driver that turns oversampling on must scale them — which is why CFGR2's oversampling fields stay uncurated here rather than half-curated."
   completeness: bring-up-subset
+# DEGREE that belongs to the IP VERSION, not to any one instance: how many
+# analog watchdogs this silicon has is fixed by the IP, so recording it on each
+# chip's adc1 would be the same number copied per part and free to drift.
+# ZERO MEANS ABSENT, exactly as for the per-instance `feat` block; an IP that
+# does not record a name at all is a compile error naming the instance, which
+# is the difference between "none" and "nobody looked".
+feat:
+  analog_watchdogs: 3
 registers:
   - name: ISR
     offset: "0x00"
@@ -22,11 +32,18 @@ registers:
       - { name: EOC, bit: 2 }
       - { name: EOS, bit: 3 }
       - { name: OVR, bit: 4 }
+      - { name: AWD1, bit: 7, description: "analog watchdog 1 tripped (w1c)" }
+      - { name: AWD2, bit: 8, description: "analog watchdog 2 tripped (w1c)" }
+      - { name: AWD3, bit: 9, description: "analog watchdog 3 tripped (w1c)" }
       - { name: EOCAL, bit: 11 }
       - { name: CCRDY, bit: 13 }
   - name: IER
     offset: "0x04"
     access: rw
+    fields:
+      - { name: AWD1IE, bit: 7 }
+      - { name: AWD2IE, bit: 8 }
+      - { name: AWD3IE, bit: 9 }
   - name: CR
     offset: "0x08"
     access: rw
@@ -49,6 +66,9 @@ registers:
       - { name: OVRMOD, bit: 12, description: "1 = overwrite DR on overrun (keeps a DMA stream moving)" }
       - { name: AUTOFF, bit: 15 }
       - { name: CHSELRMOD, bit: 21 }
+      - { name: AWD1SGL, bit: 22, description: "1 = watchdog 1 guards the single channel in AWD1CH, 0 = all converted channels" }
+      - { name: AWD1EN, bit: 23, description: "watchdog 1 enable — writable only with the ADC disabled (ll_adc.h)" }
+      - { name: AWD1CH, bit: 26, width: 5, description: "the one channel watchdog 1 guards when AWD1SGL = 1" }
   - name: CFGR2
     offset: "0x10"
     access: rw
@@ -60,12 +80,44 @@ registers:
     fields:
       - { name: SMP1, bit: 0, width: 3, description: "7 = 160.5 cycles (required for vref/temp)" }
       - { name: SMP2, bit: 4, width: 3 }
+  # Watchdog 1 is shaped differently from 2 and 3 and the register map is where
+  # that starts: its enable and its channel live in CFGR1 above (one channel or
+  # ALL), while 2 and 3 own a channel BITMASK register whose non-zero value IS
+  # their enable. Same count, three sub-resources, two shapes.
+  - name: AWD1TR
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: LT1, bit: 0, width: 12 }
+      - { name: HT1, bit: 16, width: 12 }
+  - name: AWD2TR
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: LT2, bit: 0, width: 12 }
+      - { name: HT2, bit: 16, width: 12 }
   - name: CHSELR
     offset: "0x28"
     access: rw
+  - name: AWD3TR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: LT3, bit: 0, width: 12 }
+      - { name: HT3, bit: 16, width: 12 }
   - name: DR
     offset: "0x40"
     access: ro
+  - name: AWD2CR
+    offset: "0xA0"
+    access: rw
+    fields:
+      - { name: AWD2CH, bit: 0, width: 19, description: "one bit per channel; a non-zero mask is watchdog 2's enable" }
+  - name: AWD3CR
+    offset: "0xA4"
+    access: rw
+    fields:
+      - { name: AWD3CH, bit: 0, width: 19, description: "one bit per channel; a non-zero mask is watchdog 3's enable" }
   - name: CCR
     offset: "0x308"
     access: rw

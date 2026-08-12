@@ -41,6 +41,18 @@
     "description": {
       "type": "string"
     },
+    "feat": {
+      "type": "object",
+      "description": "DEGREE that belongs to the IP VERSION rather than to one instance — how many analog watchdogs, how many filter banks, how many comparator windows this silicon design has. Same meaning, same emitted shape and the same ZERO MEANS ABSENT rule as the chip file's per-peripheral `feat` (chip.schema.json): both land in the instance's nested `struct feat`. The distinction is WHERE THE FACT LIVES, and it is not cosmetic: a UART FIFO depth genuinely differs between two instances on one die, while a watchdog count is fixed by the IP, so recording it per instance would be one number copied into every chip file that uses the IP and free to drift in any of them. A name declared in BOTH places with different values is an emit error, not a silent override — see alloy's emit/device.py.",
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4294967295
+      }
+    },
     "provenance": {
       "type": "object",
       "required": [
