@@ -34,9 +34,18 @@ registers:
         width: 16
         description: >
           Second standard ID. Its meaning is SFT's: the range end (SFT=RANGE),
-          the second ID (SFT=DUAL) or the ID MASK (SFT=CLASSIC). Only bits
-          [10:0] carry an identifier; the upper bits are the RX-buffer/debug
-          encoding and are meaningful only when SFEC=RX_BUFFER.
+          the second ID (SFT=DUAL) or the ID MASK (SFT=CLASSIC). Sixteen bits
+          wide because that is how the element is drawn, but ONLY [10:0] ever
+          carry an identifier — the width is the field's, not the value
+          domain's, so a driver masks to eleven bits itself rather than
+          trusting raw_mask here.
+
+          WHEN SFEC=RX_BUFFER the same LOW bits stop being an identifier and
+          become the Rx-buffer/debug encoding — it does NOT live in the bits
+          above [10:0]. This description said "the upper bits" until the
+          review that corrected it; the encoding overlaps the identifier's own
+          range, which is why an accessor cannot be shared between the two
+          readings and no `values:` are curated for this field.
       - name: SFID1
         bit: 16
         width: 11
