@@ -29,6 +29,15 @@
       "pattern": "^[a-z][a-z0-9_]*$",
       "description": "Peripheral class (gpio, uart, spi, i2c, clock, flash, ...). Codegen uses it to include the matching HAL driver header alloy/hal/<class>/<vendor>_<ip>.hpp when one exists."
     },
+    "personalities": {
+      "type": "array",
+      "description": "FURTHER classes this same block can be driven as, one at a time. A general-purpose timer is a PWM generator or a quadrature encoder counter and never both: same registers, same instance, two drivers, mutually exclusive. `class` stays the primary one (what the block is called, what a role matcher offers first); each entry here is an ADDITIONAL alloy/hal/<class>/<vendor>_<ip>.hpp the consumer should include and an additional role class the instance can fill. Consumers that ask 'what class is this' must ask 'is this among its classes' instead — the whole point is that the answer is not one value.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "uniqueItems": true
+    },
     "description": {
       "type": "string"
     },

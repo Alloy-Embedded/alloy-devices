@@ -2,15 +2,20 @@ schema: alloy.registers.v1
 vendor: st
 ip: tim_gp16
 class: pwm
+personalities: [encoder]
 description: >
   ST 16-bit general-purpose timer (G0-era gptimer template shared by
   TIM2/TIM3-class instances). Bring-up subset for edge-aligned PWM on
-  channels 1-4. Advanced-control instances (TIM1) additionally require
-  BDTR.MOE — not modeled yet; use GP timers for PWM roles.
+  channels 1-4, and for quadrature encoder counting on channels 1+2 —
+  two personalities of one block, never both at once on one instance.
+  Advanced-control instances (TIM1) additionally require BDTR.MOE — not
+  modeled yet; use GP timers for PWM roles.
 provenance:
   sources:
     - "alloy-devices-yml vendors/st/stm32g0/devices/stm32g071rb.yml templates.tim (SVD-derived; ip_version gptimer2_v3_x_Cube)"
     - "old-alloy src/hal/timer/lite.hpp (constants cross-check)"
+    - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha this repo's builders/st/sources.lock already pins. block/TIM_GP16 gives SMCR -> fieldset/SMCR_GP16 (extends SMCR_2CH) and CCMR_Input -> fieldset/CCMR_Input_2CH at the SAME byte_offset 0x18 as CCMR_Output. Source of the encoder fields below and of enum/SMS and enum/CCMR_Input_CCS."
+    - "RM0444 (STM32G0x1) TIMx_SMCR / TIMx_CCMR1 (input-capture view) — named as the registers these fields belong to. STATED PLAINLY: the bit positions and enum values below were read from the pinned JSON above, not from the PDF; no manual section number is claimed because none was checked."
   completeness: bring-up-subset
 registers:
   - name: CR1
@@ -31,6 +36,20 @@ registers:
   - name: SMCR
     offset: "0x08"
     access: rw
+    # SMS is ONE 4-bit field in the silicon and TWO entries here, because it is
+    # discontiguous — SMS[2:0] at bits 2:0, SMS[3] at bit 16 — and this schema
+    # gives a field one `bit` and one `width`. Splitting it is the honest
+    # spelling: a single `{bit: 0, width: 4}` would claim bits 3:1 that SMS does
+    # not own, and `{bit: 0, width: 3}` alone under the bare name `SMS` would
+    # hide a fourth bit that selects other modes. The three encoder modes live
+    # entirely in SMS[2:0] with SMS[3] = 0, which is why a driver can use the
+    # low entry and only has to make sure the high one stays clear.
+    fields:
+      - { name: SMS, bit: 0, width: 3,
+          description: "Slave mode selection, SMS[2:0]. Completed by SMS_3 at bit 16.",
+          values: { ENCODER_1: 1, ENCODER_2: 2, ENCODER_3: 3 } }
+      - { name: SMS_3, bit: 16,
+          description: "SMS[3] — the 4th bit of SMS. Must be 0 for the encoder modes." }
   - name: DIER
     offset: "0x0C"
     access: rw
@@ -48,12 +67,34 @@ registers:
     access: wo
     fields:
       - { name: UG, bit: 0 }
+  # CCMR1 HAS TWO LAYOUTS AND THIS FILE CAN ONLY HOLD ONE. The same word is
+  # TIMx_CCMR1 "output compare mode" or TIMx_CCMR1 "input capture mode"
+  # depending on CC1S/CC2S — upstream models it as two fieldsets at one offset
+  # (CCMR_Output_GP16 and CCMR_Input_2CH, both byte_offset 0x18). Here, fields
+  # of one register may not overlap (tools/alloy_devices/lints.py), so the two
+  # views cannot both be named: the input view's ICxPSC (bits 3:2 / 11:10) and
+  # ICxF (bits 7:4 / 15:12) sit on top of OCxPE and OCxM.
+  #
+  # WHAT IS CURATED, and why this split is the useful one: CC1S/CC2S (bits 1:0
+  # and 9:8) are the only input-view fields that do NOT collide, and they are
+  # the ones that SELECT the view. So a driver can put the channels into input
+  # mode by name. The input FILTER (ICxF) stays uncurated — its absence is
+  # honest rather than harmless: reset is "no filter", which is correct for a
+  # clean quadrature source and wrong for a bouncing mechanical encoder, and
+  # this file cannot say so today. Layer 3 cannot reach it either: an
+  # uncurated field is a typed member with no named accessor.
   - name: CCMR1
     offset: "0x18"
     access: rw
     fields:
+      - { name: CC1S, bit: 0, width: 2,
+          description: "CC1 direction. 0 = output; input view: 1 = IC1 on TI1, 2 = IC1 on TI2, 3 = IC1 on TRC.",
+          values: { TI1: 1 } }
       - { name: OC1PE, bit: 3 }
       - { name: OC1M, bit: 4, width: 3, description: "6 = PWM mode 1" }
+      - { name: CC2S, bit: 8, width: 2,
+          description: "CC2 direction. 0 = output; input view: 1 = IC2 on TI2, 2 = IC2 on TI1, 3 = IC2 on TRC.",
+          values: { TI2: 1 } }
       - { name: OC2PE, bit: 11 }
       - { name: OC2M, bit: 12, width: 3 }
   - name: CCMR2

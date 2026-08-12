@@ -9,6 +9,26 @@ understand and fail loudly on a mismatch.
 
 ### Schema
 
+- `alloy.registers.v1` gains an **optional** top-level key `personalities` — a
+  list of FURTHER classes the same block can be driven as, one at a time.
+  `class` has been single-valued since the schema existed, and three consumers
+  read it as if a block had one job: alloy's codegen includes exactly one
+  `alloy/hal/<class>/<vendor>_<ip>.hpp`, its role matcher offers an instance to
+  exactly one kind of role, and `chip-info` reports one answer to "what is
+  this". A general-purpose timer refutes all three. It is a PWM generator or a
+  quadrature encoder counter — the same registers, the same instance, two
+  drivers, and choosing one excludes the other.
+
+  `class` keeps its meaning (the primary class, what the block is called);
+  each entry in `personalities` is an additional driver header to include and
+  an additional role class the instance may fill. **The consumer-visible rule
+  is a question change**, not a field addition: "what class is this" has no
+  single answer any more, so a consumer must ask "is this class among its
+  classes". A consumer that keeps comparing for equality is not broken, it is
+  narrow — it will simply never offer the second personality.
+
+  First user: `st/tim_gp16` declares `personalities: [encoder]`.
+
 - `alloy.chip.v1` gains an **optional** peripheral key `feat` — a map of
   name to non-negative integer, recording DEGREE: how MUCH of a graded silicon
   feature an instance has, when the register map cannot state it. A FIFO is
@@ -49,6 +69,36 @@ understand and fail loudly on a mismatch.
   it has no consumer yet, which makes now the cheap moment to change its shape.
 
 ### Data
+
+- **`st/tim_gp16` learns quadrature encoder mode** — `SMCR.SMS` (+ `SMS_3`) and
+  `CCMR1.CC1S`/`CC2S`, with named `values` for the three encoder modes and for
+  the input mappings. Without them a driver had to hand-write the integer 3
+  into SMCR and 0x0101 into CCMR1, which guard #1 forbids in `src/`. The block
+  also declares `personalities: [encoder]` (see Schema above). Read from
+  `stm32-data-generated@669003ee data/registers/timer_v3.json`, the sha
+  `builders/st/sources.lock` already pins; **not silicon-validated**.
+
+  Two facts about this register file that a consumer should know, both stated
+  in comments next to the fields:
+
+  - **`SMS` is discontiguous in the silicon and is two entries here.** It is
+    four bits — SMS[2:0] at bits 2:0 and SMS[3] at bit 16 — and a field in this
+    schema has one `bit` and one `width`. `{bit: 0, width: 4}` would claim bits
+    3:1 that SMS does not own; `{bit: 0, width: 3}` alone, named `SMS`, would
+    hide the fourth bit. Two fields named after the manual's own diagram is the
+    only spelling that lies about neither. The encoder modes need only the low
+    entry, with the high one clear.
+  - **CCMR1 has two layouts and this file can hold one.** The word is the
+    output-compare register or the input-capture register depending on
+    CC1S/CC2S; upstream models it as two fieldsets at one offset
+    (`CCMR_Output_GP16` and `CCMR_Input_2CH`, both `byte_offset` 0x18), and
+    here fields of one register may not overlap. Only the input-view fields
+    that do not collide are curated — CC1S/CC2S, which are also the ones that
+    SELECT the view. The input filter `ICxF` (bits 7:4 / 15:12) sits on top of
+    `OCxPE`/`OCxM` and is therefore **not reachable at any layer**, not even
+    `alloy::dev::`, which gives a named accessor only to a curated field. For a
+    bouncing mechanical encoder that is a real limitation, and it is a limit of
+    the data model rather than of the driver.
 
 - **`st/fdcanram_v1` FLSSA gains the standard-filter element format** —
   `SFT`, `SFEC`, `SFID1`, `SFID2`, with named `values` for the two encoded
