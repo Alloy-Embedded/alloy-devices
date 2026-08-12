@@ -41,11 +41,30 @@ registers:
   - name: RXGFC
     offset: "0x80"
     access: rw
+    description: >
+      Global filter configuration. WRITABLE ONLY while CCCR.INIT and CCCR.CCE
+      are set — unlike the filter ELEMENTS it governs, which are plain message
+      RAM and take a write at any time. RM0444 rev 5 §36.4.24.
     fields:
-      - { name: ANFE, bit: 2, width: 2 }
-      - { name: ANFS, bit: 4, width: 2 }
-      - { name: LSS, bit: 16, width: 5 }
-      - { name: LSE, bit: 24, width: 4 }
+      - name: ANFE
+        bit: 2
+        width: 2
+        description: "Where a non-matching EXTENDED frame goes."
+        values: { FIFO0: 0, FIFO1: 1, REJECT: 2 }
+      - name: ANFS
+        bit: 4
+        width: 2
+        description: "Where a non-matching STANDARD frame goes."
+        values: { FIFO0: 0, FIFO1: 1, REJECT: 2 }
+      - name: LSS
+        bit: 16
+        width: 5
+        description: >
+          How many standard filter elements the core scans, from the start of
+          the message RAM. NOT the capacity: this field is 5 bits and would
+          admit 31, while the companion fdcanram holds 28 (fdcanram_v1
+          FLSSA_count). Values above 28 are interpreted as 28.
+      - { name: LSE, bit: 24, width: 4, description: "Extended filter elements scanned. Extended filters are not curated on the companion." }
   - name: RXFS
     offset: "0x90"
     access: rw

@@ -71,6 +71,13 @@ understand and fail loudly on a mismatch.
     now emits them as unshifted constants; a consumer older than that change
     sees the fields but not the value names.
 
+- **`st/fdcan_v1` RXGFC gains its value encodings** — `ANFS`/`ANFE` now carry
+  named values (`FIFO0`, `FIFO1`, `REJECT`) instead of only positions. A
+  curated FIELD whose ENCODING is not curated still forces a magic number into
+  a driver: "reject every frame that matched no filter" was the integer 2.
+  `LSS`/`LSE` gain descriptions saying what the register is and is not the
+  authority on. From RM0444 rev 5 §36.4.24.
+
 - **UART FIFO depths recorded** for every uart-class peripheral on the chips
   alloy's boards use: ESP32 `uart0` 128/128, RP2040 `uart0` 32/32, STM32G0
   `usart1..6` 8/8, and 0/0 on the STM32F722/F767 `usart2/3` and the SAME70
