@@ -50,6 +50,27 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- **`st/fdcanram_v1` FLSSA gains the standard-filter element format** —
+  `SFT`, `SFEC`, `SFID1`, `SFID2`, with named `values` for the two encoded
+  fields. Until now the section was curated as a bare word array, so a driver
+  that wanted an acceptance filter had to hand-write bit 30, bit 27 and bit 16
+  in `src/` — the exact thing the register database exists to prevent. From
+  RM0444 rev 5 §36.4.28 and Bosch M_CAN r1 §2.4.5; **not silicon-validated**,
+  the section offsets already were.
+
+  Two consequences worth stating, because they are cross-peripheral:
+
+  - `FLSSA_count` (28) is simultaneously the section's word count and the
+    number of standard filters an instance holds — a standard filter element
+    is exactly one word. The controller's `RXGFC.LSS` is **5 bits wide and
+    would admit 31**, so `field_t::raw_mask` over-states the real capacity by
+    three. The capacity lives on the companion, not on the controller whose
+    register names it.
+  - `values:` on a field of an ARRAY register used to be accepted and silently
+    dropped by alloy's IP emitter (array registers have no flags enum). alloy
+    now emits them as unshifted constants; a consumer older than that change
+    sees the fields but not the value names.
+
 - **UART FIFO depths recorded** for every uart-class peripheral on the chips
   alloy's boards use: ESP32 `uart0` 128/128, RP2040 `uart0` 32/32, STM32G0
   `usart1..6` 8/8, and 0/0 on the STM32F722/F767 `usart2/3` and the SAME70

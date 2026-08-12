@@ -9,16 +9,60 @@ description: >
   TX buffers at 0x278 (3 x 18 words). The FDCAN driver reaches these via the
   companion instance's base; the M_CAN element formats (T0/T1/R0/R1 headers) are
   hand-written behavior, not data.
+
+  FLSSA is the one section whose element format IS data here: a standard filter
+  element is exactly one word, so FLSSA_count is simultaneously the section's
+  word count and the number of standard filters this instance can hold. The
+  controller's own RXGFC.LSS field is 5 bits wide and would admit 31 — the
+  capacity is 28 and only this side of the pair knows it.
 provenance:
   sources:
     - "embassy-rs/stm32-data-generated @ 669003ee data/registers/fdcanram_v1.json (section offsets)"
     - "Bosch M_CAN r1 user manual §2.4 (message RAM element layout)"
+    - "RM0444 rev 5 §36.4.28 (FDCAN standard message ID filter element, S0) + Bosch M_CAN r1 §2.4.5 — SFT/SFEC/SFID1/SFID2"
   completeness: bring-up-subset
 registers:
   - name: FLSSA
     offset: "0x000"
     access: rw
+    description: >
+      Standard message ID filter list (element S0, one word each). RM0444 §36.4.28.
     array: { count: 28, stride: 4 }
+    fields:
+      - name: SFID2
+        bit: 0
+        width: 16
+        description: >
+          Second standard ID. Its meaning is SFT's: the range end (SFT=RANGE),
+          the second ID (SFT=DUAL) or the ID MASK (SFT=CLASSIC). Only bits
+          [10:0] carry an identifier; the upper bits are the RX-buffer/debug
+          encoding and are meaningful only when SFEC=RX_BUFFER.
+      - name: SFID1
+        bit: 16
+        width: 11
+        description: "First standard ID — the range start, the first ID, or the ID to match."
+      - name: SFEC
+        bit: 27
+        width: 3
+        description: "What a MATCH does with the frame. DISABLED (0) makes the element inert."
+        values:
+          DISABLED: 0
+          FIFO0: 1
+          FIFO1: 2
+          REJECT: 3
+          PRIORITY: 4
+          PRIORITY_FIFO0: 5
+          PRIORITY_FIFO1: 6
+          RX_BUFFER: 7
+      - name: SFT
+        bit: 30
+        width: 2
+        description: "How SFID1/SFID2 are READ. DISABLED (3) also makes the element inert."
+        values:
+          RANGE: 0
+          DUAL: 1
+          CLASSIC: 2
+          DISABLED: 3
   - name: RXFIFO0
     offset: "0x0B0"
     access: rw
