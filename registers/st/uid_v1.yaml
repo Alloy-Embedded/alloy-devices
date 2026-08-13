@@ -1,0 +1,69 @@
+schema: alloy.registers.v1
+vendor: st
+ip: uid_v1
+class: uid
+description: >
+  STM32 96-bit unique device identifier — three read-only words ST programs at
+  final test and no software, debugger or option-byte sequence can change.
+  Present on every STM32 family; the ADDRESS differs per family, which is why
+  it is a peripheral with a base in the chip file rather than a constant in a
+  driver.
+
+  NOT A PERIPHERAL IN THE USUAL SENSE, and the missing keys say so: no clock
+  gate (it is read through the flash interface, always on), no reset, no IRQ,
+  no DMA request, and every register is `ro`. On the G0 it lives in the system
+  information block near the flash-size and package words, not in the APB
+  peripheral map at all.
+
+  WHAT IT IS FOR HERE: alloy just gained `alloy provision` — a per-device
+  serial/MAC record written through the debug probe at production-flash time.
+  The UID is its companion from the other direction: an identity that needs no
+  production step, cannot be forgotten, cannot be cloned onto a second board by
+  copying a flash image, and is readable on the very first boot of a blank
+  part. The two answer different questions. Provisioning answers "which unit is
+  this, in OUR numbering" and can encode a MAC we are entitled to hand out. The
+  UID answers "is this the same physical die as last time" and can seed a
+  MAC-shaped value that is unique but not ours to allocate.
+
+  IT IS NOT A SECRET. It is readable by any code on the part and by any
+  debugger, it is not random (adjacent dice from one wafer differ in a few
+  bits of one word), and it is printed in bug reports. Deriving a key from it
+  is the classic mistake this description exists to head off: use it to
+  IDENTIFY, never to AUTHENTICATE.
+
+  THE WAFER/LOT SUB-FIELDS ARE DELIBERATELY NOT CURATED. The manual splits
+  word 0 into X/Y die coordinates and words 1-2 into wafer number and lot
+  number, but the upstream data carries no fields at all for this block, the
+  split differs between families, and no consumer in alloy wants it — a device
+  ID is used whole, compared whole and printed whole. That is question 0 row 3
+  (register curated, field not) stopped at ON PURPOSE rather than by neglect,
+  and the cost is exact: `alloy::dev::uid_t` gives you the three words and no
+  named accessor for a lot number. Whoever needs one curates it then, with a
+  per-family source in hand.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 (uid kind, version v1; MIT OR Apache-2.0 via stm32-metapac) — data/registers/uid_v1.json: block UID, one read-only 32-bit item repeated 3x at stride 4 from byte offset 0, described as 'Device Factory programmed 96-bit unique device identifier'. Upstream curates NO fields, and neither does this file."
+    - "RM0444 (STM32G0x1) chapter 'Device electronic signature', subsection 'Unique device ID registers (96 bits)' — that the value is 96 bits, factory programmed, read-only, and addressed as three consecutive words. Chapter NUMBER deliberately not cited: this repo's RM0444 citations already disagree about numbering, and the number is the part of a citation that is cheapest to fabricate."
+    - "The BASE address is not in this file — it is per chip (chips/st/*.yaml, from the same pinned upstream), because it moves between families. On the STM32G0B1RE it is the address the builder already carried while the block was uncurated."
+    - "NOT SILICON-WITNESSED: no STM32 was on hand. A read of these words cannot be checked against a real die here, and Renode's stm32g0 platform does not map this region at all."
+  completeness: full
+feat:
+  #: How many 32-bit words the identifier is. 3 on every STM32 (96 bits).
+  #: An IP-version fact, not an instance one — no die carries two differently
+  #: sized copies. A portable reader sizes its buffer from this instead of
+  #: assuming 96 bits, which is what lets the same code compile against a
+  #: 64-bit (RP2040 flash id) or 128-bit (SAM E70) identifier later.
+  id_words: 3
+registers:
+  - name: UID0
+    offset: "0x00"
+    access: ro
+    description: "UID[31:0] — the low word. Varies most between neighbouring dice."
+  - name: UID1
+    offset: "0x04"
+    access: ro
+    description: "UID[63:32]."
+  - name: UID2
+    offset: "0x08"
+    access: ro
+    description: "UID[95:64] — the high word. Shared by a whole lot."

@@ -86,6 +86,25 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- **`st/wwdg_v2` — the OTHER watchdog, and deliberately not class `watchdog`.**
+  All three registers (`CR`, `CFR`, `SR`), every field, and `CFR.WDGTB`'s eight
+  values named so the prescaler is not a magic number wearing an accessor.
+  `feat.timebase_max: 7` records the one thing that differs from `wwdg_v1`
+  (a two-bit `WDGTB`, hence 3), so a driver clamps against data instead of a
+  literal.
+
+  The class is `window_watchdog`, NOT `watchdog`, and that is the load-bearing
+  decision. Class is the substitutability gate: alloy's `watchdog` role matches
+  any peripheral whose IP class is `watchdog`, so calling the WWDG one would let
+  a board bind it where an IWDG is meant and silently change the safety
+  contract behind an unchanged type — the IWDG only catches feeding too late,
+  the WWDG resets on feeding too EARLY as well. Two classes make that
+  substitution a named error instead of a working build.
+
+  `stm32g0b1re` binds it (`kernel_clock: apb` — the WWDG counts PCLK/4096 and
+  dies with PCLK, unlike the LSI-driven IWDG), and `wwdg:v2` is mapped in the
+  ST builder so a regeneration reproduces it.
+
 - **`st/adc_v2` learns its three analog watchdogs** — `ISR`/`IER` bits 7-9
   (`AWD1..3`, `AWD1IE..3IE`), `CFGR1.AWD1SGL`/`AWD1EN`/`AWD1CH`, the threshold
   registers `AWD1TR` (0x20), `AWD2TR` (0x24) and `AWD3TR` (0x2C), and the

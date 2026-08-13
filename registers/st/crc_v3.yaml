@@ -1,0 +1,142 @@
+schema: alloy.registers.v1
+vendor: st
+ip: crc_v3
+class: crc
+description: >
+  STM32 CRC calculation unit, v3 (G0/G4/L4/WB/H7 generation). One 32-bit shift
+  engine: write data to DR, read DR back for the running remainder.
+
+  v3 is the PROGRAMMABLE one, and that is the whole reason the versions are
+  separate files. v1 (F1/F4) hard-wires the polynomial to CRC-32's 0x04C1_1DB7,
+  hard-wires the seed to all-ones, and has neither REV_IN nor REV_OUT — it
+  computes one checksum and no other. v2 added CR.REV_IN/REV_OUT and the INIT
+  register; v3 added POL and CR.POLYSIZE, so the same block does CRC-32,
+  CRC-16, CRC-8 and the 7-bit SD/MMC polynomial.
+
+  WHY THAT MATTERS TO alloy: alloy already computes CRC-32/ISO-HDLC in software
+  (src/alloy/ota/crc32.hpp) for every OTA image header, every payload and every
+  provisioning record, and a bootloader re-checks a whole slot before every
+  boot. This block computes the SAME function if — and only if — it is
+  configured to it. What the silicon can and cannot reach:
+
+    polynomial   POL, reset 0x04C1_1DB7        = ISO-HDLC's, exactly. reachable
+    seed         INIT, reset 0xFFFF_FFFF       = refin=false form of all-ones. reachable
+    width        CR.POLYSIZE = WIDTH_32                                 reachable
+    refin=true   CR.REV_IN (see the note on the field)                  reachable
+    refout=true  CR.REV_OUT = 1                                         reachable
+    xorout       NOT IN THIS BLOCK — there is no XOR register           NOT reachable
+
+  So the block reaches five of the six parameters and the sixth is one
+  instruction of software (`value ^ all-ones`) applied to the DR read. A driver
+  that skips it computes CRC-32/JAMCRC, not ISO-HDLC, and the two agree on
+  nothing. That is stated here, in the data, because it is the trap this block
+  sets and it is invisible from the register list.
+
+  THE DATA REGISTER HAS THREE WIDTHS AT ONE ADDRESS and only one of them is
+  below. Upstream models DR8/DR16/DR32 as three views of byte offset 0x00,
+  because the write WIDTH is a semantic input: a byte written to DR feeds one
+  byte, a word feeds four. `alloy.registers.v1` cannot express two registers at
+  one offset (the emitter refuses overlap), so DR is curated once, at 32 bits,
+  and a driver that needs the byte view takes the address of DR and narrows the
+  pointer. That costs a cast, not reachability, because DR has no fields — see
+  the note on register DR. This is a THIRD instance of "two registers at one
+  address" after TIM CCMR1's input/output views, and the first where the data
+  model's limit is survivable.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 (crc kind, version v3; MIT OR Apache-2.0 via stm32-metapac) — data/registers/crc_v3.json: DR8/DR16/DR32 at byte offset 0, IDR at 4, CR at 8, INIT at 16, POL at 20; CR fields RESET bit 0, POLYSIZE bits 3-4, REV_IN bits 5-6, REV_OUT bit 7; and the POLYSIZE/REV_IN/REV_OUT variant names and values reproduced below"
+    - "RM0444 (STM32G0x1) chapter 'Cyclic redundancy check calculation unit (CRC)', subsections 'CRC data register (CRC_DR)', 'CRC independent data register (CRC_IDR)', 'CRC control register (CRC_CR)', 'CRC initial value (CRC_INIT)', 'CRC polynomial (CRC_POL)' — reset values, the RESET-bit semantics, and that CRC_DR accepts byte/half-word/word accesses. Chapter NUMBER deliberately not cited; this repo's own RM0444 citations already disagree with each other about numbering, and a number is the part of a citation that is cheapest to fabricate."
+    - "NOT SILICON-WITNESSED. No STM32G0 was on hand for this curation, and Renode 1.16.1 does not model this block (its platforms/cpus/stm32g0.repl carries only `Tag <0x40023000, 0x400233FF> \"CRC\"`, which returns zero). Everything here is upstream data plus the manual."
+  completeness: full
+registers:
+  - name: DR
+    offset: "0x00"
+    access: rw
+    reset: "0xFFFFFFFF"
+    description: >
+      Data register. Writing feeds data into the shift engine; reading returns
+      the current remainder (through REV_OUT). NO FIELDS, deliberately: every
+      bit is data, so there is nothing to name, and that is what makes the
+      missing DR8/DR16 views harmless — a driver narrows `&regs::DR` to a
+      byte pointer and writes through it, which is exactly what an 8-bit
+      access to this address is. Had the aliases carried FIELDS, the way
+      CCMR1's two views do, they would have been unreachable instead.
+      Reset value is INIT's reset value, because reset loads INIT.
+  - name: IDR
+    offset: "0x04"
+    access: rw
+    reset: "0x00000000"
+    description: >
+      Independent data register — 32 bits of scratch that the CRC engine never
+      touches and CR.RESET does not clear. Not part of the checksum; it is
+      here because it is the block's one piece of state that survives a
+      CRC reset, which is what makes it usable as a "which pass am I on"
+      marker by code that shares the unit.
+  - name: CR
+    offset: "0x08"
+    access: rw
+    reset: "0x00000000"
+    description: "Control: reset pulse, polynomial width, input/output bit reversal"
+    fields:
+      - name: RESET
+        bit: 0
+        description: >
+          Write 1 to reload DR from INIT and restart. Self-clearing in
+          hardware; writing 0 does nothing. Single bit, so the bit IS the
+          encoding and there is no `values:` to curate.
+      - name: POLYSIZE
+        bit: 3
+        width: 2
+        description: "Polynomial width. WIDTH_32 with POL at its reset value is CRC-32."
+        values:
+          WIDTH_32: 0
+          WIDTH_16: 1
+          WIDTH_8: 2
+          WIDTH_7: 3
+      - name: REV_IN
+        bit: 5
+        width: 2
+        description: >
+          Bit reversal applied to data on its way IN, and the field a
+          reflected CRC lives or dies by. The engine consumes the (reversed)
+          value MSB first, so reversal by BYTE means each byte enters LSB
+          first, which is what refin=true means for a byte stream.
+
+          The granularity must match how the driver assembles its writes, and
+          BOTH of these produce a correct reflected CRC over the same bytes:
+            REV_IN=WORD, feeding words assembled little-endian (b0 | b1<<8 | ...)
+            REV_IN=BYTE, feeding words assembled big-endian  (b0<<24 | b1<<16 | ...)
+          They are the same permutation reached from two directions. BYTE has
+          one practical advantage and it is why alloy's driver picks it: it is
+          also the setting a 1-, 2- or 3-byte TAIL needs, so a buffer whose
+          length is not a multiple of four is finished without rewriting CR
+          mid-stream.
+        values:
+          NONE: 0
+          BYTE: 1
+          HALF_WORD: 2
+          WORD: 3
+      - name: REV_OUT
+        bit: 7
+        description: >
+          Reverse the 32-bit value read back from DR — refout=true. Single
+          bit, so the bit is the encoding.
+  - name: INIT
+    offset: "0x10"
+    access: rw
+    reset: "0xFFFFFFFF"
+    description: >
+      Seed loaded into DR by CR.RESET and by a peripheral reset. Note the
+      reset value is already CRC-32/ISO-HDLC's all-ones seed, so the common
+      case writes nothing here. Writing INIT does NOT reload DR; set CR.RESET
+      afterwards.
+  - name: POL
+    offset: "0x14"
+    access: rw
+    reset: "0x04C11DB7"
+    description: >
+      The polynomial, in NORMAL (non-reflected) form, MSB-first — 0x04C1_1DB7
+      is the same polynomial as software's reflected 0xEDB8_8320, not a
+      different one. Reset value is CRC-32's, so the common case writes
+      nothing here either. Only bits above the width selected by
+      CR.POLYSIZE are ignored.

@@ -30,7 +30,7 @@ map:
   "pwr:g0": st/pwr_g0
   "crc:v3": uncurated
   "iwdg:v2": st/iwdg_v2
-  "wwdg:v2": uncurated
+  "wwdg:v2": st/wwdg_v2
   "rtc:v3_base": st/rtc_v3
   "rtc:v3": uncurated
   "tamp:g0": uncurated

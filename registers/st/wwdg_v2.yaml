@@ -1,0 +1,111 @@
+schema: alloy.registers.v1
+vendor: st
+ip: wwdg_v2
+class: window_watchdog
+description: >
+  STM32 System Window Watchdog (v2: G0/G4/L4/F7 — WDGTB is THREE bits at 11;
+  v1 (F1/F4) has a two-bit WDGTB at bit 7, which is the whole difference and
+  the reason the versions are separate files).
+
+  NOT a second flavour of the IWDG, and the class name says so. The IWDG runs
+  off the LSI, is asynchronous to the core, and only catches code that stops
+  feeding. The WWDG runs off PCLK, dies with it, and catches feeding too EARLY
+  as well as too late: refreshing CR while T[6:0] is still greater than
+  CFR.W[6:0] resets the part immediately. A runaway loop that still kicks the
+  dog is exactly what that upper bound detects, and no IWDG can.
+
+  Timing, from the manual's own formula:
+      t_WWDG = t_PCLK * 4096 * 2^WDGTB * (T[5:0] + 1)
+  The /4096 predivider and the 7-bit counter are IP constants, so they live in
+  the driver next to that formula, not here. What the DATA has to carry is
+  WDGTB's reachable range, because it is the one thing that differs between v1
+  and v2 — hence feat.timebase_max below.
+
+  The counter's bit 6 is the arming bit, not a count: the reset fires the
+  moment T rolls 0x40 -> 0x3F. So only T[5:0] is time and T6 must stay 1;
+  writing a reload with bit 6 clear resets the part on the next tick.
+
+  BRING-UP SUBSET is the whole block — the WWDG has three registers and this
+  file has all three.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003ee (wwdg kind, version v2; MIT OR Apache-2.0) — data/registers/wwdg_v2.json: CR/CFR/SR offsets, T/WDGA/W/EWI/WDGTB/EWIF bit positions, and the eight WDGTB variants"
+    - "RM0444 (STM32G0x1) chapter 'System window watchdog (WWDG)', subsections 'WWDG control register (WWDG_CR)', 'WWDG configuration register (WWDG_CFR)', 'WWDG status register (WWDG_SR)' — reset values, the T6 arming rule, the window comparison and the t_WWDG formula. Chapter NUMBER deliberately not cited: the number is what a fabricated citation gets right."
+  completeness: full
+feat:
+  #: Largest value CFR.WDGTB accepts — the prescaler is 2^WDGTB on top of the
+  #: fixed /4096, so this bounds the longest deadline the block can express.
+  #: 7 here (3-bit field), 3 on wwdg_v1 (2-bit field). A driver that clamps
+  #: against this instead of against 7 is correct on both without a #if.
+  timebase_max: 7
+registers:
+  - name: CR
+    offset: "0x00"
+    access: rw
+    reset: "0x7F"
+    description: >
+      Control register. Writing it IS the refresh — there is no key and no
+      separate reload register, so a stray store here either feeds the dog or
+      kills the part depending on when it lands.
+    fields:
+      - name: T
+        bit: 0
+        width: 7
+        description: >
+          7-bit down-counter. T[5:0] is the count; T6 is the arming bit and
+          the reset fires when it clears (0x40 -> 0x3F). Reload values must
+          therefore be 0x40..0x7F.
+      - name: WDGA
+        bit: 7
+        description: >
+          Activation. Set by software, cleared ONLY by a reset — there is no
+          disable. Once armed, the watchdog stays armed for the life of the
+          power cycle.
+  - name: CFR
+    offset: "0x04"
+    access: rw
+    reset: "0x7F"
+    description: >
+      Configuration: the window bound, the early-wakeup interrupt and the
+      timebase. Program it BEFORE setting CR.WDGA — after arming, the deadline
+      is already running.
+    fields:
+      - name: W
+        bit: 0
+        width: 7
+        description: >
+          Window. A refresh (a write to CR) while T[6:0] > W[6:0] generates a
+          reset. W at its reset value 0x7F is never less than T, which is how
+          the window is 'disabled': it is not a disable bit, it is a bound
+          placed where nothing can exceed it.
+      - name: EWI
+        bit: 9
+        description: >
+          Early wakeup interrupt enable. Fires when the counter reaches 0x40 —
+          one tick before the reset — and is the block's last-gasp hook. Set
+          by software, cleared only by a reset, like WDGA.
+      - name: WDGTB
+        bit: 11
+        width: 3
+        description: "Counter clock prescaler on top of the fixed PCLK/4096."
+        values:
+          DIV1: 0
+          DIV2: 1
+          DIV4: 2
+          DIV8: 3
+          DIV16: 4
+          DIV32: 5
+          DIV64: 6
+          DIV128: 7
+  - name: SR
+    offset: "0x08"
+    access: rw
+    reset: "0x00"
+    description: >
+      Status. One flag, and its clearing convention is the trap: EWIF is
+      cleared by writing ZERO to it (rc_w0), not one. A handler that does the
+      reflexive `SR = EWIF` leaves the flag set and re-enters forever.
+    fields:
+      - name: EWIF
+        bit: 0
+        description: "Early wakeup interrupt flag. Write 0 to clear."

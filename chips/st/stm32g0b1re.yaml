@@ -96,12 +96,12 @@ peripherals:
     irq: ADC1_COMP
   crc:
     base: '0x40023000'
-    uncurated: true
-    ip_hint: crc:v3:CRC
+    ip: st/crc_v3
     gate:
       peripheral: rcc
       register: AHBENR
       bit: 12
+    kernel_clock: apb
   crs:
     base: '0x40006C00'
     uncurated: true
@@ -559,8 +559,7 @@ peripherals:
     irq: USB_UCPD1_2
   uid:
     base: '0x1FFF7590'
-    uncurated: true
-    ip_hint: uid:v1:UID
+    ip: st/uid_v1
   usart1:
     base: '0x40013800'
     ip: st/usart_v4
@@ -674,13 +673,13 @@ peripherals:
     ip_hint: vrefintcal:v1:VREFINTCAL
   wwdg:
     base: '0x40002C00'
-    uncurated: true
-    ip_hint: wwdg:v2:WWDG
+    ip: st/wwdg_v2
     gate:
       peripheral: rcc
       register: APBENR1
       bit: 11
     irq: WWDG
+    kernel_clock: apb
 pins:
   pa0:
     port: a
