@@ -1,12 +1,18 @@
 # embassy (kind:version[:block]) tag -> our curated registers/st/<ip>, or 'uncurated'.
 # Unmapped tags are BUILD ERRORS so new upstream tags surface loudly.
-# name_overrides win over tags: LPUART carries usart:v4 tags but its BRR is
-# x256 (different baud math) — binding it to usart_v4 would silently program
-# the wrong baud rate.
+# A `kind:version:BLOCK` key wins over the bare `kind:version` one, which is
+# how the LPUART is kept off st/usart_v4: upstream tags it usart:v4 because the
+# offsets match, but its BRR is x256 (different baud math) and it is missing
+# GTPR/RTOR, so binding it there would silently program the wrong baud rate.
+# It used to be held out by a `lpuart` NAME override, which was blunter than
+# the fact: the name says nothing about the IP version, and stm32l412cb's
+# LPUART is usart:v3, a block this database has not curated.
 map:
   "gpio:v2": st/gpio_v2
   "usart:v4": st/usart_v4
+  "usart:v4:LPUART": st/lpuart_v4
   "usart:v3": st/usart_v3
+  "usart:v3:LPUART": uncurated
   "i2c:v2": st/i2c_v2
   "spi:v3_i2s": st/spi_v2
   "adc:g0": st/adc_v2
@@ -178,5 +184,4 @@ map:
 
 
 name_overrides:
-  "lpuart": uncurated
   "lptim": uncurated

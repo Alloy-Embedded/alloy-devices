@@ -336,22 +336,34 @@ peripherals:
     irq: TIM7_LPTIM2
   lpuart1:
     base: '0x40008000'
-    uncurated: true
-    ip_hint: usart:v4:LPUART
+    ip: st/lpuart_v4
     gate:
       peripheral: rcc
       register: APBENR1
       bit: 20
     irq: USART3_4_5_6_LPUART1
+    kernel_clock: apb
+    dma_requests:
+      rx: 14
+      tx: 15
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   lpuart2:
     base: '0x40008400'
-    uncurated: true
-    ip_hint: usart:v4:LPUART
+    ip: st/lpuart_v4
     gate:
       peripheral: rcc
       register: APBENR1
       bit: 7
     irq: USART2_LPUART2
+    kernel_clock: apb
+    dma_requests:
+      rx: 64
+      tx: 65
+    feat:
+      rx_fifo_depth: 8
+      tx_fifo_depth: 8
   pwr:
     base: '0x40007000'
     ip: st/pwr_g0
