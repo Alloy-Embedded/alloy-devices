@@ -1,0 +1,297 @@
+schema: alloy.registers.v1
+vendor: st
+ip: tim_adv
+class: bridge
+description: >
+  ST advanced-control timer (G0-era TIM_ADV template, TIM1 on the G0B1RE).
+  Curated for ONE feature: a complementary-output bridge — CHx/CHxN pairs with
+  a hardware dead-time generator and a BREAK input that forces the outputs to a
+  safe state without software.
+
+  `class: bridge` and NOT `pwm`, deliberately. This IP is a superset of
+  st/tim_gp16 and would drive alloy::pwm perfectly well, but no
+  alloy/hal/pwm/st_tim_adv.hpp exists, and declaring a class whose driver is
+  not in the tree would offer TIM1 to the `led_pwm` role and then fail to
+  compile. The day that driver is written, `pwm` joins `personalities:` here
+  and nothing else changes.
+
+  WHAT IS DELIBERATELY NOT CURATED, because the feature does not need it and a
+  register nobody programs is a register nobody has checked:
+    * SMCR fields — trigger/slave/ETR modes. The register is declared (the
+      struct layout needs it) with no fields, which is question 0's row 2: base
+      and offset, no named accessor.
+    * BK2 (the second break input: BDTR.BK2E/BK2P/BK2F, AF2). TIM1 has two
+      break inputs on this die and this file curates one. `feat.break_inputs`
+      says 2 because that is what the silicon has; the driver drives one and
+      says so.
+    * channels 5 and 6, CCMR3, CCR5/CCR6, combined-PWM modes.
+    * the burst-DMA controller (DCR/DMAR) and TISEL.
+    * AF1's comparator break sources (BKCMP1E/BKCMP2E) and ETRSEL. Only the
+      BKIN *pin* path (BKINE/BKINP) is curated, because that is the one a
+      `bridge::brk<pin>` tag can route.
+provenance:
+  sources:
+    - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha builders/st/sources.lock already pins, and the same file registers/st/tim_gp16.yaml was built from. block/TIM_ADV (extends TIM_2CH_CMP -> TIM_1CH_CMP -> TIM_1CH -> TIM_CORE) gives the register offsets; fieldset/BDTR_ADV (extends BDTR_1CH_CMP), CCER_ADV, CR2_ADV, SR_ADV, EGR_ADV, DIER_ADV, CCMR_Output_GP16 and AF1_ADV give the bit positions; enum/OSSI, enum/OSSR, enum/BKP, enum/BKINP, enum/LOCK, enum/FilterValue, enum/CMS and enum/OCM give the encodings below."
+    - "RM0444 (STM32G0x1) section 21 'Advanced-control timer (TIM1)' — named as the manual chapter these registers belong to, and as the source of the DTG piecewise dead-time encoding the driver implements. STATED PLAINLY, in the shape tim_gp16.yaml's provenance already uses: the bit positions and enumerated values in this file were read from the pinned JSON above, NOT from the PDF. No page or table number is claimed because none was checked. Nothing here has been seen on silicon."
+  completeness: bring-up-subset
+#: DEGREE, and it belongs to the IP rather than to an instance: how many
+#: complementary pairs and how many break inputs is fixed by the TIM_ADV
+#: design, not by which die it is dropped onto. ZERO MEANS ABSENT is what
+#: makes these usable as a capability test — a timer IP with
+#: `complementary_channels: 0` cannot host a bridge, and the facade says so
+#: with a static_assert instead of programming a CCxNE bit that does not
+#: exist.
+feat:
+  channels: 4
+  complementary_channels: 3
+  break_inputs: 2
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CEN, bit: 0 }
+      - { name: UDIS, bit: 1 }
+      - { name: URS, bit: 2 }
+      - { name: OPM, bit: 3 }
+      - { name: DIR, bit: 4 }
+      # CENTER-ALIGNED IS NOT A STYLE PREFERENCE ON A BRIDGE. In edge-aligned
+      # mode all three phases switch on the same counter reload, so the
+      # bridge's three half-bridges commutate simultaneously and the DC-link
+      # ripple current is the sum. Center-aligned interleaves them. The three
+      # variants differ only in WHEN the compare interrupt/trigger fires
+      # (down, up, both) — the waveform is the same — which is why the
+      # portable config offers `edge` vs `center` and the variant is Layer 2.
+      - { name: CMS, bit: 5, width: 2,
+          description: "Center-aligned mode. 0 = edge-aligned (counter counts up only).",
+          values: { EDGE_ALIGNED: 0, CENTER_1: 1, CENTER_2: 2, CENTER_3: 3 } }
+      - { name: ARPE, bit: 7 }
+      # CKD divides the timer clock to make t_DTS, which is the tick the
+      # DEAD-TIME generator counts in. Curated because the driver must know it
+      # is 00 to convert nanoseconds to a DTG code at all: a driver that left
+      # this alone and assumed t_DTS = t_CK_INT would compute a dead time four
+      # times too short if anything else had set CKD to 10.
+      - { name: CKD, bit: 8, width: 2,
+          description: "Clock division for the dead-time generator and the digital filters: t_DTS = t_CK_INT << CKD.",
+          values: { DIV1: 0, DIV2: 1, DIV4: 2 } }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    # THE IDLE STATE IS WHAT THE PINS DO AFTER THE BREAK FIRES. When MOE goes
+    # to 0 — which a break does in hardware, with no software in the path —
+    # and OSSI selects "drive the idle level" rather than "release", these
+    # bits ARE the level each pin is driven to. Getting them wrong turns a
+    # fault into a shoot-through: OIS1 = 1 with OIS1N = 1 would drive both
+    # transistors of phase 1 on. The driver forces all six to 0 and refuses to
+    # offer them as a knob; see the header comment in the driver for why that
+    # is the only combination it is willing to program.
+    fields:
+      - { name: CCPC, bit: 0, description: "Capture/compare preloaded control" }
+      - { name: OIS1, bit: 8, description: "Output idle state, CH1 (level driven when MOE=0 and OSSI=1)" }
+      - { name: OIS1N, bit: 9, description: "Output idle state, CH1N" }
+      - { name: OIS2, bit: 10 }
+      - { name: OIS2N, bit: 11 }
+      - { name: OIS3, bit: 12 }
+      - { name: OIS3N, bit: 13 }
+      - { name: OIS4, bit: 14 }
+  # Declared with NO FIELDS on purpose — question 0's row 2. The struct layout
+  # needs the word; the bridge feature never programs a slave mode, and a
+  # field this file has not checked is worse than no field at all.
+  - name: SMCR
+    offset: "0x08"
+    access: rw
+  - name: DIER
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: UIE, bit: 0 }
+      - { name: BIE, bit: 7, description: "Break interrupt enable" }
+      - { name: UDE, bit: 8, description: "Update DMA request enable" }
+  - name: SR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: UIF, bit: 0 }
+      - { name: BIF, bit: 7, description: "Break interrupt flag — set by the break, cleared by writing 0" }
+      - { name: B2IF, bit: 8, description: "Break 2 interrupt flag" }
+      - { name: SBIF, bit: 13, description: "System break interrupt flag (lockup/PVD/SRAM parity sources)" }
+  - name: EGR
+    offset: "0x14"
+    access: wo
+    fields:
+      - { name: UG, bit: 0 }
+      - { name: COMG, bit: 5, description: "Capture/compare control update generation" }
+      - { name: BG, bit: 7, description: "Break generation — a software break, same effect as the pin" }
+  # CCMR1/CCMR2 HAVE TWO LAYOUTS AND THIS FILE HOLDS THE OUTPUT ONE, for the
+  # same reason and with the same consequence as registers/st/tim_gp16.yaml:
+  # fields of one register may not overlap, the input view's ICxPSC/ICxF sit
+  # on top of OCxPE/OCxM, and a bridge is an output-only personality. The
+  # input view is unreachable here at every layer.
+  #
+  # OCxM IS FOUR BITS AND THEY ARE NOT CONTIGUOUS — OCxM[2:0] then OCxM[3] up
+  # at bit 16/24 — so it is spelled as two entries, exactly as tim_gp16.yaml
+  # spells the discontiguous SMS. PWM modes 1 and 2 live entirely in the low
+  # three bits with the high one clear, which is why a driver can write the
+  # low field by name as long as it keeps the high one at 0.
+  - name: CCMR1
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: CC1S, bit: 0, width: 2,
+          description: "CC1 direction. 0 = output, which is the only value a bridge uses.",
+          values: { OUTPUT: 0 } }
+      - { name: OC1FE, bit: 2 }
+      - { name: OC1PE, bit: 3, description: "CCR1 preload — must be 1 so a duty write lands on an update, not mid-period" }
+      - { name: OC1M, bit: 4, width: 3,
+          description: "Output compare mode, OC1M[2:0]. Completed by OC1M_3 at bit 16.",
+          values: { FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM_MODE_1: 6, PWM_MODE_2: 7 } }
+      - { name: CC2S, bit: 8, width: 2, values: { OUTPUT: 0 } }
+      - { name: OC2FE, bit: 10 }
+      - { name: OC2PE, bit: 11 }
+      - { name: OC2M, bit: 12, width: 3,
+          description: "Output compare mode, OC2M[2:0]. Completed by OC2M_3 at bit 24.",
+          values: { FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM_MODE_1: 6, PWM_MODE_2: 7 } }
+      - { name: OC1M_3, bit: 16, description: "OC1M[3] — must be 0 for PWM modes 1 and 2" }
+      - { name: OC2M_3, bit: 24, description: "OC2M[3] — must be 0 for PWM modes 1 and 2" }
+  - name: CCMR2
+    offset: "0x1C"
+    access: rw
+    fields:
+      - { name: CC3S, bit: 0, width: 2, values: { OUTPUT: 0 } }
+      - { name: OC3FE, bit: 2 }
+      - { name: OC3PE, bit: 3 }
+      - { name: OC3M, bit: 4, width: 3,
+          values: { FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM_MODE_1: 6, PWM_MODE_2: 7 } }
+      - { name: CC4S, bit: 8, width: 2, values: { OUTPUT: 0 } }
+      - { name: OC4FE, bit: 10 }
+      - { name: OC4PE, bit: 11 }
+      - { name: OC4M, bit: 12, width: 3,
+          values: { FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM_MODE_1: 6, PWM_MODE_2: 7 } }
+      - { name: OC3M_3, bit: 16 }
+      - { name: OC4M_3, bit: 24 }
+  # CCxNE/CCxNP are the whole reason this IP is a different file from
+  # tim_gp16: they are the COMPLEMENTARY output's enable and polarity, and
+  # tim_gp16's CCER has neither because a general-purpose timer has no
+  # complementary outputs. Note the asymmetry the silicon has and this file
+  # therefore has: CC4 has an NP bit but no NE bit, because channel 4 has no
+  # complementary output — it is the polarity of channel 4's *input* capture
+  # in the other view.
+  - name: CCER
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: CC1E, bit: 0 }
+      - { name: CC1P, bit: 1, description: "CH1 output polarity: 0 = active high" }
+      - { name: CC1NE, bit: 2, description: "CH1N complementary output enable" }
+      - { name: CC1NP, bit: 3, description: "CH1N output polarity: 0 = active high" }
+      - { name: CC2E, bit: 4 }
+      - { name: CC2P, bit: 5 }
+      - { name: CC2NE, bit: 6 }
+      - { name: CC2NP, bit: 7 }
+      - { name: CC3E, bit: 8 }
+      - { name: CC3P, bit: 9 }
+      - { name: CC3NE, bit: 10 }
+      - { name: CC3NP, bit: 11 }
+      - { name: CC4E, bit: 12 }
+      - { name: CC4P, bit: 13 }
+      - { name: CC4NP, bit: 15 }
+  - name: CNT
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: CNT, bit: 0, width: 16 }
+  - name: PSC
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 16 }
+  - name: ARR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: ARR, bit: 0, width: 16 }
+  # The repetition counter. An advanced timer raises its UPDATE event only
+  # every REP+1 counter overflows, which is how a center-aligned bridge gets
+  # one update per PWM period instead of two.
+  - name: RCR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: REP, bit: 0, width: 16 }
+  - name: CCR1
+    offset: "0x34"
+    access: rw
+  - name: CCR2
+    offset: "0x38"
+    access: rw
+  - name: CCR3
+    offset: "0x3C"
+    access: rw
+  - name: CCR4
+    offset: "0x40"
+    access: rw
+  # BDTR IS THE SAFETY REGISTER, and every field in it is curated because the
+  # feature programs every field in it.
+  #
+  #   DTG   the dead time, in a PIECEWISE encoding (four ranges selected by
+  #         DTG[7:5]) counted in t_DTS ticks. The unit is not nanoseconds and
+  #         the mapping is not linear, which is exactly why a Layer-1 knob in
+  #         nanoseconds is the portable spelling and this is what the driver
+  #         computes from it.
+  #   OSSI  what the pins do when MOE = 0 (which is what a break causes):
+  #         released to the GPIO (0) or driven to the CR2 idle level (1).
+  #   OSSR  the same question while MOE = 1 but a channel is disabled.
+  #   BKP   the polarity of the break input: which level means "fault".
+  #   AOE   whether MOE comes back BY ITSELF on the next update after the
+  #         break clears. The driver leaves it 0 — an inverter that re-arms
+  #         its own bridge without the application saying so is a decision no
+  #         framework should make for a compressor.
+  #   MOE   the master switch. Every output is off until this is 1, whatever
+  #         CCxE/CCxNE say.
+  #   LOCK  write-once (per reset) protection of the fields above.
+  - name: BDTR
+    offset: "0x44"
+    access: rw
+    fields:
+      - { name: DTG, bit: 0, width: 8,
+          description: "Dead-time generator setup. Piecewise: DTG[7:5]=0xx -> DTG[7:0] t_DTS; 10x -> (64+DTG[5:0])*2; 110 -> (32+DTG[4:0])*8; 111 -> (32+DTG[4:0])*16." }
+      - { name: LOCK, bit: 8, width: 2,
+          description: "Write-once lock of the break/dead-time configuration. Cleared only by a peripheral reset.",
+          values: { OFF: 0, LEVEL_1: 1, LEVEL_2: 2, LEVEL_3: 3 } }
+      - { name: OSSI, bit: 10,
+          description: "Off-state, idle (MOE=0): 0 = outputs released to GPIO, 1 = outputs driven to their CR2 idle level.",
+          values: { RELEASE: 0, DRIVE_IDLE_LEVEL: 1 } }
+      - { name: OSSR, bit: 11,
+          description: "Off-state, run (MOE=1, channel disabled): 0 = released, 1 = driven to the idle level.",
+          values: { RELEASE: 0, DRIVE_IDLE_LEVEL: 1 } }
+      - { name: BKE, bit: 12, description: "Break input enable" }
+      - { name: BKP, bit: 13,
+          description: "Break input polarity: 0 = break is active LOW, 1 = active HIGH.",
+          values: { ACTIVE_LOW: 0, ACTIVE_HIGH: 1 } }
+      - { name: AOE, bit: 14, description: "Automatic output enable — MOE re-arms itself on the next update event" }
+      - { name: MOE, bit: 15, description: "Main output enable — every CHx/CHxN is off while this is 0" }
+      - { name: BKF, bit: 16, width: 4,
+          description: "Break input digital filter: how many consecutive samples at what rate before the break is believed.",
+          values: { NO_FILTER: 0, CK_INT_N2: 1, CK_INT_N4: 2, CK_INT_N8: 3,
+                    DTS_DIV2_N6: 4, DTS_DIV2_N8: 5, DTS_DIV4_N6: 6, DTS_DIV4_N8: 7,
+                    DTS_DIV8_N6: 8, DTS_DIV8_N8: 9, DTS_DIV16_N5: 10, DTS_DIV16_N6: 11,
+                    DTS_DIV16_N8: 12, DTS_DIV32_N5: 13, DTS_DIV32_N6: 14, DTS_DIV32_N8: 15 } }
+  # AF1 selects WHICH sources drive the break. BKINE is the BKIN *pin* — the
+  # one a `bridge::brk<pin>` tag routes — and it is curated with BKINP for one
+  # reason: this file will not rely on a reset value it has not checked. The
+  # comparator break sources (BKCMP1E/BKCMP2E, their polarities) and ETRSEL
+  # are left uncurated; nothing in the bridge feature reaches them.
+  #
+  # TWO POLARITY BITS COMPOSE HERE AND ONE OF THEM HAD TO BE PINNED. BKINP
+  # inverts the BKIN pin before it joins the OR of break sources; BDTR.BKP
+  # then selects the polarity of that composite. Two spellings of one fact is
+  # the shape this project refuses, so the driver fixes BKINP at 0 and lets
+  # BKP alone carry the answer.
+  - name: AF1
+    offset: "0x60"
+    access: rw
+    fields:
+      - { name: BKINE, bit: 0, description: "BRK BKIN pin input enable" }
+      - { name: BKINP, bit: 9,
+          description: "BKIN pin polarity BEFORE the break OR. Held at 0 by the driver so BDTR.BKP is the only polarity.",
+          values: { NOT_INVERTED: 0, INVERTED: 1 } }

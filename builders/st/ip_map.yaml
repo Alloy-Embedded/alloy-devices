@@ -13,7 +13,7 @@ map:
   "adccommon:v3": st/adccommon_v3
   "timer:v3:TIM_GP16": st/tim_gp16
   "timer:v3:TIM_GP32": st/tim_gp16
-  "timer:v3:TIM_ADV": uncurated
+  "timer:v3:TIM_ADV": st/tim_adv
   "timer:v3:TIM_BASIC": uncurated
   "timer:v3:TIM_1CH": uncurated
   "timer:v3:TIM_2CH": uncurated
