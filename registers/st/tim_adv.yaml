@@ -256,8 +256,13 @@ registers:
       - { name: DTG, bit: 0, width: 8,
           description: "Dead-time generator setup. Piecewise: DTG[7:5]=0xx -> DTG[7:0] t_DTS; 10x -> (64+DTG[5:0])*2; 110 -> (32+DTG[4:0])*8; 111 -> (32+DTG[4:0])*16." }
       - { name: LOCK, bit: 8, width: 2,
+          # NOT `OFF: 0`. YAML 1.1 reads a bare OFF as the boolean false, the
+          # loader hands the emitter a bool where a name belongs, and codegen
+          # dies with `'bool' object has no attribute 'lower'` — which names
+          # neither this file nor this field. DISABLED is also what the
+          # upstream enum calls it.
           description: "Write-once lock of the break/dead-time configuration. Cleared only by a peripheral reset.",
-          values: { OFF: 0, LEVEL_1: 1, LEVEL_2: 2, LEVEL_3: 3 } }
+          values: { DISABLED: 0, LEVEL_1: 1, LEVEL_2: 2, LEVEL_3: 3 } }
       - { name: OSSI, bit: 10,
           description: "Off-state, idle (MOE=0): 0 = outputs released to GPIO, 1 = outputs driven to their CR2 idle level.",
           values: { RELEASE: 0, DRIVE_IDLE_LEVEL: 1 } }
