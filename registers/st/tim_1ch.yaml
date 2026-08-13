@@ -91,8 +91,13 @@ registers:
     offset: "0x24"
     access: rw
     fields:
+      # UIFCPY (bit 31) is NOT curated, and the reason is a naming rule rather
+      # than a doubt about the silicon: this register's only other field would
+      # give it a flags enum called `cnt`, which is already the accessor name
+      # for the counter itself, and alloy's IP emitter refuses that collision.
+      # The counter is the field a driver needs; the mirror of SR.UIF that
+      # CR1.UIFREMAP puts beside it is reachable only as a raw read.
       - { name: CNT, bit: 0, width: 16 }
-      - { name: UIFCPY, bit: 31 }
   - name: PSC
     offset: "0x28"
     access: rw
