@@ -28,7 +28,7 @@ map:
   "exti:g0": st/exti_g0
   "syscfg:g0": uncurated
   "pwr:g0": st/pwr_g0
-  "crc:v3": uncurated
+  "crc:v3": st/crc_v3
   "iwdg:v2": st/iwdg_v2
   "wwdg:v2": st/wwdg_v2
   "rtc:v3_base": st/rtc_v3
@@ -43,7 +43,7 @@ map:
   "dac:v4": st/dac_v4
   "vrefbuf:v1": uncurated
   "vrefintcal:v1": uncurated
-  "uid:v1": uncurated
+  "uid:v1": st/uid_v1
   "usb:v4": uncurated
   "usbram:32_2048": uncurated
   "crs:v1": uncurated
