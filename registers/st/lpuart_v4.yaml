@@ -1,0 +1,205 @@
+schema: alloy.registers.v1
+vendor: st
+ip: lpuart_v4
+class: uart
+description: >
+  ST LPUART — the low-power UART of the PRESC/FIFO era (STM32G0/G4/L4/L5/H7).
+
+  IS IT THE SAME IP AS usart_v4? Register-for-register it is the same BLOCK
+  with two registers removed and one register widened, which is exactly why it
+  gets its own file rather than sharing usart_v4's:
+
+    * GTPR (0x10, smartcard guard time / prescaler) and RTOR (0x14, receiver
+      timeout) DO NOT EXIST. LPUART has no smartcard, IrDA, LIN or
+      receiver-timeout function at all, so the two words are reserved.
+    * BRR is 20 bits wide (usart_v4's functional USARTDIV is 16), and the
+      divisor is a DIFFERENT SUM: LPUARTDIV = (256 x f_ck) / baud, and RM0444
+      forbids any value below 0x300. That is the whole reason LPUART is not
+      bound to st/usart_v4 in builders/st/ip_map.yaml: the offsets would have
+      matched, every field the bring-up driver touches would have matched, and
+      the port would have run at 1/256 of the requested rate.
+    * CR1 has no OVER8 (bit 15 is reserved — LPUART has no
+      oversampling-by-8), CR2 no ABREN/RTOEN, RQR no ABRRQ, ISR no
+      ABRE/ABRF/RTOF/EOBF/LBDF, ICR no RTOCF/EOBCF/UDRCF.
+    * CR1 DOES have DEDT/DEAT and CR3 DEM/DEP, which alloy's curated
+      usart_v4 does not carry — so hardware RS-485 driver-enable is reachable
+      on an LPUART and is a compile error on a v4 USART. The asymmetry is the
+      database's, not a judgement.
+    * CR1.UESM + CR3.WUS/WUFIE + ISR.WUF + ICR.WUCF are the reason the block
+      exists: the receiver stays clocked in Stop mode and raises a wakeup.
+      usart_v4's curated data carries UESM but none of the WUS/WUF half.
+
+  FIELD NAMES ARE usart_v4's, DELIBERATELY. ST's SVD spells CR1 bit 5
+  RXFNEIE, bit 7 TXFNFIE, ISR bit 5 RXFNE, bit 7 TXFNF and ISR bit 2 NE; this
+  file spells them RXNEIE/TXEIE/RXNE/TXE/NF, the same as registers/st/usart_v4
+  and the same as every other UART in the database. They are the same bits
+  under both names (the F is the FIFO-mode reading of the flag). Keeping the
+  name means ONE driver body programs both blocks and the only thing that
+  forks is the divisor — see src/alloy/hal/uart/st_usart_v4_body.hpp.
+feat:
+  brr_min: 768
+provenance:
+  sources:
+    - "cmsis-svd-data data/STMicro/STM32G0B1.svd, peripheral LPUART1 @ 0x40008000 (register offsets, field bit positions and widths read directly from the SVD; LPUART2 derivesFrom LPUART1)"
+    - "embassy-rs/stm32-data-generated @ 669003ee data/registers/usart_v4.json — block/LPUART vs block/USART: the same twelve-word layout minus GTPR (0x10) and RTOR (0x14), which is the independent confirmation that the two blocks differ by subtraction"
+    - "ST RM0444 rev 5 §37 (LPUART): the LPUARTDIV = 256 x f_ck / baud relation and the 'do not write values below 0x300 in LPUART_BRR' rule that `feat.brr_min` records"
+  completeness: bring-up-subset
+  verified:
+    - >-
+      NOT silicon-verified. No STM32G0B1 board was on hand when this file was
+      written; every position below is read from ST's own machine-readable
+      SVD, and nothing here has driven a wire.
+    - >-
+      brr_min = 0x300 = 768 is the ONE fact in this file that no bit position
+      states and no SVD carries — it is a prose rule in RM0444 §37.8.4. It is
+      recorded as a `feat` (a DEGREE) rather than written into a driver so the
+      compile-time baud check reads its bound from the database. Its partner
+      bound, the MAXIMUM divisor, is deliberately NOT recorded: BRR's curated
+      width already states it (raw_mask = 0xFFFFF).
+    - >-
+      ICR bit 5 TXFECF is ABSENT here and PRESENT in registers/st/usart_v4.
+      ST's SVD omits it from LPUART_ICR; RM0444's LPUART_ICR table is the
+      only other source and was not available offline to break the tie, so
+      the conservative reading (the machine-readable one) wins. No driver in
+      the tree writes it. If a reference manual later says otherwise, adding
+      it is additive.
+    - >-
+      ISR's reset value is 0x008000C0 (TC, TXE/TXFNF and TXFE set out of
+      reset), per the SVD. Not recorded as `reset:` on the register because
+      nothing in the tree reads reset values yet and an unread fact is a
+      fact free to drift.
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    description: >
+      SVD splits this into LPUART_CR1_enabled / LPUART_CR1_disabled (the two
+      FIFO-mode readings of one word). This is the union, which is the
+      enabled view: the two differ only in that TXFEIE/RXFFIE (30/31) are
+      FIFO-mode-only interrupt enables.
+    fields:
+      - { name: UE, bit: 0 }
+      - { name: UESM, bit: 1, description: "USART enabled in Stop mode — the LPUART keeps its receiver clocked while the core sleeps" }
+      - { name: RE, bit: 2 }
+      - { name: TE, bit: 3 }
+      - { name: IDLEIE, bit: 4 }
+      - { name: RXNEIE, bit: 5, description: "SVD spells it RXFNEIE; same bit, FIFO-mode reading" }
+      - { name: TCIE, bit: 6 }
+      - { name: TXEIE, bit: 7, description: "SVD spells it TXFNFIE; same bit, FIFO-mode reading" }
+      - { name: PEIE, bit: 8 }
+      - { name: PS, bit: 9 }
+      - { name: PCE, bit: 10 }
+      - { name: WAKE, bit: 11 }
+      - { name: M0, bit: 12 }
+      - { name: MME, bit: 13 }
+      - { name: CMIE, bit: 14 }
+      - { name: DEDT, bit: 16, width: 5, description: "Driver-enable de-assertion time, in 16ths of a bit" }
+      - { name: DEAT, bit: 21, width: 5, description: "Driver-enable assertion time, in 16ths of a bit" }
+      - { name: M1, bit: 28 }
+      - { name: FIFOEN, bit: 29 }
+      - { name: TXFEIE, bit: 30 }
+      - { name: RXFFIE, bit: 31 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: ADDM7, bit: 4 }
+      - { name: STOP, bit: 12, width: 2,
+          description: "LPUART encodes ONE and TWO only — 0.5 and 1.5 stop bits are USART-only encodings and this field's 01/11 are reserved.",
+          values: { ONE: 0, TWO: 2 } }
+      - { name: SWAP, bit: 15 }
+      - { name: RXINV, bit: 16 }
+      - { name: TXINV, bit: 17 }
+      - { name: DATAINV, bit: 18 }
+      - { name: MSBFIRST, bit: 19 }
+      - { name: ADD, bit: 24, width: 8 }
+  - name: CR3
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: EIE, bit: 0 }
+      - { name: HDSEL, bit: 3 }
+      - { name: DMAR, bit: 6 }
+      - { name: DMAT, bit: 7 }
+      - { name: RTSE, bit: 8 }
+      - { name: CTSE, bit: 9 }
+      - { name: CTSIE, bit: 10 }
+      - { name: OVRDIS, bit: 12 }
+      - { name: DDRE, bit: 13 }
+      - { name: DEM, bit: 14, description: "Driver-enable mode: the RTS output becomes RS-485 DE" }
+      - { name: DEP, bit: 15, description: "DE polarity. 0 = DE active high" }
+      - { name: WUS, bit: 20, width: 2,
+          description: "What raises WUF while the core is in Stop. 01 is reserved.",
+          values: { ADDRESS_MATCH: 0, START_BIT: 2, RXNE: 3 } }
+      - { name: WUFIE, bit: 22 }
+      - { name: TXFTIE, bit: 23 }
+      - { name: RXFTCFG, bit: 25, width: 3 }
+      - { name: RXFTIE, bit: 28 }
+      - { name: TXFTCFG, bit: 29, width: 3 }
+  - name: BRR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: BRR, bit: 0, width: 20,
+          description: "LPUARTDIV = (256 x f_ck) / baud. Twenty bits, and values below 0x300 (feat.brr_min) are forbidden — so f_ck must be between 3x and 4096x the baud rate." }
+  - name: RQR
+    offset: "0x18"
+    access: wo
+    fields:
+      - { name: SBKRQ, bit: 1 }
+      - { name: MMRQ, bit: 2 }
+      - { name: RXFRQ, bit: 3 }
+      - { name: TXFRQ, bit: 4 }
+  - name: ISR
+    offset: "0x1C"
+    access: ro
+    fields:
+      - { name: PE, bit: 0 }
+      - { name: FE, bit: 1 }
+      - { name: NF, bit: 2, description: "SVD spells it NE" }
+      - { name: ORE, bit: 3 }
+      - { name: IDLE, bit: 4 }
+      - { name: RXNE, bit: 5, description: "SVD spells it RXFNE" }
+      - { name: TC, bit: 6 }
+      - { name: TXE, bit: 7, description: "SVD spells it TXFNF" }
+      - { name: CTSIF, bit: 9 }
+      - { name: CTS, bit: 10 }
+      - { name: BUSY, bit: 16 }
+      - { name: CMF, bit: 17 }
+      - { name: SBKF, bit: 18 }
+      - { name: RWU, bit: 19 }
+      - { name: WUF, bit: 20, description: "Wakeup from Stop mode flag" }
+      - { name: TEACK, bit: 21 }
+      - { name: REACK, bit: 22 }
+      - { name: TXFE, bit: 23 }
+      - { name: RXFF, bit: 24 }
+      - { name: RXFT, bit: 26 }
+      - { name: TXFT, bit: 27 }
+  - name: ICR
+    offset: "0x20"
+    access: wo
+    fields:
+      - { name: PECF, bit: 0 }
+      - { name: FECF, bit: 1 }
+      - { name: NCF, bit: 2 }
+      - { name: ORECF, bit: 3 }
+      - { name: IDLECF, bit: 4 }
+      - { name: TCCF, bit: 6 }
+      - { name: CTSCF, bit: 9 }
+      - { name: CMCF, bit: 17 }
+      - { name: WUCF, bit: 20 }
+  - name: RDR
+    offset: "0x24"
+    access: ro
+    fields:
+      - { name: RDR, bit: 0, width: 9 }
+  - name: TDR
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: TDR, bit: 0, width: 9 }
+  - name: PRESC
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: PRESCALER, bit: 0, width: 4 }
