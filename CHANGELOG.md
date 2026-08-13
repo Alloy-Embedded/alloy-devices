@@ -86,6 +86,45 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- **The basic and small timers: `st/tim_basic`, `st/tim_1ch`, `st/tim_1ch_cmp`,
+  `st/tim_2ch_cmp`.** Four new IP files, not one, and not a reuse of
+  `st/tim_gp16`. The G0's six remaining timers were all `uncurated`, and the
+  cheap move — pointing TIM6/TIM7/TIM14/TIM15/TIM16/TIM17 at the existing
+  general-purpose overlay — is wrong in four separate ways, each of which the
+  register map states:
+
+  - **TIM6/TIM7 have no capture/compare unit at all.** No CCMR, no CCER, no
+    CCR. `st/tim_gp16` would lay four compare registers and an enable register
+    over reserved address space, and a driver could "enable channel 1" on a
+    block that has none.
+  - **TIM14 has no CR2.** So no master-mode selection, so no trigger output.
+  - **TIM16/TIM17 have a CR2, and it has no MMS either** — bits 6:4 hold the
+    output-idle state instead. Only TIM6, TIM7 and TIM15 can drive TRGO.
+  - **TIM15/TIM16/TIM17 gate their outputs behind `BDTR.MOE`.** A driver
+    written for `tim_gp16` (which has no BDTR and never writes MOE) leaves the
+    pin inactive with every other register correct — a silent failure, not a
+    missing feature.
+
+  Each file records those as DEGREE on the IP, where the fact belongs: `feat`
+  carries `channels`, `complementary`, `trgo` and `moe`, so portable code asks
+  a number instead of assuming a family. `trgo: 0` on TIM14/TIM16/TIM17 is the
+  one that pays for itself — "use a timer to trigger the ADC" is answerable
+  from data now.
+
+  Curated as `class: tick`, because the time base is what all six share and
+  what all six are usually bought for. Bring-up subsets: the input-capture view
+  of CCMR1 (ICxF, ICxPSC) is unreachable on all four for the same reason it is
+  on `st/tim_gp16` — fields may not overlap and the output view is the one that
+  selects the view. `st/tim_2ch_cmp`'s DIER curates only `CC1IE`: upstream's
+  `DIER_2CH_CMP` keeps its CCIE array at length 1 while SR and EGR widen theirs
+  to 2, and an interrupt-enable bit invented from symmetry is exactly what this
+  database exists to refuse.
+
+  `builders/st/ip_map.yaml` maps the four upstream tags, so all 103 generated
+  stm32g0 chip files gain the instances (and their DMA request numbers). No
+  claim here is witnessed by silicon; every bit position comes from the pinned
+  `stm32-data-generated@669003ee`, as each file's provenance states.
+
 - **`st/wwdg_v2` — the OTHER watchdog, and deliberately not class `watchdog`.**
   All three registers (`CR`, `CFR`, `SR`), every field, and `CFR.WDGTB`'s eight
   values named so the prescaler is not a magic number wearing an accessor.

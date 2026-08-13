@@ -1,0 +1,142 @@
+schema: alloy.registers.v1
+vendor: st
+ip: tim_1ch_cmp
+class: tick
+description: >
+  ST one-channel timer with a complementary output (G0-era TIM16/TIM17
+  template). st/tim_1ch plus CR2, a repetition counter, a break/dead-time
+  register and the CC1N output. THE DIFFERENCE THAT MATTERS is BDTR.MOE: on
+  this block the compare unit can be running, the channel enabled and the pin
+  correctly muxed, and the output still stays inactive until MOE is set. A
+  driver written for st/tim_gp16 (which has no BDTR and never writes MOE)
+  produces a silent pin here, which is why reusing it would be a bug rather
+  than a shortcut.
+provenance:
+  sources:
+    - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha builders/st/sources.lock already pins. block/TIM_1CH_CMP extends block/TIM_1CH extends block/TIM_CORE; fields from fieldset/CR1_1CH, CR2_1CH_CMP, DIER_1CH_CMP (+DIER_1CH, DIER_CORE), SR_1CH_CMP (+SR_1CH, SR_CORE), EGR_1CH_CMP (+EGR_1CH, EGR_CORE), CCMR_Output_1CH, CCER_1CH_CMP (+CCER_1CH), RCR_1CH_CMP, BDTR_1CH_CMP, CNT_CORE, ARR_CORE, CCR_1CH, TISEL_1CH, and enum/OCM_LIMITED."
+    - "RM0444 (STM32G0x1) chapter 'General-purpose timers (TIM15/TIM16/TIM17)' — named as the manual chapter these registers belong to. STATED PLAINLY: every bit position and enum value below was read from the pinned JSON above, not from the PDF, and no section number is claimed because none was checked. Nothing here is witnessed by silicon."
+  completeness: bring-up-subset
+# DEGREE. One channel, one complementary output, NO trigger output (CR2 on this
+# block carries preload control and output-idle levels — there is no MMS field
+# in it, so TIM16/TIM17 cannot drive the DAC or the ADC), and outputs gated by
+# BDTR.MOE.
+feat:
+  channels: 1
+  complementary: 1
+  trgo: 0
+  moe: 1
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CEN, bit: 0 }
+      - { name: UDIS, bit: 1 }
+      - { name: URS, bit: 2 }
+      - { name: OPM, bit: 3 }
+      - { name: ARPE, bit: 7 }
+      - { name: CKD, bit: 8, width: 2 }
+      - { name: UIFREMAP, bit: 11 }
+  # NO MMS HERE. This is upstream's CR2_1CH_CMP, and the absence is the point:
+  # every other timer family on this die puts master-mode selection at bits
+  # 6:4 of CR2, and TIM16/TIM17 put output-idle state there instead.
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: CCPC, bit: 0, description: "CCxE/CCxNE/OCxM are preloaded, committed by a COM event" }
+      - { name: CCUS, bit: 2, description: "COM event may also be raised by the TRGI rising edge" }
+      - { name: CCDS, bit: 3, description: "Capture/compare DMA request fires on update instead of on CC" }
+      - { name: OIS1, bit: 8, description: "OC1 idle state (used with BDTR.MOE cleared)" }
+      - { name: OIS1N, bit: 9, description: "OC1N idle state" }
+  - name: DIER
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: UIE, bit: 0 }
+      - { name: CC1IE, bit: 1 }
+      - { name: COMIE, bit: 5 }
+      - { name: BIE, bit: 7, description: "Break interrupt enable" }
+      - { name: UDE, bit: 8, description: "Update DMA request enable" }
+      - { name: CC1DE, bit: 9 }
+  - name: SR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: UIF, bit: 0, description: "Update interrupt flag — cleared by writing 0" }
+      - { name: CC1IF, bit: 1 }
+      - { name: COMIF, bit: 5 }
+      - { name: BIF, bit: 7 }
+      - { name: CC1OF, bit: 9 }
+  - name: EGR
+    offset: "0x14"
+    access: wo
+    fields:
+      - { name: UG, bit: 0 }
+      - { name: CC1G, bit: 1 }
+      - { name: COMG, bit: 5 }
+      - { name: BG, bit: 7 }
+  # Output view named, input view (ICF/ICPSC) left uncurated — see st/tim_1ch.
+  - name: CCMR1
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: CC1S, bit: 0, width: 2, values: { OUTPUT: 0, TI1: 1 } }
+      - { name: OC1FE, bit: 2 }
+      - { name: OC1PE, bit: 3 }
+      - { name: OC1M, bit: 4, width: 3,
+          description: "Output compare 1 mode, OC1M[2:0]. Completed by OC1M_3 at bit 16.",
+          values: { FROZEN: 0, TOGGLE: 3, FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM1: 6, PWM2: 7 } }
+      - { name: OC1M_3, bit: 16, description: "OC1M[3]. Reserved on this block — must stay 0." }
+  - name: CCER
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: CC1E, bit: 0 }
+      - { name: CC1P, bit: 1 }
+      - { name: CC1NE, bit: 2, description: "Complementary output OC1N enable" }
+      - { name: CC1NP, bit: 3 }
+  - name: CNT
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: CNT, bit: 0, width: 16 }
+      - { name: UIFCPY, bit: 31 }
+  - name: PSC
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 16 }
+  - name: ARR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: ARR, bit: 0, width: 16 }
+  - name: RCR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: REP, bit: 0, width: 8,
+          description: "Repetition counter: an update event is raised every REP+1 overflows" }
+  - name: CCR1
+    offset: "0x34"
+    access: rw
+    fields:
+      - { name: CCR1, bit: 0, width: 16 }
+  - name: BDTR
+    offset: "0x44"
+    access: rw
+    fields:
+      - { name: DTG, bit: 0, width: 8, description: "Dead-time generator setup (non-linear encoding)" }
+      - { name: LOCK, bit: 8, width: 2, description: "Lock level — WRITE ONCE per reset" }
+      - { name: OSSI, bit: 10, description: "Off-state selection for idle mode" }
+      - { name: OSSR, bit: 11, description: "Off-state selection for run mode" }
+      - { name: BKE, bit: 12, description: "Break input enable" }
+      - { name: BKP, bit: 13, description: "Break input polarity" }
+      - { name: AOE, bit: 14, description: "Automatic output enable — MOE is restored by the next update event" }
+      - { name: MOE, bit: 15, description: "Main output enable. WITHOUT THIS THE PIN IS INACTIVE, however the channel is configured." }
+  - name: TISEL
+    offset: "0x68"
+    access: rw
+    fields:
+      - { name: TI1SEL, bit: 0, width: 4 }

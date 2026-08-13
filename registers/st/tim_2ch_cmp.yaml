@@ -1,0 +1,185 @@
+schema: alloy.registers.v1
+vendor: st
+ip: tim_2ch_cmp
+class: tick
+description: >
+  ST two-channel timer with one complementary output (G0-era TIM15 template).
+  st/tim_1ch_cmp plus a second channel, a slave-mode control register, and —
+  unlike TIM16/TIM17 — a master-mode selection in CR2, so this one CAN drive
+  TRGO. Its outputs are gated by BDTR.MOE exactly as TIM16/TIM17's are.
+provenance:
+  sources:
+    - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha builders/st/sources.lock already pins. block/TIM_2CH_CMP extends block/TIM_1CH_CMP extends block/TIM_1CH extends block/TIM_CORE; fields from fieldset/CR1_1CH, CR2_2CH_CMP, SMCR_2CH, DIER_2CH_CMP, SR_2CH_CMP, EGR_2CH_CMP, CCMR_Output_2CH, CCER_2CH_CMP, RCR_1CH_CMP, BDTR_1CH_CMP, CNT_CORE, ARR_CORE, CCR_1CH, TISEL_2CH, and enums MMS / OCM / SMS / TS."
+    - "RM0444 (STM32G0x1) chapter 'General-purpose timers (TIM15/TIM16/TIM17)' — named as the manual chapter these registers belong to. STATED PLAINLY: every bit position and enum value below was read from the pinned JSON above, not from the PDF, and no section number is claimed because none was checked. Nothing here is witnessed by silicon."
+  completeness: bring-up-subset
+feat:
+  channels: 2
+  complementary: 1
+  trgo: 1
+  moe: 1
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CEN, bit: 0 }
+      - { name: UDIS, bit: 1 }
+      - { name: URS, bit: 2 }
+      - { name: OPM, bit: 3 }
+      - { name: ARPE, bit: 7 }
+      - { name: CKD, bit: 8, width: 2 }
+      - { name: UIFREMAP, bit: 11 }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: CCPC, bit: 0 }
+      - { name: CCUS, bit: 2 }
+      - { name: CCDS, bit: 3 }
+      # The whole reason TIM15 can be a trigger source and TIM16/TIM17 cannot.
+      # All eight encodings are reachable here because this block HAS compare
+      # units for the OC1REF/OC2REF ones — but only channels 1 and 2 exist, so
+      # the OC3/OC4 encodings (6 and 7) are named for what they are on richer
+      # timers and are not curated.
+      - { name: MMS, bit: 4, width: 3,
+          description: "Master mode selection — what drives TRGO.",
+          values: { RESET: 0, ENABLE: 1, UPDATE: 2, COMPARE_PULSE: 3, OC1REF: 4, OC2REF: 5 } }
+      - { name: TI1S, bit: 7, description: "TI1 is the XOR of CH1/CH2 inputs instead of CH1 alone" }
+      - { name: OIS1, bit: 8 }
+      - { name: OIS1N, bit: 9 }
+      - { name: OIS2, bit: 10 }
+  # SMS and TS are each ONE field in the silicon and TWO entries here, because
+  # both are discontiguous and this schema gives a field one `bit` and one
+  # `width` — the same split, for the same reason, as st/tim_gp16's SMS.
+  - name: SMCR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: SMS, bit: 0, width: 3,
+          description: "Slave mode selection, SMS[2:0]. Completed by SMS_3 at bit 16.",
+          values: { DISABLED: 0, RESET_MODE: 4, GATED: 5, TRIGGER: 6, EXT_CLOCK: 7 } }
+      - { name: TS, bit: 4, width: 3,
+          description: "Trigger selection, TS[2:0]. Completed by TS_HIGH at bits 21:20.",
+          values: { ITR0: 0, ITR1: 1, ITR2: 2, ITR3: 3, TI1F_ED: 4, TI1FP1: 5, TI2FP2: 6 } }
+      - { name: MSM, bit: 7, description: "Master/slave mode — delay TRGI to synchronise the pair" }
+      - { name: SMS_3, bit: 16, description: "SMS[3]. 1 with SMS[2:0]=0 selects combined reset+trigger." }
+      - { name: TS_HIGH, bit: 20, width: 2, description: "TS[4:3]." }
+  # UPSTREAM DECLARES ONLY CC1IE HERE. fieldset/DIER_2CH_CMP keeps the CCIE
+  # array at len 1 while SR and EGR widen theirs to 2, so a CC2IE bit is not in
+  # the pinned source. It is not curated rather than guessed: an interrupt
+  # enable invented from symmetry is exactly the kind of "obviously it must be
+  # there" that this database exists to refuse.
+  - name: DIER
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: UIE, bit: 0 }
+      - { name: CC1IE, bit: 1 }
+      - { name: COMIE, bit: 5 }
+      - { name: TIE, bit: 6 }
+      - { name: BIE, bit: 7 }
+      - { name: UDE, bit: 8, description: "Update DMA request enable" }
+      - { name: CC1DE, bit: 9 }
+      - { name: COMDE, bit: 13 }
+      - { name: TDE, bit: 14 }
+  - name: SR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: UIF, bit: 0, description: "Update interrupt flag — cleared by writing 0" }
+      - { name: CC1IF, bit: 1 }
+      - { name: CC2IF, bit: 2 }
+      - { name: COMIF, bit: 5 }
+      - { name: TIF, bit: 6 }
+      - { name: BIF, bit: 7 }
+      - { name: CC1OF, bit: 9 }
+      - { name: CC2OF, bit: 10 }
+  - name: EGR
+    offset: "0x14"
+    access: wo
+    fields:
+      - { name: UG, bit: 0 }
+      - { name: CC1G, bit: 1 }
+      - { name: CC2G, bit: 2 }
+      - { name: COMG, bit: 5 }
+      - { name: TG, bit: 6 }
+      - { name: BG, bit: 7 }
+  # Output view named, input view (ICF/ICPSC) left uncurated — see st/tim_1ch.
+  - name: CCMR1
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: CC1S, bit: 0, width: 2, values: { OUTPUT: 0, TI1: 1 } }
+      - { name: OC1FE, bit: 2 }
+      - { name: OC1PE, bit: 3 }
+      - { name: OC1M, bit: 4, width: 3,
+          description: "Output compare 1 mode, OC1M[2:0]. Completed by OC1M_3 at bit 16.",
+          values: { FROZEN: 0, TOGGLE: 3, FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM1: 6, PWM2: 7 } }
+      - { name: CC2S, bit: 8, width: 2, values: { OUTPUT: 0, TI2: 1 } }
+      - { name: OC2FE, bit: 10 }
+      - { name: OC2PE, bit: 11 }
+      - { name: OC2M, bit: 12, width: 3,
+          description: "Output compare 2 mode, OC2M[2:0]. Completed by OC2M_3 at bit 24.",
+          values: { FROZEN: 0, TOGGLE: 3, FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM1: 6, PWM2: 7 } }
+      - { name: OC1M_3, bit: 16, description: "OC1M[3]." }
+      - { name: OC2M_3, bit: 24, description: "OC2M[3]." }
+  - name: CCER
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: CC1E, bit: 0 }
+      - { name: CC1P, bit: 1 }
+      - { name: CC1NE, bit: 2, description: "Complementary output OC1N enable (channel 1 only)" }
+      - { name: CC1NP, bit: 3 }
+      - { name: CC2E, bit: 4 }
+      - { name: CC2P, bit: 5 }
+      - { name: CC2NP, bit: 7 }
+  - name: CNT
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: CNT, bit: 0, width: 16 }
+      - { name: UIFCPY, bit: 31 }
+  - name: PSC
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 16 }
+  - name: ARR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: ARR, bit: 0, width: 16 }
+  - name: RCR
+    offset: "0x30"
+    access: rw
+    fields:
+      - { name: REP, bit: 0, width: 8 }
+  - name: CCR1
+    offset: "0x34"
+    access: rw
+    fields:
+      - { name: CCR1, bit: 0, width: 16 }
+  - name: CCR2
+    offset: "0x38"
+    access: rw
+    fields:
+      - { name: CCR2, bit: 0, width: 16 }
+  - name: BDTR
+    offset: "0x44"
+    access: rw
+    fields:
+      - { name: DTG, bit: 0, width: 8 }
+      - { name: LOCK, bit: 8, width: 2, description: "Lock level — WRITE ONCE per reset" }
+      - { name: OSSI, bit: 10 }
+      - { name: OSSR, bit: 11 }
+      - { name: BKE, bit: 12 }
+      - { name: BKP, bit: 13 }
+      - { name: AOE, bit: 14 }
+      - { name: MOE, bit: 15, description: "Main output enable. WITHOUT THIS THE PIN IS INACTIVE, however the channel is configured." }
+  - name: TISEL
+    offset: "0x68"
+    access: rw
+    fields:
+      - { name: TI1SEL, bit: 0, width: 4 }
+      - { name: TI2SEL, bit: 8, width: 4 }

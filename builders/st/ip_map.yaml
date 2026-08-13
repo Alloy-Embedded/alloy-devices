@@ -14,11 +14,11 @@ map:
   "timer:v3:TIM_GP16": st/tim_gp16
   "timer:v3:TIM_GP32": st/tim_gp16
   "timer:v3:TIM_ADV": st/tim_adv
-  "timer:v3:TIM_BASIC": uncurated
-  "timer:v3:TIM_1CH": uncurated
+  "timer:v3:TIM_BASIC": st/tim_basic
+  "timer:v3:TIM_1CH": st/tim_1ch
   "timer:v3:TIM_2CH": uncurated
-  "timer:v3:TIM_1CH_CMP": uncurated
-  "timer:v3:TIM_2CH_CMP": uncurated
+  "timer:v3:TIM_1CH_CMP": st/tim_1ch_cmp
+  "timer:v3:TIM_2CH_CMP": st/tim_2ch_cmp
   "bdma:v1": st/dma_v1
   "dmamux:v1": st/dmamux_v1
   "rcc:g0x1": st/rcc_g0

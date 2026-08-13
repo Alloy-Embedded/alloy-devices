@@ -245,40 +245,53 @@ peripherals:
     irq: TIM1_BRK_UP_TRG_COM
   tim14:
     base: '0x40002000'
-    uncurated: true
-    ip_hint: timer:v3:TIM_1CH
+    ip: st/tim_1ch
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 15
     irq: TIM14
+    kernel_clock: apb
   tim15:
     base: '0x40014000'
-    uncurated: true
-    ip_hint: timer:v3:TIM_2CH_CMP
+    ip: st/tim_2ch_cmp
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 16
     irq: TIM15
+    kernel_clock: apb
+    dma_requests:
+      ch1: 40
+      ch2: 41
+      trig: 42
+      up: 43
   tim16:
     base: '0x40014400'
-    uncurated: true
-    ip_hint: timer:v3:TIM_1CH_CMP
+    ip: st/tim_1ch_cmp
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 17
     irq: TIM16
+    kernel_clock: apb
+    dma_requests:
+      ch1: 44
+      com: 45
+      up: 46
   tim17:
     base: '0x40014800'
-    uncurated: true
-    ip_hint: timer:v3:TIM_1CH_CMP
+    ip: st/tim_1ch_cmp
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 18
     irq: TIM17
+    kernel_clock: apb
+    dma_requests:
+      ch1: 47
+      com: 48
+      up: 49
   tim3:
     base: '0x40000400'
     ip: st/tim_gp16
@@ -297,22 +310,26 @@ peripherals:
       up: 37
   tim6:
     base: '0x40001000'
-    uncurated: true
-    ip_hint: timer:v3:TIM_BASIC
+    ip: st/tim_basic
     gate:
       peripheral: rcc
       register: APBENR1
       bit: 4
     irq: TIM6
+    kernel_clock: apb
+    dma_requests:
+      up: 38
   tim7:
     base: '0x40001400'
-    uncurated: true
-    ip_hint: timer:v3:TIM_BASIC
+    ip: st/tim_basic
     gate:
       peripheral: rcc
       register: APBENR1
       bit: 5
     irq: TIM7
+    kernel_clock: apb
+    dma_requests:
+      up: 39
   uid:
     base: '0x1FFF7590'
     uncurated: true

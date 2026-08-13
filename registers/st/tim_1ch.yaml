@@ -1,0 +1,115 @@
+schema: alloy.registers.v1
+vendor: st
+ip: tim_1ch
+class: tick
+description: >
+  ST one-channel general-purpose timer (G0-era TIM14 template). A time base
+  plus a single capture/compare channel. NOT st/tim_gp16 with three channels
+  removed: it has no CR2 (so no master-mode trigger output), no SMCR (so no
+  slave/encoder mode), and only CCMR1's low half. The compare output is NOT
+  gated by a BDTR.MOE bit — this block has no BDTR at all — which is the one
+  way it is simpler than its two-channel cousins rather than smaller.
+provenance:
+  sources:
+    - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha builders/st/sources.lock already pins. block/TIM_1CH extends block/TIM_CORE; fields from fieldset/CR1_1CH (+CR1_CORE), fieldset/DIER_1CH (+DIER_CORE), fieldset/SR_1CH (+SR_CORE), fieldset/EGR_1CH (+EGR_CORE), fieldset/CCMR_Output_1CH, fieldset/CCER_1CH, fieldset/CNT_CORE, fieldset/ARR_CORE, fieldset/CCR_1CH, fieldset/TISEL_1CH, and the compare-mode encoding from enum/OCM_LIMITED."
+    - "RM0444 (STM32G0x1) chapter 'General-purpose timers (TIM14)' — named as the manual chapter these registers belong to. STATED PLAINLY: every bit position and enum value below was read from the pinned JSON above, not from the PDF, and no section number is claimed because none was checked. Nothing here is witnessed by silicon."
+  completeness: bring-up-subset
+# DEGREE. One channel, no complementary output, no TRGO (there is no CR2 to
+# hold MMS), no MOE gate. `trgo: 0` is the fact a portable "trigger the ADC
+# from a timer" has to consult: TIM14 counts perfectly well and cannot start
+# a conversion.
+feat:
+  channels: 1
+  complementary: 0
+  trgo: 0
+  moe: 0
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CEN, bit: 0 }
+      - { name: UDIS, bit: 1 }
+      - { name: URS, bit: 2 }
+      - { name: OPM, bit: 3 }
+      - { name: ARPE, bit: 7 }
+      - { name: CKD, bit: 8, width: 2, description: "Dead-time/sampling clock divider: 0 = tCK_INT, 1 = /2, 2 = /4" }
+      - { name: UIFREMAP, bit: 11 }
+  - name: DIER
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: UIE, bit: 0 }
+      - { name: CC1IE, bit: 1 }
+  - name: SR
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: UIF, bit: 0, description: "Update interrupt flag — cleared by writing 0" }
+      - { name: CC1IF, bit: 1 }
+      - { name: CC1OF, bit: 9, description: "Capture overcapture flag" }
+  - name: EGR
+    offset: "0x14"
+    access: wo
+    fields:
+      - { name: UG, bit: 0 }
+      - { name: CC1G, bit: 1 }
+  # ONE WORD, TWO LAYOUTS — same situation as st/tim_gp16's CCMR1, and resolved
+  # the same way. Upstream models this offset as CCMR_Output_1CH and
+  # CCMR_Input_1CH; fields in this schema may not overlap, so the OUTPUT view
+  # is what is named. CC1S is curated because it is the field that SELECTS the
+  # view; the input filter (ICF, bits 7:4) is not reachable, and its absence is
+  # honest rather than harmless — reset means "no filter".
+  - name: CCMR1
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: CC1S, bit: 0, width: 2,
+          description: "CC1 direction. 0 = output; input view: 1 = IC1 on TI1, 2 = IC1 on TI2, 3 = IC1 on TRC.",
+          values: { OUTPUT: 0, TI1: 1 } }
+      - { name: OC1FE, bit: 2, description: "Output-compare fast enable" }
+      - { name: OC1PE, bit: 3, description: "CCR1 is buffered (preload)" }
+      # OCM is ONE 4-bit field in the silicon and TWO entries here because it is
+      # discontiguous — OC1M[2:0] at bits 6:4, OC1M[3] at bit 16 — and this
+      # schema gives a field one `bit` and one `width`. Same split, same reason,
+      # as st/tim_gp16's SMS. On this block the high bit is upstream's
+      # OCM_LIMITED: the eight modes that need it (retriggerable one-pulse,
+      # combined and asymmetric PWM) do not exist here, so OC1M_3 exists to be
+      # kept at 0, not to be written.
+      - { name: OC1M, bit: 4, width: 3,
+          description: "Output compare 1 mode, OC1M[2:0]. Completed by OC1M_3 at bit 16.",
+          values: { FROZEN: 0, TOGGLE: 3, FORCE_INACTIVE: 4, FORCE_ACTIVE: 5, PWM1: 6, PWM2: 7 } }
+      - { name: OC1M_3, bit: 16, description: "OC1M[3]. Reserved on this block — must stay 0." }
+  - name: CCER
+    offset: "0x20"
+    access: rw
+    fields:
+      - { name: CC1E, bit: 0 }
+      - { name: CC1P, bit: 1 }
+      - { name: CC1NP, bit: 3, description: "With CC1P, the input-capture edge selection; must be 0 for output mode" }
+  - name: CNT
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: CNT, bit: 0, width: 16 }
+      - { name: UIFCPY, bit: 31 }
+  - name: PSC
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 16 }
+  - name: ARR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: ARR, bit: 0, width: 16 }
+  - name: CCR1
+    offset: "0x34"
+    access: rw
+    fields:
+      - { name: CCR1, bit: 0, width: 16 }
+  - name: TISEL
+    offset: "0x68"
+    access: rw
+    fields:
+      - { name: TI1SEL, bit: 0, width: 4, description: "Which internal/external source feeds TI1" }

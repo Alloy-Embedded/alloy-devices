@@ -272,31 +272,39 @@ peripherals:
     irq: TIM1_BRK_UP_TRG_COM
   tim14:
     base: '0x40002000'
-    uncurated: true
-    ip_hint: timer:v3:TIM_1CH
+    ip: st/tim_1ch
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 15
     irq: TIM14
+    kernel_clock: apb
   tim16:
     base: '0x40014400'
-    uncurated: true
-    ip_hint: timer:v3:TIM_1CH_CMP
+    ip: st/tim_1ch_cmp
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 17
     irq: TIM16
+    kernel_clock: apb
+    dma_requests:
+      ch1: 44
+      com: 45
+      up: 46
   tim17:
     base: '0x40014800'
-    uncurated: true
-    ip_hint: timer:v3:TIM_1CH_CMP
+    ip: st/tim_1ch_cmp
     gate:
       peripheral: rcc
       register: APBENR2
       bit: 18
     irq: TIM17
+    kernel_clock: apb
+    dma_requests:
+      ch1: 47
+      com: 48
+      up: 49
   tim2:
     base: '0x40000000'
     ip: st/tim_gp16

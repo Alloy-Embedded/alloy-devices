@@ -1,0 +1,89 @@
+schema: alloy.registers.v1
+vendor: st
+ip: tim_basic
+class: tick
+description: >
+  ST basic timer (G0-era TIM6/TIM7 template). A pure time base: an up-counter,
+  a prescaler, an auto-reload, an update flag and an update trigger output.
+  There is no capture/compare unit AT ALL — no CCMR, no CCER, no CCR — which is
+  why this is a separate IP from st/tim_gp16 rather than a subset flag on it:
+  binding TIM6 to the gp16 overlay would put four compare registers and an
+  enable register on top of reserved address space and let a driver "enable
+  channel 1" on a block that has none.
+provenance:
+  sources:
+    - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha builders/st/sources.lock already pins. block/TIM_BASIC extends block/TIM_BASIC_NO_CR2 extends block/TIM_CORE; the fields below come from fieldset/CR1_CORE, fieldset/CR2_BASIC, fieldset/DIER_BASIC_NO_CR2 (+DIER_CORE), fieldset/SR_CORE, fieldset/EGR_CORE, fieldset/CNT_CORE and fieldset/ARR_CORE, and the MMS encoding from enum/MMS."
+    - "RM0444 (STM32G0x1) chapter 'Basic timers (TIM6/TIM7)' — named as the manual chapter these registers belong to. STATED PLAINLY: every bit position and enum value below was read from the pinned JSON above, not from the PDF, and no section number is claimed because none was checked. Nothing here is witnessed by silicon."
+  completeness: bring-up-subset
+# DEGREE, on the IP because it is fixed by the silicon design and not by the
+# instance: a basic timer has no channels, no complementary outputs, and it
+# DOES have a master-mode trigger output. `trgo` is the fact that pays for
+# itself — TIM6 and TIM7 exist mainly to clock the DAC and the ADC, and the
+# only thing that makes that possible is CR2.MMS below. TIM14/16/17 have no
+# MMS at all (their CR2 either does not exist or holds only output-idle and
+# preload-control bits), so a portable "use a timer as a trigger source" has
+# to ask a number rather than assume.
+feat:
+  channels: 0
+  complementary: 0
+  trgo: 1
+  moe: 0
+registers:
+  - name: CR1
+    offset: "0x00"
+    access: rw
+    fields:
+      - { name: CEN, bit: 0, description: "Counter enable" }
+      - { name: UDIS, bit: 1, description: "Update disable" }
+      - { name: URS, bit: 2, description: "Update request source: 1 = overflow/underflow only" }
+      - { name: OPM, bit: 3, description: "One-pulse mode: CEN clears on the next update event" }
+      - { name: ARPE, bit: 7, description: "ARR is buffered (preload)" }
+      - { name: UIFREMAP, bit: 11, description: "Copy UIF into CNT bit 31 so counter+flag read atomically" }
+  - name: CR2
+    offset: "0x04"
+    access: rw
+    fields:
+      # THE REASON THIS BLOCK IS INTERESTING. MMS picks what the timer emits on
+      # TRGO, which is what an ADC or a DAC waits on. Only the three encodings
+      # a basic timer can actually produce are named: the other five values of
+      # this 3-bit field select "compare match on OCx", and a block with no
+      # compare unit has no OCx to match. Curating them would emit five named
+      # constants that cannot happen on this silicon.
+      - { name: MMS, bit: 4, width: 3,
+          description: "Master mode selection — what drives TRGO.",
+          values: { RESET: 0, ENABLE: 1, UPDATE: 2 } }
+  - name: DIER
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: UIE, bit: 0, description: "Update interrupt enable" }
+      - { name: UDE, bit: 8, description: "Update DMA request enable" }
+  - name: SR
+    offset: "0x10"
+    access: rw
+    fields:
+      # Write-0-to-clear (rc_w0), not write-1: the driver must write ~UIF, and
+      # a read-modify-write that sets other bits is harmless only because UIF
+      # is the register's only bit here.
+      - { name: UIF, bit: 0, description: "Update interrupt flag — cleared by writing 0" }
+  - name: EGR
+    offset: "0x14"
+    access: wo
+    fields:
+      - { name: UG, bit: 0, description: "Update generation: reloads PSC/ARR now" }
+  - name: CNT
+    offset: "0x24"
+    access: rw
+    fields:
+      - { name: CNT, bit: 0, width: 16 }
+      - { name: UIFCPY, bit: 31, description: "Read-only copy of SR.UIF when CR1.UIFREMAP is set" }
+  - name: PSC
+    offset: "0x28"
+    access: rw
+    fields:
+      - { name: PSC, bit: 0, width: 16 }
+  - name: ARR
+    offset: "0x2C"
+    access: rw
+    fields:
+      - { name: ARR, bit: 0, width: 16 }
