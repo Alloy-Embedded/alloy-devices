@@ -18,6 +18,17 @@ provenance:
   - "pll_64mhz is the standard L4 HSI16 /1 x16 /4 recipe with 3 WS per RM0394 table 9"
   - "iwdg hand-mapped to st/iwdg_v2 (shared ip_map entry stays uncurated to avoid churning every generated\
     \ F4/F7/G4 yaml); same shape as the verified stm32g071rb entry"
+  - "tim6 hand-mapped to st/tim_basic, and the mapping is PROVEN rather than assumed: the upstream IR for\
+    \ timer:v1:TIM_BASIC and timer:v3:TIM_BASIC (the tag st/tim_basic was curated from) were flattened\
+    \ through their extends chains and compared field by field at the pinned commit 669003eeb7ad — CR1@0,\
+    \ CR2@4, DIER@12, SR@16, EGR@20, CNT@36, PSC@40, ARR@44, IDENTICAL offsets and IDENTICAL fieldsets,\
+    \ and registers/st/tim_basic.yaml matches both. The other five timer blocks are NOT interchangeable\
+    \ and stay uncurated: every one of them differs in CCMR_Output.OCM, the output-compare mode field\
+    \ that grew a bit for the combined-PWM modes — which is exactly the field a PWM or bridge driver\
+    \ writes. TIM_BASIC has no capture/compare unit at all, which is why it alone is safe. Same reason as\
+    \ iwdg above for hand-mapping instead of touching the shared ip_map entry: timer:v1:TIM_BASIC -> \
+    \ st/tim_basic is correct for every v1 family, but adopting it there rewrites every generated F4/F7/\
+    \ G4/L4 yaml and that should be a deliberate regeneration, not a side effect of this file"
 cores:
 - name: cm4
   arch: armv7em
@@ -330,13 +341,13 @@ peripherals:
     irq: TIM2
   tim6:
     base: '0x40001000'
-    uncurated: true
-    ip_hint: timer:v1:TIM_BASIC
+    ip: st/tim_basic
     gate:
       peripheral: rcc
       register: APB1ENR1
       bit: 4
     irq: TIM6
+    kernel_clock: apb
   tsc:
     base: '0x40024000'
     uncurated: true
