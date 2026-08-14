@@ -1,0 +1,221 @@
+schema: alloy.registers.v1
+vendor: st
+ip: dma_v2
+class: dma
+description: >
+  ST DMA v2 stream engine (F2/F4/F7 — the pre-DMAMUX parts). Eight streams
+  per instance, numbered 0-BASED as the silicon numbers them (DMA_S0CR..S7CR)
+  — deliberately unlike st/dma_v1, whose channels are 1-based; the chip
+  dma_routes key is `stream` here for the same reason. There is no request
+  router: each stream picks its request source with SxCR.CHSEL, and the legal
+  (controller, stream, request) triples are chip data (`dma_routes` on the
+  peripheral entries), because on these parts "channel" means the CHSEL
+  source VALUE, not the transfer unit. Flags live in two split pairs:
+  LISR/LIFCR cover streams 0-3 and HISR/HIFCR streams 4-7, with an irregular
+  per-stream packing (stream base bits 0/6/16/22 within each register) that
+  a fixed-stride repeat cannot express, so every flag is an explicit field.
+  Per-stream registers are a 0x18-stride cluster from 0x10:
+  SxCR/SxNDTR/SxPAR/SxM0AR/SxM1AR/SxFCR. Driver-contract semantics (RM0431
+  §8.3, RM0410 §8.3, same text in RM0385/RM0090): EN=0 is a REQUEST, not a
+  state — hardware completes the current transfer (and FIFO drain, if
+  enabled) first, so teardown must poll EN until it reads 0 before
+  reconfiguring; hardware itself clears EN at transfer end in non-circular
+  mode; and setting EN is IGNORED while any of the stream's five flags is
+  still set in LISR/HISR — clear them through LIFCR/HIFCR first. NDTR is
+  written only while EN=0. Reset state is direct mode (SxFCR.DMDIS=0, FIFO
+  bypassed); memory-to-memory and FIFO mode require DMDIS=1. CHSEL is
+  modeled 4 bits wide (bits 25-28), the F74x/F75x/F76x/F77x and F413/F423
+  width; parts documenting CHSEL[2:0] (F2, other F4, F72x/F73x) reserve bit
+  28, and their route data never selects a request above 7 (measured across
+  all 235 generated stm32f4*/stm32f7* chip files — max 7 there, max 9 on
+  the 4-bit parts). Per-stream NVIC vectors (DMAx_Streamn) are chip data:
+  `irq_lines` on the controller instance. Instance bases/gates are chip
+  data; every F2/F4/F7 die instantiates this block twice (dma1, dma2), and
+  only dma2 streams can serve memory-to-memory.
+feat:
+  streams: 8
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated@669003ee data/registers/dma_v2.json (MIT OR Apache-2.0; SVD-derived, the same pinned SHA the ST builder consumes) — every offset, field position and field width in this file matches entry-by-entry: ISR/IFCR pairs at 0x00/0x08 with per-stream flag base bits {0,6,16,22}, stream cluster at 0x10 stride 0x18 ordered CR/NDTR/PAR/M0AR/M1AR/FCR, CHSEL bits 25-28"
+    - "RM0431 (STM32F72x/73x) and RM0410 (STM32F76x/77x) §8.5 DMA register maps — the two shipped-board F7 dies; the register subsection is cited on each register below (numbering identical in RM0385 §8.5); EN teardown/flag-clear-before-EN/direct-vs-FIFO semantics from §8.3"
+    - "RM0090 (F405/407/415/417/42x/43x) — same v2 engine; CHSEL[2:0] parts measured: max dma_routes request is 7 on every generated F4 chip except F413/F423 (RM0430, CHSEL[3:0], max 9), matching the 4-bit F7 parts (max 9)"
+    - "chips/st/stm32f722re.yaml + stm32f767bi.yaml (builder-generated from the pinned SHA) — instance bases 0x40026000/0x40026400, RCC AHB1ENR gate bits 21/22, per-stream vector names DMAx_Stream0..7 cross-checked against the hand-verified stm32f722/stm32f767 vector tables"
+  completeness: bring-up-subset
+registers:
+  # RM0431/RM0410 §8.5.1 (DMA_LISR). Streams 0-3; stream base bits 0/6/16/22,
+  # flag order within a slot: FEIF +0, (reserved +1), DMEIF +2, TEIF +3,
+  # HTIF +4, TCIF +5. Irregular packing — explicit fields, not a repeat.
+  - name: LISR
+    offset: "0x00"
+    access: ro
+    description: "Flags for streams 0-3; the matching clear register is LIFCR. EN cannot be set while any flag of the stream is set."
+    fields:
+      - { name: FEIF0, bit: 0, description: "Stream 0 FIFO error" }
+      - { name: DMEIF0, bit: 2, description: "Stream 0 direct mode error" }
+      - { name: TEIF0, bit: 3, description: "Stream 0 transfer error" }
+      - { name: HTIF0, bit: 4, description: "Stream 0 half transfer" }
+      - { name: TCIF0, bit: 5, description: "Stream 0 transfer complete" }
+      - { name: FEIF1, bit: 6 }
+      - { name: DMEIF1, bit: 8 }
+      - { name: TEIF1, bit: 9 }
+      - { name: HTIF1, bit: 10 }
+      - { name: TCIF1, bit: 11 }
+      - { name: FEIF2, bit: 16 }
+      - { name: DMEIF2, bit: 18 }
+      - { name: TEIF2, bit: 19 }
+      - { name: HTIF2, bit: 20 }
+      - { name: TCIF2, bit: 21 }
+      - { name: FEIF3, bit: 22 }
+      - { name: DMEIF3, bit: 24 }
+      - { name: TEIF3, bit: 25 }
+      - { name: HTIF3, bit: 26 }
+      - { name: TCIF3, bit: 27 }
+  # RM0431/RM0410 §8.5.2 (DMA_HISR). Streams 4-7, same packing as LISR.
+  - name: HISR
+    offset: "0x04"
+    access: ro
+    description: "Flags for streams 4-7; same per-stream packing as LISR (stream 4 at bit 0, 5 at 6, 6 at 16, 7 at 22)."
+    fields:
+      - { name: FEIF4, bit: 0 }
+      - { name: DMEIF4, bit: 2 }
+      - { name: TEIF4, bit: 3 }
+      - { name: HTIF4, bit: 4 }
+      - { name: TCIF4, bit: 5 }
+      - { name: FEIF5, bit: 6 }
+      - { name: DMEIF5, bit: 8 }
+      - { name: TEIF5, bit: 9 }
+      - { name: HTIF5, bit: 10 }
+      - { name: TCIF5, bit: 11 }
+      - { name: FEIF6, bit: 16 }
+      - { name: DMEIF6, bit: 18 }
+      - { name: TEIF6, bit: 19 }
+      - { name: HTIF6, bit: 20 }
+      - { name: TCIF6, bit: 21 }
+      - { name: FEIF7, bit: 22 }
+      - { name: DMEIF7, bit: 24 }
+      - { name: TEIF7, bit: 25 }
+      - { name: HTIF7, bit: 26 }
+      - { name: TCIF7, bit: 27 }
+  # RM0431/RM0410 §8.5.3 (DMA_LIFCR). Write-1-to-clear for LISR, streams 0-3.
+  - name: LIFCR
+    offset: "0x08"
+    access: wo
+    description: "Write 1 to clear the matching LISR flag. Clearing all five flags of a stream is a precondition for setting its EN."
+    fields:
+      - { name: CFEIF0, bit: 0 }
+      - { name: CDMEIF0, bit: 2 }
+      - { name: CTEIF0, bit: 3 }
+      - { name: CHTIF0, bit: 4 }
+      - { name: CTCIF0, bit: 5 }
+      - { name: CFEIF1, bit: 6 }
+      - { name: CDMEIF1, bit: 8 }
+      - { name: CTEIF1, bit: 9 }
+      - { name: CHTIF1, bit: 10 }
+      - { name: CTCIF1, bit: 11 }
+      - { name: CFEIF2, bit: 16 }
+      - { name: CDMEIF2, bit: 18 }
+      - { name: CTEIF2, bit: 19 }
+      - { name: CHTIF2, bit: 20 }
+      - { name: CTCIF2, bit: 21 }
+      - { name: CFEIF3, bit: 22 }
+      - { name: CDMEIF3, bit: 24 }
+      - { name: CTEIF3, bit: 25 }
+      - { name: CHTIF3, bit: 26 }
+      - { name: CTCIF3, bit: 27 }
+  # RM0431/RM0410 §8.5.4 (DMA_HIFCR). Write-1-to-clear for HISR, streams 4-7.
+  - name: HIFCR
+    offset: "0x0C"
+    access: wo
+    description: "Write 1 to clear the matching HISR flag."
+    fields:
+      - { name: CFEIF4, bit: 0 }
+      - { name: CDMEIF4, bit: 2 }
+      - { name: CTEIF4, bit: 3 }
+      - { name: CHTIF4, bit: 4 }
+      - { name: CTCIF4, bit: 5 }
+      - { name: CFEIF5, bit: 6 }
+      - { name: CDMEIF5, bit: 8 }
+      - { name: CTEIF5, bit: 9 }
+      - { name: CHTIF5, bit: 10 }
+      - { name: CTCIF5, bit: 11 }
+      - { name: CFEIF6, bit: 16 }
+      - { name: CDMEIF6, bit: 18 }
+      - { name: CTEIF6, bit: 19 }
+      - { name: CHTIF6, bit: 20 }
+      - { name: CTCIF6, bit: 21 }
+      - { name: CFEIF7, bit: 22 }
+      - { name: CDMEIF7, bit: 24 }
+      - { name: CTEIF7, bit: 25 }
+      - { name: CHTIF7, bit: 26 }
+      - { name: CTCIF7, bit: 27 }
+  # RM0431/RM0410 §8.5.5 (DMA_SxCR), stream x at 0x10 + 0x18*x. The stream
+  # cluster interleaves SCR/SNDTR/SPAR/SM0AR/SM1AR/SFCR at equal stride —
+  # same modeling as dma_v1's CCR..CMAR block, one array per register.
+  - name: SCR
+    offset: "0x10"
+    access: rw
+    array: { count: 8, stride: 24 }
+    description: "Stream x configuration (DMA_SxCR). Reconfigure only with EN=0 — and EN=0 means READ BACK 0, not written 0."
+    fields:
+      - { name: EN, bit: 0, description: "Stream enable. Writing 0 REQUESTS a stop: hardware finishes the current transfer (+ FIFO drain) and then clears it — poll until 0 before reconfiguring. Hardware also clears it at transfer end in non-circular mode. Setting it is ignored while any of the stream's LISR/HISR flags is set." }
+      - { name: DMEIE, bit: 1, description: "Direct mode error interrupt enable" }
+      - { name: TEIE, bit: 2, description: "Transfer error interrupt enable" }
+      - { name: HTIE, bit: 3, description: "Half transfer interrupt enable" }
+      - { name: TCIE, bit: 4, description: "Transfer complete interrupt enable" }
+      - { name: PFCTRL, bit: 5, description: "0 = DMA is flow controller (NDTR counts), 1 = peripheral is (SDMMC only)" }
+      - { name: DIR, bit: 6, width: 2, description: "0 = peripheral-to-memory, 1 = memory-to-peripheral, 2 = memory-to-memory (dma2 only, FIFO mode only)" }
+      - { name: CIRC, bit: 8, description: "Circular mode (NDTR auto-reloads); forced on by DBM" }
+      - { name: PINC, bit: 9, description: "Peripheral address increment" }
+      - { name: MINC, bit: 10, description: "Memory address increment" }
+      - { name: PSIZE, bit: 11, width: 2, description: "Peripheral data size: 0 = 8-bit, 1 = 16-bit, 2 = 32-bit" }
+      - { name: MSIZE, bit: 13, width: 2, description: "Memory data size; in direct mode MSIZE follows PSIZE" }
+      - { name: PINCOS, bit: 15, description: "Peripheral increment fixed to 4 bytes regardless of PSIZE" }
+      - { name: PL, bit: 16, width: 2, description: "Priority: 0 = low .. 3 = very high" }
+      - { name: DBM, bit: 18, description: "Double-buffer mode: targets swap between M0AR/M1AR at each transfer end; implies circular" }
+      - { name: CT, bit: 19, description: "Current target in double-buffer mode: 0 = M0AR, 1 = M1AR; writable only with EN=0" }
+      - { name: PBURST, bit: 21, width: 2, description: "Peripheral burst: 0 = single, 1 = INCR4, 2 = INCR8, 3 = INCR16 (FIFO mode only)" }
+      - { name: MBURST, bit: 23, width: 2, description: "Memory burst, same encoding as PBURST" }
+      - { name: CHSEL, bit: 25, width: 4, description: "Request source selector — the `request` member of the chip's dma_routes triple for this stream. Bit 28 exists on F74x/F75x/F76x/F77x and F413/F423 (requests to 15); reserved on 3-bit parts, whose routes never select above 7" }
+  # RM0431/RM0410 §8.5.6 (DMA_SxNDTR).
+  - name: SNDTR
+    offset: "0x14"
+    access: rw
+    array: { count: 8, stride: 24 }
+    description: "Stream x number-of-data (DMA_SxNDTR); decrements per peripheral-side transfer, reloads in circular mode"
+    fields:
+      - { name: NDT, bit: 0, width: 16, description: "Number of data items (in PSIZE units, not bytes); write only while EN=0" }
+  # RM0431/RM0410 §8.5.7 (DMA_SxPAR).
+  - name: SPAR
+    offset: "0x18"
+    access: rw
+    array: { count: 8, stride: 24 }
+    description: "Stream x peripheral address (DMA_SxPAR); write only while EN=0"
+    fields:
+      - { name: PA, bit: 0, width: 32 }
+  # RM0431/RM0410 §8.5.8 (DMA_SxM0AR).
+  - name: SM0AR
+    offset: "0x1C"
+    access: rw
+    array: { count: 8, stride: 24 }
+    description: "Stream x memory 0 address (DMA_SxM0AR); in double-buffer mode writable while EN=1 only when CT=1"
+    fields:
+      - { name: M0A, bit: 0, width: 32 }
+  # RM0431/RM0410 §8.5.9 (DMA_SxM1AR). Double-buffer second target only.
+  - name: SM1AR
+    offset: "0x20"
+    access: rw
+    array: { count: 8, stride: 24 }
+    description: "Stream x memory 1 address (DMA_SxM1AR); used only when DBM=1, writable while EN=1 only when CT=0"
+    fields:
+      - { name: M1A, bit: 0, width: 32 }
+  # RM0431/RM0410 §8.5.10 (DMA_SxFCR).
+  - name: SFCR
+    offset: "0x24"
+    access: rw
+    array: { count: 8, stride: 24 }
+    description: "Stream x FIFO control (DMA_SxFCR). Reset = direct mode (DMDIS=0): the 4-word FIFO is bypassed and MSIZE follows PSIZE"
+    fields:
+      - { name: FTH, bit: 0, width: 2, description: "FIFO threshold: 0 = 1/4, 1 = 1/2, 2 = 3/4, 3 = full; ignored in direct mode" }
+      - { name: DMDIS, bit: 2, description: "Direct mode disable — set = FIFO mode; forced set by memory-to-memory" }
+      - { name: FS, bit: 3, width: 3, description: "FIFO status (read-only field of an rw register): 0-3 = fill quartile, 4 = empty, 5 = full" }
+      - { name: FEIE, bit: 7, description: "FIFO error interrupt enable" }
