@@ -103,6 +103,28 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- **`st/i2c_v2` CR1 gains `TXDMAEN` (bit 14) and `RXDMAEN` (bit 15).** The
+  bring-up subset stopped at the interrupt enables, so an I2C driver on this
+  IP could not arm a DMA request from data at all — and alloy's contract check
+  rejects the literal that would otherwise stand in for the missing field.
+  This is the register-file half of dma-streams phase 4's `i2c.rx` / `i2c.tx`
+  route: the board may now state which channel serves the signal, and the
+  driver has a curated bit to set. Unlike `st/i2c_v1` (one `CR2.DMAEN` for
+  both directions) this IP arms each direction separately, so both land
+  together — a driver that had one from data and one from a literal is the
+  failure this avoids.
+
+  Positions are transcribed from RM0444 §32.7.1 and independently
+  corroborated by Renode 1.16.1's model of the same IP
+  (`Peripherals/I2C/STM32F7_I2C.cs`, `.WithTag("TXDMAEN", 14, 1)` and
+  `.WithFlag(15, out rxDmaReceive, name: "RXDMAEN")`). Two transcriptions,
+  **not** a silicon measurement — and note that model drives something from
+  bit 15 only, so an emulated leg can witness RX and never TX.
+
+  Ships to every chip on `st/i2c_v2` at once; no per-chip regeneration.
+  `CR1.TCIE` (bit 6) stays uncurated, so the AUTOEND=0 repeated-start
+  hand-off still has no DMA story — see `completeness: bring-up-subset`.
+
 - **`st/dma_v2` — the F2/F4/F7 stream engine, and the F4/F7 chips now bind
   it.** The register file the dma-streams phase-3 driver programs: the four
   split flag/clear registers (`LISR/HISR/LIFCR/HIFCR`) with their irregular
