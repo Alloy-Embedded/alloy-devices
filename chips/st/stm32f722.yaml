@@ -147,6 +147,168 @@ pins:
   pd9:
     port: d
     index: 9
+  pc14:
+    port: c
+    index: 14
+  pc15:
+    port: c
+    index: 15
+  pc0:
+    port: c
+    index: 0
+  pc1:
+    port: c
+    index: 1
+  pc2:
+    port: c
+    index: 2
+  pc3:
+    port: c
+    index: 3
+  pa0:
+    port: a
+    index: 0
+  pa1:
+    port: a
+    index: 1
+  pa2:
+    port: a
+    index: 2
+  pa3:
+    port: a
+    index: 3
+  pc4:
+    port: c
+    index: 4
+  pc5:
+    port: c
+    index: 5
+  pb1:
+    port: b
+    index: 1
+  pb2:
+    port: b
+    index: 2
+  pb10:
+    port: b
+    index: 10
+  pb11:
+    port: b
+    index: 11
+  pb12:
+    port: b
+    index: 12
+  pb13:
+    port: b
+    index: 13
+  pb15:
+    port: b
+    index: 15
+  pd10:
+    port: d
+    index: 10
+  pd11:
+    port: d
+    index: 11
+  pd12:
+    port: d
+    index: 12
+  pd13:
+    port: d
+    index: 13
+  pd14:
+    port: d
+    index: 14
+  pd15:
+    port: d
+    index: 15
+  pc6:
+    port: c
+    index: 6
+  pc7:
+    port: c
+    index: 7
+  pc8:
+    port: c
+    index: 8
+  pc9:
+    port: c
+    index: 9
+  pa8:
+    port: a
+    index: 8
+  pa9:
+    port: a
+    index: 9
+  pa10:
+    port: a
+    index: 10
+  pa11:
+    port: a
+    index: 11
+  pa12:
+    port: a
+    index: 12
+  pa13:
+    port: a
+    index: 13
+  pa14:
+    port: a
+    index: 14
+  pa15:
+    port: a
+    index: 15
+  pc10:
+    port: c
+    index: 10
+  pc11:
+    port: c
+    index: 11
+  pc12:
+    port: c
+    index: 12
+  pd0:
+    port: d
+    index: 0
+  pd1:
+    port: d
+    index: 1
+  pd2:
+    port: d
+    index: 2
+  pd3:
+    port: d
+    index: 3
+  pd4:
+    port: d
+    index: 4
+  pd5:
+    port: d
+    index: 5
+  pd6:
+    port: d
+    index: 6
+  pd7:
+    port: d
+    index: 7
+  pb3:
+    port: b
+    index: 3
+  pb4:
+    port: b
+    index: 4
+  pb5:
+    port: b
+    index: 5
+  pb6:
+    port: b
+    index: 6
+  pb8:
+    port: b
+    index: 8
+  pb9:
+    port: b
+    index: 9
 routes:
 - pin: pd8
   peripheral: usart3

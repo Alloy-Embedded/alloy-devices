@@ -428,6 +428,12 @@ pins:
   pa12:
     port: a
     index: 12
+  pa13:
+    port: a
+    index: 13
+  pa14:
+    port: a
+    index: 14
   pa15:
     port: a
     index: 15
@@ -458,6 +464,9 @@ pins:
   pb0:
     port: b
     index: 0
+  pb1:
+    port: b
+    index: 1
   pb10:
     port: b
     index: 10
@@ -476,6 +485,9 @@ pins:
   pb15:
     port: b
     index: 15
+  pb2:
+    port: b
+    index: 2
   pb3:
     port: b
     index: 3
@@ -497,6 +509,24 @@ pins:
   pb9:
     port: b
     index: 9
+  pc13:
+    port: c
+    index: 13
+  pc14:
+    port: c
+    index: 14
+  pc15:
+    port: c
+    index: 15
+  ph0:
+    port: h
+    index: 0
+  ph1:
+    port: h
+    index: 1
+  ph3:
+    port: h
+    index: 3
 routes:
 - pin: pa0
   peripheral: tim2

@@ -516,6 +516,71 @@ def check_pinout(package: dict[str, Any]) -> list[str]:
     return problems
 
 
+def check_pin_table(doc: dict[str, Any]) -> list[str]:
+    """Pads the package bonds out that the `pins` map never names.
+
+    A chip file states its I/O TWICE, for two different readers. `package.layout`
+    is the FOOTPRINT — what a pinout picker draws and what a schematic is checked
+    against. `pins` is the CODE SURFACE — it is the only field the emitter reads
+    to produce `alloy::dev::<pin>_t` (emit/device.py), so a pad missing from it
+    cannot be named by a board role at all, however plainly the layout shows it.
+
+    Nothing made the two agree until this lint. The builder INTENDS them to
+    (builders/st/build.py: "Every I/O pin of the part, not only the ones some
+    peripheral routes to") but seeds `pins` from a different upstream field than
+    the one the layout comes from, and a HAND-WRITTEN or hand-verified chip file
+    is not seeded at all — it carries whatever its author typed. Both failure
+    modes are silent and neither is visible in the file being read: the two lists
+    are hundreds of lines apart and only their LENGTHS differ.
+
+    The failure this catches is not theoretical. A board that needs one of the
+    dropped pads gets `board <id>: named pin 'pb2' not in chip data` from the
+    emitter — a message that blames the BOARD for a hole in the CHIP, sending
+    the reader to re-check a pin number that was right all along.
+
+    Only pads whose port peripheral the chip actually declares are reported: a
+    package that bonds out a port the chip data does not have is a different
+    (and worse) problem, and `lint_chips` owns it.
+    """
+    problems: list[str] = []
+    layout = (doc.get("package") or {}).get("layout") or []
+    if not layout:
+        return problems
+    named = set(doc.get("pins") or {})
+    ports = {p.lower() for p in (doc.get("peripherals") or {})}
+
+    missing: list[str] = []
+    for entry in layout:
+        signal = str(entry.get("signal", ""))
+        if pin_kind(signal) != "gpio":
+            continue
+        pad = signal.lower()
+        if pad in named:
+            continue
+        # Port-and-index spellings only ("pb2" -> port b); a bare-numbered
+        # GPIO (RP2040 "gpio16") has no port peripheral to check against, so
+        # take it at face value.
+        #
+        # THE PORT BLOCK IS SPELLED DIFFERENTLY BY EVERY VENDOR and the first
+        # version of this lint knew only ST's: it asked for `gpiob` and so went
+        # silent on the SAM E70, whose ports are `pioa..pioe` and which is one
+        # of the parts with the largest hole in the database. Ask for any known
+        # spelling — the same reason _KIND_PREFIX is shared rather than copied
+        # into each builder.
+        m = re.fullmatch(r"p([a-z])\d{1,2}", pad)
+        if m and not any(f"{spelling}{m.group(1)}" in ports
+                         for spelling in ("gpio", "pio", "port")):
+            continue
+        missing.append(pad)
+
+    if missing:
+        shown = ", ".join(missing[:8]) + ("..." if len(missing) > 8 else "")
+        problems.append(
+            f"package layout bonds out {len(missing)} GPIO pad(s) that the 'pins' "
+            f"map never names, so no board can reference them: {shown}")
+    return problems
+
+
 def lint_pinouts(db: Database) -> None:
     """Refuse a package whose pin list cannot be a real part."""
     for key, doc in db.chips.items():
@@ -523,6 +588,8 @@ def lint_pinouts(db: Database) -> None:
         if not package:
             continue
         for problem in check_pinout(package):
+            db.issues.append(Issue(db.chip_paths[key], problem))
+        for problem in check_pin_table(doc):
             db.issues.append(Issue(db.chip_paths[key], problem))
 
 

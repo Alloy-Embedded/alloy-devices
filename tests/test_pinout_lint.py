@@ -18,7 +18,7 @@ import yaml
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "tools"))
 
-from alloy_devices.lints import check_pinout, pin_kind  # noqa: E402
+from alloy_devices.lints import check_pin_table, check_pinout, pin_kind  # noqa: E402
 
 
 def _pkg(layout: list[dict], name: str = "LQFP64") -> dict:
@@ -128,6 +128,78 @@ def test_an_empty_layout_is_reported_not_crashed() -> None:
     assert check_pinout({"type": "X", "pins": 0, "layout": []}) == ["X: no pin layout"]
 
 
+# ------------------------------- the two pin lists inside one file must agree
+#
+# A chip file states its I/O twice: `package.layout` is the FOOTPRINT, `pins` is
+# the CODE SURFACE the emitter reads. Nothing made them agree until this lint,
+# and four shipped files disagreed — quietly, because the two lists are hundreds
+# of lines apart and only their LENGTHS differ.
+
+def _doc(pads: list[str], named: list[str], ports: list[str] = ["gpioa", "gpiob"],
+         extras: list[str] | None = None) -> dict:
+    layout = [{"position": str(i + 1), "signal": p, "kind": "gpio"}
+              for i, p in enumerate(pads)]
+    layout += [{"position": str(len(pads) + i + 1), "signal": s, "kind": "power"}
+               for i, s in enumerate(extras or ["vdd", "vss", "nrst"])]
+    return {
+        "package": {"type": "LQFP48", "pins": len(layout), "layout": layout},
+        "pins": {p: {"port": p[1], "index": int(p[2:])} for p in named},
+        "peripherals": {p: {} for p in ports},
+    }
+
+
+def test_a_file_whose_two_pin_lists_agree_passes() -> None:
+    assert check_pin_table(_doc(["pa0", "pa1", "pb2"], ["pa0", "pa1", "pb2"])) == []
+
+
+def test_the_failure_that_prompted_the_pin_table_lint() -> None:
+    """stm32l412cb: the package bonds out 38 GPIO pads, the pins map named 28.
+    The ten it dropped were exactly the ones a real product needed — its relay
+    (PB2), its display commons (PC13/PH0/PH1) and its segments."""
+    problems = check_pin_table(_doc(["pa0", "pb2", "pa5"], ["pa0", "pa5"]))
+    assert len(problems) == 1
+    assert "1 GPIO pad(s)" in problems[0]
+    assert "pb2" in problems[0]
+    # The message must say WHY it matters, not just that the lists differ:
+    # the emitter reads `pins`, so a dropped pad cannot be named by any board.
+    assert "no board can reference them" in problems[0]
+
+
+def test_a_pad_whose_port_the_chip_does_not_declare_is_not_reported_here() -> None:
+    """A package bonding out a port the chip data has no peripheral for is a
+    worse problem and a different lint's; reporting it twice would send the
+    reader to add a pin entry that still could not be emitted."""
+    assert check_pin_table(_doc(["pa0", "pz9"], ["pa0"])) == []
+
+
+def test_the_port_block_is_recognised_by_every_vendor_spelling() -> None:
+    """The first version of this lint knew only ST's `gpiob` and so went silent
+    on the SAM E70 — whose ports are `pioa..pioe`, and which had the LARGEST
+    hole in the database (92 pads). A lint blind to the worst case is worse
+    than no lint, because it reads as a clean bill of health."""
+    for spelling in ("gpiob", "piob", "portb"):
+        problems = check_pin_table(_doc(["pb2"], [], ports=[spelling]))
+        assert problems and "pb2" in problems[0], spelling
+
+
+def test_a_file_with_no_package_is_not_a_finding() -> None:
+    assert check_pin_table({"pins": {}, "peripherals": {}}) == []
+
+
+def test_a_bare_numbered_gpio_is_taken_at_face_value() -> None:
+    """RP2040/ESP32 pads have no port letter, so there is no peripheral to
+    check against — they are reported on absence alone."""
+    doc = {
+        "package": {"type": "QFN56", "pins": 2,
+                    "layout": [{"position": "1", "signal": "gpio16", "kind": "gpio"},
+                               {"position": "2", "signal": "gpio17", "kind": "gpio"}]},
+        "pins": {"gpio16": {}},
+        "peripherals": {},
+    }
+    problems = check_pin_table(doc)
+    assert problems and "gpio17" in problems[0]
+
+
 # --------------------------------------------------- against the real database
 
 @pytest.mark.skipif(not (REPO / "chips").is_dir(), reason="no chips/")
@@ -138,6 +210,17 @@ def test_every_shipped_package_passes_its_own_lint() -> None:
         package = (yaml.safe_load(path.read_text()) or {}).get("package")
         if package:
             assert check_pinout(package) == [], f"{path.name}: {check_pinout(package)}"
+
+
+@pytest.mark.skipif(not (REPO / "chips").is_dir(), reason="no chips/")
+def test_every_shipped_chip_names_every_pad_its_package_bonds_out() -> None:
+    """The database-wide half. When this first ran it failed on four files
+    holding 306 pads between them; it is here so the fifth cannot land."""
+    failures = []
+    for path in (REPO / "chips").glob("*/*.yaml"):
+        for problem in check_pin_table(yaml.safe_load(path.read_text()) or {}):
+            failures.append(f"{path.name}: {problem}")
+    assert not failures, "\n".join(failures)
 
 
 @pytest.mark.skipif(not list((REPO / "builders/st/cache").glob("*/data_chips_*.json"))
