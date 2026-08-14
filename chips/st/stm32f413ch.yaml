@@ -658,8 +658,7 @@ peripherals:
         request: 5
   uid:
     base: '0x1FFF7A10'
-    uncurated: true
-    ip_hint: uid:v1:UID
+    ip: st/uid_v1
   usart1:
     base: '0x40011000'
     ip: st/usart_v2

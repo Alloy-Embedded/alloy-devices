@@ -66,12 +66,12 @@ peripherals:
     irq: CAN1_RX0
   crc:
     base: '0x40023000'
-    uncurated: true
-    ip_hint: crc:v3:CRC
+    ip: st/crc_v3
     gate:
       peripheral: rcc
       register: AHB1ENR
       bit: 12
+    kernel_clock: apb
   dac1:
     base: '0x40007400'
     uncurated: true
@@ -626,8 +626,7 @@ peripherals:
         request: 5
   uid:
     base: '0x1FF07A10'
-    uncurated: true
-    ip_hint: uid:v1:UID
+    ip: st/uid_v1
   usart1:
     base: '0x40011000'
     ip: st/usart_v3
