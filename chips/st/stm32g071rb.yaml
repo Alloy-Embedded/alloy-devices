@@ -179,9 +179,6 @@ peripherals:
     dma_requests:
       rx: 10
       tx: 11
-    dma_requests:
-      rx: 10
-      tx: 11
   spi1:
     ip: st/spi_v2
     base: '0x40013000'
@@ -191,9 +188,6 @@ peripherals:
       bit: 12
     irq: SPI1
     kernel_clock: apb
-    dma_requests:
-      rx: 16
-      tx: 17
     dma_requests:
       rx: 16
       tx: 17
