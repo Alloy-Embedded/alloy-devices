@@ -62,7 +62,10 @@ map:
   "flash:f7": st/flash_f7
   "adc:v2": uncurated
   "adccommon:v2": uncurated
-  "dma:v2": uncurated
+  # dma:v2 is the F2/F4/F7 stream engine — ONE tag for both families below.
+  # yaml.safe_load keeps the LAST duplicate, so this key must appear exactly
+  # once: a second "dma:v2" in the f4 section would silently win over this one.
+  "dma:v2": st/dma_v2
   "timer:v1:TIM_GP16": uncurated
   "timer:v1:TIM_GP32": uncurated
   "timer:v1:TIM_ADV": uncurated
@@ -141,7 +144,9 @@ map:
   "adc:v2": uncurated
   "adccommon:v2": uncurated
   "timer:v1": uncurated
-  "dma:v2": uncurated
+  # dma:v2 -> st/dma_v2 is mapped ONCE, in the f7 section above (duplicate
+  # keys are last-one-wins in yaml.safe_load, so restating it here would be
+  # the load-bearing copy without looking like one).
   "dbgmcu:f4": uncurated
   "pwr:f4": uncurated
   "syscfg:f4": uncurated
