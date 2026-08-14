@@ -275,17 +275,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 0
+        stream: 0
         request: 1
       - controller: dma1
-        channel: 5
+        stream: 5
         request: 1
       tx:
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 1
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 1
   i2c2:
     base: '0x40005800'
@@ -299,17 +299,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 2
+        stream: 2
         request: 7
       - controller: dma1
-        channel: 3
+        stream: 3
         request: 7
       tx:
       - controller: dma1
-        channel: 4
+        stream: 4
         request: 8
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 7
   i2c3:
     base: '0x40005C00'
@@ -323,17 +323,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 1
+        stream: 1
         request: 1
       - controller: dma1
-        channel: 2
+        stream: 2
         request: 3
       tx:
       - controller: dma1
-        channel: 0
+        stream: 0
         request: 8
       - controller: dma1
-        channel: 4
+        stream: 4
         request: 3
   i2c4:
     base: '0x40006000'
@@ -347,17 +347,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 1
+        stream: 1
         request: 8
       - controller: dma1
-        channel: 2
+        stream: 2
         request: 2
       tx:
       - controller: dma1
-        channel: 5
+        stream: 5
         request: 2
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 8
   iwdg:
     base: '0x40003000'
@@ -476,17 +476,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 0
+        stream: 0
         request: 3
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 3
       tx:
       - controller: dma2
-        channel: 3
+        stream: 3
         request: 3
       - controller: dma2
-        channel: 5
+        stream: 5
         request: 3
   spi2:
     base: '0x40003800'
@@ -500,17 +500,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 1
+        stream: 1
         request: 9
       - controller: dma1
-        channel: 3
+        stream: 3
         request: 0
       tx:
       - controller: dma1
-        channel: 4
+        stream: 4
         request: 0
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 9
   spi3:
     base: '0x40003C00'
@@ -524,17 +524,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 0
+        stream: 0
         request: 0
       - controller: dma1
-        channel: 2
+        stream: 2
         request: 0
       tx:
       - controller: dma1
-        channel: 5
+        stream: 5
         request: 0
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 0
   spi4:
     base: '0x40013400'
@@ -548,20 +548,20 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 0
+        stream: 0
         request: 4
       - controller: dma2
-        channel: 3
+        stream: 3
         request: 5
       tx:
       - controller: dma2
-        channel: 1
+        stream: 1
         request: 4
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 9
       - controller: dma2
-        channel: 4
+        stream: 4
         request: 5
   spi6:
     base: '0x40015400'
@@ -575,11 +575,11 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 6
+        stream: 6
         request: 1
       tx:
       - controller: dma2
-        channel: 5
+        stream: 5
         request: 1
   syscfg:
     base: '0x40013800'
@@ -727,11 +727,11 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 2
+        stream: 2
         request: 4
       tx:
       - controller: dma1
-        channel: 4
+        stream: 4
         request: 4
   uart5:
     base: '0x40005000'
@@ -745,11 +745,11 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 0
+        stream: 0
         request: 4
       tx:
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 4
   uart7:
     base: '0x40007800'
@@ -763,11 +763,11 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 3
+        stream: 3
         request: 5
       tx:
       - controller: dma1
-        channel: 1
+        stream: 1
         request: 5
   uart8:
     base: '0x40007C00'
@@ -781,11 +781,11 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 5
       tx:
       - controller: dma1
-        channel: 0
+        stream: 0
         request: 5
   uid:
     base: '0x1FF0F420'
@@ -802,14 +802,14 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 4
       - controller: dma2
-        channel: 5
+        stream: 5
         request: 4
       tx:
       - controller: dma2
-        channel: 7
+        stream: 7
         request: 4
   usart2:
     base: '0x40004400'
@@ -823,11 +823,11 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 5
+        stream: 5
         request: 4
       tx:
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 4
   usart3:
     base: '0x40004800'
@@ -841,14 +841,14 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 1
+        stream: 1
         request: 4
       tx:
       - controller: dma1
-        channel: 3
+        stream: 3
         request: 4
       - controller: dma1
-        channel: 4
+        stream: 4
         request: 7
   usart6:
     base: '0x40011400'
@@ -862,17 +862,17 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 1
+        stream: 1
         request: 5
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 5
       tx:
       - controller: dma2
-        channel: 6
+        stream: 6
         request: 5
       - controller: dma2
-        channel: 7
+        stream: 7
         request: 5
   usb_otg_fs:
     base: '0x50000000'

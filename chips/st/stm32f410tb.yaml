@@ -138,20 +138,20 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 0
+        stream: 0
         request: 1
       - controller: dma1
-        channel: 5
+        stream: 5
         request: 1
       tx:
       - controller: dma1
-        channel: 1
+        stream: 1
         request: 0
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 1
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 1
   i2c2:
     base: '0x40005800'
@@ -165,14 +165,14 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 2
+        stream: 2
         request: 7
       - controller: dma1
-        channel: 3
+        stream: 3
         request: 7
       tx:
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 7
   i2s2:
     base: '0x40003400'
@@ -231,20 +231,20 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 0
+        stream: 0
         request: 3
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 3
       tx:
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 2
       - controller: dma2
-        channel: 3
+        stream: 3
         request: 3
       - controller: dma2
-        channel: 5
+        stream: 5
         request: 3
   syscfg:
     base: '0x40013800'
@@ -314,14 +314,14 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma2
-        channel: 2
+        stream: 2
         request: 4
       - controller: dma2
-        channel: 5
+        stream: 5
         request: 4
       tx:
       - controller: dma2
-        channel: 7
+        stream: 7
         request: 4
   usart2:
     base: '0x40004400'
@@ -335,14 +335,14 @@ peripherals:
     dma_routes:
       rx:
       - controller: dma1
-        channel: 5
+        stream: 5
         request: 4
       - controller: dma1
-        channel: 7
+        stream: 7
         request: 6
       tx:
       - controller: dma1
-        channel: 6
+        stream: 6
         request: 4
   wwdg:
     base: '0x40002C00'
