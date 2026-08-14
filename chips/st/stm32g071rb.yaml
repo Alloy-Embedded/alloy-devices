@@ -21,6 +21,7 @@ provenance:
     exist too but PA5 = LD4 LED (deliberately not routed to keep the LED role alive)'
   - 'EXTI mining 2026-08-07: EXTI base 0x40021800 and the line->vector grouping (0-1 EXTI0_1, 2-3 EXTI2_3, 4-15 EXTI4_15) read from builders/st/cache/669003ee.../data_chips_STM32G071RB.json (EXTI address 1073879040 + its 16-entry signal->interrupt table); gpio port_index values are the EXTICR port codes from ST cmsis_device_g0 stm32g071xx.h (A=0..F=5) — note this die has NO port E, so gpiof is 5, not 4'
   - 'DMA mining 2026-07-22: DMA1 7ch @0x40020000 (AHBENR bit 0) + DMAMUX @0x40020800 (clocked with DMA1, no own gate) from canonical yml; request IDs ADC=5, TIM2_CH1/UP=26/31, USART2_RX/TX=52/53 from RM0444 §11 table (Zephyr overlay cross-checks); DMA IRQ grouping 9/10/11'
+  - 'DMA mining 2026-08-14: I2C1_RX/TX=10/11 and SPI1_RX/TX=16/17 from the same RM0444 §11 DMAMUX request table (ids restated in registers/st/dmamux_v1.yaml; SPI1 pair cross-checked against Zephyr spi_loopback overlay for the sibling G0B1 die) — the two curated peripherals this hand file carried without their router requests'
   verified:
   - "Memories: yml claimed family-max 512K/144K and self-flags 'requires enrichment'; part code 'RB'=128K\
     \ and two independent old-alloy sources agree on 128K/36K \u2014 128K/36K seeded"
@@ -175,6 +176,9 @@ peripherals:
       bit: 21
     irq: I2C1
     kernel_clock: apb
+    dma_requests:
+      rx: 10
+      tx: 11
   spi1:
     ip: st/spi_v2
     base: '0x40013000'
@@ -184,6 +188,9 @@ peripherals:
       bit: 12
     irq: SPI1
     kernel_clock: apb
+    dma_requests:
+      rx: 16
+      tx: 17
   dma1:
     ip: st/dma_v1
     base: '0x40020000'
