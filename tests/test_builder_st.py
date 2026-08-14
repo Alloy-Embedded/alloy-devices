@@ -186,20 +186,50 @@ F4_DMA_JSON = _chip_json(
 
 
 def test_stream_dma_keeps_controller_and_stream(monkeypatch):
+    """On a stream engine (upstream kind "dma": F4/F7) the triple is keyed
+    `stream`: ST's own F4/F7 docs use "channel" for the CHSEL source value,
+    and dma_v1 channels are 1-based while streams are 0-based — one key for
+    both is how an off-by-one ships (docs/design/dma-streams.md §3.2)."""
     chip = _build(monkeypatch, F4_DMA_JSON, family="stm32f4")
     spi1 = chip["peripherals"]["spi1"]
     assert spi1["dma_routes"]["rx"] == [
-        {"controller": "dma2", "channel": 0, "request": 3},
-        {"controller": "dma2", "channel": 2, "request": 3},
+        {"controller": "dma2", "stream": 0, "request": 3},
+        {"controller": "dma2", "stream": 2, "request": 3},
     ]
     assert spi1["dma_routes"]["tx"] == [
-        {"controller": "dma2", "channel": 3, "request": 3},
-        {"controller": "dma2", "channel": 5, "request": 3},
+        {"controller": "dma2", "stream": 3, "request": 3},
+        {"controller": "dma2", "stream": 5, "request": 3},
     ]
     # Every controller named must be a peripheral of this chip.
     for entries in spi1["dma_routes"].values():
         for entry in entries:
             assert entry["controller"] in chip["peripherals"]
+            assert "channel" not in entry
+
+
+def test_channel_engine_routes_keep_the_channel_key(monkeypatch):
+    """L4-shaped silicon: no router, but the controller is a channel engine
+    (upstream kind "bdma"), where `channel` is the silicon's own word and
+    stays. The rename is per-controller fact, not a blanket."""
+    doc = _chip_json(
+        peripherals=[
+            _periph("DMA1", 0x40020000, "bdma", "v1", "DMA"),
+            _periph("SPI2", 0x40003800, "spi", "v2_i2s", "SPI",
+                    dma_channels=[
+                        {"signal": "RX", "channel": "DMA1_CH4", "request": 1},
+                        {"signal": "TX", "channel": "DMA1_CH5", "request": 1}]),
+        ],
+        interrupts=[{"name": "SPI2", "number": 36}],
+    )
+    chip = _build(monkeypatch, doc, family="stm32f4")
+    spi2 = chip["peripherals"]["spi2"]
+    assert spi2["dma_routes"]["rx"] == [
+        {"controller": "dma1", "channel": 4, "request": 1}]
+    assert spi2["dma_routes"]["tx"] == [
+        {"controller": "dma1", "channel": 5, "request": 1}]
+    for entries in spi2["dma_routes"].values():
+        for entry in entries:
+            assert "stream" not in entry
 
 
 def test_stream_dma_does_not_masquerade_as_a_router_request(monkeypatch):

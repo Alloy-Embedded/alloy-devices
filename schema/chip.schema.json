@@ -307,7 +307,7 @@
           },
           "dma_routes": {
             "type": "object",
-            "description": "For a chip with NO DMA request router (STM32F4/F7/L4): the specific controller+channel each of this peripheral's DMA signals can be served by, and the per-channel selector value to write there. A `request` alone is not a fact on these parts — it only means anything relative to the channel it selects on, and a signal usually offers several alternative channels. Chips WITH a router use `dma_requests` instead, whose id is chip-wide.",
+            "description": "For a chip with NO DMA request router (STM32F4/F7/L4): the specific controller+unit each of this peripheral's DMA signals can be served by, and the per-unit selector value to write there. A `request` alone is not a fact on these parts — it only means anything relative to the unit it selects on, and a signal usually offers several alternatives. The unit key is `stream` on a stream-engine controller (F4/F7 dma:v2) and `channel` on a channel-engine controller (L4 bdma) — never both: on F4/F7, ST's own documentation uses 'channel' for the CHSEL source value, and dma_v1 channels are 1-based while streams are 0-based, so one key for both invited an off-by-one. Chips WITH a router use `dma_requests` instead, whose id is chip-wide.",
             "propertyNames": {
               "pattern": "^[a-z][a-z0-9_]*$"
             },
@@ -317,8 +317,17 @@
               "items": {
                 "type": "object",
                 "required": [
-                  "controller",
-                  "channel"
+                  "controller"
+                ],
+                "oneOf": [
+                  {
+                    "required": ["stream"],
+                    "not": {"required": ["channel"]}
+                  },
+                  {
+                    "required": ["channel"],
+                    "not": {"required": ["stream"]}
+                  }
                 ],
                 "additionalProperties": false,
                 "properties": {
@@ -326,17 +335,23 @@
                     "type": "string",
                     "description": "Name of the DMA controller peripheral in this chip's `peripherals`."
                   },
+                  "stream": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 31,
+                    "description": "Stream index on a stream-engine controller (F4/F7 dma:v2), 0-based as the silicon numbers it. Mutually exclusive with `channel`."
+                  },
                   "channel": {
                     "type": "integer",
                     "minimum": 0,
                     "maximum": 31,
-                    "description": "Channel (F4/F7 call it a stream) index on that controller, as the silicon numbers it."
+                    "description": "Channel index on a channel-engine controller (L4 bdma), as the silicon numbers it. Mutually exclusive with `stream`."
                   },
                   "request": {
                     "type": "integer",
                     "minimum": 0,
                     "maximum": 255,
-                    "description": "Value written to that channel's source selector (F4/F7 DMA_SxCR.CHSEL, L4 DMA_CSELR). Absent where the channel implies the source."
+                    "description": "Value written to that unit's source selector (F4/F7 DMA_SxCR.CHSEL, L4 DMA_CSELR). Absent where the unit implies the source."
                   }
                 }
               }

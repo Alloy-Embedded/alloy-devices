@@ -223,7 +223,8 @@ def _peripheral_irq(p: dict) -> str | None:
     return entries[0]["interrupt"] if entries else None
 
 
-def _dma_facts(p: dict) -> tuple[dict[str, int], dict[str, list[dict]]]:
+def _dma_facts(p: dict, stream_controllers: set[str],
+               ) -> tuple[dict[str, int], dict[str, list[dict]]]:
     """One peripheral's DMA facts, split by what the silicon actually offers.
 
     Two upstream shapes, and they mean different things:
@@ -237,6 +238,15 @@ def _dma_facts(p: dict) -> tuple[dict[str, int], dict[str, list[dict]]]:
       the controller and stream it selects on; a peripheral usually offers
       several alternatives. Flattening that to `{rx: 3}` both mislabelled the
       number and threw the alternatives away, so it goes to `dma_routes`.
+
+    The triple's unit key names what the CONTROLLER calls it
+    (docs/design/dma-streams.md §3.2): `stream` where the controller is a
+    stream engine (upstream kind "dma": F4/F7), because on those parts
+    "channel" already means the CHSEL source value and dma_v1 channels are
+    1-based while streams are 0-based; `channel` where it is a channel
+    engine (upstream kind "bdma": L4). `stream_controllers` is that fact,
+    keyed by lower-cased controller name, taken from the upstream tags so a
+    later curation of the controller cannot silently flip the key.
     """
     reqs: dict[str, int] = {}
     routes: dict[str, list[dict]] = {}
@@ -252,14 +262,17 @@ def _dma_facts(p: dict) -> tuple[dict[str, int], dict[str, list[dict]]]:
         m = _DMA_CHANNEL_RE.match(str(ch.get("channel") or ""))
         if m is None:
             continue
-        entry = {"controller": m.group(1).lower(), "channel": int(m.group(2))}
+        controller = m.group(1).lower()
+        unit_key = "stream" if controller in stream_controllers else "channel"
+        entry = {"controller": controller, unit_key: int(m.group(2))}
         if req is not None:
             entry["request"] = req
         bucket = routes.setdefault(sig, [])
         if entry not in bucket:
             bucket.append(entry)
     for bucket in routes.values():
-        bucket.sort(key=lambda e: (e["controller"], e["channel"]))
+        bucket.sort(key=lambda e: (e["controller"],
+                                   e.get("stream", e.get("channel", 0))))
     return reqs, routes
 
 
@@ -330,6 +343,14 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
     interrupts = [{"name": i["name"], "number": i["number"]} for i in core["interrupts"]]
     irq_names = {i["name"] for i in core["interrupts"]}
 
+    # Stream-engine DMA controllers, by name: upstream kind "dma" is the
+    # F4/F7 stream engine, "bdma" the channel engine. dma_routes triples on a
+    # stream engine are keyed `stream`, not `channel` (see _dma_facts).
+    stream_controllers = {
+        p["name"].lower() for p in core["peripherals"]
+        if (p.get("registers") or {}).get("kind") == "dma"
+    }
+
     for p in core["peripherals"]:
         regs = p.get("registers")
         if regs is None:
@@ -378,7 +399,7 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
             hclk_is_ahb = family == "stm32l4" and bus.startswith("HCLK")
             entry["kernel_clock"] = ("ahb" if ("AHB" in bus or hclk_is_ahb)
                                      else "apb2" if bus.endswith("2") else "apb")
-        dma_reqs, dma_routes = _dma_facts(p)
+        dma_reqs, dma_routes = _dma_facts(p, stream_controllers)
         if mapped != "uncurated":
             if dma_reqs:
                 entry["dma_requests"] = dict(sorted(dma_reqs.items()))

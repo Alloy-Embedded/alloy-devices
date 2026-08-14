@@ -318,14 +318,34 @@ def lint_chips(db: Database) -> None:
                     db.issues.append(Issue(path, f"peripheral {name}: companion {cname} references UNCURATED peripheral {target}"))
             # A dma_route names the controller that serves the signal. The
             # whole point of the field is that the controller is load-bearing,
-            # so a dangling name is worse than no route at all.
+            # so a dangling name is worse than no route at all. And the unit
+            # key must say what THAT controller calls it: `stream` on a
+            # stream engine (dma:v2 — where "channel" means the CHSEL source
+            # value), `channel` on a channel engine (bdma). A route keyed the
+            # other way is the exact one-word-three-meanings confusion the
+            # rename exists to kill.
             for sig, entries in (p.get("dma_routes") or {}).items():
                 for entry in entries:
-                    if entry["controller"] not in periphs:
+                    ctrl = periphs.get(entry["controller"])
+                    if ctrl is None:
                         db.issues.append(Issue(
                             path,
                             f"peripheral {name}: dma_routes.{sig} references unknown "
                             f"DMA controller {entry['controller']}"))
+                        continue
+                    hint = ctrl.get("ip_hint", "")
+                    ip = ctrl.get("ip", "")
+                    is_stream_engine = (hint.startswith("dma:")
+                                        or ip.startswith("st/dma_v2"))
+                    want = "stream" if is_stream_engine else "channel"
+                    if want not in entry:
+                        got = "channel" if want == "stream" else "stream"
+                        engine = "stream engine" if is_stream_engine else "channel engine"
+                        db.issues.append(Issue(
+                            path,
+                            f"peripheral {name}: dma_routes.{sig} on "
+                            f"{entry['controller']} ({hint or ip}, a {engine}) "
+                            f"must be keyed `{want}`, not `{got}`"))
 
         boot = doc.get("boot")
         if boot and boot["kind"] == "rp2040_boot2":
