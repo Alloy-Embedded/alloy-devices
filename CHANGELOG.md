@@ -84,6 +84,23 @@ understand and fail loudly on a mismatch.
   one of them silently dropped by the dict. `dma_routes` carries the real triple;
   it has no consumer yet, which makes now the cheap moment to change its shape.
 
+- That cheap moment was taken: **a `dma_routes` triple on a stream-engine
+  controller is keyed `stream`, not `channel`** (approved, design doc
+  `dma-streams.md` §3.2 / open question 6). On F4/F7 ST's own documentation
+  already uses "channel" for the CHSEL *source* value, the triples used the
+  same word for the *stream* index, and dma_v1 channels are 1-based where
+  streams are 0-based — one word carrying three meanings, one of them off by
+  one, in the field a DMA driver is about to be written against. The schema
+  now requires exactly one of `stream`/`channel` per triple; `channel` remains
+  the key where the controller really is a channel engine (L4 bdma — no
+  generated file carries one today). The builder picks the key from the
+  upstream controller kind (`dma` = stream engine, `bdma` = channel engine),
+  the engine-match is linted, and every generated F4/F7 file is regenerated
+  (`--check` clean). Still no consumer: no alloy code reads the key — its
+  only mentions there outside the design doc are two comments — the board
+  emitter's phase-3 extension point (which already speaks of a
+  `(controller, stream)` match) and a prose note in `dma.hpp`.
+
 ### Data
 
 - **The basic and small timers: `st/tim_basic`, `st/tim_1ch`, `st/tim_1ch_cmp`,
