@@ -103,6 +103,50 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- **`st/dma_v2` — the F2/F4/F7 stream engine, and the F4/F7 chips now bind
+  it.** The register file the dma-streams phase-3 driver programs: the four
+  split flag/clear registers (`LISR/HISR/LIFCR/HIFCR`) with their irregular
+  per-stream packing (stream base bits 0/6/16/22 — spelled out as explicit
+  fields, since a fixed-stride repeat cannot express it), and the 0x18-stride
+  per-stream cluster `SCR/SNDTR/SPAR/SM0AR/SM1AR/SFCR` as six count-8 arrays.
+  Streams are **0-based** as the silicon numbers them — deliberately unlike
+  `st/dma_v1`'s 1-based channels, which is also why the route triples key on
+  `stream` here. `CHSEL` is modeled 4 bits wide: measured over all 235
+  generated F4/F7 chips, route request ids reach 9 on the 4-bit dies
+  (F74x–F77x, F413/F423) and never exceed 7 on the 3-bit ones, so the union
+  is safe with bit 28 reserved. `feat.streams = 8` sits at IP level because
+  every instance has eight. Every offset, field position and width matches
+  `embassy-rs/stm32-data-generated@669003ee data/registers/dma_v2.json`
+  entry-by-entry (checked mechanically); RM sections are cited per register,
+  and the description records the driver-contract semantics from RM §8.3
+  (EN=0 is a request to be polled, flags must be cleared before EN sets,
+  direct mode is the reset state).
+
+  With the IP curated, `ip_map.yaml` maps `dma:v2` → `st/dma_v2` — **once**:
+  the tag was duplicated across the map's f7 and f4 sections, and
+  `yaml.safe_load` keeps the last duplicate, so flipping only one copy would
+  have silently kept the mapping uncurated. The f4 duplicate is gone and both
+  sites carry a comment naming the trap. All 235 generated `stm32f4*/f7*`
+  chips regenerated: a uniform 470-line flip of `uncurated`/`ip_hint` to
+  `ip: st/dma_v2` and nothing else (verified by sorting the diff).
+  `build --check` clean for both touched families. (Recorded, not fixed:
+  `--check` was already red at HEAD for g0/g4/l4 — a fresh build drops the
+  committed `feat` fifo-depth blocks on stm32g0b1re/g431c6/l412c8 —
+  pre-existing drift, reproduced with this change stashed.)
+
+  The two hand-verified board chips the builder KEEPs (`stm32f722.yaml`,
+  `stm32f767.yaml`, behind `nucleo_f722ze`/`nucleo_f767zi`) gain what every
+  generated sibling already had: `dma1`/`dma2` on the new IP (bases
+  0x40026000/0x40026400, AHB1ENR bits 21/22), per-stream NVIC vectors as
+  `irq_lines` (`DMAx_Streamn`, all 16, names checked against each file's
+  vector table — the per-stream "data, not grouping logic" the driver needs),
+  and `dma_routes` triples for the phase-3 anchor signals: `usart3` rx/tx on
+  both (debug_uart: rx = dma1 stream 1 request 4; tx = dma1 stream 3
+  request 4 or stream 4 request 7), plus `usart2` and `spi1` (dma2) on the
+  F722 where those are curated. Every triple equals the builder-generated
+  same-die sibling's (`stm32f722re`/`stm32f767bi`) **and** the
+  RM0431/RM0410 §8.3 request-mapping rows.
+
 - **The basic and small timers: `st/tim_basic`, `st/tim_1ch`, `st/tim_1ch_cmp`,
   `st/tim_2ch_cmp`.** Four new IP files, not one, and not a reuse of
   `st/tim_gp16`. The G0's six remaining timers were all `uncurated`, and the
