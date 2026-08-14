@@ -133,6 +133,14 @@
             "type": "integer",
             "minimum": 1,
             "description": "Flash erase-page granularity (bytes). Optional; when present, nvm/fs regions must be a whole multiple of it."
+          },
+          "fast": {
+            "type": "boolean",
+            "description": "Tightly- or core-coupled memory: reachable by the core at zero wait states, unlike the general SRAM behind the bus matrix. DTCM on Cortex-M7 parts, CCM on F3/F4/G4. A control loop's state and its stack belong here."
+          },
+          "dma_reachable": {
+            "type": "boolean",
+            "description": "Whether the peripheral DMA can address this region. FALSE for coupled memory, which hangs off the core rather than the bus matrix the DMA sees: a buffer placed there and handed to a transfer moves nothing, silently. Absent means true (ordinary SRAM). This is why coupled memory must be opt-in per symbol and can never hold .data/.bss wholesale."
           }
         }
       }

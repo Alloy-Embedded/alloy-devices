@@ -490,6 +490,30 @@ def build_chip(sha: str, part: str, family: str, ip_map: dict[str, str],
             main = max(ram_regs, key=lambda m: m["size"])
             flat.append({"name": "sram", "kind": "ram",
                          "base": f"0x{main['address']:08X}", "size": main["size"]})
+            # Tightly/core-coupled RAM, carried BESIDE the main SRAM rather than
+            # discarded. On an F7 the DTCM is 64-128 KB of zero-wait-state memory
+            # at 0x20000000, immediately below SRAM; on F3/F4/G4 the CCM sits at
+            # 0x10000000. A control loop's state and its stack belong there and
+            # nowhere else, and until now the fact was thrown away here.
+            #
+            # `dma_reachable: false` is the half that matters more than the
+            # speed. These regions hang off the core, not the bus matrix the
+            # peripheral DMA sees: a buffer that lands in one and is handed to a
+            # DMA transfer fails silently, moving nothing. So the flag travels
+            # with the region, and the linker emitter uses it to keep .data and
+            # .bss OUT — only what a program explicitly marks goes there.
+            for extra in sorted(ram_regs, key=lambda m: m["address"]):
+                if extra is main:
+                    continue
+                name = str(extra["name"]).lower()
+                # Data-side coupled memory only. ITCM is instruction-side and
+                # cannot hold .data at all, so it is not carried as ram.
+                if not any(tag in name for tag in ("dtcm", "ccm")):
+                    continue
+                flat.append({"name": name, "kind": "ram",
+                             "base": f"0x{extra['address']:08X}",
+                             "size": extra["size"],
+                             "fast": True, "dma_reachable": False})
 
     core_name, arch, fpu = _ARCH[core["name"].lower()]
     prio_bits = core.get("nvic_priority_bits") or _NVIC_PRIO_BITS.get(family, 2)

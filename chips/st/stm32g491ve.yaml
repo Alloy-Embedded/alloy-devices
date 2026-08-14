@@ -24,6 +24,18 @@ memories:
   kind: ram
   base: '0x20000000'
   size: 81920
+- name: ccmram_icode
+  kind: ram
+  base: '0x10000000'
+  size: 16384
+  fast: true
+  dma_reachable: false
+- name: ccmram_dcode
+  kind: ram
+  base: '0x20018000'
+  size: 16384
+  fast: true
+  dma_reachable: false
 peripherals:
   adc1:
     base: '0x50000000'
@@ -107,12 +119,12 @@ peripherals:
     irq: CORDIC
   crc:
     base: '0x40023000'
-    uncurated: true
-    ip_hint: crc:v3:CRC
+    ip: st/crc_v3
     gate:
       peripheral: rcc
       register: AHB1ENR
       bit: 12
+    kernel_clock: apb
   crs:
     base: '0x40002000'
     uncurated: true
@@ -322,13 +334,16 @@ peripherals:
     irq: LPTIM1
   lpuart1:
     base: '0x40008000'
-    uncurated: true
-    ip_hint: usart:v4:LPUART
+    ip: st/lpuart_v4
     gate:
       peripheral: rcc
       register: APB1ENR2
       bit: 0
     irq: LPUART1
+    kernel_clock: apb
+    dma_requests:
+      rx: 34
+      tx: 35
   opamp1:
     base: '0x40010300'
     uncurated: true
@@ -575,8 +590,7 @@ peripherals:
     irq: UCPD1
   uid:
     base: '0x1FFF7590'
-    uncurated: true
-    ip_hint: uid:v1:UID
+    ip: st/uid_v1
   usart1:
     base: '0x40013800'
     ip: st/usart_v4
@@ -636,13 +650,13 @@ peripherals:
     ip_hint: vrefintcal:v1:VREFINTCAL
   wwdg:
     base: '0x40002C00'
-    uncurated: true
-    ip_hint: wwdg:v2:WWDG
+    ip: st/wwdg_v2
     gate:
       peripheral: rcc
       register: APB1ENR1
       bit: 11
     irq: WWDG
+    kernel_clock: apb
 pins:
   pa0:
     port: a
