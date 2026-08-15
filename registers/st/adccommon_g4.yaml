@@ -1,0 +1,56 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adccommon_g4
+class: adccommon
+description: >
+  The block a G4 ADC pair shares: the converter clock source and prescaler, the
+  internal-source enables, and the dual-mode plumbing. Each converter names it
+  through `companions: {common: …}`, the same edge st/adc_f4 and FDCAN use.
+
+  CKMODE is why a bring-up driver has to reach it. The G4's converter can be
+  clocked either from the RCC's dedicated ADC clock (asynchronous, CKMODE = 0,
+  which is what the clock tree selects with CCIPR.ADCSEL) or synchronously from
+  the bus clock. Reset leaves it asynchronous, and a driver that never writes
+  it is trusting a reset value it did not choose — the existing adc_v3 driver
+  writes CKMODE explicitly for exactly that reason, and this file exists so the
+  same driver can do it here.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 data/registers/adccommon_g4.json — same pinned tree, same builder path as every other ST register file here. Offsets, bits and widths transcribed, not recalled."
+    - "The companion RELATIONSHIP (which converters share a common block, at which address) is from the same tree's per-chip data, which names the ADC12_COMMON / ADC345_COMMON blocks alongside their converters."
+  completeness: bring-up-subset
+# NOT CURATED: the dual-mode selector's encoding (CCR.DUAL), MDMA, and the
+# common data registers. Dual conversion is a cross-peripheral feature with no
+# driver behind it yet, and curating its encoding without one would be a field
+# whose values nobody has read against the manual.
+registers:
+  - name: CSR
+    offset: "0x00"
+    access: ro
+    description: "Both converters' flags mirrored into one word, master in the low half and slave in the high."
+    fields:
+      - { name: ADRDY_MST, bit: 0 }
+      - { name: EOC_MST, bit: 2 }
+      - { name: OVR_MST, bit: 4 }
+      - { name: ADRDY_SLV, bit: 16 }
+      - { name: EOC_SLV, bit: 18 }
+      - { name: OVR_SLV, bit: 20 }
+  - name: CCR
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: DUAL, bit: 0, width: 5, description: "dual-mode selector; 0 = independent. Encoding not curated — see the file note." }
+      - { name: DELAY, bit: 8, width: 4 }
+      - name: CKMODE
+        bit: 16
+        width: 2
+        description: "0 = the RCC's dedicated ADC clock (asynchronous); 1..3 = synchronous from the bus clock, divided."
+        values: { ASYNC: 0, SYNC_DIV1: 1, SYNC_DIV2: 2, SYNC_DIV4: 3 }
+      - name: PRESC
+        bit: 18
+        width: 4
+        description: "Divider applied to the asynchronous clock source."
+        values: { DIV1: 0, DIV2: 1, DIV4: 2, DIV6: 3, DIV8: 4, DIV10: 5, DIV12: 6, DIV16: 7, DIV32: 8, DIV64: 9, DIV128: 10, DIV256: 11 }
+      - { name: VREFEN, bit: 22 }
+      - { name: VSENSEEN, bit: 23, description: "temperature sensor — named VSENSEEN here and TSEN on the G0; same job, the manuals differ" }
+      - { name: VBATEN, bit: 24 }

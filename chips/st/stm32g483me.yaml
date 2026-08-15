@@ -39,57 +39,65 @@ memories:
 peripherals:
   adc1:
     base: '0x50000000'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 13
     irq: ADC1_2
+    kernel_clock: sysclk
+    companions:
+      common: adc12_common
   adc12_common:
     base: '0x50000300'
-    uncurated: true
-    ip_hint: adccommon:g4:ADC_COMMON
+    ip: st/adccommon_g4
   adc2:
     base: '0x50000100'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 13
     irq: ADC1_2
+    kernel_clock: sysclk
+    companions:
+      common: adc12_common
   adc3:
     base: '0x50000400'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 14
     irq: ADC3
+    kernel_clock: sysclk
+    companions:
+      common: adc345_common
   adc345_common:
     base: '0x50000700'
-    uncurated: true
-    ip_hint: adccommon:g4:ADC_COMMON
+    ip: st/adccommon_g4
   adc4:
     base: '0x50000500'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 14
     irq: ADC4
+    kernel_clock: sysclk
+    companions:
+      common: adc345_common
   adc5:
     base: '0x50000600'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 14
     irq: ADC5
+    kernel_clock: sysclk
+    companions:
+      common: adc345_common
   aes:
     base: '0x50060000'
     uncurated: true

@@ -1,0 +1,162 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adc_g4
+class: adc
+description: >
+  The G4's sequencer ADC. Same lineage as st/adc_v3 (L4/F3) and very nearly the
+  same silicon: of 19 registers the two IPs share 18, and NOT ONE of them sits
+  at a different offset. The G4 adds a gain-compensation register, splits the
+  single analog-watchdog threshold register into three, and grows a handful of
+  fields (SMPPLUS, BULB, SWTRIG/SMPTRIG, SATEN); it drops AUTOFF.
+
+  WHY THIS IS A SEPARATE FILE AND NOT A REUSE OF st/adc_v3: the deltas above
+  are real register-map differences, and this repo curates per IP VERSION
+  precisely so one file cannot quietly claim silicon it was not read against.
+  Upstream gives the two families different register versions (v3 and g4), and
+  that is the line this file follows.
+
+  WHY THE FIELD NAMES MATCH st/adc_v3 ANYWAY, deliberately: accessor names are
+  this file's choice, and a driver is written against names. Where the two IPs
+  have the same field doing the same job, it is spelled the same here; where
+  the silicon genuinely differs, the name differs with it. (Upstream spells the
+  data register's field RDATA here and regularDATA on the L4; that is an
+  upstream inconsistency about one field, not a silicon difference, and this
+  file uses the shared spelling DATA.)
+
+  That matching makes the DRIVER BODY portable between the two IPs — but not,
+  it turns out, a single shared file. An earlier draft of this note claimed the
+  adc_v3 driver would serve both tags with a widened `requires` and no second
+  body; that was written before checking the generator, and it is wrong.
+  Codegen emits an IP header only for the IPs a board's chip instantiates, so a
+  body reached from both would have to include `alloy/ip/st/adc_v3.hpp` and
+  `alloy/ip/st/adc_g4.hpp`, of which exactly one exists on any given board.
+  alloy ships `hal/adc/st_adc_g4.hpp` as a near-duplicate instead, and says so
+  in its own header. The name matching still pays: the duplicate is the same
+  forty lines rather than a re-derivation.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 data/registers/adc_g4.json — the same pinned tree and the same builder path (builders/st/build.py::_http_get) as every other ST register file here. Every offset, bit and width below is that file's, transcribed and not recalled."
+    - "The IP-to-family mapping was READ from the same tree's per-chip data (data_chips_STM32*.json, cached under builders/st/cache/669003ee…): 93 parts name registers.kind=adc version=g4, and they are exactly the G4 line — the same 93 this repo carries."
+    - "The adc_v3 comparison in the description is MEASURED, not asserted: both register maps were diffed register-by-register out of the pinned JSON (18 of 19 shared, zero offset mismatches, deltas as listed). That is why one driver can serve both, and the diff is the evidence for it."
+    - "ST's RM0440 is the human-readable counterpart. Its section NUMBERS are deliberately not quoted, for the reason this repo's adc_v2.yaml states: st.com would not serve the PDF to the environment this was curated in, and a section number nobody read is a fabricated citation."
+  completeness: bring-up-subset
+# WHAT IS NOT HERE: the injected group, the three analog watchdogs (TR1/TR2/TR3
+# are real and uncurated — the G0's watchdog work would port here, and has not
+# been done), gain compensation, and the internal-channel NUMBERS. The last one
+# is the same call this repo made for the F4/F7 parts: nothing in the pinned
+# data gives VREFINT/temperature channel numbers, so the chip files carry no
+# `channels:` map and `board::adc_has_vref` is false rather than wrong.
+registers:
+  - name: ISR
+    offset: "0x00"
+    access: rw
+    description: "Write one to clear."
+    fields:
+      - { name: ADRDY, bit: 0 }
+      - { name: EOSMP, bit: 1 }
+      - { name: EOC, bit: 2 }
+      - { name: EOS, bit: 3 }
+      - { name: OVR, bit: 4 }
+      - { name: AWD1, bit: 7 }
+      - { name: AWD2, bit: 8 }
+      - { name: AWD3, bit: 9 }
+  - name: IER
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: ADRDYIE, bit: 0 }
+      - { name: EOCIE, bit: 2 }
+      - { name: EOSIE, bit: 3 }
+      - { name: OVRIE, bit: 4 }
+  - name: CR
+    offset: "0x08"
+    access: rw
+    description: "The wake sequence lives here: leave DEEPPWD, raise ADVREGEN, settle, calibrate with ADEN low, then ADEN."
+    fields:
+      - { name: ADEN, bit: 0 }
+      - { name: ADDIS, bit: 1 }
+      - { name: ADSTART, bit: 2 }
+      - { name: ADSTP, bit: 4 }
+      - { name: ADVREGEN, bit: 28 }
+      - { name: DEEPPWD, bit: 29, description: "reset state is DEEP POWER DOWN — clearing it is the first step of bring-up, not an optimisation" }
+      - { name: ADCALDIF, bit: 30 }
+      - { name: ADCAL, bit: 31 }
+  - name: CFGR
+    offset: "0x0C"
+    access: rw
+    fields:
+      - { name: DMAEN, bit: 0 }
+      - { name: DMACFG, bit: 1, values: { ONE_SHOT: 0, CIRCULAR: 1 } }
+      - name: RES
+        bit: 3
+        width: 2
+        description: "Resolution."
+        values: { BITS12: 0, BITS10: 1, BITS8: 2, BITS6: 3 }
+      # NOTE THE WIDTH: EXTSEL is FIVE bits here and four on the L4, and ALIGN
+      # moved from bit 5 to bit 15 to make room. A driver that shared a literal
+      # between the two IPs would be wrong on one of them; sharing the NAME and
+      # letting each file state its own geometry is what makes the shared
+      # driver safe.
+      - { name: EXTSEL, bit: 5, width: 5, description: "which hardware event starts a regular conversion" }
+      - { name: EXTEN, bit: 10, width: 2, values: { DISABLED: 0, RISING: 1, FALLING: 2, BOTH: 3 } }
+      - { name: OVRMOD, bit: 12 }
+      - { name: CONT, bit: 13 }
+      - { name: AUTDLY, bit: 14 }
+      - { name: ALIGN, bit: 15, values: { RIGHT: 0, LEFT: 1 } }
+      - { name: DISCEN, bit: 16 }
+      - { name: DISCNUM, bit: 17, width: 3 }
+      - { name: AWD1SGL, bit: 22 }
+      - { name: AWD1EN, bit: 23 }
+      - { name: AWD1CH, bit: 26, width: 5 }
+  - name: CFGR2
+    offset: "0x10"
+    access: rw
+    fields:
+      - { name: ROVSE, bit: 0, description: "regular-group oversampler enable" }
+      - { name: JOVSE, bit: 1 }
+      - name: OVSR
+        bit: 2
+        width: 3
+        description: "samples summed per result"
+        values: { MUL2: 0, MUL4: 1, MUL8: 2, MUL16: 3, MUL32: 4, MUL64: 5, MUL128: 6, MUL256: 7 }
+      - name: OVSS
+        bit: 5
+        width: 4
+        description: "right shift applied to the sum"
+        values: { NO_SHIFT: 0, SHIFT1: 1, SHIFT2: 2, SHIFT3: 3, SHIFT4: 4, SHIFT5: 5, SHIFT6: 6, SHIFT7: 7, SHIFT8: 8 }
+      - { name: TROVS, bit: 9 }
+      - { name: ROVSM, bit: 10 }
+      - { name: GCOMP, bit: 16, description: "gain compensation — G4 only" }
+  - name: SMPR1
+    offset: "0x14"
+    access: rw
+    description: "Sampling time for channels 0..9, three bits each."
+    fields:
+      - { name: SMP_CH0_9, bit: 0, width: 3, repeat: { count: 10, stride: 3 } }
+      - { name: SMPPLUS, bit: 31, description: "G4 only: shifts the whole sample-time table by half a cycle" }
+  - name: SMPR2
+    offset: "0x18"
+    access: rw
+    description: "Sampling time for channels 10..18."
+    fields:
+      - { name: SMP_CH10_18, bit: 0, width: 3, repeat: { count: 9, stride: 3 } }
+  - name: TR1
+    offset: "0x20"
+    access: rw
+    description: "Analog watchdog 1 thresholds. The G4 splits what the L4 keeps in one TR; TR2/TR3 exist and are not curated because no driver arms watchdogs 2 and 3 on this IP yet."
+    fields:
+      - { name: LT1, bit: 0, width: 12 }
+      - { name: AWDFILT, bit: 12, width: 3 }
+      - { name: HT1, bit: 16, width: 12 }
+  - name: SQR1
+    offset: "0x30"
+    access: rw
+    description: "Sequence length and the first four slots. A single conversion is L = 0 with the channel in SQ1."
+    fields:
+      - { name: L, bit: 0, width: 4, description: "conversions in the sequence, minus one" }
+      - { name: SQ1, bit: 6, width: 5, description: "the channel a single conversion converts" }
+  - name: DR
+    offset: "0x40"
+    access: ro
+    fields:
+      - { name: DATA, bit: 0, width: 16 }

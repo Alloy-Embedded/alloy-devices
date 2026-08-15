@@ -39,26 +39,29 @@ memories:
 peripherals:
   adc1:
     base: '0x50000000'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 13
     irq: ADC1_2
+    kernel_clock: sysclk
+    companions:
+      common: adc12_common
   adc12_common:
     base: '0x50000300'
-    uncurated: true
-    ip_hint: adccommon:g4:ADC_COMMON
+    ip: st/adccommon_g4
   adc2:
     base: '0x50000100'
-    uncurated: true
-    ip_hint: adc:g4:ADC
+    ip: st/adc_g4
     gate:
       peripheral: rcc
       register: AHB2ENR
       bit: 13
     irq: ADC1_2
+    kernel_clock: sysclk
+    companions:
+      common: adc12_common
   aes:
     base: '0x50060000'
     uncurated: true
