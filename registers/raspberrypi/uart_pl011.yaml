@@ -10,6 +10,19 @@ provenance:
   sources:
     - "alloy-devices-yml pico.yml templates.uart (SVD-derived offsets and field positions)"
     - "RP2040 datasheet §4.2 / PL011 TRM (baud formula; the old example hardcoded IBRD=67/FBRD=53 — FBRD=52 per the rounding formula)"
+    - >-
+      UARTDMACR's three fields: raspberrypi/pico-sdk @
+      98a542c1a62fb549ffb5d66a3e5892b06276b670
+      src/rp2040/hardware_regs/RP2040.svd (sha256
+      1c72330127ae097c8c9a3661b509fcb9a94826d76a5c0d7e259eb605ddd7b0a6,
+      2592282 bytes) — the SAME pinned file that sourced registers/raspberrypi/
+      dma_v1.yaml and adc.yaml. UART0/UARTDMACR bitRanges, transcribed and not
+      recalled. CROSS-CHECK against what this file already had: every register
+      offset and every field bit already curated here re-parses IDENTICAL out of
+      that SVD's UART0 node (script-compared, 0 mismatches), with one naming
+      deviation that is not a defect — the SVD names the two whole-register baud
+      fields BAUD_DIVINT/BAUD_DIVFRAC and this file has always called them
+      DIVINT/DIVFRAC, same bits, same widths.
   completeness: bring-up-subset
 registers:
   - name: UARTDR
@@ -82,3 +95,16 @@ registers:
   - name: UARTDMACR
     offset: "0x48"
     access: rw
+    description: >-
+      DMA Control Register. The two enables are what route the FIFOs to the
+      DMA's UART0_TX (TREQ_SEL 20) / UART0_RX (21) request lines, curated in
+      chips/raspberrypi/rp2040.yaml as uart0's dma_requests. Nothing here says
+      WHICH of the PL011's two request flavours (UARTRXDMASREQ, one word, vs
+      UARTRXDMABREQ, a burst at the UARTIFLS trigger level) the RP2040 wires to
+      TREQ_SEL 21 — the SVD names both in DMAONERR's text and picks neither.
+      That gap matters to anything that wants a frame-gap event out of RTIM
+      while DMA is draining the FIFO, and it is recorded rather than guessed.
+    fields:
+      - { name: RXDMAE, bit: 0, description: "Receive DMA enable: DMA for the receive FIFO is enabled" }
+      - { name: TXDMAE, bit: 1, description: "Transmit DMA enable: DMA for the transmit FIFO is enabled" }
+      - { name: DMAONERR, bit: 2, description: "The RX DMA requests (UARTRXDMASREQ/UARTRXDMABREQ) are disabled when the UART error interrupt is asserted" }
