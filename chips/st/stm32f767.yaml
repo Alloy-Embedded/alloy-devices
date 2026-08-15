@@ -5,6 +5,17 @@ part: STM32F767ZI
 die: stm32f767
 provenance:
   sources:
+  - 'TIM1 2026-08-15: the advanced-control timer, promoted into this curated short
+    chip file from the bulk-admitted sibling (stm32f767zi.yaml). base 0x40010000,
+    APB2ENR bit 0 and irq TIM1_BRK_TIM9 are the sibling''s, which took them from the
+    Keil SVD this file already cites; kernel_clock apb2 is PCLK2_TIM in
+    embassy-rs/stm32-data-generated@669003ee data/chips/STM32F767ZI.json. The twelve
+    routes are that same JSON''s TIM1 pin list, filtered to the pins THIS file
+    declares — PE8/PE10/PE12/PE15 carry the same signals on the die and are dropped
+    because this package does not bring them out. `ip: st/tim_adv_v1` is the timer:v1
+    TIM_ADV template, whose ten curated registers were compared field by field against
+    the pinned upstream and differ from the G0-era st/tim_adv in exactly one place
+    (OCxM is three bits here, four there). NOTHING HERE HAS BEEN SEEN ON SILICON.'
   - 'ADC 2026-08-15: adc1 + its shared common block, promoted into this curated short chip file from the bulk-admitted sibling (stm32f767zi.yaml), where the same three facts (base 0x40012000, APB2ENR bit 8, irq ADC) came from the Keil SVD this file already cites. kernel_clock apb2 and the common-block companion are from embassy-rs/stm32-data-generated@669003ee data/chips/STM32F767ZI.json (rcc.kernel_clock = PCLK2; ADC123_COMMON at 0x40012300). NO channels: map — nothing in either source gives this part''s VREFINT/temperature channel NUMBERS, and a guessed one would be a generated lie, so internal channels stay unreachable and board::adc_has_vref is false rather than wrong.'
   - 'alloy-devices-yml bulk-admitted stm32f767zitx.yml (Keil STM32F7xx_DFP SVD: memories, bases, interrupts
     incl. ETH=61/ETH_WKUP=62) + stm32f7x7.yml interrupt cross-check'
@@ -109,6 +120,15 @@ peripherals:
       peripheral: rcc
       register: AHB1ENR
       bit: 6
+  tim1:
+    base: '0x40010000'
+    ip: st/tim_adv_v1
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 0
+    irq: TIM1_BRK_TIM9
+    kernel_clock: apb2
   usart3:
     ip: st/usart_v3
     base: '0x40004800'
@@ -434,6 +454,66 @@ pins:
     port: b
     index: 9
 routes:
+- pin: pa6
+  peripheral: tim1
+  signal: bk
+  kind: af_fixed
+  af: 1
+- pin: pa7
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pa8
+  peripheral: tim1
+  signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa9
+  peripheral: tim1
+  signal: ch2
+  kind: af_fixed
+  af: 1
+- pin: pa10
+  peripheral: tim1
+  signal: ch3
+  kind: af_fixed
+  af: 1
+- pin: pa11
+  peripheral: tim1
+  signal: ch4
+  kind: af_fixed
+  af: 1
+- pin: pb0
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb1
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
+- pin: pb12
+  peripheral: tim1
+  signal: bk
+  kind: af_fixed
+  af: 1
+- pin: pb13
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pb14
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb15
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
 - pin: pd8
   peripheral: usart3
   signal: tx

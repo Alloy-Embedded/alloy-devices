@@ -522,8 +522,7 @@ peripherals:
       bit: 14
   tim1:
     base: '0x40010000'
-    uncurated: true
-    ip_hint: timer:v1:TIM_ADV
+    ip: st/tim_adv_v1
     gate:
       peripheral: rcc
       register: APB2ENR
@@ -1055,6 +1054,56 @@ routes:
   signal: rx
   kind: af_fixed
   af: 8
+- pin: pa6
+  peripheral: tim1
+  signal: bk
+  kind: af_fixed
+  af: 1
+- pin: pa7
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pb0
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb1
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
+- pin: pb12
+  peripheral: tim1
+  signal: bk
+  kind: af_fixed
+  af: 1
+- pin: pb13
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pb14
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb15
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
+- pin: pe12
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
+- pin: pe8
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
 - pin: pa10
   peripheral: tim1
   signal: ch3
