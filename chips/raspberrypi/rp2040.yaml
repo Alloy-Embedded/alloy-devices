@@ -5,6 +5,7 @@ part: RP2040
 die: rp2040
 provenance:
   sources:
+    - 'ADC 2026-08-15: base 0x4004C000, RESETS.RESET bit 0 (reset_release, the RP2040 boots peripherals HELD in reset) and the ADC_IRQ_FIFO vector, all from the vendor SVD raspberrypi/pico-sdk@98a542c1a62fb549ffb5d66a3e5892b06276b670 src/rp2040/hardware_regs/RP2040.svd. The vector number 22 in that SVD matches the ADC_IRQ_FIFO entry already in this file''s interrupt table, which is the cross-check that the base and the vector came from the same part. kernel_clock is recorded as apb because that is the closest node alloy''s clock_node models; the converter is actually fed by clk_adc, a separate 48 MHz output of the clocks block that alloy cannot yet select — a driver must not derive a conversion TIME from this value, and none does.'
     - "alloy-devices-yml vendors/raspberrypi pico.yml/rp2040.yml (SVD-derived bases, offsets, IRQs, funcsel per pin)"
     - "RP2040 datasheet §2.15/§2.16/§2.18 (clock bring-up encodings + XOSC magic values — the old YAML's SRC/AUXSRC encodings were wrong and were rejected)"
     - "rp-rs/rp2040-boot2 precompiled boot2_w25q080.padded.bin, sha256 a1408dd2691089af701a1cad19530c539064608566633b9619d15b40d0357b1e (BSD-3-Clause, derived from pico-sdk boot_stage2)"
@@ -25,6 +26,17 @@ boot:
   description: "W25Q080-class QSPI XIP setup; CRC32/MPEG-2 of bytes 0-251 stored little-endian in bytes 252-255"
   payload_hex: "00b5324b212058609868022188439860d860186158612e4b00219960022159610121f02299502b49196001219960352000f044f80222904214d00621196600f034f8196e01211966002018661a6600f02cf8196e196e196e052000f02ff801210842f9d1002199601b491960002159601a491b48016001219960eb211966a021196600f012f8002199601649144801600121996001bc002800d0004712481349086003c880f30888084703b5996a04200142fbd001200142f8d103bd02b518661866fff7f2ff186e186e02bd00000240000000180000070000035f0021220000f4000018222000a00001001008ed00e000000000000000000000000074b24e7a"
 peripherals:
+  adc:
+    ip: raspberrypi/adc
+    base: '0x4004C000'
+    gate:
+      peripheral: resets
+      register: RESET
+      bit: 0
+      style: reset_release
+      done_register: RESET_DONE
+    irq: ADC_IRQ_FIFO
+    kernel_clock: apb
   resets:
     ip: raspberrypi/resets
     base: "0x4000C000"

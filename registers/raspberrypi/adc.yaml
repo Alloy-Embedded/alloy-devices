@@ -1,0 +1,109 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: adc
+class: adc
+description: >
+  The RP2040's 12-bit SAR converter. Five inputs — four on GPIO26..29 and a
+  fifth wired to the on-die temperature sensor — behind ONE sample-and-hold,
+  selected by CS.AINSEL. There is no sequence register and no channel bitmap:
+  a conversion is "point AINSEL at an input, start, read RESULT".
+
+  NOTHING HERE LOOKS LIKE THE ST PARTS, and that is worth saying because the
+  facade makes them look alike. There is no per-channel sampling time, no
+  resolution selector, no oversampler, no analog watchdog, no injected group.
+  What it does have that the ST converters do not is a FIFO with a DMA data
+  request and a free-running round-robin mode (CS.RROBIN) that cycles a mask of
+  inputs without CPU involvement — the closest thing this IP has to a scan.
+
+  THE INPUT PINS ARE NOT MUXED THE NORMAL WAY. GPIO26..29 reach the converter
+  only with their digital pad disabled (pads_bank0: IE low, OD high); this is
+  not an alternate function in io_bank0. Any driver that samples a real pin has
+  to do that, and a chip file's route table cannot express it — which is why
+  this file states it and the temperature input (AINSEL 4), which needs no pin
+  at all, is the one a bring-up example can use unaided.
+provenance:
+  sources:
+    - "raspberrypi/pico-sdk @ 98a542c1a62fb549ffb5d66a3e5892b06276b670 src/rp2040/hardware_regs/RP2040.svd — the VENDOR'S OWN SVD, fetched at that pinned commit (resolved from master at curation time, 2026-07-03). Every register offset, field bit and field width below is that file's bitRange, transcribed and not recalled. The peripheral base 0x4004C000 and the ADC_IRQ_FIFO vector number 22 are from the same peripheral node, and 22 cross-checks against the interrupt table already curated in chips/raspberrypi/rp2040.yaml."
+    - "RESETS.RESET bit 0 (this block's reset-release gate) is from the same SVD's RESETS peripheral. It matters that it is bit 0: the RP2040 boots every peripheral HELD IN RESET, so a converter whose gate is wrong is not a slow converter, it is a block that never answers."
+    - "NOT curated from the datasheet: the conversion time, the 48 MHz clk_adc requirement, and the temperature-sensor transfer function. Those are datasheet facts this curation had no served copy of, so no driver here may derive a temperature from a count, and none does — RESULT is raw counts and the facade says so."
+  completeness: bring-up-subset
+registers:
+  - name: CS
+    offset: "0x00"
+    access: rw
+    description: "Control and status. EN powers the converter; READY is low while a conversion is in flight."
+    fields:
+      - { name: EN, bit: 0, description: "1 = converter powered; allow a startup delay before the first conversion" }
+      - { name: TS_EN, bit: 1, description: "power the on-die temperature sensor (input 4)" }
+      - { name: START_ONCE, bit: 2, description: "self-clearing: start one conversion" }
+      - { name: START_MANY, bit: 3, description: "free-run: convert continuously" }
+      - { name: READY, bit: 8, description: "1 = idle and RESULT is valid; 0 = converting" }
+      - { name: ERR, bit: 9, description: "the LAST conversion saw a conversion error" }
+      - { name: ERR_STICKY, bit: 10, description: "some conversion since this was cleared saw an error (w1c)" }
+      - { name: AINSEL, bit: 12, width: 3, description: "which input the sample-and-hold is pointed at: 0..3 = GPIO26..29, 4 = temperature sensor" }
+      - { name: RROBIN, bit: 16, width: 5, description: "bitmask of inputs to cycle after each conversion; 0 = stay on AINSEL" }
+  - name: RESULT
+    offset: "0x04"
+    access: ro
+    description: "The last conversion, right-aligned raw counts."
+    fields:
+      - { name: RESULT, bit: 0, width: 12 }
+  - name: FCS
+    offset: "0x08"
+    access: rw
+    description: "The sample FIFO — the path a DMA stream takes, since there is no data register to burst from."
+    fields:
+      # Named for scope: CS.EN above is the converter's enable and this is
+      # the FIFO's. Accessor names are unique per IP, so the SVD's reuse of
+      # EN/ERR/FIFO across registers cannot survive verbatim.
+      - { name: FIFO_EN, bit: 0, description: "write results to the FIFO as well as RESULT" }
+      - { name: SHIFT, bit: 1, description: "1 = right-shift results to 8 bits, so a byte-wide DMA can move them" }
+      - { name: FIFO_ERR_IN_ENTRY, bit: 2, description: "include the error bit in each FIFO entry" }
+      - { name: DREQ_EN, bit: 3, description: "raise the DMA data request when LEVEL passes THRESH" }
+      - { name: EMPTY, bit: 8 }
+      - { name: FULL, bit: 9 }
+      - { name: UNDER, bit: 10, description: "a read of an empty FIFO (w1c)" }
+      - { name: OVER, bit: 11, description: "a write to a full FIFO (w1c)" }
+      - { name: LEVEL, bit: 16, width: 4, description: "entries currently in the FIFO" }
+      - { name: THRESH, bit: 24, width: 4, description: "DREQ/IRQ threshold" }
+  - name: FIFO
+    offset: "0x0C"
+    access: ro
+    description: "Pop one entry. Reading an empty FIFO sets FCS.UNDER."
+    fields:
+      - { name: VAL, bit: 0, width: 12 }
+      - { name: SAMPLE_ERR, bit: 15, description: "this sample saw a conversion error" }
+  - name: DIV
+    offset: "0x10"
+    access: rw
+    description: >
+      Free-running conversion pace, as a 16.8 fixed-point divisor of the ADC
+      clock: a conversion starts every INT+1 clocks (plus FRAC/256). Only
+      meaningful with CS.START_MANY; a one-shot conversion ignores it.
+    fields:
+      # INT_PART, not the SVD's `INT`: accessors are emitted as C++
+      # identifiers and `int` is a keyword, so the generated header would
+      # not parse. Same class of collision as the EN/ERR/FIFO renames
+      # above, with the language rather than the IP doing the colliding.
+      - { name: FRAC, bit: 0, width: 8 }
+      - { name: INT_PART, bit: 8, width: 16 }
+  - name: INTR
+    offset: "0x14"
+    access: ro
+    fields:
+      - { name: INTR_FIFO, bit: 0, description: "raw: FIFO level has reached THRESH" }
+  - name: INTE
+    offset: "0x18"
+    access: rw
+    fields:
+      - { name: INTE_FIFO, bit: 0 }
+  - name: INTF
+    offset: "0x1C"
+    access: rw
+    fields:
+      - { name: INTF_FIFO, bit: 0, description: "force the interrupt, for testing" }
+  - name: INTS
+    offset: "0x20"
+    access: ro
+    fields:
+      - { name: INTS_FIFO, bit: 0, description: "masked interrupt status" }
