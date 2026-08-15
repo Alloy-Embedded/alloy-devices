@@ -40,9 +40,15 @@ provenance:
     - "The adc_v3 comparison in the description is MEASURED, not asserted: both register maps were diffed register-by-register out of the pinned JSON (18 of 19 shared, zero offset mismatches, deltas as listed). That is why one driver can serve both, and the diff is the evidence for it."
     - "ST's RM0440 is the human-readable counterpart. Its section NUMBERS are deliberately not quoted, for the reason this repo's adc_v2.yaml states: st.com would not serve the PDF to the environment this was curated in, and a section number nobody read is a fabricated citation."
   completeness: bring-up-subset
-# WHAT IS NOT HERE: the injected group, the three analog watchdogs (TR1/TR2/TR3
-# are real and uncurated — the G0's watchdog work would port here, and has not
-# been done), gain compensation, and the internal-channel NUMBERS. The last one
+# DEGREE that belongs to the IP VERSION, not to any one instance — the same
+# placement st/adc_v2.yaml uses and for the same reason: how many analog
+# watchdogs this silicon has is fixed by the IP, so recording it per chip would
+# be one number copied into 93 files and free to drift in any of them.
+feat:
+  analog_watchdogs: 3
+# WHAT IS NOT HERE: the injected group, gain compensation, and the
+# internal-channel NUMBERS. (The three analog watchdogs WERE on this list and
+# are now curated below — the note is corrected rather than left to rot.) The last one
 # is the same call this repo made for the F4/F7 parts: nothing in the pinned
 # data gives VREFINT/temperature channel numbers, so the chip files carry no
 # `channels:` map and `board::adc_has_vref` is false rather than wrong.
@@ -140,14 +146,49 @@ registers:
     description: "Sampling time for channels 10..18."
     fields:
       - { name: SMP_CH10_18, bit: 0, width: 3, repeat: { count: 9, stride: 3 } }
+  # THREE WATCHDOGS IN TWO SHAPES, and the split is sharper here than on the
+  # G0. Watchdog 1 keeps 12-BIT thresholds in TR1 and its channel selection in
+  # CFGR (AWD1CH/AWD1SGL/AWD1EN). Watchdogs 2 and 3 own a 19-bit channel
+  # BITMASK each — a non-zero mask is their enable, there is no AWDnEN bit —
+  # and their thresholds are EIGHT bits wide, not twelve. That last asymmetry
+  # is the interesting one: 2 and 3 cannot express a window at the data
+  # register's own resolution, so their units are not watchdog 1's units. A
+  # facade field that means "raw counts on read()'s scale" is honest for
+  # ordinal 0 and is NOT honest for 1 and 2 without a documented shift, which
+  # is why alloy's driver implements ordinal 0 and refuses the other two by
+  # name rather than guessing at the conversion.
   - name: TR1
     offset: "0x20"
     access: rw
-    description: "Analog watchdog 1 thresholds. The G4 splits what the L4 keeps in one TR; TR2/TR3 exist and are not curated because no driver arms watchdogs 2 and 3 on this IP yet."
+    description: "Analog watchdog 1: 12-bit thresholds, on the data register's own scale."
     fields:
       - { name: LT1, bit: 0, width: 12 }
-      - { name: AWDFILT, bit: 12, width: 3 }
+      - { name: AWDFILT, bit: 12, width: 3, description: "G4 only: require N consecutive out-of-window samples before flagging" }
       - { name: HT1, bit: 16, width: 12 }
+  - name: TR2
+    offset: "0x24"
+    access: rw
+    description: "Analog watchdog 2 thresholds — EIGHT bits, not twelve. Which bits of the result they are compared against is an RM statement this curation had no served source for, so no driver here converts a 12-bit window into these."
+    fields:
+      - { name: LT2, bit: 0, width: 8 }
+      - { name: HT2, bit: 16, width: 8 }
+  - name: TR3
+    offset: "0x28"
+    access: rw
+    description: "Analog watchdog 3 thresholds — eight bits, same caveat as TR2."
+    fields:
+      - { name: LT3, bit: 0, width: 8 }
+      - { name: HT3, bit: 16, width: 8 }
+  - name: AWD2CR
+    offset: "0xA0"
+    access: rw
+    fields:
+      - { name: AWD2CH, bit: 0, width: 19, description: "one bit per channel; a non-zero mask IS watchdog 2's enable" }
+  - name: AWD3CR
+    offset: "0xA4"
+    access: rw
+    fields:
+      - { name: AWD3CH, bit: 0, width: 19, description: "one bit per channel; a non-zero mask IS watchdog 3's enable" }
   - name: SQR1
     offset: "0x30"
     access: rw
