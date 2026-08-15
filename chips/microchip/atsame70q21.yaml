@@ -24,6 +24,10 @@ provenance:
   - 'XDMAC mining 2026-07-22: base 0x40078000 / PID 58 -> PCER1 bit 26 from canonical yml (irq XDMAC ja
     na lista); PERIDs do enum CC.PERID canonico (52 entradas): USART1_TX=9/RX=10, AFEC0=35; 24 canais
     corroborados por GSWR swreq0..23 + datasheet (geometria 0x50/stride 0x40 e datasheet-only)'
+  - 'XDMAC PERID completion 2026-08-15: SPI0_TX=1/SPI0_RX=2 e TWIHS0_TX=14/TWIHS0_RX=15 lidos do value-group
+    XDMAC_CC__PERID do ATSAME70Q21B.atdf dentro do pack fixado same70-dfp-4.9.129.atpack (sha256 confere com
+    builders/microchip/sources.lock), o MESMO enum canonico que ja tinha dado USART1_TX=9/RX=10 e AFEC0=35 —
+    spi0/twihs0 tinham ficado sem dma_requests na mineracao de 2026-07-22'
   - same70-dfp-4.9.129.atpack ATSAME70Q21B.atdf <pinouts>/LQFP144 (Apache-2.0 (SPDX-License-Identifier
     in every ATDF; Copyright (c) 2017 Microchip Technology Inc.)) — physical pinout, accepted by the pinout
     plausibility lint
@@ -144,6 +148,9 @@ peripherals:
       style: write_set
     irq: TWIHS0
     kernel_clock: apb
+    dma_requests:
+      tx: 14
+      rx: 15
   afec0:
     ip: microchip/afec_v1
     base: '0x4003C000'
@@ -168,6 +175,9 @@ peripherals:
       style: write_set
     irq: SPI0
     kernel_clock: apb
+    dma_requests:
+      tx: 1
+      rx: 2
   gmac:
     ip: microchip/gmac_v1
     base: '0x40050000'
