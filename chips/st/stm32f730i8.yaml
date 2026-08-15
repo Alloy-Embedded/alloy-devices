@@ -33,35 +33,40 @@ memories:
 peripherals:
   adc1:
     base: '0x40012000'
-    uncurated: true
-    ip_hint: adc:v2:ADC
+    ip: st/adc_f4
     gate:
       peripheral: rcc
       register: APB2ENR
       bit: 8
     irq: ADC
+    kernel_clock: apb2
+    companions:
+      common: adc123_common
   adc123_common:
     base: '0x40012300'
-    uncurated: true
-    ip_hint: adccommon:v2:ADC_COMMON
+    ip: st/adccommon_f4
   adc2:
     base: '0x40012100'
-    uncurated: true
-    ip_hint: adc:v2:ADC
+    ip: st/adc_f4
     gate:
       peripheral: rcc
       register: APB2ENR
       bit: 9
     irq: ADC
+    kernel_clock: apb2
+    companions:
+      common: adc123_common
   adc3:
     base: '0x40012200'
-    uncurated: true
-    ip_hint: adc:v2:ADC
+    ip: st/adc_f4
     gate:
       peripheral: rcc
       register: APB2ENR
       bit: 10
     irq: ADC
+    kernel_clock: apb2
+    companions:
+      common: adc123_common
   aes:
     base: '0x50060000'
     uncurated: true

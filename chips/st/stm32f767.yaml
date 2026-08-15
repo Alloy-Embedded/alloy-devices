@@ -5,6 +5,7 @@ part: STM32F767ZI
 die: stm32f767
 provenance:
   sources:
+  - 'ADC 2026-08-15: adc1 + its shared common block, promoted into this curated short chip file from the bulk-admitted sibling (stm32f767zi.yaml), where the same three facts (base 0x40012000, APB2ENR bit 8, irq ADC) came from the Keil SVD this file already cites. kernel_clock apb2 and the common-block companion are from embassy-rs/stm32-data-generated@669003ee data/chips/STM32F767ZI.json (rcc.kernel_clock = PCLK2; ADC123_COMMON at 0x40012300). NO channels: map — nothing in either source gives this part''s VREFINT/temperature channel NUMBERS, and a guessed one would be a generated lie, so internal channels stay unreachable and board::adc_has_vref is false rather than wrong.'
   - 'alloy-devices-yml bulk-admitted stm32f767zitx.yml (Keil STM32F7xx_DFP SVD: memories, bases, interrupts
     incl. ETH=61/ETH_WKUP=62) + stm32f7x7.yml interrupt cross-check'
   - curated chips/st/stm32f722.yaml (sibling F7 short chip file) — rcc_f7/flash_f7/gpio_v2/usart_v3/iwdg_v2
@@ -48,6 +49,20 @@ memories:
   base: '0x20000000'
   size: 524288
 peripherals:
+  adc1:
+    base: '0x40012000'
+    ip: st/adc_f4
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 8
+    irq: ADC
+    kernel_clock: apb2
+    companions:
+      common: adc123_common
+  adc123_common:
+    base: '0x40012300'
+    ip: st/adccommon_f4
   rcc:
     ip: st/rcc_f7
     base: '0x40023800'

@@ -1,0 +1,64 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adccommon_f4
+class: adccommon
+description: >
+  The block ADC1, ADC2 and ADC3 share on the F4/F7 lineage (upstream's
+  adccommon_v2): the converter clock prescaler, the internal-source enables,
+  the multi-ADC mode selector, and the dual/triple common data register.
+
+  IT IS A SEPARATE PERIPHERAL AND NOT PART OF st/adc_f4 BECAUSE OF THE
+  ADDRESSES. The three converters sit at 0x…000, 0x…100 and 0x…200 and this
+  block at 0x…300, so its distance from "the ADC" is a different number for
+  each of the three. Modelling it inline the way st/adc_v2 does for the G0 —
+  where there is exactly one converter — would be right for ADC1 and silently
+  wrong for the other two. Chip files name it through
+  `companions: {common: adccommon}` on each converter.
+
+  WHY A BRING-UP DRIVER CANNOT SKIP IT: ADCPRE's reset value divides PCLK2 by
+  2, and on a fast F7 (PCLK2 up to 108 MHz) that leaves the converter clocked
+  far above its rated maximum. Bringing this ADC up legally means writing this
+  register, which means reaching this block. That is the difference between a
+  companion that is nice to have and one that is load-bearing.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 data/registers/adccommon_v2.json — same pinned tree and same builder path as every other ST register file here. Offsets, bits, widths and the ADCPRE encoding are that file's, transcribed and not recalled."
+    - "The companion RELATIONSHIP (which converters share which common block, and at what address) is from the same tree's per-chip data: data_chips_STM32F767ZI.json names ADC1/ADC2/ADC3 at 0x40012000/0x40012100/0x40012200 and ADC123_COMMON at 0x40012300, with registers.kind=adccommon version=v2."
+    - "NOT curated from a reference manual: the ADC's maximum input clock, which is the number that makes ADCPRE load-bearing, is a datasheet electrical characteristic and this curation had no served copy. The description above states the SHAPE of the problem (the reset divider can leave the converter over its limit on a fast part) without quoting a limit nobody here read. A driver that wants to compute a legal prescaler needs that number and must get it from the datasheet, not from this file."
+  completeness: bring-up-subset
+registers:
+  - name: CSR
+    offset: "0x00"
+    access: ro
+    description: "The three converters' status flags, mirrored into one word so a shared ISR can dispatch without reading each block. Bits shown are ADC1's; ADC2 and ADC3 repeat the pattern at +8 and +16 in the silicon, which this bring-up subset does not model because no alloy driver dispatches a shared ADC interrupt yet."
+    fields:
+      - { name: AWD, bit: 0 }
+      - { name: EOC, bit: 1 }
+      - { name: JEOC, bit: 2 }
+      - { name: JSTRT, bit: 3 }
+      - { name: STRT, bit: 4 }
+      - { name: OVR, bit: 5 }
+  - name: CCR
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: MULTI, bit: 0, width: 5, description: "dual/triple mode selector; 0 = the three converters run independently" }
+      - { name: DELAY, bit: 8, width: 4, description: "sampling delay between converters in interleaved modes" }
+      - { name: DDS, bit: 13, values: { SINGLE: 0, CONTINUOUS: 1 } }
+      - { name: DMA, bit: 14, width: 2, description: "multi-ADC DMA mode" }
+      - name: ADCPRE
+        bit: 16
+        width: 2
+        description: >
+          Prescaler from PCLK2 to the converter clock. The reset value is DIV2,
+          which is not necessarily legal on a fast part — see this file's
+          description.
+        values: { DIV2: 0, DIV4: 1, DIV6: 2, DIV8: 3 }
+      - { name: VBATE, bit: 22, description: "connect the battery-voltage divider to its channel" }
+      - { name: TSVREFE, bit: 23, description: "connect the temperature sensor and the internal reference to their channels" }
+  - name: CDR
+    offset: "0x08"
+    access: ro
+    description: "Dual/triple-mode common data."
+    fields:
+      - { name: DATA, bit: 0, width: 16 }

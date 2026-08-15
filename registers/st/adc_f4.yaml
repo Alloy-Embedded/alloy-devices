@@ -1,0 +1,177 @@
+schema: alloy.registers.v1
+vendor: st
+ip: adc_f4
+class: adc
+description: >
+  ST's classic multi-ADC (the F4/F7 lineage, upstream's adc_v2): up to three
+  converters that share one common block, programmed through a 16-slot regular
+  SEQUENCE in SQR1..SQR3 rather than the G0's channel bitmap. A single
+  conversion is therefore a sequence of length one, which is why this IP has no
+  CHSELR and why its driver writes SQR3.SQ1 where the G0 driver writes a mask.
+
+  NAMING, because it is genuinely confusing and the confusion is inherited:
+  alloy's ADC file names do NOT track upstream's adc_vN numbering. This file is
+  upstream's `adc_v2`, and alloy's `st/adc_v2.yaml` is upstream's `adc_g0`.
+  Naming this one adc_v2 to match upstream would collide with a file that has
+  shipped since the first ADC landed, so it takes the family flavour the rest
+  of this repo already uses for family-specific IPs (flash_f4, flash_f7,
+  rcc_f4, rcc_f7). It serves BOTH F4 and F7: upstream's data gives the two
+  families one register version, and every field below is identical across
+  them.
+
+  THE COMMON BLOCK IS A COMPANION, NOT PART OF THIS IP, and that is forced by
+  the addresses. On the G0 there is one converter and its common CCR sits at a
+  fixed offset inside the block, so alloy's adc_v2 models it inline. Here
+  ADC1/2/3 sit at 0x…000/0x…100/0x…200 and the common block at 0x…300 — one
+  block at three different distances. An offset inside this IP would be right
+  for ADC1 and wrong for the other two, so the common registers live in
+  st/adccommon_f4 and each converter names it through `companions: {common: …}`.
+  That matters for correctness, not tidiness: CCR.ADCPRE is the prescaler, and
+  its reset value (PCLK2/2) is ABOVE this ADC's maximum clock on a fast F7, so
+  a driver that cannot reach the common block cannot bring the converter up
+  legally.
+provenance:
+  sources:
+    - "embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 data/registers/adc_v2.json — the same pinned tree, fetched through the same builder path (builders/st/build.py::_http_get), that this repo's other ST register files use. Every register offset, field bit, field width and enumerated value below is that file's, transcribed and not recalled."
+    - "IP-to-family mapping read from the SAME pinned tree's per-chip data (data_chips_STM32*.json, cached under builders/st/cache/669003ee…): 237 parts name registers.kind=adc version=v2, and they are exactly the F4 and F7 lines. That is how this file's claim to serve both families was established rather than assumed."
+    - "ST's reference manuals (RM0090 for F4, RM0410 for F7) are the human-readable counterpart. Their chapter and section NUMBERS are deliberately not quoted: st.com would not serve the PDFs to the environment this was curated in, and a section number nobody read is a fabricated citation — the same rule this repo's adc_v2.yaml states for RM0444."
+  completeness: bring-up-subset
+# WHAT IS NOT HERE, said plainly so the next reader does not mistake absence
+# for a claim that the silicon lacks it:
+#
+#   * the INTERNAL CHANNELS (VREFINT, temperature, VBAT). Their channel NUMBERS
+#     are a per-part datasheet fact and nothing in the pinned upstream data
+#     carries them — the per-chip pin lists give IN0..IN15 and stop. A number
+#     invented here would be a generated lie, which this repo rates worse than
+#     a hand-written one because nobody reviews it. So the chip files carry no
+#     `channels:` map for these parts, and code that asks for
+#     `board::adc_vref_channel` gets a compile error naming the missing thing
+#     instead of a plausible wrong channel.
+#   * the INJECTED group (JSQR/JDR/JOFR are curated below because they are
+#     part of the same register map, but no alloy driver programs them yet).
+#   * MULTI-ADC modes, which live in the companion's CCR.MULTI.
+registers:
+  - name: SR
+    offset: "0x00"
+    access: rw
+    description: "Status. Flags are cleared by writing 0 to them on this IP, unlike the G0's write-one-to-clear."
+    fields:
+      - { name: AWD, bit: 0, description: "analog watchdog tripped" }
+      - { name: EOC, bit: 1, description: "regular conversion complete" }
+      - { name: JEOC, bit: 2 }
+      - { name: JSTRT, bit: 3 }
+      - { name: STRT, bit: 4 }
+      - { name: OVR, bit: 5 }
+  - name: CR1
+    offset: "0x04"
+    access: rw
+    fields:
+      - { name: AWDCH, bit: 0, width: 5, description: "the channel the watchdog guards when AWDSGL = 1" }
+      - { name: EOCIE, bit: 5 }
+      - { name: AWDIE, bit: 6 }
+      - { name: JEOCIE, bit: 7 }
+      - { name: SCAN, bit: 8, description: "1 = convert the whole SQR sequence, 0 = the first slot only" }
+      - { name: AWDSGL, bit: 9, values: { ALL_CHANNELS: 0, SINGLE_CHANNEL: 1 } }
+      - { name: JAUTO, bit: 10 }
+      - { name: DISCEN, bit: 11 }
+      - { name: JDISCEN, bit: 12 }
+      - { name: DISCNUM, bit: 13, width: 3 }
+      - { name: JAWDEN, bit: 22 }
+      - { name: AWDEN, bit: 23, description: "regular-group watchdog enable" }
+      - name: RES
+        bit: 24
+        width: 2
+        description: "Conversion resolution."
+        values: { BITS12: 0, BITS10: 1, BITS8: 2, BITS6: 3 }
+      - { name: OVRIE, bit: 26 }
+  - name: CR2
+    offset: "0x08"
+    access: rw
+    fields:
+      - { name: ADON, bit: 0, description: "converter on; needs a stabilisation delay before the first conversion" }
+      - { name: CONT, bit: 1 }
+      - { name: DMA, bit: 8 }
+      - { name: DDS, bit: 9, values: { SINGLE: 0, CONTINUOUS: 1 } }
+      - { name: EOCS, bit: 10, description: "0 = EOC at end of SEQUENCE, 1 = EOC at end of each CONVERSION", values: { EACH_SEQUENCE: 0, EACH_CONVERSION: 1 } }
+      - { name: ALIGN, bit: 11, values: { RIGHT: 0, LEFT: 1 } }
+      - { name: JEXTSEL, bit: 16, width: 4 }
+      - { name: JEXTEN, bit: 20, width: 2, values: { DISABLED: 0, RISING: 1, FALLING: 2, BOTH: 3 } }
+      - { name: JSWSTART, bit: 22 }
+      - { name: EXTSEL, bit: 24, width: 4, description: "which hardware event starts a regular conversion; the encoding is per family, so it is a raw value here" }
+      - { name: EXTEN, bit: 28, width: 2, values: { DISABLED: 0, RISING: 1, FALLING: 2, BOTH: 3 } }
+      - { name: SWSTART, bit: 30, description: "start a regular conversion now" }
+  # SAMPLING TIME IS PER CHANNEL on this IP — genuinely one 3-bit field each,
+  # not the G0's two-shared-times-and-a-selector. SMPR1 holds channels 10..18,
+  # SMPR2 holds 0..9, and the repeat below is the manual's own stride.
+  - name: SMPR1
+    offset: "0x0C"
+    access: rw
+    description: "Sampling time for channels 10..18; slot n is channel 10 + n."
+    fields:
+      # Named for the RANGE, not `SMP`: accessor names are unique per IP, and
+      # SMPR1 and SMPR2 both spell this field SMP in the manual.
+      - { name: SMP_CH10_18, bit: 0, width: 3, repeat: { count: 9, stride: 3 } }
+  - name: SMPR2
+    offset: "0x10"
+    access: rw
+    description: "Sampling time for channels 0..9; slot n is channel n."
+    fields:
+      - { name: SMP_CH0_9, bit: 0, width: 3, repeat: { count: 10, stride: 3 } }
+  - name: JOFR
+    offset: "0x14"
+    access: rw
+    array: { count: 4, stride: 4 }
+    description: "Injected-channel data offset, one per injected slot."
+    fields:
+      - { name: JOFFSET, bit: 0, width: 12 }
+  - name: HTR
+    offset: "0x24"
+    access: rw
+    description: "Analog watchdog high threshold."
+    fields:
+      - { name: HT, bit: 0, width: 12 }
+  - name: LTR
+    offset: "0x28"
+    access: rw
+    description: "Analog watchdog low threshold."
+    fields:
+      - { name: LT, bit: 0, width: 12 }
+  # THE REGULAR SEQUENCE, and note the slot ORDER across the three registers:
+  # SQR3 holds slots 1..6, SQR2 holds 7..12, SQR1 holds 13..16 plus the LENGTH.
+  # A single conversion is L = 0 (one slot) with the channel in SQR3.SQ1.
+  - name: SQR1
+    offset: "0x2C"
+    access: rw
+    description: "Sequence slots 13..16, and the sequence LENGTH minus one."
+    fields:
+      - { name: SQ13_16, bit: 0, width: 5, repeat: { count: 4, stride: 5 } }
+      - { name: L, bit: 20, width: 4, description: "number of conversions in the sequence, minus one" }
+  - name: SQR2
+    offset: "0x30"
+    access: rw
+    description: "Sequence slots 7..12."
+    fields:
+      - { name: SQ7_12, bit: 0, width: 5, repeat: { count: 6, stride: 5 } }
+  - name: SQR3
+    offset: "0x34"
+    access: rw
+    description: "Sequence slots 1..6 — slot 1 is the channel a single conversion converts."
+    fields:
+      - { name: SQ1_6, bit: 0, width: 5, repeat: { count: 6, stride: 5 } }
+  - name: JSQR
+    offset: "0x38"
+    access: rw
+    fields:
+      - { name: JSQ, bit: 0, width: 5, repeat: { count: 4, stride: 5 } }
+      - { name: JL, bit: 20, width: 2 }
+  - name: JDR
+    offset: "0x3C"
+    access: ro
+    array: { count: 4, stride: 4 }
+    fields:
+      - { name: JDATA, bit: 0, width: 16 }
+  - name: DR
+    offset: "0x4C"
+    access: ro
+    fields:
+      - { name: DATA, bit: 0, width: 16 }
