@@ -41,10 +41,30 @@ provenance:
 #: `complementary_channels: 0` cannot host a bridge, and the facade says so
 #: with a static_assert instead of programming a CCxNE bit that does not
 #: exist.
+#:
+#: `trgo` and `moe` use the SAME SPELLING as st/tim_basic, st/tim_1ch,
+#: st/tim_1ch_cmp and st/tim_2ch_cmp, because a capability test that has to
+#: know which register file it is asking is not a capability test. Their
+#: absence here was not a statement that TIM_ADV lacks them — it has both —
+#: it was a gap, and the gap had a consequence: alloy/tick.hpp constrains
+#: `trigger_on_update()` on `Inst::feat::trgo != 0u`, and on a member that
+#: does not exist that is a hard substitution failure rather than the
+#: graceful refusal the guard was written to give. So the one timer that can
+#: drive a three-phase bridge was the one timer that could not be asked to
+#: trigger an ADC.
+#:
+#: `complementary_channels` and `break_inputs` keep their names. They are the
+#: odd spelling out — the other files say `complementary` — but renaming them
+#: is a two-repo breaking change (alloy's st_tim_adv.hpp reads
+#: `complementary_channels` by name) and devices ships BEFORE alloy, so a
+#: rename here lands in a window where the pinned data and the driver
+#: disagree. Left visible rather than half-fixed.
 feat:
   channels: 4
   complementary_channels: 3
   break_inputs: 2
+  trgo: 1
+  moe: 1
 registers:
   - name: CR1
     offset: "0x00"
@@ -85,8 +105,26 @@ registers:
     # transistors of phase 1 on. The driver forces all six to 0 and refuses to
     # offer them as a knob; see the header comment in the driver for why that
     # is the only combination it is willing to program.
+    #
+    # MMS SHARES THIS REGISTER WITH THE IDLE STATE, and that is the whole
+    # reason it is worth a paragraph. A driver that wants a trigger output
+    # cannot read-modify-write here — the idle bits are a safety decision
+    # that must stay unconditionally zero — so it writes the word WHOLE, with
+    # MMS as the only non-zero part. Curating MMS does not weaken the rule
+    # above; it makes it checkable, because "CR2 = 0" becomes "CR2 = exactly
+    # these bits and nothing else" and a mask can say so.
+    #
+    # OC4REF is the encoding that matters for a control loop: park CCR4 where
+    # you want the sample and TRGO fires there, so an ADC converts at a chosen
+    # point in the PWM period instead of wherever the CPU reached. The four
+    # OCxREF values exist here and only two on st/tim_2ch_cmp because this IP
+    # has four channels and that one has two.
     fields:
       - { name: CCPC, bit: 0, description: "Capture/compare preloaded control" }
+      - { name: MMS, bit: 4, width: 3,
+          description: "Master mode selection — what drives TRGO.",
+          values: { RESET: 0, ENABLE: 1, UPDATE: 2, COMPARE_PULSE: 3,
+                    OC1REF: 4, OC2REF: 5, OC3REF: 6, OC4REF: 7 } }
       - { name: OIS1, bit: 8, description: "Output idle state, CH1 (level driven when MOE=0 and OSSI=1)" }
       - { name: OIS1N, bit: 9, description: "Output idle state, CH1N" }
       - { name: OIS2, bit: 10 }

@@ -17,6 +17,25 @@ provenance:
     - "stm32-data-generated@669003ee data/registers/timer_v3.json — the sha this repo's builders/st/sources.lock already pins. block/TIM_GP16 gives SMCR -> fieldset/SMCR_GP16 (extends SMCR_2CH) and CCMR_Input -> fieldset/CCMR_Input_2CH at the SAME byte_offset 0x18 as CCMR_Output. Source of the encoder fields below and of enum/SMS and enum/CCMR_Input_CCS."
     - "RM0444 (STM32G0x1) TIMx_SMCR / TIMx_CCMR1 (input-capture view) — named as the registers these fields belong to. STATED PLAINLY: the bit positions and enum values below were read from the pinned JSON above, not from the PDF; no manual section number is claimed because none was checked."
   completeness: bring-up-subset
+#: DEGREE. This file had no `feat` block at all, which is not the same as
+#: declaring zeros: a capability test written against it got a substitution
+#: failure rather than an answer, so `Inst::feat::trgo != 0u` — the guard
+#: alloy/tick.hpp uses — could not be asked of a TIM2 either way.
+#:
+#: `trgo: 1` is stated together with CR2.MMS below, and neither is worth
+#: having without the other. A `feat` that promises a trigger output whose
+#: register field is uncurated would be a capability test that passes and
+#: then cannot be programmed — the failure mode this whole block exists to
+#: prevent, one level up.
+#:
+#: `moe: 0` and `complementary: 0` are facts, not omissions: a general-purpose
+#: timer has no main output enable and no CHxN. That is exactly why
+#: `class: pwm` here and `class: bridge` on st/tim_adv.
+feat:
+  channels: 4
+  complementary: 0
+  trgo: 1
+  moe: 0
 registers:
   - name: CR1
     offset: "0x00"
@@ -30,9 +49,20 @@ registers:
       - { name: CMS, bit: 5, width: 2 }
       - { name: ARPE, bit: 7 }
       - { name: CKD, bit: 8, width: 2 }
+  # CR2 held no fields at all until MMS. On a general-purpose timer this
+  # register carries no output-idle state — that is an advanced-timer thing —
+  # so there is no safety argument here, only the plain one: TIM2/TIM3 are
+  # the timers an ADC is normally clocked from (the ADC driver has named
+  # `tim2_trgo` and `tim3_trgo` as trigger sources all along), and without
+  # MMS the producing half of that pair was not expressible.
   - name: CR2
     offset: "0x04"
     access: rw
+    fields:
+      - { name: MMS, bit: 4, width: 3,
+          description: "Master mode selection — what drives TRGO.",
+          values: { RESET: 0, ENABLE: 1, UPDATE: 2, COMPARE_PULSE: 3,
+                    OC1REF: 4, OC2REF: 5, OC3REF: 6, OC4REF: 7 } }
   - name: SMCR
     offset: "0x08"
     access: rw
