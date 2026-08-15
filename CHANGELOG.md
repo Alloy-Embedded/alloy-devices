@@ -103,6 +103,92 @@ understand and fail loudly on a mismatch.
 
 ### Data
 
+- **`raspberrypi/dma_v1` — the RP2040's DMA, curated from zero, and the
+  RP2040 binds it.** Twelve channels from the vendor's own SVD at the same
+  pinned commit that sourced the ADC (`pico-sdk@98a542c1`,
+  `src/rp2040/hardware_regs/RP2040.svd`), with the sha256 of the exact bytes
+  recorded this time — the ADC pass pinned the commit but not the digest, and a
+  SHA plus a digest is checkable by a reader who has neither the file nor the
+  machine. Channels are **0-based** and stay that way, like `st/dma_v2`'s
+  streams and unlike `st/dma_v1`'s channels; the chip records the base as data
+  (`channels: {count: 12, first: 0}`, no schema change — `channels` already
+  takes any lowercase key to an integer) rather than renumbering the part to
+  suit a consumer that assumes 1.
+
+  **The DREQ table was in the SVD**, which the plan for this pass did not
+  expect: all 45 request ids are `enumeratedValues` on `CH0_CTRL_TRIG/TREQ_SEL`
+  with the vendor's own descriptions, so nothing in this pass is
+  datasheet-derived and nothing is hand-entered. The chip carries the three
+  that have a peripheral to hang them on — `adc.conv = 36`, `uart0.tx = 20`,
+  `uart0.rx = 21` — under `dma_requests`, the G0's key, because the meaning is
+  the same (a chip-wide id owned by the peripheral, any channel serving any
+  request). No `dma_routes` and no new legality shape. SPI, I2C, PIO, PWM and
+  TIMER have ids in the same enumeration and no peripheral entry on this die,
+  so they are absent rather than invented.
+
+  **Four registers per channel in four alias views, all sixteen curated**,
+  because they are not sixteen registers — they are four registers and a choice
+  of which write starts the transfer (the register at view offset `0xC`
+  triggers). This needed no schema concept: `array` registers live outside the
+  layout struct, so four overlapping views of the same words do not trip the
+  overlap check, and array fields emit as position/mask `raw_field` constants,
+  so `CTRL_TRIG`'s one set of accessors applies to whichever CTRL view a driver
+  writes. The consumer-visible consequence is a **sequencing rule, not a
+  field**: configure through `CH_AL1_CTRL` and start separately, or `setup()`
+  starts the channel while configuring it. None of the three DMA engines
+  already in the tree has that hazard.
+
+  **Four absences, provable by exhaustion over the curation rather than
+  asserted:** no half-transfer flag exists anywhere (the seven interrupt
+  registers are one bit per channel, and `CTRL_TRIG` has no such bit); no
+  circular/auto-reload bit exists; `RING_SIZE`/`RING_SEL` wrap the *address* on
+  a naturally-aligned power-of-two **byte** window and leave the counter
+  running down through it; and `CHAIN_TO` cannot name its own channel, that
+  spelling being how chaining is disabled. `TRANS_COUNT` does hold a RELOAD
+  that every trigger copies into the live counter (readable only at
+  `CH_DBG_TCR`), but nothing re-triggers a halted channel by itself — so a ring
+  on one channel is finite, and that is silicon rather than a driver choice.
+
+  **Stopping is a fourth shape.** `dma_v1` clears EN; `dma_v2` clears EN and
+  polls it to 0; XDMAC writes GD and polls GS. Here clearing EN only *pauses*
+  (BUSY stays high), so terminating early means writing `CHAN_ABORT` and
+  polling it to all-zero while in-flight transfers drain through the address
+  and data FIFOs — until then, in the SVD's own words, "it is unsafe to restart
+  the channel".
+
+  **Two NVIC lines whose channel map is software, not silicon.** `INTE0` routes
+  a channel to `DMA_IRQ_0`, `INTE1` to `DMA_IRQ_1`; both, either or neither is
+  legal. The chip therefore binds `irq: DMA_IRQ_0` and leaves `DMA_IRQ_1`
+  curated-and-unbound in the interrupt table: `irq_lines` describes lines
+  GROUPED onto vectors by the silicon, and spelling this one that way would
+  assert a fixed mapping that does not exist.
+
+  One claim in the file is **inferred and marked as such** — that
+  `CH_CTRL_TRIG` itself triggers. The SVD annotates the other three view-`0xC`
+  registers with the trigger sentence and does not annotate this one; the
+  inference is its name, its offset and those three siblings. It is the most
+  consequential behavioural claim in the curation and no host test can falsify
+  it, so it belongs on a hardware checklist. Not curated, and named rather than
+  silently absent: the sniffer (`SNIFF_CTRL`, `SNIFF_DATA`).
+
+  Renames, both the documented class: `DATA_SIZE` and `RING_SIZE` keep the
+  SVD's encodings but not its value names (`SIZE_BYTE` would emit
+  `data_size_size_byte`), and `TIMER0..3` collapse to one array with
+  `TIMER_X`/`TIMER_Y` rather than per-IP accessors called `x` and `y`. No
+  RP2040 DMA field is a C++ keyword — the `INT` hazard the ADC pass hit does
+  not recur. The address and count registers carry **no fields at all**, which
+  is forced rather than stylistic: the SVD names each whole-register field
+  after its own register, and four views repeat those names.
+
+  Measured end to end, not by string comparison: `validate` clean (78 IP files,
+  440 chips, 0 errors), the emitted header compiles under `clang++ -std=c++23`
+  with `sizeof(regs) == 0x44C`, and seven examples build green for both
+  `raspberry_pi_pico` and `rp2040_zero` under arm-none-eabi-gcc 14.2.1. No HAL
+  driver header is pulled in — codegen includes
+  `alloy/hal/dma/raspberrypi_dma_v1.hpp` only when it exists, and no RP2040 DMA
+  driver exists yet. **This is data only: nothing on an RP2040 can start a DMA
+  transfer as of this release.**
+
 - **`st/i2c_v2` CR1 gains `TXDMAEN` (bit 14) and `RXDMAEN` (bit 15).** The
   bring-up subset stopped at the interrupt enables, so an I2C driver on this
   IP could not arm a DMA request from data at all — and alloy's contract check
