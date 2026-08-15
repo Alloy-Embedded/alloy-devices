@@ -128,6 +128,35 @@ peripherals:
       register: APB2ENR
       bit: 0
     irq: TIM1_BRK_TIM9
+    # ⚠ THIS NAMES THE BUS CLOCK, AND THE TIMER MAY NOT RUN ON IT.
+    #
+    # The pinned upstream separates the two nodes explicitly for this part —
+    # data_chips_STM32F767ZI.json gives TIM1 `bus_clock: PCLK2` AND
+    # `kernel_clock: PCLK2_TIM`, two different names — while USART3 beside it
+    # gets `bus_clock: PCLK1` and a register mux. So the source says a timer's
+    # clock is its own node. `apb2` here is the BUS one, because alloy's
+    # clock_node enum has {ahb, apb, apb2, sysclk} and no timer node exists to
+    # name yet.
+    #
+    # WHAT IS NOT IN THE SERVED DATA: how PCLK2_TIM relates to PCLK2. The node
+    # name appears in the chip files; its definition lives in embassy's rcc
+    # code generator, not in the register JSON this repo pins, and the F7
+    # reference manual would not be served (see this file's provenance rule).
+    # The widely-repeated ST rule is x2 whenever the APB prescaler is not 1 —
+    # NOT WRITTEN HERE AS FACT, because recalling a rule is the thing this repo
+    # refuses.
+    #
+    # WHY IT HAS NEVER MATTERED BEFORE, and why it does now: on every other
+    # board in the tree APB == AHB (prescaler 1), where both readings give the
+    # same number. The two F7 boards are the first with a divided APB —
+    # pll_180mhz sets PPRE2 to /2, so apb2_hz is 90 MHz while AHB is 180 — and
+    # tim1 here is the first timer promoted onto one. If the doubler is real,
+    # a bridge asked for 20 kHz switches at 40 kHz.
+    #
+    # HOW TO SETTLE IT, no scope and no wires: run the bridge at a known
+    # frequency and count update events against alloy's own uptime for a
+    # second. The count is the carrier. 20000 means this line is right; 40000
+    # means the timer node is 2x the bus node and alloy needs one.
     kernel_clock: apb2
   usart3:
     ip: st/usart_v3

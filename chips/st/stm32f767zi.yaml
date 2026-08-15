@@ -528,6 +528,13 @@ peripherals:
       register: APB2ENR
       bit: 0
     irq: TIM1_BRK_TIM9
+    # No kernel_clock, and that is not an oversight — see the long note on the
+    # same peripheral in chips/st/stm32f767.yaml. Upstream gives TIM1
+    # `kernel_clock: PCLK2_TIM`, a node alloy cannot name, and the relation
+    # between it and PCLK2 is not in the served data. The short file names the
+    # bus node so a board can open the timer at all; this bulk file has no
+    # board using it, so it states nothing rather than stating the same
+    # unverified thing twice.
   tim10:
     base: '0x40014400'
     uncurated: true
