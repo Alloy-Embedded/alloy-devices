@@ -9,6 +9,7 @@ description: >
   MR.ONE must be written 1. Temperature sensor lives on AFEC0 channel 11.
 provenance:
   sources:
+    - "EMR.RES ENCODING (2026-08-15): value names and numbers from the pinned vendor pack this file already cites — same70-dfp-4.9.129.atpack, ATSAME70Q21B.atdf, value-group AFEC_EMR__RES: NO_AVERAGE=0 (12-bit, no averaging), OSR4=2 (13-bit, rate/4), OSR16=3 (14-bit, rate/16), OSR64=4 (15-bit, rate/64), OSR256=5 (16-bit, rate/256). Transcribed from that value-group, not recalled; note that 1 is absent from it, which is why this had to be curated as values rather than left as a width for a driver to compute against."
     - "alloy-devices-yml vendors/microchip/same70 atsame70q21b.yml templates.afec (SVD-derived; bases 0x4003C000/0x40064000, PIDs 29/40)"
     - "old-alloy git 8b1b1bc7^ driver_semantics/adc.hpp (CR/MR/EMR/CHER/LCDR/ISR usage + kResultBits=12 cross-check)"
   completeness: bring-up-subset
@@ -34,7 +35,21 @@ registers:
     offset: "0x08"
     access: rw
     fields:
-      - { name: RES, bit: 16, width: 3 }
+      # RESOLUTION AND OVERSAMPLING ARE ONE FIELD on this IP, which is the
+      # thing that makes the AFEC not translate cleanly into the ST vocabulary:
+      # more bits ARE more averaging, at a proportionally lower sample rate.
+      # A caller cannot ask for "16 bits without averaging" because the silicon
+      # has no such mode.
+      #
+      # AND THE ENCODING IS NOT CONTIGUOUS: 12-bit is 0 and 13-bit is 2 — the
+      # value 1 is not a resolution. A driver computing `bits - 12` would write
+      # 1 for a 13-bit request and land on a reserved encoding, which is
+      # precisely the class of bug curating the values prevents.
+      - name: RES
+        bit: 16
+        width: 3
+        description: "Resolution, which on this IP also selects the averaging ratio."
+        values: { NO_AVERAGE: 0, OSR4: 2, OSR16: 3, OSR64: 4, OSR256: 5 }
       - { name: TAG, bit: 24 }
   - name: SEQ1R
     offset: "0x0C"
