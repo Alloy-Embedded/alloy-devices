@@ -6,6 +6,7 @@ die: rp2040
 provenance:
   sources:
     - 'ADC 2026-08-15: base 0x4004C000, RESETS.RESET bit 0 (reset_release, the RP2040 boots peripherals HELD in reset) and the ADC_IRQ_FIFO vector, all from the vendor SVD raspberrypi/pico-sdk@98a542c1a62fb549ffb5d66a3e5892b06276b670 src/rp2040/hardware_regs/RP2040.svd. The vector number 22 in that SVD matches the ADC_IRQ_FIFO entry already in this file''s interrupt table, which is the cross-check that the base and the vector came from the same part. kernel_clock is recorded as apb because that is the closest node alloy''s clock_node models; the converter is actually fed by clk_adc, a separate 48 MHz output of the clocks block that alloy cannot yet select — a driver must not derive a conversion TIME from this value, and none does.'
+    - 'DMA 2026-08-15: base 0x50000000, RESETS.RESET bit 2 (reset_release, same reason as the ADC — this part boots peripherals HELD in reset), 12 channels numbered from 0, and the vectors DMA_IRQ_0 = 11 / DMA_IRQ_1 = 12 — all from the same vendor SVD raspberrypi/pico-sdk@98a542c1a62fb549ffb5d66a3e5892b06276b670 src/rp2040/hardware_regs/RP2040.svd (sha256 1c72330127ae097c8c9a3661b509fcb9a94826d76a5c0d7e259eb605ddd7b0a6). Both vector numbers cross-check against the interrupt table already in this file, which is the evidence the base and the vectors came from the same part. THE THREE dma_requests IDS ARE FROM THE SAME FILE, NOT FROM THE DATASHEET: adc.conv = 36, uart0.tx = 20 and uart0.rx = 21 are enumeratedValues ADC, UART0_TX and UART0_RX on CH0_CTRL_TRIG/TREQ_SEL, and all 45 of that enumeration are transcribed in registers/raspberrypi/dma_v1.yaml, so each id here is checkable against its neighbours rather than free-floating. Only two peripherals carry requests because only two DREQ-driving peripherals are curated on this die at all — SPI, I2C, PIO, PWM and TIMER have DREQ ids in that enumeration and no peripheral entry here to hang them on, and inventing one to hold a number would be data ahead of a driver. kernel_clock is recorded as ahb: the block sits in the AHB-Lite peripheral region as a bus master, and on this part clk_sys feeds the whole fabric, so no timing may be derived from this node and nothing does.'
     - "alloy-devices-yml vendors/raspberrypi pico.yml/rp2040.yml (SVD-derived bases, offsets, IRQs, funcsel per pin)"
     - "RP2040 datasheet §2.15/§2.16/§2.18 (clock bring-up encodings + XOSC magic values — the old YAML's SRC/AUXSRC encodings were wrong and were rejected)"
     - "rp-rs/rp2040-boot2 precompiled boot2_w25q080.padded.bin, sha256 a1408dd2691089af701a1cad19530c539064608566633b9619d15b40d0357b1e (BSD-3-Clause, derived from pico-sdk boot_stage2)"
@@ -37,6 +38,34 @@ peripherals:
       done_register: RESET_DONE
     irq: ADC_IRQ_FIFO
     kernel_clock: apb
+    dma_requests:
+      conv: 36
+  dma:
+    ip: raspberrypi/dma_v1
+    base: '0x50000000'
+    gate:
+      peripheral: resets
+      register: RESET
+      bit: 2
+      style: reset_release
+      done_register: RESET_DONE
+    # ONE VECTOR IS BOUND AND THE OTHER IS DELIBERATELY NOT. This block raises
+    # DMA_IRQ_0 (11) and DMA_IRQ_1 (12), both already in this file's interrupt
+    # table, but WHICH channel reaches WHICH line is a runtime software choice
+    # (set bit n in INTE0, or INTE1, or both, or neither) rather than silicon
+    # geometry. `irq_lines` exists for a controller whose numbered lines are
+    # GROUPED onto vectors by the silicon, and spelling this one that way would
+    # assert a fixed mapping that does not exist. So the instance names the line
+    # a driver policy uses, and the second line stays curated-and-unbound.
+    irq: DMA_IRQ_0
+    kernel_clock: ahb
+    channels:
+      count: 12
+      # 0-BASED, unlike every DMA controller in the tree so far except the F4/F7
+      # streams. The channels are CH0..CH11 in the silicon, in pico-sdk and in
+      # every RP2040 example anyone will read, so `first` records the base as
+      # data instead of renumbering the part to suit a consumer.
+      first: 0
   resets:
     ip: raspberrypi/resets
     base: "0x4000C000"
@@ -68,6 +97,9 @@ peripherals:
     gate: { peripheral: resets, register: RESET, bit: 22, style: reset_release, done_register: RESET_DONE }
     irq: UART0_IRQ
     kernel_clock: apb
+    dma_requests:
+      rx: 21
+      tx: 20
     feat:
       rx_fifo_depth: 32
       tx_fifo_depth: 32
