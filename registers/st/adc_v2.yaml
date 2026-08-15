@@ -13,6 +13,8 @@ provenance:
     - "old-alloy src/hal/adc/lite.hpp + examples/lite_hal_probe (ADC conversions ran on real Nucleo-G071RB hardware)"
     - "ANALOG WATCHDOGS (AWD1/2/3: ISR+IER bits 7-9, CFGR1 AWD1SGL/AWD1EN/AWD1CH, AWD1TR/AWD2TR/AWD3TR, AWD2CR/AWD3CR) from ST's OWN CMSIS device header STMicroelectronics/cmsis_device_g0 Include/stm32g0b1xx.h — every bit position below is that file's ADC_<REG>_<FIELD>_Pos, cross-checked against embassy-rs/stm32-data-generated @ 669003ee data/registers/adc_g0.json, which agrees on all of them. RM0444 chapter 'Analog-to-digital converter (ADC)', subsections 'Analog window watchdog' and the ADC register map; the chapter NUMBER is deliberately not quoted because st.com would not serve the PDF from the environment this was curated in, and a section number nobody read is a fabricated citation."
     - "ARMING CONSTRAINTS from ST's own LL driver STMicroelectronics/stm32g0xx_hal_driver Inc/stm32g0xx_ll_adc.h: LL_ADC_SetAnalogWDMonitChannels (CFGR1 AWD1CH/AWD1SGL/AWD1EN, AWD2CR AWD2CH, AWD3CR AWD3CH) is documented 'conditioned to ADC state: ADC must be disabled'; LL_ADC_ConfigAnalogWDThresholds (AWDnTR LT/HT) 'ADC must be disabled or enabled without conversion on going on group regular'. The thresholds compare against the ADC data register's own scale, so a driver that turns oversampling on must scale them — which is why CFGR2's oversampling fields stay uncurated here rather than half-curated."
+    - "ADVANCED CONVERSION CONTROL (2026-08-15) — CFGR1 SCANDIR/EXTSEL/EXTEN/WAIT/DISCEN and the RES/ALIGN/DMACFG encodings, CFGR2 OVSE/OVSR/OVSS/TOVS/LFTRIG and the CKMODE encoding, SMPR SMPSEL and both SMP encodings, CHSELR's CHSEL bitmap and the CHSELR_1 sequence view, CALFACT, and CCR's PRESC encoding: all taken from embassy-rs/stm32-data-generated @ 669003eeb7ad30d123220a3cb9b520122c5ca2b6 data/registers/adc_g0.json — the SAME pinned tree this file's watchdog fields were cross-checked against, fetched through the same builder path (builders/st/build.py::_http_get). Every bit offset, width, and enumerated value below is that file's, transcribed and not recalled; the value NAMES are alloy's uppercase spelling of the upstream variant names (Bits12 -> BITS12, Cycles160_5 -> CYCLES160_5). RM0444's ADC chapter is the human-readable counterpart; its section NUMBER is deliberately not quoted, for the reason the watchdog entry above gives."
+    - "WHY OVERSAMPLING IS CURATED NOW, reversing this file's own earlier decision: the note below the watchdog entry said CFGR2's oversampling fields stayed uncurated 'rather than half-curated' because the watchdog thresholds compare against the data register's scale, so an oversampling driver must scale them. That is a true fact about the DRIVER and it was the wrong place to act on it — leaving the fields out made the feature unreachable at every layer at once (peripheral-surface.md question 0, row 3) without making any program safer. The units interaction is handled in alloy, not here, and by REFUSAL rather than by arithmetic: the AWDnTR threshold fields are 12 bits wide (generated, below), so an oversampling setting that widens the data register past 12 bits cannot express a threshold at all, and alloy's driver already bounds every window against that generated width. What this file must NOT do is assert how the silicon compares a widened result against a 12-bit threshold — that is an RM statement nobody in this curation session read, so it is not written down as though it were."
   completeness: bring-up-subset
 # DEGREE that belongs to the IP VERSION, not to any one instance: how many
 # analog watchdogs this silicon has is fixed by the IP, so recording it on each
@@ -41,9 +43,16 @@ registers:
     offset: "0x04"
     access: rw
     fields:
+      - { name: ADRDYIE, bit: 0 }
+      - { name: EOSMPIE, bit: 1 }
+      - { name: EOCIE, bit: 2, description: "end of one conversion" }
+      - { name: EOSIE, bit: 3, description: "end of the whole sequence" }
+      - { name: OVRIE, bit: 4, description: "a result was lost (see OVRMOD)" }
       - { name: AWD1IE, bit: 7 }
       - { name: AWD2IE, bit: 8 }
       - { name: AWD3IE, bit: 9 }
+      - { name: EOCALIE, bit: 11 }
+      - { name: CCRDYIE, bit: 13 }
   - name: CR
     offset: "0x08"
     access: rw
@@ -59,27 +68,95 @@ registers:
     access: rw
     fields:
       - { name: DMAEN, bit: 0 }
-      - { name: DMACFG, bit: 1, description: "0 = one-shot DMA (stops at CNDTR=0), 1 = circular" }
-      - { name: RES, bit: 3, width: 2 }
-      - { name: ALIGN, bit: 5 }
+      - { name: DMACFG, bit: 1, description: "0 = one-shot DMA (stops at CNDTR=0), 1 = circular", values: { ONE_SHOT: 0, CIRCULAR: 1 } }
+      - name: SCANDIR
+        bit: 2
+        description: >
+          Which end of CHSELR the bitmap scan starts from. Only meaningful in
+          bitmap mode (CHSELRMOD = 0); in sequence mode the order is the
+          sequence's own.
+        values: { UPWARD: 0, BACKWARD: 1 }
+      - name: RES
+        bit: 3
+        width: 2
+        description: "Conversion resolution. Fewer bits is a shorter conversion, and DR is still right-aligned at the chosen width."
+        values: { BITS12: 0, BITS10: 1, BITS8: 2, BITS6: 3 }
+      - { name: ALIGN, bit: 5, values: { RIGHT: 0, LEFT: 1 } }
+      - name: EXTSEL
+        bit: 6
+        width: 3
+        description: >
+          Which hardware event starts a conversion when EXTEN is not DISABLED.
+          The encoding is per chip line in ST's manual; these names are the ones
+          the G0 register map carries.
+        values: { TIM1_TRGO2: 0, TIM1_CC4: 1, TIM2_TRGO: 2, TIM3_TRGO: 3, TIM15_TRGO: 4, TIM6_TRGO: 5, TIM4_TRGO: 6, EXTI_LINE11: 7 }
+      - name: EXTEN
+        bit: 10
+        width: 2
+        description: "Hardware-trigger edge. DISABLED means software start (ADSTART) only."
+        values: { DISABLED: 0, RISING: 1, FALLING: 2, BOTH: 3 }
       - { name: CONT, bit: 13 }
       - { name: OVRMOD, bit: 12, description: "1 = overwrite DR on overrun (keeps a DMA stream moving)" }
-      - { name: AUTOFF, bit: 15 }
-      - { name: CHSELRMOD, bit: 21 }
+      - { name: WAIT, bit: 14, description: "1 = wait-conversion mode: the next conversion is held until DR has been read, which cannot overrun by construction" }
+      - { name: AUTOFF, bit: 15, description: "1 = power the analog block down between conversions; the driver pays the start-up delay on the next one" }
+      - { name: DISCEN, bit: 16, description: "1 = discontinuous: one channel of the sequence per trigger, instead of the whole sequence" }
+      - { name: CHSELRMOD, bit: 21, description: "0 = CHSELR is a channel BITMAP, 1 = CHSELR is an ORDERED 8-slot sequence (the CHSELR_1 view below)" }
       - { name: AWD1SGL, bit: 22, description: "1 = watchdog 1 guards the single channel in AWD1CH, 0 = all converted channels" }
       - { name: AWD1EN, bit: 23, description: "watchdog 1 enable — writable only with the ADC disabled (ll_adc.h)" }
       - { name: AWD1CH, bit: 26, width: 5, description: "the one channel watchdog 1 guards when AWD1SGL = 1" }
   - name: CFGR2
     offset: "0x10"
     access: rw
+    # OVERSAMPLING. Earlier revisions of this file left these four uncurated on
+    # purpose, and said why: the analog watchdog compares its thresholds against
+    # the DATA REGISTER's own scale, so a driver that turns oversampling on and
+    # leaves a watchdog armed would be guarding a window in the wrong units.
+    # That reason was about the DRIVER, not about the data, and leaving the
+    # fields out did not prevent the bug — it only put the feature out of reach
+    # of every layer at once. The fields are curated here; the units problem is
+    # solved where it lives, in alloy's adc facade, which scales an armed
+    # watchdog's window with the oversampler's effective shift and says so.
     fields:
-      - { name: CKMODE, bit: 30, width: 2, description: "1 = PCLK/2 (synchronous)" }
+      - { name: OVSE, bit: 0, description: "oversampler enable; the sum of OVSR samples is shifted right by OVSS and lands in DR" }
+      - name: OVSR
+        bit: 2
+        width: 3
+        description: "How many samples are summed per result."
+        values: { MUL2: 0, MUL4: 1, MUL8: 2, MUL16: 3, MUL32: 4, MUL64: 5, MUL128: 6, MUL256: 7 }
+      - name: OVSS
+        bit: 5
+        width: 4
+        description: >
+          Right shift applied to the sum. Ratio 2^n with shift n keeps the
+          result on the plain 12-bit scale (an average); a smaller shift keeps
+          the extra bits and widens DR beyond 12 bits.
+        values: { NO_SHIFT: 0, SHIFT1: 1, SHIFT2: 2, SHIFT3: 3, SHIFT4: 4, SHIFT5: 5, SHIFT6: 6, SHIFT7: 7, SHIFT8: 8 }
+      - { name: TOVS, bit: 9, description: "1 = one trigger per SAMPLE of the oversampled sum, 0 = one trigger per finished result" }
+      - { name: LFTRIG, bit: 29, description: "low-frequency trigger mode" }
+      - name: CKMODE
+        bit: 30
+        width: 2
+        description: "1 = PCLK/2 (synchronous)"
+        values: { ADCLK: 0, PCLK_DIV2: 1, PCLK_DIV4: 2, PCLK: 3 }
   - name: SMPR
     offset: "0x14"
     access: rw
+    # TWO shared sampling times and a per-channel SELECTOR between them — not a
+    # per-channel time. SMPSEL[n] picks SMP1 or SMP2 for channel n, so a
+    # 19-channel converter offers exactly two durations at once. Any surface
+    # that offers "the sampling time of channel n" as a free value is lying on
+    # this IP; what it can honestly offer is the pair and the assignment.
     fields:
-      - { name: SMP1, bit: 0, width: 3, description: "7 = 160.5 cycles (required for vref/temp)" }
-      - { name: SMP2, bit: 4, width: 3 }
+      - name: SMP1
+        bit: 0
+        width: 3
+        description: "7 = 160.5 cycles (required for vref/temp)"
+        values: { CYCLES1_5: 0, CYCLES3_5: 1, CYCLES7_5: 2, CYCLES12_5: 3, CYCLES19_5: 4, CYCLES39_5: 5, CYCLES79_5: 6, CYCLES160_5: 7 }
+      - name: SMP2
+        bit: 4
+        width: 3
+        values: { CYCLES1_5: 0, CYCLES3_5: 1, CYCLES7_5: 2, CYCLES12_5: 3, CYCLES19_5: 4, CYCLES39_5: 5, CYCLES79_5: 6, CYCLES160_5: 7 }
+      - { name: SMPSEL, bit: 8, repeat: { count: 19, stride: 1 }, description: "channel n uses SMP1 (0) or SMP2 (1)" }
   # Watchdog 1 is shaped differently from 2 and 3 and the register map is where
   # that starts: its enable and its channel live in CFGR1 above (one channel or
   # ALL), while 2 and 3 own a channel BITMASK register whose non-zero value IS
@@ -96,9 +173,29 @@ registers:
     fields:
       - { name: LT2, bit: 0, width: 12 }
       - { name: HT2, bit: 16, width: 12 }
+  # ONE ADDRESS, TWO VIEWS — and only one of them is expressible here.
+  #
+  # CFGR1.CHSELRMOD switches this address between a 19-bit channel BITMAP
+  # (mode 0, below) and eight ordered 4-bit SEQUENCE slots (mode 1, upstream's
+  # CHSELR_1). The sequence view is the one that gives the G0 an arbitrary
+  # conversion ORDER, and it cannot be curated in alloy.registers.v1: as a
+  # second register at offset 0x28 the validator refuses it ("registers
+  # CHSELR_1 and CHSELR overlap"), and as extra fields of this register its
+  # slots would overlap CHSEL's bits, which is refused as well.
+  #
+  # That is the SAME data-model limit peripheral-surface.md records for
+  # st/tim_gp16's CCMR1 input/output views, now hit a second time on a second
+  # IP — so the output is a data-model proposal for the maintainer, not a
+  # curation ticket and not a C++ workaround. Until it lands, ordered scan is
+  # unreachable on this IP at every layer, and the bitmap scan below (which
+  # converts in SCANDIR order and cannot repeat a channel) is the whole of what
+  # a driver can honestly offer.
   - name: CHSELR
     offset: "0x28"
     access: rw
+    description: "Bitmap view (CHSELRMOD = 0): one bit per channel; every selected channel converts once per sequence, in SCANDIR order."
+    fields:
+      - { name: CHSEL, bit: 0, repeat: { count: 19, stride: 1 }, description: "channel n is in the scan" }
   - name: AWD3TR
     offset: "0x2C"
     access: rw
@@ -118,11 +215,21 @@ registers:
     access: rw
     fields:
       - { name: AWD3CH, bit: 0, width: 19, description: "one bit per channel; a non-zero mask is watchdog 3's enable" }
+  - name: CALFACT
+    offset: "0xB4"
+    access: rw
+    description: "The factory/self calibration factor. Survives ADDIS, does not survive the regulator going down."
+    fields:
+      - { name: CALFACT, bit: 0, width: 7 }
   - name: CCR
     offset: "0x308"
     access: rw
     fields:
-      - { name: PRESC, bit: 18, width: 4 }
+      - name: PRESC
+        bit: 18
+        width: 4
+        description: "Divider from the ADC clock source to the converter."
+        values: { DIV1: 0, DIV2: 1, DIV4: 2, DIV6: 3, DIV8: 4, DIV10: 5, DIV12: 6, DIV16: 7, DIV32: 8, DIV64: 9, DIV128: 10, DIV256: 11 }
       - { name: VREFEN, bit: 22 }
       - { name: TSEN, bit: 23 }
       - { name: VBATEN, bit: 24 }
