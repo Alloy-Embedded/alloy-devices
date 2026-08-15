@@ -1,0 +1,382 @@
+schema: alloy.registers.v1
+vendor: raspberrypi
+ip: dma_v1
+class: dma
+description: >
+  The RP2040's DMA — twelve channels, "with separate read and write masters"
+  in the SVD's own words. Channels are 0-BASED (CH0..CH11) and this file keeps
+  them that way: array index i IS channel i, with no adjustment anywhere. That
+  is worth saying because the tree already holds both conventions — st/dma_v1
+  is 1-based and its array index i is channel i+1, st/dma_v2 is 0-based — and
+  an off-by-one hidden in curation is the one bug this data cannot make loud.
+
+  IT IS A FREE ROUTER, like the G0's DMAMUX and unlike F4/F7. Any channel can
+  serve any request: the request id lives in CTRL_TRIG.TREQ_SEL, is chip-wide,
+  and belongs to the PERIPHERAL, so chip files carry it as `dma_requests` (not
+  `dma_routes`) — the same key as the G0 because the meaning is the same.
+
+  FOUR REGISTERS PER CHANNEL, IN FOUR ALIAS VIEWS, AND THE VIEW POSITION IS A
+  SEMANTIC. Each channel occupies 64 bytes holding READ_ADDR, WRITE_ADDR,
+  TRANS_COUNT and CTRL in four different orders (+0x00, +0x10, +0x20, +0x30).
+  The register that lands at view offset 0xC is that view's TRIGGER: writing
+  it reloads the counter and STARTS the channel. All sixteen views are curated
+  below because they are not sixteen registers — they are four registers and a
+  choice of which write starts the transfer, and a driver that can reach only
+  one view cannot both configure a channel without starting it and re-arm it in
+  a single store. The immediate consequence for a driver: CTRL_TRIG (+0x0C) is
+  a trigger, so configuration must be written through CH_AL1_CTRL / CH_AL2_CTRL
+  / CH_AL3_CTRL, and the start issued separately (MULTI_CHAN_TRIGGER, or one of
+  the three *_TRIG aliases). None of the three ST engines has this hazard: they
+  configure and set EN inside one register.
+
+  WHAT THIS IP DOES NOT HAVE, provable BY EXHAUSTION over the register set
+  below rather than asserted:
+    · NO HALF-TRANSFER EVENT. INTR/INTE0/INTF0/INTS0/INTE1/INTF1/INTS1 carry
+      one bit PER CHANNEL and nothing else, and CTRL_TRIG has no half-transfer
+      flag. A half-buffer interrupt does not exist on a single channel.
+    · NO CIRCULAR / AUTO-RELOAD-ON-WRAP BIT. Nothing here re-arms a channel by
+      itself. TRANS_COUNT does hold a RELOAD value — writing it sets RELOAD,
+      and each TRIGGER copies RELOAD into the live counter (the reload value is
+      readable at CH_DBG_TCR) — but a channel that runs to zero HALTS and stays
+      halted until something triggers it again. CHAIN_TO cannot be that
+      something for itself: setting CHAIN_TO to the channel's own number is how
+      the SVD says chaining is DISABLED. So an endless stream costs either a
+      second channel chained to the first, or a software re-trigger.
+    · RING_SIZE/RING_SEL WRAP THE ADDRESS, NOT THE COUNT. They confine one side
+      of the transfer to a (1 << n) BYTE window and the SVD spells out that the
+      window must be naturally aligned. The counter still runs down through it.
+      A buffer used this way must be a power-of-two BYTES *and* aligned to its
+      own size — the size alone is not the constraint.
+
+  STOPPING IS A FOURTH SHAPE. st/dma_v1 clears EN and is done; st/dma_v2 clears
+  EN and polls it to 0; XDMAC writes GD and polls GS. Here, clearing EN only
+  PAUSES — the SVD says BUSY stays high if it was high. Terminating early means
+  writing the channel's bit to CHAN_ABORT and then POLLING CHAN_ABORT until it
+  reads all-zero, because until then in-flight transfers are still draining
+  through the address and data FIFOs and "it is unsafe to restart the channel".
+  Any teardown that frees a buffer after a bare EN-clear is racing hardware.
+
+  TWO NVIC LINES, AND THE CHANNEL-TO-LINE MAP IS SOFTWARE, NOT SILICON. Setting
+  bit n of INTE0 routes channel n to DMA_IRQ_0; INTE1 routes it to DMA_IRQ_1;
+  both, either or neither are legal, and the SVD says outright that ignoring the
+  second line and using INTE0/INTS0/IRQ 0 is valid. That is a runtime policy, so
+  it is not expressible as chip geometry: a chip file binds `irq: DMA_IRQ_0` to
+  the controller and leaves DMA_IRQ_1 in the interrupt table, curated and
+  unbound. Binding both as `irq_lines` ranges would assert a fixed mapping this
+  silicon does not have.
+
+  INTFn (force) has no counterpart in the three engines already in the tree. It
+  raises the interrupt condition through the real register path, which is the
+  cheapest way for a host register double to exercise an ISR honestly.
+
+  NOT CURATED: the sniffer (SNIFF_CTRL at 0x434, SNIFF_DATA at 0x438) — a CRC
+  accelerator that observes a channel's data, with no consumer in the DMA
+  stream contract. It is named here rather than silently absent because two of
+  its fields (EN, BSWAP) would need scope renames against CTRL_TRIG's, and that
+  naming debt should be paid by whoever needs the checksums, not by this pass.
+provenance:
+  sources:
+    - "raspberrypi/pico-sdk @ 98a542c1a62fb549ffb5d66a3e5892b06276b670 src/rp2040/hardware_regs/RP2040.svd — the VENDOR'S OWN SVD at the SAME pinned commit that sourced registers/raspberrypi/adc.yaml. Every register offset, field bit and field width below is that file's addressOffset and bitRange, transcribed and not recalled. The copy used was fetched fresh over https at that SHA and is sha256 1c72330127ae097c8c9a3661b509fcb9a94826d76a5c0d7e259eb605ddd7b0a6, 2592282 bytes — recorded because the ADC pass pinned the commit but not the bytes, and a SHA plus a digest is checkable by a reader who has neither."
+    - "Peripheral node DMA: baseAddress 0x50000000, interrupts DMA_IRQ_0 = 11 and DMA_IRQ_1 = 12. Both vector numbers CROSS-CHECK against the interrupt table already curated in chips/raspberrypi/rp2040.yaml (11 and 12 there since the bootstrap pass), which is the evidence that the base and the vectors came from the same part — the same cross-check the ADC pass used with ADC_IRQ_FIFO = 22."
+    - "THE DREQ TABLE IS IN THIS SVD, NOT ONLY IN THE DATASHEET. All 45 request ids below are enumeratedValues on CH0_CTRL_TRIG/TREQ_SEL in that file, each with the vendor's own one-line description. This is the reason no line of this curation is datasheet-derived and no value is hand-entered: the estimate in the design doc expected the table to come from RP2040 datasheet §2.5.3 and a second source, and it did not have to. The three ids the chip file uses (UART0_TX = 20, UART0_RX = 21, ADC = 36) are entries of this same enumeration, so they are checkable against their neighbours here rather than free-floating in a chip file."
+    - "RESETS.RESET bit 2 (this block's reset-release gate) is from the same SVD's RESETS peripheral, where DMA is bitRange [2:2] in RESET, WDSEL and RESET_DONE alike. It matters that it is right: the RP2040 boots every peripheral HELD IN RESET, so a DMA whose gate bit is wrong is not a slow DMA, it is a block that never answers."
+    - "ONE FACT BELOW IS INFERRED, NOT TRANSCRIBED, and is marked at the register: that CH_CTRL_TRIG itself triggers. The SVD annotates the OTHER three view-0xC registers with 'This is a trigger register (0xc). Writing a nonzero value will reload the channel counter and start the channel' and does NOT annotate CH0_CTRL_TRIG. The inference is from its own name (the vendor spelled it CTRL_TRIG) plus its position at view offset 0xC plus those three sentences. It is the single most consequential behavioural claim in this file — a driver that gets it wrong starts a channel while configuring it — and no host register double can falsify it, so it belongs on a hardware checklist."
+    - "NOT curated from any source: the sniffer registers (see the description), and nothing at all is taken from the RP2040 datasheet. No timing, no clock requirement and no bus-arbitration claim appears in this file, because the SVD does not carry them."
+  completeness: bring-up-subset
+registers:
+  # ---------------------------------------------------------------------------
+  # Per-channel block: 12 channels at stride 0x40 from 0x00, each holding the
+  # same four registers in four orders. Array index i IS channel i (0-based).
+  #
+  # WHY THE ADDRESS AND COUNT REGISTERS CARRY NO FIELDS. The SVD names each
+  # whole-register field after its own register (CH0_READ_ADDR.CH0_READ_ADDR),
+  # and four views repeat the same three names, so curating them verbatim would
+  # collide four ways over — accessor names are per-IP. They are whole 32-bit
+  # words a driver writes through alloy::reg_at anyway, exactly as the ST
+  # engines write CPAR/CMAR/CNDTR, so there is nothing a field would add. Only
+  # CTRL_TRIG has bits that mean different things, and it carries them once:
+  # because array-register fields emit as position/mask `raw_field` constants
+  # rather than being bound to a struct member, that one set of accessors
+  # applies to whichever CTRL view the driver writes. That is what lets all
+  # four views be curated with no naming fight and no schema concept invented.
+  # ---------------------------------------------------------------------------
+  - name: CH_READ_ADDR
+    offset: "0x00"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "Source pointer; updates itself after each read, so it always holds the NEXT address to be read. Not a trigger."
+  - name: CH_WRITE_ADDR
+    offset: "0x04"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "Destination pointer; updates itself after each write. Not a trigger."
+  - name: CH_TRANS_COUNT
+    offset: "0x08"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: >
+      Number of BUS TRANSFERS (not bytes — see CTRL_TRIG.DATA_SIZE) before the
+      channel halts. Reading it while the channel is active shows the transfers
+      REMAINING. Writing it sets the RELOAD value, which every trigger copies
+      into the live counter; the reload value itself is readable at CH_DBG_TCR.
+      A channel therefore repeats the same length every time it is triggered —
+      but nothing triggers it again by itself. Not a trigger (the AL1 view's
+      copy at +0x1C is).
+  - name: CH_CTRL_TRIG
+    offset: "0x0C"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: >
+      Channel control and status — AND THE VIEW-0 TRIGGER. Writing this register
+      starts the channel, so a driver configures through CH_AL1_CTRL/AL2/AL3 and
+      starts separately. (That this one triggers is INFERRED from its name, its
+      offset within the view and the three sibling annotations — see provenance.)
+      There is no direction bit: direction is which side increments (INCR_READ /
+      INCR_WRITE) and which side the request paces.
+    fields:
+      - { name: EN, bit: 0, description: "Channel enable. Clearing it does NOT abort: the channel stops responding to triggers and PAUSES the current sequence, with BUSY still high if it was high. See CHAN_ABORT." }
+      - { name: HIGH_PRIORITY, bit: 1, description: "Preferential issue scheduling; does not change the DMA's bus priority" }
+      # DATA_SIZE's values are renamed from the SVD's SIZE_BYTE/SIZE_HALFWORD/
+      # SIZE_WORD: the emitted constant is <field>_<VALUE>, so the verbatim
+      # names would read data_size_size_byte. Same for RING_SIZE's RING_NONE.
+      - name: DATA_SIZE
+        bit: 2
+        width: 2
+        description: "Size of each bus transfer; READ_ADDR and WRITE_ADDR advance by this much. ONE field for BOTH sides — this IP cannot read halfwords and write words, which is the same limitation XDMAC's single DWIDTH has, and the reason a mismatched-width start cannot be offered here."
+        values: { BYTE: 0, HALFWORD: 1, WORD: 2 }
+      - { name: INCR_READ, bit: 4, description: "1 = the read address advances; 0 = every read hits the same address. Off for peripheral-to-memory." }
+      - { name: INCR_WRITE, bit: 5, description: "1 = the write address advances; 0 = every write hits the same address. Off for memory-to-peripheral." }
+      - name: RING_SIZE
+        bit: 6
+        width: 4
+        description: "log2 of an ADDRESS wrap window in BYTES: for n > 0 only the low n bits of the address change, which the SVD describes as wrapping on a (1 << n) byte boundary for NATURALLY-ALIGNED ring buffers. 2..32768 bytes. It does not touch TRANS_COUNT — the channel still halts when the count reaches zero."
+        values: { NONE: 0 }
+      - { name: RING_SEL, bit: 10, description: "0 = RING_SIZE wraps the READ address, 1 = the WRITE address" }
+      - { name: CHAIN_TO, bit: 11, width: 4, description: "Channel to trigger when this one completes. Setting it to THIS channel's own number is how chaining is disabled, which is also why a channel cannot re-trigger itself." }
+      - name: TREQ_SEL
+        bit: 15
+        width: 6
+        description: "Which transfer request paces the channel — a chip-wide id, carried per peripheral as `dma_requests` in chip files. 0x00..0x3a are the external DREQs, 0x3b..0x3e the four internal pacing timers and 0x3f permanent (unpaced)."
+        values:
+          PIO0_TX0: 0
+          PIO0_TX1: 1
+          PIO0_TX2: 2
+          PIO0_TX3: 3
+          PIO0_RX0: 4
+          PIO0_RX1: 5
+          PIO0_RX2: 6
+          PIO0_RX3: 7
+          PIO1_TX0: 8
+          PIO1_TX1: 9
+          PIO1_TX2: 10
+          PIO1_TX3: 11
+          PIO1_RX0: 12
+          PIO1_RX1: 13
+          PIO1_RX2: 14
+          PIO1_RX3: 15
+          SPI0_TX: 16
+          SPI0_RX: 17
+          SPI1_TX: 18
+          SPI1_RX: 19
+          UART0_TX: 20
+          UART0_RX: 21
+          UART1_TX: 22
+          UART1_RX: 23
+          PWM_WRAP0: 24
+          PWM_WRAP1: 25
+          PWM_WRAP2: 26
+          PWM_WRAP3: 27
+          PWM_WRAP4: 28
+          PWM_WRAP5: 29
+          PWM_WRAP6: 30
+          PWM_WRAP7: 31
+          I2C0_TX: 32
+          I2C0_RX: 33
+          I2C1_TX: 34
+          I2C1_RX: 35
+          ADC: 36
+          XIP_STREAM: 37
+          XIP_SSITX: 38
+          XIP_SSIRX: 39
+          TIMER0: 59
+          TIMER1: 60
+          TIMER2: 61
+          TIMER3: 62
+          PERMANENT: 63
+      - { name: IRQ_QUIET, bit: 21, description: "Suppress the per-block IRQ; instead one is raised when NULL is written to a trigger register, i.e. at the end of a control-block chain" }
+      - { name: BSWAP, bit: 22, description: "Byte-swap the data in flight: halfwords swap their two bytes, words reverse all four; no effect on byte data" }
+      - { name: SNIFF_EN, bit: 23, description: "Make this channel's transfers visible to the sniff hardware (whose own registers this file does not curate)" }
+      - { name: BUSY, bit: 24, description: "High from the start of a transfer sequence until its last transfer completes. Read-only, non-destructive, and it stays high while a cleared EN has merely PAUSED the channel — the only way to bring it down early is CHAN_ABORT. Note a channel that never started also reads 0 here." }
+      - { name: WRITE_ERROR, bit: 29, description: "A write bus error was received; write 1 to clear. WRITE_ADDR shows approximately where (not earlier, not more than 5 transfers later)." }
+      - { name: READ_ERROR, bit: 30, description: "A read bus error was received; write 1 to clear. READ_ADDR shows approximately where (not earlier, not more than 3 transfers later)." }
+      - { name: AHB_ERROR, bit: 31, description: "Read-only OR of READ_ERROR and WRITE_ERROR. The channel HALTS on any bus error and always raises its channel IRQ flag." }
+  # The three alias views. Each is the same four words in a different order, so
+  # that whichever register a driver writes LAST is the one at view offset 0xC
+  # and therefore the trigger. Curated without fields: CTRL_TRIG's accessors
+  # above are raw_field position/mask constants and apply to every CTRL view.
+  - name: CH_AL1_CTRL
+    offset: "0x10"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "CTRL again, at a NON-trigger offset. This is the register a setup() writes: same bits as CH_CTRL_TRIG, no start."
+  - name: CH_AL1_READ_ADDR
+    offset: "0x14"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "READ_ADDR in view 1. Not a trigger."
+  - name: CH_AL1_WRITE_ADDR
+    offset: "0x18"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "WRITE_ADDR in view 1. Not a trigger."
+  - name: CH_AL1_TRANS_COUNT_TRIG
+    offset: "0x1C"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "TRANS_COUNT at view offset 0xC — A TRIGGER. Writing a nonzero value reloads the counter and starts the channel, which makes 'set a new length and go' one store."
+  - name: CH_AL2_CTRL
+    offset: "0x20"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "CTRL in view 2, non-trigger."
+  - name: CH_AL2_TRANS_COUNT
+    offset: "0x24"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "TRANS_COUNT in view 2. Not a trigger."
+  - name: CH_AL2_READ_ADDR
+    offset: "0x28"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "READ_ADDR in view 2. Not a trigger."
+  - name: CH_AL2_WRITE_ADDR_TRIG
+    offset: "0x2C"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "WRITE_ADDR at view offset 0xC — A TRIGGER. 'Point the channel at the other half of a buffer and restart it' is one store here, which is the shape a software ping-pong ring would be built on."
+  - name: CH_AL3_CTRL
+    offset: "0x30"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "CTRL in view 3, non-trigger."
+  - name: CH_AL3_WRITE_ADDR
+    offset: "0x34"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "WRITE_ADDR in view 3. Not a trigger."
+  - name: CH_AL3_TRANS_COUNT
+    offset: "0x38"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "TRANS_COUNT in view 3. Not a trigger."
+  - name: CH_AL3_READ_ADDR_TRIG
+    offset: "0x3C"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "READ_ADDR at view offset 0xC — A TRIGGER. The memory-to-peripheral counterpart of AL2's."
+  # ---------------------------------------------------------------------------
+  # Shared block. Every interrupt register is ONE 16-bit field where bit n is
+  # channel n — there is no half-transfer bit and no per-flag decomposition, so
+  # a completion is the only event a channel can raise.
+  # ---------------------------------------------------------------------------
+  - name: INTR
+    offset: "0x400"
+    access: rw
+    description: "Raw per-channel interrupt status, ignoring masking and forcing. Cleared by writing a bit mask HERE or to INTS0/INTS1 — write-1-to-clear, and nothing in this path is destroyed by a read."
+    fields:
+      - { name: INTR, bit: 0, width: 16, description: "Bit n = channel n raised its interrupt (transfer complete, or halted on a bus error)" }
+  - name: INTE0
+    offset: "0x404"
+    access: rw
+    description: "Set bit n to route channel n's interrupt to DMA_IRQ_0."
+    fields:
+      - { name: INTE0, bit: 0, width: 16 }
+  - name: INTF0
+    offset: "0x408"
+    access: rw
+    description: "Force bits into INTE0's path; the interrupt stays asserted until the forced bit is cleared. Nothing else in the tree's three DMA engines has this — it is how a host double raises a real interrupt condition."
+    fields:
+      - { name: INTF0, bit: 0, width: 16 }
+  - name: INTS0
+    offset: "0x40C"
+    access: rw
+    description: "Which channels are currently asserting DMA_IRQ_0 (INTR masked by INTE0, plus INTF0). An ISR guards on this and clears by writing the bits it consumed."
+    fields:
+      - { name: INTS0, bit: 0, width: 16 }
+  - name: INTE1
+    offset: "0x414"
+    access: rw
+    description: "Set bit n to route channel n's interrupt to DMA_IRQ_1 — the second, independent line. A channel may be on both, either or neither; nothing in the silicon fixes the choice."
+    fields:
+      - { name: INTE1, bit: 0, width: 16 }
+  - name: INTF1
+    offset: "0x418"
+    access: rw
+    fields:
+      - { name: INTF1, bit: 0, width: 16, description: "Force, for DMA_IRQ_1" }
+  - name: INTS1
+    offset: "0x41C"
+    access: rw
+    description: "Which channels are currently asserting DMA_IRQ_1."
+    fields:
+      - { name: INTS1, bit: 0, width: 16 }
+  - name: TIMER
+    offset: "0x420"
+    access: rw
+    array: { count: 4, stride: 4 }
+    description: >
+      The four internal pacing timers (TREQ ids 59..62), each producing requests
+      at (X/Y) * sys_clk. The equation is evaluated once per sys_clk, so the
+      fastest they go is one request per sys_clk. Curated as one array because
+      TIMER0..3 are the same register four times; the fields are named for their
+      scope (X and Y alone would be per-IP accessors called `x` and `y`).
+    fields:
+      - { name: TIMER_Y, bit: 0, width: 16, description: "Divisor" }
+      - { name: TIMER_X, bit: 16, width: 16, description: "Dividend" }
+  - name: MULTI_CHAN_TRIGGER
+    offset: "0x430"
+    access: rw
+    description: "Write 1s to start channels: bit n is exactly a write to channel n's trigger register, and the channel starts if it is enabled and not already busy. One global store starts several channels at once — and, unlike a trigger alias, it starts a channel without rewriting any of its configuration."
+    fields:
+      - { name: MULTI_CHAN_TRIGGER, bit: 0, width: 16 }
+  - name: FIFO_LEVELS
+    offset: "0x440"
+    access: ro
+    description: "Debug fill levels of the three internal FIFOs. Read-only, and the reason a stop must drain: these are what CHAN_ABORT flushes."
+    fields:
+      - { name: TDF_LVL, bit: 0, width: 8, description: "Transfer-Data FIFO" }
+      - { name: WAF_LVL, bit: 8, width: 8, description: "Write-Address FIFO" }
+      - { name: RAF_LVL, bit: 16, width: 8, description: "Read-Address FIFO" }
+  - name: CHAN_ABORT
+    offset: "0x444"
+    access: rw
+    description: >
+      Terminate a sequence early: write 1 to channel n's bit. THE BIT STAYS HIGH
+      until in-flight transfers have been flushed through the address and data
+      FIFOs, and the SVD's instruction is explicit — "this register must be
+      polled until it returns all-zero. Until this point, it is unsafe to
+      restart the channel". This, not a cleared EN, is the RP2040's stop
+      sequence, and the polling is what makes a teardown-then-free safe.
+    fields:
+      - { name: CHAN_ABORT, bit: 0, width: 16 }
+  - name: N_CHANNELS
+    offset: "0x448"
+    access: ro
+    description: "How many channels this instance was built with. The IP supports up to 16 and can be configured with as few as one to save area; the RP2040 die has 12, which is why the count is chip data (`channels.count`) and not an IP `feat`."
+    fields:
+      - { name: N_CHANNELS, bit: 0, width: 5 }
+  # Per-channel debug window: same 0x40 stride, 0x800 away from the control
+  # block. CH_DBG_TCR is the only place the TRANS_COUNT reload value can be
+  # read back, which makes it the witness for the reload semantics stated above.
+  - name: CH_DBG_CTDREQ
+    offset: "0x800"
+    access: rw
+    array: { count: 12, stride: 64 }
+    description: "Read: how many accesses the channel believes it may still make on the peripheral without over/underflowing it. Write any value: clear the counter and re-initiate the DREQ handshake."
+    fields:
+      - { name: DBG_CTDREQ, bit: 0, width: 6 }
+  - name: CH_DBG_TCR
+    offset: "0x804"
+    access: ro
+    array: { count: 12, stride: 64 }
+    description: "The TRANS_COUNT RELOAD value — the length the next trigger will use. Read-only, and the only readback of a value that is otherwise write-only."
