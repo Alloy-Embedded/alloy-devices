@@ -8,11 +8,13 @@ provenance:
   - 'TIM1 2026-08-15: the advanced-control timer, promoted into this curated short
     chip file from the bulk-admitted sibling (stm32f767zi.yaml). base 0x40010000,
     APB2ENR bit 0 and irq TIM1_BRK_TIM9 are the sibling''s, which took them from the
-    Keil SVD this file already cites; kernel_clock apb2 is PCLK2_TIM in
-    embassy-rs/stm32-data-generated@669003ee data/chips/STM32F767ZI.json. The twelve
+    Keil SVD this file already cites; kernel_clock is apb2_tim, the node embassy-rs/stm32-data-generated@669003ee
+    data/chips/STM32F767ZI.json calls PCLK2_TIM and distinguishes from the bus''s
+    PCLK2; its 2x relation to the bus was measured on a Nucleo-F722ZE, not read. The twelve
     routes are that same JSON''s TIM1 pin list, filtered to the pins THIS file
-    declares — PE8/PE10/PE12/PE15 carry the same signals on the die and are dropped
-    because this package does not bring them out. `ip: st/tim_adv_v1` is the timer:v1
+    declares — PE8/PE10/PE12/PE15 carry the same signals on the die and are absent
+    because this file curates no port E — a CURATION boundary, not a package one,
+    and the earlier wording here claimed the package as the reason and was wrong. `ip: st/tim_adv_v1` is the timer:v1
     TIM_ADV template, whose ten curated registers were compared field by field against
     the pinned upstream and differ from the G0-era st/tim_adv in exactly one place
     (OCxM is three bits here, four there). NOTHING HERE HAS BEEN SEEN ON SILICON.'
@@ -128,36 +130,24 @@ peripherals:
       register: APB2ENR
       bit: 0
     irq: TIM1_BRK_TIM9
-    # ⚠ THIS NAMES THE BUS CLOCK, AND THE TIMER MAY NOT RUN ON IT.
+    # apb2_tim, NOT apb2 — and that distinction was MEASURED, not reasoned.
     #
-    # The pinned upstream separates the two nodes explicitly for this part —
-    # data_chips_STM32F767ZI.json gives TIM1 `bus_clock: PCLK2` AND
-    # `kernel_clock: PCLK2_TIM`, two different names — while USART3 beside it
-    # gets `bus_clock: PCLK1` and a register mux. So the source says a timer's
-    # clock is its own node. `apb2` here is the BUS one, because alloy's
-    # clock_node enum has {ahb, apb, apb2, sysclk} and no timer node exists to
-    # name yet.
+    # The pinned upstream separates the two nodes explicitly: this part's chip
+    # JSON gives TIM1 `bus_clock: PCLK2` AND `kernel_clock: PCLK2_TIM`, two
+    # different names, while USART3 beside it gets `bus_clock: PCLK1` and a
+    # register mux. The source says a timer's clock is its own node; it does
+    # NOT say what that node's frequency is.
     #
-    # WHAT IS NOT IN THE SERVED DATA: how PCLK2_TIM relates to PCLK2. The node
-    # name appears in the chip files; its definition lives in embassy's rcc
-    # code generator, not in the register JSON this repo pins, and the F7
-    # reference manual would not be served (see this file's provenance rule).
-    # The widely-repeated ST rule is x2 whenever the APB prescaler is not 1 —
-    # NOT WRITTEN HERE AS FACT, because recalling a rule is the thing this repo
-    # refuses.
+    # A Nucleo-F722ZE answered it on 2026-08-16 — same family, same v1 TIM_ADV,
+    # same pll_180mhz with PPRE2=/2. alloy::bridge asked TIM1 for 1 kHz and the
+    # timer's own update flag counted 2001 periods per second, five passes in a
+    # row, against an uptime whose lines arrived 1.00 s apart on the host. The
+    # timer node is 2x the bus node. See apb2_tim_hz in the clock profile.
     #
-    # WHY IT HAS NEVER MATTERED BEFORE, and why it does now: on every other
-    # board in the tree APB == AHB (prescaler 1), where both readings give the
-    # same number. The two F7 boards are the first with a divided APB —
-    # pll_180mhz sets PPRE2 to /2, so apb2_hz is 90 MHz while AHB is 180 — and
-    # tim1 here is the first timer promoted onto one. If the doubler is real,
-    # a bridge asked for 20 kHz switches at 40 kHz.
-    #
-    # HOW TO SETTLE IT, no scope and no wires: run the bridge at a known
-    # frequency and count update events against alloy's own uptime for a
-    # second. The count is the carrier. 20000 means this line is right; 40000
-    # means the timer node is 2x the bus node and alloy needs one.
-    kernel_clock: apb2
+    # THIS PART ITSELF IS STILL UNWITNESSED: the measurement was on the F722.
+    # The two share the family, the timer template and the prescaler, which is
+    # why the same node is named here — but no F767 has run it.
+    kernel_clock: apb2_tim
   usart3:
     ip: st/usart_v3
     base: '0x40004800'
@@ -781,6 +771,23 @@ clock:
       ahb_hz: 180000000
       apb_hz: 45000000
       apb2_hz: 90000000
+      # MEASURED ON SILICON, and this is the only pair of numbers in this
+      # file that came from a board rather than from the pinned data.
+      #
+      # The pinned chip data gives every APB timer a `kernel_clock` of
+      # PCLK*_TIM while the peripherals beside it get PCLK* — two nodes — and
+      # does NOT define the relation between them. On 2026-08-16 a
+      # Nucleo-F722ZE settled it: alloy::bridge asked TIM1 for 1 kHz, and the
+      # timer's own update flag counted 2001 periods per second against
+      # alloy's uptime, five passes in a row. The uptime is SysTick on the
+      # undivided core clock and the printed lines arrived 1.00 s apart on the
+      # host, so the ruler was checked too. The timer node is 2x the bus node
+      # whenever the APB prescaler is not 1 — here PPRE1=/4 and PPRE2=/2.
+      #
+      # Boards whose APB prescaler IS 1 need not state these: the emitter
+      # mirrors the bus node, which is the same number there.
+      apb_tim_hz: 90000000
+      apb2_tim_hz: 180000000
       program:
       # The 8 MHz is a DRIVEN clock from the ST-Link MCO, not a crystal: HSEBYP
       # selects the bypass input, and it is writable only while HSEON is clear,

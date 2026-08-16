@@ -281,7 +281,7 @@
           },
           "feat": {
             "type": "object",
-            "description": "DEGREE, not presence: how MUCH of a graded silicon feature this instance has, as a number the register map cannot state. Emitted as a nested `struct feat` of constants on the instance descriptor (feat::rx_fifo_depth). ZERO MEANS ABSENT — there is never a companion boolean, because a bool and a count that can disagree is a bug class. Only facts a register map cannot carry belong here: a field's WIDTH is already generated (field_t::raw_mask), so a maximum programmable value must be read from there, not restated here.",
+            "description": "DEGREE, not presence: how MUCH of a graded silicon feature this instance has, as a number the register map cannot state. Emitted as a nested `struct feat` of constants on the instance descriptor (feat::rx_fifo_depth). ZERO MEANS ABSENT \u2014 there is never a companion boolean, because a bool and a count that can disagree is a bug class. Only facts a register map cannot carry belong here: a field's WIDTH is already generated (field_t::raw_mask), so a maximum programmable value must be read from there, not restated here.",
             "propertyNames": {
               "pattern": "^[a-z][a-z0-9_]*$"
             },
@@ -315,7 +315,7 @@
           },
           "dma_routes": {
             "type": "object",
-            "description": "For a chip with NO DMA request router (STM32F4/F7/L4): the specific controller+unit each of this peripheral's DMA signals can be served by, and the per-unit selector value to write there. A `request` alone is not a fact on these parts — it only means anything relative to the unit it selects on, and a signal usually offers several alternatives. The unit key is `stream` on a stream-engine controller (F4/F7 dma:v2) and `channel` on a channel-engine controller (L4 bdma) — never both: on F4/F7, ST's own documentation uses 'channel' for the CHSEL source value, and dma_v1 channels are 1-based while streams are 0-based, so one key for both invited an off-by-one. Chips WITH a router use `dma_requests` instead, whose id is chip-wide.",
+            "description": "For a chip with NO DMA request router (STM32F4/F7/L4): the specific controller+unit each of this peripheral's DMA signals can be served by, and the per-unit selector value to write there. A `request` alone is not a fact on these parts \u2014 it only means anything relative to the unit it selects on, and a signal usually offers several alternatives. The unit key is `stream` on a stream-engine controller (F4/F7 dma:v2) and `channel` on a channel-engine controller (L4 bdma) \u2014 never both: on F4/F7, ST's own documentation uses 'channel' for the CHSEL source value, and dma_v1 channels are 1-based while streams are 0-based, so one key for both invited an off-by-one. Chips WITH a router use `dma_requests` instead, whose id is chip-wide.",
             "propertyNames": {
               "pattern": "^[a-z][a-z0-9_]*$"
             },
@@ -329,12 +329,24 @@
                 ],
                 "oneOf": [
                   {
-                    "required": ["stream"],
-                    "not": {"required": ["channel"]}
+                    "required": [
+                      "stream"
+                    ],
+                    "not": {
+                      "required": [
+                        "channel"
+                      ]
+                    }
                   },
                   {
-                    "required": ["channel"],
-                    "not": {"required": ["stream"]}
+                    "required": [
+                      "channel"
+                    ],
+                    "not": {
+                      "required": [
+                        "stream"
+                      ]
+                    }
                   }
                 ],
                 "additionalProperties": false,
@@ -715,6 +727,16 @@
                   "$ref": "#/$defs/clock_op"
                 },
                 "description": "The register writes that reach this profile, in order. MAY be empty: on some parts a profile is the reset state and there is nothing to write \u2014 RL78's HOCO frequency is selected by an option byte, which is image content rather than a program. An empty list means 'already there', not 'not described yet'; the description field is where that gets said."
+              },
+              "apb_tim_hz": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "What a TIMER on that APB bus is clocked at, which is not always the bus frequency: ST's own chip data names PCLK*_TIM as a node distinct from PCLK*. Omit wherever the APB prescaler is 1 \u2014 codegen mirrors the bus node, which is the same number there. State it only with a source, and say what the source was: the 2x on the F7 profiles was MEASURED on a Nucleo-F722ZE, because the served data names the node without defining it."
+              },
+              "apb2_tim_hz": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "As apb_tim_hz, for the second APB bus."
               }
             }
           }

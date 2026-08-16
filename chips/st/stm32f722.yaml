@@ -125,6 +125,24 @@ peripherals:
     feat:
       rx_fifo_depth: 0
       tx_fifo_depth: 0
+  tim1:
+    base: '0x40010000'
+    ip: st/tim_adv_v1
+    gate:
+      peripheral: rcc
+      register: APB2ENR
+      bit: 0
+    irq: TIM1_BRK_TIM9
+    # apb2_tim, NOT apb2 — MEASURED ON THIS EXACT BOARD.
+    #
+    # The pinned data gives TIM1 `bus_clock: PCLK2` AND `kernel_clock:
+    # PCLK2_TIM`, two nodes, and never says how they relate. On 2026-08-16 a
+    # Nucleo-F722ZE settled it: alloy::bridge asked TIM1 for 1 kHz and the
+    # timer's own update flag counted 2001 periods per second, five passes in a
+    # row. The bridge outputs were never enabled — the counter runs regardless
+    # of MOE — so nothing was driven onto a pin. See apb2_tim_hz in the profile
+    # for the full protocol, including how the ruler itself was checked.
+    kernel_clock: apb2_tim
   usart3:
     ip: st/usart_v3
     base: '0x40004800'
@@ -399,6 +417,66 @@ pins:
     port: b
     index: 9
 routes:
+- pin: pa6
+  peripheral: tim1
+  signal: bk
+  kind: af_fixed
+  af: 1
+- pin: pa7
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pa8
+  peripheral: tim1
+  signal: ch1
+  kind: af_fixed
+  af: 1
+- pin: pa9
+  peripheral: tim1
+  signal: ch2
+  kind: af_fixed
+  af: 1
+- pin: pa10
+  peripheral: tim1
+  signal: ch3
+  kind: af_fixed
+  af: 1
+- pin: pa11
+  peripheral: tim1
+  signal: ch4
+  kind: af_fixed
+  af: 1
+- pin: pb0
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb1
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
+- pin: pb12
+  peripheral: tim1
+  signal: bk
+  kind: af_fixed
+  af: 1
+- pin: pb13
+  peripheral: tim1
+  signal: ch1n
+  kind: af_fixed
+  af: 1
+- pin: pb14
+  peripheral: tim1
+  signal: ch2n
+  kind: af_fixed
+  af: 1
+- pin: pb15
+  peripheral: tim1
+  signal: ch3n
+  kind: af_fixed
+  af: 1
 - pin: pd8
   peripheral: usart3
   signal: tx
@@ -612,6 +690,23 @@ clock:
       ahb_hz: 180000000
       apb_hz: 45000000
       apb2_hz: 90000000
+      # MEASURED ON SILICON, and this is the only pair of numbers in this
+      # file that came from a board rather than from the pinned data.
+      #
+      # The pinned chip data gives every APB timer a `kernel_clock` of
+      # PCLK*_TIM while the peripherals beside it get PCLK* — two nodes — and
+      # does NOT define the relation between them. On 2026-08-16 a
+      # Nucleo-F722ZE settled it: alloy::bridge asked TIM1 for 1 kHz, and the
+      # timer's own update flag counted 2001 periods per second against
+      # alloy's uptime, five passes in a row. The uptime is SysTick on the
+      # undivided core clock and the printed lines arrived 1.00 s apart on the
+      # host, so the ruler was checked too. The timer node is 2x the bus node
+      # whenever the APB prescaler is not 1 — here PPRE1=/4 and PPRE2=/2.
+      #
+      # Boards whose APB prescaler IS 1 need not state these: the emitter
+      # mirrors the bus node, which is the same number there.
+      apb_tim_hz: 90000000
+      apb2_tim_hz: 180000000
       program:
       # The 8 MHz is a DRIVEN clock from the ST-Link MCO, not a crystal: HSEBYP
       # selects the bypass input, and it is writable only while HSEON is clear,

@@ -190,7 +190,11 @@ def lint_chips(db: Database) -> None:
                         "family-max sizes; this lint exists to stop that",
                     ))
 
-        clock_nodes = {"sysclk", "ahb", "apb", "apb2"} | set(doc["clock"]["sources"].keys())
+        # The APB TIMER nodes are separate from the APB BUS nodes because ST's
+        # own chip data names PCLK*_TIM apart from PCLK*, and on a divided APB
+        # they are not the same frequency — measured 2x on a Nucleo-F722ZE.
+        clock_nodes = ({"sysclk", "ahb", "apb", "apb2", "apb_tim", "apb2_tim"}
+                       | set(doc["clock"]["sources"].keys()))
         # Two peripherals at one base means one silently points at the other's
         # registers — a dead peripheral (found the hard way: usart1's base was
         # clobbered to the GMAC's 0x40050000 while wiring Ethernet, so every
