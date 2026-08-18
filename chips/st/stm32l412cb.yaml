@@ -5,6 +5,7 @@ part: STM32L412CB
 die: die464
 provenance:
   sources:
+  - 'FLOW-CONTROL ROUTES 2026-08-15: the de/rts/cts rows for usart1/2/3 and lpuart1, from embassy-rs/stm32-data-generated @ 669003ee data/chips/STM32L412CB.json — the SAME pinned tree and cache this file''s other pin facts come from. They were absent because this chip file predates the removal of the builder''s signal ALLOW-LIST (builders/st/build.py:46), which silently dropped every route it had not heard of; the upstream data has carried DE, RTS and CTS for all four ports all along. This file is hand-kept (graduation pending), so the builder will not backfill them — hence curated by hand, pin/af transcribed from that JSON. WHAT THIS UNBLOCKS: a hardware driver-enable on PA12 (usart1) now passes routes::routable<>, so an RS-485 port on this part can be declared at all. Not silicon-verified.'
   - "builders/st (embassy-rs/stm32-data-generated @ 669003eeb7ad, MIT OR Apache-2.0 via stm32-metapac)\
     \ \u2014 bases, RCC gates, IRQs, pin AFs, DMA requests, memories, ip tags \u2014 then hand-curated:\
     \ this file is the first stm32l4 in the database"
@@ -849,6 +850,30 @@ routes:
   signal: cs
   kind: af_fixed
   af: 5
+- {pin: pa0, peripheral: usart2, signal: cts, kind: af_fixed, af: 7}
+- {pin: pa1, peripheral: usart2, signal: de, kind: af_fixed, af: 7}
+- {pin: pa1, peripheral: usart2, signal: rts, kind: af_fixed, af: 7}
+- {pin: pa11, peripheral: usart1, signal: cts, kind: af_fixed, af: 7}
+- {pin: pa12, peripheral: usart1, signal: de, kind: af_fixed, af: 7}
+- {pin: pa12, peripheral: usart1, signal: rts, kind: af_fixed, af: 7}
+- {pin: pa15, peripheral: usart3, signal: de, kind: af_fixed, af: 7}
+- {pin: pa15, peripheral: usart3, signal: rts, kind: af_fixed, af: 7}
+- {pin: pa6, peripheral: lpuart1, signal: cts, kind: af_fixed, af: 8}
+- {pin: pa6, peripheral: usart3, signal: cts, kind: af_fixed, af: 7}
+- {pin: pb1, peripheral: lpuart1, signal: de, kind: af_fixed, af: 8}
+- {pin: pb1, peripheral: lpuart1, signal: rts, kind: af_fixed, af: 8}
+- {pin: pb1, peripheral: usart3, signal: de, kind: af_fixed, af: 7}
+- {pin: pb1, peripheral: usart3, signal: rts, kind: af_fixed, af: 7}
+- {pin: pb12, peripheral: lpuart1, signal: de, kind: af_fixed, af: 8}
+- {pin: pb12, peripheral: lpuart1, signal: rts, kind: af_fixed, af: 8}
+- {pin: pb13, peripheral: lpuart1, signal: cts, kind: af_fixed, af: 8}
+- {pin: pb13, peripheral: usart3, signal: cts, kind: af_fixed, af: 7}
+- {pin: pb14, peripheral: usart3, signal: de, kind: af_fixed, af: 7}
+- {pin: pb14, peripheral: usart3, signal: rts, kind: af_fixed, af: 7}
+- {pin: pb3, peripheral: usart1, signal: de, kind: af_fixed, af: 7}
+- {pin: pb3, peripheral: usart1, signal: rts, kind: af_fixed, af: 7}
+- {pin: pb4, peripheral: usart1, signal: cts, kind: af_fixed, af: 7}
+
 interrupts:
 - name: WWDG
   number: 0
